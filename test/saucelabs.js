@@ -1,5 +1,6 @@
 const {getBrowser} = require('./saucelabs/setup');
 const webdriver = require('selenium-webdriver');
+const assert = require('assert');
 
 let capabilities = [{browserName: 'firefox'}, {browserName: 'chrome'}];
 
@@ -16,11 +17,10 @@ for (let capability in capabilities) {
       return browser.quit();
     });
 
-    it('check headline', async () => {
-      // const el = await browser.wait(webdriver.until.elementsLocated(webdriver.By.css('a')));
-      // console.log(el, el.length);
+    it('', async () => {
       const el = await browser.wait(webdriver.until.elementLocated(webdriver.By.css('h1')));
       const txt = await el.getText();
+      assert.equal(txt, 'nachricht 12');
       console.log(txt);
     });
   });

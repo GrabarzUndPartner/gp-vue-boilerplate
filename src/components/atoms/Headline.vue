@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="$style.root">{{ content }}<div :class="$style.aha">ola</div></h1>
+  <h1 :class="$style.root">{{ content }}</h1>
 </template>
 
 <script>
