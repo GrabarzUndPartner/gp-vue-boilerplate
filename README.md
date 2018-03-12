@@ -8,6 +8,30 @@
 
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
+# General usage
+
+# Coding Rules
+
+# Visual regression tests
+
+# CheatSheet - Commands
+
+## Generate Travis-CI Secure Tokens
+
+### Github Token
+Generate personal access token at github: https://github.com/settings/tokens
+Use command to encrypt your personal access token for travis-ci
+```
+travis encrypt GH_TOKEN=<Your TOKEN> --add
+```
+
+### Saucelab Token
+Generate personal access token at saucelabs: https://saucelabs.com/beta/user-settings
+Use command to encrypt your personal access token for travis-ci
+```
+travis encrypt SAUCE_ACCESS_KEY=<Your TOKEN> --add
+
+```
 
 # ToDos
 - webpackmonitor (https://github.com/nuxt-community/webpackmonitor-module)
