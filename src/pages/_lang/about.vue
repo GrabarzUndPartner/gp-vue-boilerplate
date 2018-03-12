@@ -5,7 +5,7 @@
     "hello": "hello world!"
   },
   "de": {
-    "test": "nachricht 123456",
+    "test": "nachricht 12",
     "hello": "hallo welt"
   }
 }
