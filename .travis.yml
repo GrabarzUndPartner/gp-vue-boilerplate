@@ -6,26 +6,26 @@ env:
   global:
   #github
   - secure: O6MZLL2iFyBn85t9IFA4FPFujf3xEn4B5CJAP4aUGpDTXHrvG+5Eyj2kU7carBN38uVgb3VDJ/SoWybHfo7o+wy0jIEPEct/xmfb1vzckbLaR+62OlrLDoqTs/jlNLVeQWo46WwYdAVUIdwaCoboi98S7sdbrOs/sWmVKnNtmnlLRuT6hamZMS43KLSpZfq7n913jEZrkHFGxILki/yrnd14+0bTTy2d1PQYMawy2lj+PdmNGX+to+QBTeTtaY0WCc4INXZQt2ckNy5NMeP8UgagITwRj1sJpAv41lCuhRIQ+ZvuverfvO+ZQQ6K6TaeC2VnnlYs09fi4GOTzzJmNZe+2kWBCywy+OIle7jIjFH5hxmds1Li88MCaplBlRi7eh8rQtxrmvWT+4U/kZ7eZFHf/tdi2rGD5lSpGVEJeHf4oWdunaVlv8P7T1uWxFIDIxL6MtlJiYeINO2+9anR369kWUsr2hNmuNzY77AZrPTD+wyfZg9v+2QFclwUlW0vGKwXDlJqqH6cUx2bSZ6uByRdpUMpApoJsV2GbBM0R9Yn+jNgupNZLC5cjeClcuRORB4gy+PTUFWUUaHH4CXbxYj0GoduI9+AZPu3LfLhUOiC5VpOKeXlOWW9IGV3o6vf8Zw8nPNmLk/VFqyOY4QxtKRHbD6twAu/qMOzEKYh2Pc=
-  #saucelab
-  - secure: VmCdViQtzKqO0JlOrf3ltKxdDl+RrlOY7UltS7IbC49LoUYvp8qn9ao/JyGjT61xNLAatlgv17QCLDywsLiLR+aFIUWd9h17oUUQ6bb0OfdhVZMfMtrPETD5L5TZP5NfrhWs0N0/d7aAmjgqn5ClhlyHYDV5EWkoSeeveFwv22jXDT5Nd2iqwlR7R57Mjog6Nz+q1BXrkE7cKixGbxgfCUuQYxXOU/hp7x5T6Wum82YBZkJicRleT1FNYSiXkZ0a9JMoomMKaVmyY6mweWbvFXYVdokEfQ4PbPCM/UMoJlQTvAHe1xpisYo4kGGjsqsKsVKs6MxXRjRSCgD30aQqrB3oyHgyZ3QO42hZO1zFmaX9oMdwbXyYCSnTWLMGruUCgyP6AjSgQ9pQ2qIZjSQ0OXC2/c0LSiBJlcJRF0pMGxkh3weyEJ0Eg9e+EXr/Qgv15fSJplsZM95F5IYmaF075aelSR/vus0zzlYnWL6CWd1xyZA3+u1hoscVkhUCkMFkg8lViwdcHHs2RT1bQgEwGObOmx/5dwHKo1JxQgK/I6PoS9ayuhMFqqHG8hANwDkumVpCIc0ItkqCoqrUGHw5CmW64kBjHw2KFKVL/rvlChLnngAizjii0tSwU3JwS2JTyhxqoIQWinIWAodx94x/ehCSbxZC04+kIY1GBYzvhBU=
+  #saucelabs
+  - secure: cVaY+w332Fpz3oftOwE0U6kZrqI6gkEujJaCVTtiyjiqzaJAGu926Qcne4vf2kqoCrX6FIyCqA7RrkXXDpi4SKn6DsD/bXdTiMU29GgpQmGE34vLVZejYouHPYD62zoZ1QSL3SzTEHCmuoK6KyUtep5ho/3UOQgNmsUFyDbyuaNy0jfI+mo2C1vOsVEO8IHm/AsVTYI9KFGS0pwKgAslVhe5zDX5L7yndynq9/kmgsyWNVHNdsJ8fN4DAb7Ulqr3Oltc0JouZVMQftx1oj7b3/SUIUy0T+kbjLxP39JhT41m9P9tbIfkbBPHfGK7veSf2kGO8Xfpbv0SGbiDO/XDCZmkn3UjrMVKlM5InDs+es/4+xvGV7qDbnlKTW11e8udHVQ48FXCvUUUBmX9syyANfl9APQAEuU/pNWcmXjK3XBwxTxJU85kZEnQtyMxf3MKhk/7OReSbCS6vrjii6xFEqKrSFWzY7K/4tSTdjzJDBNG+iWoY6dhjyuq1QRVgPA2IVCmmAsRdr35Xtvh0/OsnA7uelPxaeGhXWZJFxG6Qwbp/HIillyUZN5U6M4KrsMHTSTZs4qjNCDN87B8z2MJYhoXMTBsnoueSF9jJ1CV7pIbhO3TMchOF4EPgsWQ9S/K8Kx+03X9wC+a0aoZbtGEl3Q347/XvHbSM4jw1UNrhAc=
 cache:
   directories:
-    - node_modules
+  - node_modules
 addons:
   sauce_connect:
     username: gerbeth
   hosts:
-    - travis.dev
+  - travis.dev
 before_install:
-  - sudo apt-get install libtool automake autoconf nasm
+- sudo apt-get install libtool automake autoconf nasm
 install:
-  - npm install --no-optional
-  - npm run build
+- npm install --no-optional
+- npm run build
 before_script:
-  - npm run start & # start a Web server
-  - sleep 10 # give Web server some time to bind to sockets, etc
+- npm run start &
+- sleep 10
 script:
-  - npx mocha
+- npx mocha
 after_success:
-  - npm run release
-  - git push --follow-tags https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG HEAD:$TRAVIS_BRANCH
+- npm run release
+- git push --follow-tags https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG HEAD:$TRAVIS_BRANCH
