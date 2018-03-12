@@ -1,0 +1,78 @@
+{
+  "name": "vue-boilerplate",
+  "version": "1.0.0",
+  "description": "Grabarz & Partner Boilerplate",
+  "author": "Stephan Gerbeth",
+  "license": "MIT",
+  "engines": {
+    "node": ">=9.4.0"
+  },
+  "main": "index.js",
+  "standard-version": {
+    "scripts": {
+      "postcommit": "git commit --amend -m \"$(git log -1 --pretty=%B) [ci skip]\""
+    }
+  },
+  "scripts": {
+    "postinstall": "npm run favicon",
+    "test": "npm run lint",
+    "dev": "cross-env NODE_ENV=development node ./env/nuxt/server.js",
+    "build": "cross-env NODE_ENV=build nuxt build --config-file env/nuxt/config.js",
+    "start": "cross-env NODE_ENV=production node ./env/nuxt/server.js",
+    "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt/config.js",
+    "lint": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
+    "browserslist": "npx browserslist",
+    "favicon": "node ./env/tools/favicons.js",
+    "release": "standard-version",
+    "commitmsg": "validate-commit-msg",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-vue-app": "^2.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "chromedriver": "^2.36.0",
+    "cross-env": "^5.1.3",
+    "deepmerge": "^2.0.1",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^4.12.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^4.2.2",
+    "favicons": "^4.8.6",
+    "fs-extra": "^5.0.0",
+    "geckodriver": "^1.10.0",
+    "httpolyglot": "^0.1.2",
+    "husky": "^0.14.3",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-webp": "^4.1.0",
+    "imagemin-webpack-plugin": "^2.0.0",
+    "mocha": "^5.0.4",
+    "opn": "^5.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "standard-version": "^4.3.0",
+    "svg-sprite-loader": "^3.6.2",
+    "svgo": "^1.0.4",
+    "svgo-loader": "^2.1.0",
+    "validate-commit-msg": "^2.14.0",
+    "webpack-monitor": "^1.0.14",
+    "webpack-virtual-modules": "^0.1.8"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "4.3.0",
+    "nuxt": "^1.3.0",
+    "vue-i18n": "^7.4.2",
+    "vue-i18n-extensions": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StephanGerbeth/vue-boilerplate.git"
+  }
+}

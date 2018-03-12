@@ -1,0 +1,15 @@
+version: "{build}"
+
+install:
+  - ps: $nodejs_version = Get-Content .nvmrc -Raw | foreach{ $_.Trim()}
+  - ps: Install-Product node $nodejs_version
+  - npm install
+
+build: off
+
+test_script:
+  - node --version && npm --version
+  - npm test
+
+matrix:
+  fast_finish: true

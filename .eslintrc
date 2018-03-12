@@ -1,0 +1,37 @@
+// ESLint rules
+// ------------
+// rule definitions are described at https://eslint.org/docs/rules/
+{
+  root: true,
+
+  parserOptions: {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    mocha: true
+  },
+
+  plugins: [
+    'mocha',
+    'json',
+    'vue'
+  ],
+
+  extends: [
+    'standard',
+    'plugin:vue/essential'
+  ],
+
+  rules: {
+    "no-debugger": 0,
+    "semi": [2, "always"],
+    "complexity": [2, { "max": 7 }],
+    "mocha/no-exclusive-tests": "error"
+  }
+}

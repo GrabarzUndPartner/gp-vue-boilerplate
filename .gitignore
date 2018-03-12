@@ -1,0 +1,24 @@
+# Folders
+/.nuxt
+/dist
+/node_modules
+/env/nuxt/cert
+
+/src/static/favicon/*
+!/src/static/favicon/favicon.png
+
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Node template
+# Logs
+logs
+*.log
+
+# Files
+.DS_Store
+/env/nuxt/config/global/favicon.json

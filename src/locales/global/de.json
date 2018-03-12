@@ -1,0 +1,29 @@
+{
+  "header": {
+    "navigation": [{
+      "title": "Start",
+      "url": ""
+    }, {
+      "title": "Über uns",
+      "url": "about"
+    }, {
+      "title": "Projekte",
+      "url": "sub/projects"
+    }]
+  },
+
+  "footer": {
+    "navigation": [{
+      "title": "Kontakt",
+      "url": "contact"
+    }, {
+      "title": "Nutzungsbedingungen",
+      "url": "terms"
+    }, {
+      "title": "Datenschutz",
+      "url": "legals"
+    }]
+  },
+
+  "configxyz": "Ich bin eine Headline"
+}
