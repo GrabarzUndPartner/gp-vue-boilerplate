@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/StephanGerbeth/vue-boilerplate/compare/v1.0.1...v1.0.2) (2018-03-12)
+
+
+### Bug Fixes
+
+* **mocha:** test headline of about page ([31cece4](https://github.com/StephanGerbeth/vue-boilerplate/commit/31cece4))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2018-03-12)
 
