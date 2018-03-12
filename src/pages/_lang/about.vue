@@ -5,7 +5,7 @@
     "hello": "hello world!"
   },
   "de": {
-    "test": "nachricht 12",
+    "test": "nachricht 123456",
     "hello": "hallo welt"
   }
 }
@@ -16,9 +16,10 @@
     <headline v-bind:content="$t('test')"></headline>
     hello22 {{$t('configxyz')}}
     {{ $t('test') }}
+    hello
     <img src="~/assets/image.svg" />
     <img src="~/assets/image2.svg" />
-    <img src="~/assets/image0.png.webp" />
+    <img src="~/assets/image0.jpg.webp" />
   <br/>
 
   </div>
