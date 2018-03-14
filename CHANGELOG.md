@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.1.3...v1.1.4) (2018-03-12)
+
+
+### Bug Fixes
+
+* **changelog:** replaced repo urls ([fc278ba](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fc278ba))
+* **packages:** updated packages (axios, eslint-plugin-node) ([5bb5648](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5bb5648))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.1.2...v1.1.3) (2018-03-12)
 
