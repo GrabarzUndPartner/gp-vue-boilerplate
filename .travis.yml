@@ -20,7 +20,7 @@ before_script:
 - npm run start &
 - sleep 10
 script:
-- npx wdio wdio.conf.js
+- npm run wdio
 after_success:
 - npm run release
 - git push --follow-tags https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG HEAD:$TRAVIS_BRANCH

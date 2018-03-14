@@ -24,6 +24,8 @@
     "browserslist": "npx browserslist",
     "favicon": "node ./env/tools/favicons.js",
     "release": "standard-version",
+    "wdio": "npx wdio ./test/wdio/wdio.conf.js",
+    "wdio-local": "npx wdio ./test/wdio/wdio.conf.local.js",
     "commitmsg": "validate-commit-msg",
     "precommit": "npm run lint"
   },
