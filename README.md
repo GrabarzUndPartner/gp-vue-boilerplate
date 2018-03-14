@@ -33,6 +33,13 @@ travis encrypt SAUCE_ACCESS_KEY=<Your TOKEN> --add
 
 ```
 
+## Local Selenium Test
+To run local selenium tests you need a java (version >= 8)
+If problems occur, please install the selenium standalone server manually in global scope.
+```
+npm i selenium-standalone -g
+```
+
 # ToDos
 - webpackmonitor (https://github.com/nuxt-community/webpackmonitor-module)
 - semantic release (https://www.npmjs.com/package/semantic-release)

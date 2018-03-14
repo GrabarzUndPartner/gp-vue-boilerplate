@@ -11,9 +11,6 @@ env:
 cache:
   directories:
   - node_modules
-addons:
-  sauce_connect:
-    username: gerbeth
 before_install:
 - sudo apt-get install libtool automake autoconf nasm
 install:
@@ -23,7 +20,7 @@ before_script:
 - npm run start &
 - sleep 10
 script:
-- npx mocha
+- npx wdio wdio.conf.js
 after_success:
 - npm run release
 - git push --follow-tags https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG HEAD:$TRAVIS_BRANCH
