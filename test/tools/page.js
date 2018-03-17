@@ -15,6 +15,10 @@ class Page {
     return global.browser.elements('a').value;
   }
 
+  getSource () {
+    return global.browser.source().value;
+  }
+
   saveDocumentScreenshot (filename) {
     global.browser.saveDocumentScreenshot('./output/' + filename + '.png');
   }

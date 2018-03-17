@@ -1,35 +1,45 @@
-var page = require('./page');
-var baseUrl = require('../wdio/wdio.conf').config.baseUrl;
-var mapToCrawl = new Map();
-// var setToCrawl = new Set();
+const page = require('./page');
+const baseUrl = require('../wdio/wdio.conf').config.baseUrl;
 
-module.exports = function crawlPage (url, beforeScreenshot = () => {}) {
-  describe('open page: ' + url, function () {
-    page.open(url);
-    beforeScreenshot(url);
-    it('do screenshot', function () {
-      page.saveDocumentScreenshot(url.replace(/\//g, '_'));
-      mapToCrawl.set(url, true);
-      collectLinks();
-      let result = getNextUrlToCrawl();
-      if (result) {
-        crawlPage(result, beforeScreenshot);
-      }
-    });
-  });
+const crawlerSet = new Set();
+const setIter = crawlerSet.values();
+
+module.exports = (url, beforeScreenshot) => {
+  crawlerSet.add(url);
+  crawlNextPage(setIter.next(), beforeScreenshot);
 };
+
+function crawlNextPage (next, beforeScreenshot = () => {}) {
+  if (!next.done) {
+    let url = next.value;
+    describe('open page: ' + url, function () {
+      prepareTest(url, beforeScreenshot);
+      // TODO: decision for coding standard - version A or B
+      // version A
+      it('collect urls', () => collectLinks());
+      // version B
+      it(...screenshotPage(url, beforeScreenshot));
+    });
+  }
+}
+
+function prepareTest (url, beforeScreenshot) {
+  page.open(url);
+  beforeScreenshot(url);
+}
 
 function collectLinks () {
   page.getLinks().forEach(function (link) {
-    let url = link.getAttribute('href').replace(baseUrl, '');
-    if (!mapToCrawl.has(url)) {
-      mapToCrawl.set(url, false);
-    }
+    crawlerSet.add(link.getAttribute('href').replace(baseUrl, ''));
   });
 }
 
-function getNextUrlToCrawl () {
-  return (Array.from(mapToCrawl).find((item) => {
-    return item[1] === false;
-  }) || [])[0];
+function screenshotPage (url, beforeScreenshot) {
+  return [
+    'screenshot',
+    function () {
+      page.saveDocumentScreenshot(url.replace(/\//g, '_'));
+      crawlNextPage(setIter.next(), beforeScreenshot);
+    }
+  ];
 }

@@ -1,8 +1,11 @@
 // var expect = require('chai').expect;
-var describeCrawler = require('./tools/crawler');
 
-describeCrawler('de/about', function () {
-  it('test 123', function (url) {
-    console.log('HELLO', url);
+const describeCrawler = require('./tools/crawler');
+const htmllint = require('./tools/lint');
+const {expect} = require('chai');
+
+describeCrawler('de/about', function (url) {
+  it('html validation', async () => {
+    expect(await htmllint()).to.be.true;
   });
 });

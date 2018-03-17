@@ -18,6 +18,10 @@
 
 <script>
 export default {
-
+  head () {
+    return {
+      title: 'title of page'
+    };
+  }
 };
 </script>

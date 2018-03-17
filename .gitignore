@@ -1,9 +1,9 @@
 # Folders
-/.nuxt
-/dist
-/node_modules
-/env/nuxt/cert
-/output
+/.nuxt/
+/dist/
+/node_modules/
+/env/nuxt/cert/
+/output/
 
 /src/static/favicon/*
 !/src/static/favicon/favicon.png

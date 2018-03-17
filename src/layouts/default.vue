@@ -1,10 +1,10 @@
 <template>
   <div>
-    <page-header v-bind:navigation="$t('header.navigation')"></page-header>
+    <page-header :navigation="$t('header.navigation')"/>
     <main>
       <nuxt/>
     </main>
-    <page-footer v-bind:navigation="$t('footer.navigation')"></page-footer>
+    <page-footer :navigation="$t('footer.navigation')"/>
   </div>
 </template>
 
@@ -16,8 +16,13 @@ export default {
   components: {
     PageHeader,
     PageFooter
+  },
+  head () {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    };
   }
 };
-
-console.log('VOILA');
 </script>

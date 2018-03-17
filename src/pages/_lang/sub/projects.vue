@@ -13,10 +13,10 @@
 
 <template>
   <div>
-    <headline v-bind:content="$t('test')"></headline>
-  hello2 huhu234 {{$t('configxyz')}}
+    <headline :content="$t('test')"/>
+    hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
-  <br/>
+    <br>
 
   </div>
 </template>
@@ -27,6 +27,12 @@ import Headline from '~/components/atoms/Headline';
 export default {
   components: {
     headline: Headline
+  },
+
+  head () {
+    return {
+      title: 'title of page'
+    };
   }
 };
 </script>

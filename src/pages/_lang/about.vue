@@ -13,14 +13,21 @@
 
 <template>
   <div>
-    <headline v-bind:content="$t('test')"></headline>
-    hello22 {{$t('configxyz')}}
+    <headline :content="$t('test')"/>
+    hello22 {{ $t('configxyz') }}
     {{ $t('test') }}
+
     hello
-    <img src="~/assets/image.svg" />
-    <img src="~/assets/image2.svg" />
-    <img src="~/assets/image0.jpg.webp" />
-  <br/>
+    <img
+      src="~/assets/image.svg"
+      alt="test">
+    <img
+      src="~/assets/image2.svg"
+      alt="test">
+    <img
+      src="~/assets/image0.jpg.webp"
+      alt="test">
+    <br>
 
   </div>
 </template>
@@ -31,6 +38,12 @@ import Headline from '~/components/atoms/Headline';
 export default {
   components: {
     headline: Headline
+  },
+
+  head () {
+    return {
+      title: 'title of page'
+    };
   }
 };
 </script>

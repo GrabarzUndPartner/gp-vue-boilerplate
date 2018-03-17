@@ -18,20 +18,23 @@
   },
 
   plugins: [
-    'mocha',
-    'json',
-    'vue'
+    "chai-friendly",
+    "mocha",
+    "json",
+    "vue"
   ],
 
   extends: [
-    'standard',
-    'plugin:vue/essential'
+    "standard",
+    "plugin:vue/recommended"
   ],
 
   rules: {
     "no-debugger": 0,
     "semi": [2, "always"],
     "complexity": [2, { "max": 7 }],
-    "mocha/no-exclusive-tests": "error"
+    "mocha/no-exclusive-tests": "error",
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2
   }
 }
