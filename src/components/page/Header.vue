@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <link-list v-bind:list="navigation"></link-list>
+      <link-list :list="navigation"/>
     </nav>
   </header>
 </template>
