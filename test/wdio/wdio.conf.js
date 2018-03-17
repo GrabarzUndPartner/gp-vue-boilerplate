@@ -81,10 +81,10 @@ exports.config = {
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: 'http://localhost:8050',
+  baseUrl: 'http://localhost:8050/',
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 30000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -110,7 +110,9 @@ exports.config = {
   //     webdriverrtc: {},
   //     browserevent: {}
   // },
-  //
+  plugins: {
+    'wdio-screenshot': {}
+  },
   // Test runner services
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
@@ -139,7 +141,8 @@ exports.config = {
   //
 
   mochaOpts: {
-    ui: 'bdd'
+    ui: 'bdd',
+    timeout: 60000
   }
   // =====
   // Hooks
