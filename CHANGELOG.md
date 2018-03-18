@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.2.0...v1.2.1) (2018-03-18)
+
+
+### Bug Fixes
+
+* **vue:** seo friendly vue files ([beca0dc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/beca0dc))
+* **wdio:** cleanup htmllint and chai (eslint-support) ([135b275](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/135b275))
+* cleanup ([ac5f829](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ac5f829))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.1.6...v1.2.0) (2018-03-17)
 
