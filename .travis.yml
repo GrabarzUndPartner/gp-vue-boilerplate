@@ -15,11 +15,12 @@ before_install:
 - sudo apt-get install libtool automake autoconf nasm
 install:
 - npm install --no-optional
-- npm run build
+- npm run static
 before_script:
 - npm run start &
 - sleep 10
 script:
+- npx mocha ./test/general/html-lint.js
 - npm run wdio
 after_success:
 - npm run release

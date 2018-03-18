@@ -1,12 +1,12 @@
 <template>
-  <h1>MASTER INDEX</h1>
+  <h1>404er</h1>
 </template>
 
 <script>
 export default {
   head () {
     return {
-      title: 'MASTER INDEX'
+      title: '404er'
     };
   }
 };

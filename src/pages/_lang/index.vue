@@ -10,7 +10,7 @@
 </i18n>
 
 <template>
-  <div class="Content">
+  <div class="content">
     <h1>Headline</h1>
     <p>{{ $t('text') }}</p>
   </div>

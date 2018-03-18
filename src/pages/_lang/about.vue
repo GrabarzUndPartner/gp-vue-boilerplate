@@ -27,6 +27,15 @@
     <img
       src="~/assets/image0.jpg.webp"
       alt="test">
+    <!-- <img
+      src="~/assets/image0.png.webp"
+      alt="test"> -->
+    <img
+      src="~/assets/image1.png"
+      alt="test">
+    <!-- <img
+      src="~/assets/image1.png24.png"
+      alt="test"> -->
     <br>
 
   </div>

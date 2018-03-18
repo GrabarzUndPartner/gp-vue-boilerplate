@@ -30,7 +30,10 @@ module.exports = {
   },
 
   generate: {
-    routes: ['/en', '/en/about', '/de', '/de/about']
+    routes: ['/en', '/en/about', '/de', '/de/about'],
+    minify: {
+      removeOptionalTags: false
+    }
   },
 
   head: deepmerge.all([require('./config/global/favicon.json'), {
