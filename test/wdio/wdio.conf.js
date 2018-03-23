@@ -10,7 +10,6 @@ exports.config = {
   //
   user: 'gerbeth',
   key: process.env.SAUCE_ACCESS_KEY,
-  build: process.env.TRAVIS_BUILD_NUMBER,
 
   //
   // ==================
@@ -56,9 +55,9 @@ exports.config = {
     // 5 instance gets started at a time.
     // maxInstances: 5,
     //
-    {browserName: 'firefox', platform: 'Windows 10', version: '41.0'},
-    {browserName: 'chrome', platform: 'OS X 10.10', version: '45.0'},
-    {browserName: 'internet explorer', platform: 'Windows 7', version: '10'}
+    {browserName: 'firefox', platform: 'Windows 10', version: '41.0', build: process.env.TRAVIS_BUILD_NUMBER},
+    {browserName: 'chrome', platform: 'OS X 10.10', version: '45.0', build: process.env.TRAVIS_BUILD_NUMBER},
+    {browserName: 'internet explorer', platform: 'Windows 7', version: '10', build: process.env.TRAVIS_BUILD_NUMBER}
   ],
   //
   // ===================
