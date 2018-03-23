@@ -10,6 +10,7 @@ exports.config = {
   //
   user: 'gerbeth',
   key: process.env.SAUCE_ACCESS_KEY,
+  build: process.env.TRAVIS_BUILD_NUMBER,
 
   //
   // ==================
