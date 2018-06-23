@@ -1,0 +1,47 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.autoFixOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      {
+        "language": "vue",
+        "autoFix": true
+      }
+    ],
+    "prettier.eslintIntegration": true
+  },
+  "extensions": {
+    "recommendations": [
+      "alefragnani.Bookmarks",
+      "christian-kohler.npm-intellisense",
+      "christian-kohler.path-intellisense",
+      "CoenraadS.bracket-pair-colorizer",
+      "dariofuzinato.vue-peek",
+      "dbaeumer.vscode-eslint",
+      "deerawan.vscode-dash",
+      "EditorConfig.EditorConfig",
+      "eg2.vscode-npm-script",
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "humao.rest-client",
+      "mgmcdermott.vscode-language-babel",
+      "mrmlnc.vscode-attrs-sorter",
+      "octref.vetur",
+      "ricard.postcss",
+      "robertohuertasm.vscode-icons",
+      "shekhardtu.vuejspack",
+      "WallabyJs.quokka-vscode",
+      "wix.vscode-import-cost"
+    ]
+  }
+}

@@ -1,5 +1,9 @@
 <template>
-  <h1 :class="$style.root">{{ content }}</h1>
+  <h1 class="test">{{ content }}
+    <span class="blue">blue
+      <span class="green">green</span>
+    </span>
+  </h1>
 </template>
 
 <script>
@@ -14,9 +18,22 @@ export default {
 };
 </script>
 
-<style module>
-.root {
+<style lang="postcss" module>
+:local(.test) {
+  background: red;
+  color: yellow;
+}
+.test1 {
   color: red;
+  font-size: responsive;
+
+  .blue {
+    color: blue;
+
+    .green {
+      color: green;
+    }
+  }
 }
 
 .aha {
