@@ -25,32 +25,41 @@
 ## Generate Travis-CI Secure Tokens
 
 ### Github Token
-Generate personal access token at github: https://github.com/settings/tokens
+
+Generate personal access token at github: [https://github.com/settings/tokens](https://github.com/settings/tokens)
+
 Use command to encrypt your personal access token for travis-ci
-```
+
+```bash
 travis encrypt GH_TOKEN=<Your TOKEN> --add
 ```
 
 ### Saucelab Token
+
 Generate personal access token at saucelabs: https://saucelabs.com/beta/user-settings
 Use command to encrypt your personal access token for travis-ci
-```
-travis encrypt SAUCE_ACCESS_KEY=<Your TOKEN> --add
 
+```bash
+travis encrypt SAUCE_ACCESS_KEY=<Your TOKEN> --add
 ```
 
 ## Local Selenium Test
+
 To run local selenium tests you need a java (version >= 8)
 If problems occur, please install the selenium standalone server manually in global scope.
-```
+
+```bash
 npm i selenium-standalone -g
 ```
+
 # IDE infos
 
 ## Webstorm
 
 ### Plugins
+
 - Postcss support
 
 # ToDos
+
 - webpackmonitor (https://github.com/nuxt-community/webpackmonitor-module)

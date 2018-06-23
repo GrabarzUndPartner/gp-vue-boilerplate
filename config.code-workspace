@@ -17,7 +17,24 @@
         "autoFix": true
       }
     ],
-    "prettier.eslintIntegration": true
+    "prettier.eslintIntegration": true,
+    "files.exclude": {
+      ".nuxt/": true,
+      "dist/": true,
+      "node_modules/": true,
+      "env/nuxt/cert/": true,
+      "output/": true,
+      "src/static/favicon/*": true,
+      "src/static/favicon/favicon.png": false,
+      "**/.idea": true,
+      "**/*.iml": true,
+      "**/out": true,
+      "**/gen": true,
+      "**/logs": true,
+      "**/*.log": true,
+      "**/.DS_Store": true,
+      "env/nuxt/config/global/favicon.json": true
+    }
   },
   "extensions": {
     "recommendations": [
@@ -26,6 +43,7 @@
       "christian-kohler.path-intellisense",
       "CoenraadS.bracket-pair-colorizer",
       "dariofuzinato.vue-peek",
+      "DavidAnson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "deerawan.vscode-dash",
       "EditorConfig.EditorConfig",
@@ -35,14 +53,17 @@
       "formulahendry.auto-rename-tag",
       "humao.rest-client",
       "mgmcdermott.vscode-language-babel",
+      "michelemelluso.gitignore",
       "mrmlnc.vscode-attrs-sorter",
+      "npxms.hide-gitignored",
       "octref.vetur",
       "ricard.postcss",
       "robertohuertasm.vscode-icons",
       "shekhardtu.vuejspack",
       "shinnn.stylelint",
       "WallabyJs.quokka-vscode",
-      "wix.vscode-import-cost"
+      "wix.vscode-import-cost",
+      "yzhang.markdown-all-in-one"
     ]
   }
 }
