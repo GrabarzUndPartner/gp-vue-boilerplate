@@ -20,12 +20,13 @@ export default {
 
 <style lang="postcss" module>
 :local(.test) {
-  background: red;
   color: yellow;
+  background: red;
 }
+
 .test1 {
-  color: red;
   font-size: responsive;
+  color: red;
 
   .blue {
     color: blue;

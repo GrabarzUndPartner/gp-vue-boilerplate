@@ -5,20 +5,22 @@ var prodConfig = require('./wdio.conf.js').config;
 
 // clone prod config and add new properties/overrides
 var localConfig = Object.assign(prodConfig, {
-  capabilities: [{
-    browserName: 'chrome'
-  }],
+  capabilities: [
+    {
+      browserName: 'chrome'
+    }
+  ],
 
   services: ['selenium-standalone'],
 
   // Hooks to notify Growl-like programs
-  onPrepare: function (config, capabilities) {
+  onPrepare: function(/*config , capabilities*/) {
     notifier.notify({
       title: 'WebdriverIO',
       message: 'Test run started'
     });
   },
-  afterTest: function (test) {
+  afterTest: function(test) {
     if (!test.passed) {
       notifier.notify({
         title: 'Test failure!',
@@ -26,7 +28,7 @@ var localConfig = Object.assign(prodConfig, {
       });
     }
   },
-  onComplete: function (exitCode) {
+  onComplete: function(/*exitCode*/) {
     notifier.notify({
       title: 'WebdriverIO',
       message: 'Tests finished running.'

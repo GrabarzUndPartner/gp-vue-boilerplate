@@ -17,7 +17,7 @@ export default {
     PageHeader,
     PageFooter
   },
-  head () {
+  head() {
     return {
       htmlAttrs: {
         lang: this.$i18n.locale

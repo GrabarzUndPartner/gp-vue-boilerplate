@@ -1,0 +1,15 @@
+{
+  "processors": ["stylelint-processor-html"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-config-css-modules"
+  ],
+  "rules": {
+    "no-empty-source": null,
+    "rule-empty-line-before": [ "always", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment"]
+    } ]
+  }
+}

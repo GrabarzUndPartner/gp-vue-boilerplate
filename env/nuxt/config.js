@@ -5,7 +5,7 @@ const deepmerge = require('deepmerge');
 
 process.env.DEBUG = 'nuxt:*';
 module.exports = {
-  dev: (process.env.NODE_ENV === 'development'),
+  dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
 
   build: {
@@ -13,15 +13,13 @@ module.exports = {
 
     // vendor: ['vue-i18n'],
 
-    extend (config, { isClient }) {
+    extend(config) {
       webpackPlugins(config.plugins, this.options.srcDir);
       webpackModules(config.module);
     }
   },
 
-  plugins: [
-    '~/plugins/i18n.js'
-  ],
+  plugins: ['~/plugins/i18n.js'],
 
   modules: [],
 
@@ -36,13 +34,16 @@ module.exports = {
     }
   },
 
-  head: deepmerge.all([require('./config/global/favicon.json'), {
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'}
-    ],
-    link: []
-  }])
+  head: deepmerge.all([
+    require('./config/global/favicon.json'),
+    {
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ],
+      link: []
+    }
+  ])
 
   // render: {
   //   // confiture `render`

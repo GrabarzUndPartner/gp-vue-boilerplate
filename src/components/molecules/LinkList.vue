@@ -18,7 +18,7 @@ export default {
     list: {
       type: Array,
       required: true,
-      default: function () {
+      default: function() {
         return [];
       }
     }
@@ -30,5 +30,4 @@ export default {
 :global(a.nuxt-link-active) {
   color: red;
 }
-
 </style>
