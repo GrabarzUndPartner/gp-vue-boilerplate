@@ -34,7 +34,12 @@
       "**/*.log": true,
       "**/.DS_Store": true,
       "env/nuxt/config/global/favicon.json": true
-    }
+    },
+    "files.associations": {
+      ".postcssrc": "json",
+      ".stylelintrc": "json",
+      ".vcmrc": "json"
+    },
   },
   "extensions": {
     "recommendations": [
