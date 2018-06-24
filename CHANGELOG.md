@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.4.1...v1.4.2) (2018-06-24)
+
+
+### Bug Fixes
+
+* **linter:** added vscode-css-formatter extension and prettier.stylelintIntegration property ([c8c99e4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c8c99e4))
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.4.0...v1.4.1) (2018-06-24)
 
