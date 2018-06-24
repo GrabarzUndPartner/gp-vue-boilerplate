@@ -28,6 +28,10 @@ export default {
   font-size: responsive;
   color: red;
 
+  &.a {
+    color: yellow;
+  }
+
   .blue {
     color: blue;
 

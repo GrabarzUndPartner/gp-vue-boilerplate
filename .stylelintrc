@@ -5,6 +5,9 @@
     "stylelint-config-recess-order",
     "stylelint-config-css-modules"
   ],
+  "ignoreFiles": [
+    "./**/*.js"
+  ],
   "rules": {
     "no-empty-source": null,
     "rule-empty-line-before": [ "always", {

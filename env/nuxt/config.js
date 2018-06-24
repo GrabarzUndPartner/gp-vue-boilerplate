@@ -7,7 +7,7 @@ process.env.DEBUG = 'nuxt:*';
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
-
+  css: [],
   build: {
     analyze: false,
 

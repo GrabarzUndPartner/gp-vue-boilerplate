@@ -10,21 +10,17 @@
   "main": "index.js",
   "standard-version": {
     "scripts": {
-      "postcommit":
-        "git commit --amend -m \"$(git log -1 --pretty=%B) [ci skip]\""
+      "postcommit": "git commit --amend -m \"$(git log -1 --pretty=%B) [ci skip]\""
     }
   },
   "scripts": {
     "postinstall": "npm run favicon",
     "test": "npm run lint",
     "dev": "cross-env NODE_ENV=development node ./env/nuxt/server.js",
-    "build":
-      "cross-env NODE_ENV=build nuxt build --config-file env/nuxt/config.js",
+    "build": "cross-env NODE_ENV=build nuxt build --config-file env/nuxt/config.js",
     "start": "cross-env NODE_ENV=production node ./env/nuxt/server.js",
-    "static":
-      "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt/config.js",
-    "lint:es":
-      "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
+    "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt/config.js",
+    "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
     "lint:css": "npx stylelint 'src/**/*.vue'",
     "lint": "npm run lint:es && npm run lint:css",
     "browserslist": "npx browserslist",
