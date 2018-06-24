@@ -18,6 +18,7 @@
       }
     ],
     "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": true,
     "files.exclude": {
       ".nuxt/": true,
       "dist/": true,
@@ -38,11 +39,14 @@
     "files.associations": {
       ".postcssrc": "json",
       ".stylelintrc": "json",
-      ".vcmrc": "json"
+      ".vcmrc": "json",
+      "*.css": "postcss",
+      "*.pcss": "postcss"
     },
   },
   "extensions": {
     "recommendations": [
+      "aeschli.vscode-css-formatter",
       "alefragnani.Bookmarks",
       "christian-kohler.npm-intellisense",
       "christian-kohler.path-intellisense",
