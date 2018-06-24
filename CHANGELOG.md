@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.3.0...v1.4.0) (2018-06-23)
+
+
+### Bug Fixes
+
+* **cleanup:** added files and extensions ([6e83ffc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6e83ffc))
+* **editor:** updated file associations ([881cf4f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/881cf4f))
+* **vscode:** added extension to vscode project config ([512fce4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/512fce4))
+
+
+### Features
+
+* **stylelint:** fixed eslint config and added stylelint config ([8415ad6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8415ad6))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.2.4...v1.3.0) (2018-06-23)
 
