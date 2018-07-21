@@ -9,7 +9,11 @@ module.exports = {
   srcDir: 'src/',
   css: [],
   build: {
-    analyze: false,
+    analyze: {
+      analyzerMode: 'static',
+      reportFilename: '../../reports/webpack-bundle-analyzer.html',
+      openAnalyzer: false
+    },
 
     // vendor: ['vue-i18n'],
 
