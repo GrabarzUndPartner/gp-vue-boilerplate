@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.4.2...v1.6.0) (2018-07-22)
+
+
+### Bug Fixes
+
+* **cleanup:** gitignore & robots.txt ([c82811f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c82811f))
+* **test:** activated webpack analyzer in static mode ([1ade387](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1ade387))
+
+
+### Features
+
+* **versions:** update & replace libs ([9c020cf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9c020cf))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.4.2...v1.5.0) (2018-07-21)
 
