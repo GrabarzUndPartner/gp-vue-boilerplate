@@ -25,3 +25,4 @@ logs
 # Files
 .DS_Store
 /env/nuxt/config/global/favicon.json
+.scannerwork
