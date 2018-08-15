@@ -1,7 +1,7 @@
 language: node_js
 branches:
-  only:
-    - master
+  except:
+    - /^v\d+\.\d+\.\d+$/
 env:
   global:
     #saucelabs
