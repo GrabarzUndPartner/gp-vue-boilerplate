@@ -1,3 +1,13 @@
+## [1.7.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.1...v1.7.2) (2018-08-15)
+
+
+### Bug Fixes
+
+* **packages:** cleaned up dependencies ([0d5cabc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0d5cabc))
+* **wdio:** added reporter module ([d2fd806](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d2fd806))
+* **wdio:** added wdio mocha module ([3458032](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3458032))
+* **wdio:** added wdio sauce module ([17643fa](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/17643fa))
+
 ## [1.7.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.0...v1.7.1) (2018-08-15)
 
 
