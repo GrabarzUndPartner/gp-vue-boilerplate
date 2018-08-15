@@ -1,27 +1,26 @@
 language: node_js
-branches:
-  only:
-  - master
+# branches:
+#   only:
+#     - master
 env:
   global:
     #saucelabs
-  - secure: 0dEI1QivjPDVNfew5wtuu9z2JSUOV0y1yPKqDQFrEXofKpiPgcR4fwew4HpJRum6GVOQlzFnudV9zX/f/9+RYPh2X7hT+snv0bOFJH0H86xAIRxlmg7UbjCOEyzR5LjWiSJL0EEuFskZyhuVoCjjvJg6YwMcZySW5pYpzZZlGOZ/4MUtf0Ukm9nZFK+vo0bHl5NZ78/bAqtZw9qeO7BuesoD0wQ6LmKHtVl5jCG2saRMw20wdvkENCsn3lR9mUbsBjQkO8k/bqJERCwpQb8kWsRoQ20tq+n3vWZiHsDelYW3Vfk5qQ6lDu890v2NvQa5n0x2FeR20E3qVHdbY0lBreKt9n2MF8PFxv3cxqZ0sfX8S4hbmIdPIpWDd6BTyrElatizKgVqnDL0ZCbv3iJREbWB8Gcnijy9dPcBkqru4lavTKpiQQphugaWHpgeSHcAB4XEKOOplvbtoPl/jNikvAXExTwtC8AHCwkizXXFlaJN+MTjrvT7vF/SCP2IzIFDsRYAMa80fFKSx+FZnRbMK4SHUdM6uLsEmTtYKsXNY4dUm+b52Yvcb88psAqM/UcZOr+gSuRKXTh3X5t9rSQ7QJt+U12DRTD4pAS5C+rxu6/ycWxtCVzLRNkeGdapsmmK2MALzPYDTJNiUhrdichwxFh66zvawzO+hJYBGX4u0b8=
-    #github
-  - secure: Dx/QegBVkAnFd5q4ak0K7Cy2RTWIrFXBkIN5M5hu+nKF8WqrNYh0pAjFnWXix6Sn2WVgNQgv4Nwli6XLqXR/eUJh260wYrlfQSbZ+9ADA8U1FTgngueRxqpKlZq3/33q8OXPznEGgG7V5PYcdxBlbG7M0UJE16HwRcF8/iYRtXHUFhxD9n9IKoEt8pKBieQZwk+10epyB9pGCXXR/HD7hCEsM079lGOE0ReHJp0cxQNPRdFTcsEG7tfYGRXwp5W9eRDAVPnt2f89MW75L87qOXdu/gXlvUjdQcwo5KPhSH9ipGDyuZoQ2QS+i67j4MjzGiwZH+DbwisQesMqarNvg+FEc6WXm3tt75GFHH9h2tU4GI6fXr9/8PuhNcJDt4PmuuVeLPlOMCep+FXeRn38FIaN3+UKMEBrBfS1GA8Jb4Gq20QORf0N2HczhIjVf/13U9mqAAz4e28Dolhh3ddL0f30uJumov2J7MCcdYio9g0JY+RgwrOXKTeS5KvT6EC40+daL+xdH2sXoXrI2Hv8RoDO7ciQLZYYAVLZ9HQRRdBoPW8A76S5T0yY7wPqgArbcsRR8f2GhFh5pbe2UPlFGazRpQqUjIKRl7LS+4p8FQJh/ojQZYg5BEd4g/leNM+tkfCZj+VbwOyazfg4K0GK3eEeraizbkVPGYAZy0V8Z4c=
+    - secure: 0dEI1QivjPDVNfew5wtuu9z2JSUOV0y1yPKqDQFrEXofKpiPgcR4fwew4HpJRum6GVOQlzFnudV9zX/f/9+RYPh2X7hT+snv0bOFJH0H86xAIRxlmg7UbjCOEyzR5LjWiSJL0EEuFskZyhuVoCjjvJg6YwMcZySW5pYpzZZlGOZ/4MUtf0Ukm9nZFK+vo0bHl5NZ78/bAqtZw9qeO7BuesoD0wQ6LmKHtVl5jCG2saRMw20wdvkENCsn3lR9mUbsBjQkO8k/bqJERCwpQb8kWsRoQ20tq+n3vWZiHsDelYW3Vfk5qQ6lDu890v2NvQa5n0x2FeR20E3qVHdbY0lBreKt9n2MF8PFxv3cxqZ0sfX8S4hbmIdPIpWDd6BTyrElatizKgVqnDL0ZCbv3iJREbWB8Gcnijy9dPcBkqru4lavTKpiQQphugaWHpgeSHcAB4XEKOOplvbtoPl/jNikvAXExTwtC8AHCwkizXXFlaJN+MTjrvT7vF/SCP2IzIFDsRYAMa80fFKSx+FZnRbMK4SHUdM6uLsEmTtYKsXNY4dUm+b52Yvcb88psAqM/UcZOr+gSuRKXTh3X5t9rSQ7QJt+U12DRTD4pAS5C+rxu6/ycWxtCVzLRNkeGdapsmmK2MALzPYDTJNiUhrdichwxFh66zvawzO+hJYBGX4u0b8=
+      #github
+    - secure: Dx/QegBVkAnFd5q4ak0K7Cy2RTWIrFXBkIN5M5hu+nKF8WqrNYh0pAjFnWXix6Sn2WVgNQgv4Nwli6XLqXR/eUJh260wYrlfQSbZ+9ADA8U1FTgngueRxqpKlZq3/33q8OXPznEGgG7V5PYcdxBlbG7M0UJE16HwRcF8/iYRtXHUFhxD9n9IKoEt8pKBieQZwk+10epyB9pGCXXR/HD7hCEsM079lGOE0ReHJp0cxQNPRdFTcsEG7tfYGRXwp5W9eRDAVPnt2f89MW75L87qOXdu/gXlvUjdQcwo5KPhSH9ipGDyuZoQ2QS+i67j4MjzGiwZH+DbwisQesMqarNvg+FEc6WXm3tt75GFHH9h2tU4GI6fXr9/8PuhNcJDt4PmuuVeLPlOMCep+FXeRn38FIaN3+UKMEBrBfS1GA8Jb4Gq20QORf0N2HczhIjVf/13U9mqAAz4e28Dolhh3ddL0f30uJumov2J7MCcdYio9g0JY+RgwrOXKTeS5KvT6EC40+daL+xdH2sXoXrI2Hv8RoDO7ciQLZYYAVLZ9HQRRdBoPW8A76S5T0yY7wPqgArbcsRR8f2GhFh5pbe2UPlFGazRpQqUjIKRl7LS+4p8FQJh/ojQZYg5BEd4g/leNM+tkfCZj+VbwOyazfg4K0GK3eEeraizbkVPGYAZy0V8Z4c=
 cache:
   directories:
-  - node_modules
+    - node_modules
 before_install:
-- sudo apt-get install libtool automake autoconf nasm
+  - sudo apt-get install libtool automake autoconf nasm
 install:
-- npm install --no-optional
-- npm run static
+  - npm install --no-optional
+  - npm run static
 before_script:
-- npm run start &
-- sleep 10
+  - npm run start &
+  - sleep 10
 script:
-- npx mocha ./test/general/html-lint.js
-- npm run wdio
+  - npx mocha ./test/general/html-lint.js
+  - npm run wdio
 after_success:
-- npm run release
-- git push --follow-tags https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG HEAD:$TRAVIS_BRANCH
+  - npm run semantic-release
