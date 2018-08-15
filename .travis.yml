@@ -1,7 +1,7 @@
 language: node_js
-# branches:
-#   only:
-#     - master
+branches:
+  only:
+    - master
 env:
   global:
     #saucelabs
