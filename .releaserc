@@ -1,10 +1,12 @@
 {
   "verifyConditions": [
     "@semantic-release/changelog",
+    "@semantic-release/npm",
     "@semantic-release/git"
   ],
   "prepare": [
     "@semantic-release/changelog",
+    "@semantic-release/npm",
     {
       "path": "@semantic-release/git",
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
