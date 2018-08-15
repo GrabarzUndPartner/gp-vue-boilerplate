@@ -25,16 +25,13 @@
       "node_modules/": true,
       "env/nuxt/cert/": true,
       "output/": true,
-      "src/static/favicon/*": true,
-      "src/static/favicon/favicon.png": false,
       "**/.idea": true,
       "**/*.iml": true,
       "**/out": true,
       "**/gen": true,
       "**/logs": true,
       "**/*.log": true,
-      "**/.DS_Store": true,
-      "env/nuxt/config/global/favicon.json": true
+      "**/.DS_Store": true
     },
     "files.associations": {
       ".postcssrc": "json",
@@ -42,7 +39,7 @@
       ".vcmrc": "json",
       "*.css": "postcss",
       "*.pcss": "postcss"
-    },
+    }
   },
   "extensions": {
     "recommendations": [

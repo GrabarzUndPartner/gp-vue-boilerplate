@@ -25,7 +25,40 @@ module.exports = {
 
   plugins: ['~/plugins/i18n.js'],
 
-  modules: [],
+  modules: [
+    [
+      '@nuxtjs/pwa',
+      {
+        icon: {
+          iconSrc: 'src/static/favicon.png',
+          sizes: [16, 120, 144, 152, 192, 384, 512]
+        },
+        meta: {
+          charset: 'utf-8',
+          viewport: 'width=device-width, initial-scale=1',
+          mobileApp: true,
+          mobileAppIOS: true,
+          appleStatusBarStyle: 'default',
+          favicon: true,
+          name: 'TITLE',
+          author: '',
+          description: '',
+          theme_color: 'black',
+          lang: 'de',
+          ogType: 'website',
+          ogSiteName: 'ogSITE_NAME',
+          ogTitle: 'ogTITLE',
+          ogDescription: 'ogDESCRIPTION',
+          ogHost: undefined,
+          ogImage: true
+        },
+        manifest: {
+          name: 'MANIFEST FOR APP',
+          lang: 'de'
+        }
+      }
+    ]
+  ],
 
   router: {
     middleware: 'i18n'
@@ -39,7 +72,6 @@ module.exports = {
   },
 
   head: deepmerge.all([
-    require('./config/global/favicon.json'),
     {
       meta: [
         { charset: 'utf-8' },
