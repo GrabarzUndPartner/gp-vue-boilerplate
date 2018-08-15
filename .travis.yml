@@ -14,7 +14,7 @@ cache:
 before_install:
   - sudo apt-get install libtool automake autoconf nasm
 install:
-  - npm install --no-optional
+  - npm ci
   - npm run static
 before_script:
   - npm run start &
