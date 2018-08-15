@@ -4,6 +4,7 @@
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "license": "MIT",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run favicon",
