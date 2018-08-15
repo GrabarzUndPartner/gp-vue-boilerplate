@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.6.2...v1.7.0) (2018-08-15)
+
+
+### Bug Fixes
+
+* **semantic-release:** install routine ([6872268](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6872268))
+* **semantic-release:** install routine ([4d5db4a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4d5db4a))
+* **semantic-release:** install routine ([2871ee9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2871ee9))
+
+
+### Features
+
+* **semantic-release:** removed standard-version ([9ab7b87](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9ab7b87))
+
 # Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
