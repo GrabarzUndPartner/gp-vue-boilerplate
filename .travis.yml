@@ -23,4 +23,5 @@ script:
   - npx mocha ./test/general/html-lint.js
   - npm run wdio
 after_success:
+  - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release
