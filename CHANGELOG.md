@@ -1,3 +1,12 @@
+## [1.7.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.2...v1.7.3) (2018-08-15)
+
+
+### Bug Fixes
+
+* **package:** set package to private mode ([9ad2c61](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9ad2c61))
+* **release:** update version number in package.json ([063acac](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/063acac))
+* **release:** update version number in package.json ([f7ce009](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f7ce009))
+
 ## [1.7.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.1...v1.7.2) (2018-08-15)
 
 
