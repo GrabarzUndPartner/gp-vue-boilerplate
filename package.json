@@ -69,6 +69,7 @@
     "stylelint-config-standard": "^18.2.0",
     "svg-sprite-loader": "^3.9.0",
     "svgo-loader": "^2.1.0",
+    "wdio-sauce-service": "^0.4.10",
     "wdio-screenshot": "^0.6.0",
     "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.13.1",
