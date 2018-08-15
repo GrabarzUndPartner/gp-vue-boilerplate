@@ -1,3 +1,11 @@
+## [1.7.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.0...v1.7.1) (2018-08-15)
+
+
+### Bug Fixes
+
+* **travis:** acceptable branches ([bb61b17](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bb61b17))
+* **versioning:** added npmrc config + removed valid commit msg ([3ccd1bf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3ccd1bf))
+
 # [1.7.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.6.2...v1.7.0) (2018-08-15)
 
 
