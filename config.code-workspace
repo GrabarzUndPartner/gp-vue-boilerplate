@@ -35,10 +35,12 @@
     },
     "files.associations": {
       ".postcssrc": "json",
+      ".releaserc": "json",
       ".stylelintrc": "json",
       ".vcmrc": "json",
       "*.css": "postcss",
-      "*.pcss": "postcss"
+      "*.pcss": "postcss",
+      ".*ignore": "ignore"
     }
   },
   "extensions": {
