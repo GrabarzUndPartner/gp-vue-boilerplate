@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.8.0...v1.8.1) (2018-08-16)
+
+
+### Bug Fixes
+
+* **deepmerge:** remove from package.json and nuxt config ([5920934](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5920934))
+* **packages:** rearranged script declarations ([b7b447f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b7b447f))
+
 # [1.8.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.3...v1.8.0) (2018-08-16)
 
 
