@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.3...v1.8.0) (2018-08-16)
+
+
+### Bug Fixes
+
+* **workspace:** add ignore association pattern to config ([12f89ae](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/12f89ae))
+
+
+### Features
+
+* **pwa:** added module removed favicon generator ([79264ff](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/79264ff))
+
 ## [1.7.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.7.2...v1.7.3) (2018-08-15)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "vue-boilerplate",
-  "version": "1.7.3",
+  "version": "1.8.0",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "lint:css": "npx stylelint 'src/**/*.vue'",
     "lint": "npm run lint:es && npm run lint:css",
     "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html; exit ${PIPESTATUS[0]}",
-    "browserslist": "npx browserslist",   
+    "browserslist": "npx browserslist",
     "wdio": "npx wdio ./test/wdio/wdio.conf.js",
     "wdio-local": "npx wdio ./test/wdio/wdio.conf.local.js",
     "precommit": "npm run lint",
