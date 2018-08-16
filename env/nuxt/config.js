@@ -1,6 +1,5 @@
 const webpackPlugins = require('./config/webpack/plugins');
 const webpackModules = require('./config/webpack/modules');
-const deepmerge = require('deepmerge');
 // const i18nExtensions = require('vue-i18n-extensions');
 
 process.env.DEBUG = 'nuxt:*';
@@ -71,15 +70,10 @@ module.exports = {
     }
   },
 
-  head: deepmerge.all([
-    {
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-      ],
-      link: []
-    }
-  ])
+  head: {
+    meta: [],
+    link: []
+  }
 
   // render: {
   //   // confiture `render`
