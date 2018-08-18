@@ -24,15 +24,16 @@
       ".scannerwork/": true,
       "dist/": true,
       "node_modules/": true,
-      "env/nuxt/cert/": true,
       "output/": true,
+      "test/wdio/": true,
       "**/.idea": true,
       "**/*.iml": true,
       "**/out": true,
       "**/gen": true,
       "**/logs": true,
       "**/*.log": true,
-      "**/.DS_Store": true
+      "**/.DS_Store": true,
+      ".*": true
     },
     "files.associations": {
       ".branchlintrc": "json",

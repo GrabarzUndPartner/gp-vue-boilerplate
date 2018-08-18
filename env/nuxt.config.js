@@ -1,5 +1,5 @@
-const webpackPlugins = require('./config/webpack/plugins');
-const webpackModules = require('./config/webpack/modules');
+const webpackPlugins = require('./webpack/plugins');
+const webpackModules = require('./webpack/modules');
 // const i18nExtensions = require('vue-i18n-extensions');
 
 process.env.DEBUG = 'nuxt:*';
@@ -10,7 +10,7 @@ module.exports = {
   build: {
     analyze: {
       analyzerMode: 'static',
-      reportFilename: '../../reports/webpack-bundle-analyzer.html',
+      reportFilename: '../reports/webpack-bundle-analyzer.html',
       openAnalyzer: false
     },
 
