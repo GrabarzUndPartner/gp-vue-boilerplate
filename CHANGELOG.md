@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.8.1...v1.9.0) (2018-08-18)
+
+
+### Bug Fixes
+
+* **branch-name-lint:** deactivate branch name linter ([84cd87e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/84cd87e))
+* **workspace:** ignore scannerwork directory ([895a08c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/895a08c))
+
+
+### Features
+
+* **branch-name-lint:** added branch-name-lint and config ([a3dab45](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a3dab45))
+
 ## [1.8.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.8.0...v1.8.1) (2018-08-16)
 
 
