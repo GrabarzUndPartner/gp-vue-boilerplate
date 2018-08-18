@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.9.1...v1.10.0) (2018-08-18)
+
+
+### Bug Fixes
+
+* **audit:** update version numbers to resolve the audit successful ([33dfa1e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/33dfa1e))
+* **sample:** updated and removed mocha-lint-html check ([af24994](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/af24994))
+
+
+### Features
+
+* **package:** removed ([0efbd6c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0efbd6c))
+
 ## [1.9.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.9.0...v1.9.1) (2018-08-18)
 
 
