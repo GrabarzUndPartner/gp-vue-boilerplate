@@ -18,7 +18,7 @@ before_script:
   - npm run start &
   - sleep 10
 script:
-  - npx mocha ./test/general/html-lint.js
+  - npx mocha ./test/general/
   - npm run wdio
 after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
