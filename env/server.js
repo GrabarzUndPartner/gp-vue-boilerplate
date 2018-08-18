@@ -1,3 +1,13 @@
+const certInfo = {
+  key: 'myserver.key',
+  cert: 'STAR_gp-home_net.crt',
+  ca: [
+    'AddTrustExternalCARoot.crt',
+    'COMODORSAAddTrustCA.crt',
+    'COMODORSADomainValidationSecureServerCA.crt'
+  ]
+};
+
 const { Nuxt, Builder } = require('nuxt');
 const app = require('express')();
 const fs = require('fs');
@@ -7,7 +17,7 @@ const port = process.env.PORT || 8050;
 const opn = require('opn');
 
 // We instantiate Nuxt.js with the options
-let config = require('./config.js');
+let config = require('./nuxt.config.js');
 const nuxt = new Nuxt(config);
 app.use(nuxt.render);
 
@@ -19,7 +29,7 @@ if (config.dev) {
   });
 }
 
-let options = getOptions('./env/nuxt/cert');
+let options = getOptions('./env/cert');
 
 httpolyglot.createServer(options, app).listen(port, '0.0.0.0', function() {
   if (!process.env.TRAVIS) {
@@ -28,17 +38,16 @@ httpolyglot.createServer(options, app).listen(port, '0.0.0.0', function() {
 });
 
 function getOptions(dir) {
-  if (fs.existsSync(dir)) {
+  if (
+    fs.existsSync(path.join(dir, certInfo.key)) &&
+    fs.existsSync(path.join(dir, certInfo.cert))
+  ) {
     return {
-      key: fs.readFileSync(path.join(dir, 'myserver.key')),
-      cert: fs.readFileSync(path.join(dir, 'STAR_gp-home_net.crt')),
-      ca: [
-        fs.readFileSync(path.join(dir, 'AddTrustExternalCARoot.crt')),
-        fs.readFileSync(path.join(dir, 'COMODORSAAddTrustCA.crt')),
-        fs.readFileSync(
-          path.join(dir, 'COMODORSADomainValidationSecureServerCA.crt')
-        )
-      ],
+      key: fs.readFileSync(path.join(dir, certInfo.key)),
+      cert: fs.readFileSync(path.join(dir, certInfo.cert)),
+      ca: certInfo.ca.map(ca => {
+        return fs.readFileSync(path.join(dir, ca));
+      }),
       requestCert: false,
       rejectUnauthorized: false
     };
