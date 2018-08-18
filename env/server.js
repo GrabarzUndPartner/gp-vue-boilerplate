@@ -7,7 +7,7 @@ const port = process.env.PORT || 8050;
 const opn = require('opn');
 
 // We instantiate Nuxt.js with the options
-let config = require('./config.js');
+let config = require('./nuxt.config.js');
 const nuxt = new Nuxt(config);
 app.use(nuxt.render);
 
