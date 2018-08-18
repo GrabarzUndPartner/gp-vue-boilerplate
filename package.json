@@ -1,5 +1,5 @@
 {
-  "name": "vue-boilerplate",
+  "name": "gp-vue-boilerplate",
   "version": "1.8.0",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
@@ -19,6 +19,7 @@
     "browserslist": "npx browserslist",
     "wdio": "npx wdio ./test/wdio/wdio.conf.js",
     "wdio-local": "npx wdio ./test/wdio/wdio.conf.local.js",
+    "prepush": "npx branch-name-lint .branchlintrc",
     "precommit": "npm run lint",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "semantic-release": "semantic-release",
@@ -31,6 +32,7 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "babel-eslint": "^8.2.6",
     "babel-preset-vue-app": "^2.0.0",
+    "branch-name-lint": "^1.0.5",
     "chai": "^4.1.2",
     "chromedriver": "^2.41.0",
     "cross-env": "^5.2.0",
