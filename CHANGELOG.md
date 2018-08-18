@@ -1,3 +1,13 @@
+## [1.10.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.0...v1.10.1) (2018-08-18)
+
+
+### Bug Fixes
+
+* **cert:** fixed cert detection - check by files ([81b54d7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/81b54d7))
+* **env:** rearranged directory structure ([9ae599c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9ae599c))
+* **ssl-cert:** moved directory and update the server cert path ([fcbead5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fcbead5))
+* **workspace:** exclude .* files from vscode ([c9a26d6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c9a26d6))
+
 # [1.10.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.9.1...v1.10.0) (2018-08-18)
 
 
