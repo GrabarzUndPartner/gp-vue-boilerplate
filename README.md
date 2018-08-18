@@ -12,7 +12,7 @@
 [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/gerbeth.svg)](https://saucelabs.com/u/gerbeth)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/gerbeth.svg)](https://saucelabs.com/u/gerbeth) [![Greenkeeper badge](https://badges.greenkeeper.io/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://greenkeeper.io/)
 
 # General usage
 
