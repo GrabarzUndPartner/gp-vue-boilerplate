@@ -19,7 +19,7 @@
     "browserslist": "npx browserslist",
     "wdio": "npx wdio ./test/wdio/wdio.conf.js",
     "wdio-local": "npx wdio ./test/wdio/wdio.conf.local.js",
-    
+    "prepush": "npx branch-name-lint .branchlintrc",
     "precommit": "npm run lint",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "semantic-release": "semantic-release",
