@@ -21,6 +21,7 @@
     "prettier.stylelintIntegration": true,
     "files.exclude": {
       ".nuxt/": true,
+      ".scannerwork/": true,
       "dist/": true,
       "node_modules/": true,
       "env/nuxt/cert/": true,
@@ -34,6 +35,7 @@
       "**/.DS_Store": true
     },
     "files.associations": {
+      ".branchlintrc": "json",
       ".postcssrc": "json",
       ".releaserc": "json",
       ".stylelintrc": "json",
