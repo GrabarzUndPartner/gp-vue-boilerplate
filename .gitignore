@@ -23,3 +23,5 @@ logs
 .DS_Store
 .scannerwork
 sw.*
+env/cert/*
+!env/cert/README.md

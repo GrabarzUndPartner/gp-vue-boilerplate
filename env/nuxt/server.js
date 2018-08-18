@@ -19,7 +19,7 @@ if (config.dev) {
   });
 }
 
-let options = getOptions('./env/nuxt/cert');
+let options = getOptions('./env/cert');
 
 httpolyglot.createServer(options, app).listen(port, '0.0.0.0', function() {
   if (!process.env.TRAVIS) {
