@@ -32,7 +32,8 @@
       "**/gen": true,
       "**/logs": true,
       "**/*.log": true,
-      "**/.DS_Store": true
+      "**/.DS_Store": true,
+      ".*": true
     },
     "files.associations": {
       ".branchlintrc": "json",
