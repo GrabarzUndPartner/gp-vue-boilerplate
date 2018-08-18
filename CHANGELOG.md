@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.9.0...v1.9.1) (2018-08-18)
+
+
+### Bug Fixes
+
+* **branch-name-linter:** added ([c026f8f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c026f8f))
+
 # [1.9.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.8.1...v1.9.0) (2018-08-18)
 
 
