@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.1...v1.10.2) (2018-09-03)
+
+
+### Bug Fixes
+
+* **travis:** use npm i instead of npm ci ([86d2d15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/86d2d15))
+
 ## [1.10.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.0...v1.10.1) (2018-08-18)
 
 
