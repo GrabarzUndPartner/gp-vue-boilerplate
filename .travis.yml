@@ -12,7 +12,7 @@ cache: false
 before_install:
   - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
 install:
-  - npm ci
+  - npm i
   - npm run static
 before_script:
   - npm run start &
