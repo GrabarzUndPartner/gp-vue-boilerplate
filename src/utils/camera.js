@@ -26,3 +26,10 @@ export function getVideoStreamSettings(stream) {
     .find(track => track.enabled)
     .getSettings();
 }
+
+export function getVideoStreamConstraints(stream) {
+  return stream
+    .getVideoTracks()
+    .find(track => track.enabled)
+    .getConstraints();
+}

@@ -1,17 +1,20 @@
 <template>
   <div>
+    <camera
+      class="camera"
+      @loadedmetadata.native="setup"
+      @play.native="start"/>
     <!-- <canvas-greyscale
       ref="test"
       :width="width"
       :height="height"/> -->
-    <canvas-base
-      ref="debug"
-      :width="width"
-      :height="height"
-      class="debug"/>
-    <camera
-      class="camera"
-      @play.native="start"/>
+    <no-ssr>
+      <canvas-base
+        ref="debug"
+        :source="source"
+        class="debug"/>
+    </no-ssr>
+
   </div>
 </template>
 
@@ -28,6 +31,7 @@ export default {
     return {
       loop: null,
       step: 0,
+      source: null,
       width: 0,
       height: 0,
       canvasComponents: []
@@ -41,27 +45,19 @@ export default {
     this.stop();
   },
   methods: {
-    start(e) {
+    setup(e) {
       this.source = e.target;
-      this.stop();
-      this.loop = window.requestAnimationFrame(animationFrame.bind(this));
+    },
+    start() {
+      // this.stop();
     },
     stop() {
-      window.cancelAnimationFrame(this.loop);
+      // if (this.subscription) {
+      //   this.subscription.unsubscribe();
+      // }
     }
   }
 };
-
-function animationFrame(time) {
-  this.loop = window.requestAnimationFrame(animationFrame.bind(this));
-  const currentStep = Math.round(time / (1000 / this.source.constraints.frameRate));
-  if(currentStep > this.step) {
-    this.step = currentStep;
-    this.width = this.source.constraints.width;
-    this.height = this.source.constraints.height;
-    this.$refs.debug.update(this.source);
-  }
-}
 </script>
 
 <style lang="postcss" scoped>
