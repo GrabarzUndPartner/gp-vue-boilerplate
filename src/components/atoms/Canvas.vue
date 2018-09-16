@@ -5,19 +5,28 @@
 </template>
 
 <script>
-// import greyscale from '../../filter/greyscale.js';
-import labcie from '../../filter/labcie.js';
 import { subscribeThrottle } from '../../services/animationFrame';
+import { createFilter } from '../../utils/filter.js';
+
+let values = {
+  raw: [0, 0, 0],
+  result: [0, 0, 0]
+};
 
 export default {
   props: {
     source: {
-      type: global.HTMLVideoElement,
+      type: global.HTMLCanvasElement,
       default: function () {
-        return new global.HTMLVideoElement();
+        return new global.HTMLCanvasElement();
       }
+    },
+    filterName: {
+      type: String,
+      default: 'default'
     }
   },
+
   data() {
     return {
       context: null,
@@ -30,52 +39,49 @@ export default {
 
   watch: {
     source: {
-      handler(source) {
-        console.log('SOURCE CHANGE', source);
-        if (source) {
-          this.setup(source);
-        }
-      },
+      handler(source) { console.log('SOURCE CHANGE'); this.setup(source); },
       immediate: false
     },
+    filterName: {
+      handler(name) { this.filter = createFilter(name); }
+    }
+  },
+
+  created() {
+    this.filter = createFilter(this.filterName);
+  },
+
+  updated() {
+    console.log('UPDATE');
   },
 
   mounted() {
     console.log('MOUNTED', this.$el, this.source);
     this.context = this.$el.getContext('2d');
-    if (this.source) {
-      this.setup(this.source);
-    }
+    this.setup(this.source);
   },
+
   destroyed() {
     this.raw = null;
     this.result = null;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-    console.log('DESTROY BASE12');
+    console.log('DESTROY BASE1');
   },
+
   methods: {
     setup(source) {
-      // if (this.$el) {
-      console.log('SETUP', source, this.$el);
+      if (source) {
+        console.log('SETUP', source, source.constraints);
+        let frameRate = this.source.constraints.frameRate;
+        let width = source.constraints.width;
+        let height = source.constraints.height;
 
-
-      let frameRate = this.source.constraints.frameRate;
-      this.width = source.width || source.videoWidth;
-      this.height = source.height || source.videoHeight;
-      this.raw = createImageBuffer(this.context, this.width, this.height);
-      this.result = createImageBuffer(this.context, this.width, this.height);
-
-      this.subscription = subscribeThrottle(update.bind(this), frameRate);
-      // }
-    },
-
-    update(source, width, height) {
-      this.context.drawImage(source, 0, 0, width, height);
-      this.rgb = this.context.getImageData(0, 0, width, height);
-      let filter = labcie(this.rgb, this.raw, this.result);
-      this.context.putImageData(filter, 0, 0);
+        this.raw = createImageBuffer(this.context, width, height);
+        this.result = createImageBuffer(this.context, width, height);
+        this.subscription = subscribeThrottle(update.bind(this), frameRate);
+      }
     }
   }
 };
@@ -88,10 +94,17 @@ function createImageBuffer(context, width, height) {
 }
 
 function update() {
-  this.context.drawImage(this.source, 0, 0, this.width, this.height);
-  this.rgb = this.context.getImageData(0, 0, this.width, this.height);
-  let filter = labcie(this.rgb, this.raw, this.result);
-  this.context.putImageData(filter, 0, 0);
+  this.width = this.source.constraints.width;
+  this.height = this.source.constraints.height;
+
+  this.filter
+    .then((filter) => filter(this.source.data, values))
+    .then((result) => {
+      this.result.data.set(result.data);
+      values = result.values;
+      this.context.putImageData(this.result, 0, 0);
+    });
+
 }
 </script>
 

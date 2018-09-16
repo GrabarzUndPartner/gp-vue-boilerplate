@@ -8,7 +8,6 @@
 
 <script>
 import { getStream, getNextVideoDevice, getVideoStreamSettings/*, getVideoStreamConstraints*/ } from '../../utils/camera.js';
-import { fromEvent } from 'rxjs';
 
 export default {
   data() {
@@ -20,14 +19,11 @@ export default {
       }
     };
   },
-  mounted() {
-    fromEvent(this.$el, 'timeupdate').subscribe(() => {
-      this.$el.width = this.$el.videoWidth;
-      this.$el.height = this.$el.videoHeight;
-    });
 
+  mounted() {
     this.enable();
   },
+
   methods: {
     enable(conf = {}) {
       this.disable();
@@ -61,7 +57,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="postcss">
 </style>

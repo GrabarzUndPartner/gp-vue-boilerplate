@@ -77,6 +77,7 @@
     "@nuxtjs/pwa": "^2.0.8",
     "nuxt": "^1.4.2",
     "rxjs": "^6.3.1",
+    "simple-web-worker": "^1.2.0",
     "vue-i18n": "^8.0.0",
     "vue-i18n-extensions": "^0.2.0"
   },
