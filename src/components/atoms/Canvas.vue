@@ -8,11 +8,6 @@
 import { subscribeThrottle } from '../../services/animationFrame';
 import { createFilter } from '../../utils/filter.js';
 
-let values = {
-  raw: [0, 0, 0],
-  result: [0, 0, 0]
-};
-
 export default {
   props: {
     source: {
@@ -62,7 +57,6 @@ export default {
   },
 
   destroyed() {
-    this.raw = null;
     this.result = null;
     if (this.subscription) {
       this.subscription.unsubscribe();
@@ -78,7 +72,6 @@ export default {
         let width = source.constraints.width;
         let height = source.constraints.height;
 
-        this.raw = createImageBuffer(this.context, width, height);
         this.result = createImageBuffer(this.context, width, height);
         this.subscription = subscribeThrottle(update.bind(this), frameRate);
       }
@@ -98,10 +91,9 @@ function update() {
   this.height = this.source.constraints.height;
 
   this.filter
-    .then((filter) => filter(this.source.data, values))
-    .then((result) => {
-      this.result.data.set(result.data);
-      values = result.values;
+    .then((filter) => filter(this.source.data))
+    .then((data) => {
+      this.result.data.set(data);
       this.context.putImageData(this.result, 0, 0);
     });
 

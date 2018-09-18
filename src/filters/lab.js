@@ -1,9 +1,7 @@
 export function setup() {
   return {
-    values: {
-      raw: [0, 0, 0],
-      result: [0, 0, 0]
-    }
+    raw: [0, 0, 0],
+    result: [0, 0, 0]
   };
 }
 

@@ -20,8 +20,14 @@ function createWorker(worker, name, filter) {
 }
 
 function getHandler(worker, name, setup) {
-  return function process(data, config) {
-    console.log(setup);
-    return worker.postMessage(name, [data, config]).catch(console.error);
+  var values = setup;
+  return function process(data) {
+    return worker
+      .postMessage(name, [data, values])
+      .catch(console.error)
+      .then(result => {
+        values = result.values;
+        return result.data;
+      });
   };
 }
