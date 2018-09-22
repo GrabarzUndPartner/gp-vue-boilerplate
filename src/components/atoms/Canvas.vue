@@ -6,7 +6,7 @@
 
 <script>
 import { subscribeThrottle } from '../../services/animationFrame';
-import { createFilter } from '../../utils/filter.js';
+import Filter from '../../classes/Filter';
 
 export default {
   props: {
@@ -25,8 +25,6 @@ export default {
   data() {
     return {
       context: null,
-      raw: null,
-      result: null,
       width: 0,
       height: 0
     };
@@ -34,24 +32,16 @@ export default {
 
   watch: {
     source: {
-      handler(source) { console.log('SOURCE CHANGE'); this.setup(source); },
+      handler(source) { this.setup(source); },
       immediate: false
     },
     filterName: {
-      handler(name) { this.filter = createFilter(name); }
+      handler(filterName) { this.filter = new Filter(filterName); },
+      immediate: true
     }
   },
 
-  created() {
-    this.filter = createFilter(this.filterName);
-  },
-
-  updated() {
-    console.log('UPDATE');
-  },
-
   mounted() {
-    console.log('MOUNTED', this.$el, this.source);
     this.context = this.$el.getContext('2d');
     this.setup(this.source);
   },
@@ -61,19 +51,14 @@ export default {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-    console.log('DESTROY BASE1');
   },
 
   methods: {
     setup(source) {
       if (source) {
-        console.log('SETUP', source, source.constraints);
-        let frameRate = this.source.constraints.frameRate;
-        let width = source.constraints.width;
-        let height = source.constraints.height;
-
-        this.result = createImageBuffer(this.context, width, height);
-        this.subscription = subscribeThrottle(update.bind(this), frameRate);
+        const constraints = source.constraints;
+        this.filter.setBuffer(createImageBuffer(this.context, constraints.width, constraints.height));
+        this.subscription = subscribeThrottle(update.bind(this), constraints.frameRate);
       }
     }
   }
@@ -90,13 +75,8 @@ function update() {
   this.width = this.source.constraints.width;
   this.height = this.source.constraints.height;
 
-  this.filter
-    .then((filter) => filter(this.source.data))
-    .then((data) => {
-      this.result.data.set(data);
-      this.context.putImageData(this.result, 0, 0);
-    });
-
+  this.context.putImageData(this.filter.getBuffer(), 0, 0);
+  this.filter.send(this.source.data);
 }
 </script>
 

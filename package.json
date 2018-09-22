@@ -70,7 +70,8 @@
     "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.13.2",
     "webpack-monitor": "^1.0.14",
-    "webpack-virtual-modules": "^0.1.10"
+    "webpack-virtual-modules": "^0.1.10",
+    "worker-loader": "^2.0.0"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",

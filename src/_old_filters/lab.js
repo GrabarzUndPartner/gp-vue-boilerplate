@@ -1,4 +1,5 @@
 export function setup() {
+  console.log('UI');
   return {
     raw: [0, 0, 0],
     result: [0, 0, 0]

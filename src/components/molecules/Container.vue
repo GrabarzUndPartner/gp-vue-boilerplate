@@ -17,7 +17,7 @@
       <canvas-base
         ref="debug"
         :source="source"
-        filter-name="lab"
+        filter-name="labcie"
         class="debug"/>
     </no-ssr>
     <camera
@@ -62,7 +62,6 @@ export default {
 function update() {
   this.canvas.width = this.video.constraints.width;
   this.canvas.height = this.video.constraints.height;
-  // this.canvas.constraints = this.video.constraints;
   this.context.drawImage(this.video, 0, 0);
   this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
 }
