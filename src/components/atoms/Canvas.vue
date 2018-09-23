@@ -24,7 +24,6 @@ export default {
 
   data() {
     return {
-      context: null,
       width: 0,
       height: 0
     };
@@ -57,19 +56,12 @@ export default {
     setup(source) {
       if (source) {
         const constraints = source.constraints;
-        this.filter.setBuffer(createImageBuffer(this.context, constraints.width, constraints.height));
+        this.filter.setBuffer(this.context.createImageData(constraints.width, constraints.height));
         this.subscription = subscribeThrottle(update.bind(this), constraints.frameRate);
       }
     }
   }
 };
-
-function createImageBuffer(context, width, height) {
-  const buffer = context.createImageData(width, height);
-  buffer.average = [0, 0, 0];
-  buffer.count = 0;
-  return buffer;
-}
 
 function update() {
   this.width = this.source.constraints.width;

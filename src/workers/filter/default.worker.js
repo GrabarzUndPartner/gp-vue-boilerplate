@@ -1,3 +1,3 @@
 import './base';
 
-self.tick = function() {};
+// self.tick = function() {};
