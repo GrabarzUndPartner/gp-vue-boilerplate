@@ -72,7 +72,8 @@ module.exports = {
 
   head: {
     meta: [],
-    link: []
+    link: [],
+    script: []
   }
 
   // render: {

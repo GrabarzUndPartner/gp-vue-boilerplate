@@ -1,14 +1,13 @@
-self.values = null;
-
-function process(source) {
-  const data = new Uint32Array(source.buffer),
+function process(imageData) {
+  const data = new Uint32Array(imageData.data.buffer),
     px = [0, 0, 0, 0];
 
   for (let i = data.length; i >= 0; i--) {
-    px[3] = (data[i] >> 24) & 0xff; // alpha
-    px[2] = (data[i] >> 16) & 0xff; // blue
-    px[1] = (data[i] >> 8) & 0xff; // green
-    px[0] = (data[i] >> 0) & 0xff; // red
+    const current = data[i];
+    px[3] = (current >> 24) & 0xff; // alpha
+    px[2] = (current >> 16) & 0xff; // blue
+    px[1] = (current >> 8) & 0xff; // green
+    px[0] = (current >> 0) & 0xff; // red
 
     self.tick(px);
 
@@ -18,13 +17,14 @@ function process(source) {
       (px[1] << 8) | // Green
       px[0]; // Red
   }
-  return source;
+  return imageData;
 }
 
 self.addEventListener('message', e => {
   self.start();
-  self.postMessage(process(e.data));
-  self.end();
+  const imageData = process(e.data);
+  self.end(imageData);
+  self.postMessage(imageData);
 });
 
 self.start = function() {};

@@ -20,6 +20,13 @@
         filter-name="labcie"
         class="debug"/>
     </no-ssr>
+    <no-ssr>
+      <canvas-base
+        ref="debug"
+        :source="source"
+        filter-name="contour"
+        class="debug"/>
+    </no-ssr>
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>
@@ -53,7 +60,6 @@ export default {
     setup(e) {
       this.video = e.target;
       this.canvas.constraints = e.target.constraints;
-      this.source = this.canvas;
       this.subscription = subscribeThrottle(update.bind(this), this.canvas.constraints.frameRate);
     }
   }
@@ -63,7 +69,13 @@ function update() {
   this.canvas.width = this.video.constraints.width;
   this.canvas.height = this.video.constraints.height;
   this.context.drawImage(this.video, 0, 0);
-  this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
+  setTimeout(() => {
+    if (!this.source) {
+      this.source = this.canvas;
+    }
+    this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height);
+  }, 0);
+
 }
 </script>
 

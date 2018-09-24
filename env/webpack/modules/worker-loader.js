@@ -12,7 +12,7 @@ module.exports = function() {
         use: [
           {
             loader: 'worker-loader',
-            options: { inline: false }
+            options: { inline: false, name: '[name].[hash:5].js' }
           }
         ]
       }
