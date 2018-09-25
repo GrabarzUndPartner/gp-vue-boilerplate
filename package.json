@@ -30,7 +30,7 @@
     "@commitlint/config-conventional": "^7.0.1",
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.0",
     "babel-preset-vue-app": "^2.0.0",
     "branch-name-lint": "^1.0.5",
     "chai": "^4.1.2",
