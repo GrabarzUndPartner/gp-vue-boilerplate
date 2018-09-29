@@ -17,8 +17,10 @@ export default {
       }
     },
     filterName: {
-      type: String,
-      default: 'default'
+      type: Array,
+      default: function () {
+        return ['image/default'];
+      }
     }
   },
 
@@ -33,10 +35,6 @@ export default {
     source: {
       handler(source) { this.setup(source); },
       immediate: false
-    },
-    filterName: {
-      handler(filterName) { this.filter = new Filter(filterName); },
-      immediate: true
     }
   },
 
@@ -56,6 +54,7 @@ export default {
     setup(source) {
       if (source) {
         const constraints = source.constraints;
+        this.filter = new Filter(this.filterName);
         this.filter.setBuffer(this.context.createImageData(constraints.width, constraints.height));
         this.subscription = subscribeThrottle(update.bind(this), constraints.frameRate);
       }

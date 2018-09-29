@@ -1,4 +1,4 @@
-import './base';
+import '../image.base.js';
 
 let value = 0;
 self.tick = function(px) {

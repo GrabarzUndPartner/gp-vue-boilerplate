@@ -1,30 +1,29 @@
 <template>
   <div>
-
     <no-ssr>
       <canvas-base
+        ref="debug"
         :source="source"
-        filter-name="default"
+        :filter-name="['image/default']"
         class="debug"/>
     </no-ssr>
     <no-ssr>
       <canvas-base
         :source="source"
-        filter-name="greyscale"
+        :filter-name="['image/greyscale']"
+        class="debug"/>
+    </no-ssr>
+    <no-ssr>
+      <canvas-base
+        :source="source"
+        :filter-name="['image/labcie']"
         class="debug"/>
     </no-ssr>
     <no-ssr>
       <canvas-base
         ref="debug"
         :source="source"
-        filter-name="labcie"
-        class="debug"/>
-    </no-ssr>
-    <no-ssr>
-      <canvas-base
-        ref="debug"
-        :source="source"
-        filter-name="contour"
+        :filter-name="['image/labcie', 'image/contour']"
         class="debug"/>
     </no-ssr>
     <camera
@@ -37,6 +36,7 @@
 import Camera from '../atoms/Camera';
 import CanvasBase from '../atoms/Canvas';
 import { subscribeThrottle } from '../../services/animationFrame';
+import WorkerPipeline from '../../classes/WorkerPipeline';
 
 export default {
   components: {
@@ -52,6 +52,21 @@ export default {
   mounted() {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
+
+
+    let pipeline = new WorkerPipeline(['test1', ['test2', 'test3', 'test4'], 'test5']);
+
+    pipeline.subscribe((data) => {
+      console.log(data);
+    });
+    setTimeout(() => {
+      pipeline.send('hello');
+    }, 1000);
+
+    setTimeout(() => {
+      pipeline.send('huhu');
+    }, 2000);
+
   },
   destroyed() {
     this.subscription.unsubscribe();

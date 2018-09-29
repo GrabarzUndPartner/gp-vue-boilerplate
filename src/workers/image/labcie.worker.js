@@ -1,4 +1,4 @@
-import './base';
+import '../image.base';
 import { rgb2lab } from '../../utils/rgb-lab';
 
 const steps = 2;

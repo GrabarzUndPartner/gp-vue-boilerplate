@@ -14,7 +14,7 @@ export default {
     return {
       config: {
         facingMode: 'environment',
-        // frameRate: 5,
+        // frameRate: 1,
         width: 160
       }
     };

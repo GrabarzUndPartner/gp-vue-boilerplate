@@ -1,21 +1,18 @@
-import { fromEvent } from 'rxjs';
+import WorkerPipeline from '../classes/WorkerPipeline';
 
-const worker = Symbol('worker');
+const pipeline = Symbol('pipeline');
 const buffer = Symbol('buffer');
 const flag = Symbol('flag');
 
 export default class Filter {
   constructor(name) {
     this[buffer] = null;
-    this[worker] = { postMessage: function() {} };
     this[flag] = false;
 
-    import('../workers/filter/' + name + '.worker.js').then(Worker => {
-      this[worker] = new Worker();
-      fromEvent(this[worker], 'message').subscribe(e => {
-        this[buffer].data.set(e.data.data);
-        this[flag] = false;
-      });
+    this[pipeline] = new WorkerPipeline(name);
+    this[pipeline].subscribe(imageData => {
+      this[buffer].data.set(imageData.data);
+      this[flag] = false;
     });
   }
 
@@ -29,7 +26,7 @@ export default class Filter {
 
   send(data) {
     if (!this[flag]) {
-      this[worker].postMessage(data);
+      this[pipeline].send(data);
       this[flag] = true;
     }
   }

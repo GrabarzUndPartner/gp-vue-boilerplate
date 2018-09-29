@@ -1,4 +1,4 @@
-import './labcie';
+import '../image.base';
 
 self.importScripts(
   'https://huningxin.github.io/opencv.js/build/asm.js/opencv.js'
@@ -79,14 +79,6 @@ function drawContour(input, output) {
   hierarchy.delete();
 }
 
-const orgEnd = self.end;
 self.end = function(imageData) {
-  let res = orgEnd(imageData);
-
   drawContour(imageData, imageData);
-
-  return res;
 };
-
-// console.log(self.cv);
-// self.tick = function() {};
