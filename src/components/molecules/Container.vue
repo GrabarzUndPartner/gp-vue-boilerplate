@@ -1,39 +1,31 @@
 <template>
   <div>
-    <no-ssr>
-      <canvas-base
-        ref="debug"
-        :source="source"
-        :filter-name="['image/default']"
-        :width="width"
-        :height="height"
-        class="debug"/>
-    </no-ssr>
-    <no-ssr>
-      <canvas-base
-        :source="source"
-        :filter-name="['image/greyscale']"
-        :width="width"
-        :height="height"
-        class="debug"/>
-    </no-ssr>
-    <no-ssr>
-      <canvas-base
-        :source="source"
-        :filter-name="['image/labcie']"
-        :width="width"
-        :height="height"
-        class="debug"/>
-    </no-ssr>
-    <no-ssr>
-      <canvas-base
-        ref="debug"
-        :source="source"
-        :filter-name="['image/labcie', 'image/contour']"
-        :width="width"
-        :height="height"
-        class="debug"/>
-    </no-ssr>
+    <canvas-base
+      ref="debug"
+      :source="source"
+      :filter-pipeline="['image/default']"
+      :width="width"
+      :height="height"
+      class="debug"/>
+    <canvas-base
+      :source="source"
+      :filter-pipeline="['image/greyscale']"
+      :width="width"
+      :height="height"
+      class="debug"/>
+    <canvas-base
+      :source="source"
+      :filter-pipeline="['image/labcie']"
+      :width="width"
+      :height="height"
+      class="debug"/>
+    <canvas-base
+      ref="debug"
+      :source="source"
+      :filter-pipeline="['image/labcie', 'image/contour']"
+      :width="width"
+      :height="height"
+      class="debug"/>
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>

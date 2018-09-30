@@ -16,7 +16,7 @@ export default {
         return new global.HTMLCanvasElement();
       }
     },
-    filterName: {
+    filterPipeline: {
       type: Array,
       default: function () {
         return ['image/default'];
@@ -69,7 +69,7 @@ export default {
   methods: {
     setup(source) {
       if (source) {
-        this.filter = new Filter(this.filterName);
+        this.filter = new Filter(this.filterPipeline);
         this.updateFilter();
 
         this.renderSubscription = render.subscribe(renderUpdate.bind(this));
