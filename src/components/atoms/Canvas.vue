@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { subscribeThrottle } from '../../services/animationFrame';
+import { render, measure } from '../../services/animationFrame';
 import Filter from '../../classes/Filter';
 
 export default {
@@ -46,7 +46,8 @@ export default {
   destroyed() {
     this.result = null;
     if (this.subscription) {
-      this.subscription.unsubscribe();
+      this.renderSubscription.unsubscribe();
+      this.measureSubscription.unsubscribe();
     }
   },
 
@@ -54,19 +55,26 @@ export default {
     setup(source) {
       if (source) {
         const constraints = source.constraints;
+
         this.filter = new Filter(this.filterName);
         this.filter.setBuffer(this.context.createImageData(constraints.width, constraints.height));
-        this.subscription = subscribeThrottle(update.bind(this), constraints.frameRate);
+
+        this.renderSubscription = render.subscribe(renderUpdate.bind(this));
+        this.measureSubscription = measure.subscribe(measureUpdate.bind(this));
       }
     }
   }
 };
 
-function update() {
+function renderUpdate() {
+  if (this.filter.updated) {
+    this.context.putImageData(this.filter.getBuffer(), 0, 0);
+  }
+}
+
+function measureUpdate() {
   this.width = this.source.constraints.width;
   this.height = this.source.constraints.height;
-
-  this.context.putImageData(this.filter.getBuffer(), 0, 0);
   this.filter.send(this.source.data);
 }
 </script>

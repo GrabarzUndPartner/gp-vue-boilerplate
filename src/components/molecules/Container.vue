@@ -36,7 +36,6 @@
 import Camera from '../atoms/Camera';
 import CanvasBase from '../atoms/Canvas';
 import { subscribeThrottle } from '../../services/animationFrame';
-import WorkerPipeline from '../../classes/WorkerPipeline';
 
 export default {
   components: {
@@ -52,45 +51,34 @@ export default {
   mounted() {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
-
-
-    let pipeline = new WorkerPipeline(['test1', ['test2', 'test3', 'test4'], 'test5']);
-
-    pipeline.subscribe((data) => {
-      console.log(data);
-    });
-    setTimeout(() => {
-      pipeline.send('hello');
-    }, 1000);
-
-    setTimeout(() => {
-      pipeline.send('huhu');
-    }, 2000);
-
   },
   destroyed() {
-    this.subscription.unsubscribe();
+    this.renderSubscription.unsubscribe();
+    this.measureSubscription.unsubscribe();
   },
   methods: {
     setup(e) {
       this.video = e.target;
       this.canvas.constraints = e.target.constraints;
-      this.subscription = subscribeThrottle(update.bind(this), this.canvas.constraints.frameRate);
+
+      this.renderSubscription = subscribeThrottle(renderUpdate.bind(this), this.video.constraints.frameRate);
+      this.measureSubscription = subscribeThrottle(measureUpdate.bind(this), this.video.constraints.frameRate);
     }
   }
 };
 
-function update() {
+function renderUpdate() {
   this.canvas.width = this.video.constraints.width;
   this.canvas.height = this.video.constraints.height;
-  this.context.drawImage(this.video, 0, 0);
-  setTimeout(() => {
-    if (!this.source) {
-      this.source = this.canvas;
-    }
-    this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height);
-  }, 0);
 
+  if (!this.source) {
+    this.source = this.canvas;
+  }
+  this.context.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
+}
+
+function measureUpdate() {
+  this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height);
 }
 </script>
 
