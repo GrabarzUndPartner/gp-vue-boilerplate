@@ -12,7 +12,9 @@ export default class WorkerPipeline {
   }
 
   send(data) {
-    this[sender].then(port => port.postMessage({ body: data }));
+    this[sender].then(port =>
+      port.postMessage({ code: 'message', body: data })
+    );
   }
 
   subscribe(fn) {

@@ -2,18 +2,29 @@ import { zip, fromEvent } from 'rxjs';
 
 const sender = [];
 const receiver = [];
-let subscription;
+let subscription = { unsubscribe: function() {} };
 
 self.process = function() {};
 
 fromEvent(self, 'message').subscribe(e => {
-  if (e.data.code === 'receiver') {
-    registerReceiver(e.ports[0]);
-    combineReceivers();
-  } else if (e.data.code === 'sender') {
-    registerSender(e.ports[0]);
-  } else {
-    send(self.process(e.data.body));
+  switch (e.data.code) {
+    case 'message': {
+      send(self.process(e.data.body));
+      break;
+    }
+    case 'receiver': {
+      registerReceiver(e.ports[0]);
+      combineReceivers();
+      break;
+    }
+    case 'sender': {
+      registerSender(e.ports[0]);
+      break;
+    }
+    default: {
+      console.log('I don\'t know what i should do?!');
+      break;
+    }
   }
 });
 
@@ -23,9 +34,7 @@ function registerReceiver(port) {
 }
 
 function combineReceivers() {
-  if (subscription) {
-    subscription.unsubscribe();
-  }
+  subscription.unsubscribe();
   subscription = zip(...receiver).subscribe(result => {
     send(self.process(result.map(e => e.data.body)));
   });
