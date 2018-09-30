@@ -5,7 +5,6 @@ const subject = new Subject();
 const measureSubject = new Subject();
 
 if (process.browser) {
-  console.log(global);
   global.requestAnimationFrame(update);
 }
 

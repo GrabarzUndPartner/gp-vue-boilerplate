@@ -61,6 +61,13 @@ export default {
       this.video = e.target;
       this.canvas.constraints = e.target.constraints;
 
+      this.canvas.width = this.video.constraints.width;
+      this.canvas.height = this.video.constraints.height;
+
+      if (!this.source) {
+        this.source = this.canvas;
+      }
+
       this.renderSubscription = subscribeThrottle(renderUpdate.bind(this), this.video.constraints.frameRate);
       this.measureSubscription = subscribeThrottle(measureUpdate.bind(this), this.video.constraints.frameRate);
     }
@@ -68,12 +75,6 @@ export default {
 };
 
 function renderUpdate() {
-  this.canvas.width = this.video.constraints.width;
-  this.canvas.height = this.video.constraints.height;
-
-  if (!this.source) {
-    this.source = this.canvas;
-  }
   this.context.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
 }
 

@@ -56,6 +56,9 @@ export default {
       if (source) {
         const constraints = source.constraints;
 
+        this.width = this.source.constraints.width;
+        this.height = this.source.constraints.height;
+
         this.filter = new Filter(this.filterName);
         this.filter.setBuffer(this.context.createImageData(constraints.width, constraints.height));
 
@@ -73,8 +76,6 @@ function renderUpdate() {
 }
 
 function measureUpdate() {
-  this.width = this.source.constraints.width;
-  this.height = this.source.constraints.height;
   this.filter.send(this.source.data);
 }
 </script>
