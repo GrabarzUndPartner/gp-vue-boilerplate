@@ -9,10 +9,10 @@ if (process.browser) {
 }
 
 function update(time) {
-  window.requestAnimationFrame(update);
   subject.next(time);
   setTimeout(() => {
     measureSubject.next(time);
+    window.requestAnimationFrame(update);
   }, 0);
 }
 
