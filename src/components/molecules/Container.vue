@@ -5,18 +5,24 @@
         ref="debug"
         :source="source"
         :filter-name="['image/default']"
+        :width="width"
+        :height="height"
         class="debug"/>
     </no-ssr>
     <no-ssr>
       <canvas-base
         :source="source"
         :filter-name="['image/greyscale']"
+        :width="width"
+        :height="height"
         class="debug"/>
     </no-ssr>
     <no-ssr>
       <canvas-base
         :source="source"
         :filter-name="['image/labcie']"
+        :width="width"
+        :height="height"
         class="debug"/>
     </no-ssr>
     <no-ssr>
@@ -24,6 +30,8 @@
         ref="debug"
         :source="source"
         :filter-name="['image/labcie', 'image/contour']"
+        :width="width"
+        :height="height"
         class="debug"/>
     </no-ssr>
     <camera
@@ -45,12 +53,13 @@ export default {
 
   data() {
     return {
-      source: null
+      source: null,
+      width: 0,
+      height: 0
     };
   },
   mounted() {
-    this.canvas = document.createElement('canvas');
-    this.context = this.canvas.getContext('2d');
+
   },
   destroyed() {
     this.subscription.unsubscribe();
@@ -58,26 +67,21 @@ export default {
   methods: {
     setup(e) {
       this.video = e.target;
-      this.canvas.constraints = e.target.constraints;
-
-      this.canvas.width = this.video.constraints.width;
-      this.canvas.height = this.video.constraints.height;
-
-      if (!this.source) {
-        this.source = this.canvas;
-      }
-
+      this.source = document.createElement('canvas');
+      this.context = this.source.getContext('2d');
       this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
     }
   }
 };
 
 function renderUpdate() {
-  this.context.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
+  this.context.drawImage(this.video, 0, 0, this.width, this.height);
 }
 
 function measureUpdate() {
-  this.canvas.data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height);
+  this.width = this.video.constraints.width;
+  this.height = this.video.constraints.height;
+  this.source.data = this.context.getImageData(0, 0, this.width, this.height);
 }
 </script>
 
