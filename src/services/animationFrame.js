@@ -19,8 +19,13 @@ function update(time) {
 export const render = subject;
 export const measure = measureSubject;
 
-export function subscribeThrottle(callback, frameRate = 60) {
-  return subject.pipe(throttle(frameRate)).subscribe(callback);
+export function subscribeThrottle(cb1, cb2, frameRate = 60) {
+  return subject.pipe(throttle(frameRate)).subscribe(time => {
+    cb1(time);
+    setTimeout(() => {
+      cb2();
+    }, 0);
+  });
 }
 
 export function throttle(frameRate) {

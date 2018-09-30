@@ -53,8 +53,7 @@ export default {
     this.context = this.canvas.getContext('2d');
   },
   destroyed() {
-    this.renderSubscription.unsubscribe();
-    this.measureSubscription.unsubscribe();
+    this.subscription.unsubscribe();
   },
   methods: {
     setup(e) {
@@ -68,8 +67,7 @@ export default {
         this.source = this.canvas;
       }
 
-      this.renderSubscription = subscribeThrottle(renderUpdate.bind(this), this.video.constraints.frameRate);
-      this.measureSubscription = subscribeThrottle(measureUpdate.bind(this), this.video.constraints.frameRate);
+      this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
     }
   }
 };

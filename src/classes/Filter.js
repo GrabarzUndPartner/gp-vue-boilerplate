@@ -29,7 +29,7 @@ export default class Filter {
   }
 
   send(data) {
-    if (!this[flag]) {
+    if (!this[flag] && data) {
       this[pipeline].send(data);
       this[flag] = true;
     }
