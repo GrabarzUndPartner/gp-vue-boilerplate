@@ -30,8 +30,8 @@ export default class Filter {
 
   send(data) {
     if (!this[flag] && this[buffer] && data) {
-      this[pipeline].send(data);
       this[flag] = true;
+      this[pipeline].send(data);
     }
   }
 }

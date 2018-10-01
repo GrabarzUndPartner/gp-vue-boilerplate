@@ -29,7 +29,7 @@ export function lab2rgb(lab) {
 }
 
 export function rgb2lab(rgb) {
-  var r = rgb[0] / 255,
+  let r = rgb[0] / 255,
     g = rgb[1] / 255,
     b = rgb[2] / 255,
     x,

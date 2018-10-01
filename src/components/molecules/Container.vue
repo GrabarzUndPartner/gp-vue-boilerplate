@@ -26,6 +26,27 @@
       :width="width"
       :height="height"
       class="debug"/>
+    <canvas-base
+      ref="debug"
+      :source="source"
+      :filter-pipeline="['image/labcie.L']"
+      :width="width"
+      :height="height"
+      class="debug"/>
+    <canvas-base
+      ref="debug"
+      :source="source"
+      :filter-pipeline="['image/labcie.A']"
+      :width="width"
+      :height="height"
+      class="debug"/>
+    <canvas-base
+      ref="debug"
+      :source="source"
+      :filter-pipeline="['image/labcie.B']"
+      :width="width"
+      :height="height"
+      class="debug"/>
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>
@@ -62,6 +83,7 @@ export default {
       this.source = document.createElement('canvas');
       this.context = this.source.getContext('2d');
       this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
+
     }
   }
 };
