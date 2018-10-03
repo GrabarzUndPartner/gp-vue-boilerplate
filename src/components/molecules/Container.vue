@@ -63,10 +63,16 @@ export default {
     CanvasChannels
   },
 
+  props: {
+    width: {
+      type: Number,
+      default: 160
+    }
+  },
+
   data() {
     return {
       source: null,
-      width: 0,
       height: 0
     };
   },
@@ -75,6 +81,7 @@ export default {
     this.video = null;
     this.source = null;
     this.context = null;
+    this.height = null;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
@@ -95,8 +102,7 @@ function renderUpdate() {
 }
 
 function measureUpdate() {
-  this.width = this.video.constraints.width;
-  this.height = this.video.constraints.height;
+  this.height = (this.video.constraints.height / this.video.constraints.width) * this.width;
   this.source.data = this.context.getImageData(0, 0, this.width, this.height);
 }
 </script>

@@ -27,7 +27,7 @@ export function subscribe(renderFn, measureFn, renderPipes = []) {
 }
 
 export function subscribeThrottle(cb1, cb2, frameRate = 60) {
-  subscribe(cb1, cb2, [throttle(frameRate)]);
+  return subscribe(cb1, cb2, [throttle(frameRate)]);
 }
 
 export function throttle(frameRate) {
