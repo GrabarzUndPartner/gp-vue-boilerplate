@@ -76,6 +76,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/pwa": "^2.0.8",
+    "element-ui": "^2.4.8",
     "nuxt": "^1.4.2",
     "opencv.js": "^1.2.1",
     "rxjs": "^6.3.1",

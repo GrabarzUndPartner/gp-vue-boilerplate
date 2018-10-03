@@ -4,12 +4,18 @@ const sender = [];
 const receiver = [];
 let subscription = { unsubscribe: function() {} };
 
+self.options = {};
 self.process = function() {};
 
 fromEvent(self, 'message').subscribe(e => {
   switch (e.data.code) {
     case 'message': {
+      console.log(e.body.data);
       send(self.process(e.data.body));
+      break;
+    }
+    case 'options': {
+      self.options = e.data.body;
       break;
     }
     case 'receiver': {

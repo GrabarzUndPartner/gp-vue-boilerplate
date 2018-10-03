@@ -1,20 +1,33 @@
 import { fromEvent } from 'rxjs';
 
+const io = Symbol('io');
 const queue = Symbol('queue');
 const sender = Symbol('sender');
 const receiver = Symbol('receiver');
 
 export default class WorkerPipeline {
   constructor(list) {
-    this[queue] = loadWorkers(list).then(list => createPipeline(list));
-    this[sender] = this[queue].then(list => list[0].getPort());
-    this[receiver] = this[queue].then(list => list[1].getPort('sender'));
+    this[queue] = loadWorkers(list);
+    this[io] = this[queue].then(list => createPipeline(list));
+    this[sender] = this[io].then(list => list[0].getPort());
+    this[receiver] = this[io].then(list => list[1].getPort('sender'));
   }
 
-  send(data) {
-    this[sender].then(port =>
-      port.postMessage({ code: 'message', body: data })
-    );
+  send(data, code = 'message') {
+    this[sender].then(port => port.postMessage({ code: code, body: data }));
+  }
+
+  sendOptions(options) {
+    this[queue].then(items => {
+      items.filter(item => {
+        if (options[item.name]) {
+          item.worker.postMessage({
+            code: 'options',
+            body: options[item.name]
+          });
+        }
+      });
+    });
   }
 
   subscribe(fn) {
@@ -26,6 +39,7 @@ export default class WorkerPipeline {
 }
 
 function loadWorkers(workerRef) {
+  console.log(workerRef);
   if (Array.isArray(workerRef)) {
     return Promise.all(workerRef.map(item => loadWorkers(item)));
   } else {
@@ -33,6 +47,7 @@ function loadWorkers(workerRef) {
       let worker = new Worker();
       return {
         worker: worker,
+        name: workerRef,
         getPort(code = 'receiver') {
           return registerWorkerPort(code, worker);
         }

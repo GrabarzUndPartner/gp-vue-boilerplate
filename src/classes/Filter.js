@@ -28,6 +28,10 @@ export default class Filter {
     return this[buffer];
   }
 
+  setOptions(value) {
+    this[pipeline].sendOptions(value, 'options');
+  }
+
   send(data) {
     if (!this[flag] && this[buffer] && data) {
       this[flag] = true;

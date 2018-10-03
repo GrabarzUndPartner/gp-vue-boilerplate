@@ -16,6 +16,12 @@ export default {
         return new global.HTMLCanvasElement();
       }
     },
+    filterOptions: {
+      type: Object,
+      default() {
+        return {};
+      }
+    },
     filterPipeline: {
       type: Array,
       default: function () {
@@ -50,6 +56,11 @@ export default {
       handler() {
         this.updateFilter();
       }
+    },
+    filterOptions: {
+      handler(value) {
+        this.updateFilterOptions(value);
+      }
     }
   },
 
@@ -80,6 +91,9 @@ export default {
       if (this.width && this.height) {
         this.filter.setBuffer(this.context.createImageData(this.width, this.height));
       }
+    },
+    updateFilterOptions(value) {
+      this.filter.setOptions(value);
     }
   }
 };

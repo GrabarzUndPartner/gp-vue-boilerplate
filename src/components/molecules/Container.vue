@@ -1,13 +1,18 @@
 <template>
   <div>
-    <canvas-base
-      ref="debug"
+    <el-cascader
+      :options="options"
+      v-model="selectedOptions"
+      size="small"
+      @change="changeFilter"/>
+    <!-- <canvas-base
       :source="source"
+      :filter-options="filterOptions"
       :filter-pipeline="['image/default']"
       :width="width"
       :height="height"
-      class="debug"/>
-    <canvas-base
+      class="debug"/> -->
+    <!-- <canvas-base
       :source="source"
       :filter-pipeline="['image/greyscale']"
       :width="width"
@@ -25,25 +30,12 @@
       :filter-pipeline="['image/labcie', 'image/contour']"
       :width="width"
       :height="height"
-      class="debug"/>
+      class="debug"/> -->
     <canvas-base
       ref="debug"
       :source="source"
-      :filter-pipeline="['image/labcie.L']"
-      :width="width"
-      :height="height"
-      class="debug"/>
-    <canvas-base
-      ref="debug"
-      :source="source"
-      :filter-pipeline="['image/labcie.A']"
-      :width="width"
-      :height="height"
-      class="debug"/>
-    <canvas-base
-      ref="debug"
-      :source="source"
-      :filter-pipeline="['image/labcie.B']"
+      :filter-options="filterOptions"
+      :filter-pipeline="['image/lab']"
       :width="width"
       :height="height"
       class="debug"/>
@@ -68,7 +60,28 @@ export default {
     return {
       source: null,
       width: 0,
-      height: 0
+      height: 0,
+      filterOptions: {
+        lab: [0, 1, 2]
+      },
+      options: [{
+        id: 0,
+        value: '[0,1,2]',
+        label: 'LAB'
+      }, {
+        id: 1,
+        value: '[0,0,0]',
+        label: 'L'
+      }, {
+        id: 2,
+        value: '[1,1,1]',
+        label: 'A'
+      }, {
+        id: 3,
+        value: '[2,2,2]',
+        label: 'B'
+      }],
+      selectedOptions: ['[0,1,2]']
     };
   },
   mounted() {
@@ -84,6 +97,10 @@ export default {
       this.context = this.source.getContext('2d');
       this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
 
+    },
+
+    changeFilter(e) {
+      this.filterOptions = { 'image/lab': { channels: JSON.parse(e[0]) } };
     }
   }
 };

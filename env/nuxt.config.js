@@ -6,7 +6,8 @@ process.env.DEBUG = 'nuxt:*';
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
-  css: [],
+  css: ['element-ui/lib/theme-chalk/index.css'],
+
   build: {
     analyze: {
       analyzerMode: 'static',
@@ -22,7 +23,7 @@ module.exports = {
     }
   },
 
-  plugins: ['~/plugins/i18n.js'],
+  plugins: ['@/plugins/i18n.js', '@/plugins/element-ui'],
 
   modules: [
     [
