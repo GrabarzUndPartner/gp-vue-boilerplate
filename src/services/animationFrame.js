@@ -1,5 +1,5 @@
 import { Subject, interval } from 'rxjs';
-import { throttle as t } from 'rxjs/operators';
+import { throttle as t, first } from 'rxjs/operators';
 
 const subject = new Subject();
 const measureSubject = new Subject();
@@ -19,13 +19,15 @@ function update(time) {
 export const render = subject;
 export const measure = measureSubject;
 
-export function subscribeThrottle(cb1, cb2, frameRate = 60) {
-  return subject.pipe(throttle(frameRate)).subscribe(time => {
-    cb1(time);
-    setTimeout(() => {
-      cb2();
-    }, 0);
+export function subscribe(renderFn, measureFn, renderPipes = []) {
+  return subject.pipe(...renderPipes).subscribe(time => {
+    renderFn(time);
+    measureSubject.pipe(first()).subscribe(measureFn);
   });
+}
+
+export function subscribeThrottle(cb1, cb2, frameRate = 60) {
+  subscribe(cb1, cb2, [throttle(frameRate)]);
 }
 
 export function throttle(frameRate) {

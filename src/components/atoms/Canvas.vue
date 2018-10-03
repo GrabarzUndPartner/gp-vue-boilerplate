@@ -5,26 +5,28 @@
 </template>
 
 <script>
-import { render, measure } from '../../services/animationFrame';
+import { subscribe } from '../../services/animationFrame';
 import Filter from '../../classes/Filter';
+
+const filter = Symbol('filter');
 
 export default {
   props: {
     source: {
       type: global.HTMLCanvasElement,
-      default: function () {
+      default() {
         return new global.HTMLCanvasElement();
       }
     },
-    filterOptions: {
+    options: {
       type: Object,
       default() {
         return {};
       }
     },
-    filterPipeline: {
+    filter: {
       type: Array,
-      default: function () {
+      default() {
         return ['image/default'];
       }
     },
@@ -39,13 +41,22 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      context: null
+    };
   },
 
   watch: {
     source: {
-      handler(source) { this.setup(source); },
+      handler() {
+        this.setup();
+      },
       immediate: false
+    },
+    context: {
+      handler() {
+        this.setup();
+      }
     },
     width: {
       handler() {
@@ -57,55 +68,64 @@ export default {
         this.updateFilter();
       }
     },
-    filterOptions: {
-      handler(value) {
-        this.updateFilterOptions(value);
-      }
+    options: {
+      handler() {
+        this.updateOptions();
+      },
+      immediate: false
     }
   },
 
   mounted() {
     this.context = this.$el.getContext('2d');
-    this.setup(this.source);
   },
 
   destroyed() {
     this.result = null;
-    if (this.subscription) {
-      this.renderSubscription.unsubscribe();
-      this.measureSubscription.unsubscribe();
-    }
+    this.unsubscribe();
   },
 
   methods: {
-    setup(source) {
-      if (source) {
-        this.filter = new Filter(this.filterPipeline);
-        this.updateFilter();
+    setup() {
+      this[filter] = new Filter(this.filter);
+      this.updateFilter();
+      this.updateOptions();
+      this.subscribe();
+    },
 
-        this.renderSubscription = render.subscribe(renderUpdate.bind(this));
-        this.measureSubscription = measure.subscribe(measureUpdate.bind(this));
-      }
-    },
     updateFilter() {
-      if (this.width && this.height) {
-        this.filter.setBuffer(this.context.createImageData(this.width, this.height));
+      if (this[filter] && this.context && this.width && this.height) {
+        this[filter].setBuffer(this.context.createImageData(this.width, this.height));
       }
     },
-    updateFilterOptions(value) {
-      this.filter.setOptions(value);
+
+    updateOptions() {
+      this[filter].setOptions(this.options);
+    },
+
+    subscribe() {
+      this.unsubscribe();
+      this.subscription = subscribe(renderUpdate.bind(this), measureUpdate.bind(this));
+    },
+
+    unsubscribe() {
+      if (this.subscription) {
+        this.subscription.unsubscribe();
+      }
     }
   }
 };
 
 function renderUpdate() {
-  if (this.filter && this.filter.updated) {
-    this.context.putImageData(this.filter.getBuffer(), 0, 0);
+  if (this[filter] && this[filter].updated) {
+    this.context.putImageData(this[filter].getBuffer(), 0, 0);
   }
 }
 
 function measureUpdate() {
-  this.filter.send(this.source.data);
+  if (this.source) {
+    this[filter].send(this.source.data);
+  }
 }
 </script>
 

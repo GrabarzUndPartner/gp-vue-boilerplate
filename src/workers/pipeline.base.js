@@ -10,7 +10,6 @@ self.process = function() {};
 fromEvent(self, 'message').subscribe(e => {
   switch (e.data.code) {
     case 'message': {
-      console.log(e.body.data);
       send(self.process(e.data.body));
       break;
     }
@@ -28,7 +27,7 @@ fromEvent(self, 'message').subscribe(e => {
       break;
     }
     default: {
-      console.log('I don\'t know what i should do?!');
+      console.error('I don\'t know what i should do?!');
       break;
     }
   }

@@ -39,7 +39,6 @@ export default class WorkerPipeline {
 }
 
 function loadWorkers(workerRef) {
-  console.log(workerRef);
   if (Array.isArray(workerRef)) {
     return Promise.all(workerRef.map(item => loadWorkers(item)));
   } else {

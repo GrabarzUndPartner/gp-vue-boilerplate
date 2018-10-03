@@ -1,44 +1,49 @@
 <template>
   <div>
-    <el-cascader
-      :options="options"
-      v-model="selectedOptions"
-      size="small"
-      @change="changeFilter"/>
     <!-- <canvas-base
       :source="source"
-      :filter-options="filterOptions"
-      :filter-pipeline="['image/default']"
+      :filter="['image/default']"
       :width="width"
       :height="height"
-      class="debug"/> -->
-    <!-- <canvas-base
-      :source="source"
-      :filter-pipeline="['image/greyscale']"
-      :width="width"
-      :height="height"
-      class="debug"/>
+    />
     <canvas-base
       :source="source"
-      :filter-pipeline="['image/labcie']"
+      :filter="['image/greyscale']"
       :width="width"
       :height="height"
-      class="debug"/>
+    /> -->
     <canvas-base
-      ref="debug"
       :source="source"
-      :filter-pipeline="['image/labcie', 'image/contour']"
+      :filter="['image/labcie']"
       :width="width"
       :height="height"
-      class="debug"/> -->
+    />
     <canvas-base
-      ref="debug"
       :source="source"
-      :filter-options="filterOptions"
-      :filter-pipeline="['image/lab']"
+      :filter="['image/labcie', 'image/contour']"
       :width="width"
       :height="height"
-      class="debug"/>
+    />
+    <canvas-channels
+      :items="[
+        { value: [0,1,2], label: 'LAB' },
+        { value: [0,0,0], label: 'L' },
+        { value: [1,1,1], label: 'A' },
+        { value: [2,2,2], label: 'B', selected: true }
+      ]"
+      name="image/lab">
+      <template
+        slot="canvas"
+        slot-scope="props">
+        <canvas-base
+          :source="source"
+          :options="props.options"
+          :filter="['image/lab']"
+          :width="width"
+          :height="height"/>
+      </template>
+    </canvas-channels>
+
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>
@@ -48,59 +53,39 @@
 <script>
 import Camera from '../atoms/Camera';
 import CanvasBase from '../atoms/Canvas';
+import CanvasChannels from './CanvasChannels';
 import { subscribeThrottle } from '../../services/animationFrame';
 
 export default {
   components: {
     Camera,
-    CanvasBase
+    CanvasBase,
+    CanvasChannels
   },
 
   data() {
     return {
       source: null,
       width: 0,
-      height: 0,
-      filterOptions: {
-        lab: [0, 1, 2]
-      },
-      options: [{
-        id: 0,
-        value: '[0,1,2]',
-        label: 'LAB'
-      }, {
-        id: 1,
-        value: '[0,0,0]',
-        label: 'L'
-      }, {
-        id: 2,
-        value: '[1,1,1]',
-        label: 'A'
-      }, {
-        id: 3,
-        value: '[2,2,2]',
-        label: 'B'
-      }],
-      selectedOptions: ['[0,1,2]']
+      height: 0
     };
   },
-  mounted() {
 
-  },
   destroyed() {
-    this.subscription.unsubscribe();
+    this.video = null;
+    this.source = null;
+    this.context = null;
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   },
+
   methods: {
     setup(e) {
       this.video = e.target;
       this.source = document.createElement('canvas');
       this.context = this.source.getContext('2d');
       this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
-
-    },
-
-    changeFilter(e) {
-      this.filterOptions = { 'image/lab': { channels: JSON.parse(e[0]) } };
     }
   }
 };
