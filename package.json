@@ -43,7 +43,7 @@
     "eslint-plugin-vue": "^4.7.1",
     "geckodriver": "^1.12.2",
     "httpolyglot": "^0.1.2",
-    "husky": "^0.14.3",
+    "husky": "^1.1.1",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webp": "^4.1.0",
