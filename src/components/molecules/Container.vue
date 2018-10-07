@@ -11,13 +11,13 @@
       :filter="['image/greyscale']"
       :width="width"
       :height="height"
-    /> -->
+    />
     <canvas-base
       :source="source"
       :filter="['image/labcie']"
       :width="width"
       :height="height"
-    />
+    /> -->
     <canvas-base
       :source="source"
       :filter="['image/labcie', 'image/contour']"
@@ -98,6 +98,8 @@ export default {
 };
 
 function renderUpdate() {
+  this.source.width = this.width;
+  this.source.height = this.height;
   this.context.drawImage(this.video, 0, 0, this.width, this.height);
 }
 
@@ -110,7 +112,7 @@ function measureUpdate() {
 <style lang="postcss" scoped>
 .camera {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 1px;
   height: 1px;

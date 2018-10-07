@@ -78,6 +78,7 @@ export default {
 
   mounted() {
     this.context = this.$el.getContext('2d');
+    this[filter] = new Filter(this.filter);
   },
 
   destroyed() {
@@ -87,7 +88,6 @@ export default {
 
   methods: {
     setup() {
-      this[filter] = new Filter(this.filter);
       this.updateFilter();
       this.updateOptions();
       this.subscribe();

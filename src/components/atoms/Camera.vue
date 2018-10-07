@@ -10,12 +10,27 @@
 import { getStream, getNextVideoDevice, getVideoStreamSettings/*, getVideoStreamConstraints*/ } from '../../utils/camera.js';
 
 export default {
+  props: {
+    facingMode: {
+      type: String,
+      default: 'environment'
+    },
+    frameRate: {
+      type: Number,
+      default: null
+    },
+    width: {
+      type: Number,
+      default: 160
+    }
+  },
+
   data() {
     return {
       config: {
-        facingMode: 'environment',
-        // frameRate: 1,
-        // width: 160
+        facingMode: this.facingMode,
+        frameRate: this.frameRate,
+        width: this.width
       }
     };
   },
