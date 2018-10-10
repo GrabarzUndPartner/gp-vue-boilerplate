@@ -3,9 +3,8 @@ module.exports = function(module) {
     .concat(
       ...[
         require('./modules/url-loader')(module.rules),
-        require('./modules/vue-loader')(module.rules),
-        require('./modules/svg-sprite-loader')(module.rules),
-        require('./modules/image-loader')(module.rules)
+        require('./modules/svg-sprite-loader')(module.rules)
+        // require('./modules/vue-loader')(module.rules)
       ]
     )
     .reduce(function(result, item) {

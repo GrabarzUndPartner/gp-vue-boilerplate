@@ -17,7 +17,8 @@ module.exports = [
         quality: '75-100'
       }
     })
-  }, {
+  },
+  {
     env: {
       development: false,
       production: true,
@@ -39,7 +40,8 @@ module.exports = [
         })
       ]
     })
-  }, {
+  },
+  {
     env: {
       development: false,
       production: true,
