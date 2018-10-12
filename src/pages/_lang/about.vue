@@ -25,17 +25,17 @@
       src="~/assets/image2.svg"
       alt="test">
     <img
-      src="~/assets/image0.jpg.webp"
+      src="~/assets/image0.png"
       alt="test">
-    <!-- <img
-      src="~/assets/image0.png.webp"
-      alt="test"> -->
     <img
-      src="~/assets/image1.png"
+      src="~/assets/image0.png24.png"
       alt="test">
-    <!-- <img
-      src="~/assets/image1.png24.png"
-      alt="test"> -->
+    <img
+      src="~/assets/image1.png.webp"
+      alt="test">
+    <img
+      src="~/assets/image0.jpg"
+      alt="test">
     <br>
 
   </div>
