@@ -25,9 +25,6 @@
       src="~/assets/image2.svg"
       alt="test">
     <img
-      src="~/assets/image3.svg"
-      alt="test">
-    <img
       src="~/assets/image0.png"
       alt="test">
     <img
@@ -38,9 +35,6 @@
       alt="test">
     <img
       src="~/assets/image0.jpg"
-      alt="test">
-    <img
-      src="~/assets/image0.jpg.webp"
       alt="test">
     <br>
 

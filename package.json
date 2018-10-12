@@ -5,7 +5,7 @@
   "author": "Stephan Gerbeth",
   "license": "MIT",
   "private": true,
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
     "test": "npm run lint",
     "dev": "cross-env NODE_ENV=development node ./env/server.js",
@@ -69,6 +69,7 @@
     "wdio-mocha-framework": "^0.6.3",
     "wdio-sauce-service": "^0.4.11",
     "wdio-screenshot": "^0.6.0",
+    "wdio-selenium-standalone-service": "0.0.10",
     "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.13.2",
     "webpack-monitor": "^1.0.14",
