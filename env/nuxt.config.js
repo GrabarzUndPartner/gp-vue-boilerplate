@@ -1,8 +1,8 @@
+process.env.DEBUG = 'nuxt:*';
 const webpackPlugins = require('./webpack/plugins');
 const webpackModules = require('./webpack/modules');
 // const i18nExtensions = require('vue-i18n-extensions');
 
-process.env.DEBUG = 'nuxt:*';
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
@@ -14,10 +14,12 @@ module.exports = {
       openAnalyzer: false
     },
 
+    // plugins: [],
+
     // vendor: ['vue-i18n'],
 
-    extend(config) {
-      webpackPlugins(config.plugins, this.options.srcDir);
+    extend(config, compiler) {
+      webpackPlugins(config.plugins, this.options.srcDir, compiler);
       webpackModules(config.module);
     }
   },

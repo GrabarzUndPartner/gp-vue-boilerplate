@@ -18,9 +18,9 @@ export default {
 };
 </script>
 
-<style lang="postcss" module>
-:local(.test) {
-  color: yellow;
+<style>
+.test {
+  color: green;
   background: red;
 }
 

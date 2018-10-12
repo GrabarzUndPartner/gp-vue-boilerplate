@@ -1,5 +1,4 @@
 exports.config = {
-
   //
   // =================
   // Service Providers
@@ -20,13 +19,9 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: [
-    './test/*.js'
-  ],
+  specs: ['./test/*.js'],
   // Patterns to exclude.
-  exclude: [
-    './test/wdio/*.js'
-  ],
+  exclude: ['./test/wdio/*.js'],
   //
   // ============
   // Capabilities
@@ -56,19 +51,9 @@ exports.config = {
     // maxInstances: 5,
     //
     {
-      browserName: 'firefox',
-      platform: 'Windows 10',
-      version: '41.0',
-      build: process.env.TRAVIS_BUILD_NUMBER
-    }, {
       browserName: 'chrome',
       platform: 'OS X 10.10',
       version: '45.0',
-      build: process.env.TRAVIS_BUILD_NUMBER
-    }, {
-      browserName: 'internet explorer',
-      platform: 'Windows 7',
-      version: '10',
       build: process.env.TRAVIS_BUILD_NUMBER
     }
   ],
