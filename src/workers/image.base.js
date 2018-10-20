@@ -3,7 +3,7 @@ import './pipeline.base';
 self.process = function([imageData]) {
   const data = new Uint32Array(imageData.data.buffer),
     px = [0, 0, 0, 0];
-  self.start();
+  self.start(imageData);
   for (let i = data.length; i >= 0; i--) {
     const current = data[i];
     px[3] = (current >> 24) & 0xff; // alpha
@@ -11,7 +11,7 @@ self.process = function([imageData]) {
     px[1] = (current >> 8) & 0xff; // green
     px[0] = (current >> 0) & 0xff; // red
 
-    self.tick(px);
+    self.tick(px, i);
 
     data[i] =
       (px[3] << 24) | // Alpha
