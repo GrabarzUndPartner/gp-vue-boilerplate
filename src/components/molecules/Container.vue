@@ -1,108 +1,110 @@
 <template>
   <div>
-    <canvas-base
+    <option-canvas
       :source="source"
       :filter="['image/default']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
-    <!-- <canvas-base
+
+    <!-- <option-canvas
       :source="source"
       :filter="['image/greyscale']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
-    <canvas-base
+
+    <option-canvas
       :source="source"
       :filter="['image/labcie']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
-    <canvas-base
+
+    <option-canvas
       :source="source"
       :filter="['image/labcie', 'image/contour']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
-    />
-    <drop-down
-      :items="[
-        { value: [0,1,2], label: 'LAB' },
-        { value: [0,0,0], label: 'L' },
-        { value: [1,1,1], label: 'A' },
-        { value: [2,2,2], label: 'B', selected: true }
-      ]"
-      name="image/lab">
-      <template
-        slot="canvas"
-        slot-scope="props">
-        <canvas-base
-          :source="source"
-          :options="props.options"
-          :filter="['image/lab']"
-          :frame-rate="frameRate"
-          :width="width"
-          :height="height"/>
-      </template>
-    </drop-down>
+    /> -->
 
-    <drop-down
-      :items="[
-        { value: 1, label: 'A', selected: true },
-        { value: 2, label: 'B' }
-      ]"
-      name="image/lab-false-color">
-      <template
-        slot="canvas"
-        slot-scope="props">
-        <canvas-base
-          :source="source"
-          :options="props.options"
-          :filter="['image/lab-false-color']"
-          :width="width"
-          :height="height"/>
-      </template>
-    </drop-down>
+    <!-- <option-canvas
+      :source="source"
+      :filter="['image/lab']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height">
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: [0,1,2], label: 'LAB' },
+            { value: [0,0,0], label: 'L' },
+            { value: [1,1,1], label: 'A' },
+            { value: [2,2,2], label: 'B', selected: true }
+          ]"
+          prop="channels"
+          name="image/lab"/></template>
+    </option-canvas>
 
-    <drop-down
-      :items="[
-        { value: 1, label: 'I2', selected: true },
-        { value: 2, label: 'I3' }
-      ]"
-      name="image/ohta-false-color">
-      <template
-        slot="canvas"
-        slot-scope="props">
-        <canvas-base
-          :source="source"
-          :options="props.options"
-          :filter="['image/ohta-false-color']"
-          :width="width"
-          :height="height"/>
-      </template>
-    </drop-down> -->
+    <option-canvas
+      :source="source"
+      :filter="['image/lab-false-color']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height">
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: 1, label: 'A', selected: true },
+            { value: 2, label: 'B' }
+          ]"
+          prop="channels"
+          name="image/lab-false-color"/></template>
+    </option-canvas>
 
-    <slider
-      :value="35"
-      :min="0"
-      :max="70"
-      name="image/movement">
-      <template
-        slot="canvas"
-        slot-scope="props">
-        <canvas-base
-          :source="source"
-          :filter="['image/movement']"
-          :frame-rate="frameRate"
-          :options="props.options"
-          :width="width"
-          :height="height"
-        />
+    <option-canvas
+      :source="source"
+      :filter="['image/ohta-false-color']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height">
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: 1, label: 'I2', selected: true },
+            { value: 2, label: 'I3' }
+          ]"
+          prop="channels"
+          name="image/ohta-false-color"/></template>
+    </option-canvas> -->
+
+    <option-canvas
+      :source="source"
+      :filter="['image/movement']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height">
+      <template slot="options">
+        <slider
+          :value="35"
+          :min="0"
+          :max="70"
+          name="image/movement"
+          prop="threshold"/>
+        <drop-down
+          :items="[
+            { value: 0, label: '0' },
+            { value: 35, label: '35', selected: true }
+          ]"
+          name="image/movement"
+          prop="threshold"/>
       </template>
-    </slider>
+    </option-canvas>
+
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>
@@ -111,7 +113,7 @@
 
 <script>
 import Camera from '../atoms/Camera';
-import CanvasBase from '../atoms/Canvas';
+import OptionCanvas from './OptionCanvas';
 import DropDown from '../atoms/inputs/DropDown';
 import Slider from '../atoms/inputs/Slider';
 import { subscribeThrottle } from '../../services/animationFrame';
@@ -119,7 +121,7 @@ import { subscribeThrottle } from '../../services/animationFrame';
 export default {
   components: {
     Camera,
-    CanvasBase,
+    OptionCanvas,
     DropDown,
     Slider
   },
