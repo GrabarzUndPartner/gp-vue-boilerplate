@@ -7,8 +7,14 @@
       :width="width"
       :height="height"
     />
-
     <canvas-base
+      :source="source"
+      :filter="['image/movement']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height"
+    />
+    <!-- <canvas-base
       :source="source"
       :filter="['image/greyscale']"
       :frame-rate="frameRate"
@@ -48,7 +54,7 @@
           :width="width"
           :height="height"/>
       </template>
-    </canvas-channels>
+    </canvas-channels> -->
 
     <camera
       class="camera"
