@@ -1,8 +1,6 @@
 <template>
   <div>
-    <slot
-      :options="config"
-      name="canvas"/>
+    <label>{{ prop }}</label>
     <el-cascader
       :options="options"
       :value="selected"
@@ -25,12 +23,15 @@ export default {
       default() {
         return [];
       }
+    },
+    prop: {
+      type: String,
+      default: 'value'
     }
   },
 
   data() {
     return {
-      config: {},
       selected: [],
       options: []
     };
@@ -65,7 +66,7 @@ export default {
     },
 
     changeFilter(e) {
-      this.config = { [this.name]: { channels: JSON.parse(e[0]) } };
+      this.$parent.$emit('change', { [this.name]: { [this.prop]: JSON.parse(e[0]) } });
     }
   }
 };

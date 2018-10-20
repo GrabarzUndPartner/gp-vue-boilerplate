@@ -1,11 +1,10 @@
 <template>
   <div>
-    <slot
-      :options="config"
-      name="canvas"/>
+    <label>{{ prop }}</label>
     <el-slider
       v-model="value"
       :max="max"
+      label="hello"
       @change="changeFilter"/>
   </div>
 </template>
@@ -26,23 +25,26 @@ export default {
     max: {
       type: Number,
       default: 10
+    },
+    prop: {
+      type: String,
+      default: 'value'
     }
   },
 
   data() {
     return {
-      value: 35,
-      config: {}
+      value: 35
     };
   },
 
   mounted() {
-    this.config = { [this.name]: { threshold: this.value } };
+    this.changeFilter(this.value);
   },
 
   methods: {
     changeFilter(e) {
-      this.config = { [this.name]: { threshold: e } };
+      this.$parent.$emit('change', { [this.name]: { [this.prop]: e } });
     }
   }
 };
