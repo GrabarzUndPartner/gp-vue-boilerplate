@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <canvas-base
+    <canvas-base
       :source="source"
       :filter="['image/default']"
       :width="width"
@@ -17,7 +17,7 @@
       :filter="['image/labcie']"
       :width="width"
       :height="height"
-    /> -->
+    />
     <canvas-base
       :source="source"
       :filter="['image/labcie', 'image/contour']"
