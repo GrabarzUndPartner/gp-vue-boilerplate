@@ -7,13 +7,6 @@
       :width="width"
       :height="height"
     />
-    <canvas-base
-      :source="source"
-      :filter="['image/movement']"
-      :frame-rate="frameRate"
-      :width="width"
-      :height="height"
-    />
     <!-- <canvas-base
       :source="source"
       :filter="['image/greyscale']"
@@ -21,7 +14,7 @@
       :width="width"
       :height="height"
     />
-    <!--canvas-base
+    <canvas-base
       :source="source"
       :filter="['image/labcie']"
       :frame-rate="frameRate"
@@ -34,8 +27,8 @@
       :frame-rate="frameRate"
       :width="width"
       :height="height"
-    /-->
-    <canvas-channels
+    />
+    <drop-down
       :items="[
         { value: [0,1,2], label: 'LAB' },
         { value: [0,0,0], label: 'L' },
@@ -54,9 +47,9 @@
           :width="width"
           :height="height"/>
       </template>
-    </canvas-channels> -->
+    </drop-down>
 
-    <canvas-channels
+    <drop-down
       :items="[
         { value: 1, label: 'A', selected: true },
         { value: 2, label: 'B' }
@@ -72,9 +65,9 @@
           :width="width"
           :height="height"/>
       </template>
-    </canvas-channels>
+    </drop-down>
 
-    <canvas-channels
+    <drop-down
       :items="[
         { value: 1, label: 'I2', selected: true },
         { value: 2, label: 'I3' }
@@ -90,8 +83,26 @@
           :width="width"
           :height="height"/>
       </template>
-    </canvas-channels>
+    </drop-down> -->
 
+    <slider
+      :value="35"
+      :min="0"
+      :max="70"
+      name="image/movement">
+      <template
+        slot="canvas"
+        slot-scope="props">
+        <canvas-base
+          :source="source"
+          :filter="['image/movement']"
+          :frame-rate="frameRate"
+          :options="props.options"
+          :width="width"
+          :height="height"
+        />
+      </template>
+    </slider>
     <camera
       class="camera"
       @loadedmetadata.native="setup"/>
@@ -101,14 +112,16 @@
 <script>
 import Camera from '../atoms/Camera';
 import CanvasBase from '../atoms/Canvas';
-import CanvasChannels from './CanvasChannels';
+import DropDown from '../atoms/inputs/DropDown';
+import Slider from '../atoms/inputs/Slider';
 import { subscribeThrottle } from '../../services/animationFrame';
 
 export default {
   components: {
     Camera,
     CanvasBase,
-    CanvasChannels
+    DropDown,
+    Slider
   },
 
   props: {
