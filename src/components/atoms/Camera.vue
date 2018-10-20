@@ -17,7 +17,7 @@ export default {
     },
     frameRate: {
       type: Number,
-      default: null
+      default: 1
     },
     width: {
       type: Number,

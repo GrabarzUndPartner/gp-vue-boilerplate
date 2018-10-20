@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { subscribe } from '../../services/animationFrame';
+import { subscribeThrottle } from '../../services/animationFrame';
 import Filter from '../../classes/Filter';
 
 const filter = Symbol('filter');
@@ -29,6 +29,10 @@ export default {
       default() {
         return ['image/default'];
       }
+    },
+    frameRate: {
+      type: Number,
+      default: null
     },
     height: {
       type: Number,
@@ -105,7 +109,7 @@ export default {
 
     subscribe() {
       this.unsubscribe();
-      this.subscription = subscribe(renderUpdate.bind(this), measureUpdate.bind(this));
+      this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.frameRate);
     },
 
     unsubscribe() {

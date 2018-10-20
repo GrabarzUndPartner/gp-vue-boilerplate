@@ -3,24 +3,29 @@
     <canvas-base
       :source="source"
       :filter="['image/default']"
+      :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
+
     <canvas-base
       :source="source"
       :filter="['image/greyscale']"
+      :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
     <canvas-base
       :source="source"
       :filter="['image/labcie']"
+      :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
     <canvas-base
       :source="source"
       :filter="['image/labcie', 'image/contour']"
+      :frame-rate="frameRate"
       :width="width"
       :height="height"
     />
@@ -39,6 +44,7 @@
           :source="source"
           :options="props.options"
           :filter="['image/lab']"
+          :frame-rate="frameRate"
           :width="width"
           :height="height"/>
       </template>
@@ -73,7 +79,8 @@ export default {
   data() {
     return {
       source: null,
-      height: 0
+      height: 0,
+      frameRate: null
     };
   },
 
@@ -82,6 +89,7 @@ export default {
     this.source = null;
     this.context = null;
     this.height = null;
+    this.frameRate = null;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
@@ -92,6 +100,7 @@ export default {
       this.video = e.target;
       this.source = document.createElement('canvas');
       this.context = this.source.getContext('2d');
+      this.frameRate = this.video.constraints.frameRate;
       this.subscription = subscribeThrottle(renderUpdate.bind(this), measureUpdate.bind(this), this.video.constraints.frameRate);
     }
   }
