@@ -15,7 +15,7 @@
       :width="width"
       :height="height"
     />
-    <canvas-base
+    <!--canvas-base
       :source="source"
       :filter="['image/labcie']"
       :frame-rate="frameRate"
@@ -28,7 +28,7 @@
       :frame-rate="frameRate"
       :width="width"
       :height="height"
-    />
+    /-->
     <canvas-channels
       :items="[
         { value: [0,1,2], label: 'LAB' },
@@ -45,6 +45,42 @@
           :options="props.options"
           :filter="['image/lab']"
           :frame-rate="frameRate"
+          :width="width"
+          :height="height"/>
+      </template>
+    </canvas-channels>
+
+    <canvas-channels
+      :items="[
+        { value: 1, label: 'A', selected: true },
+        { value: 2, label: 'B' }
+      ]"
+      name="image/lab-false-color">
+      <template
+        slot="canvas"
+        slot-scope="props">
+        <canvas-base
+          :source="source"
+          :options="props.options"
+          :filter="['image/lab-false-color']"
+          :width="width"
+          :height="height"/>
+      </template>
+    </canvas-channels>
+
+    <canvas-channels
+      :items="[
+        { value: 1, label: 'I2', selected: true },
+        { value: 2, label: 'I3' }
+      ]"
+      name="image/ohta-false-color">
+      <template
+        slot="canvas"
+        slot-scope="props">
+        <canvas-base
+          :source="source"
+          :options="props.options"
+          :filter="['image/ohta-false-color']"
           :width="width"
           :height="height"/>
       </template>
