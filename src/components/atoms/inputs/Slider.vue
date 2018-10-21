@@ -18,6 +18,10 @@ export default {
       type: String,
       default: null
     },
+    default: {
+      type: Number,
+      default: 35
+    },
     min: {
       type: Number,
       default: 0
@@ -34,7 +38,7 @@ export default {
 
   data() {
     return {
-      value: 35
+      value: this.default
     };
   },
 
