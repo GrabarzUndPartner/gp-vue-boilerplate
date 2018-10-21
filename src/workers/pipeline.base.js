@@ -14,7 +14,7 @@ fromEvent(self, 'message').subscribe(e => {
       break;
     }
     case 'options': {
-      self.options = e.data.body;
+      self.options = Object.assign(self.options, e.data.body);
       break;
     }
     case 'receiver': {

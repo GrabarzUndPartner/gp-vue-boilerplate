@@ -2,6 +2,7 @@
   <div
     :style="{width: width + 'px'}"
     class="group">
+    <label>{{ filter }}</label>
     <canvas-base
       :source="source"
       :filter="filter"

@@ -32,6 +32,81 @@
       :height="height"
     /> -->
 
+    <option-canvas
+      :source="source"
+      :filter="['image/clamp-hsl-brightness']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height"
+    >
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: 0, label: 'H' },
+            { value: 1, label: 'S' },
+            { value: 2, label: 'L', selected: true }
+          ]"
+          prop="channel"
+          name="image/clamp-hsl-brightness"/>
+        <slider
+          :value="50"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl-brightness"
+          prop="threshold"/>
+      </template>
+    </option-canvas>
+
+    <option-canvas
+      :source="source"
+      :filter="['image/clamp-hsv-brightness']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height"
+    >
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: 0, label: 'H' },
+            { value: 1, label: 'S' },
+            { value: 2, label: 'V', selected: true }
+          ]"
+          prop="channel"
+          name="image/clamp-hsv-brightness"/>
+        <slider
+          :value="50"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv-brightness"
+          prop="threshold"/>
+      </template>
+    </option-canvas>
+
+    <option-canvas
+      :source="source"
+      :filter="['image/clamp-ohta-brightness']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height"
+    >
+      <template slot="options">
+        <drop-down
+          :items="[
+            { value: 0, label: 'I1', selected: true },
+            { value: 1, label: 'I2' },
+            { value: 2, label: 'I3' }
+          ]"
+          prop="channel"
+          name="image/clamp-ohta-brightness"/>
+        <slider
+          :value="200"
+          :min="0"
+          :max="255"
+          name="image/clamp-ohta-brightness"
+          prop="threshold"/>
+      </template>
+    </option-canvas>
+
     <!-- <option-canvas
       :source="source"
       :filter="['image/lab']"
