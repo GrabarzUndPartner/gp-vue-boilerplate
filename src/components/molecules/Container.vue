@@ -49,7 +49,7 @@
           prop="channel"
           name="image/clamp-hsl-brightness"/>
         <slider
-          :value="50"
+          :default="50"
           :min="0"
           :max="100"
           name="image/clamp-hsl-brightness"
@@ -74,7 +74,7 @@
           prop="channel"
           name="image/clamp-hsv-brightness"/>
         <slider
-          :value="50"
+          :default="50"
           :min="0"
           :max="100"
           name="image/clamp-hsv-brightness"
@@ -99,7 +99,7 @@
           prop="channel"
           name="image/clamp-ohta-brightness"/>
         <slider
-          :value="200"
+          :default="200"
           :min="0"
           :max="255"
           name="image/clamp-ohta-brightness"
@@ -165,7 +165,7 @@
       :height="height">
       <template slot="options">
         <slider
-          :value="35"
+          :default="35"
           :min="0"
           :max="70"
           name="image/movement"
