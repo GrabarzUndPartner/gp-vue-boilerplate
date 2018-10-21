@@ -3,16 +3,22 @@ import { rgb2ohta } from '../../utils/rgb-ohta';
 
 let ohta;
 
-self.options = { channel: 0, threshold: 200 };
-self.start = function() {};
+self.options = { i1: 0, i2: 0, i3: 0 };
+self.start = function() {
+  // console.log(self.options);
+};
 
 self.tick = function(px) {
   ohta = rgb2ohta(px);
 
-  if (ohta[self.options.channel] < self.options.threshold) {
-    px[0] = 0;
-    px[1] = 0;
-    px[2] = 0;
+  if (ohta[0] < (self.options.i1 / 100) * 255) {
+    self.clearPixel(px);
+  }
+  if (ohta[1] < (self.options.i2 / 100) * 255 - 128) {
+    self.clearPixel(px);
+  }
+  if (ohta[2] < (self.options.i3 / 100) * 255 - 128) {
+    self.clearPixel(px);
   }
 };
 

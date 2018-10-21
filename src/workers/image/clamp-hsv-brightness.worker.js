@@ -3,16 +3,20 @@ import { rgb2hsv } from '../../utils/rgb-hsv';
 
 let hsv;
 
-self.options = { channel: 2, threshold: 50 };
+self.options = { h: [0, 100], s: 0, v: 0 };
 self.start = function() {};
 
 self.tick = function(px) {
   hsv = rgb2hsv(px);
 
-  if (hsv[self.options.channel] < self.options.threshold / 100) {
-    px[0] = 0;
-    px[1] = 0;
-    px[2] = 0;
+  if (hsv[0] < self.options.h[0] / 100 || hsv[0] > self.options.h[1] / 100) {
+    self.clearPixel(px);
+  }
+  if (hsv[1] < self.options.s / 100) {
+    self.clearPixel(px);
+  }
+  if (hsv[2] < self.options.v / 100) {
+    self.clearPixel(px);
   }
 };
 

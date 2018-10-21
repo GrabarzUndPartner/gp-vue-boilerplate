@@ -30,6 +30,12 @@ self.bytes2Pixel = function(current) {
   ];
 };
 
+self.clearPixel = function(px) {
+  px[0] = 0;
+  px[1] = 0;
+  px[2] = 0;
+};
+
 self.start = function() {};
 self.tick = function() {};
 self.end = function() {};
