@@ -98,20 +98,24 @@
       :height="height"
     >
       <template slot="options">
-        <drop-down
-          :items="[
-            { value: 0, label: 'I1', selected: true },
-            { value: 1, label: 'I2' },
-            { value: 2, label: 'I3' }
-          ]"
-          prop="channel"
-          name="image/clamp-ohta-brightness"/>
         <slider
-          :default="200"
+          :default="0"
           :min="0"
-          :max="255"
+          :max="100"
           name="image/clamp-ohta-brightness"
-          prop="threshold"/>
+          prop="i1"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-ohta-brightness"
+          prop="i2"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-ohta-brightness"
+          prop="i3"/>
       </template>
     </option-canvas>
 
