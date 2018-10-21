@@ -134,4 +134,7 @@ function measureUpdate() {
 </script>
 
 <style lang="postcss">
+canvas {
+  background: violet;
+}
 </style>

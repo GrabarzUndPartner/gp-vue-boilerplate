@@ -1,23 +1,30 @@
 import '../image.base';
+import SmoothBuffer from '../../classes/SmoothBuffer';
 
-let previous = null;
-self.options = { threshold: 35 };
+let buffer = null;
+self.options = { threshold: [35, 150] };
 
 self.start = function(imageData) {
-  if (!previous) {
-    previous = new Uint32Array(imageData.data.length);
+  if (!buffer) {
+    buffer = new SmoothBuffer(3, imageData.data.length);
   }
 };
 
 self.tick = function(px, index) {
-  let oldPx = self.bytes2Pixel(previous[index]);
-  previous[index] = self.pixel2Bytes(px);
+  let oldPx = buffer.get(index);
+  buffer.set(px, index);
 
-  if (Math.abs(oldPx[0] - px[0]) < self.options.threshold) {
-    px[0] = 0;
-    px[1] = 0;
-    px[2] = 0;
+  const oldL = oldPx[0] * 0.3 + oldPx[1] * 0.6 + oldPx[2] * 0.1;
+  const newL = px[0] * 0.3 + px[1] * 0.6 + px[2] * 0.1;
+  const movement = Math.abs(oldL - newL);
+  if (
+    movement < self.options.threshold[0] ||
+    movement > self.options.threshold[1]
+  ) {
+    self.clearPixel(px);
   }
 };
 
-self.end = function() {};
+self.end = function() {
+  buffer.increment();
+};

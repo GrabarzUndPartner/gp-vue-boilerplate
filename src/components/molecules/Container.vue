@@ -24,17 +24,19 @@
       :height="height"
     />
 
+     -->
+
     <option-canvas
       :source="source"
       :filter="['image/labcie', 'image/contour']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
-    /> -->
+    />
 
     <option-canvas
       :source="source"
-      :filter="['image/clamp-hsl-brightness']"
+      :filter="['image/clamp-hsl']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
@@ -44,26 +46,26 @@
           :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-hsl-brightness"
+          name="image/clamp-hsl"
           prop="h"/>
-        <slider
-          :default="0"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-hsl-brightness"
+          name="image/clamp-hsl"
           prop="s"/>
-        <slider
-          :default="0"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-hsl-brightness"
+          name="image/clamp-hsl"
           prop="l"/>
       </template>
     </option-canvas>
 
     <option-canvas
       :source="source"
-      :filter="['image/clamp-hsv-brightness']"
+      :filter="['image/clamp-ohta']"
       :frame-rate="frameRate"
       :width="width"
       :height="height"
@@ -73,70 +75,82 @@
           :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-hsv-brightness"
-          prop="h"/>
-        <slider
-          :default="0"
-          :min="0"
-          :max="100"
-          name="image/clamp-hsv-brightness"
-          prop="s"/>
-        <slider
-          :default="0"
-          :min="0"
-          :max="100"
-          name="image/clamp-hsv-brightness"
-          prop="v"/>
-      </template>
-    </option-canvas>
-
-    <option-canvas
-      :source="source"
-      :filter="['image/clamp-ohta-brightness']"
-      :frame-rate="frameRate"
-      :width="width"
-      :height="height"
-    >
-      <template slot="options">
-        <slider
-          :default="0"
-          :min="0"
-          :max="100"
-          name="image/clamp-ohta-brightness"
+          name="image/clamp-ohta"
           prop="i1"/>
-        <slider
-          :default="0"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-ohta-brightness"
+          name="image/clamp-ohta"
           prop="i2"/>
-        <slider
-          :default="0"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
-          name="image/clamp-ohta-brightness"
+          name="image/clamp-ohta"
           prop="i3"/>
       </template>
     </option-canvas>
 
     <!-- <option-canvas
       :source="source"
-      :filter="['image/lab']"
+      :filter="['image/clamp-hsv']"
+      :frame-rate="frameRate"
+      :width="width"
+      :height="height"
+    >
+      <template slot="options">
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv"
+          prop="h"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv"
+          prop="s"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv"
+          prop="v"/>
+      </template>
+    </option-canvas>
+
+
+    <option-canvas
+      :source="source"
+      :filter="['image/clamp-lab']"
       :frame-rate="frameRate"
       :width="width"
       :height="height">
       <template slot="options">
-        <drop-down
-          :items="[
-            { value: [0,1,2], label: 'LAB' },
-            { value: [0,0,0], label: 'L' },
-            { value: [1,1,1], label: 'A' },
-            { value: [2,2,2], label: 'B', selected: true }
-          ]"
-          prop="channels"
-          name="image/lab"/></template>
-    </option-canvas>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-lab"
+          prop="l"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-lab"
+          prop="a"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-lab"
+          prop="b"/>
+      </template>
+    </option-canvas> -->
 
+    <!--
     <option-canvas
       :source="source"
       :filter="['image/lab-false-color']"
@@ -171,24 +185,35 @@
 
     <option-canvas
       :source="source"
-      :filter="['image/movement']"
+      :filter="['image/clamp-hsl', 'image/movement', 'image/contour']"
       :frame-rate="frameRate"
       :width="width"
       :height="height">
       <template slot="options">
-        <slider
-          :default="35"
+        <range-slider
+          :default="[35, 150]"
           :min="0"
-          :max="70"
+          :max="150"
           name="image/movement"
           prop="threshold"/>
-        <drop-down
-          :items="[
-            { value: 0, label: '0' },
-            { value: 35, label: '35', selected: true }
-          ]"
-          name="image/movement"
-          prop="threshold"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl"
+          prop="h"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl"
+          prop="s"/>
+        <range-slider
+          :default="[0, 100]"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl"
+          prop="l"/>
       </template>
     </option-canvas>
 
