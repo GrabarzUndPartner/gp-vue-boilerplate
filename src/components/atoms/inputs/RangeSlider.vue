@@ -4,6 +4,7 @@
     <el-slider
       v-model="value"
       :max="max"
+      range
       @change="changeFilter"/>
   </div>
 </template>
@@ -18,8 +19,10 @@ export default {
       default: null
     },
     default: {
-      type: Number,
-      default: 35
+      type: Array,
+      default() {
+        return [25, 75];
+      }
     },
     min: {
       type: Number,
@@ -27,7 +30,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 10
+      default: 100
     },
     prop: {
       type: String,
@@ -47,6 +50,7 @@ export default {
 
   methods: {
     changeFilter(e) {
+      console.log(e);
       this.$parent.$emit('change', { [this.name]: { [this.prop]: e } });
     }
   }

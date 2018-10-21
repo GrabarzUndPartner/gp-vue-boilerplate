@@ -40,20 +40,24 @@
       :height="height"
     >
       <template slot="options">
-        <drop-down
-          :items="[
-            { value: 0, label: 'H' },
-            { value: 1, label: 'S' },
-            { value: 2, label: 'L', selected: true }
-          ]"
-          prop="channel"
-          name="image/clamp-hsl-brightness"/>
-        <slider
-          :default="50"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
           name="image/clamp-hsl-brightness"
-          prop="threshold"/>
+          prop="h"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl-brightness"
+          prop="s"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsl-brightness"
+          prop="l"/>
       </template>
     </option-canvas>
 
@@ -65,20 +69,24 @@
       :height="height"
     >
       <template slot="options">
-        <drop-down
-          :items="[
-            { value: 0, label: 'H' },
-            { value: 1, label: 'S' },
-            { value: 2, label: 'V', selected: true }
-          ]"
-          prop="channel"
-          name="image/clamp-hsv-brightness"/>
-        <slider
-          :default="50"
+        <range-slider
+          :default="[0, 100]"
           :min="0"
           :max="100"
           name="image/clamp-hsv-brightness"
-          prop="threshold"/>
+          prop="h"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv-brightness"
+          prop="s"/>
+        <slider
+          :default="0"
+          :min="0"
+          :max="100"
+          name="image/clamp-hsv-brightness"
+          prop="v"/>
       </template>
     </option-canvas>
 
@@ -191,6 +199,7 @@ import Camera from '../atoms/Camera';
 import OptionCanvas from './OptionCanvas';
 import DropDown from '../atoms/inputs/DropDown';
 import Slider from '../atoms/inputs/Slider';
+import RangeSlider from '../atoms/inputs/RangeSlider';
 import { subscribeThrottle } from '../../services/animationFrame';
 
 export default {
@@ -198,7 +207,8 @@ export default {
     Camera,
     OptionCanvas,
     DropDown,
-    Slider
+    Slider,
+    RangeSlider
   },
 
   props: {
