@@ -1,3 +1,16 @@
+# [1.12.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.11.0...v1.12.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **repeat:** one more time ([db5cbad](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/db5cbad))
+* **version:** updated package versions ([d85a67d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d85a67d))
+
+
+### Features
+
+* **virtual:** images and languages ([0a4ff6f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0a4ff6f))
+
 # [1.11.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.2...v1.11.0) (2018-10-12)
 
 
