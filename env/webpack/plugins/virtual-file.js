@@ -1,41 +1,59 @@
-const fs = require('fs');
-const VirtualImage = require('webpack-virtual-modules');
+const VirtualImage = require('./virtual-file/VirtualImage');
+const VirtualLang = require('./virtual-file/VirtualLang');
+let locales = [];
 
-module.exports = [
-  {
-    env: {
-      development: true,
-      production: true,
-      build: true,
-      static: true
+module.exports = function(options) {
+  locales = options.modules.reduce((result, item) => {
+    if (item[0] === 'nuxt-i18n') {
+      return result.concat(item[1].locales);
+    }
+    return result;
+  }, []);
+
+  return [
+    {
+      env: {
+        development: true,
+        production: true,
+        build: true,
+        static: true
+      },
+      plugin: new VirtualImage(/(?!\.png24)\.(png|jpe?g|gif)$/)
     },
-    plugin: new VirtualImage(
-      // {
-      //   'src/assets/image1.png.webp': fs.readFileSync(
-      //     'src/assets/image1.png'
-      //   )
-      // }
-      /\.(webp)$/,
-      function(resource, regex) {
-        return {
-          path: 'src/' + resource.request,
-          file: fs.readFileSync('src/' + resource.request.replace(regex, ''))
-        };
-      }
-    )
-  },
-  {
-    env: {
-      development: true,
-      production: true,
-      build: true,
-      static: true
+    {
+      env: {
+        development: true,
+        production: true,
+        build: true,
+        static: true
+      },
+      plugin: new VirtualImage(/\.(webp)$/, {
+        redirectTo: function(url, regex) {
+          return url.replace(regex, '');
+        }
+      })
     },
-    plugin: new VirtualImage(/\.(png24\.png)$/, function(resource, regex) {
-      return {
-        path: 'src/' + resource.request,
-        file: fs.readFileSync('src/' + resource.request.replace(regex, '.png'))
-      };
-    })
-  }
-];
+    {
+      env: {
+        development: true,
+        production: true,
+        build: true,
+        static: true
+      },
+      plugin: new VirtualImage(/\.(png24\.png)$/, {
+        redirectTo: function(url, regex) {
+          return url.replace(regex, '.png');
+        }
+      })
+    },
+    {
+      env: {
+        development: true,
+        production: true,
+        build: true,
+        static: true
+      },
+      plugin: new VirtualLang(/^@.+\.(lang)/, locales)
+    }
+  ];
+};

@@ -1,7 +1,7 @@
-process.env.DEBUG = 'nuxt:*';
+// process.env.DEBUG = '*';
+const path = require('path');
 const webpackPlugins = require('./webpack/plugins');
 const webpackModules = require('./webpack/modules');
-// const i18nExtensions = require('vue-i18n-extensions');
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
@@ -10,23 +10,57 @@ module.exports = {
   build: {
     analyze: {
       analyzerMode: 'static',
-      reportFilename: '../reports/webpack-bundle-analyzer.html',
+      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
       openAnalyzer: false
     },
 
-    // plugins: [],
-
-    // vendor: ['vue-i18n'],
-
-    extend(config, compiler) {
-      webpackPlugins(config.plugins, this.options.srcDir, compiler);
+    extend(config) {
+      webpackPlugins(config.plugins, this.options, config);
       webpackModules(config.module);
+      return config;
     }
   },
 
-  plugins: ['~/plugins/i18n.js'],
+  vue: {
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src',
+      i18n: 'src'
+    }
+  },
+
+  router: {
+    base: '/'
+  },
 
   modules: [
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            iso: 'en-US'
+          },
+          {
+            code: 'de',
+            iso: 'de-DE'
+          }
+        ],
+        defaultLocale: 'de',
+        strategy: 'prefix_except_default',
+        vueI18n: {
+          fallbackLocale: 'de',
+          messages: {
+            en: require(path.resolve('src/locales/global/en.json')),
+            de: require(path.resolve('src/locales/global/de.json'))
+          }
+        },
+        vueI18nLoader: false
+      }
+    ],
     [
       '@nuxtjs/pwa',
       {
@@ -61,29 +95,8 @@ module.exports = {
     ]
   ],
 
-  router: {
-    middleware: 'i18n'
-  },
-
-  generate: {
-    routes: ['/en', '/en/about', '/de', '/de/about'],
-    minify: {
-      removeOptionalTags: false
-    }
-  },
-
   head: {
     meta: [],
     link: []
   }
-
-  // render: {
-  //   // confiture `render`
-  //   // see Nuxt.js docs: https://nuxtjs.org/api/configuration-render#bundleRenderer
-  //   bundleRenderer: {
-  //     directives: {
-  //       t: i18nExtensions.directive
-  //     }
-  //   }
-  // }
 };

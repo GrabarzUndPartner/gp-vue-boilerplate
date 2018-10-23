@@ -2,9 +2,10 @@ module.exports = function(module) {
   let list = []
     .concat(
       ...[
-        require('./modules/url-loader')(module.rules),
-        require('./modules/svg-sprite-loader')(module.rules)
-        // require('./modules/vue-loader')(module.rules)
+        require('./modules/i18n-loader')(module.rules),
+        require('./modules/postcss-fix-loader')(module.rules),
+        require('./modules/svg-sprite-loader')(module.rules),
+        require('./modules/url-loader')(module.rules)
       ]
     )
     .reduce(function(result, item) {
