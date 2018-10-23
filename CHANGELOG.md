@@ -1,3 +1,17 @@
+# [1.11.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.2...v1.11.0) (2018-10-12)
+
+
+### Bug Fixes
+
+* **pkg-versions:** updated ([a6a2bc1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a6a2bc1))
+* **saucelabs:** test ([280b9ea](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/280b9ea))
+* **saucelabs:** test ([6cbe63c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6cbe63c))
+
+
+### Features
+
+* **nuxt-update:** updated to version 2 ([a36fd0c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a36fd0c))
+
 ## [1.10.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.10.1...v1.10.2) (2018-09-03)
 
 
