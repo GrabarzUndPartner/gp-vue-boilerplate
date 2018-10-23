@@ -25,6 +25,12 @@
 import Headline from '~/components/atoms/Headline';
 
 export default {
+  nuxtI18n: {
+    paths: {
+      en: '/sub',
+      de: '/unter'
+    }
+  },
   components: {
     headline: Headline
   },

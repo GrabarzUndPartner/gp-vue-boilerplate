@@ -3,9 +3,7 @@
     <li
       v-for="(item) in list"
       :key="item.title">
-      <nuxt-link
-        :to="$i18n.path(item.url)"
-        exact>
+      <nuxt-link :to="localePath(item.url)">
         {{ item.title }}
       </nuxt-link>
     </li>
@@ -22,7 +20,7 @@ export default {
         return [];
       }
     }
-  }
+  },
 };
 </script>
 

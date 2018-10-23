@@ -1,28 +1,40 @@
 {
   "header": {
-    "navigation": [{
-      "title": "Home",
-      "url": ""
-    }, {
-      "title": "About",
-      "url": "about"
-    }, {
-      "title": "Projects",
-      "url": "sub/projects"
-    }]
+    "navigation": [
+      {
+        "title": "Home",
+        "url": "index"
+      },
+      {
+        "title": "About",
+        "url": "about"
+      },
+      {
+        "title": "Sub",
+        "url": "sub"
+      },
+      {
+        "title": "Projects",
+        "url": "sub-projects"
+      }
+    ]
   },
 
   "footer": {
-    "navigation": [{
-      "title": "Contact",
-      "url": "contact"
-    }, {
-      "title": "Terms of use",
-      "url": "terms"
-    }, {
-      "title": "Legals",
-      "url": "legals"
-    }]
+    "navigation": [
+      {
+        "title": "Contact",
+        "url": "contact"
+      },
+      {
+        "title": "Terms of use",
+        "url": "terms"
+      },
+      {
+        "title": "Legals",
+        "url": "legals"
+      }
+    ]
   },
 
   "configxyz": "I'm a Headline"

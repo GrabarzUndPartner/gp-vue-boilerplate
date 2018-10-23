@@ -1,11 +1,11 @@
-<i18n>
+<i18n src="@/locales/about.lang">
 {
   "en": {
     "test": "message 123456789",
     "hello": "hello world!"
   },
   "de": {
-    "test": "nachricht 12",
+    "test": "nachricht 122",
     "hello": "hallo welt"
   }
 }
@@ -15,9 +15,7 @@
   <div>
     <headline :content="$t('test')"/>
     hello22 {{ $t('configxyz') }}
-    {{ $t('test') }}
-
-    hello
+    {{ $t('hello') }}
     <img
       src="~/assets/image.svg"
       alt="test">
@@ -45,6 +43,12 @@
 import Headline from '~/components/atoms/Headline';
 
 export default {
+  nuxtI18n: {
+    paths: {
+      en: '/about',
+      de: '/ueber'
+    }
+  },
   components: {
     headline: Headline
   },

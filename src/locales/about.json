@@ -4,7 +4,7 @@
     "hello": "hello world!"
   },
   "de": {
-    "test": "headline1234",
-    "hello": "hallo welt"
+    "test": "headlineABC123456",
+    "hello": "hallo welt Content File (JSON)"
   }
 }
