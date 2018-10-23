@@ -8,11 +8,12 @@ module.exports = {
   srcDir: 'src/',
   css: [],
   build: {
-    analyze: {
-      analyzerMode: 'static',
-      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-      openAnalyzer: false
-    },
+    analyze: false,
+    // {
+    //   analyzerMode: 'static',
+    //   reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
+    //   openAnalyzer: false
+    // },
 
     extend(config) {
       webpackPlugins(config.plugins, this.options, config);

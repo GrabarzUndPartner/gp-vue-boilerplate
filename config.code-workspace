@@ -33,7 +33,7 @@
       "**/logs": true,
       "**/*.log": true,
       "**/.DS_Store": true,
-      ".*": false
+      ".*": true
     },
     "files.associations": {
       ".branchlintrc": "json",
