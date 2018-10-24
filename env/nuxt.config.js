@@ -9,26 +9,16 @@ module.exports = {
   css: [],
   build: {
     analyze: false,
-    // {
+    // analyze: {
     //   analyzerMode: 'static',
     //   reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
     //   openAnalyzer: false
     // },
 
     extend(config) {
-      webpackPlugins(config.plugins, this.options, config);
+      webpackPlugins(config.plugins);
       webpackModules(config.module);
       return config;
-    }
-  },
-
-  vue: {
-    transformAssetUrls: {
-      video: 'src',
-      source: 'src',
-      object: 'src',
-      embed: 'src',
-      i18n: 'src'
     }
   },
 
