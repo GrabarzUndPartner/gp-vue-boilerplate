@@ -20,10 +20,7 @@
     "wdio": "npx wdio ./test/wdio/wdio.conf.js",
     "wdio-local": "npx wdio ./test/wdio/wdio.conf.local.js",
     "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once",
-    "prepush": "npx branch-name-lint .branchlintrc",
-    "precommit": "npm run lint",
-    "commitmsg": "commitlint -E GIT_PARAMS"
+    "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
@@ -43,7 +40,7 @@
     "eslint-plugin-vue": "^4.7.1",
     "geckodriver": "^1.12.2",
     "httpolyglot": "^0.1.2",
-    "husky": "^0.14.3",
+    "husky": "^1.1.2",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webp": "^4.1.0",
