@@ -1,8 +1,8 @@
-module.exports = function(plugins, options) {
+module.exports = function(plugins) {
   let list = []
     .concat(
       ...[
-        require('./plugins/virtual-file')(options),
+        require('./plugins/virtual-file'),
         require('./plugins/imagemin'),
         require('./plugins/svg-sprite'),
         require('./plugins/monitor')

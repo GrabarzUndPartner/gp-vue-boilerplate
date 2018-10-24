@@ -37,6 +37,7 @@
     },
     "files.associations": {
       ".branchlintrc": "json",
+      ".huskyrc": "json",
       ".postcssrc": "json",
       ".releaserc": "json",
       ".stylelintrc": "json",

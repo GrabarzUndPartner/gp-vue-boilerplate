@@ -4,17 +4,8 @@ const VirtualModule = require('webpack-virtual-modules');
 var chokidar = require('chokidar');
 
 module.exports = class VirtualLang extends VirtualModule {
-  constructor(/*regex, locales*/) {
+  constructor() {
     super();
-    // super(regex, resource => {
-    //   const filePath = getFilePath(resource.request);
-    //   let langFilePaths = getLanguageFilePaths(filePath, locales);
-
-    //   return {
-    //     path: filePath,
-    //     file: generateContent(langFilePaths)
-    //   };
-    // });
   }
 
   apply(compiler) {
@@ -28,16 +19,6 @@ module.exports = class VirtualLang extends VirtualModule {
       .on('all', (event, filePath) => mergeContent(compiler, this, filePath));
   }
 };
-
-// function generateContent(filePaths) {
-//   return JSON.stringify(
-//     Object.assign(
-//       ...filePaths.map(file => {
-//         return { [file.lang]: JSON.parse(getFile(file.path)) };
-//       })
-//     )
-//   );
-// }
 
 function getFile(filePath) {
   // try {
@@ -58,7 +39,6 @@ function readContent(compiler, filePath) {
 }
 
 function writeContent(virtualContent, filePath, content) {
-  // debug('HUCH', getLangFilePath(filePath), content);
   virtualContent.writeModule(
     getLangFilePath(filePath),
     JSON.stringify(content)
@@ -74,12 +54,6 @@ function mergeContent(compiler, virtualContent, filePath) {
   writeContent(virtualContent, filePath, content);
 }
 
-// function getFilePath(request) {
-//   return request.replace(/(@|~)(.+)\?.+/, (match, p1, p2) => {
-//     return 'src' + p2;
-//   });
-// }
-
 function getLangFilePath(filePath) {
   return filePath.replace(/(src\/locales\/)(\w+\/)+(\w+)(\.json)$/, function(
     match,
@@ -94,14 +68,3 @@ function getLangFilePath(filePath) {
 function getLangByFilePath(filePath) {
   return /src\/locales\/(\w+)/.exec(filePath)[1];
 }
-
-// function getLanguageFilePaths(filePath, locales) {
-//   return locales.map(local => {
-//     return {
-//       lang: local.code,
-//       path: filePath.replace(/(.+locales\/)(.+\.)(lang)/, (match, p1, p2) => {
-//         return path.resolve(`${p1}${local.code}/${p2}json`);
-//       })
-//     };
-//   });
-// }
