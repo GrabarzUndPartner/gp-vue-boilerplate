@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.1...v1.12.2) (2018-10-24)
+
+
+### Bug Fixes
+
+* **cleanup:** cleanup code ([f2f0b21](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f2f0b21))
+
 ## [1.12.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.0...v1.12.1) (2018-10-24)
 
 
