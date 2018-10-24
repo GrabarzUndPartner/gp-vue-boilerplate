@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.0...v1.12.1) (2018-10-24)
+
+
+### Bug Fixes
+
+* **husky:** updated version ([9b3e9a7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9b3e9a7))
+
 # [1.12.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.11.0...v1.12.0) (2018-10-23)
 
 
