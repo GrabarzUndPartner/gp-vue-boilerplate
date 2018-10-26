@@ -42,3 +42,15 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss">
+@media (--xs) {
+  div {
+    background-color: violet;
+
+    & h1 {
+      font-size: 60px;
+    }
+  }
+}
+</style>

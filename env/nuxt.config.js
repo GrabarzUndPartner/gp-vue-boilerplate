@@ -42,11 +42,12 @@ module.exports = {
         ],
         defaultLocale: 'de',
         strategy: 'prefix_except_default',
+        seo: true,
         vueI18n: {
           fallbackLocale: 'de',
           messages: {
-            en: require(path.resolve('src/locales/global/en.json')),
-            de: require(path.resolve('src/locales/global/de.json'))
+            en: require(path.resolve('src/globals/locales/en.json')),
+            de: require(path.resolve('src/globals/locales/de.json'))
           }
         },
         vueI18nLoader: false
