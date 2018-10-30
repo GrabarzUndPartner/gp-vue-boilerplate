@@ -2,7 +2,6 @@ module.exports = function(module) {
   let list = []
     .concat(
       ...[
-        require('./modules/i18n-loader')(module.rules),
         require('./modules/postcss-fix-loader')(module.rules),
         require('./modules/svg-sprite-loader')(module.rules),
         require('./modules/url-loader')(module.rules)

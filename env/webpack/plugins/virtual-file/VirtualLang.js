@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const VirtualModule = require('webpack-virtual-modules');
 var chokidar = require('chokidar');
-
 module.exports = class VirtualLang extends VirtualModule {
   constructor() {
     super();
@@ -30,7 +29,10 @@ function getFile(filePath) {
 
 function readContent(compiler, filePath) {
   let target = getLangFilePath(filePath);
-  if (compiler.inputFileSystem._virtualFiles) {
+  if (
+    compiler.inputFileSystem._virtualFiles &&
+    compiler.inputFileSystem._virtualFiles[path.resolve(target)]
+  ) {
     return JSON.parse(
       compiler.inputFileSystem._virtualFiles[path.resolve(target)].contents
     );

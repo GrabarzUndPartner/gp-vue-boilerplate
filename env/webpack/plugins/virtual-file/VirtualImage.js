@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const VirtualModule = require('webpack-virtual-modules');
+// var debug = require('debug')('webpack-virtual-modules');
 
 module.exports = class VirtualLang extends VirtualModule {
   constructor(regex, options = {}) {
@@ -15,6 +16,7 @@ module.exports = class VirtualLang extends VirtualModule {
     let self = this;
     var beforeResolversHook = function(resource) {
       if (self.regex && self.regex.test(resource.request)) {
+        // debug(self.regex, resource.request);
         const { path, file } = getContent(
           resource,
           self.regex,
@@ -31,14 +33,17 @@ module.exports = class VirtualLang extends VirtualModule {
 };
 
 function getContent(resource, regex, redirectTo = redirectDefault) {
+  let url = resource.request.replace(/^@/, '.');
+
   return {
-    path: 'src/' + resource.request,
-    file: getFile('src/' + redirectTo(resource.request, regex))
+    path: 'src/' + url,
+    file: getFile('src/' + redirectTo(url, regex))
   };
 }
 
 function getFile(filePath) {
   try {
+    // debug(path.resolve(filePath));
     return fs.readFileSync(path.resolve(filePath));
   } catch (e) {
     return fs.readFileSync(path.resolve('src/assets/error.jpg'));

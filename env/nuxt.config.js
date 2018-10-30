@@ -1,4 +1,5 @@
-// process.env.DEBUG = '*';
+// process.env.DEBUG = 'webpack-virtual-modules';
+
 const path = require('path');
 const webpackPlugins = require('./webpack/plugins');
 const webpackModules = require('./webpack/modules');
@@ -10,9 +11,9 @@ module.exports = {
   build: {
     analyze: false,
     // analyze: {
-    //   analyzerMode: 'static',
+    //   analyzerMode: 'server',
     //   reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-    //   openAnalyzer: false
+    //   openAnalyzer: true
     // },
 
     extend(config) {
@@ -25,6 +26,8 @@ module.exports = {
   router: {
     base: '/'
   },
+
+  plugins: [{ src: '@/plugins/breakpoints' }],
 
   modules: [
     [
@@ -50,7 +53,7 @@ module.exports = {
             de: require(path.resolve('src/globals/locales/de.json'))
           }
         },
-        vueI18nLoader: false
+        vueI18nLoader: true
       }
     ],
     [
@@ -89,6 +92,17 @@ module.exports = {
 
   head: {
     meta: [],
-    link: []
+    link: [],
+    script: [
+      {
+        src:
+          'https://cdn.polyfill.io/v2/polyfill.min.js?features=HTMLPictureElement'
+      },
+      {
+        innerHTML:
+          'document.createElement( "picture" );document.createElement( "source" );'
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   }
 };

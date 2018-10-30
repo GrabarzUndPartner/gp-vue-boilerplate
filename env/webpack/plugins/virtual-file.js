@@ -1,4 +1,5 @@
 const VirtualImage = require('./virtual-file/VirtualImage');
+// const VirtualImg = require('./virtual-file/VirtualImg');
 const VirtualLang = require('./virtual-file/VirtualLang');
 
 module.exports = [

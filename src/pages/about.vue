@@ -29,12 +29,11 @@
       src="~/assets/image0.png24.png"
       alt="test">
     <img
-      src="~/assets/image1.png.webp"
+      src="@/assets/image1.png.webp"
       alt="test">
     <img
       src="~/assets/image0.jpg"
       alt="test">
-    <br>
 
   </div>
 </template>
