@@ -42,7 +42,7 @@
     "httpolyglot": "^0.1.2",
     "husky": "^1.1.2",
     "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webp": "^4.1.0",
     "imagemin-webpack-plugin": "^2.3.0",
     "mocha": "^5.2.0",
