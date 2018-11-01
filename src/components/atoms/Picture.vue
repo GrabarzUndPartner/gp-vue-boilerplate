@@ -15,6 +15,7 @@
 <script>
 import objectFitImages from 'object-fit-images';
 import mime from 'mime/lite';
+import breakpoint from '../../utils/breakpoint';
 
 export default {
   props: {
@@ -43,7 +44,7 @@ export default {
     sources: {
       handler(values) {
         const list = convertObjectToArray(values);
-        const sorted = sortBy(list, this.breakpoints, 'type');
+        const sorted = sortBy(list, breakpoint, 'type');
         this.fallback = sorted[0];
         this.sorted = sorted.reverse();
         objectFitImages(this.$el);

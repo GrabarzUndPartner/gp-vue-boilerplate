@@ -80,7 +80,8 @@
     "mime": "^2.3.1",
     "nuxt": "^2.2.0",
     "nuxt-i18n": "^5.4.4",
-    "object-fit-images": "github:StephanGerbeth/object-fit-images"
+    "object-fit-images": "github:StephanGerbeth/object-fit-images",
+    "rxjs": "^6.3.3"
   },
   "repository": {
     "type": "git",

@@ -25,8 +25,21 @@
     <img
       src="~/assets/image0.png"
       alt="test">
+
+    <intersect
+      @enter="enter"
+      @leave="leave"
+      @passing="passing">
+      <img
+        src="~/assets/image2.png"
+        alt="test">
+    </intersect>
+
     <img
-      src="~/assets/image0.png24.png"
+      src="@/assets/image1.png.webp"
+      alt="test">
+    <img
+      src="@/assets/image1.png.webp"
       alt="test">
     <img
       src="@/assets/image1.png.webp"
@@ -49,13 +62,41 @@ export default {
     }
   },
   components: {
-    headline: Headline
+    Headline
   },
 
   head () {
     return {
       title: 'title of page'
     };
+  },
+
+  data () {
+    return {
+      msg: 'I will change'
+    };
+  },
+
+  methods: {
+    passing(value) {
+      console.log('AHA', value.intersection.y, value.intersectionRatio);
+    },
+
+    enter() {
+      console.log('enter');
+    },
+
+    leave() {
+      console.log('leave');
+    }
   }
 };
 </script>
+
+<style lang="postcss">
+img {
+  display: block;
+  width: 100%;
+}
+</style>
+

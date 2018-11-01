@@ -4,8 +4,9 @@ module.exports = function(plugins) {
       ...[
         require('./plugins/virtual-file'),
         require('./plugins/imagemin'),
-        require('./plugins/svg-sprite'),
-        require('./plugins/monitor')
+        require('./plugins/svg-sprite')
+        // require('./plugins/monitor')
+        // require('./plugins/module-replacement')
       ]
     )
     .reduce(function(result, item) {

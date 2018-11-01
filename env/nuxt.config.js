@@ -16,6 +16,8 @@ module.exports = {
     //   openAnalyzer: true
     // },
 
+    transpile: [],
+
     extend(config) {
       webpackPlugins(config.plugins);
       webpackModules(config.module);
@@ -27,7 +29,7 @@ module.exports = {
     base: '/'
   },
 
-  plugins: [{ src: '@/plugins/breakpoints' }],
+  plugins: [{ src: '@/plugins/intersectionObserver' }],
 
   modules: [
     [
@@ -59,6 +61,7 @@ module.exports = {
     [
       '@nuxtjs/pwa',
       {
+        dev: true,
         icon: {
           iconSrc: 'src/static/favicon.png',
           sizes: [16, 120, 144, 152, 192, 384, 512]
