@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.2...v1.13.0) (2018-11-04)
+
+
+### Bug Fixes
+
+* **cleanup:** restructured and rebuild webpack modules by nuxt style ([1812844](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1812844))
+* **drafts:**  plugins, utils and services ([2bab2a1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2bab2a1))
+
+
+### Features
+
+* **globals:** global postcss and lang files ([1d79cd0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1d79cd0))
+* **picture:** picture support ([230f2ed](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/230f2ed))
+
 ## [1.12.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.1...v1.12.2) (2018-10-24)
 
 
