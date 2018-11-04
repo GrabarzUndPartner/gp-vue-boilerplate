@@ -2,12 +2,12 @@
   <picture class="cover">
     <source
       v-for="item in sorted"
-      :srcset="require(`@/assets/${item.src}`)"
+      :srcset="item.src"
       :type="item.mime"
       :media="item.media"
       :key="item.type">
     <img
-      :src="require('@/assets/' + fallback.src)"
+      :src="fallback.src"
       :alt="alt">
   </picture>
 </template>
@@ -30,6 +30,10 @@ export default {
       type: String,
       required: true,
       default: null
+    },
+    webp: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -43,10 +47,12 @@ export default {
   watch: {
     sources: {
       handler(values) {
-        const list = convertObjectToArray(values);
-        const sorted = sortBy(list, breakpoint, 'type');
-        this.fallback = sorted[0];
-        this.sorted = sorted.reverse();
+        let list = convertObjectToArray(values);
+        list = sortBy(list, Object.keys(breakpoint), 'media');
+        list = completeEntries(list, breakpoint);
+        list = addWebpSupport(list);
+        this.fallback = list[0];
+        this.sorted = list.reverse();
         objectFitImages(this.$el);
       },
       immediate: true
@@ -58,15 +64,27 @@ function convertObjectToArray(obj) {
   return Object.keys(obj).map((k) => obj[k]);
 }
 
-function sortBy(list, by, attrib) {
-  return sortArray(list, Object.keys(by), attrib).map((item) => {
-    item.media = by[item[attrib]];
+function completeEntries(list, breakpoint) {
+  return list.map((item) => {
+    item.media = breakpoint[item['media']];
     item.mime = mime.getType((item.src.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]);
+    item.src = require(`@/assets/${item.src}`);
     return item;
   });
 }
 
-function sortArray (list, pattern, attribute) {
+function addWebpSupport(list) {
+  return list.reduce((result, item) => {
+    result.push(item, {
+      media: item['media'],
+      mime: mime.getType('webp'),
+      src: `${item.src}.webp`
+    });
+    return result;
+  }, []);
+}
+
+function sortBy (list, pattern, attribute) {
   return list.sort(function (a, b) {
     if (pattern.indexOf(a[attribute]) === pattern.indexOf(b[attribute])) {
         return 0;

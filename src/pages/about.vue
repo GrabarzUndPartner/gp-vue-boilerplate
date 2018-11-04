@@ -34,20 +34,18 @@
         src="~/assets/image2.png"
         alt="test">
     </intersect>
-
     <img
-      src="@/assets/image1.png.webp"
+      src="~/assets/image0.png"
       alt="test">
     <img
-      src="@/assets/image1.png.webp"
+      src="~/assets/image1.png"
       alt="test">
     <img
-      src="@/assets/image1.png.webp"
+      src="~/assets/image0.png"
       alt="test">
     <img
-      src="~/assets/image0.jpg"
+      src="~/assets/sample/1920x300.jpg"
       alt="test">
-
   </div>
 </template>
 
