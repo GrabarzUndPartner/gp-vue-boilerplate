@@ -1,9 +1,12 @@
 {
   "presets": [
-    ["vue-app", {
-      "modules": false,
-      "useBuiltIns": true,
-      "debug": true
-    }]
+    [
+      "vue-app",
+      {
+        "modules": false,
+        "useBuiltIns": true,
+        "debug": true
+      }
+    ]
   ]
 }

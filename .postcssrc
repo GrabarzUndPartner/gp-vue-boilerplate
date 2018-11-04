@@ -1,7 +1,0 @@
-{
-  "plugins": {
-    "postcss-normalize": {},
-    "postcss-nested": {},
-    "rucksack-css": {}
-  }
-}

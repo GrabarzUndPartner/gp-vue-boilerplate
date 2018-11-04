@@ -30,7 +30,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.navigation);
+    // console.log(this.navigation);
   }
 };
 </script>
