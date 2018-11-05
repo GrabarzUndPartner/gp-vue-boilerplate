@@ -20,6 +20,7 @@ module.exports = {
     },
     'postcss-momentum-scrolling': ['scroll'],
     'postcss-pseudo-content-insert': {},
-    'rucksack-css': {}
+    'rucksack-css': {}, 
+    'postcss-nested': {}
   }
 };
