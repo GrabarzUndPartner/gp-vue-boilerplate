@@ -5,7 +5,7 @@
 [![Sauce Test Status](https://saucelabs.com/buildstatus/gerbeth)](https://saucelabs.com/u/gerbeth)
 [![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate)
-[![NSP Status](https://nodesecurity.io/orgs/grabarz-and-partner/projects/f3fb80ee-7ded-480a-82af-5f3fcb5dda82/badge)](https://nodesecurity.io/orgs/grabarz-and-partner/projects/f3fb80ee-7ded-480a-82af-5f3fcb5dda82)
+
 [![dependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![devDependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/dev-status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate?type=dev)
 

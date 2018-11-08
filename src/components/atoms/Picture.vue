@@ -1,5 +1,5 @@
 <template>
-  <picture class="cover">
+  <picture>
     <source
       v-for="item in sorted"
       :srcset="item.src"
