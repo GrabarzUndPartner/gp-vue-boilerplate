@@ -1,6 +1,7 @@
 // process.env.DEBUG = 'webpack-virtual-modules';
 
 const path = require('path');
+require('dotenv').config()
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
