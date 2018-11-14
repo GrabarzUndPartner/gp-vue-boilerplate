@@ -40,6 +40,7 @@
     "chai": "^4.2.0",
     "chromedriver": "^2.43.1",
     "cross-env": "^5.2.0",
+    "dotenv": "^6.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-json": "^1.2.1",
