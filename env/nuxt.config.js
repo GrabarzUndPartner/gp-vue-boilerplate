@@ -36,6 +36,7 @@ module.exports = {
     '@/modules/svg',
     '@/modules/webp',
     '@/modules/image',
+    '@nuxtjs/dotenv',
     [
       'nuxt-i18n',
       {
