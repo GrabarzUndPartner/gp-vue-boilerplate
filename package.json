@@ -79,7 +79,7 @@
     "wdio-mocha-framework": "^0.6.4",
     "wdio-sauce-service": "^0.4.12",
     "wdio-screenshot": "^0.6.0",
-    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-selenium-standalone-service": "0.0.11",
     "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.14.0",
     "webp-loader": "^0.4.0",
