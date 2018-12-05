@@ -36,6 +36,7 @@ module.exports = {
     '@/modules/svg',
     '@/modules/webp',
     '@/modules/image',
+    '@nuxtjs/axios',
     [
       'nuxt-i18n',
       {
