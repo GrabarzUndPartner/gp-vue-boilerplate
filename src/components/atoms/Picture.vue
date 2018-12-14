@@ -5,10 +5,12 @@
       :srcset="item.src"
       :type="item.mime"
       :media="item.media"
-      :key="item.type">
+      :key="item.type"
+    >
     <img
       :src="fallback.src"
-      :alt="alt">
+      :alt="alt"
+    >
   </picture>
 </template>
 
@@ -20,15 +22,15 @@ import breakpoint from '../../utils/breakpoint';
 export default {
   props: {
     sources: {
-      type: Object,
+      type: Array,
       required: true,
-      default() {
-        return {};
+      default () {
+        return [];
       }
     },
     alt: {
       type: String,
-      required: true,
+      required: false,
       default: null
     },
     webp: {
@@ -37,16 +39,15 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       sorted: [],
       fallback: {}
     };
   },
-
   watch: {
     sources: {
-      handler(values) {
+      handler (values) {
         let list = convertObjectToArray(values);
         list = sortBy(list, Object.keys(breakpoint), 'media');
         list = completeEntries(list, breakpoint);
@@ -60,20 +61,20 @@ export default {
   }
 };
 
-function convertObjectToArray(obj) {
+function convertObjectToArray (obj) {
   return Object.keys(obj).map((k) => obj[k]);
 }
 
-function completeEntries(list, breakpoint) {
+function completeEntries (list, breakpoint) {
   return list.map((item) => {
     item.media = breakpoint[item['media']];
     item.mime = mime.getType((item.src.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]);
-    item.src = require(`@/assets/${item.src}`);
+    if (item.src.search('http') === -1) item.src = require(`@/assets/${item.src}`);
     return item;
   });
 }
 
-function addWebpSupport(list) {
+function addWebpSupport (list) {
   return list.reduce((result, item) => {
     result.push(item, {
       media: item['media'],
@@ -87,9 +88,9 @@ function addWebpSupport(list) {
 function sortBy (list, pattern, attribute) {
   return list.sort(function (a, b) {
     if (pattern.indexOf(a[attribute]) === pattern.indexOf(b[attribute])) {
-        return 0;
+      return 0;
     } else {
-        return pattern.indexOf(a[attribute]) > pattern.indexOf(b[attribute]) ? 1 : -1;
+      return pattern.indexOf(a[attribute]) > pattern.indexOf(b[attribute]) ? 1 : -1;
     }
   });
 }
@@ -99,6 +100,8 @@ function sortBy (list, pattern, attribute) {
 picture {
   & img {
     display: block;
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>
