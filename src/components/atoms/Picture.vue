@@ -1,11 +1,11 @@
 <template>
   <picture class="cover">
     <source
-      v-for="item in sorted"
+      v-for="(item, index) in sorted"
       :srcset="item.src"
       :type="item.mime"
       :media="item.media"
-      :key="item.type"
+      :key="index"
     >
     <img
       :src="fallback.src"
