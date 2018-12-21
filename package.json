@@ -81,7 +81,7 @@
     "wdio-screenshot": "^0.6.0",
     "wdio-selenium-standalone-service": "0.0.10",
     "wdio-spec-reporter": "^0.1.5",
-    "webdriverio": "^4.14.0",
+    "webdriverio": "^5.0.0",
     "webp-loader": "^0.4.0",
     "webpack-virtual-modules": "0.1.10"
   },
