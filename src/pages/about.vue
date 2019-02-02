@@ -13,39 +13,48 @@
 
 <template>
   <div>
-    <headline :content="$t('test')"/>
+    <headline :content="$t('test')" />
     hello22 {{ $t('configxyz') }}
     {{ $t('hello') }}
     <img
       src="~/assets/image.svg"
-      alt="test">
+      alt="test"
+    >
     <img
       src="~/assets/image2.svg"
-      alt="test">
+      alt="test"
+    >
     <img
       src="~/assets/image0.png"
-      alt="test">
+      alt="test"
+    >
 
     <intersect
       @enter="enter"
       @leave="leave"
-      @passing="passing">
+      @passing="passing"
+    >
       <img
         src="~/assets/image2.png"
-        alt="test">
+        alt="test"
+      >
     </intersect>
     <img
       src="~/assets/image0.png"
-      alt="test">
+      alt="test"
+    >
     <img
       src="~/assets/image1.png"
-      alt="test">
+      alt="test"
+    >
     <img
       src="~/assets/image0.png"
-      alt="test">
+      alt="test"
+    >
     <img
       src="~/assets/sample/1920x300.jpg"
-      alt="test">
+      alt="test"
+    >
   </div>
 </template>
 
@@ -76,15 +85,15 @@ export default {
   },
 
   methods: {
-    passing(value) {
+    passing (value) {
       console.log('AHA', value.intersection.y, value.intersectionRatio);
     },
 
-    enter() {
+    enter () {
       console.log('enter');
     },
 
-    leave() {
+    leave () {
       console.log('leave');
     }
   }

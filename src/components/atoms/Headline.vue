@@ -1,7 +1,11 @@
 <template>
-  <h1 class="test">{{ content }}
-    <span class="blue">blue
-      <span class="green">green</span>
+  <h1 class="test">
+    {{ content }}
+    <span class="blue">
+      blue
+      <span class="green">
+        green
+      </span>
     </span>
   </h1>
 </template>

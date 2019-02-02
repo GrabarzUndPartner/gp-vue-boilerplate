@@ -2,13 +2,15 @@
   <picture class="cover">
     <source
       v-for="item in sorted"
+      :key="item.type"
       :srcset="item.src"
       :type="item.mime"
       :media="item.media"
-      :key="item.type">
+    >
     <img
       :src="fallback.src"
-      :alt="alt">
+      :alt="alt"
+    >
   </picture>
 </template>
 
@@ -22,7 +24,7 @@ export default {
     sources: {
       type: Object,
       required: true,
-      default() {
+      default () {
         return {};
       }
     },
@@ -37,7 +39,7 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       sorted: [],
       fallback: {}
@@ -46,7 +48,7 @@ export default {
 
   watch: {
     sources: {
-      handler(values) {
+      handler (values) {
         let list = convertObjectToArray(values);
         list = sortBy(list, Object.keys(breakpoint), 'media');
         list = completeEntries(list, breakpoint);
@@ -60,11 +62,11 @@ export default {
   }
 };
 
-function convertObjectToArray(obj) {
+function convertObjectToArray (obj) {
   return Object.keys(obj).map((k) => obj[k]);
 }
 
-function completeEntries(list, breakpoint) {
+function completeEntries (list, breakpoint) {
   return list.map((item) => {
     item.media = breakpoint[item['media']];
     item.mime = mime.getType((item.src.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]);
@@ -73,7 +75,7 @@ function completeEntries(list, breakpoint) {
   });
 }
 
-function addWebpSupport(list) {
+function addWebpSupport (list) {
   return list.reduce((result, item) => {
     result.push(item, {
       media: item['media'],
@@ -87,9 +89,9 @@ function addWebpSupport(list) {
 function sortBy (list, pattern, attribute) {
   return list.sort(function (a, b) {
     if (pattern.indexOf(a[attribute]) === pattern.indexOf(b[attribute])) {
-        return 0;
+      return 0;
     } else {
-        return pattern.indexOf(a[attribute]) > pattern.indexOf(b[attribute]) ? 1 : -1;
+      return pattern.indexOf(a[attribute]) > pattern.indexOf(b[attribute]) ? 1 : -1;
     }
   });
 }

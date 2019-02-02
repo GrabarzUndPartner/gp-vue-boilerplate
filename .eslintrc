@@ -11,16 +11,41 @@
     "es6": true,
     "mocha": true
   },
-  "plugins": ["chai-friendly", "mocha", "json", "vue"],
-  "extends": ["plugin:vue/recommended", "eslint:recommended"],
+  "plugins": [
+    "chai-friendly",
+    "mocha",
+    "json",
+    "vue"
+  ],
+  "extends": [
+    "plugin:vue/recommended",
+    "eslint:recommended"
+  ],
   "rules": {
     "no-debugger": "off",
     "no-console": "off",
-    "semi": ["error", "always"],
-    "complexity": ["error", { "max": 7 }],
-    "quotes": ["error", "single"],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "complexity": [
+      "error",
+      {
+        "max": 7
+      }
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
     "mocha/no-exclusive-tests": "error",
     "no-unused-expressions": 0,
-    "chai-friendly/no-unused-expressions": 2
+    "chai-friendly/no-unused-expressions": 2,
+    "vue/no-use-v-if-with-v-for": [
+      "error",
+      {
+        "allowUsingIterationVar": true
+      }
+    ]
   }
 }

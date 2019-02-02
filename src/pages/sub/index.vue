@@ -29,13 +29,14 @@
 
 <template>
   <div class="test">
-    <headline :content="$t('test')"/>
+    <headline :content="$t('test')" />
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
     <picture-comp
       :sources="$t('sources')"
-      alt="image description"/>
+      alt="image description"
+    />
   </div>
 </template>
 
@@ -55,7 +56,7 @@ export default {
     Headline,
     PictureComp
   },
-  data() {
+  data () {
     return {
 
     };
@@ -67,7 +68,7 @@ export default {
     };
   },
 
-  mounted() {
+  mounted () {
     // console.log(this.$t('sources'));
   }
 };

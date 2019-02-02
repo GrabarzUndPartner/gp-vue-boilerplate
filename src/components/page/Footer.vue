@@ -1,8 +1,8 @@
 <template>
   <footer>
-    <!-- <nav>
-      <link-list v-bind:list="navigation"></link-list>
-    </nav> -->
+    <nav>
+      <link-list :list="navigation" />
+    </nav>
   </footer>
 </template>
 

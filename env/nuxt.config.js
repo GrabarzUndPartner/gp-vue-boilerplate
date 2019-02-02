@@ -8,12 +8,7 @@ module.exports = {
   css: [],
   env: {},
   build: {
-    analyze: false,
-    // analyze: {
-    //   analyzerMode: 'static',
-    //   reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-    //   openAnalyzer: false
-    // },
+    analyze: getAnalyzerConfig(),
     parallel: true,
     transpile: []
   },
@@ -30,7 +25,6 @@ module.exports = {
   vendor: ['default-passive-events'],
 
   modules: [
-    '@/modules/fix/postcss',
     '@/modules/fix/image',
     '@/modules/virtual',
     '@/modules/svg',
@@ -116,3 +110,15 @@ module.exports = {
     __dangerouslyDisableSanitizers: ['script']
   }
 };
+
+function getAnalyzerConfig () {
+  if (process.env.NODE_ENV === 'static') {
+    return {
+      analyzerMode: 'static',
+      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
+      openAnalyzer: false
+    };
+  } else {
+    return false;
+  }
+}
