@@ -1,6 +1,7 @@
 // process.env.DEBUG = 'webpack-virtual-modules';
 
 const path = require('path');
+const opn = require('opn');
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
@@ -18,6 +19,16 @@ module.exports = {
 
   router: {
     base: '/'
+  },
+
+  hooks: {
+    build: {
+      done: function () {
+        if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
+          opn('http://localhost:8050', { app: ['google chrome', '--incognito'] });
+        }
+      }
+    }
   },
 
   plugins: [{ src: '@/plugins/intersectionObserver' }],
@@ -116,7 +127,7 @@ function getAnalyzerConfig () {
     return {
       analyzerMode: 'static',
       reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-      openAnalyzer: false
+      openAnalyzer: true
     };
   } else {
     return false;
