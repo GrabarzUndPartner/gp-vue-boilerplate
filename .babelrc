@@ -1,16 +1,19 @@
-// currently not used
-// {
-//   "presets": [
-//     [
-//       "@babel/preset-env",
-//       {
-//         "modules": false,
-//         "useBuiltIns": "entry",
-//         "debug": true
-//       }
-//     ]
-//   ],
-//   "plugins": [
-//     "@babel/plugin-transform-runtime"
-//   ]
-// }
+{
+  "presets": [
+    [
+      "@nuxt/babel-preset-app",
+      {}
+    ],
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "modules": false,
+        "debug": true
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}

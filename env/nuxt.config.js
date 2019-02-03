@@ -1,10 +1,11 @@
 // process.env.DEBUG = 'webpack-virtual-modules';
 
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 const opn = require('opn');
 
 module.exports = {
+  mode: 'universal',
   dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
   css: [],
@@ -13,21 +14,21 @@ module.exports = {
   build: {
     analyze: getAnalyzerConfig(),
     babel: {
-      babelrc: false,
+      babelrc: true,
       cacheDirectory: undefined,
-      presets: [
-        ['@nuxt/babel-preset-app', {
-          'targets': {
-            browsers: getBrowserslistRC()
-          },
-          'modules': false,
-          'useBuiltIns': 'entry',
-          'debug': false
-        }]
-      ],
-      plugins: [
-        '@babel/plugin-transform-runtime'
-      ]
+      // presets: [
+      //   ['@nuxt/babel-preset-app', {}],
+      //   ['@babel/preset-env', {
+      //     'useBuiltIns': 'entry',
+      //     'modules': false,
+      //     'debug': true
+      //   }]
+
+
+      // ],
+      // plugins: [
+      //   '@babel/plugin-transform-runtime'
+      // ]
     },
     parallel: true,
     transpile: []
@@ -154,6 +155,6 @@ function getAnalyzerConfig () {
   }
 }
 
-function getBrowserslistRC () {
-  return fs.readFileSync(path.resolve('.browserslistrc')).toString().trim().split('\n');
-}
+// function getBrowserslistRC () {
+//   return fs.readFileSync(path.resolve('.browserslistrc')).toString().trim().split('\n');
+// }
