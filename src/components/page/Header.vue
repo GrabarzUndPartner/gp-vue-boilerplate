@@ -7,6 +7,7 @@
       v-for="language in languages"
       :key="language.code"
       :to="switchLocalePath(language.code)"
+      class="language-switch"
     >
       {{ language.code }}
     </nuxt-link>

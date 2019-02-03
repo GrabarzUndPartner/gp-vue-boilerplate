@@ -20,11 +20,7 @@ module.exports = class VirtualLang extends VirtualModule {
 };
 
 function getFile (filePath) {
-  // try {
   return fs.readFileSync(path.resolve(filePath)).toString();
-  // } catch (e) {
-  //   return JSON.stringify({});
-  // }
 }
 
 function readContent (compiler, filePath) {

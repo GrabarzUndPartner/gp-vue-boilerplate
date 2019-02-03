@@ -1,4 +1,4 @@
-module.exports = function nuxtImageMin() {
+module.exports = function nuxtImageMin () {
   this.extendBuild(config => {
     let urlLoader = config.module.rules.find(
       rule =>

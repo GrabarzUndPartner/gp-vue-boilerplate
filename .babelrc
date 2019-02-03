@@ -1,12 +1,16 @@
-{
-  "presets": [
-    [
-      "vue-app",
-      {
-        "modules": false,
-        "useBuiltIns": true,
-        "debug": true
-      }
-    ]
-  ]
-}
+// currently not used
+// {
+//   "presets": [
+//     [
+//       "@babel/preset-env",
+//       {
+//         "modules": false,
+//         "useBuiltIns": "entry",
+//         "debug": true
+//       }
+//     ]
+//   ],
+//   "plugins": [
+//     "@babel/plugin-transform-runtime"
+//   ]
+// }

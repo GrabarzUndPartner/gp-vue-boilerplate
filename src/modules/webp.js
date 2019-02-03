@@ -2,7 +2,7 @@ const multi = require('multi-loader');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminWebp = require('imagemin-webp');
 
-module.exports = function() {
+module.exports = function () {
   this.extendBuild(config => {
     config.module.rules.push({
       test: /\.(jpe?g|png)$/i,

@@ -8,12 +8,9 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
-    "mocha": true
+    "es6": true
   },
   "plugins": [
-    "chai-friendly",
-    "mocha",
     "json",
     "vue"
   ],
@@ -37,9 +34,6 @@
     "quotes": [
       "error",
       "single"
-    ],
-    "mocha/no-exclusive-tests": "error",
-    "no-unused-expressions": 0,
-    "chai-friendly/no-unused-expressions": 2
+    ]
   }
 }

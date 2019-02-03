@@ -1,6 +1,7 @@
 // process.env.DEBUG = 'webpack-virtual-modules';
 
 const path = require('path');
+const fs = require('fs');
 const opn = require('opn');
 
 module.exports = {
@@ -8,11 +9,30 @@ module.exports = {
   srcDir: 'src/',
   css: [],
   env: {},
+
   build: {
     analyze: getAnalyzerConfig(),
+    babel: {
+      babelrc: false,
+      cacheDirectory: undefined,
+      presets: [
+        ['@nuxt/babel-preset-app', {
+          'targets': {
+            browsers: getBrowserslistRC()
+          },
+          'modules': false,
+          'useBuiltIns': 'entry',
+          'debug': false
+        }]
+      ],
+      plugins: [
+        '@babel/plugin-transform-runtime'
+      ]
+    },
     parallel: true,
     transpile: []
   },
+
   render: {
     http2: { push: true }
   },
@@ -132,4 +152,8 @@ function getAnalyzerConfig () {
   } else {
     return false;
   }
+}
+
+function getBrowserslistRC () {
+  return fs.readFileSync(path.resolve('.browserslistrc')).toString().trim().split('\n');
 }
