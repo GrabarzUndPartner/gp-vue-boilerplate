@@ -18,8 +18,9 @@ before_script:
   - npm run start &
   - sleep 10
 script:
-  - npx mocha ./test/general/
-  - npm run wdio
+  - npm start -- --silent &
+  - npm run cy:run -- --record --parallel --group $STAGE_NAME
+  - kill $(jobs -p) || true
 after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release

@@ -57,8 +57,6 @@ module.exports = {
 
   plugins: [{ src: '@/plugins/intersectionObserver' }],
 
-  vendor: ['default-passive-events'],
-
   modules: [
     '@/modules/fix/image',
     '@/modules/virtual',
@@ -129,7 +127,9 @@ module.exports = {
   ],
 
   head: {
-    meta: [],
+    meta: [
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
+    ],
     link: [],
     script: [
       {
