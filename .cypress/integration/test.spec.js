@@ -1,28 +1,11 @@
-const resolutions = [
-  'macbook-15',
-  'macbook-13',
-  'macbook-11',
-  'ipad-2',
-  'ipad-mini',
-  'iphone-6+',
-  'iphone-6',
-  'iphone-5'
-];
+import { createTestInAllResolutions } from '../utils/viewport';
 
-describe('My First Test', function () {
-  resolutions.forEach((res) => {
-    context(`${res} resolution`, function () {
-      beforeEach(function () {
-        // run these tests as if in a desktop
-        // browser with a 720p monitor
-        cy.viewport(res);
-      });
+createTestInAllResolutions((res) => {
+  describe(`homepage`, function () {
 
-      it('Visits the Kitchen Sink', function () {
-        cy.visit('/');
-        cy.get('.language-switch').click();
-      });
+    it('test the language switch', function () {
+      cy.visit('/');
+      cy.get('.language-switch').click();
     });
   });
-
 });
