@@ -14,20 +14,7 @@ module.exports = {
     analyze: getAnalyzerConfig(),
     babel: {
       babelrc: true,
-      cacheDirectory: undefined,
-      // presets: [
-      //   ['@nuxt/babel-preset-app', {}],
-      //   ['@babel/preset-env', {
-      //     'useBuiltIns': 'entry',
-      //     'modules': false,
-      //     'debug': true
-      //   }]
-
-
-      // ],
-      // plugins: [
-      //   '@babel/plugin-transform-runtime'
-      // ]
+      cacheDirectory: undefined
     },
     parallel: true,
     transpile: []
@@ -64,66 +51,74 @@ module.exports = {
     '@/modules/webp',
     '@/modules/image',
     '@nuxtjs/axios',
-    [
-      'nuxt-i18n',
-      {
-        locales: [
-          {
-            code: 'en',
-            iso: 'en-US'
-          },
-          {
-            code: 'de',
-            iso: 'de-DE'
-          }
-        ],
-        defaultLocale: 'de',
-        strategy: 'prefix_except_default',
-        seo: true,
-        vueI18n: {
-          fallbackLocale: 'de',
-          messages: {
-            en: require(path.resolve('src/globals/locales/en.json')),
-            de: require(path.resolve('src/globals/locales/de.json'))
-          }
+    ['nuxt-i18n', {
+      locales: [
+        {
+          code: 'en',
+          iso: 'en-US'
         },
-        vueI18nLoader: true
-      }
-    ],
-    [
-      '@nuxtjs/pwa',
-      {
-        dev: process.env.NODE_ENV === 'development',
-        icon: {
-          iconSrc: 'src/static/favicon.png',
-          sizes: [16, 120, 144, 152, 192, 384, 512]
-        },
-        meta: {
-          charset: 'utf-8',
-          viewport: 'width=device-width, initial-scale=1',
-          mobileApp: true,
-          mobileAppIOS: true,
-          appleStatusBarStyle: 'default',
-          favicon: true,
-          name: 'TITLE',
-          author: '',
-          description: '',
-          theme_color: 'black',
-          lang: 'de',
-          ogType: 'website',
-          ogSiteName: 'ogSITE_NAME',
-          ogTitle: 'ogTITLE',
-          ogDescription: 'ogDESCRIPTION',
-          ogHost: undefined,
-          ogImage: true
-        },
-        manifest: {
-          name: 'Sample MANIFEST',
-          short_name: 'Sample',
-          lang: 'de'
+        {
+          code: 'de',
+          iso: 'de-DE'
         }
+      ],
+      defaultLocale: 'de',
+      strategy: 'prefix_except_default',
+      seo: true,
+      vueI18n: {
+        fallbackLocale: 'de',
+        messages: {
+          en: require(path.resolve('src/globals/locales/en.json')),
+          de: require(path.resolve('src/globals/locales/de.json'))
+        }
+      },
+      vueI18nLoader: true
+    }],
+    ['@nuxtjs/pwa', {
+      dev: process.env.NODE_ENV === 'development',
+      icon: {
+        iconSrc: 'src/static/favicon.png',
+        sizes: [16, 120, 144, 152, 192, 384, 512]
+      },
+      meta: {
+        charset: 'utf-8',
+        viewport: 'width=device-width, initial-scale=1',
+        mobileApp: true,
+        mobileAppIOS: true,
+        appleStatusBarStyle: 'default',
+        favicon: true,
+        name: 'TITLE',
+        author: '',
+        description: '',
+        theme_color: 'black',
+        lang: 'de',
+        ogType: 'website',
+        ogSiteName: 'ogSITE_NAME',
+        ogTitle: 'ogTITLE',
+        ogDescription: 'ogDESCRIPTION',
+        ogHost: undefined,
+        ogImage: true
+      },
+      manifest: {
+        name: 'Sample MANIFEST',
+        short_name: 'Sample',
+        lang: 'de'
       }
-    ]
+    }],
+    ['@nuxtjs/sitemap', {
+      path: '/sitemap.xml',
+      hostname: 'https://localhost:8050',
+      cacheTime: 1000 * 60 * 15,
+      gzip: false,
+      generate: true,
+      exclude: [],
+      routes: []
+    }],
+    ['nuxt-robots-module', {
+      UserAgent: '*',
+      Disallow: '',
+      Sitemap: 'https://localhost:8050/sitemap.xml'
+    }]
   ],
 
   head: {

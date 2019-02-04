@@ -1,1 +1,3 @@
-# robots.txt
+User-agent: *
+Disallow: 
+Sitemap: https://localhost:8050/sitemap.xml

@@ -5,6 +5,7 @@
 /env/nuxt/cert/
 /output/
 /reports/*.html
+/src/static/sitemap.xml
 
 
 # IntelliJ project files
