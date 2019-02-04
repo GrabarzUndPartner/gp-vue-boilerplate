@@ -24,6 +24,7 @@
     "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html; exit ${PIPESTATUS[0]}",
     "browserslist": "npx browserslist",
     "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
