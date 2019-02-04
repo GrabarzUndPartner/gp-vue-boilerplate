@@ -13,12 +13,10 @@ before_install:
   - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
 install:
   - npm i
+  - npm install wait-on
   - npm run static
-before_script:
-  - npm run start &
-  - sleep 10
 script:
-  - npm start & wait-on http://localhost:8050
+  - npm run start & npx wait-on http://localhost:8050
   - npm run cypress:run -- --record --parallel --group $STAGE_NAME
   - kill $(jobs -p) || true
 after_success:
