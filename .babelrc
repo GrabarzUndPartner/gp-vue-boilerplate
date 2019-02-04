@@ -7,7 +7,7 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "entry",
+        "useBuiltIns": "usage",
         "modules": false,
         "debug": true
       }

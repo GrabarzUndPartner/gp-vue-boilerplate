@@ -26,8 +26,8 @@
     "cypress:open": "npx cypress open",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:dev": "start-storybook -p 6006 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o dist/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -36,6 +36,7 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
+    "@storybook/addon-a11y": "^4.1.11",
     "@storybook/addon-actions": "^4.1.11",
     "@storybook/addon-links": "^4.1.11",
     "@storybook/addon-viewport": "^4.1.11",

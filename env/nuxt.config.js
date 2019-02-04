@@ -5,7 +5,6 @@ const path = require('path');
 const opn = require('opn');
 
 module.exports = {
-  mode: 'universal',
   dev: process.env.NODE_ENV === 'development',
   srcDir: 'src/',
   css: [],
@@ -32,6 +31,10 @@ module.exports = {
     },
     parallel: true,
     transpile: []
+  },
+
+  generate: {
+    dir: 'dist/website'
   },
 
   render: {

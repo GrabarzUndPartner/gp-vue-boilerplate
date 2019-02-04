@@ -1,9 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 
-
 import MyPicture from '~/components/atoms/Picture.vue';
-
 
 storiesOf('Picture', module).add('default', () => ({
   components: { MyPicture },
