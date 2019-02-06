@@ -62,6 +62,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webp": "^5.0.0",
     "imagemin-webpack-plugin": "^2.4.0",
+    "license-webpack-plugin": "^2.1.0",
     "multi-loader": "^0.1.0",
     "node-gyp": "^3.8.0",
     "node-notifier": "^5.3.0",

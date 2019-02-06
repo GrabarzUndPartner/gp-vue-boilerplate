@@ -118,7 +118,8 @@ module.exports = {
       UserAgent: '*',
       Disallow: '',
       Sitemap: 'https://localhost:8050/sitemap.xml'
-    }]
+    }],
+    '@/modules/licence'
   ],
 
   head: {
