@@ -63,3 +63,50 @@ npm i selenium-standalone -g
 # ToDos
 
 - webpackmonitor (https://github.com/nuxt-community/webpackmonitor-module)
+
+# development checklist
+
+- [ ] sitemap.xml
+- [ ] robots.txt
+- [ ] licences
+- [ ] SEO
+- [ ] social meta tags
+- [ ] lighthouse test
+- [ ] a11y
+- [ ] i18n
+- [ ] PWA
+- [ ] SonarQube
+- [ ] npm audit
+- [ ] image optimization
+- [ ] svg optimization
+- [ ] tracking
+- [ ] no keys & secrets in frontend code
+- [ ] 60fps animations
+- [ ] js & css size
+- [ ] favicon
+- [ ] title per page
+- [ ] qa/testing
+- [ ] deployment pipeline
+- [ ] storybook
+- [ ] cypress
+- [ ] removed unused sources
+- [ ] IE11
+- [ ] browser matrix
+- [ ] correct changelog
+- [ ] no build errors
+- [ ] substitution
+- [ ] disclaimer
+- [ ] terms of use
+- [ ] cookie notification
+- [ ] no lorem ipsum
+- [ ] different keys & secrets - preview-/live-server
+- [ ] cache durations
+- [ ] https/ssl
+- [ ] 404-page
+- [ ] 500-page
+- [ ] form validation
+- [ ] url/domain-check
+- [ ] language detection
+- [ ] disabled noindex, nofollow on normal pages
+- [ ] enabled noindex, nofollow on auth area pages
+- [ ] no launch on friday
