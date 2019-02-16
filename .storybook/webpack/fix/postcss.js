@@ -3,7 +3,7 @@ module.exports = (config) => {
   if (cssLoader) {
     config.module.rules.push({
       resourceQuery: /postcss/,
-      use: 'postcss-loader'
+      use: ["style-loader", "css-loader", 'postcss-loader']
     });
   }
 }
