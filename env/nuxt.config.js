@@ -114,7 +114,7 @@ module.exports = {
       exclude: [],
       routes: []
     }],
-    ['nuxt-robots-module', {
+    ['@nuxtjs/robots', {
       UserAgent: '*',
       Disallow: '',
       Sitemap: 'https://localhost:8050/sitemap.xml'
