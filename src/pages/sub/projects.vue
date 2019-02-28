@@ -13,11 +13,10 @@
 
 <template>
   <div>
-    <headline :content="$t('test')"/>
+    <headline :content="$t('test')" />
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
-
   </div>
 </template>
 

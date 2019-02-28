@@ -1,7 +1,9 @@
 {
-  "folders": [{
-    "path": "."
-  }],
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
   "settings": {
     "vetur.format.defaultFormatter.js": "vscode-typescript",
     "vetur.format.defaultFormatter.html": "js-beautify-html",
@@ -40,7 +42,7 @@
       "**/logs": true,
       "**/*.log": true,
       "**/.DS_Store": true,
-      ".*": true
+      ".*": false
     },
     "files.associations": {
       ".branchlintrc": "json",

@@ -2,7 +2,8 @@
   <ul>
     <li
       v-for="(item) in list"
-      :key="item.title">
+      :key="item.title"
+    >
       <nuxt-link :to="localePath(item.url)">
         {{ item.title }}
       </nuxt-link>
@@ -16,7 +17,7 @@ export default {
     list: {
       type: Array,
       required: true,
-      default: function() {
+      default: function () {
         return [];
       }
     }

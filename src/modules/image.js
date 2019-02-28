@@ -1,7 +1,7 @@
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozJpeg = require('imagemin-mozjpeg');
 
-module.exports = function() {
+module.exports = function () {
   this.extendBuild(config => {
     let options = {
       test: /\.(jpe?g|png|gif)$/i,

@@ -1,11 +1,11 @@
 <template>
   <picture class="cover">
     <source
-      v-for="(item, index) in sorted"
+      v-for="item in sorted"
+      :key="item.type"
       :srcset="item.src"
       :type="item.mime"
       :media="item.media"
-      :key="index"
     >
     <img
       :src="fallback.src"
@@ -25,7 +25,7 @@ export default {
       type: Array,
       required: true,
       default () {
-        return [];
+        return {};
       }
     },
     alt: {

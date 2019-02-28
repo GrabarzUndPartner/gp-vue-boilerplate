@@ -1,14 +1,16 @@
 <template>
   <header>
     <nav>
-      <link-list :list="navigation"/>
+      <link-list :list="navigation" />
     </nav>
     <nuxt-link
-      v-for="locale in $i18n.locales"
-      v-if="locale.code !== $i18n.locale"
-      :key="locale.code"
-      :to="switchLocalePath(locale.code)">{{ locale.code }}</nuxt-link>
-
+      v-for="language in languages"
+      :key="language.code"
+      :to="switchLocalePath(language.code)"
+      class="language-switch"
+    >
+      {{ language.code }}
+    </nuxt-link>
   </header>
 </template>
 
@@ -29,7 +31,15 @@ export default {
     }
   },
 
-  mounted() {
+  computed: {
+    languages: function () {
+      return this.$i18n.locales.filter((locale) => {
+        return locale.code !== this.$i18n.locale;
+      });
+    }
+  },
+
+  mounted () {
     // console.log(this.navigation);
   }
 };

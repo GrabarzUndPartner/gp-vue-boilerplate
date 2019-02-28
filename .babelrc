@@ -1,12 +1,19 @@
 {
   "presets": [
     [
-      "vue-app",
+      "@nuxt/babel-preset-app",
+      {}
+    ],
+    [
+      "@babel/preset-env",
       {
+        "useBuiltIns": "usage",
         "modules": false,
-        "useBuiltIns": true,
-        "debug": true
+        "debug": false
       }
     ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
   ]
 }

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <page-header :navigation="$t('header.navigation')"/>
+    <page-header :navigation="$t('header.navigation')" />
     <main>
-      <nuxt/>
+      <nuxt />
     </main>
-    <page-footer :navigation="$t('footer.navigation')"/>
+    <page-footer :navigation="$t('footer.navigation')" />
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     PageHeader,
     PageFooter
   },
-  head() {
+  head () {
     return {
       htmlAttrs: {
         lang: this.$i18n.locale
