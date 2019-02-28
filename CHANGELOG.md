@@ -1,3 +1,38 @@
+# [1.14.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.13.0...v1.14.0) (2019-02-28)
+
+
+### Bug Fixes
+
+* **browser:** auto open - starts browser after dev-build ([2eae507](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2eae507))
+* **cypress:** added mochawesome as dependency ([f588728](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f588728))
+* **cypress:** added project id as export var ([71410e8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/71410e8))
+* **cypress:** generalize first test ([ed5bd95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed5bd95))
+* **cypress:** removed package installation mochawesome, downgraded mocha ([8f15dc0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8f15dc0))
+* **cypress:** removed project id from config file added to travis.yml ([f5d63a3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f5d63a3))
+* **cypress:** renamed cypress test folder ([3d5da9d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3d5da9d))
+* **header:** dissolve v-for / v-if eslint errors ([8e59d11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8e59d11))
+* **licence:** added plugin to extract used licences ([d87903a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d87903a))
+* **modules:** added sitemap and robots.txt generator ([c196c4f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c196c4f))
+* **readme:** added development checklist ([f07c5fa](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f07c5fa))
+* **storybook:** postcss compiler ([97bb9eb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/97bb9eb))
+* **test:** selenium test removed, cypress test added ([1c2fd1f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c2fd1f))
+* **travis:** added cypress progress ([8158104](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8158104))
+* **travis:** added cypress secret to yml ([818ec8a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/818ec8a))
+* **travis:** correct call ([40766e6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/40766e6))
+* **travis:** install mocha and mochawesome only in ci ([cbcb0bf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cbcb0bf))
+* **travis:** install wait-on module ([707d173](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/707d173))
+* **travis:** remove parallel task of cypress (cause no billing plan) ([bdd7ed1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bdd7ed1))
+* **travis:** removed group param from cypress:run call ([427c1c2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/427c1c2))
+* **travis:** update cypress call ([e93a53f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e93a53f))
+* **update:** versions and fixed some bugs ([4fdf913](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4fdf913))
+* **version:** updated package versions ([11d65c8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/11d65c8))
+
+
+### Features
+
+* **storybook:** added + separate webpack config ([18a8e35](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/18a8e35))
+* **storybook:** working demo ([566ab3a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/566ab3a))
+
 # [1.13.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.12.2...v1.13.0) (2018-11-04)
 
 
