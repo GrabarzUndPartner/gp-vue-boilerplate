@@ -22,7 +22,7 @@ import breakpoint from '../../utils/breakpoint';
 export default {
   props: {
     sources: {
-      type: Object,
+      type: Array,
       required: true,
       default () {
         return {};
@@ -30,7 +30,7 @@ export default {
     },
     alt: {
       type: String,
-      required: true,
+      required: false,
       default: null
     },
     webp: {
@@ -45,7 +45,6 @@ export default {
       fallback: {}
     };
   },
-
   watch: {
     sources: {
       handler (values) {
@@ -70,7 +69,7 @@ function completeEntries (list, breakpoint) {
   return list.map((item) => {
     item.media = breakpoint[item['media']];
     item.mime = mime.getType((item.src.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]);
-    item.src = require(`@/assets/${item.src}`);
+    if (item.src.search('http') === -1) item.src = require(`@/assets/${item.src}`);
     return item;
   });
 }
@@ -101,6 +100,8 @@ function sortBy (list, pattern, attribute) {
 picture {
   & img {
     display: block;
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>
