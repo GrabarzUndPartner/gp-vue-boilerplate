@@ -39,7 +39,7 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "@nuxtjs/sitemap": "^0.2.0",
     "@storybook/addon-a11y": "^4.1.13",
-    "@storybook/addon-actions": "^4.1.13",
+    "@storybook/addon-actions": "^5.0.0",
     "@storybook/addon-links": "^4.1.13",
     "@storybook/addon-viewport": "^4.1.13",
     "@storybook/addons": "^5.0.0",
