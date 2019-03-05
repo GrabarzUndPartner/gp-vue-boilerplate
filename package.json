@@ -41,7 +41,7 @@
     "@storybook/addon-a11y": "^4.1.13",
     "@storybook/addon-actions": "^5.0.0",
     "@storybook/addon-links": "^5.0.0",
-    "@storybook/addon-viewport": "^4.1.13",
+    "@storybook/addon-viewport": "^5.0.0",
     "@storybook/addons": "^5.0.0",
     "@storybook/vue": "^5.0.0",
     "babel-eslint": "^10.0.1",
