@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.0...v1.14.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **readme:** add useful content ([a0f8da5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a0f8da5))
+
 # [1.14.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.13.0...v1.14.0) (2019-02-28)
 
 
