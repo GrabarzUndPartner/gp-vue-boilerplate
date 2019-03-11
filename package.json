@@ -18,6 +18,7 @@
     "build": "npx nuxt build --config-file env/nuxt.config.js",
     "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js",
     "start": "cross-env NODE_ENV=production node ./env/server.js",
+    "production": "npm run static && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
     "lint:css": "npx stylelint 'src/**/*.vue'",
@@ -28,7 +29,7 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o dist/storybook"
+    "storybook:prod": "build-storybook -c .storybook -o dist/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
