@@ -2,111 +2,224 @@
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![Greenkeeper badge](https://badges.greenkeeper.io/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://greenkeeper.io/)
 
-[![Sauce Test Status](https://saucelabs.com/buildstatus/gerbeth)](https://saucelabs.com/u/gerbeth)
 [![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate)
-[![NSP Status](https://nodesecurity.io/orgs/grabarz-and-partner/projects/f3fb80ee-7ded-480a-82af-5f3fcb5dda82/badge)](https://nodesecurity.io/orgs/grabarz-and-partner/projects/f3fb80ee-7ded-480a-82af-5f3fcb5dda82)
+[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
+
 [![dependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![devDependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/dev-status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate?type=dev)
+[![Known Vulnerabilities](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate/badge.svg)](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate)
 
-[![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
-[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
+# Boilerplate - Grabarz & Partner
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/gerbeth.svg)](https://saucelabs.com/u/gerbeth)
+G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites by vuejs.
 
-# General usage
+## Quickstart
 
-# Coding Rules
-
-# Visual regression tests
-
-# CheatSheet - Commands
-
-## Generate Travis-CI Secure Tokens
-
-### Github Token
-
-Generate personal access token at github: [https://github.com/settings/tokens](https://github.com/settings/tokens)
-
-Use command to encrypt your personal access token for travis-ci
+### Install the boilerplate
 
 ```bash
-travis encrypt GH_TOKEN=<Your TOKEN> --add
+git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git 
+npm i
 ```
 
-### Saucelab Token
-
-Generate personal access token at saucelabs: https://saucelabs.com/beta/user-settings
-Use command to encrypt your personal access token for travis-ci
+### Run boilerplate in dev-mode
 
 ```bash
-travis encrypt SAUCE_ACCESS_KEY=<Your TOKEN> --add
+npm run dev
 ```
 
-## Local Selenium Test
-
-To run local selenium tests you need a java (version >= 8)
-If problems occur, please install the selenium standalone server manually in global scope.
+### Run boilerplate production-build
 
 ```bash
-npm i selenium-standalone -g
+npm run static
 ```
 
-# IDE infos
+### Run boilerplate production-build + server
 
-## Webstorm
+```bash
+npm run production
+```
 
-### Plugins
+## Cypress
 
-- Postcss support
+### Run local test instance
 
-# ToDos
+```bash
+npm run cypress:open
+```
 
-- webpackmonitor (https://github.com/nuxt-community/webpackmonitor-module)
+## Storybook
 
-# development checklist
+### Run storybook in dev-mode
 
-- [ ] sitemap.xml
-- [ ] robots.txt
-- [ ] licences
-- [ ] SEO
-- [ ] social meta tags
-- [ ] lighthouse test
-- [ ] a11y
-- [ ] i18n
-- [ ] PWA
-- [ ] SonarQube
-- [ ] npm audit
-- [ ] image optimization
-- [ ] svg optimization
-- [ ] tracking
-- [ ] no keys & secrets in frontend code
-- [ ] 60fps animations
-- [ ] js & css size
-- [ ] favicon
-- [ ] title per page
-- [ ] qa/testing
-- [ ] deployment pipeline
-- [ ] storybook
-- [ ] cypress
-- [ ] removed unused sources
-- [ ] IE11
-- [ ] browser matrix
-- [ ] correct changelog
-- [ ] no build errors
-- [ ] substitution
-- [ ] disclaimer
-- [ ] terms of use
-- [ ] cookie notification
-- [ ] no lorem ipsum
-- [ ] different keys & secrets - preview-/live-server
-- [ ] cache durations
-- [ ] https/ssl
-- [ ] 404-page
-- [ ] 500-page
-- [ ] form validation
-- [ ] url/domain-check
-- [ ] language detection
-- [ ] disabled noindex, nofollow on normal pages
-- [ ] enabled noindex, nofollow on auth area pages
-- [ ] no launch on friday
+```bash
+npm run storybook:dev
+```
+
+### Run storybook production-build
+
+```bash
+npm run storybook:prod
+```
+
+## Features
+
+- browserslist support
+  - [x] > 1% in DE
+  - [x] Firefox ESR
+  - [x] IE 11
+- images
+  - jpg
+    - [x] optimization
+  - png
+    - [x] optimization
+  - webp
+    - [x] generator (created by original source -> jpg, png)
+    - [x] optimization
+  - svg  
+    - [x] sprite generator
+    - [x] optimization
+- breakpoint
+  - [x] global definition
+  - [x] accessible in js
+  - [x] accessible in postcss
+- i18n
+  - [x] global language files
+  - [x] page files by language
+  - [x] vue block support
+    - [x] exclusive language reference loader ".lang"
+- PWA
+  - [x] module embedded - configurable by nuxt.config.js
+- SEO
+  - [x] sitemap generator
+  - [x] robots.txt generator
+- babel
+  - [x] embedded browserslist support
+- postcss
+  - [x] embedded browserslist support
+  - plugins
+    - [x] postcss-preset-env
+    - [x] postcss-normalize
+    - [x] postcss-object-fit-images
+    - [x] @fullhuman/postcss-purgecss
+    - [x] postcss-momentum-scrolling
+    - [x] postcss-pseudo-content-insert
+    - [x] rucksack-css
+- licenses
+  - [x] license extraction from build
+- linter
+  - [x] eslint
+  - [x] stylelint
+  - [x] branchlint
+  - [x] commitlint
+- versioning  
+  - [x] semantic release
+    - [x] git release version
+    - [x] npm release version
+  - [x] changelog generator
+- continous integration
+  - [x] travis
+  - [ ] appveyor
+- vulnerability scanner  
+  - [x] snyk
+  - [x] greenkeeper
+- IDE
+  - vscode workspace configuration
+    - [x] recommended project extensions
+    - [x] custom project settings
+    - [x] disabled prettier config
+    - [x] file association map
+- documentation
+  - [ ] storybook
+- testing
+  - [ ] cypress
+
+## ToDo
+
+--
+
+## Checklist
+
+All processes are working automatically. Nevertheless you should check before going live if all processes work correctly and the output is correct.
+
+### List
+
+- project start
+  - [ ] browser matrix (IE11 support?)
+  - [ ] multilanguage (i18n)
+  - [ ] tracking concept
+- prepare launch
+  - NO launch on friday
+  - deployment
+    - [ ] setup pipeline
+    - [ ] embed SonarQube
+    - [ ] test pipeline
+  - url/domain
+    - [ ] configured
+    - [ ] current ssl certificate
+- before launch
+  - Build
+    - [ ] deployment pipeline
+    - [ ] no build errors
+  - Content
+    - [ ] favicon
+    - [ ] multilanguage
+    - [ ] complete
+    - [ ] no lorem ipsum
+    - [ ] disclaimer
+    - [ ] terms of use
+    - [ ] cookie notification
+    - [ ] contact
+    - [ ] 404-page
+    - [ ] 500-page
+  - Form validation
+    - [ ] prevent XSS (escape strings)
+    - [ ] input validation is configured
+  - Server
+    - [ ] language detection
+    - [ ] encrypted keys & secrets as environment variables
+    - [ ] prevent XSS by user inputs (escape strings)
+  - Device testing
+    - [ ] based on browser matrix
+    - [ ] in incognito mode
+    - [ ] activated adblocker
+  - SEO
+    - [ ] page title
+    - [ ] meta tags
+    - [ ] social meta tags
+    - [ ] sitemap.xml
+    - [ ] robots.txt
+    - [ ] disabled noindex, nofollow on normal pages
+    - [ ] enabled noindex, nofollow on auth area pages
+  - Lighthouse
+    - [ ] a11y
+    - [ ] image optimization
+    - [ ] svg optimization
+    - [ ] PWA support
+    - [ ] cache durations on server
+    - [ ] time to first byte (TTFB)
+    - [ ] first meaningful paint (FMP)
+  - Security
+    - [ ] npm audit
+    - [ ] no keys & secrets embedded in frontend code
+    - [ ] different keys & secrets for test/prod environment
+    - [ ] valid ssl certificate
+  - Performance
+    - [ ] google chrome performance measurement (60fps)
+    - [ ] check js size
+    - [ ] check css size
+    - [ ] removed unused sources  
+  - Tracking
+    - [ ] embedded
+    - [ ] different project ids for test/prod environment
+  - Licenses
+    - [ ] check licences of used packages
+    - [ ] send license list to the security department of your client (optional)
+  - Documentation
+    - [ ] technical concept
+    - [ ] living styleguide (storybook)
+    - [ ] complete git changelog
+    - [ ] deployment pipeline
+- launch
+  - GOOD LUCK.
