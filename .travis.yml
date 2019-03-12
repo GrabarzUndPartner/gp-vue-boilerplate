@@ -15,7 +15,7 @@ before_install:
   - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
 install:
   - npm i
-  - npm install wait-on mocha@5.2.0 mochawesome
+  - npm install wait-on mocha@5.2.0 mochawesome --no-save
   - npm run static
 script:
   - npm run start & npx wait-on http://localhost:8050

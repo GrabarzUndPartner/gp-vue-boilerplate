@@ -182,12 +182,14 @@ All processes are working automatically. Nevertheless you should check before go
     - [ ] prevent XSS by user inputs (escape strings)
   - Device testing
     - [ ] based on browser matrix
+    - [ ] on actual devices, not simulations
     - [ ] in incognito mode
     - [ ] activated adblocker
   - SEO
     - [ ] page title
     - [ ] meta tags
     - [ ] social meta tags
+    - [ ] added alt-texts to all images and links
     - [ ] sitemap.xml
     - [ ] robots.txt
     - [ ] disabled noindex, nofollow on normal pages
@@ -219,7 +221,7 @@ All processes are working automatically. Nevertheless you should check before go
   - Documentation
     - [ ] technical concept
     - [ ] living styleguide (storybook)
-    - [ ] complete git changelog
+    - [ ] git changelog with reference to ticket numbers (if applicable)
     - [ ] deployment pipeline
 - launch
   - GOOD LUCK.
