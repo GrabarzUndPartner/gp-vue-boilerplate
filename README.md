@@ -149,6 +149,7 @@ All processes are working automatically. Nevertheless you should check before go
   - [ ] browser matrix (IE11 support?)
   - [ ] multilanguage (i18n)
   - [ ] tracking concept
+  - [ ] webfonts
 - prepare launch
   - NO launch on friday
   - deployment

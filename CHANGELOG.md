@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.1...v1.14.2) (2019-03-12)
+
+
+### Bug Fixes
+
+* **mochawesome:** removed from dependencies ([3a5da6a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3a5da6a))
+
 ## [1.14.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.0...v1.14.1) (2019-03-11)
 
 
