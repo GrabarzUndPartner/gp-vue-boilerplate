@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "1.14.1",
+  "version": "1.14.2",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -93,10 +93,13 @@
     "@nuxtjs/robots": "^2.0.0",
     "default-passive-events": "^1.0.10",
     "mime": "^2.4.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
     "nuxt": "^2.4.5",
     "nuxt-i18n": "^5.8.4",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
-    "rxjs": "^6.4.0"
+    "rxjs": "^6.4.0",
+    "wait-on": "^3.2.0"
   },
   "repository": {
     "type": "git",
