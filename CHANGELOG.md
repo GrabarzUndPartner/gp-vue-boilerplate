@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.2...v1.14.3) (2019-03-12)
+
+
+### Bug Fixes
+
+* **packages:** removed mochawesome and mocha - only install on travis ([6642591](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6642591))
+
 ## [1.14.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.1...v1.14.2) (2019-03-12)
 
 
