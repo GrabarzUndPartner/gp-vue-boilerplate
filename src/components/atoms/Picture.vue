@@ -22,7 +22,7 @@ import breakpoint from '../../utils/breakpoint';
 export default {
   props: {
     sources: {
-      type: Array,
+      type: Object,
       required: true,
       default () {
         return {};
