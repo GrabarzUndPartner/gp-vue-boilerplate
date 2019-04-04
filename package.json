@@ -91,7 +91,7 @@
     "@nuxtjs/robots": "^2.0.0",
     "default-passive-events": "^1.0.10",
     "mime": "^2.4.0",
-    "nuxt": "^2.4.5",
+    "nuxt": "^2.6.1",
     "nuxt-i18n": "^5.8.5",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.4.0"
