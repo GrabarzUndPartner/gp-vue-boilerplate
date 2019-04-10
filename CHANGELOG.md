@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.3...v1.15.0) (2019-04-10)
+
+
+### Features
+
+* **update:** updated nuxt version + cleanup ([3f8779c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3f8779c))
+
 ## [1.14.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.2...v1.14.3) (2019-03-12)
 
 
