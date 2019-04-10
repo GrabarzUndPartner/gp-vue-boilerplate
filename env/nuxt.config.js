@@ -1,8 +1,7 @@
-// process.env.DEBUG = 'webpack-virtual-modules';
+// process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
-// const fs = require('fs');
-const opn = require('opn');
+const open = require('open');
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
@@ -13,8 +12,36 @@ module.exports = {
   build: {
     analyze: getAnalyzerConfig(),
     babel: {
-      babelrc: true,
-      cacheDirectory: undefined
+      presets ({ isServer }) {
+        const targets = isServer ? { node: 'current' } : { ie: 11 };
+        return [
+          [require.resolve('@nuxt/babel-preset-app'), { targets }]
+        ];
+      }
+    },
+    postcss: {
+      plugins: {
+        'postcss-normalize': {},
+        'postcss-object-fit-images': {},
+        '@fullhuman/postcss-purgecss': {
+          content: [
+            'src/pages/**/*.vue',
+            'src/layouts/**/*.vue',
+            'src/components/**/*.vue'
+          ],
+          whitelist: ['html', 'body'],
+          whitelistPatterns: [/nuxt-/]
+        },
+        'postcss-momentum-scrolling': ['scroll'],
+        'rucksack-css': {}
+      },
+      preset: {
+        stage: 0,
+        features: {
+          'nesting-rules': true
+        },
+        importFrom: 'src/globals/postcss.js'
+      }
     },
     parallel: true,
     transpile: []
@@ -36,7 +63,7 @@ module.exports = {
     build: {
       done: function () {
         if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
-          opn('http://localhost:8050', { app: ['google chrome', '--incognito'] });
+          open('http://localhost:8050', { app: ['google chrome', '--incognito'] });
         }
       }
     }
@@ -119,7 +146,13 @@ module.exports = {
       Disallow: '',
       Sitemap: 'https://localhost:8050/sitemap.xml'
     }],
-    '@/modules/licence'
+    ['@/modules/licence', {
+      perChunkOutput: false,
+      handleMissingLicenseText: (packageName) => {
+        console.log('Cannot find license for ' + packageName);
+        return 'NO LICENSE TEXT';
+      }
+    }]
   ],
 
   head: {
@@ -153,7 +186,3 @@ function getAnalyzerConfig () {
     return false;
   }
 }
-
-// function getBrowserslistRC () {
-//   return fs.readFileSync(path.resolve('.browserslistrc')).toString().trim().split('\n');
-// }
