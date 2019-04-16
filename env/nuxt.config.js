@@ -82,23 +82,20 @@ module.exports = {
       locales: [
         {
           code: 'en',
-          iso: 'en-US'
+          iso: 'en-US',
+          file: 'en.json',
         },
         {
           code: 'de',
-          iso: 'de-DE'
+          iso: 'de-DE',
+          file: 'de.json'
         }
       ],
+      lazy: true,
+      langDir: 'globals/locales/',
       defaultLocale: 'de',
       strategy: 'prefix_except_default',
       seo: true,
-      vueI18n: {
-        fallbackLocale: 'de',
-        messages: {
-          en: require(path.resolve('src/globals/locales/en.json')),
-          de: require(path.resolve('src/globals/locales/de.json'))
-        }
-      },
       vueI18nLoader: true
     }],
     ['@nuxtjs/pwa', {
@@ -133,13 +130,18 @@ module.exports = {
       }
     }],
     ['@nuxtjs/sitemap', {
-      path: '/sitemap.xml',
+      path: 'sitemap.xml',
       hostname: 'https://localhost:8050',
       cacheTime: 1000 * 60 * 15,
       gzip: false,
-      generate: true,
       exclude: [],
-      routes: []
+      routes: [],
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date(),
+        lastmodrealtime: true
+      }
     }],
     ['@nuxtjs/robots', {
       UserAgent: '*',
