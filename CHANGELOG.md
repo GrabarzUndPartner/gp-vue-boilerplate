@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.15.0...v1.15.1) (2019-04-20)
+
+
+### Bug Fixes
+
+* **vue-i18n:** hot reload of global locales ([1869f6b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1869f6b))
+
 # [1.15.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.14.3...v1.15.0) (2019-04-10)
 
 
