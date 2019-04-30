@@ -178,7 +178,7 @@ module.exports = {
 };
 
 function getAnalyzerConfig () {
-  if (process.env.NODE_ENV === 'static') {
+  if (process.env.NODE_ENV === 'production') {
     return {
       analyzerMode: 'static',
       reportFilename: path.resolve('dist/reports/webpack-bundle-analyzer.html'),
