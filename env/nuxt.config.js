@@ -44,7 +44,19 @@ module.exports = {
       }
     },
     parallel: true,
-    transpile: []
+    transpile: [],
+
+    extend (
+      config,
+      {
+        isClient,
+        loaders: { vue }
+      }
+    ) {
+      if (isClient) {
+        vue.transformAssetUrls['svg-symbol'] = ['src'];
+      }
+    }
   },
 
   generate: {
@@ -69,7 +81,10 @@ module.exports = {
     }
   },
 
-  plugins: [{ src: '@/plugins/intersectionObserver' }],
+  plugins: [
+    { src: '@/plugins/intersectionObserver' },
+    { src: '@/plugins/svgSymbol' }
+  ],
 
   modules: [
     '@/modules/fix/image',
