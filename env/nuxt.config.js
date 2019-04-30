@@ -44,19 +44,7 @@ module.exports = {
       }
     },
     parallel: true,
-    transpile: [],
-
-    extend (
-      config,
-      {
-        isClient,
-        loaders: { vue }
-      }
-    ) {
-      if (isClient) {
-        vue.transformAssetUrls['svg-symbol'] = ['src'];
-      }
-    }
+    transpile: []
   },
 
   generate: {

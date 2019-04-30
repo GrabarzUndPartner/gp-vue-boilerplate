@@ -16,17 +16,17 @@ Vue.component('svg-symbol', {
   },
 
   computed: {
-    url() {
+    url () {
       return this.src.url.replace(/-usage$/, '');
     }
   },
 
-  mounted() {
+  mounted () {
     svg4everybody({ polyfill: this.isIE11() || this.polyfill });
   },
 
   methods: {
-    isIE11() {
+    isIE11 () {
       if (!this.$isServer) {
         return !!window.MSInputMethodContext && !!document.documentMode;
       }
@@ -34,7 +34,7 @@ Vue.component('svg-symbol', {
     }
   },
 
-  render(createElement) {
+  render (createElement) {
     const use = createElement('use', {
       attrs: {
         'xlink:href': this.url
