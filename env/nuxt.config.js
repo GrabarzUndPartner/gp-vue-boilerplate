@@ -69,7 +69,10 @@ module.exports = {
     }
   },
 
-  plugins: [{ src: '@/plugins/intersectionObserver' }],
+  plugins: [
+    { src: '@/plugins/intersectionObserver' },
+    { src: '@/plugins/svgSymbol' }
+  ],
 
   modules: [
     '@/modules/fix/image',
