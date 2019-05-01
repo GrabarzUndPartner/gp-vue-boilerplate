@@ -92,7 +92,8 @@
     "nuxt": "^2.6.2",
     "nuxt-i18n": "^5.8.5",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
-    "rxjs": "^6.4.0"
+    "rxjs": "^6.4.0",
+    "svg4everybody": "^2.1.9"
   },
   "repository": {
     "type": "git",
