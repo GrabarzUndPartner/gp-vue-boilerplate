@@ -1,3 +1,11 @@
+# [1.16.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.15.1...v1.16.0) (2019-05-01)
+
+
+### Features
+
+* **svg:** added svg-symbol component (plugin) ([92995eb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/92995eb))
+* **svg:** move config (transformAssetUrls) to svg module ([299fa27](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/299fa27))
+
 ## [1.15.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.15.0...v1.15.1) (2019-04-20)
 
 
