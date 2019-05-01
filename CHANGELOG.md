@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.17.0...v1.18.0) (2019-05-01)
+
+
+### Features
+
+* **eslint:** added rules: ([e0e49b9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e0e49b9))
+
 # [1.17.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.16.0...v1.17.0) (2019-05-01)
 
 
