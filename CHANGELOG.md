@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.16.0...v1.17.0) (2019-05-01)
+
+
+### Features
+
+* **analyzer:** analyzer active by node_env production ([35a11c7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/35a11c7))
+
 # [1.16.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.15.1...v1.16.0) (2019-05-01)
 
 
