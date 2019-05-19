@@ -12,13 +12,11 @@ module.exports = function () {
         optimizationLevel: 3
       },
       jpegtran: null,
-      plugins: [
-        imageminMozJpeg({
-          quality: 70,
-          progressive: true,
-          sample: ['2x2']
-        })
-      ]
+      plugins: [imageminMozJpeg({
+        quality: 70,
+        progressive: true,
+        sample: ['2x2']
+      })]
     };
 
     options = Object.assign(options, { disable: this.options.dev });
