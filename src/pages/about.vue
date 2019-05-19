@@ -16,14 +16,14 @@
     <headline :content="$t('test')" />
     hello22 {{ $t('configxyz') }}
     {{ $t('hello') }}
-    <img
+    <!-- <img
       src="~/assets/image.svg"
       alt="test"
     >
     <img
       src="~/assets/image2.svg"
       alt="test"
-    >
+    > -->
     <img
       src="~/assets/image0.png"
       alt="test"

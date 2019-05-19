@@ -75,10 +75,7 @@ module.exports = {
     }
   },
 
-  plugins: [
-    { src: '@/plugins/intersectionObserver' },
-    { src: '@/plugins/svgSymbol' }
-  ],
+  plugins: [{ src: '@/plugins/intersectionObserver' }],
 
   modules: [
     '@/modules/fix/image',
@@ -181,18 +178,18 @@ module.exports = {
   head: {
     meta: [{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
     link: [],
-    script: [
-      {
-        src:
-          'https://cdn.polyfill.io/v2/polyfill.min.js?features=HTMLPictureElement',
-        defer: true
-      },
-      {
-        innerHTML:
-          'document.createElement( "picture" );document.createElement( "source" );'
-      }
-    ],
-    __dangerouslyDisableSanitizers: ['script']
+    // script: [
+    //   {
+    //     src:
+    //       'https://cdn.polyfill.io/v2/polyfill.min.js?features=HTMLPictureElement',
+    //     defer: true
+    //   },
+    //   {
+    //     innerHTML:
+    //       'document.createElement( "picture" );document.createElement( "source" );'
+    //   }
+    // ],
+    // __dangerouslyDisableSanitizers: ['script']
   }
 };
 

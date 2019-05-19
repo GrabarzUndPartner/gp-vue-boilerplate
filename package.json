@@ -76,10 +76,12 @@
     "postcss-normalize": "^7.0.1",
     "postcss-object-fit-images": "^1.1.2",
     "rucksack-css": "^1.0.2",
+    "snyk": "^1.161.1",
     "stylelint": "^10.0.1",
     "stylelint-config-css-modules": "^1.4.0",
     "stylelint-config-recess-order": "^2.0.2",
     "stylelint-config-standard": "^18.3.0",
+    "svg-inline-loader": "^0.8.0",
     "svg-sprite-loader": "^4.1.6",
     "svgo-loader": "^2.2.0",
     "terser": "^3.17.0",
@@ -95,8 +97,7 @@
     "nuxt-i18n": "^5.12.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.5.2",
-    "svg4everybody": "^2.1.9",
-    "snyk": "^1.161.1"
+    "svg4everybody": "^2.1.9"
   },
   "repository": {
     "type": "git",

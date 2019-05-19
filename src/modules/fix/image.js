@@ -5,6 +5,6 @@ module.exports = function nuxtImageMin () {
         rule.loader === 'url-loader' ||
         (rule.use && rule.use.find(item => item.loader === 'url-loader'))
     );
-    urlLoader.test = /(gif)$/;
+    urlLoader.test = /(gif)$/;    
   });
 };

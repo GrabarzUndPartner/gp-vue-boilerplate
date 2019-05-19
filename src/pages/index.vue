@@ -13,23 +13,30 @@
   <div class="content">
     <h1>Headline</h1>
     <p>{{ $t('text') }}</p>
-    <div style="border:solid red 1px">
-      <svg-symbol src="@/assets/image2.svg" />
-    </div>
-    <svg>
-      <use xlink:href="@/assets/image2.svg" />
-    </svg>
-    <svg>
-      <use xlink:href="_nuxt/sprite.svg#image2" />
-    </svg>
+    <svg-elem src="image3.svg" />
+    <svg-elem
+      src="image2.svg"
+      :inline="true"
+    />
   </div>
 </template>
 
 <script>
+import SvgElem from '@/components/atoms/Svg';
+
 export default {
+  components: {
+    SvgElem
+  },
   head () {
     return {
       title: 'title of page'
+    };
+  },
+
+  data () {
+    return {
+      test: 'image2.svg',
     };
   }
 };
