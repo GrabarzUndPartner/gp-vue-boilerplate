@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.1...v1.18.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* .snyk & package.json to reduce vulnerabilities ([d85de52](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d85de52))
+
 ## [1.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.0...v1.18.1) (2019-05-19)
 
 
