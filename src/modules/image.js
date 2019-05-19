@@ -13,10 +13,10 @@ module.exports = function () {
       },
       jpegtran: null,
       plugins: [imageminMozJpeg({
-          quality: 70,
-          progressive: true,
-          sample: ['2x2']
-        })]
+        quality: 70,
+        progressive: true,
+        sample: ['2x2']
+      })]
     };
 
     options = Object.assign(options, { disable: this.options.dev });
