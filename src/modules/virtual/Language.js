@@ -12,7 +12,9 @@ module.exports = class VirtualLang extends VirtualModule {
 
     chokidar
       .watch(
-        ['src/locales/**/*.json', '!src/locales/global', '!src/locales/*.json'],
+        [
+'src/locales/**/*.json', '!src/locales/global', '!src/locales/*.json'
+],
         { persistent: false }
       )
       .on('all', (event, filePath) => mergeContent(compiler, this, filePath));

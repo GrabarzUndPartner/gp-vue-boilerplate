@@ -14,9 +14,9 @@ module.exports = {
     babel: {
       presets ({ isServer }) {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
-        return [
-          [require.resolve('@nuxt/babel-preset-app'), { targets }]
-        ];
+        return [[
+require.resolve('@nuxt/babel-preset-app'), { targets }
+]];
       }
     },
     postcss: {
@@ -29,7 +29,9 @@ module.exports = {
             'src/layouts/**/*.vue',
             'src/components/**/*.vue'
           ],
-          whitelist: ['html', 'body'],
+          whitelist: [
+'html', 'body'
+],
           whitelistPatterns: [/nuxt-/]
         },
         'postcss-momentum-scrolling': ['scroll'],
@@ -63,7 +65,9 @@ module.exports = {
     build: {
       done: function () {
         if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
-          open('http://localhost:8050', { app: ['google chrome', '--incognito'] });
+          open('http://localhost:8050', { app: [
+'google chrome', '--incognito'
+] });
         }
       }
     }
@@ -81,7 +85,8 @@ module.exports = {
     '@/modules/webp',
     '@/modules/image',
     '@nuxtjs/axios',
-    ['nuxt-i18n', {
+    [
+'nuxt-i18n', {
       locales: [
         {
           code: 'en',
@@ -100,12 +105,16 @@ module.exports = {
       strategy: 'prefix_except_default',
       seo: true,
       vueI18nLoader: true
-    }],
-    ['@nuxtjs/pwa', {
+    }
+],
+    [
+'@nuxtjs/pwa', {
       dev: process.env.NODE_ENV === 'development',
       icon: {
         iconSrc: 'src/static/favicon.png',
-        sizes: [16, 120, 144, 152, 192, 384, 512]
+        sizes: [
+16, 120, 144, 152, 192, 384, 512
+]
       },
       meta: {
         charset: 'utf-8',
@@ -131,8 +140,10 @@ module.exports = {
         short_name: 'Sample',
         lang: 'de'
       }
-    }],
-    ['@nuxtjs/sitemap', {
+    }
+],
+    [
+'@nuxtjs/sitemap', {
       path: 'sitemap.xml',
       hostname: 'https://localhost:8050',
       cacheTime: 1000 * 60 * 15,
@@ -145,25 +156,28 @@ module.exports = {
         lastmod: new Date(),
         lastmodrealtime: true
       }
-    }],
-    ['@nuxtjs/robots', {
+    }
+],
+    [
+'@nuxtjs/robots', {
       UserAgent: '*',
       Disallow: '',
       Sitemap: 'https://localhost:8050/sitemap.xml'
-    }],
-    ['@/modules/licence', {
+    }
+],
+    [
+'@/modules/licence', {
       perChunkOutput: false,
       handleMissingLicenseText: (packageName) => {
         console.log('Cannot find license for ' + packageName);
         return 'NO LICENSE TEXT';
       }
-    }]
+    }
+]
   ],
 
   head: {
-    meta: [
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
-    ],
+    meta: [{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
     link: [],
     script: [
       {

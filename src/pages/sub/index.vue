@@ -44,7 +44,6 @@
 import Headline from '~/components/atoms/Headline';
 import PictureComp from '~/components/atoms/Picture';
 
-
 export default {
   nuxtI18n: {
     paths: {
