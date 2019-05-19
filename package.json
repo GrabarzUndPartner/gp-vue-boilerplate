@@ -29,7 +29,9 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
-    "storybook:prod": "build-storybook -c .storybook -o dist/storybook"
+    "storybook:prod": "build-storybook -c .storybook -o dist/storybook",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.6.1",
@@ -93,10 +95,12 @@
     "nuxt-i18n": "^5.12.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.5.2",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "snyk": "^1.161.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git"
-  }
+  },
+  "snyk": true
 }
