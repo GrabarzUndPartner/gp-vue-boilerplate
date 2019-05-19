@@ -1,3 +1,12 @@
+## [1.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.0...v1.18.1) (2019-05-19)
+
+
+### Bug Fixes
+
+* **format:** reformat files ([5a8246c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5a8246c))
+* **format:** reformat files ([1789b1f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1789b1f))
+* **packages:** update ([03c7890](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/03c7890))
+
 # [1.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.17.0...v1.18.0) (2019-05-01)
 
 
