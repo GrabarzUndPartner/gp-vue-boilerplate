@@ -14,9 +14,11 @@ module.exports = {
     babel: {
       presets ({ isServer }) {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
-        return [[
-          require.resolve('@nuxt/babel-preset-app'), { targets }
-        ]];
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'), { targets }
+          ]
+        ];
       }
     },
     postcss: {
@@ -32,9 +34,13 @@ module.exports = {
           whitelist: [
             'html', 'body'
           ],
-          whitelistPatterns: [/nuxt-/]
+          whitelistPatterns: [
+            /nuxt-/
+          ]
         },
-        'postcss-momentum-scrolling': ['scroll'],
+        'postcss-momentum-scrolling': [
+          'scroll'
+        ],
         'rucksack-css': {}
       },
       preset: {
@@ -75,15 +81,44 @@ module.exports = {
     }
   },
 
-  plugins: [{ src: '@/plugins/intersectionObserver' }],
+  plugins: [
+    { src: '@/plugins/intersectionObserver' }
+  ],
 
   modules: [
     '@/modules/fix/image',
     '@/modules/virtual',
     '@/modules/svg',
-    '@/modules/webp',
     '@/modules/image',
     '@nuxtjs/axios',
+    [
+      '@bazzite/nuxt-optimized-images', {
+        handleImages: [
+          'jpeg', 'png', 'gif'
+        ],
+        responsive: {
+          adapter: require(__dirname + '/../src/modules/responsive-loader/adapter.js')
+        },
+        optimizeImagesInDev: true,
+        mozjpeg: {
+          quality: 70,
+          progressive: true,
+          sample: [
+            '2x2'
+          ]
+        },
+        pngquant: {
+          quality: '75-100'
+        },
+        optipng: {
+          optimizationLevel: 3
+        },
+        gifsicle: {
+          interlaced: true,
+          optimizationLevel: 3
+        }
+      }
+    ],
     [
       'nuxt-i18n', {
         locales: [
@@ -168,15 +203,40 @@ module.exports = {
       '@/modules/licence', {
         perChunkOutput: false,
         handleMissingLicenseText: (packageName) => {
-          console.log('Cannot find license for ' + packageName);
-          return 'NO LICENSE TEXT';
+          return 'NO LICENSE TEXT: ' + packageName;
+        },
+        licenseTextOverrides: {
+          'regenerator-runtime': `MIT License
+
+            Copyright (c) 2014-present, Facebook, Inc.
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.`,
+          'consola': 'MIT License'
         }
       }
     ]
   ],
 
   head: {
-    meta: [{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
+    meta: [
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
+    ],
     link: [],
     // script: [
     //   {

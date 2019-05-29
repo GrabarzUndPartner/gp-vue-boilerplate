@@ -13,20 +13,26 @@
   <div class="content">
     <h1>Headline</h1>
     <p>{{ $t('text') }}</p>
-    <svg-elem src="image3.svg" />
-    <svg-elem
-      src="image2.svg"
-      :inline="true"
-    />
+    <!-- <img
+      :src="source"
+      alt="test"
+    >
+    <img
+      :src="sourceWebp"
+      alt="test"
+    > -->
+    <svg-inline src="image3.svg" />
+    <svg-inline src="image2.svg" />
+    <!-- <img src="@/assets/svg/image2.svg"> -->
   </div>
 </template>
 
 <script>
-import SvgElem from '@/components/atoms/Svg';
+import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   components: {
-    SvgElem
+    SvgInline
   },
   head () {
     return {
@@ -36,8 +42,18 @@ export default {
 
   data () {
     return {
-      test: 'image2.svg',
+      img: 'image0.png',
+      test: 'image2.svg'
     };
+  },
+
+  computed: {
+    source () {
+      return require(`~/assets/${this.img}?resize&nonretina`);
+    },
+    sourceWebp () {
+      return require(`~/assets/${this.img}?webp`);
+    }
   }
 };
 </script>

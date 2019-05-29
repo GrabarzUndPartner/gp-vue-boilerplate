@@ -4,10 +4,10 @@ module.exports = function () {
       test: /\.svg$/,
       oneOf: [
         {
-          resourceQuery: /inline/,
+          resourceQuery: /include/,
           use: [
             {
-              loader: 'svg-inline-loader',
+              loader: 'raw-loader',
               options: {
 
               }
@@ -18,20 +18,15 @@ module.exports = function () {
               }
             }
           ]
-        }, {
+        },
+        {
           use: [
             {
-              loader: 'svg-sprite-loader',
+              loader: 'file-loader',
               options: {
-                spriteModule: 'node_modules/svg-sprite-loader/runtime/sprite.build'
-              }
-            }, {
-              loader: 'svgo-loader',
-              options: {
-                externalConfig: '.svgorc.yml'
+
               }
             }
-
           ]
         }
       ]

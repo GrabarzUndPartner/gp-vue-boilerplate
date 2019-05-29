@@ -50,7 +50,9 @@ Vue.component('svg-symbol', {
           height: '100%'
         }
       },
-      [use]
+      [
+use
+]
     );
     return svg;
   }

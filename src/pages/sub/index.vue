@@ -4,24 +4,24 @@
     "test": "message23",
     "hello": "hello world!",
     "sources": [
-      {"media": "default", "src": "sample/576x300.jpg"},
-      {"media": "xs", "src": "sample/768x300.jpg"},
-      {"media": "sm", "src": "sample/992x300.jpg"},
-      {"media": "md", "src": "sample/1200x300.jpg"},
-      {"media": "lg", "src": "sample/1600x300.jpg"},
-      {"media": "xl", "src": "sample/1920x300.jpg"}
+      {"media": "default", "src": "retina/1152x600.jpg"},
+      {"media": "xs", "src": "retina/1536x600.jpg"},
+      {"media": "sm", "src": "retina/1984x600.jpg"},
+      {"media": "md", "src": "retina/2400x600.jpg"},
+      {"media": "lg", "src": "retina/3200x600.jpg"},
+      {"media": "xl", "src": "retina/3840x600.jpg"}
     ]
   },
   "de": {
     "test": "nachricht 123",
     "hello": "hallo welt",
     "sources": [
-      {"media": "default", "src": "sample/576x300.jpg"},
-      {"media": "xs", "src": "sample/768x300.jpg"},
-      {"media": "sm", "src": "sample/992x300.jpg"},
-      {"media": "md", "src": "sample/1200x300.jpg"},
-      {"media": "lg", "src": "sample/1600x300.jpg"},
-      {"media": "xl", "src": "sample/1920x300.jpg"}
+      {"media": "default", "src": "retina/1152x600.jpg"},
+      {"media": "xs", "src": "retina/1536x600.jpg"},
+      {"media": "sm", "src": "retina/1984x600.jpg"},
+      {"media": "md", "src": "retina/2400x600.jpg"},
+      {"media": "lg", "src": "retina/3200x600.jpg"},
+      {"media": "xl", "src": "retina/3840x600.jpg"}
     ]
   }
 }
@@ -33,6 +33,8 @@
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
+    <svg-inline src="image3.svg" />
+    <svg-inline src="image2.svg" />
     <picture-comp
       :sources="$t('sources')"
       alt="image description"
@@ -42,6 +44,7 @@
 
 <script>
 import Headline from '~/components/atoms/Headline';
+import SvgInline from '@/components/atoms/SvgInline';
 import PictureComp from '~/components/atoms/Picture';
 
 export default {
@@ -53,6 +56,7 @@ export default {
   },
   components: {
     Headline,
+    SvgInline,
     PictureComp
   },
   data () {
