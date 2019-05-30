@@ -21,11 +21,11 @@ export default {
   },
 
   created () {
-    let r = require.context('@/assets/svg/?include', true, /\.svg$/, 'lazy-once');
+    console.log('SVG');
 
     this.item = {
       asyncComponent: () => {
-        return r('./' + this.src).then((result) => {
+        return import(/* webpackMode: "lazy-once" */'@/assets/svg/' + this.src + '?include').then((result) => {
           return {
             render (create) {
               return create('span', {

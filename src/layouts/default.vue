@@ -1,21 +1,22 @@
 <template>
   <div>
-    <page-header :navigation="$t('header.navigation')" />
+    <lazy-hydrate when-idle>
+      <page-header :navigation="$t('header.navigation')" />
+    </lazy-hydrate>
     <main>
       <nuxt />
     </main>
-    <page-footer :navigation="$t('footer.navigation')" />
+    <lazy-hydrate when-visible>
+      <page-footer :navigation="$t('footer.navigation')" />
+    </lazy-hydrate>
   </div>
 </template>
 
 <script>
-import PageHeader from '../components/page/Header';
-import PageFooter from '../components/page/Footer';
-
 export default {
   components: {
-    PageHeader,
-    PageFooter
+    PageHeader: () => import(/* webpackMode: "eager" */'../components/page/Header'),
+    PageFooter: () => import(/* webpackMode: "eager" */'../components/page/Footer')
   },
   head () {
     return {

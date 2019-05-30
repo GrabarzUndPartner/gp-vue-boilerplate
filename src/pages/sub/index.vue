@@ -35,17 +35,12 @@
     <br>
     <svg-inline src="image3.svg" />
     <svg-inline src="image2.svg" />
-    <picture-comp
-      :sources="$t('sources')"
-      alt="image description"
-    />
   </div>
 </template>
 
 <script>
 import Headline from '~/components/atoms/Headline';
 import SvgInline from '@/components/atoms/SvgInline';
-import PictureComp from '~/components/atoms/Picture';
 
 export default {
   nuxtI18n: {
@@ -56,8 +51,7 @@ export default {
   },
   components: {
     Headline,
-    SvgInline,
-    PictureComp
+    SvgInline
   },
   data () {
     return {

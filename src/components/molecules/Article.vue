@@ -33,6 +33,9 @@ export default {
         return '';
       }
     }
+  },
+  created () {
+    console.log('ARTICLE');
   }
 };
 </script>

@@ -19,7 +19,6 @@
       v-for="(item, index) in sorted"
       :key="index"
     />
-
     <img
       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
       :alt="alt"
@@ -64,17 +63,11 @@ export default {
       list = sortBy(list, Object.keys(breakpoint), 'media');
       list = completeEntries(list, breakpoint);
       return list.reverse();
-    },
-
-    // fallback () {
-    //   let list = convertObjectToArray(this.sources);
-    //   list = sortBy(list, Object.keys(breakpoint), 'media');
-
-    //   return require(`@/assets/${list[0].src}?inline`);
-    // }
+    }
   },
 
   created () {
+    console.log('PICTURE');
     objectFitImages(this.$el);
   }
 };
@@ -104,24 +97,26 @@ function sortBy (list, pattern, attribute) {
 }
 
 function createDefaultImageConfig (item) {
-  const retina = require.context('@/assets/', true, /\.(png|jpe?g)$/);
-  const nonretina = require.context('@/assets/?resize&nonretina', true, /\.(png|jpe?g)$/);
-
-  return createAsyncSource(item, retina, nonretina);
+  return createAsyncSource(
+    item,
+    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src),
+    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize&nonretina')
+  );
 }
 
 function createWebpImageConfig (item) {
-  const retina = require.context('@/assets/?webp', true, /\.(png|jpe?g)$/);
-  const nonretina = require.context('@/assets/?webp&resize&nonretina', true, /\.(png|jpe?g)$/);
-
-  return createAsyncSource(item, retina, nonretina);
+  return createAsyncSource(
+    item,
+    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp'),
+    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp&resize&nonretina')
+  );
 }
 
 function createAsyncSource (item, retina, nonretina) {
   return {
     asyncComponent: () => {
       return Promise.all([
-        retina('./' + item.src), nonretina('./' + item.src)
+        retina, nonretina
       ]).then((urls) => {
         return {
           render (create) {
@@ -138,9 +133,9 @@ function createSourceElement (create, item, [
 ]) {
   return create('source', {
     attrs: {
-      srcset: `${retinaUrl} 2x, ${nonRetinaUrl} 1x`,
+      srcset: `${retinaUrl.default.src} 2x, ${nonRetinaUrl.default.src} 1x`,
       media: breakpoint[item['media']],
-      type: mimeTypes[getMimeType(retinaUrl)]
+      type: mimeTypes[getMimeType(retinaUrl.default.src)]
     }
   });
 }

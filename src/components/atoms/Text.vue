@@ -6,7 +6,9 @@
 
 <script>
 export default {
-
+  created () {
+    console.log('TEXT');
+  }
 };
 </script>
 

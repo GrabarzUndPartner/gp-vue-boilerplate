@@ -22,13 +22,11 @@
 </template>
 
 <script>
-import gpArticle from '@/components/molecules/Article';
-import gpText from '@/components/atoms/Text';
 
 export default {
   components: {
-    gpArticle,
-    gpText
+    gpArticle: () => import(/* webpackMode: "eager" */'@/components/molecules/Article'),
+    gpText: () => import(/* webpackMode: "eager" */'@/components/atoms/Text')
   },
 
   props: {
@@ -38,6 +36,10 @@ export default {
         return this.$t('content', 'en');
       }
     }
+  },
+
+  created () {
+    console.log('HEADLINETEXT');
   }
 };
 </script>

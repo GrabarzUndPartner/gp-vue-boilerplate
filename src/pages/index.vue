@@ -11,29 +11,50 @@
 
 <template>
   <div class="content">
-    <gp-stage />
-    <gp-headline-text />
+    <div
+      v-for="(item, index) in components"
+      :key="index"
+    >
+      <lazy-hydrate
+        v-if="item.onlySSR"
+        ssr-only
+      >
+        <component
+          :is="item.asyncComponent"
+          :content="item.data.content"
+        />
+      </lazy-hydrate>
+      <lazy-hydrate
+        v-else
+        when-visible
+      >
+        <component
+          :is="item.asyncComponent"
+          :content="item.data.content"
+        />
+      </lazy-hydrate>
+    </div>
 
     <h1>Headline</h1>
     <p>{{ $t('text') }}</p>
-
-    <svg-inline src="image3.svg" />
-    <svg-inline src="image2.svg" />
+    <lazy-hydrate ssr-only>
+      <svg-inline src="image3.svg" />
+    </lazy-hydrate>
+    <lazy-hydrate ssr-only>
+      <svg-inline src="image2.svg" />
+    </lazy-hydrate>
     <!-- <img src="@/assets/svg/image2.svg"> -->
   </div>
 </template>
 
 <script>
-import gpStage from '@/components/organisms/Stage';
-import gpHeadlineText from '@/components/organisms/article/HeadlineText';
 import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   components: {
-    gpStage,
-    gpHeadlineText,
     SvgInline
   },
+
   head () {
     return {
       title: 'title of page'
@@ -45,6 +66,59 @@ export default {
       img: 'image0.png',
       test: 'image2.svg'
     };
+  },
+
+  asyncData () {
+    return new Promise((resolve) => {
+      resolve([
+        {
+          c: 'Stage',
+          onlySSR: true,
+          data: {
+
+          }
+        }, {
+          c: 'article/HeadlineText',
+          onlySSR: true,
+          data: {
+
+          }
+        }, {
+          c: 'article/HeadlineText',
+          onlySSR: true,
+          data: {
+
+          }
+        }, {
+          c: 'article/HeadlineText',
+          onlySSR: true,
+          data: {
+
+          }
+        }
+      ]);
+    }).then((components) => {
+      return {
+        components: components
+      };
+    });
+  },
+
+  created () {
+    let r = require.context('@/components/organisms/', true, /\.(vue)$/);
+
+    this.components = this.components.map((item) => {
+      return {
+        asyncComponent: () => {
+          return new Promise((resolve) => {
+            resolve(r(`./${item.c}.vue`));
+          });
+        },
+        onlySSR: item.onlySSR,
+        data: item.data
+      };
+    });
+
   }
 };
 </script>

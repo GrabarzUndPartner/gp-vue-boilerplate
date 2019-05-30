@@ -13,15 +13,11 @@
 </template>
 
 <script>
-import gpHeadline from '@/components/atoms/headline/Page';
-import gpSubline from '@/components/atoms/subline/Page';
-import gpPicture from '@/components/atoms/Picture';
-
 export default {
   components: {
-    gpHeadline,
-    gpSubline,
-    gpPicture
+    gpHeadline: () => import(/* webpackMode: "eager" */'@/components/atoms/headline/Page'),
+    gpSubline: () => import(/* webpackMode: "eager" */'@/components/atoms/subline/Page'),
+    gpPicture: () => import(/* webpackMode: "eager" */'@/components/atoms/Picture')
   },
 
   props: {

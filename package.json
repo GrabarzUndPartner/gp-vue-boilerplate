@@ -17,6 +17,7 @@
     "dev": "cross-env NODE_ENV=development node ./env/server.js",
     "build": "npx nuxt build --config-file env/nuxt.config.js",
     "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js",
+    "static:now": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js && cp now.json dist/website && cd dist/website/ && now",
     "start": "cross-env NODE_ENV=production node ./env/server.js",
     "production": "npm run static && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
@@ -98,7 +99,8 @@
     "nuxt": "^2.7.1",
     "nuxt-i18n": "^5.12.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "vue-lazy-hydration": "^1.0.0-beta.9"
   },
   "repository": {
     "type": "git",
