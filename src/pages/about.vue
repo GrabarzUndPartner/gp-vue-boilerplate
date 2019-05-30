@@ -17,7 +17,7 @@
     hello22 {{ $t('configxyz') }}
     {{ $t('hello') }}
 
-    <img
+    <!-- <img
       src="~/assets/image0.png"
       alt="test"
     >
@@ -47,7 +47,7 @@
     <img
       src="~/assets/sample/1920x300.jpg"
       alt="test"
-    >
+    > -->
   </div>
 </template>
 

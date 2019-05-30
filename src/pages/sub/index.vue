@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 picture img {
   width: 100%;
   height: 300px;
