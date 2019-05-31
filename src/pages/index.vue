@@ -85,13 +85,13 @@ export default {
           }
         }, {
           c: 'article/HeadlineText',
-          onlySSR: true,
+          onlySSR: false,
           data: {
 
           }
         }, {
           c: 'article/HeadlineText',
-          onlySSR: true,
+          onlySSR: false,
           data: {
 
           }

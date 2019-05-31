@@ -60,6 +60,7 @@ module.exports = {
   },
 
   render: {
+    resourceHints: false,
     http2: { push: true }
   },
 

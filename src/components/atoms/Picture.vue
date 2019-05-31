@@ -99,7 +99,7 @@ function sortBy (list, pattern, attribute) {
 function createDefaultImageConfig (item) {
   return createAsyncSource(
     item,
-    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src),
+    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize'),
     import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize&nonretina')
   );
 }
@@ -118,6 +118,7 @@ function createAsyncSource (item, retina, nonretina) {
       return Promise.all([
         retina, nonretina
       ]).then((urls) => {
+        console.log(urls);
         return {
           render (create) {
             return createSourceElement(create, item, urls);
