@@ -1,6 +1,9 @@
 <template>
   <div class="organisms-stage">
-    <gp-picture class="background" />
+    <gp-picture
+      class="background"
+      :sources="content.sources"
+    />
     <div class="headline-subline">
       <gp-headline class="headline">
         {{ content.headline }}
@@ -26,10 +29,15 @@ export default {
       default () {
         return {
           headline: 'STAGE HEADLINE',
-          subline: 'STAGE SUBLINE'
+          subline: 'STAGE SUBLINE',
+
         };
       }
     }
+  },
+
+  created () {
+    console.log(this.content);
   }
 };
 </script>

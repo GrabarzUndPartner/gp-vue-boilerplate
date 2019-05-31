@@ -95,6 +95,22 @@ export default {
           data: {
 
           }
+        }, {
+          c: 'Stage',
+          onlySSR: true,
+          data: {
+            content: {
+              'sources': [
+                { 'media': 'default', 'src': 'retina/sample-b/1152x600.jpg' },
+                { 'media': 'xs', 'src': 'retina/sample-b/1536x600.jpg' },
+                { 'media': 'sm', 'src': 'retina/sample-b/1984x600.jpg' },
+                { 'media': 'md', 'src': 'retina/sample-b/2400x600.jpg' },
+                { 'media': 'lg', 'src': 'retina/sample-b/3200x600.jpg' },
+                { 'media': 'xl', 'src': 'retina/sample-b/3840x600.jpg' }
+              ]
+            }
+
+          }
         }
       ]);
     }).then((components) => {

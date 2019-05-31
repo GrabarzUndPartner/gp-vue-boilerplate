@@ -4,24 +4,24 @@
     "test": "message23",
     "hello": "hello world!",
     "sources": [
-      {"media": "default", "src": "retina/1152x600.jpg"},
-      {"media": "xs", "src": "retina/1536x600.jpg"},
-      {"media": "sm", "src": "retina/1984x600.jpg"},
-      {"media": "md", "src": "retina/2400x600.jpg"},
-      {"media": "lg", "src": "retina/3200x600.jpg"},
-      {"media": "xl", "src": "retina/3840x600.jpg"}
+      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
+      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
+      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
+      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
+      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
+      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
     ]
   },
   "de": {
     "test": "nachricht 123",
     "hello": "hallo welt",
     "sources": [
-      {"media": "default", "src": "retina/1152x600.jpg"},
-      {"media": "xs", "src": "retina/1536x600.jpg"},
-      {"media": "sm", "src": "retina/1984x600.jpg"},
-      {"media": "md", "src": "retina/2400x600.jpg"},
-      {"media": "lg", "src": "retina/3200x600.jpg"},
-      {"media": "xl", "src": "retina/3840x600.jpg"}
+      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
+      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
+      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
+      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
+      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
+      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
     ]
   }
 }

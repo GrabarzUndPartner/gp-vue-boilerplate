@@ -1,13 +1,13 @@
 <i18n>
 {
-  "en": {
+  "de": {
     "sources": [
-      {"media": "default", "src": "retina/1152x600.jpg"},
-      {"media": "xs", "src": "retina/1536x600.jpg"},
-      {"media": "sm", "src": "retina/1984x600.jpg"},
-      {"media": "md", "src": "retina/2400x600.jpg"},
-      {"media": "lg", "src": "retina/3200x600.jpg"},
-      {"media": "xl", "src": "retina/3840x600.jpg"}
+      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
+      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
+      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
+      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
+      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
+      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
     ]
   }
 }
@@ -22,7 +22,7 @@
     <img
       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
       :alt="alt"
-      loading="lazy"
+      loading="auto"
     >
   </picture>
 </template>
@@ -41,9 +41,11 @@ const mimeTypes = {
 export default {
   props: {
     sources: {
-      type: Object,
+      type: [
+        Array, Object
+      ],
       default () {
-        return this.$t('sources', 'en');
+        return this.$t('sources', 'de');
       }
     },
     alt: {
@@ -118,7 +120,6 @@ function createAsyncSource (item, retina, nonretina) {
       return Promise.all([
         retina, nonretina
       ]).then((urls) => {
-        console.log(urls);
         return {
           render (create) {
             return createSourceElement(create, item, urls);
