@@ -27,6 +27,11 @@ export default {
 
 <style module>
 :global(a.nuxt-link-active) {
-  color: red;
+  color: green;
+}
+
+a {
+  line-height: 2em;
+  color: black;
 }
 </style>

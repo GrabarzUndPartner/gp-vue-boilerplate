@@ -12,5 +12,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
+p {
+  font-family: serif;
+  font-weight: 400;
+}
+
+.wf-raleway-n4-active p {
+  font-family: "Raleway", serif;
+}
 </style>

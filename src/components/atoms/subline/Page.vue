@@ -13,4 +13,12 @@ export default {
 </script>
 
 <style lang="postcss">
+h4 {
+  font-family: serif;
+  font-weight: 400;
+}
+
+.wf-amaticsc-n4-active h4 {
+  font-family: "Amatic SC", serif;
+}
 </style>

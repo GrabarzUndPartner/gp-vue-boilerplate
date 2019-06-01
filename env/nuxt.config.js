@@ -16,7 +16,9 @@ module.exports = {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
         return [
           [
-            require.resolve('@nuxt/babel-preset-app'), { targets }
+            require.resolve('@nuxt/babel-preset-app'), {
+              targets
+            }
           ]
         ];
       }
@@ -237,9 +239,16 @@ module.exports = {
 
   head: {
     meta: [
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    link: [],
+    link: [
+      { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.documentElement.classList.add("wf-amaticsc-n7-active")' },
+      // { rel: 'prefetch', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.body.classList.add("wf-amaticsc-n4-active")' },
+      // { rel: 'preload', href: '/fonts/raleway-v13-latin-regular.woff2', as: 'font', type: 'font/woff2' },
+      // { rel: 'preload', href: '/fonts/raleway-v13-latin-500.woff2', as: 'font', type: 'font/woff2' },
+      // { rel: 'preload', href: '/fonts/raleway-v13-latin-600.woff2', as: 'font', type: 'font/woff2' }
+    ],
     // script: [
     //   {
     //     src:

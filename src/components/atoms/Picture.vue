@@ -8,7 +8,8 @@
       {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
       {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
       {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
-    ]
+    ],
+    "alt": "image description"
   }
 }
 </i18n>
@@ -22,7 +23,7 @@
     <img
       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
       :alt="alt"
-      loading="auto"
+      loading="lazy"
     >
   </picture>
 </template>
@@ -51,11 +52,9 @@ export default {
     alt: {
       type: String,
       required: false,
-      default: null
-    },
-    webp: {
-      type: Boolean,
-      default: true
+      default () {
+        return this.$t('alt', 'de');
+      }
     }
   },
 
