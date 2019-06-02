@@ -34,7 +34,7 @@
     "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.6.1",
+    "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^7.6.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@kazupon/vue-i18n-loader": "^0.3.0",
@@ -57,12 +57,12 @@
     "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-vue": "^5.2.2",
-    "express": "^4.17.0",
+    "express": "^4.17.1",
     "httpolyglot": "^0.1.2",
     "husky": "^2.3.0",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-webp": "^5.0.0",
+    "imagemin-webp": "^5.1.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "license-webpack-plugin": "^2.1.1",
     "multi-loader": "^0.1.0",
@@ -86,7 +86,7 @@
     "webpack-virtual-modules": "0.1.10"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/axios": "^5.5.2",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.1.0",
     "default-passive-events": "^1.0.10",
@@ -96,7 +96,7 @@
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.5.2",
     "svg4everybody": "^2.1.9",
-    "snyk": "^1.161.1"
+    "snyk": "^1.168.0"
   },
   "repository": {
     "type": "git",
