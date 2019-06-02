@@ -57,7 +57,7 @@
     "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-vue": "^5.2.2",
-    "express": "^4.17.0",
+    "express": "^4.17.1",
     "httpolyglot": "^0.1.2",
     "husky": "^2.3.0",
     "imagemin-jpeg-recompress": "^6.0.0",
