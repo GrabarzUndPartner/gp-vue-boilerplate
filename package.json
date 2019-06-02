@@ -34,8 +34,8 @@
     "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^7.6.0",
+    "@commitlint/cli": "^8.0.0",    
+    "@commitlint/config-conventional": "^8.0.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
