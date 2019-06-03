@@ -16,7 +16,7 @@
       :key="index"
     >
       <lazy-hydrate
-        v-if="item.onlySSR"
+        v-if="item.load == 'ssr-only'"
         ssr-only
       >
         <component
@@ -25,8 +25,17 @@
         />
       </lazy-hydrate>
       <lazy-hydrate
-        v-else
+        v-if="item.load == 'visible'"
         when-visible
+      >
+        <component
+          :is="item.asyncComponent"
+          :content="item.data.content"
+        />
+      </lazy-hydrate>
+      <lazy-hydrate
+        v-if="item.load == 'idle'"
+        when-idle
       >
         <component
           :is="item.asyncComponent"
@@ -73,25 +82,25 @@ export default {
       resolve([
         {
           c: 'Stage',
-          onlySSR: true,
+          load: 'ssr-only',
           data: {
 
           }
         }, {
           c: 'article/HeadlineText',
-          onlySSR: true,
+          load: 'ssr-only',
           data: {
 
           }
         }, {
           c: 'article/HeadlineText',
-          onlySSR: false,
+          load: 'visible',
           data: {
 
           }
         }, {
           c: 'article/HeadlineText',
-          onlySSR: false,
+          load: 'visible',
           data: {
 
           }
@@ -122,6 +131,9 @@ export default {
   },
 
   created () {
+    let hurra = () => getPost('Headline');
+    console.log(hurra);
+
     let r = require.context('@/components/organisms/', true, /\.(vue)$/);
 
     this.components = this.components.map((item) => {
@@ -131,11 +143,35 @@ export default {
             resolve(r(`./${item.c}.vue`));
           });
         },
-        onlySSR: item.onlySSR,
+        load: item.load,
         data: item.data
       };
     });
 
   }
 };
+
+global.requestIdleCallback =
+  global.requestIdleCallback ||
+  function (cb) {
+    var start = Date.now();
+    return setTimeout(function () {
+      cb({
+        didTimeout: false,
+        timeRemaining: function () {
+          return Math.max(0, 50 - (Date.now() - start));
+        }
+      });
+    }, 1);
+  };
+
+global.cancelIdleCallback =
+  global.cancelIdleCallback ||
+  function (id) {
+    clearTimeout(id);
+  };
+
+const getPost = (component) => ({
+  component: import(`@/components/atoms/${component}.vue`)
+});
 </script>

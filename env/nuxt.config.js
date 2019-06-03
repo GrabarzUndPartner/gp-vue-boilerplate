@@ -1,4 +1,4 @@
-// process.env.DEBUG = 'nuxt:*';
+process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
 const open = require('open');
@@ -137,6 +137,7 @@ module.exports = {
             file: 'de.json'
           }
         ],
+        parsePages: true,
         lazy: true,
         langDir: 'globals/locales/',
         defaultLocale: 'de',
@@ -243,8 +244,8 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.documentElement.classList.add("wf-amaticsc-n7-active")' },
-      // { rel: 'prefetch', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.body.classList.add("wf-amaticsc-n4-active")' },
+      // { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.documentElement.classList.add("wf-amaticsc-n7-active")' },
+      { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.body.classList.add("wf-amaticsc-n4-active")' },
       // { rel: 'preload', href: '/fonts/raleway-v13-latin-regular.woff2', as: 'font', type: 'font/woff2' },
       // { rel: 'preload', href: '/fonts/raleway-v13-latin-500.woff2', as: 'font', type: 'font/woff2' },
       // { rel: 'preload', href: '/fonts/raleway-v13-latin-600.woff2', as: 'font', type: 'font/woff2' }
