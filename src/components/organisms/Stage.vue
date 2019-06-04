@@ -1,9 +1,11 @@
 <template>
   <div class="organisms-stage">
-    <gp-picture
-      class="background"
-      :sources="content.sources"
-    />
+    <lazy-hydrate ssr-only>
+      <gp-picture
+        class="background"
+        :sources="content.sources"
+      />
+    </lazy-hydrate>
     <div class="headline-subline">
       <gp-headline class="headline">
         {{ content.headline }}
@@ -20,7 +22,7 @@ export default {
   components: {
     gpHeadline: () => import(/* webpackMode: "eager" */'@/components/atoms/headline/Page'),
     gpSubline: () => import(/* webpackMode: "eager" */'@/components/atoms/subline/Page'),
-    gpPicture: () => import(/* webpackMode: "eager" */'@/components/atoms/Picture')
+    gpPicture: () => import(/* webpackMode: "lazy" */'@/components/atoms/Picture')
   },
 
   props: {

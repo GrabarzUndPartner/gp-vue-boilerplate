@@ -11,36 +11,52 @@
 
 <template>
   <div class="content">
+    <stage />
     <div
       v-for="(item, index) in components"
       :key="index"
     >
       <lazy-hydrate
         v-if="item.load == 'ssr-only'"
+        v-slot="{ hydrated }"
         ssr-only
       >
-        <component
-          :is="item.asyncComponent"
-          :content="item.data.content"
-        />
+        <div>
+          test {{ hydrated }}
+          <component
+            :is="item.asyncComponent"
+            v-if="hydrated"
+            :content="item.data.content"
+          />
+        </div>
       </lazy-hydrate>
       <lazy-hydrate
         v-if="item.load == 'visible'"
+        v-slot="{ hydrated }"
         when-visible
       >
-        <component
-          :is="item.asyncComponent"
-          :content="item.data.content"
-        />
+        <div>
+          test {{ hydrated }}
+          <component
+            :is="item.asyncComponent"
+            v-if="hydrated"
+            :content="item.data.content"
+          />
+        </div>
       </lazy-hydrate>
       <lazy-hydrate
         v-if="item.load == 'idle'"
+        v-slot="{ hydrated }"
         when-idle
       >
-        <component
-          :is="item.asyncComponent"
-          :content="item.data.content"
-        />
+        <div>
+          test {{ hydrated }}
+          <component
+            :is="item.asyncComponent"
+            v-if="hydrated"
+            :content="item.data.content"
+          />
+        </div>
       </lazy-hydrate>
     </div>
 
@@ -61,7 +77,8 @@ import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   components: {
-    SvgInline
+    SvgInline,
+    Stage: () => import('@/components/organisms/Stage')
   },
 
   head () {
@@ -81,12 +98,6 @@ export default {
     return new Promise((resolve) => {
       resolve([
         {
-          c: 'Stage',
-          load: 'ssr-only',
-          data: {
-
-          }
-        }, {
           c: 'article/HeadlineText',
           load: 'ssr-only',
           data: {
@@ -131,17 +142,13 @@ export default {
   },
 
   created () {
-    let hurra = () => getPost('Headline');
-    console.log(hurra);
-
-    let r = require.context('@/components/organisms/', true, /\.(vue)$/);
+    // let hurra = () => getPost('Headline');
+    // console.log(hurra);
 
     this.components = this.components.map((item) => {
       return {
         asyncComponent: () => {
-          return new Promise((resolve) => {
-            resolve(r(`./${item.c}.vue`));
-          });
+          return import(/* webpackMode: "lazy" */`@/components/organisms/${item.c}`);
         },
         load: item.load,
         data: item.data
@@ -171,7 +178,7 @@ global.cancelIdleCallback =
     clearTimeout(id);
   };
 
-const getPost = (component) => ({
-  component: import(`@/components/atoms/${component}.vue`)
-});
+// const getPost = (component) => ({
+//   component: import(`@/components/atoms/${component}.vue`)
+// });
 </script>

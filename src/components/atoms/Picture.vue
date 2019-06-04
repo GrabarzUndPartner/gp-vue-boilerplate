@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import objectFitImages from 'object-fit-images';
 import breakpoint from '../../utils/breakpoint';
 
 const mimeTypes = {
@@ -67,9 +66,13 @@ export default {
     }
   },
 
-  created () {
+  mounted () {
     console.log('PICTURE');
-    objectFitImages(this.$el);
+    if ('objectFit' in document.documentElement.style === false) {
+      import('object-fit-images').then((objectFitImages) => {
+        objectFitImages(this.$el);
+      });
+    }
   }
 };
 
