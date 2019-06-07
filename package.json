@@ -96,7 +96,7 @@
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.5.2",
     "svg4everybody": "^2.1.9",
-    "snyk": "^1.168.0"
+    "snyk": "^1.173.2"
   },
   "repository": {
     "type": "git",
