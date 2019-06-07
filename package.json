@@ -76,7 +76,7 @@
     "postcss-normalize": "^8.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "rucksack-css": "^1.0.2",
-    "stylelint": "^10.0.1",
+    "stylelint": "^10.1.0",
     "stylelint-config-css-modules": "^1.4.0",
     "stylelint-config-recess-order": "^2.0.2",
     "stylelint-config-standard": "^18.3.0",
