@@ -30,3 +30,11 @@ install:
 after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: dist/website/
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
