@@ -16,15 +16,8 @@
     <headline :content="$t('test')" />
     hello22 {{ $t('configxyz') }}
     {{ $t('hello') }}
-    <img
-      src="~/assets/image.svg"
-      alt="test"
-    >
-    <img
-      src="~/assets/image2.svg"
-      alt="test"
-    >
-    <img
+
+    <!-- <img
       src="~/assets/image0.png"
       alt="test"
     >
@@ -54,7 +47,7 @@
     <img
       src="~/assets/sample/1920x300.jpg"
       alt="test"
-    >
+    > -->
   </div>
 </template>
 

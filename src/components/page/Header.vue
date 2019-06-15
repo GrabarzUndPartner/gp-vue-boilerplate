@@ -37,10 +37,6 @@ export default {
         return locale.code !== this.$i18n.locale;
       });
     }
-  },
-
-  mounted () {
-    // console.log(this.navigation);
   }
 };
 </script>

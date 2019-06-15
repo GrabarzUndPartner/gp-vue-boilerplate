@@ -13,7 +13,9 @@ Vue.component('intersect', {
       type: Array,
       required: false,
       default() {
-        return [0];
+        return [
+0
+];
       }
     },
     root: {
@@ -74,7 +76,9 @@ function onScroll() {
   });
 }
 
-function onIntersect([entry]) {
+function onIntersect([
+entry
+]) {
   if (!entry.isIntersecting) {
     observedIntersections.delete(entry.target);
     this.$emit('leave', entry);
