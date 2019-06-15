@@ -21,8 +21,6 @@ export default {
   },
 
   created () {
-    console.log('SVG');
-
     this.item = {
       asyncComponent: () => {
         return import(/* webpackMode: "lazy-once" */'@/assets/svg/' + this.src + '?include').then((result) => {

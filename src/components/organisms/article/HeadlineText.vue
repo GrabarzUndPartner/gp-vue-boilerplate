@@ -43,14 +43,6 @@ export default {
     return {
       isVisible: process.browser ? true : false
     };
-  },
-
-  created () {
-    console.log('HEADLINETEXT');
-  },
-
-  mounted () {
-    // this.$el.classList.add('visible');
   }
 };
 </script>

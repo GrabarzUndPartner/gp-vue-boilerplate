@@ -67,7 +67,6 @@ export default {
   },
 
   mounted () {
-    console.log('PICTURE');
     if ('objectFit' in document.documentElement.style === false) {
       import('object-fit-images').then((objectFitImages) => {
         objectFitImages(this.$el);

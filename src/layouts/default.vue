@@ -24,15 +24,6 @@ export default {
         lang: this.$i18n.locale
       }
     };
-  },
-  data () {
-
-    return {
-
-    };
-  },
-  mounted () {
-
   }
 };
 </script>

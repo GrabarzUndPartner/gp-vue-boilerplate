@@ -14,12 +14,13 @@ env:
     - secure: "FX6kiDWQELo076iQDwW5m5zdRQMqV+wYBOcx4B+UwA+PnpmVaSv5FksjF45ruefp26RXLfSaytj0iE70huGqb6e34SyqJndPmrU58kBq6vz00iw94hwZBUmfaibNd0Q7oeRGmmZWwE5oZt2ll8RMzI9K95w+rFeHy9hXlFG2zCFU51RgQsc8pCxYjphbt6ki2kwmvtdBkCuMOckNI5QG/lSU9uiuNjys3/sBLmtq67JZbYNP3RQolm5Y86mvESkvHrEf0afQNFqciJW8TW4sj5J9ZSJXcYh0GWWPr7sId7mqtwyY0ciTbdgwLX0Aa/1D9o2eIIPfL2U5hNrmwP8OULWXQ/9+8p4r5RZqswy6SxtjHfSFFW0CTDgiuYt7c4bj5v5UbekOcrQr6PlF1amI2kFe8V7Q9zzVMjyhIDEV3ndEC2XLQDOppCdnLetAcRuK4j/jGeJp8fyWcIMeJLlB0CZ8tVxgwuDD9R8903TJw0xxETI4cfM1AdZPEXPUod/6htz+N17kaVFmH3Z69mLdIMA4+MbTiVObmefep1s7sxFU/flkQXOV3G5ij/2CkyO3RVlXICXNgOThJ33Sbmftv482cAiW4VHMZPN15AvIiPuDxY0gE5vFcJkqhKXUFw7v+gLSkva0kyv8D6VfcV7cRnZKMvtGlMRr+A5247C/8K4="
 cache: false
 before_install:
+  # image optimization dependencies
   - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
   # cypress dependencies
   - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 install:
   - npm i
-  - npm install wait-on mocha@5.2.0 mochawesome --no-save
+  - npm install wait-on mocha mochawesome --no-save
   - npm run static
 script:
   - npm run start & npx wait-on http://localhost:8050

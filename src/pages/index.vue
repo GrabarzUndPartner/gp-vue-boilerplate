@@ -106,9 +106,6 @@ export default {
   },
 
   created () {
-    // let hurra = () => getPost('Headline');
-    // console.log(hurra);
-
     this.components = this.components.map((item) => {
       return {
         asyncComponent: () => import(`@/components/organisms/${item.c}`),
@@ -119,28 +116,4 @@ export default {
 
   }
 };
-
-global.requestIdleCallback =
-  global.requestIdleCallback ||
-  function (cb) {
-    var start = Date.now();
-    return setTimeout(function () {
-      cb({
-        didTimeout: false,
-        timeRemaining: function () {
-          return Math.max(0, 50 - (Date.now() - start));
-        }
-      });
-    }, 1);
-  };
-
-global.cancelIdleCallback =
-  global.cancelIdleCallback ||
-  function (id) {
-    clearTimeout(id);
-  };
-
-// const getPost = (component) => ({
-//   component: import(`@/components/atoms/${component}.vue`)
-// });
 </script>
