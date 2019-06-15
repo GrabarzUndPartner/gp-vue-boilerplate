@@ -22,11 +22,11 @@ install:
   - npm i
   - npm install wait-on mocha mochawesome --no-save
   - npm run static
-script:
-  - npm run start & npx wait-on http://localhost:8050
-  - export CYPRESS_PROJECT_ID=575mhd
-  - npm run cypress:run -- --record
-  - kill $(jobs -p) || true
+# script:
+#   - npm run start & npx wait-on http://localhost:8050
+#   - export CYPRESS_PROJECT_ID=575mhd
+#   - npm run cypress:run -- --record
+#   - kill $(jobs -p) || true
 after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release
