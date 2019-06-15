@@ -31,6 +31,8 @@ after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release
 deploy:
+  edge:
+    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   local_dir: ./dist/website/
