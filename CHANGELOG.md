@@ -1,3 +1,30 @@
+# [1.19.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.2...v1.19.0) (2019-06-15)
+
+
+### Bug Fixes
+
+* **appveyor:** install node x64 ([97a6d2d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/97a6d2d))
+* **cleanup:** cleanup nuxt.config and updated snyk version ([10c2a1a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/10c2a1a))
+* **cleanup:** removed unused code ([c348b5b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c348b5b))
+* **cypress:** temporary disable of cypress tests ([c8836c2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c8836c2))
+* **font:** lazy load of font files by preload and prefetch ([b775d6f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b775d6f))
+* **fonts:** dynamic font loading ([283433b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/283433b))
+* **images:** extended sample ([e453fcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e453fcd))
+* **lazy:** hydrate ([1c9bb95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c9bb95))
+* **lazy-hydrate:** test load pattern ([5f777d2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5f777d2))
+* **license:** added missed license ([3e40a8a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3e40a8a))
+* **sample:** added new components ([fb28244](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fb28244))
+* **snyk:** auth ([74bff09](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/74bff09))
+
+
+### Features
+
+* **font:** efficient font loading ([59f50bb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/59f50bb))
+* **lazy-hydrate:** optimized loading of components ([66b25ae](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/66b25ae))
+* **polyfill:** added featured polyfill-service ([ee072bc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ee072bc))
+* **svg:** new implementation ([cbaad7e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cbaad7e))
+* **svg:** refactored svg import ([ff3a39d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ff3a39d))
+
 ## [1.18.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.1...v1.18.2) (2019-05-19)
 
 
