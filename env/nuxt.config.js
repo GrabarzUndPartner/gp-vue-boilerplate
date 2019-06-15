@@ -156,6 +156,26 @@ module.exports = {
       }
     ],
     [
+      'nuxt-polyfill', {
+        features: [
+          /*
+              Feature with detect:
+
+              Detection is better because the polyfill will not be
+              loaded, parsed and executed if it's not necessary.
+          */
+          {
+            require: 'picturefill',
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+          },
+          {
+            require: 'intersection-observer',
+            detect: () => 'IntersectionObserver' in window,
+          },
+        ]
+      }
+    ],
+    [
       '@nuxtjs/pwa', {
         dev: process.env.NODE_ENV === 'development',
         icon: {

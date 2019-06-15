@@ -95,11 +95,13 @@
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.2.0",
     "default-passive-events": "^1.0.10",
+    "intersection-observer": "^0.7.0",
     "mime": "^2.4.3",
     "nuxt": "^2.8.0",
     "nuxt-i18n": "^5.12.4",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
+    "picturefill": "^3.0.3",
     "rxjs": "^6.5.2",
     "vue-lazy-hydration": "^1.0.0-beta.9"
   },
