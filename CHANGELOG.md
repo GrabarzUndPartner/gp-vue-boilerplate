@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.0...v1.20.1) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from master branch ([73e679f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/73e679f))
+
 # [1.20.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.19.0...v1.20.0) (2019-06-15)
 
 
