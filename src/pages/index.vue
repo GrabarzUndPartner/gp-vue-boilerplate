@@ -16,47 +16,11 @@
       v-for="(item, index) in components"
       :key="index"
     >
-      <lazy-hydrate
-        v-if="item.load == 'ssr-only'"
-        v-slot="{ hydrated }"
-        ssr-only
-      >
-        <div>
-          test {{ hydrated }}
-          <component
-            :is="item.asyncComponent"
-            v-if="hydrated"
-            :content="item.data.content"
-          />
-        </div>
-      </lazy-hydrate>
-      <lazy-hydrate
-        v-if="item.load == 'visible'"
-        v-slot="{ hydrated }"
-        when-visible
-      >
-        <div>
-          test {{ hydrated }}
-          <component
-            :is="item.asyncComponent"
-            v-if="hydrated"
-            :content="item.data.content"
-          />
-        </div>
-      </lazy-hydrate>
-      <lazy-hydrate
-        v-if="item.load == 'idle'"
-        v-slot="{ hydrated }"
-        when-idle
-      >
-        <div>
-          test {{ hydrated }}
-          <component
-            :is="item.asyncComponent"
-            v-if="hydrated"
-            :content="item.data.content"
-          />
-        </div>
+      <lazy-hydrate when-visible>
+        <component
+          :is="item.asyncComponent"
+          :content="item.data.content"
+        />
       </lazy-hydrate>
     </div>
 
@@ -147,9 +111,7 @@ export default {
 
     this.components = this.components.map((item) => {
       return {
-        asyncComponent: () => {
-          return import(/* webpackMode: "lazy" */`@/components/organisms/${item.c}`);
-        },
+        asyncComponent: () => import(`@/components/organisms/${item.c}`),
         load: item.load,
         data: item.data
       };

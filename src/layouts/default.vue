@@ -13,8 +13,6 @@
 </template>
 
 <script>
-// import PQueue from 'p-queue';
-
 export default {
   components: {
     PageHeader: () => import(/* webpackMode: "eager" */'../components/page/Header'),
@@ -35,85 +33,16 @@ export default {
   },
   mounted () {
 
-    // global.addEventListener('load', () => {
-    //   Promise.all([
-    //     loadFont('/fonts/amatic-sc-v12-latin-700.woff2'),
-    //     // loadFont('/fonts/amatic-sc-v12-latin-regular.woff2'),
-    //     // loadFont('/fonts/raleway-v13-latin-600.woff2'),
-    //     // loadFont('/fonts/raleway-v13-latin-500.woff2'),
-    //     loadFont('/fonts/raleway-v13-latin-regular.woff2')
-    //   ]).then(() => {
-    //     addClassToPage([
-    //       'wf-amaticsc-n7-active', 'wf-amaticsc-n4-active', 'wf-raleway-n6-active', 'wf-raleway-n5-active', 'wf-raleway-n4-active'
-    //     ]);
-    //   });
-
-    // Promise.all([
-    //   loadFont('/fonts/amatic-sc-v12-latin-700.woff2')
-    //     .then(() => addClassToPage('wf-amaticsc-n7-active')),
-    //   loadFont('/fonts/amatic-sc-v12-latin-regular.woff2')
-    //     .then(() => addClassToPage('wf-amaticsc-n4-active'))
-    // ]).then(() => {
-    //   setTimeout(() => {
-    //     Promise.all([
-    //       loadFont('/fonts/raleway-v13-latin-600.woff2')
-    //         .then(() => addClassToPage('wf-raleway-n6-active')),
-    //       loadFont('/fonts/raleway-v13-latin-500.woff2')
-    //         .then(() => addClassToPage('wf-raleway-n5-active'))
-    //     ]).then(() => {
-    //       setTimeout(() => {
-    //         loadFont('/fonts/raleway-v13-latin-regular.woff2')
-    //           .then(() => addClassToPage('wf-raleway-n4-active'));
-    //       }, 10);
-    //     });
-    //   }, 10);
-    // });
-
-    // const queue = new PQueue({ concurrency: 2 });
-    // queue.add(() => loadFont('/fonts/amatic-sc-v12-latin-700.woff2'), { priority: 1 })
-    //   .then(() => addClassToPage('wf-amaticsc-n7-active'));
-    // queue.add(() => loadFont('/fonts/amatic-sc-v12-latin-regular.woff2'), { priority: 1 })
-    //   .then(() => addClassToPage('wf-amaticsc-n4-active'));
-    // queue.add(() => loadFont('/fonts/raleway-v13-latin-600.woff2'))
-    //   .then(() => addClassToPage('wf-raleway-n6-active'));
-    // queue.add(() => loadFont('/fonts/raleway-v13-latin-500.woff2'))
-    //   .then(() => addClassToPage('wf-raleway-n5-active'));
-    // queue.add(() => loadFont('/fonts/raleway-v13-latin-regular.woff2'))
-    //   .then(() => addClassToPage('wf-raleway-n4-active'));
-    // });
   }
 };
-
-// function loadFont (url) {
-//   return new Promise((resolve) => {
-//     global.requestIdleCallback(() => {
-//       let link = document.createElement('link');
-//       link.rel = 'prefetch';
-//       link.onload = () => {
-//         resolve();
-//       };
-//       link.href = url;
-//       link.as = 'font';
-//       link.type = 'font/woff2';
-//       link.crossorigin = 'anonymous';
-//       document.querySelector('head').appendChild(link);
-//     });
-//   });
-// }
-
-// function addClassToPage (className) {
-//   global.requestIdleCallback(() => {
-//     document.documentElement.classList.add(...className);
-//   });
-// }
 </script>
 
 <style lang="postcss">
 body {
   margin: 0;
 }
-
 /* stylelint-disable */
+
 /* amatic-sc-regular - latin */
 @font-face {
   font-family: "Amatic SC";

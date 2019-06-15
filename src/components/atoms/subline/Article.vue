@@ -16,7 +16,7 @@ h5 {
   font-weight: 500;
 }
 
-.wf-raleway-n5-active h5 {
+.visible h5 {
   font-family: "Raleway", serif;
 }
 </style>

@@ -1,4 +1,4 @@
-process.env.DEBUG = 'nuxt:*';
+// process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
 const open = require('open');
@@ -9,15 +9,22 @@ module.exports = {
   css: [],
   env: {},
 
+  modern: 'client',
+
   build: {
     analyze: getAnalyzerConfig(),
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
+    },
     babel: {
       presets ({ isServer }) {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
         return [
           [
             require.resolve('@nuxt/babel-preset-app'), {
-              targets
+              targets,
+              useBuiltIns: 'usage'
             }
           ]
         ];
@@ -54,7 +61,8 @@ module.exports = {
       }
     },
     parallel: true,
-    transpile: []
+    transpile: [],
+    crossorigin: 'anonymous'
   },
 
   generate: {
@@ -67,7 +75,8 @@ module.exports = {
   },
 
   router: {
-    base: '/'
+    base: '/',
+    prefetchLinks: true
   },
 
   hooks: {
@@ -76,7 +85,7 @@ module.exports = {
         if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
           open('http://localhost:8050', {
             app: [
-              'google chrome', '--incognito'
+              'google chrome'
             ]
           });
         }
@@ -103,7 +112,7 @@ module.exports = {
         responsive: {
           adapter: require(__dirname + '/../src/modules/responsive-loader/adapter.js')
         },
-        optimizeImagesInDev: true,
+        optimizeImagesInDev: false,
         mozjpeg: {
           quality: 70,
           progressive: true,
@@ -243,13 +252,13 @@ module.exports = {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    // link: [
-    // { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.documentElement.classList.add("wf-amaticsc-n7-active")' },
-    // { rel: 'preload', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', onload: 'document.body.classList.add("wf-amaticsc-n4-active")' },
-    // { rel: 'preload', href: '/fonts/raleway-v13-latin-regular.woff2', as: 'font', type: 'font/woff2' },
-    // { rel: 'preload', href: '/fonts/raleway-v13-latin-500.woff2', as: 'font', type: 'font/woff2' },
-    // { rel: 'preload', href: '/fonts/raleway-v13-latin-600.woff2', as: 'font', type: 'font/woff2' }
-    // ],
+    link: [
+      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-500.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-600.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+    ],
     // script: [
     //   {
     //     src:

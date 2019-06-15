@@ -14,11 +14,7 @@ export default {
 
 <style lang="postcss">
 h1 {
-  font-family: serif;
-  font-weight: 700;
-}
-
-.wf-amaticsc-n7-active h1 {
   font-family: "Amatic SC", serif;
+  font-weight: 700;
 }
 </style>
