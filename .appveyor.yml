@@ -2,7 +2,7 @@ version: "{build}"
 
 install:
   - ps: $nodejs_version = Get-Content .nvmrc -Raw | foreach{ $_.Trim()}
-  - ps: Install-Product node $nodejs_version
+  - ps: Install-Product node $nodejs_version x64
   - npm install
 
 build: off
