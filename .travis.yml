@@ -33,7 +33,7 @@ after_success:
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: dist/website/
+  local_dir: ./dist/website/
   target-branch: gh-pages
   github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
