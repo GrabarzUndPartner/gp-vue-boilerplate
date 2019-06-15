@@ -30,6 +30,7 @@ install:
 after_success:
   - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   - npm run semantic-release
+# test deploy
 deploy:
   provider: pages
   skip_cleanup: true
