@@ -1,3 +1,11 @@
+## [1.20.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.4...v1.20.5) (2019-06-16)
+
+
+### Bug Fixes
+
+* **travis:** add base var to render gh-pages properly ([58816da](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/58816da))
+* **travis:** deploy gh-pages from master branch ([94cc43c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/94cc43c))
+
 ## [1.20.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.3...v1.20.4) (2019-06-15)
 
 
