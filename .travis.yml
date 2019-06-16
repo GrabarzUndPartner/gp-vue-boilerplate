@@ -1,7 +1,7 @@
 language: node_js
 branches:
-  # except:
-  #   - /^v\d+\.\d+\.\d+$/
+  except:
+    - /^v\d+\.\d+\.\d+$/
 env:
   global:
     #saucelabs
@@ -31,8 +31,6 @@ after_success:
   # - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   # - npm run semantic-release
 deploy:
-  edge:
-    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   local_dir: ./dist/website/
@@ -40,4 +38,4 @@ deploy:
   github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
-    branch: feature/gh-pages_deploy
+    branch: master
