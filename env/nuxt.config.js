@@ -75,7 +75,7 @@ module.exports = {
   },
 
   router: {
-    base: process.env.npm_config_base || '/',
+    base: getBasePath(),
     prefetchLinks: true
   },
 
@@ -274,11 +274,11 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/amatic-sc-v12-latin-700.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/amatic-sc-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-500.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: '/fonts/raleway-v13-latin-600.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/amatic-sc-v12-latin-700.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/amatic-sc-v12-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-500.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-600.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
     ],
     // script: [
     //   {
@@ -305,4 +305,8 @@ function getAnalyzerConfig () {
   } else {
     return false;
   }
+}
+
+function getBasePath () {
+  return process.env.npm_config_base || '/';
 }
