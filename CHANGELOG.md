@@ -1,3 +1,10 @@
+## [1.20.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.6...v1.20.7) (2019-06-16)
+
+
+### Bug Fixes
+
+* **base-url:** base-url support for font loading ([44d3d9f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/44d3d9f))
+
 ## [1.20.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.5...v1.20.6) (2019-06-16)
 
 
