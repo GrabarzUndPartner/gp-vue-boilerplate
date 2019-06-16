@@ -20,6 +20,13 @@ export default {
   },
   head () {
     return {
+      link: [
+        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-500.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-600.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+      ],
       htmlAttrs: {
         lang: this.$i18n.locale
       }
@@ -42,8 +49,8 @@ body {
   font-display: swap;
   unicode-range: U+000-5FF;
   src: local("Amatic SC Regular"), local("AmaticSC-Regular"),
-    url("/fonts/amatic-sc-v12-latin-regular.woff2") format("woff2"),
-    url("/fonts/amatic-sc-v12-latin-regular.woff") format("woff");
+    url("~assets/fonts/amatic-sc-v12-latin-regular.woff2") format("woff2"),
+    url("~assets/fonts/amatic-sc-v12-latin-regular.woff") format("woff");
 }
 
 /* amatic-sc-700 - latin */
@@ -54,8 +61,8 @@ body {
   font-display: swap;
   unicode-range: U+000-5FF;
   src: local("Amatic SC Bold"), local("AmaticSC-Bold"),
-    url("/fonts/amatic-sc-v12-latin-700.woff2") format("woff2"),
-    url("/fonts/amatic-sc-v12-latin-700.woff") format("woff");
+    url("~assets/fonts/amatic-sc-v12-latin-700.woff2") format("woff2"),
+    url("~assets/fonts/amatic-sc-v12-latin-700.woff") format("woff");
 }
 
 /* raleway-regular - latin */
@@ -65,8 +72,8 @@ body {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: url("/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
-    url("/fonts/raleway-v13-latin-regular.woff") format("woff");
+  src: url("~assets/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
+    url("~assets/fonts/raleway-v13-latin-regular.woff") format("woff");
 }
 /* raleway-500 - latin */
 @font-face {
@@ -75,8 +82,8 @@ body {
   font-weight: 500;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: url("/fonts/raleway-v13-latin-500.woff2") format("woff2"),
-    url("/fonts/raleway-v13-latin-500.woff") format("woff");
+  src: url("~assets/fonts/raleway-v13-latin-500.woff2") format("woff2"),
+    url("~assets/fonts/raleway-v13-latin-500.woff") format("woff");
 }
 /* raleway-600 - latin */
 @font-face {
@@ -85,8 +92,8 @@ body {
   font-weight: 600;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: url("/fonts/raleway-v13-latin-600.woff2") format("woff2"),
-    url("/fonts/raleway-v13-latin-600.woff") format("woff");
+  src: url("~assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
+    url("~assets/fonts/raleway-v13-latin-600.woff") format("woff");
 }
 
 /* stylelint-enable */
