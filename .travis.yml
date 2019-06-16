@@ -20,16 +20,16 @@ before_install:
   - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 install:
   - npm i
-  # - npm install wait-on mocha mochawesome --no-save
+  - npm install wait-on mocha mochawesome --no-save
   - npm run static
 # script:
 #   - npm run start & npx wait-on http://localhost:8050
 #   - export CYPRESS_PROJECT_ID=575mhd
 #   - npm run cypress:run -- --record
 #   - kill $(jobs -p) || true
-# after_success:
-  # - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
-  # - npm run semantic-release
+after_success:
+  - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
+  - npm run semantic-release
 deploy:
   provider: pages
   skip_cleanup: true
