@@ -1,3 +1,11 @@
+## [1.20.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.5...v1.20.6) (2019-06-16)
+
+
+### Bug Fixes
+
+* **base:** configurable base path ([f5caa15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f5caa15))
+* **base:** remove slashes at font preload declaration ([d364134](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d364134))
+
 ## [1.20.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.4...v1.20.5) (2019-06-16)
 
 
