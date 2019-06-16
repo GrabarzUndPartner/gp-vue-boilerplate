@@ -1,3 +1,11 @@
+## [1.20.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.7...v1.20.8) (2019-06-16)
+
+
+### Bug Fixes
+
+* **i18n:** windows compatible regex instructions to collect lang files ([1c1802f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c1802f))
+* **readme:** osx/windows installation instructions ([b66c0c8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b66c0c8))
+
 ## [1.20.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.6...v1.20.7) (2019-06-16)
 
 
