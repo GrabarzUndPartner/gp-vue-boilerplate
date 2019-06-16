@@ -27,15 +27,13 @@ install:
 #   - export CYPRESS_PROJECT_ID=575mhd
 #   - npm run cypress:run -- --record
 #   - kill $(jobs -p) || true
-after_success:
+# after_success:
   # - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
   # - npm run semantic-release
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: ./dist/website/
-  target-branch: gh-pages
   github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
+  local_dir: dist/website/
   on:
     branch: master
