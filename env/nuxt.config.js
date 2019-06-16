@@ -75,7 +75,7 @@ module.exports = {
   },
 
   router: {
-    base: '/',
+    base: process.env.npm_config_base || '/',
     prefetchLinks: true
   },
 

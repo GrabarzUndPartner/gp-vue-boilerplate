@@ -21,7 +21,7 @@ before_install:
 install:
   - npm i
   - npm install wait-on mocha mochawesome --no-save
-  - npm run static
+  - npm run static --base=/gp-vue-boilerplate/
 # script:
 #   - npm run start & npx wait-on http://localhost:8050
 #   - export CYPRESS_PROJECT_ID=575mhd
