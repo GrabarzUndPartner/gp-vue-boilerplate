@@ -101,6 +101,7 @@
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "picturefill": "^3.0.3",
+    "postcss-url": "^8.0.0",
     "rxjs": "^6.5.2",
     "vue-lazy-hydration": "^1.0.0-beta.9"
   },
