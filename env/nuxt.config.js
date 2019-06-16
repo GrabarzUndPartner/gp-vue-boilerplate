@@ -275,10 +275,10 @@ module.exports = {
     ],
     link: [
       { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/amatic-sc-v12-latin-700.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/amatic-sc-v12-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-500.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}/fonts/raleway-v13-latin-600.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/amatic-sc-v12-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/raleway-v13-latin-regular.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/raleway-v13-latin-500.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', media: '(min-width: 0px)', href: `${getBasePath()}fonts/raleway-v13-latin-600.woff2`, as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
     ],
     // script: [
     //   {
