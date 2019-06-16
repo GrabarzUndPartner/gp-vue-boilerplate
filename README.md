@@ -16,10 +16,50 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ## Quickstart
 
-### Install the boilerplate
+### OSX - install
+
+- install nvm <https://medium.com/@isaacjoe/best-way-to-install-and-use-nvm-on-mac-e3a3f6bc494d>
 
 ```bash
-git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git 
+nvm install 10.6.0
+
+git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git
+cd gp-vue-boilerplate
+
+npm i snyk -g
+snyk auth
+
+npm i
+```
+
+### Windows - install
+
+- install nvm <https://github.com/coreybutler/nvm/releases>
+- install git client <https://git-scm.com/download/win>
+- install Visual C++ 2015 Build Tools <https://go.microsoft.com/fwlink/?LinkId=615460>
+- install Rust <https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi>
+- restart Windows
+
+- run command prompt as administrator
+
+```bash
+git clone -b msvc --recursive https://github.com/kornelski/pngquant.git
+cd pngquant
+
+cargo clean
+set PNG_STATIC=1
+cargo build --release
+
+cd ..
+git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git
+cd gp-vue-boilerplate
+
+nvm on
+nvm install 10.6.0 64
+nvm use 10.6.0
+npm i snyk -g
+# re-run command prompt as administrator
+snyk auth
 npm i
 ```
 
@@ -101,6 +141,7 @@ npm run storybook:prod
   - plugins
     - [x] postcss-preset-env
     - [x] postcss-normalize
+    - [x] postcss-url
     - [x] postcss-object-fit-images
     - [x] @fullhuman/postcss-purgecss
     - [x] postcss-momentum-scrolling
