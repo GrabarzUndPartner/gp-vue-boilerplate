@@ -11,7 +11,7 @@ module.exports = function () {
           use: {
             loader: 'responsive-loader',
             options: {
-              name: '[path][name].[width]x[height].[sha512:hash:base64:7].[ext].webp',
+              name: 'img/[name].[width]x[height].[sha512:hash:base64:7].[ext].webp',
               adapter: require(__dirname + '/responsive-loader/adapter.js')
             }
           }

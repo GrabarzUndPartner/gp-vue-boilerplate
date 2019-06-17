@@ -190,7 +190,7 @@ npm run storybook:prod
 
 ## ToDo
 
-- refactor resulting webp image paths
+--
 
 ## Checklist
 
