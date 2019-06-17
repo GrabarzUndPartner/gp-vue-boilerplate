@@ -16,6 +16,13 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ## Quickstart
 
+### IDE
+
+It is recommended to use VSCode Editor. <https://code.visualstudio.com/>
+
+Open the workspace by `config.code-workspace` and the recommended extensions, to use the boilerplate, can be installed by a notification.
+
+
 ### OSX - install
 
 - install nvm <https://medium.com/@isaacjoe/best-way-to-install-and-use-nvm-on-mac-e3a3f6bc494d>
