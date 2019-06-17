@@ -18,8 +18,8 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ## Demo
 
-Page: <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
-Code: <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
+- Page: <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
+- Code: <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
 
 ### IDE
 
