@@ -1,3 +1,11 @@
+## [1.20.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.8...v1.20.9) (2019-06-17)
+
+
+### Bug Fixes
+
+* **readme:** added ide recommendation ([57edf0f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/57edf0f))
+* **vscode:** cleanup extension-list in config ([b5657bc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b5657bc))
+
 ## [1.20.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.7...v1.20.8) (2019-06-16)
 
 
