@@ -32,7 +32,9 @@
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
     "storybook:prod": "build-storybook -c .storybook -o dist/storybook",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.2.1",
