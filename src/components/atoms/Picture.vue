@@ -1,18 +1,3 @@
-<i18n>
-{
-  "de": {
-    "sources": [
-      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
-      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
-      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
-      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
-      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
-      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
-    ],
-    "alt": "image description"
-  }
-}
-</i18n>
 <template>
   <picture class="cover">
     <component
@@ -45,14 +30,21 @@ export default {
         Array, Object
       ],
       default () {
-        return this.$t('sources', 'de');
+        return [
+          { 'media': 'default', 'src': 'retina/sample-a/1152x600.jpg' },
+          { 'media': 'xs', 'src': 'retina/sample-a/1536x600.jpg' },
+          { 'media': 'sm', 'src': 'retina/sample-a/1984x600.jpg' },
+          { 'media': 'md', 'src': 'retina/sample-a/2400x600.jpg' },
+          { 'media': 'lg', 'src': 'retina/sample-a/3200x600.jpg' },
+          { 'media': 'xl', 'src': 'retina/sample-a/3840x600.jpg' }
+        ];
       }
     },
     alt: {
       type: String,
       required: false,
       default () {
-        return this.$t('alt', 'de');
+        return 'image description';
       }
     }
   },
@@ -81,9 +73,26 @@ function convertObjectToArray (obj) {
 
 function completeEntries (list) {
   return list.reduce((result, item) => {
-    if (item.src.search('http') === -1) {
-      result.push(createDefaultImageConfig(item));
-      result.push(createWebpImageConfig(item));
+    if (item.src) {
+      if (item.src.search('http') === -1) {
+        result.push(createDefaultImageConfig(item));
+        result.push(createWebpImageConfig(item));
+      } else {
+        result.push(createAsyncSource(
+          item,
+          Promise.all([
+            Promise.resolve({ default: { src: item.src } })
+          ])
+        ));
+      }
+    } else {
+      result.push(createAsyncSource(
+        item,
+        Promise.all(Object.keys(item.srcset).map((key) => {
+          return Promise.resolve({ default: { src: item.srcset[key] } });
+        })
+        )
+      ));
     }
     return result;
   }, []);
@@ -102,25 +111,27 @@ function sortBy (list, pattern, attribute) {
 function createDefaultImageConfig (item) {
   return createAsyncSource(
     item,
-    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize'),
-    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize&nonretina')
+    Promise.all([
+      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize'),
+      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize&nonretina')
+    ])
   );
 }
 
 function createWebpImageConfig (item) {
   return createAsyncSource(
     item,
-    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp'),
-    import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp&resize&nonretina')
+    Promise.all([
+      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp'),
+      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp&resize&nonretina')
+    ])
   );
 }
 
-function createAsyncSource (item, retina, nonretina) {
+function createAsyncSource (item, urls) {
   return {
     asyncComponent: () => {
-      return Promise.all([
-        retina, nonretina
-      ]).then((urls) => {
+      return urls.then((urls) => {
         return {
           render (create) {
             return createSourceElement(create, item, urls);
@@ -131,16 +142,27 @@ function createAsyncSource (item, retina, nonretina) {
   };
 }
 
-function createSourceElement (create, item, [
-  retinaUrl, nonRetinaUrl
-]) {
+function createSourceElement (create, item, urls) {
   return create('source', {
-    attrs: {
-      srcset: `${retinaUrl.default.src} 2x, ${nonRetinaUrl.default.src} 1x`,
+    attrs: Object.assign({
       media: breakpoint[item['media']],
-      type: mimeTypes[getMimeType(retinaUrl.default.src)]
-    }
+      type: mimeTypes[getMimeType(urls[0].default.src)]
+    }, getSource(urls))
   });
+}
+
+function getSource (urls) {
+  if (urls.length > 1) {
+    return {
+      srcset: urls.map((url, index) => {
+        return `${url.default.src} ${urls.length - index}x`;
+      }).join(',')
+    };
+  } else {
+    return {
+      srcset: `${urls[0].default.src}`
+    };
+  }
 }
 
 function getMimeType (url) {
