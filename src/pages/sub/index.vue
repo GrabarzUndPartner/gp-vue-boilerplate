@@ -29,7 +29,6 @@
 
 <template>
   <div class="test">
-    <headline :content="$t('test')" />
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
@@ -39,7 +38,6 @@
 </template>
 
 <script>
-import Headline from '~/components/atoms/Headline';
 import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
@@ -50,7 +48,6 @@ export default {
     }
   },
   components: {
-    Headline,
     SvgInline
   },
   data () {

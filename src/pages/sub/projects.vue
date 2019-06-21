@@ -13,7 +13,6 @@
 
 <template>
   <div>
-    <headline :content="$t('test')" />
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
@@ -21,8 +20,6 @@
 </template>
 
 <script>
-import Headline from '~/components/atoms/Headline';
-
 export default {
   nuxtI18n: {
     paths: {
@@ -30,8 +27,9 @@ export default {
       de: '/unter/projects'
     }
   },
+
   components: {
-    headline: Headline
+
   },
 
   head () {

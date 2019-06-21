@@ -23,7 +23,9 @@ export default {
   created () {
     this.item = {
       asyncComponent: () => {
+
         return import(/* webpackMode: "lazy-once" */'@/assets/svg/' + this.src + '?include').then((result) => {
+          console.log(result);
           return {
             render (create) {
               return create('span', {

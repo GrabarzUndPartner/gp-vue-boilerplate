@@ -14,10 +14,10 @@ export default {
   data() {
     return {
       main: {
-        margin: 15,
-        maxWidth: 600,
+        padding: 15,
         lineHeight: 1.4,
         fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+        backgroundColor: '#ffffff',
       },
 
       logo: {
@@ -90,7 +90,7 @@ export default {
         <br />
         <a
           :style="link"
-          href="https://github.com/storybooks/storybook"
+          href="https://github.com/storybookjs/storybook"
           target="_blank"
           rel="noopener noreferrer"
         >

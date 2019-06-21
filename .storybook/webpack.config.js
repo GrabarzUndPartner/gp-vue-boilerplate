@@ -1,17 +1,59 @@
+const path = require('path')
 
-const nuxtConf = require('../env/nuxt.config')
+module.exports = ({ config }) => {
+  config.resolve.alias = Object.assign(config.resolve.alias, {
+    '@': path.resolve(__dirname, "../src"),
+    '@@': path.resolve(__dirname, "../"),
+    '~': path.resolve(__dirname, "../src"),
+    '~~': path.resolve(__dirname, "../")
+  });
 
-module.exports = (sBaseConfig, configType, defaultConfig) => {
-  const srcDir = `../${nuxtConf.srcDir || ''}`
-  const rootDir = `../${nuxtConf.rootDir || ''}`
+  config.module.rules.push({
+    resourceQuery: /postcss/,
+    use: [
+      'style-loader',
+      'css-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          config: {
+            path: '.storybook/'
+          }
+        }
+      }
+    ]
+  });
 
-  require('./webpack/fix/alias')(defaultConfig, rootDir, srcDir, __dirname);
-  require('./webpack/fix/postcss')(defaultConfig);
-  require('./webpack/fix/image')(defaultConfig);
-  require('./webpack/image')(defaultConfig, nuxtConf.dev);
-  require('./webpack/webp')(defaultConfig, nuxtConf.dev);
-  require('./webpack/svg')(defaultConfig);
+  config.module.rules = config.module.rules.map(rule => {
+    if (rule.test && rule.test.toString().includes('svg')) {
+      const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
+      return { ...rule, test: new RegExp(test) }
+    } else {
+      return rule
+    }
+  });
 
+  config.module.rules.push({
+    test: /\.svg$/,
+    oneOf: [{
+      resourceQuery: /include/,
+      use: [{
+        loader: 'raw-loader',
+        options: {}
+      }, {
+        loader: 'svgo-loader',
+        options: {
+          externalConfig: '.svgorc.yml'
+        }
+      }]
+    },
+    {
+      use: [{
+        loader: 'file-loader',
+        options: {}
+      }]
+    }]
+  });
 
-  return defaultConfig
+  return config;
 }

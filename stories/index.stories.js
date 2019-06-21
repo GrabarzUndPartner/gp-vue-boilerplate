@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope, react/no-this-in-sfc */
+/* eslint-disable react/react-in-jsx-scope */
 
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
@@ -21,8 +21,7 @@ storiesOf('Button', module)
   }))
   .add('with JSX', () => ({
     components: { MyButton },
-    // eslint-disable-next-line no-unused-vars
-    render (h) {
+    render () {
       return <my-button onClick={this.action}>With JSX</my-button>;
     },
     methods: { action: linkTo('clicked') },
@@ -32,5 +31,3 @@ storiesOf('Button', module)
     template: '<my-button @click="action">😀 😎 👍 💯</my-button>',
     methods: { action: action('clicked') },
   }));
-
-/* eslint-enable react/react-in-jsx-scope */
