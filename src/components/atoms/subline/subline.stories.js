@@ -24,7 +24,7 @@ storiesOf('atoms/Sublines', module)
       };
     }
   }))
-  .add('Page Subline', () => ({
+  .add('Page', () => ({
     components: {
       GpPageSubline,
     },
@@ -33,7 +33,7 @@ storiesOf('atoms/Sublines', module)
       return { text: 'Page Subline H4' };
     }
   }))
-  .add('Article Subline', () => ({
+  .add('Article', () => ({
     components: {
       GpArticleSubline,
     },
@@ -42,7 +42,7 @@ storiesOf('atoms/Sublines', module)
       return { text: 'Article Subline H5' };
     }
   }))
-  .add('Section Subline', () => ({
+  .add('Section', () => ({
     components: {
       GpSectionSubline,
     },

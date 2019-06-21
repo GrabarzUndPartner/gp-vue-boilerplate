@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue';
 import GpText from '@/components/atoms/Text.vue';
 
 storiesOf('atoms/Text', module)
-  .add('Running Text', () => ({
+  .add('Default', () => ({
     components: {
       GpText
     },

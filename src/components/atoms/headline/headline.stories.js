@@ -24,7 +24,7 @@ storiesOf('atoms/Headlines', module)
       };
     }
   }))
-  .add('Page Headline', () => ({
+  .add('Page', () => ({
     components: {
       GpPageHeadline,
     },
@@ -33,7 +33,7 @@ storiesOf('atoms/Headlines', module)
       return { text: 'Page Headline H1' };
     }
   }))
-  .add('Article Headline', () => ({
+  .add('Article', () => ({
     components: {
       GpArticleHeadline,
     },
@@ -42,7 +42,7 @@ storiesOf('atoms/Headlines', module)
       return { text: 'Article Headline H2' };
     }
   }))
-  .add('Section Headline', () => ({
+  .add('Section', () => ({
     components: {
       GpSectionHeadline,
     },
