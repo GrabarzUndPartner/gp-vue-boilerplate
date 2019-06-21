@@ -1,3 +1,17 @@
+## [1.20.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.10...v1.20.11) (2019-06-17)
+
+
+### Bug Fixes
+
+* **webp:** resulting path fix ([60fb431](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/60fb431))
+
+## [1.20.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.9...v1.20.10) (2019-06-17)
+
+
+### Bug Fixes
+
+* **readme:** added demo links and open todos ([10baf9b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/10baf9b))
+
 ## [1.20.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.8...v1.20.9) (2019-06-17)
 
 

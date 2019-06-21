@@ -14,12 +14,12 @@
 
 G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites by vuejs.
 
-## Quickstart
-
 ## Demo
 
-Page: <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
-Code: <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
+- Page: <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
+- Code: <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
+
+## Quickstart
 
 ### IDE
 
@@ -190,7 +190,7 @@ npm run storybook:prod
 
 ## ToDo
 
-- refactor resulting webp image paths
+--
 
 ## Checklist
 
