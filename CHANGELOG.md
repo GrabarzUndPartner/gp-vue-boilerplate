@@ -1,3 +1,19 @@
+# [1.21.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.11...v1.21.0) (2019-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** added lazy hydrate + svg support ([27b80b2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/27b80b2))
+* **storybook:** added stories ([a871544](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a871544))
+* **storybook:** removed script call duplicates in package.json ([e3f1bd4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e3f1bd4))
+* **storybook:** restructured stories ([df45618](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/df45618))
+* **storybook:** restructured stories for headline and subline ([5ef8c39](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5ef8c39))
+
+
+### Features
+
+* **storybook:** initial config ([4acc2a9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4acc2a9))
+
 ## [1.20.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.10...v1.20.11) (2019-06-17)
 
 
