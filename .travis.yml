@@ -12,28 +12,37 @@ env:
     - secure: tDmi0q7FWgCvn1ER6SsiSm1fJXGU1TJHaah16/L/UQ1pJe0Pp1BNiZzK8QwHQPOLFFVIGny6URrHcpo/D5F4PTcRabtjfZvi3UiKpBF0kgEzKlUsoZNs5bZ4dw2tocwJjtkQ9WokYPC13RanzBQK0kx0J6cN32a1jtm6Ov4VCzOl0ujRanOFLkCwokEsnninlTfGYfAJ7vstgYPToc/KttCyoLLu8S2s6uQ8TYOQWil4EAf/e3uktnqkyMBXJM6orlN9iCmVo2NcpvIPiQIgQt+YF42nLTddyWkuMlDxaLO/TV75UtemaoYbRPJScdVkZVq02/bTl7ZPQ1TEQIN+bwHc9RykBTKTlVgK1yPLN92nk/AXM/Apzg+xSAJy0gh7pMuLocmK4u1qOO8PrC5piHjzSaJ1ljsmQqAarXb6FgBpzra6uWlvfSeIWu7TILm0RxE4GtaqJQ5nmnR8hCz8pGQAdofANqd/VEE6ADpNBzThD0FS1iDr6/dTOcR4VCoP8LiMqIKI7zA368w/WjTfBS9SbXcKw0Et2B2gqDMZ+9i2wD9mgTVn/Ayf9tiLKHLlFWeTOWeC1NgfL88rvNdW6i0TlvkK9Q0cxpMljGgqoIwwrR3dBGqnH+ufuAakULHlExWpktdMuFlYRixwKi5jdFZIRIeM3rotljPGP7axPdI=
     #snyk
     - secure: "FX6kiDWQELo076iQDwW5m5zdRQMqV+wYBOcx4B+UwA+PnpmVaSv5FksjF45ruefp26RXLfSaytj0iE70huGqb6e34SyqJndPmrU58kBq6vz00iw94hwZBUmfaibNd0Q7oeRGmmZWwE5oZt2ll8RMzI9K95w+rFeHy9hXlFG2zCFU51RgQsc8pCxYjphbt6ki2kwmvtdBkCuMOckNI5QG/lSU9uiuNjys3/sBLmtq67JZbYNP3RQolm5Y86mvESkvHrEf0afQNFqciJW8TW4sj5J9ZSJXcYh0GWWPr7sId7mqtwyY0ciTbdgwLX0Aa/1D9o2eIIPfL2U5hNrmwP8OULWXQ/9+8p4r5RZqswy6SxtjHfSFFW0CTDgiuYt7c4bj5v5UbekOcrQr6PlF1amI2kFe8V7Q9zzVMjyhIDEV3ndEC2XLQDOppCdnLetAcRuK4j/jGeJp8fyWcIMeJLlB0CZ8tVxgwuDD9R8903TJw0xxETI4cfM1AdZPEXPUod/6htz+N17kaVFmH3Z69mLdIMA4+MbTiVObmefep1s7sxFU/flkQXOV3G5ij/2CkyO3RVlXICXNgOThJ33Sbmftv482cAiW4VHMZPN15AvIiPuDxY0gE5vFcJkqhKXUFw7v+gLSkva0kyv8D6VfcV7cRnZKMvtGlMRr+A5247C/8K4="
-cache: false
-before_install:
-  # image optimization dependencies
-  - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
-  # cypress dependencies
-  - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
-install:
-  - npm i
-  - npm install wait-on mocha mochawesome --no-save
-  - npm run static --base=/gp-vue-boilerplate/
+cache: bundler
+
+jobs:
+  include:
+    - stage: prepare cache
+      before_install:
+        # image optimization dependencies
+        - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
+        # cypress dependencies
+        - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+      install:
+        - npm i
+        - npm install wait-on mocha mochawesome --no-save
+    - stage: compile
+      script: npm run static --base=/gp-vue-boilerplate/
+    - stage: compile
+      script: npm run storybook:prod
+    - stage: deploy
+      script:
+        - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
+        - npm run semantic-release
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+        local_dir: dist/website/
+        on:
+          branch: master
 # script:
 #   - npm run start & npx wait-on http://localhost:8050
 #   - export CYPRESS_PROJECT_ID=575mhd
 #   - npm run cypress:run -- --record
 #   - kill $(jobs -p) || true
-after_success:
-  - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
-  - npm run semantic-release
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-  local_dir: dist/website/
-  on:
-    branch: master
+
