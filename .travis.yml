@@ -16,7 +16,9 @@ cache:
   bundler: true
   directories:
     - node_modules # NPM packages
-    - dist
+    - dist/reports
+    - dist/website
+    - dist/storybook
 jobs:
   include:
     - stage: prepare cache
@@ -40,7 +42,7 @@ jobs:
         provider: pages
         skip_cleanup: true
         github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-        local_dir: dist/website/
+        local_dir: dist/
         on:
           branch: master
 # script:
