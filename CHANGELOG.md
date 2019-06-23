@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.24.0...v1.25.0) (2019-06-23)
+
+
+### Features
+
+* **travis:** multiple stages test ([cd07a51](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cd07a51))
+
 # [1.24.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.23.0...v1.24.0) (2019-06-23)
 
 
