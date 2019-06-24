@@ -31,11 +31,12 @@ jobs:
         - npm i
         - npm install wait-on mocha mochawesome --no-save
     - stage: compile
-      script: npm run static --base=/gp-vue-boilerplate/website/
+      script: npm run static --base=/gp-vue-boilerplate/
     - stage: compile
       script: npm run storybook:prod
     - stage: deploy
       script:
+        - ls dist
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
       deploy:
