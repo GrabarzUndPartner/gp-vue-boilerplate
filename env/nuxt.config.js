@@ -67,7 +67,7 @@ module.exports = {
   },
 
   generate: {
-    dir: 'dist/'
+    dir: 'dist/website'
   },
 
   render: {
