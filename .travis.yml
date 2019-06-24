@@ -39,6 +39,7 @@ jobs:
         - ls dist
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
+        - ls dist/storybook
       deploy:
         provider: pages
         skip_cleanup: true
