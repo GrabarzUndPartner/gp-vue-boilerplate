@@ -30,9 +30,9 @@ jobs:
       install:
         - npm i
         - npm install wait-on mocha mochawesome --no-save
-    - stage: compile
+    - stage: website
       script: npm run static --base=/gp-vue-boilerplate/
-    - stage: compile
+    - stage: storybook
       script: npm run storybook:prod
     - stage: deploy
       script:
