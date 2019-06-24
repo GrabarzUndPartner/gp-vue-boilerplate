@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.1...v1.25.2) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** deploy multiple builds to gh-pages ([15b73ef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/15b73ef))
+
 ## [1.25.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.0...v1.25.1) (2019-06-24)
 
 
