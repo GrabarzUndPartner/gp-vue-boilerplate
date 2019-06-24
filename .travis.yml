@@ -38,8 +38,6 @@ jobs:
       script:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
-        - mv dist/website/* dist
-        - rm -rf dist/website
       deploy:
         provider: pages
         skip_cleanup: true
