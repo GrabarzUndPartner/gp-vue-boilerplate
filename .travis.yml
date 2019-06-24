@@ -36,10 +36,10 @@ jobs:
       script: npm run storybook:prod
     - stage: deploy
       script:
-        - ls dist
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
-        - ls dist/storybook
+        - mv dist/website dist
+        - rm -rf dist/website
       deploy:
         provider: pages
         skip_cleanup: true
