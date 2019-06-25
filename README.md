@@ -52,7 +52,6 @@ npm i
 - install Visual C++ 2015 Build Tools <https://go.microsoft.com/fwlink/?LinkId=615460>
 - install Rust <https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi>
 - restart Windows
-
 - run command prompt as administrator
 
 ```bash
