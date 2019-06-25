@@ -15,9 +15,7 @@ env:
 cache:
   npm: true
   directories:
-    - dist/reports
-    - dist/website
-    - dist/storybook
+    - dist
 jobs:
   include:
     - stage: prepare cache
