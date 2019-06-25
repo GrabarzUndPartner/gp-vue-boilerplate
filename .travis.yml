@@ -16,6 +16,7 @@ cache:
   npm: true
   directories:
     - dist
+    - reports
 jobs:
   include:
     - stage: prepare cache
@@ -30,13 +31,13 @@ jobs:
         - npm install wait-on mocha mochawesome --no-save
     - stage: website
       script: npm run static --base=/gp-vue-boilerplate/
-    # test
-    # - stage: storybook
-    #   script: npm run storybook:prod
+    - stage: storybook
+      script: npm run storybook:prod
     - stage: deploy
       script:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
+        - mv reports dist
       deploy:
         provider: pages
         skip_cleanup: true

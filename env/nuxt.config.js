@@ -293,7 +293,7 @@ function getAnalyzerConfig () {
   if (process.env.NODE_ENV === 'production') {
     return {
       analyzerMode: 'static',
-      reportFilename: path.resolve('dist/reports/webpack-bundle-analyzer.html'),
+      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
       openAnalyzer: true
     };
   } else {
