@@ -1,3 +1,10 @@
+## [1.25.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.5...v1.25.6) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([965adeb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/965adeb))
+
 ## [1.25.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.4...v1.25.5) (2019-06-24)
 
 
