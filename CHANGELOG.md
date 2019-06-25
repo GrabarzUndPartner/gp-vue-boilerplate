@@ -1,3 +1,11 @@
+## [1.25.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.9...v1.25.10) (2019-06-25)
+
+
+### Bug Fixes
+
+* **readme:** added additional demo links ([cc2816d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cc2816d))
+* **readme:** removed empty line ([69ef82e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/69ef82e))
+
 ## [1.25.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.8...v1.25.9) (2019-06-25)
 
 
