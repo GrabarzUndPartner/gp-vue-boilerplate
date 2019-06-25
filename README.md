@@ -16,8 +16,10 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ## Demo
 
-- Page: <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
-- Code: <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
+- website (build): <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
+- website (source code): <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
+- webpack report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack-bundle-analyzer.html>
+- storybook website components: <https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview>
 
 ## Quickstart
 
@@ -26,7 +28,6 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 It is recommended to use VSCode Editor. <https://code.visualstudio.com/>
 
 Open the workspace by `config.code-workspace` and the recommended extensions, to use the boilerplate, can be installed by a notification.
-
 
 ### OSX - install
 
@@ -51,7 +52,6 @@ npm i
 - install Visual C++ 2015 Build Tools <https://go.microsoft.com/fwlink/?LinkId=615460>
 - install Rust <https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi>
 - restart Windows
-
 - run command prompt as administrator
 
 ```bash
