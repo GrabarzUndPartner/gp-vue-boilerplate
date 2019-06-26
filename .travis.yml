@@ -34,6 +34,8 @@ jobs:
     - stage: storybook
       script: npm run storybook:prod
     - stage: deploy
+      on:
+        branch: master
       script:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release

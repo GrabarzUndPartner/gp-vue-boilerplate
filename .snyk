@@ -1,6 +1,198 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.3
-ignore: {}
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-MIXINDEEP-450212:
+    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.340Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.341Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+  SNYK-JS-SETVALUE-450213:
+    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.342Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.343Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.344Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.345Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.346Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.347Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        reason: None given
+        expires: '2019-07-25T13:41:47.348Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-AXIOS-174505:
