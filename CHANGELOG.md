@@ -1,3 +1,17 @@
+## [1.25.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.10...v1.25.11) (2019-06-26)
+
+
+### Bug Fixes
+
+* **appveyor:** add encrypted snyk token ([370143b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/370143b))
+* **appveyor:** added snyk auth ([427d258](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/427d258))
+* **appveyor:** corrected snyk auth command ([a413e46](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a413e46))
+* **appveyor:** corrected snyk auth command ([ba1c656](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ba1c656))
+* **package:** updated versions ([b856af6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b856af6))
+* **snyk:** added packages to wait for patch ([450ef85](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/450ef85))
+* **svg:** removed console log ([b703bd2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b703bd2))
+* **travis:** only execute stage deploy on master ([8136e66](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8136e66))
+
 ## [1.25.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.9...v1.25.10) (2019-06-25)
 
 

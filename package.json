@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "1.25.10",
+  "version": "1.25.11",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -90,7 +90,7 @@
     "terser": "^4.0.0",
     "webpack-virtual-modules": "0.1.10"
   },
-  "dependencies": { 
+  "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.2.0",
