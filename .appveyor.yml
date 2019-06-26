@@ -14,6 +14,7 @@ build: off
 test_script:
   - node --version && npm --version
   - npm run static
+  - snyk auth
   - npm test
 
 matrix:
