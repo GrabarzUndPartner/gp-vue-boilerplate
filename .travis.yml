@@ -51,11 +51,13 @@ jobs:
       script: npm run storybook:prod
     - stage: test
       script:
-        - npm install wait-on mocha mochawesome --no-save
+        - npm install wait-on mocha mochawesome mochawesome-merge mochawesome-report-generator --no-save
         - npm run start-static & npx wait-on http://localhost:8050
         - export CYPRESS_PROJECT_ID=575mhd
         - npm run cypress:run -- --record
         - kill $(jobs -p) || true
+        - npx mochawesome-merge --reportDir ./reports/cypress/results > ./reports/cypress/mochawesome.json
+        - npx mochawesome-report-generator mochawesome.json --reportDir=./reports/ --reportFilename=cypress.html
     - stage: deploy
       on:
         branch: master

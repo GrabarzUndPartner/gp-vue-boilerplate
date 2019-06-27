@@ -8,6 +8,9 @@
   "videosFolder": "./dist/reports/cypress/videos",
   "reporter": "mochawesome",
   "reporterOptions": {
-    "reportDir": "./dist/reports/cypress"
+    "reportDir": "./reports/cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
   }
 }
