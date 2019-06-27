@@ -33,6 +33,12 @@ jobs:
       script: npm run static --base=/gp-vue-boilerplate/
     - stage: storybook
       script: npm run storybook:prod
+    - stage: test
+      script:
+        - npm run start-static & npx wait-on http://localhost:8050
+        - export CYPRESS_PROJECT_ID=575mhd
+        - npm run cypress:run -- --record
+        - kill $(jobs -p) || true
     - stage: deploy
       on:
         branch: master
