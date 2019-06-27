@@ -36,6 +36,7 @@
     "block-spacing": "error",
     "no-debugger": "off",
     "no-console": "off",
+    "vue/no-v-html": "off",
     "semi": [
       "error",
       "always"
