@@ -45,13 +45,13 @@ jobs:
       #   - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
       install:
         - npm i
-        - npm install wait-on mocha mochawesome --no-save
     - stage: website
       script: npm run static --base=/gp-vue-boilerplate/
     - stage: storybook
       script: npm run storybook:prod
     - stage: test
       script:
+        - npm install wait-on mocha mochawesome --no-save
         - npm run start-static & npx wait-on http://localhost:8050
         - export CYPRESS_PROJECT_ID=575mhd
         - npm run cypress:run -- --record
