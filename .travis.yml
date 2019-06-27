@@ -37,12 +37,12 @@ cache:
 jobs:
   include:
     - stage: prepare cache
-      before_install:
-        - ls dist
-        # image optimization dependencies
-        - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
-        # cypress dependencies
-        - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+      # before_install:
+      #   - ls dist
+      #   # image optimization dependencies
+      #   - sudo apt-get install libtool libsecret-1-dev automake autoconf nasm
+      #   # cypress dependencies
+      #   - sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
       install:
         - npm i
         - npm install wait-on mocha mochawesome --no-save
