@@ -1,27 +1,33 @@
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozJpeg = require('imagemin-mozjpeg');
+const imageminWebp = require('imagemin-webp');
 
 module.exports = function () {
   this.extendBuild(config => {
-    let options = {
-      test: /\.(jpe?g|png|gif)$/i,
-      pngquant: {
-        quality: '75-100'
-      },
-      optipng: {
-        optimizationLevel: 3
-      },
-      jpegtran: null,
-      plugins: [
-        imageminMozJpeg({
-          quality: 70,
-          progressive: true,
-          sample: ['2x2']
-        })
+    config.module.rules.push({
+      test: /\.(jpe?g|png)$/i,
+      oneOf: [
+        {
+          resourceQuery: /webp/,
+          use: {
+            loader: 'responsive-loader',
+            options: {
+              name: 'img/[name].[width]x[height].[sha512:hash:base64:7].[ext].webp',
+              adapter: require(__dirname + '/responsive-loader/adapter.js')
+            }
+          }
+        }
       ]
-    };
+    });
 
-    options = Object.assign(options, { disable: this.options.dev });
-    config.plugins.push(new ImageminPlugin(options));
+    config.plugins.push(prepareConfig({
+      test: /\.(webp)$/i,
+      plugins: [
+        imageminWebp({ quality: 75 })
+      ]
+    }, this.options.dev));
   });
 };
+
+function prepareConfig (options, dev) {
+  return new ImageminPlugin(Object.assign(options, { disable: dev }));
+}

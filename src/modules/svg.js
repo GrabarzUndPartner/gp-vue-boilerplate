@@ -1,33 +1,33 @@
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-
 module.exports = function () {
-  this.extendBuild((config,
-    {
-      isClient,
-      loaders: { vue }
-    }) => {
-
-    // svg-symbol
-    if (isClient) {
-      vue.transformAssetUrls['svg-symbol'] = ['src'];
-    }
-
-    config.plugins.push(new SpriteLoaderPlugin({ plainSprite: false }));
+  this.extendBuild((config) => {
     config.module.rules.push({
       test: /\.svg$/,
-      use: [
+      oneOf: [
         {
-          loader: 'svg-sprite-loader',
-          options: {
-            extract: true,
-            esModule: false
-          }
+          resourceQuery: /include/,
+          use: [
+            {
+              loader: 'raw-loader',
+              options: {
+
+              }
+            }, {
+              loader: 'svgo-loader',
+              options: {
+                externalConfig: '.svgorc.yml'
+              }
+            }
+          ]
         },
         {
-          loader: 'svgo-loader',
-          options: {
-            externalConfig: '.svgorc.yml'
-          }
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+
+              }
+            }
+          ]
         }
       ]
     });

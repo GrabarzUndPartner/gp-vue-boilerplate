@@ -1,3 +1,274 @@
+## [1.25.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.10...v1.25.11) (2019-06-26)
+
+
+### Bug Fixes
+
+* **appveyor:** add encrypted snyk token ([370143b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/370143b))
+* **appveyor:** added snyk auth ([427d258](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/427d258))
+* **appveyor:** corrected snyk auth command ([a413e46](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a413e46))
+* **appveyor:** corrected snyk auth command ([ba1c656](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ba1c656))
+* **package:** updated versions ([b856af6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b856af6))
+* **snyk:** added packages to wait for patch ([450ef85](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/450ef85))
+* **svg:** removed console log ([b703bd2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b703bd2))
+* **travis:** only execute stage deploy on master ([8136e66](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8136e66))
+
+## [1.25.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.9...v1.25.10) (2019-06-25)
+
+
+### Bug Fixes
+
+* **readme:** added additional demo links ([cc2816d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cc2816d))
+* **readme:** removed empty line ([69ef82e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/69ef82e))
+
+## [1.25.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.8...v1.25.9) (2019-06-25)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([2a049a9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2a049a9))
+
+## [1.25.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.7...v1.25.8) (2019-06-25)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([0169383](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0169383))
+
+## [1.25.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.6...v1.25.7) (2019-06-25)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([8cdcfdc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8cdcfdc))
+
+## [1.25.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.5...v1.25.6) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([965adeb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/965adeb))
+
+## [1.25.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.4...v1.25.5) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([360892e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/360892e))
+* **travis:** move website files to dist root ([f8000ac](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f8000ac))
+
+## [1.25.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.3...v1.25.4) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** move website files to dist root ([2edd175](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2edd175))
+* **travis:** move website files to dist root ([906772d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/906772d))
+
+## [1.25.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.2...v1.25.3) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** deploy multiple builds to gh-pages ([074b1e6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/074b1e6))
+
+## [1.25.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.1...v1.25.2) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** deploy multiple builds to gh-pages ([15b73ef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/15b73ef))
+
+## [1.25.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.0...v1.25.1) (2019-06-24)
+
+
+### Bug Fixes
+
+* **travis:** deploy multiple builds to gh-pages ([77d4590](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/77d4590))
+
+# [1.25.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.24.0...v1.25.0) (2019-06-23)
+
+
+### Features
+
+* **travis:** multiple stages test ([cd07a51](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cd07a51))
+
+# [1.24.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.23.0...v1.24.0) (2019-06-23)
+
+
+### Features
+
+* **travis:** multiple stages test ([a450c5f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a450c5f))
+
+# [1.23.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.22.0...v1.23.0) (2019-06-23)
+
+
+### Features
+
+* **travis:** multiple stages test ([77b02f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/77b02f6))
+
+# [1.22.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.21.0...v1.22.0) (2019-06-23)
+
+
+### Features
+
+* **travis:** multiple stages test ([74acd26](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/74acd26))
+* **travis:** multiple stages test ([d2ece14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d2ece14))
+
+# [1.21.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.11...v1.21.0) (2019-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** added lazy hydrate + svg support ([27b80b2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/27b80b2))
+* **storybook:** added stories ([a871544](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a871544))
+* **storybook:** removed script call duplicates in package.json ([e3f1bd4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e3f1bd4))
+* **storybook:** restructured stories ([df45618](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/df45618))
+* **storybook:** restructured stories for headline and subline ([5ef8c39](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5ef8c39))
+
+
+### Features
+
+* **storybook:** initial config ([4acc2a9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4acc2a9))
+
+## [1.20.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.10...v1.20.11) (2019-06-17)
+
+
+### Bug Fixes
+
+* **webp:** resulting path fix ([60fb431](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/60fb431))
+
+## [1.20.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.9...v1.20.10) (2019-06-17)
+
+
+### Bug Fixes
+
+* **readme:** added demo links and open todos ([10baf9b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/10baf9b))
+
+## [1.20.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.8...v1.20.9) (2019-06-17)
+
+
+### Bug Fixes
+
+* **readme:** added ide recommendation ([57edf0f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/57edf0f))
+* **vscode:** cleanup extension-list in config ([b5657bc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b5657bc))
+
+## [1.20.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.7...v1.20.8) (2019-06-16)
+
+
+### Bug Fixes
+
+* **i18n:** windows compatible regex instructions to collect lang files ([1c1802f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c1802f))
+* **readme:** osx/windows installation instructions ([b66c0c8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b66c0c8))
+
+## [1.20.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.6...v1.20.7) (2019-06-16)
+
+
+### Bug Fixes
+
+* **base-url:** base-url support for font loading ([44d3d9f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/44d3d9f))
+
+## [1.20.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.5...v1.20.6) (2019-06-16)
+
+
+### Bug Fixes
+
+* **base:** configurable base path ([f5caa15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f5caa15))
+* **base:** remove slashes at font preload declaration ([d364134](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d364134))
+
+## [1.20.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.4...v1.20.5) (2019-06-16)
+
+
+### Bug Fixes
+
+* **travis:** add base var to render gh-pages properly ([58816da](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/58816da))
+* **travis:** deploy gh-pages from master branch ([94cc43c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/94cc43c))
+
+## [1.20.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.3...v1.20.4) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from master branch ([8bd6226](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8bd6226))
+
+## [1.20.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.2...v1.20.3) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from master branch ([b530cd4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b530cd4))
+
+## [1.20.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.1...v1.20.2) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from master branch ([2290f99](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2290f99))
+
+## [1.20.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.20.0...v1.20.1) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from master branch ([73e679f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/73e679f))
+
+# [1.20.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.19.0...v1.20.0) (2019-06-15)
+
+
+### Bug Fixes
+
+* **travis:** deploy gh-pages from feature branch ([e6ae242](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e6ae242))
+* **travis:** deploy gh-pages from feature branch ([128da05](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/128da05))
+* **travis:** deploy gh-pages from feature branch ([bd8377a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bd8377a))
+* **travis:** deploy gh-pages from master branch ([f54dd8d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f54dd8d))
+
+
+### Features
+
+* **travis:** deploy gh-pages ([3050923](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3050923))
+
+# [1.19.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.2...v1.19.0) (2019-06-15)
+
+
+### Bug Fixes
+
+* **appveyor:** install node x64 ([97a6d2d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/97a6d2d))
+* **cleanup:** cleanup nuxt.config and updated snyk version ([10c2a1a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/10c2a1a))
+* **cleanup:** removed unused code ([c348b5b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c348b5b))
+* **cypress:** temporary disable of cypress tests ([c8836c2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c8836c2))
+* **font:** lazy load of font files by preload and prefetch ([b775d6f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b775d6f))
+* **fonts:** dynamic font loading ([283433b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/283433b))
+* **images:** extended sample ([e453fcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e453fcd))
+* **lazy:** hydrate ([1c9bb95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c9bb95))
+* **lazy-hydrate:** test load pattern ([5f777d2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5f777d2))
+* **license:** added missed license ([3e40a8a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3e40a8a))
+* **sample:** added new components ([fb28244](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fb28244))
+* **snyk:** auth ([74bff09](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/74bff09))
+
+
+### Features
+
+* **font:** efficient font loading ([59f50bb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/59f50bb))
+* **lazy-hydrate:** optimized loading of components ([66b25ae](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/66b25ae))
+* **polyfill:** added featured polyfill-service ([ee072bc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ee072bc))
+* **svg:** new implementation ([cbaad7e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cbaad7e))
+* **svg:** refactored svg import ([ff3a39d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ff3a39d))
+
+## [1.18.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.1...v1.18.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* .snyk & package.json to reduce vulnerabilities ([d85de52](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d85de52))
+
+## [1.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.18.0...v1.18.1) (2019-05-19)
+
+
+### Bug Fixes
+
+* **format:** reformat files ([5a8246c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5a8246c))
+* **format:** reformat files ([1789b1f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1789b1f))
+* **packages:** update ([03c7890](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/03c7890))
+
 # [1.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.17.0...v1.18.0) (2019-05-01)
 
 

@@ -5,6 +5,10 @@
     }
   ],
   "settings": {
+    "path-intellisense.mappings": {
+      "@": "${workspaceRoot}/src",
+      "@@": "${workspaceRoot}"
+    },
     "vetur.format.defaultFormatter.js": "vscode-typescript",
     "vetur.format.defaultFormatter.html": "js-beautify-html",
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
@@ -58,36 +62,35 @@
   },
   "extensions": {
     "recommendations": [
-      "aeschli.vscode-css-formatter",
       "alefragnani.Bookmarks",
       "balazs4.gitlab-pipeline-monitor",
       "bhshawon.node-json-autocomplete",
       "christian-kohler.npm-intellisense",
       "christian-kohler.path-intellisense",
       "CoenraadS.bracket-pair-colorizer",
+      "cssho.vscode-svgviewer",
       "cstuder.gitlab-ci-validator",
-      "dariofuzinato.vue-peek",
+      "daixiangyu13.ivue",
       "DavidAnson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "deerawan.vscode-dash",
+      "eamodio.gitlens",
       "EditorConfig.EditorConfig",
       "eg2.vscode-npm-script",
-      "esbenp.prettier-vscode",
-      "formulahendry.auto-close-tag",
-      "formulahendry.auto-rename-tag",
       "humao.rest-client",
       "kisstkondoros.csstriggers",
       "mgmcdermott.vscode-language-babel",
       "michelemelluso.gitignore",
       "mrmlnc.vscode-attrs-sorter",
+      "mrmlnc.vscode-postcss-sorting",
       "npxms.hide-gitignored",
       "octref.vetur",
       "pflannery.vscode-versionlens",
-      "ricard.postcss",
-      "shekhardtu.vuejspack",
       "shinnn.stylelint",
       "steoates.autoimport",
+      "vscode-icons-team.vscode-icons",
       "WallabyJs.quokka-vscode",
+      "wayou.vscode-todo-highlight",
       "wix.vscode-import-cost",
       "yzhang.markdown-all-in-one"
     ]

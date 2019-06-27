@@ -4,24 +4,24 @@
     "test": "message23",
     "hello": "hello world!",
     "sources": [
-      {"media": "default", "src": "sample/576x300.jpg"},
-      {"media": "xs", "src": "sample/768x300.jpg"},
-      {"media": "sm", "src": "sample/992x300.jpg"},
-      {"media": "md", "src": "sample/1200x300.jpg"},
-      {"media": "lg", "src": "sample/1600x300.jpg"},
-      {"media": "xl", "src": "sample/1920x300.jpg"}
+      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
+      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
+      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
+      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
+      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
+      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
     ]
   },
   "de": {
     "test": "nachricht 123",
     "hello": "hallo welt",
     "sources": [
-      {"media": "default", "src": "sample/576x300.jpg"},
-      {"media": "xs", "src": "sample/768x300.jpg"},
-      {"media": "sm", "src": "sample/992x300.jpg"},
-      {"media": "md", "src": "sample/1200x300.jpg"},
-      {"media": "lg", "src": "sample/1600x300.jpg"},
-      {"media": "xl", "src": "sample/1920x300.jpg"}
+      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
+      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
+      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
+      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
+      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
+      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
     ]
   }
 }
@@ -29,21 +29,16 @@
 
 <template>
   <div class="test">
-    <headline :content="$t('test')" />
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
-    <picture-comp
-      :sources="$t('sources')"
-      alt="image description"
-    />
+    <svg-inline src="image3.svg" />
+    <svg-inline src="image2.svg" />
   </div>
 </template>
 
 <script>
-import Headline from '~/components/atoms/Headline';
-import PictureComp from '~/components/atoms/Picture';
-
+import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   nuxtI18n: {
@@ -53,8 +48,7 @@ export default {
     }
   },
   components: {
-    Headline,
-    PictureComp
+    SvgInline
   },
   data () {
     return {
@@ -74,7 +68,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 picture img {
   width: 100%;
   height: 300px;

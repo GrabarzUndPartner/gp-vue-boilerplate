@@ -12,7 +12,9 @@ module.exports = class VirtualLang extends VirtualModule {
 
     chokidar
       .watch(
-        ['src/locales/**/*.json', '!src/locales/global', '!src/locales/*.json'],
+        [
+          'src/locales/**/*.json', '!src/locales/global', '!src/locales/*.json'
+        ],
         { persistent: false }
       )
       .on('all', (event, filePath) => mergeContent(compiler, this, filePath));
@@ -53,6 +55,7 @@ function mergeContent (compiler, virtualContent, filePath) {
 }
 
 function getLangFilePath (filePath) {
+  filePath = filePath.replace(/\\/g, '/');
   return filePath.replace(/(src\/locales\/)(\w+\/)+(\w+)(\.json)$/, function (
     match,
     p1,
@@ -64,5 +67,6 @@ function getLangFilePath (filePath) {
 }
 
 function getLangByFilePath (filePath) {
+  filePath = filePath.replace(/\\/g, '/');
   return /src\/locales\/(\w+)/.exec(filePath)[1];
 }

@@ -22,7 +22,8 @@
     "array-bracket-newline": [
       "error",
       {
-        "minItems": 2
+        "multiline": true,
+        "minItems": 1
       }
     ],
     "no-multiple-empty-lines": [
