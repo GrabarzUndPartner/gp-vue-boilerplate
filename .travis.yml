@@ -57,7 +57,7 @@ jobs:
         - npm run cypress:run -- --record
         - kill $(jobs -p) || true
         - npx mochawesome-merge --reportDir ./reports/cypress/results > ./reports/cypress/mochawesome.json
-        - npx mochawesome-report-generator mochawesome.json --reportDir=./reports/ --reportFilename=cypress.html
+        - npx mochawesome-report-generator ./reports/cypress/mochawesome.json --reportDir=./reports/ --reportFilename=cypress.html
     - stage: deploy
       on:
         branch: master
