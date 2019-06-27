@@ -2,6 +2,23 @@ language: node_js
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+addons:
+  apt:
+    update: true
+    packages:
+      - libtool
+      - libsecret-1-dev
+      - automake
+      - autoconf
+      - nasm
+      - libgtk2.0-0
+      - libnotify-dev
+      - libgconf-2-4
+      - libnss3
+      - libxss1
+      - libasound2
+services:
+  - xvfb
 env:
   global:
     #saucelabs
