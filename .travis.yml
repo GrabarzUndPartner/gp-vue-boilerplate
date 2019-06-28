@@ -50,7 +50,6 @@ jobs:
       script:
         - npm install wait-on mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator --no-save
         - npm run start-static & npx wait-on http://localhost:8050
-        - export CYPRESS_PROJECT_ID=575mhd
         - npm run cypress:run -- --record
         - kill $(jobs -p) || true
         - npx mochawesome-merge --reportDir ./reports/cypress/results > ./reports/cypress/mochawesome.json
@@ -61,8 +60,7 @@ jobs:
       script:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
-        - mkdir dist/reports/
-        - mv reports/* dist/reports/
+        - cp -R reports/* dist/reports/
       deploy:
         provider: pages
         skip_cleanup: true
