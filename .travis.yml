@@ -64,7 +64,8 @@ jobs:
       script:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
         - npm run semantic-release
-        - mv reports/* dist/reports
+        - mkdir dist/reports/
+        - mv reports/* dist/reports/
       deploy:
         provider: pages
         skip_cleanup: true
