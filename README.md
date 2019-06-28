@@ -19,6 +19,7 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 - website (build): <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
 - website (source code): <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
 - webpack report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack-bundle-analyzer.html>
+- cypress report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html>
 - storybook website components: <https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview>
 
 ## Quickstart

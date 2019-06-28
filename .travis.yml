@@ -40,37 +40,36 @@ jobs:
     - stage: prepare cache
       before_install:
         - rm -rf dist
+        - rm -rf reports
       install:
         - npm i
     - stage: website
-      script: npm run static --base=/gp-vue-boilerplate/
-    - stage: storybook
-      script: npm run storybook:prod
-    - stage: test
       script:
+        - npm run static --base=/gp-vue-boilerplate/
+    - stage: storybook
+      script:
+        - npm run storybook:prod
+    - stage: test
+      install:
         - npm install wait-on mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator --no-save
+      script:
         - npm run start-static & npx wait-on http://localhost:8050
         - npm run cypress:run -- --record
         - kill $(jobs -p) || true
         - npx mochawesome-merge --reportDir ./reports/cypress/results > ./reports/cypress/mochawesome.json
         - npx mochawesome-report-generator ./reports/cypress/mochawesome.json --reportDir=./reports/ --reportFilename=cypress.html
     - stage: deploy
-      on:
-        branch: master
-      script:
+      if: branch = master
+      install:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
+      script:
         - npm run semantic-release
         - cp -R reports/* dist/reports/
       deploy:
         provider: pages
         skip_cleanup: true
-        github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+        github_token: $GH_TOKEN
         local_dir: dist/
         on:
           branch: master
-# script:
-#   - npm run start & npx wait-on http://localhost:8050
-#   - export CYPRESS_PROJECT_ID=575mhd
-#   - npm run cypress:run -- --record
-#   - kill $(jobs -p) || true
 
