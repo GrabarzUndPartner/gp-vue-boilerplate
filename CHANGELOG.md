@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.11...v1.26.0) (2019-06-27)
+
+
+### Features
+
+* **server:** added server static options for dist ([480099f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/480099f))
+
 ## [1.25.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.10...v1.25.11) (2019-06-26)
 
 
