@@ -1,3 +1,24 @@
+# [1.27.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.26.0...v1.27.0) (2019-06-28)
+
+
+### Bug Fixes
+
+* **cypress:** corrected path declaration ([b818538](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b818538))
+* **cypress:** fixed mocha version ([81bb797](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/81bb797))
+* **cypress:** refactored mochawesome config ([c4f8689](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c4f8689))
+* **travis:** bugfix mv command ([2a15a0d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2a15a0d))
+* **travis:** bugfix mv command ([ddb8eb2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ddb8eb2))
+* **travis:** corrected installation routine ([d317098](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d317098))
+* **travis:** install dependencies ([79fa4bd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/79fa4bd))
+* **travis:** move reports dir ([dc4d74e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dc4d74e))
+* **travis:** recursive move ([550d527](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/550d527))
+* **travis:** removed manual installation ([821ede1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/821ede1))
+
+
+### Features
+
+* **cypress:** added cypress open plan ([1e21264](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1e21264))
+
 # [1.26.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.25.11...v1.26.0) (2019-06-27)
 
 
