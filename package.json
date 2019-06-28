@@ -14,7 +14,7 @@
   "main": "index.js",
   "scripts": {
     "test": "snyk test && npm run lint",
-    "dev": "cross-env NODE_ENV=development node ./env/server.js",
+    "dev": "cross-env NODE_ENV=development MINIMAL=1 CSB=1 node ./env/server.js",
     "build": "npx nuxt build --config-file env/nuxt.config.js",
     "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js",
     "static:now": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js && cp now.json dist/website && cd dist/website/ && now",
