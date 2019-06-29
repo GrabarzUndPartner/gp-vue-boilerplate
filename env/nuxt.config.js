@@ -1,7 +1,7 @@
 // process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
-const open = require('open');
+// const open = require('open');
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
@@ -80,19 +80,19 @@ module.exports = {
     prefetchLinks: true
   },
 
-  hooks: {
-    build: {
-      done: function () {
-        if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
-          open('http://localhost:8050', {
-            app: [
-              'google chrome'
-            ]
-          });
-        }
-      }
-    }
-  },
+  // hooks: {
+  //   build: {
+  //     done: function () {
+  //       if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
+  //         open('http://localhost:8050', {
+  //           app: [
+  //             'google chrome'
+  //           ]
+  //         });
+  //       }
+  //     }
+  //   }
+  // },
 
   plugins: [
     { src: '@/plugins/intersectionObserver' },
