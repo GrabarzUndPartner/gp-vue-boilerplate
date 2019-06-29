@@ -1,7 +1,6 @@
 // process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
-// const open = require('open');
 
 module.exports = {
   dev: process.env.NODE_ENV === 'development',
@@ -9,8 +8,12 @@ module.exports = {
   css: [],
   env: {},
 
-  modern: 'client',
+  server: {
+    port: 8050,
+    timing: false
+  },
 
+  modern: 'client',
   build: {
     analyze: getAnalyzerConfig(),
     filenames: {
@@ -80,27 +83,12 @@ module.exports = {
     prefetchLinks: true
   },
 
-  // hooks: {
-  //   build: {
-  //     done: function () {
-  //       if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
-  //         open('http://localhost:8050', {
-  //           app: [
-  //             'google chrome'
-  //           ]
-  //         });
-  //       }
-  //     }
-  //   }
-  // },
-
   plugins: [
     { src: '@/plugins/intersectionObserver' },
     { src: '@/plugins/lazyHydrate' }
   ],
 
   modules: [
-    '@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/virtual',
     '@/modules/svg',

@@ -14,13 +14,25 @@
 
 G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites by vuejs.
 
-## Demo
+### Demo
 
-- website (build): <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
-- website (source code): <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
-- webpack report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack-bundle-analyzer.html>
-- cypress report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html>
-- storybook website components: <https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview>
+- [website](https://grabarzundpartner.github.io/gp-vue-boilerplate/)
+- [source code](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages)
+
+### Reports
+
+- [webpack](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack-bundle-analyzer.html)
+- [cypress](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html)
+
+### Component Overview
+
+- [storybook](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
+
+### Sandbox
+
+- [codesandbox](https://codesandbox.io/s/gp-vue-boilerplate-bjxk4)
+
+***
 
 ## Quickstart
 
@@ -94,6 +106,14 @@ npm run static
 npm run production
 ```
 
+### Open Page
+
+```
+http://localhost:8050
+```
+
+***
+
 ## Cypress
 
 ### Run local test instance
@@ -115,6 +135,8 @@ npm run storybook:dev
 ```bash
 npm run storybook:prod
 ```
+
+***
 
 ## Features
 
@@ -189,15 +211,17 @@ npm run storybook:prod
 - testing
   - [ ] cypress
 
+***
+
 ## ToDo
 
 --
 
+***
+
 ## Checklist
 
 All processes are working automatically. Nevertheless you should check before going live if all processes work correctly and the output is correct.
-
-### List
 
 - project start
   - [ ] browser matrix (IE11 support?)
