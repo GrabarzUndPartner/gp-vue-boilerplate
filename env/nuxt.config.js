@@ -61,7 +61,7 @@ module.exports = {
         importFrom: 'src/globals/postcss.js'
       }
     },
-    parallel: true,
+    parallel: false,
     transpile: [],
     crossorigin: 'anonymous'
   },
