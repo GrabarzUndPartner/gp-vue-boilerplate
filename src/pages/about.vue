@@ -15,38 +15,6 @@
   <div>
     hello22 {{ $t('configxyz') }}
     {{ $t('hello') }}
-
-    <!-- <img
-      src="~/assets/image0.png"
-      alt="test"
-    >
-
-    <intersect
-      @enter="enter"
-      @leave="leave"
-      @passing="passing"
-    >
-      <img
-        src="~/assets/image2.png"
-        alt="test"
-      >
-    </intersect>
-    <img
-      src="~/assets/image0.png"
-      alt="test"
-    >
-    <img
-      src="~/assets/image1.png"
-      alt="test"
-    >
-    <img
-      src="~/assets/image0.png"
-      alt="test"
-    >
-    <img
-      src="~/assets/sample/1920x300.jpg"
-      alt="test"
-    > -->
   </div>
 </template>
 

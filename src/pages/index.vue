@@ -11,7 +11,6 @@
 
 <template>
   <div class="content">
-    <stage />
     <div
       v-for="(item, index) in components"
       :key="index"
@@ -41,8 +40,7 @@ import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   components: {
-    SvgInline,
-    Stage: () => import('@/components/organisms/Stage')
+    SvgInline
   },
 
   head () {
