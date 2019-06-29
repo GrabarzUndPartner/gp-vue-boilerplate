@@ -102,7 +102,7 @@ module.exports = {
   modules: [
     '@/modules/codesandbox',
     '@/modules/fix/image',
-    // '@/modules/virtual',
+    '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
     '@nuxtjs/axios',

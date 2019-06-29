@@ -1,4 +1,4 @@
-<i18n>
+<i18n src="@/locales/about.lang">
 {
   "en": {
     "test": "message 123456789",
