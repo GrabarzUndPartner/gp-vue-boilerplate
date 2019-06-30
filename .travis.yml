@@ -45,6 +45,8 @@ jobs:
     - stage: prepare cache
       name: install
       before_install:
+        - echo $PT_BRANCH
+        - echo $PT_COMMIT
         - rm -rf dist reports storybook
       install:
         - npm i
