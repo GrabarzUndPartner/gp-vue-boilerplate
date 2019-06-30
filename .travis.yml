@@ -51,6 +51,8 @@ jobs:
       script:
         - echo $TRAVIS_PULL_REQUEST_BRANCH
         - echo $TRAVIS_BRANCH
+        - echo $TRAVIS_COMMIT
+        - echo $TRAVIS_PULL_REQUEST_SHA
         - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then export PT_BRANCH=$TRAVIS_BRANCH; else export PT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
         - if [ -z "$TRAVIS_PULL_REQUEST_SHA" ]; then export PT_COMMIT=$TRAVIS_COMMIT; else export PT_COMMIT=$TRAVIS_PULL_REQUEST_SHA; fi
         - echo $PT_COMMIT
