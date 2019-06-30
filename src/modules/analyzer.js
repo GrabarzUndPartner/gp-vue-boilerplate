@@ -12,8 +12,9 @@ module.exports = function () {
         generateStatsFile: true,
         openAnalyzer: false,
         logLevel: 'info',
+        defaultSizes: 'gzip',
         statsOptions: {
-          source: false
+          source: true
         }
       }));
     }
