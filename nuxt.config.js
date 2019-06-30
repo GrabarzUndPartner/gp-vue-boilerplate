@@ -106,6 +106,7 @@ module.exports = {
     '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
+    '@/modules/packtracker',
     '@nuxtjs/axios',
     [
       '@bazzite/nuxt-optimized-images', {
