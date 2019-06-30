@@ -51,7 +51,7 @@ jobs:
         - npm run storybook:prod
     - stage: test
       install:
-        - npm install wait-on mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator --no-save
+        - npm install wait-on mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator cypress --no-save
       script:
         - npm run start:static & npx wait-on http://localhost:8050
         - npm run cypress:run -- --record
