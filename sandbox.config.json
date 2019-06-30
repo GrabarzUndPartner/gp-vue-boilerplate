@@ -1,0 +1,4 @@
+{
+  "infiniteLoopProtection": true,
+  "template": "nuxt"
+}

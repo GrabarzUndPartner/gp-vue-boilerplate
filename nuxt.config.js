@@ -1,18 +1,34 @@
 // process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
-const open = require('open');
+const fs = require('fs');
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  dev: process.env.NODE_ENV === 'development',
+  dev: isDev,
   srcDir: 'src/',
   css: [],
   env: {},
 
-  modern: 'client',
+  server: {
+    port: 8050,
+    timing: false,
+    https: (function () {
+      const dir = './env/cert';
+      const key = path.join(dir, 'server.key');
+      const crt = path.join(dir, 'server.crt');
 
+      if (fs.existsSync(key) && fs.existsSync(crt)) {
+        return { key: fs.readFileSync(key), cert: fs.readFileSync(crt) };
+      } else {
+        return null;
+      }
+    })()
+  },
+
+  modern: 'client',
   build: {
-    analyze: getAnalyzerConfig(),
+    analyze: false,
     filenames: {
       app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
@@ -80,20 +96,6 @@ module.exports = {
     prefetchLinks: true
   },
 
-  hooks: {
-    build: {
-      done: function () {
-        if (process.env.NODE_ENV === 'development' && !process.env.TRAVIS) {
-          open('http://localhost:8050', {
-            app: [
-              'google chrome'
-            ]
-          });
-        }
-      }
-    }
-  },
-
   plugins: [
     { src: '@/plugins/intersectionObserver' },
     { src: '@/plugins/lazyHydrate' }
@@ -104,6 +106,7 @@ module.exports = {
     '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
+    '@/modules/analyzer',
     '@nuxtjs/axios',
     [
       '@bazzite/nuxt-optimized-images', {
@@ -111,7 +114,7 @@ module.exports = {
           'jpeg', 'png', 'gif'
         ],
         responsive: {
-          adapter: require(__dirname + '/../src/modules/responsive-loader/adapter.js')
+          adapter: require(path.resolve('src/modules/responsive-loader/adapter.js'))
         },
         optimizeImagesInDev: false,
         mozjpeg: {
@@ -178,7 +181,7 @@ module.exports = {
     ],
     [
       '@nuxtjs/pwa', {
-        dev: process.env.NODE_ENV === 'development',
+        dev: isDev,
         icon: {
           iconSrc: 'src/static/favicon.png',
           sizes: [
@@ -289,17 +292,17 @@ module.exports = {
   }
 };
 
-function getAnalyzerConfig () {
-  if (process.env.NODE_ENV === 'production') {
-    return {
-      analyzerMode: 'static',
-      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-      openAnalyzer: true
-    };
-  } else {
-    return false;
-  }
-}
+// function getAnalyzerConfig () {
+//   if (!isDev) {
+//     return {
+//       analyzerMode: 'static',
+//       reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
+//       openAnalyzer: true
+//     };
+//   } else {
+//     return false;
+//   }
+// }
 
 function getBasePath () {
   return process.env.npm_config_base || '/';

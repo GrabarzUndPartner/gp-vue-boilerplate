@@ -1,26 +1,44 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
+[![GitHub contributors](https://img.shields.io/github/contributors/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/graphs/contributors)
 [![Greenkeeper badge](https://badges.greenkeeper.io/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://greenkeeper.io/)
-
-[![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate)
-[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 
 [![dependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![devDependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/dev-status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate/badge.svg)](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate)
 
+[![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate)
+[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
+
+[![Storybook badge](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
+
 # Boilerplate - Grabarz & Partner
 
 G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites by vuejs.
 
-## Demo
+### Demo
 
-- website (build): <https://grabarzundpartner.github.io/gp-vue-boilerplate/>
-- website (source code): <https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages>
-- webpack report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack-bundle-analyzer.html>
-- cypress report: <https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html>
-- storybook website components: <https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview>
+- [website](https://grabarzundpartner.github.io/gp-vue-boilerplate/)
+- [source code](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/tree/gh-pages)
+
+### Sandbox
+
+[![Edit gp-vue-boilerplate master](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gp-vue-boilerplate-master-tie7q?fontsize=14)
+
+### Reports
+
+- [webpack client](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/client.html)
+- [webpack modern](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/modern.html)
+- [webpack server](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/server.html)
+- [packtracker modern](https://app.packtracker.io/organizations/310/projects/247)
+- [cypress](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html)
+
+### Component Overview
+
+- [storybook](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
+
+***
 
 ## Quickstart
 
@@ -94,6 +112,14 @@ npm run static
 npm run production
 ```
 
+### Open Page
+
+```
+http://localhost:8050
+```
+
+***
+
 ## Cypress
 
 ### Run local test instance
@@ -115,6 +141,8 @@ npm run storybook:dev
 ```bash
 npm run storybook:prod
 ```
+
+***
 
 ## Features
 
@@ -189,15 +217,17 @@ npm run storybook:prod
 - testing
   - [ ] cypress
 
+***
+
 ## ToDo
 
 --
 
+***
+
 ## Checklist
 
 All processes are working automatically. Nevertheless you should check before going live if all processes work correctly and the output is correct.
-
-### List
 
 - project start
   - [ ] browser matrix (IE11 support?)
