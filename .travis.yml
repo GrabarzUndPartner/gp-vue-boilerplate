@@ -58,7 +58,7 @@ jobs:
         - ls ./dist/
         - ls ./storybook/
         - ls ./reports/
-        - npm ci wait-on mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator cypress --no-save
+        - npm i mocha@5.2.0 mochawesome --no-save
       script:
         - npm run start:static & npx wait-on http://localhost:8050
         - npm run cypress:run -- --record
@@ -68,7 +68,7 @@ jobs:
     - stage: deploy
       if: branch = master
       install:
-        - npm ci semantic-release @semantic-release/git @semantic-release/changelog --no-save
+        - npm i semantic-release @semantic-release/git @semantic-release/changelog --no-save
       script:
         - npm run semantic-release
         - mkdir gh-pages
