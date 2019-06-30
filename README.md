@@ -28,6 +28,9 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ### Reports
 
+- [webpack client](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/client.html)
+- [webpack modern](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/modern.html)
+- [webpack server](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/server.html)
 - [cypress](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html)
 
 ### Component Overview

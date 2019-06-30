@@ -50,6 +50,7 @@ jobs:
       name: build
       script:
         - npm run static --base=/gp-vue-boilerplate/
+        - npm run packtracker
     - stage: storybook
       name: build
       script:

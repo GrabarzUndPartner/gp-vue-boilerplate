@@ -28,7 +28,7 @@ module.exports = {
 
   modern: 'client',
   build: {
-    analyze: getAnalyzerConfig(),
+    analyze: false,
     filenames: {
       app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
@@ -106,7 +106,7 @@ module.exports = {
     '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
-    '@/modules/packtracker',
+    '@/modules/analyzer',
     '@nuxtjs/axios',
     [
       '@bazzite/nuxt-optimized-images', {
@@ -292,17 +292,17 @@ module.exports = {
   }
 };
 
-function getAnalyzerConfig () {
-  if (!isDev) {
-    return {
-      analyzerMode: 'static',
-      reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-      openAnalyzer: true
-    };
-  } else {
-    return false;
-  }
-}
+// function getAnalyzerConfig () {
+//   if (!isDev) {
+//     return {
+//       analyzerMode: 'static',
+//       reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
+//       openAnalyzer: true
+//     };
+//   } else {
+//     return false;
+//   }
+// }
 
 function getBasePath () {
   return process.env.npm_config_base || '/';
