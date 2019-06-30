@@ -5,6 +5,10 @@
   "author": "Stephan Gerbeth",
   "contributors": [
     {
+      "name": "Stephan Gerbeth",
+      "email": "stephan.gerbeth@grabarzundpartner.de"
+    },
+    {
       "name": "Boris Horn",
       "email": "boris.horn@grabarzundpartner.de"
     }
@@ -14,13 +18,12 @@
   "main": "index.js",
   "scripts": {
     "test": "snyk test && npm run lint",
-    "dev": "cross-env NODE_ENV=development nuxt --config-file env/nuxt.config.js",
-    "build": "npx nuxt build --config-file env/nuxt.config.js",
-    "static": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js",
-    "static:now": "npm run build && cross-env NODE_ENV=static nuxt generate --config-file env/nuxt.config.js && cp now.json dist/website && cd dist/website/ && now",
-    "start": "cross-env NODE_ENV=production node ./env/server.js",
-    "start-static": "cross-env NODE_ENV=production node ./env/server.js --static",
-    "production": "npm run static && npm run start",
+    "dev": "npx nuxt",
+    "build": "npx nuxt build",
+    "static": "npx nuxt generate",
+    "static:now": "npm run static && cp now.json dist/website && cd dist/website/ && now",
+    "start": "npx nuxt start",
+    "production": "npm run build && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
     "lint:css": "npx stylelint \"src/**/*.vue\"",

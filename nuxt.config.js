@@ -1,16 +1,29 @@
 // process.env.DEBUG = 'nuxt:*';
 
 const path = require('path');
+const fs = require('fs');
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  dev: process.env.NODE_ENV === 'development',
+  dev: isDev,
   srcDir: 'src/',
   css: [],
   env: {},
 
   server: {
     port: 8050,
-    timing: false
+    timing: false,
+    https: (function () {
+      const dir = './env/cert';
+      const key = path.join(dir, 'server.key');
+      const crt = path.join(dir, 'server.crt');
+
+      if (fs.existsSync(key) && fs.existsSync(crt)) {
+        return { key: fs.readFileSync(key), cert: fs.readFileSync(crt) };
+      } else {
+        return null;
+      }
+    })()
   },
 
   modern: 'client',
@@ -64,7 +77,7 @@ module.exports = {
         importFrom: 'src/globals/postcss.js'
       }
     },
-    parallel: false,
+    parallel: true,
     transpile: [],
     crossorigin: 'anonymous'
   },
@@ -100,7 +113,7 @@ module.exports = {
           'jpeg', 'png', 'gif'
         ],
         responsive: {
-          adapter: require(__dirname + '/../src/modules/responsive-loader/adapter.js')
+          adapter: require(path.resolve('src/modules/responsive-loader/adapter.js'))
         },
         optimizeImagesInDev: false,
         mozjpeg: {
@@ -167,7 +180,7 @@ module.exports = {
     ],
     [
       '@nuxtjs/pwa', {
-        dev: process.env.NODE_ENV === 'development',
+        dev: isDev,
         icon: {
           iconSrc: 'src/static/favicon.png',
           sizes: [
@@ -279,7 +292,7 @@ module.exports = {
 };
 
 function getAnalyzerConfig () {
-  if (process.env.NODE_ENV === 'production') {
+  if (!isDev) {
     return {
       analyzerMode: 'static',
       reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
