@@ -39,18 +39,21 @@ cache:
 jobs:
   include:
     - stage: prepare cache
+      name: install
       before_install:
-        - rm -rf dist
-        - rm -rf reports
+        - rm -rf dist reports storybook
       install:
         - npm i
     - stage: website
+      name: build
       script:
         - npm run static --base=/gp-vue-boilerplate/
-    - stage: website
+    - stage: storybook
+      name: build
       script:
-        - npm run storybook:prod -- -o storybook
+        - npm run storybook:prod
     - stage: test
+      name: cypress
       install:
         - ls ./dist/
         - ls ./storybook/
@@ -68,13 +71,15 @@ jobs:
         - npm install semantic-release @semantic-release/git @semantic-release/changelog --no-save
       script:
         - npm run semantic-release
-        - cp -R storybook/* dist/storybook/
-        - cp -R reports/* dist/reports/
+        - mkdir gh-pages
+        - cp -R dist/* gh-pages/
+        - cp -R storybook/* gh-pages/storybook/
+        - cp -R reports/* gh-pages/reports/
       deploy:
         provider: pages
         skip_cleanup: true
         github_token: $GH_TOKEN
-        local_dir: dist/
+        local_dir: gh-pages/
         on:
           branch: master
 

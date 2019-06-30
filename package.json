@@ -35,7 +35,7 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
-    "storybook:prod": "build-storybook -c .storybook -o dist/storybook",
+    "storybook:prod": "build-storybook -c .storybook -o storybook",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
