@@ -24,7 +24,7 @@ G&P Boilerplate is a professional front-end template for building fast, robust, 
 
 ### Sandbox
 
-[![Edit gp-vue-boilerplate master](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gp-vue-boilerplate-master-tie7q?fontsize=14)
+[![Edit gp-vue-boilerplate master](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/GrabarzUndPartner/gp-vue-boilerplate)
 
 ### Reports
 
