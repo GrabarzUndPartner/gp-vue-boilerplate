@@ -37,7 +37,7 @@
     "storybook:prod": "build-storybook -c .storybook -o storybook",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
-    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json"
+    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.2.1",

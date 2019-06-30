@@ -12,7 +12,8 @@ module.exports = function () {
         generateStatsFile: true,
         openAnalyzer: false,
         logLevel: 'info',
-        defaultSizes: 'gzip'
+        defaultSizes: 'gzip',
+        statsOptions: 'verbose'
       }));
     }
   });
