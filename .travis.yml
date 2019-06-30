@@ -22,8 +22,7 @@ services:
 env:
   global:
     #packtracker
-    - PT_BRANCH=[$TRAVIS_PULL_REQUEST_BRANCH||$TRAVIS_BRANCH]
-    - PT_COMMIT=[$TRAVIS_PULL_REQUEST_SHA||$TRAVIS_COMMIT]
+
     - secure: "K7azcCqLptmg4uQUzLHyoDmqo9hmcjX+WK9VkhzMhvDRCiMCxkK0kOm6GXWOfCroeTN97EIkDx/5MrLUIXGUwEiAueNCeIkNEgY5hKTJRuWib6hBdc1ArghJiCAdVhIoDYJsRasrJ7B4QbcLFjoHAYvAPKArFNlVN5+ZJCQ+v1ZPT2yaItkuRBVy+9vLxPN75yJwciPC+ruj19WvMgmWOH/nlmYCYm2830b7IjZkFuUm67/aEdjnhXaOVErmXCT6sASk/gGlX6XqejChuIze5BC5j5phYiyNQRbY5D/CzhpPmGdbDYPo85/pusixGSLYN7cC8XoKOvWrdSXsHyBbkfmXPfG2rDrQ2p6Y+MVEyBEbbq+yZvCD6LLG25koq4N3rBu77ZDbLw977hjoWmVC1IdX+1uWTdRfcuNY112UV8vvrReLHdZzC2KHfiuNvzq4jV2ogNfQvFexTIAZk7mD8uoe3+uXgCg7nMMKOLHRx3TyqK6YPT0fwrffcMpdBnaIAyvd68gPOB4bD5PWr8/KLLQFq4sVcXQhiTp33p9iKZTr0proo7Vtp79HFn7u48nyKPzdZZKIUeKCsqi+TQNWKCifz34xyYw2zNpgC0BYlXRJ4BRcB7vC2+D1OJjQGmAenaoKz2L2gCjG0uheBs1FP41RCBcRElf2ce39zX1qtDY="
     #saucelabs
     - secure: 0dEI1QivjPDVNfew5wtuu9z2JSUOV0y1yPKqDQFrEXofKpiPgcR4fwew4HpJRum6GVOQlzFnudV9zX/f/9+RYPh2X7hT+snv0bOFJH0H86xAIRxlmg7UbjCOEyzR5LjWiSJL0EEuFskZyhuVoCjjvJg6YwMcZySW5pYpzZZlGOZ/4MUtf0Ukm9nZFK+vo0bHl5NZ78/bAqtZw9qeO7BuesoD0wQ6LmKHtVl5jCG2saRMw20wdvkENCsn3lR9mUbsBjQkO8k/bqJERCwpQb8kWsRoQ20tq+n3vWZiHsDelYW3Vfk5qQ6lDu890v2NvQa5n0x2FeR20E3qVHdbY0lBreKt9n2MF8PFxv3cxqZ0sfX8S4hbmIdPIpWDd6BTyrElatizKgVqnDL0ZCbv3iJREbWB8Gcnijy9dPcBkqru4lavTKpiQQphugaWHpgeSHcAB4XEKOOplvbtoPl/jNikvAXExTwtC8AHCwkizXXFlaJN+MTjrvT7vF/SCP2IzIFDsRYAMa80fFKSx+FZnRbMK4SHUdM6uLsEmTtYKsXNY4dUm+b52Yvcb88psAqM/UcZOr+gSuRKXTh3X5t9rSQ7QJt+U12DRTD4pAS5C+rxu6/ycWxtCVzLRNkeGdapsmmK2MALzPYDTJNiUhrdichwxFh66zvawzO+hJYBGX4u0b8=
@@ -45,6 +44,11 @@ jobs:
     - stage: prepare cache
       name: install
       before_install:
+        - echo $TRAVIS_PULL_REQUEST_BRANCH||$TRAVIS_BRANCH
+        - echo $TRAVIS_PULL_REQUEST_BRANCH
+        - echo $TRAVIS_BRANCH
+        - export PT_BRANCH=[$TRAVIS_PULL_REQUEST_BRANCH||$TRAVIS_BRANCH]
+        - export PT_COMMIT=[$TRAVIS_PULL_REQUEST_SHA||$TRAVIS_COMMIT]
         - rm -rf dist reports storybook
       install:
         - npm i
