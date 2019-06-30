@@ -43,12 +43,12 @@ jobs:
     - stage: prepare cache
       name: install
       before_install:
-        # - echo $TRAVIS_PULL_REQUEST_BRANCH
-        # - echo $TRAVIS_BRANCH
+        - echo $TRAVIS_PULL_REQUEST_BRANCH
+        - echo $TRAVIS_BRANCH
         - if [ -n "$TRAVIS_PULL_REQUEST_BRANCH" ]; then export PT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; else export PT_BRANCH=$TRAVIS_BRANCH; fi
         - if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then export PT_COMMIT=$TRAVIS_PULL_REQUEST_SHA; else export PT_COMMIT=$TRAVIS_COMMIT; fi
-        # - echo $PT_BRANCH
-        # - echo $PT_COMMIT
+        - echo $PT_BRANCH
+        - echo $PT_COMMIT
         - rm -rf dist reports storybook
       install:
         - npm i
