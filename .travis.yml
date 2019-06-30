@@ -49,15 +49,14 @@ jobs:
     - stage: website
       name: build
       script:
-        - echo $TRAVIS_PULL_REQUEST_BRANCH
-        - echo $TRAVIS_BRANCH
-        - echo $TRAVIS_COMMIT
-        - echo $TRAVIS_PULL_REQUEST_SHA
-        - export PT_BRANCH=$TRAVIS_BRANCH
-        # - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then export PT_BRANCH=$TRAVIS_BRANCH; else export PT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
+        # - echo $TRAVIS_PULL_REQUEST_BRANCH
+        # - echo $TRAVIS_BRANCH
+        # - echo $TRAVIS_COMMIT
+        # - echo $TRAVIS_PULL_REQUEST_SHA
+        - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then export PT_BRANCH=$TRAVIS_BRANCH; else export PT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
         - if [ -z "$TRAVIS_PULL_REQUEST_SHA" ]; then export PT_COMMIT=$TRAVIS_COMMIT; else export PT_COMMIT=$TRAVIS_PULL_REQUEST_SHA; fi
-        - echo $PT_COMMIT
-        - echo $PT_BRANCH
+        # - echo $PT_COMMIT
+        # - echo $PT_BRANCH
         - npm run static --base=/gp-vue-boilerplate/
         - npm run packtracker
     - stage: storybook
