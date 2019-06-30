@@ -13,7 +13,7 @@ module.exports = function () {
         openAnalyzer: false,
         logLevel: 'info',
         defaultSizes: 'gzip',
-        statsOptions: 'verbose'
+        statsOptions: 'normal'
       }));
     }
   });
