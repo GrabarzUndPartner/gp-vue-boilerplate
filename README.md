@@ -221,7 +221,9 @@ npm run storybook:prod
 
 ## ToDo
 
---
+- Codesandbox - fix initialization
+- packtracker - configuration and bug fixing
+- gh-pages - solve blocked content on github (resources are available but can't be requested)
 
 ***
 
