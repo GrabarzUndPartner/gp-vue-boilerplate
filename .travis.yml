@@ -83,6 +83,7 @@ jobs:
         - cp -R dist/* gh-pages/
         - cp -R storybook/* gh-pages/storybook/
         - cp -R reports/* gh-pages/reports/
+        - touch gh-pages/.nojekyll
       deploy:
         provider: pages
         skip_cleanup: true
