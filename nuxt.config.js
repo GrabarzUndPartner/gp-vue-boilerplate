@@ -114,7 +114,7 @@ module.exports = {
           'jpeg', 'png', 'gif'
         ],
         responsive: {
-          adapter: require(path.resolve('src/modules/responsive-loader/adapter.js'))
+          adapter: require('./src/modules/responsive-loader/adapter.js')
         },
         optimizeImagesInDev: false,
         mozjpeg: {
@@ -240,6 +240,7 @@ module.exports = {
     [
       '@/modules/licence', {
         perChunkOutput: false,
+        unacceptableLicenseTest: (licenseType) => (licenseType === 'GPL'),
         handleMissingLicenseText: (packageName) => {
           return 'NO LICENSE TEXT: ' + packageName;
         },

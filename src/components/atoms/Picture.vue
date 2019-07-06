@@ -51,9 +51,9 @@ export default {
 
   computed: {
     sorted () {
-      let list = convertObjectToArray(this.sources);
-      list = sortBy(list, Object.keys(breakpoint), 'media');
-      list = completeEntries(list, breakpoint);
+      let list = this.sources;
+      list = sortBy(list, Array.from(breakpoint.keys()));
+      list = completeEntries(list);
       return list.reverse();
     }
   },
@@ -66,10 +66,6 @@ export default {
     }
   }
 };
-
-function convertObjectToArray (obj) {
-  return Object.keys(obj).map((k) => obj[k]);
-}
 
 function completeEntries (list) {
   return list.reduce((result, item) => {
@@ -86,10 +82,11 @@ function completeEntries (list) {
         ));
       }
     } else {
+      const srcsetMap = new Map(Object.entries(item.srcset));
       result.push(createAsyncSource(
         item,
-        Promise.all(Object.keys(item.srcset).map((key) => {
-          return Promise.resolve({ default: { src: item.srcset[key] } });
+        Promise.all(Array.from(srcsetMap.keys()).map((key) => {
+          return Promise.resolve({ default: { src: srcsetMap.get(key) } });
         })
         )
       ));
@@ -98,12 +95,12 @@ function completeEntries (list) {
   }, []);
 }
 
-function sortBy (list, pattern, attribute) {
+function sortBy (list, pattern) {
   return list.sort(function (a, b) {
-    if (pattern.indexOf(a[attribute]) === pattern.indexOf(b[attribute])) {
+    if (pattern.indexOf(a.media) === pattern.indexOf(b.media)) {
       return 0;
     } else {
-      return pattern.indexOf(a[attribute]) > pattern.indexOf(b[attribute]) ? 1 : -1;
+      return pattern.indexOf(a.media) > pattern.indexOf(b.media) ? 1 : -1;
     }
   });
 }
@@ -145,7 +142,7 @@ function createAsyncSource (item, urls) {
 function createSourceElement (create, item, urls) {
   return create('source', {
     attrs: Object.assign({
-      media: breakpoint[item['media']],
+      media: breakpoint.get(item.media),
       type: mimeTypes[getMimeType(urls[0].default.src)]
     }, getSource(urls))
   });

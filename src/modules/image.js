@@ -12,7 +12,7 @@ module.exports = function () {
             loader: 'responsive-loader',
             options: {
               name: 'img/[name].[width]x[height].[sha512:hash:base64:7].[ext].webp',
-              adapter: require(__dirname + '/responsive-loader/adapter.js')
+              adapter: require('./responsive-loader/adapter.js')
             }
           }
         }

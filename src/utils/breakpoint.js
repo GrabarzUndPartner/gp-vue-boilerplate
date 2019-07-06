@@ -1,6 +1,11 @@
 import config from '../globals/postcss/custom-media.json';
 
-export default Object.keys(config).reduce(function(result, key) {
-  result[key.replace('--', '')] = config[key];
+const configMap = new Map(Object.entries(config));
+
+export default (() => {
+  const result = new Map();
+  configMap.forEach((value, key) => {
+    result.set(key.replace('--', ''), value);
+  });
   return result;
-}, {});
+})();

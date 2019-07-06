@@ -56,13 +56,12 @@ function mergeContent (compiler, virtualContent, filePath) {
 
 function getLangFilePath (filePath) {
   filePath = filePath.replace(/\\/g, '/');
-  return filePath.replace(/(src\/locales\/)(\w+\/)+(\w+)(\.json)$/, function (
+  return filePath.replace(/(src\/locales\/\w+\/)([\w/?]+)(\.json)$/, function (
     match,
     p1,
-    p2,
-    p3
+    p2
   ) {
-    return `${p1}${p3}.lang`;
+    return `src/locales/${p2}.lang`;
   });
 }
 
