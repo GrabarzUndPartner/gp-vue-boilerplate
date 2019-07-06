@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e65f40a4017948be804b00ac2c301fcf)](https://app.codacy.com/app/stephan.gerbeth/gp-vue-boilerplate?utm_source=github.com&utm_medium=referral&utm_content=GrabarzUndPartner/gp-vue-boilerplate&utm_campaign=Badge_Grade_Dashboard)
 [![GitHub package version](https://img.shields.io/github/package-json/v/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![GitHub contributors](https://img.shields.io/github/contributors/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/graphs/contributors)
