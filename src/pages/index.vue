@@ -73,12 +73,6 @@ export default {
           data: {
 
           }
-        }, {
-          c: 'article/HeadlineText',
-          load: 'visible',
-          data: {
-
-          }
         }
         // , {
         //   c: 'Stage',

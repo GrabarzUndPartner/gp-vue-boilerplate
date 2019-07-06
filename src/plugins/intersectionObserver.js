@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import { subscribeToScroll } from '../service/scroll';
 
 const observedIntersections = new Map();
@@ -12,29 +13,29 @@ Vue.component('intersect', {
     threshold: {
       type: Array,
       required: false,
-      default() {
+      default () {
         return [
-0
-];
+          0
+        ];
       }
     },
     root: {
       type: getHTMLElement(),
       required: false,
-      default() {
+      default () {
         return null;
       }
     },
     rootMargin: {
       type: String,
       required: false,
-      default() {
+      default () {
         return '0px 0px 0px 0px';
       }
     }
   },
 
-  mounted() {
+  mounted () {
     this.scrollObserver = subscribeToScroll(e => onScroll.bind(this)(e));
     this.intersectionObserver = new IntersectionObserver(
       onIntersect.bind(this),
@@ -47,23 +48,23 @@ Vue.component('intersect', {
     this.intersectionObserver.observe(this.$slots.default[0].elm);
   },
 
-  destroyed: function destroyed() {
+  destroyed: function destroyed () {
     this.intersectionObserver.disconnect();
   },
 
-  render: function render() {
+  render: function render () {
     return this.$slots.default ? this.$slots.default[0] : null;
   }
 });
 
-function getHTMLElement() {
+function getHTMLElement () {
   if (typeof window === 'undefined') {
     return Object;
   }
   return window.HTMLElement;
 }
 
-function onScroll() {
+function onScroll () {
   let bounds = this.$el.getBoundingClientRect();
   observedIntersections.forEach(item => {
     viewport.y = item.rootBounds.height;
@@ -76,8 +77,8 @@ function onScroll() {
   });
 }
 
-function onIntersect([
-entry
+function onIntersect ([
+  entry
 ]) {
   if (!entry.isIntersecting) {
     observedIntersections.delete(entry.target);
@@ -89,7 +90,7 @@ entry
   }
 }
 
-function buildThresholdList() {
+function buildThresholdList () {
   var thresholds = [];
   var numSteps = 100;
 

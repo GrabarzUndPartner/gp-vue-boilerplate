@@ -19,13 +19,21 @@ export default {
     PageFooter: () => import(/* webpackMode: "eager" */'../components/page/Footer')
   },
   head () {
+    const pattern = {
+      rel: 'preload',
+      media: '(min-width: 0px)',
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'anonymous'
+    };
+
     return {
       link: [
-        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-500.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', media: '(min-width: 0px)', href: require('@/assets/fonts/raleway-v13-latin-600.woff2'), as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+        Object.assign({ href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2') }, pattern),
+        Object.assign({ href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2') }, pattern),
+        Object.assign({ href: require('@/assets/fonts/raleway-v13-latin-regular.woff2') }, pattern),
+        Object.assign({ href: require('@/assets/fonts/raleway-v13-latin-500.woff2') }, pattern),
+        Object.assign({ href: require('@/assets/fonts/raleway-v13-latin-600.woff2') }, pattern)
       ],
       htmlAttrs: {
         lang: this.$i18n.locale
