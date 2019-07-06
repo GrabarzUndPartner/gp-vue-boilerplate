@@ -69,7 +69,7 @@
     "imagemin-webp": "^5.1.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "license-webpack-plugin": "^2.1.1",
-    "node-gyp": "^5.0.1",
+    "node-gyp": "^5.0.2",
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
     "postcss-momentum-scrolling": "^1.6.12",
