@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.28.2...v1.29.0) (2019-07-06)
+
+
+### Features
+
+* **codacy:** added eslint security ([0ac7c05](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0ac7c05))
+
 ## [1.28.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.28.1...v1.28.2) (2019-07-06)
 
 
