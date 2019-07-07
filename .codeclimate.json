@@ -1,0 +1,24 @@
+{
+  "version": "2",
+  "plugins": {
+    "eslint": {
+      "enabled": true,
+      "channel": "eslint-5",
+      "config": {
+        "config": ".eslintrc"
+      }
+    },
+    "editorconfig": {
+      "enabled": true,
+      "channel": "beta",
+      "config": {
+        "editorconfig": ".editorconfig"
+      }
+    }
+  },
+  "exclude_patterns": [
+    "dist/",
+    "**/*.stories.js",
+    "**/node_modules/"
+  ]
+}
