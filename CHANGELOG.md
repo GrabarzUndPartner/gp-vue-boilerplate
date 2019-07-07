@@ -1,3 +1,21 @@
+## [1.29.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.0...v1.29.1) (2019-07-07)
+
+
+### Bug Fixes
+
+* **cleanup:** cleanup ([bfb1d15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bfb1d15))
+* **codacy:** cleaned eslint config ([4933fab](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4933fab))
+* **codacy:** cleaned eslint config ([2e5bec0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2e5bec0))
+* **codacy:** cleaned eslint config ([44a20dc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/44a20dc))
+* **codeclimate:** added config ([63ab97a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/63ab97a))
+* **codeclimate:** removed config ([6b039ee](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6b039ee))
+* **codeclimate:** updated config ([1fa2d81](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1fa2d81))
+* **eslint:** added plugins & fixed code ([42a1e1c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/42a1e1c))
+* **eslint:** detect error commit in codacy ([21b1d42](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/21b1d42))
+* **eslint:** detect error commit in codacy ([3e8bf99](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3e8bf99))
+* **nuxt:** removed unused lines in config ([662b8b0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/662b8b0))
+* **readme:** solved todo ([55f0764](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/55f0764))
+
 # [1.29.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.28.2...v1.29.0) (2019-07-06)
 
 
