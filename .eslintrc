@@ -13,11 +13,14 @@
   "plugins": [
     "json",
     "vue",
-    "security"
+    "security",
+    "promise",
   ],
   "extends": [
     "plugin:vue/recommended",
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:security/recommended",
+    "plugin:promise/recommended"
   ],
   "rules": {
     "array-bracket-newline": [
@@ -52,6 +55,7 @@
     "quotes": [
       "error",
       "single"
-    ]
+    ],
+    "security/detect-non-literal-fs-filename": "off"
   }
 }
