@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.1...v1.29.2) (2019-07-07)
+
+
+### Bug Fixes
+
+* **package:** removed unused eslint plugins ([3d0146f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3d0146f))
+
 ## [1.29.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.0...v1.29.1) (2019-07-07)
 
 
