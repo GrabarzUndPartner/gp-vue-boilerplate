@@ -102,6 +102,7 @@ module.exports = {
   ],
 
   modules: [
+    '@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/virtual',
     '@/modules/svg',
