@@ -18,7 +18,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
-    "dev": "nuxt",
+    "dev": "NODE_OPTIONS='--max-old-space-size=256' nuxt",
     "build": "nuxt build",
     "static": "nuxt generate",
     "static:now": "npm run static && cp now.json dist/website && cd dist/website/ && now",
