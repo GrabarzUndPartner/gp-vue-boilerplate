@@ -89,7 +89,7 @@
     "stylelint-config-recess-order": "^2.0.2",
     "stylelint-config-standard": "^18.3.0",
     "svgo-loader": "^2.2.1",
-    "terser": "^4.0.0",
+    "terser": "^4.1.0",
     "webpack-virtual-modules": "0.1.10"
   },
   "dependencies": {
