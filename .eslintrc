@@ -12,24 +12,11 @@
   },
   "plugins": [
     "json",
-    "vue",
-    "security",
-    "xss",
-    "no-secrets",
-    "promise",
-    "no-use-extend-native",
-    "array-func",
-    "simple-import-sort",
-    "optimize-regex",
-    "sonarjs"
+    "vue"
   ],
   "extends": [
     "plugin:vue/recommended",
-    "eslint:recommended",
-    "plugin:security/recommended",
-    "plugin:promise/recommended",
-    "plugin:array-func/recommended",
-    "plugin:sonarjs/recommended"
+    "eslint:recommended"
   ],
   "rules": {
     "array-bracket-newline": [
@@ -64,12 +51,6 @@
     "quotes": [
       "error",
       "single"
-    ],
-    "security/detect-non-literal-fs-filename": "off",
-    "xss/no-location-href-assign": "error",
-    "no-secrets/no-secrets": "error",
-    "no-use-extend-native/no-use-extend-native": "error",
-    "simple-import-sort/sort": "error",
-    "optimize-regex/optimize-regex": "warn"
+    ]
   }
 }
