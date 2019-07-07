@@ -1,3 +1,12 @@
+## [1.29.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.2...v1.29.3) (2019-07-07)
+
+
+### Bug Fixes
+
+* **package:** update node version and added yarn lock ([4cd81b6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4cd81b6))
+* **package:** update terser [skip ci] ([5cc0d58](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5cc0d58))
+* **package:** update terser [skip ci] ([e1356ee](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e1356ee))
+
 ## [1.29.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.1...v1.29.2) (2019-07-07)
 
 
