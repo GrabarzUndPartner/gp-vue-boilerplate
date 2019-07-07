@@ -1,5 +1,5 @@
 import { fromEvent, timer } from 'rxjs';
-import { map, debounce } from 'rxjs/operators';
+import { debounce, map } from 'rxjs/operators';
 
 let x = 0;
 let y = 0;
@@ -20,6 +20,6 @@ const observer = fromEvent(global, 'resize').pipe(
   })
 );
 
-export function subscribeToViewport(fn) {
+export function subscribeToViewport (fn) {
   observer.subscribe(value => fn(value));
 }

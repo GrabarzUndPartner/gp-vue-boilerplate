@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
 
-import GpPageSubline from '@/components/atoms/subline/Page.vue';
 import GpArticleSubline from '@/components/atoms/subline/Article.vue';
+import GpPageSubline from '@/components/atoms/subline/Page.vue';
 import GpSectionSubline from '@/components/atoms/subline/Section.vue';
 
 storiesOf('atoms/Sublines', module)
   .add('Overview', () => ({
     components: {
-      GpPageSubline,
       GpArticleSubline,
+      GpPageSubline,
       GpSectionSubline
     },
     template: `<div>

@@ -13,12 +13,14 @@
   "plugins": [
     "json",
     "vue",
-    "security"
+    "security",
+    "promise"
   ],
   "extends": [
     "plugin:vue/recommended",
     "eslint:recommended",
-    "plugin:security/recommended"
+    "plugin:security/recommended",
+    "plugin:promise/recommended"
   ],
   "rules": {
     "array-bracket-newline": [
@@ -38,6 +40,7 @@
     "block-spacing": "error",
     "no-debugger": "off",
     "no-console": "off",
+    "no-empty-function": "error",
     "vue/no-v-html": "off",
     "semi": [
       "error",
@@ -53,6 +56,6 @@
       "error",
       "single"
     ],
-    "security/detect-non-literal-fs-filename": "off",
+    "security/detect-non-literal-fs-filename": "off"
   }
 }

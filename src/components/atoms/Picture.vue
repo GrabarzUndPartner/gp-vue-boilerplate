@@ -62,6 +62,9 @@ export default {
     if ('objectFit' in document.documentElement.style === false) {
       import('object-fit-images').then((objectFitImages) => {
         objectFitImages(this.$el);
+        return null;
+      }).catch((e) => {
+        throw e;
       });
     }
   }
@@ -85,7 +88,7 @@ function completeEntries (list) {
       const srcsetMap = new Map(Object.entries(item.srcset));
       result.push(createAsyncSource(
         item,
-        Promise.all(Array.from(srcsetMap.keys()).map((key) => {
+        Promise.all(Array.from(srcsetMap.keys(), (key) => {
           return Promise.resolve({ default: { src: srcsetMap.get(key) } });
         })
         )

@@ -1,3 +1,5 @@
+# Boilerplate - Grabarz & Partner
+
 [![GitHub package version](https://img.shields.io/github/package-json/v/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![GitHub contributors](https://img.shields.io/github/contributors/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/graphs/contributors)
@@ -15,7 +17,7 @@
 
 [![Storybook badge](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
 
-# Boilerplate - Grabarz & Partner
+## Description
 
 G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites by vuejs.
 
@@ -116,7 +118,7 @@ npm run production
 
 ### Open Page
 
-```
+```bash
 http://localhost:8050
 ```
 
@@ -225,7 +227,6 @@ npm run storybook:prod
 
 - Codesandbox - fix initialization
 - packtracker - configuration and bug fixing
-- gh-pages - solve blocked content on github (resources are available but can't be requested)
 
 ***
 

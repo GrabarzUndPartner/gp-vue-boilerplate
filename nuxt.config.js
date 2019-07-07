@@ -278,32 +278,8 @@ module.exports = {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ]
-    // script: [
-    //   {
-    //     src:
-    //       'https://cdn.polyfill.io/v2/polyfill.min.js?features=HTMLPictureElement',
-    //     defer: true
-    //   },
-    //   {
-    //     innerHTML:
-    //       'document.createElement( "picture" );document.createElement( "source" );'
-    //   }
-    // ],
-    // __dangerouslyDisableSanitizers: ['script']
   }
 };
-
-// function getAnalyzerConfig () {
-//   if (!isDev) {
-//     return {
-//       analyzerMode: 'static',
-//       reportFilename: path.resolve('reports/webpack-bundle-analyzer.html'),
-//       openAnalyzer: true
-//     };
-//   } else {
-//     return false;
-//   }
-// }
 
 function getBasePath () {
   return process.env.npm_config_base || '/';

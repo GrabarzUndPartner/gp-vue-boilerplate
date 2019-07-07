@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
 
-import GpPageHeadline from '@/components/atoms/headline/Page.vue';
 import GpArticleHeadline from '@/components/atoms/headline/Article.vue';
+import GpPageHeadline from '@/components/atoms/headline/Page.vue';
 import GpSectionHeadline from '@/components/atoms/headline/Section.vue';
 
 storiesOf('atoms/Headlines', module)
   .add('Overview', () => ({
     components: {
-      GpPageHeadline,
       GpArticleHeadline,
+      GpPageHeadline,
       GpSectionHeadline
     },
     template: `<div>
