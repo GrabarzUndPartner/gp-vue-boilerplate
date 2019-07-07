@@ -14,7 +14,7 @@
     "json",
     "vue",
     "security",
-    "promise",
+    "promise"
   ],
   "extends": [
     "plugin:vue/recommended",
