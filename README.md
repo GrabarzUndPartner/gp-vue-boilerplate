@@ -13,7 +13,7 @@
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 
 [![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1/branch/master?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate/branch/master)
 
 [![Storybook badge](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
 
