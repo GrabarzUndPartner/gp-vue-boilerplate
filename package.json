@@ -86,7 +86,7 @@
     "sharp": "^0.22.1",
     "stylelint": "^10.1.0",
     "stylelint-config-css-modules": "^1.4.0",
-    "stylelint-config-recess-order": "^2.0.2",
+    "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^18.3.0",
     "svgo-loader": "^2.2.1",
     "terser": "^4.1.0",
