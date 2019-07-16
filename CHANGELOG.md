@@ -1,3 +1,10 @@
+## [1.29.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.3...v1.29.4) (2019-07-16)
+
+
+### Bug Fixes
+
+* **packages:** synced package-lock ([3ae6b0d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3ae6b0d))
+
 ## [1.29.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.2...v1.29.3) (2019-07-07)
 
 
