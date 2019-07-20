@@ -1,3 +1,10 @@
+## [1.29.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.4...v1.29.5) (2019-07-20)
+
+
+### Bug Fixes
+
+* **package:** update nuxt-i18n to version 6.0.0 ([b44359f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b44359f))
+
 ## [1.29.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.3...v1.29.4) (2019-07-16)
 
 
