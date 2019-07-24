@@ -105,7 +105,7 @@
     "picturefill": "^3.0.3",
     "rxjs": "^6.5.2",
     "vue-lazy-hydration": "^1.0.0-beta.9",
-    "snyk": "^1.197.0"
+    "snyk": "^2.0.0"
   },
   "repository": {
     "type": "git",
