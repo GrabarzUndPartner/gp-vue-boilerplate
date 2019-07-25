@@ -1,3 +1,10 @@
+## [1.29.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.5...v1.29.6) (2019-07-25)
+
+
+### Bug Fixes
+
+* **package:** update snyk to version 2.0.0 ([53e56da](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/53e56da))
+
 ## [1.29.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.4...v1.29.5) (2019-07-20)
 
 
