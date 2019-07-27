@@ -57,7 +57,25 @@ Open the workspace by `config.code-workspace` and the recommended extensions, to
 - install nvm <https://medium.com/@isaacjoe/best-way-to-install-and-use-nvm-on-mac-e3a3f6bc494d>
 
 ```bash
-nvm install 10.6.0
+nvm install 12.1.0
+
+git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git
+cd gp-vue-boilerplate
+
+npm i snyk -g
+snyk auth
+
+npm i
+```
+
+### Linux - install
+
+- install nvm <https://github.com/nvm-sh/nvm#install--update-script>
+
+```bash
+sudo apt-get install libjpeg-dev libpng-dev libgif-dev libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
+nvm install 12.1.0
 
 git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git
 cd gp-vue-boilerplate
@@ -90,8 +108,8 @@ git clone https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git
 cd gp-vue-boilerplate
 
 nvm on
-nvm install 10.6.0 64
-nvm use 10.6.0
+nvm install 12.1.0 64
+nvm use 12.1.0
 npm i snyk -g
 # re-run command prompt as administrator
 snyk auth
