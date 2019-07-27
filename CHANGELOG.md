@@ -1,3 +1,14 @@
+## [1.29.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.6...v1.29.7) (2019-07-27)
+
+
+### Bug Fixes
+
+* **install:** updated installation guide for linux ([615f054](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/615f054))
+* **snyk:** downgraded version ([8604d85](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8604d85))
+* **snyk:** downgraded version - added synced package lock ([d92f53c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d92f53c))
+* **travis:** added different platform libraries ([241da5c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/241da5c))
+* **travis:** added platform libraries for cypress ([eea26a4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eea26a4))
+
 ## [1.29.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.5...v1.29.6) (2019-07-25)
 
 
