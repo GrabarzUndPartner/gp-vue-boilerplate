@@ -9,6 +9,12 @@ addons:
       - libjpeg-dev
       - libpng-dev
       - libgif-dev
+      - libgtk2.0-0
+      - libnotify-dev
+      - libgconf-2-4
+      - libnss3
+      - libxss1
+      - libasound2
       # - libtool
       # - libsecret-1-dev
       # - automake
