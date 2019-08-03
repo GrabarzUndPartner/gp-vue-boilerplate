@@ -1,6 +1,4 @@
-# Grabarz & Partner - Boilerplate 
-
-[![Tweet](https://img.shields.io/twitter/url/https/github.com/GrabarzUndPartner/gp-vue-boilerplate)](https://twitter.com/intent/tweet?text=Get%20full%20featured%20NuxtJS%20Boilerplate&url=https%3A%2F%2Fgithub.com%2FGrabarzUndPartner%2Fgp-vue-boilerplate&via=grabarzpartner&hashtags=boilerplate,nuxtjs,vuejs)
+# Grabarz & Partner - Boilerplate [![Tweet](https://img.shields.io/twitter/url/https/github.com/GrabarzUndPartner/gp-vue-boilerplate?style=social)](https://twitter.com/intent/tweet?text=Get%20full%20featured%20NuxtJS%20Boilerplate&url=https%3A%2F%2Fgithub.com%2FGrabarzUndPartner%2Fgp-vue-boilerplate&via=grabarzpartner&hashtags=boilerplate,nuxtjs,vuejs)
 
 [![GitHub package version](https://img.shields.io/github/package-json/v/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
