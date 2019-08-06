@@ -1,13 +1,16 @@
 <p align="right">
-  Share:
-  <a href="https://www.facebook.com/sharer.php?u=https://github.com/GrabarzUndPartner/gp-vue-boilerplate">
-    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/facebook.svg?sanitize=true"/>
-  </a>
+  share me:
   <a href="https://twitter.com/intent/tweet?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&text=Awesome full featured vue.js/nuxt.js boilerplate&via=grabarzpartner&hashtags=vue,nuxt,boilerplate">
     <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/twitter.svg?sanitize=true"/>
   </a>
   <a href="https://news.ycombinator.com/submitlink?u=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&t=Awesome full featured vue.js/nuxt.js boilerplate">
     <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/hackernews.svg?sanitize=true"/>
+  </a>
+  <a href="https://reddit.com/submit?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&title=Awesome full featured vue.js/nuxt.js boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/reddit.svg?sanitize=true"/>
+  </a>
+  <a href="https://www.facebook.com/sharer.php?u=https://github.com/GrabarzUndPartner/gp-vue-boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/facebook.svg?sanitize=true"/>
   </a>
   <a href="https://www.xing.com/spi/shares/new?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate">
     <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/xing.svg?sanitize=true"/>
