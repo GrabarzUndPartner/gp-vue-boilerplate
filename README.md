@@ -1,4 +1,26 @@
-# Grabarz & Partner - Boilerplate [![Tweet](https://img.shields.io/twitter/url/https/github.com/GrabarzUndPartner/gp-vue-boilerplate?style=social)](https://twitter.com/intent/tweet?text=Get%20full%20featured%20NuxtJS%20Boilerplate&url=https%3A%2F%2Fgithub.com%2FGrabarzUndPartner%2Fgp-vue-boilerplate&via=grabarzpartner&hashtags=boilerplate,nuxtjs,vuejs)
+<p align="right">
+  share me:
+  <a href="https://twitter.com/intent/tweet?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&text=Awesome full featured vue.js/nuxt.js boilerplate&via=grabarzpartner&hashtags=vue,nuxt,boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/twitter.svg?sanitize=true"/>
+  </a>
+  <a href="https://news.ycombinator.com/submitlink?u=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&t=Awesome full featured vue.js/nuxt.js boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/hackernews.svg?sanitize=true"/>
+  </a>
+  <a href="https://reddit.com/submit?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&title=Awesome full featured vue.js/nuxt.js boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/reddit.svg?sanitize=true"/>
+  </a>
+  <a href="https://www.facebook.com/sharer.php?u=https://github.com/GrabarzUndPartner/gp-vue-boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/facebook.svg?sanitize=true"/>
+  </a>
+  <a href="https://www.xing.com/spi/shares/new?url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/xing.svg?sanitize=true"/>
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/GrabarzUndPartner/gp-vue-boilerplate&title=vue.js/nuxt.js boilerplate&summary=Awesome full featured vue.js/nuxt.js boilerplate">
+    <img width="24" height="24" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg?sanitize=true"/>
+  </a>
+</p>
+
+# Grabarz & Partner - Boilerplate
 
 [![GitHub package version](https://img.shields.io/github/package-json/v/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
 [![license](https://img.shields.io/github/license/GrabarzUndPartner/gp-vue-boilerplate.svg)](https://github.com/GrabarzUndPartner/gp-vue-boilerplate)
