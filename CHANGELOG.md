@@ -1,3 +1,12 @@
+## [1.29.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.7...v1.29.8) (2019-08-07)
+
+
+### Bug Fixes
+
+* **pull_request_template:** changed project name ([c1fced2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c1fced2))
+* **readme:** added reddit ([3e3e7e5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3e3e7e5))
+* **readme:** added share links ([fd02a2a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fd02a2a))
+
 ## [1.29.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.6...v1.29.7) (2019-07-27)
 
 
