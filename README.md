@@ -265,8 +265,7 @@ npm run storybook:prod
 
 ## ToDo
 
-- Codesandbox - fix initialization
-- packtracker - configuration and bug fixing
+-
 
 ***
 
