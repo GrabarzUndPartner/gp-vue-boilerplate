@@ -47,7 +47,7 @@
     "@kazupon/vue-i18n-loader": "^0.4.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
-    "@packtracker/webpack-plugin": "^2.1.0",
+    "@packtracker/webpack-plugin": "^2.2.0",
     "@storybook/addon-a11y": "^5.2.0",
     "@storybook/addon-actions": "^5.2.0",
     "@storybook/addon-links": "^5.2.0",
