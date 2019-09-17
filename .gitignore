@@ -5,7 +5,9 @@
 /node_modules/
 /env/nuxt/cert/
 /output/
+/public/
 /reports/
+/w3c/
 /src/static/sitemap.xml
 
 

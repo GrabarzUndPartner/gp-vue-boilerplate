@@ -28,7 +28,7 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
     "lint:css": "stylelint \"src/**/*.vue\"",
-    "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html; exit ${PIPESTATUS[0]}",
+    "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html",
     "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run",
     "semantic-release": "semantic-release",
