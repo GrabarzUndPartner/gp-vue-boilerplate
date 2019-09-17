@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.8...v1.30.0) (2019-09-17)
+
+
+### Features
+
+* **gitlab:** gitlab-ci integration ([74c1227](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/74c1227))
+
 ## [1.29.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.7...v1.29.8) (2019-08-07)
 
 
