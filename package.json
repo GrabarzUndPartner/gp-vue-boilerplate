@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "1.30.0",
+  "version": "1.30.1",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -106,10 +106,6 @@
     "rxjs": "^6.5.2",
     "vue-lazy-hydration": "^1.0.0-beta.9",
     "snyk": "^1.226.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GrabarzUndPartner/gp-vue-boilerplate.git"
   },
   "snyk": true
 }
