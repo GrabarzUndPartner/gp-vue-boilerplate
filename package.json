@@ -93,7 +93,7 @@
     "webpack-virtual-modules": "0.1.11"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.4.0",
     "default-passive-events": "^1.0.10",
