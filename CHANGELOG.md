@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.30.0...v1.30.1) (2019-09-18)
+
+
+### Bug Fixes
+
+* **package:** removed repo entry  ([b99b1cb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b99b1cb))
+
 # [1.30.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.29.8...v1.30.0) (2019-09-17)
 
 
