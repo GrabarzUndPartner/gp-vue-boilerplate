@@ -101,7 +101,7 @@ module.exports = {
     { src: '@/plugins/lazyHydrate' }
   ],
 
-  modules: [
+  buildModules: [
     //'@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/virtual',
