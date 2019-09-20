@@ -44,9 +44,9 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
-    "@kazupon/vue-i18n-loader": "^0.4.0",
+    "@kazupon/vue-i18n-loader": "^0.4.1",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
-    "@nuxtjs/sitemap": "^1.2.0",
+    "@nuxtjs/sitemap": "^1.3.0",
     "@packtracker/webpack-plugin": "^2.2.0",
     "@storybook/addon-a11y": "^5.2.0",
     "@storybook/addon-actions": "^5.2.0",
@@ -103,9 +103,9 @@
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "picturefill": "^3.0.3",
-    "rxjs": "^6.5.2",
+    "rxjs": "^6.5.3",
     "vue-lazy-hydration": "^1.0.0-beta.9",
-    "snyk": "^1.226.1"
+    "snyk": "^1.226.2"
   },
   "snyk": true
 }
