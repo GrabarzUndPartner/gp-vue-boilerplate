@@ -54,7 +54,7 @@
     "@storybook/addon-viewport": "^5.2.0",
     "@storybook/addons": "^5.2.0",
     "@storybook/vue": "^5.2.0",
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "branch-name-lint": "^1.0.5",
