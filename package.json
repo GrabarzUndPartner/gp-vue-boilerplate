@@ -99,7 +99,7 @@
     "default-passive-events": "^1.0.10",
     "intersection-observer": "^0.7.0",
     "nuxt": "^2.9.2",
-    "nuxt-i18n": "^6.1.3",
+    "nuxt-i18n": "^6.2.1",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "picturefill": "^3.0.3",
