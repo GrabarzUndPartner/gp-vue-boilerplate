@@ -85,7 +85,7 @@
     "rucksack-css": "^1.0.2",
     "sharp": "^0.23.0",
     "stylelint": "^11.0.0",
-    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-css-modules": "^1.5.0",
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^19.0.0",
     "svgo-loader": "^2.2.1",
