@@ -53,7 +53,7 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addon-viewport": "^5.2.1",
     "@storybook/addons": "^5.2.1",
-    "@storybook/vue": "^5.2.0",
+    "@storybook/vue": "^5.2.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
