@@ -98,14 +98,15 @@
     "@nuxtjs/robots": "^2.4.1",
     "default-passive-events": "^1.0.10",
     "intersection-observer": "^0.7.0",
+    "jsfeat": "0.0.8",
     "nuxt": "^2.9.2",
     "nuxt-i18n": "^6.2.1",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "picturefill": "^3.0.3",
     "rxjs": "^6.5.3",
-    "vue-lazy-hydration": "^1.0.0-beta.9",
-    "snyk": "^1.230.5"
+    "snyk": "^1.230.5",
+    "vue-lazy-hydration": "^1.0.0-beta.9"
   },
   "snyk": true
 }

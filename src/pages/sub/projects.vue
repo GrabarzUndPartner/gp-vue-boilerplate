@@ -16,10 +16,13 @@
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
+    <MoleculeObjectDetector />
   </div>
 </template>
 
 <script>
+import MoleculeObjectDetector from '@/components/molecules/ObjectDetector';
+
 export default {
   nuxtI18n: {
     paths: {
@@ -29,7 +32,7 @@ export default {
   },
 
   components: {
-
+    MoleculeObjectDetector
   },
 
   head () {
