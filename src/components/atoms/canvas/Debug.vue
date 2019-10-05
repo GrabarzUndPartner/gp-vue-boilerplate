@@ -46,6 +46,9 @@ export default {
         }
         this.$nextTick(() => {
           this.context.putImageData(imageData, 0, 0);
+          if (options.matches) {
+            render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
+          }
         });
 
       }
@@ -95,6 +98,26 @@ function renderImage (src, dst, sw, sh, dw) {
       var pix = src[i * sw + j];
       dst[i * dw + j] = alpha | (pix << 16) | (pix << 8) | pix;
     }
+  }
+}
+
+function render_matches (ctx, screen_corners, pattern_corners, match_mask, matches, count) {
+  for (var i = 0; i < count; ++i) {
+    var m = matches[Number(i)];
+    var s_kp = screen_corners[m.screen_idx];
+    // console.log(pattern_corners[m.pattern_lev]);
+    var p_kp = pattern_corners[m.pattern_lev];//[m.pattern_idx];
+
+    if (match_mask.data[Number(i)]) {
+      ctx.strokeStyle = 'rgb(0,255,0)';
+    } else {
+      ctx.strokeStyle = 'rgb(255,0,0)';
+    }
+    ctx.beginPath();
+    ctx.moveTo(s_kp.x, s_kp.y);
+    ctx.lineTo(p_kp.x * 0.5, p_kp.y * 0.5); // our preview is downscaled
+    ctx.lineWidth = 1;
+    ctx.stroke();
   }
 }
 </script>
