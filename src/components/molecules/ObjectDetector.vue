@@ -17,14 +17,10 @@
       @load="onVideoLoad"
       @imagedata="onUpdate"
     />
-    <h2>Grayscale</h2>
+    <h2>Detected Corners</h2>
     <atom-canvas-debug :options="debugOptionsA" />
-    <h2>Gaussian</h2>
-    <atom-canvas-debug :options="debugOptionsB" />
-    <h2>Corners</h2>
-    <atom-canvas-debug :options="debugOptionsC" />
     <h2>Matches</h2>
-    <atom-canvas-debug :options="debugOptionsD" />
+    <atom-canvas-debug :options="debugOptionsB" />
   </div>
 </template>
 
@@ -51,8 +47,6 @@ export default {
       source: new Source(),
       debugOptionsA: null,
       debugOptionsB: null,
-      debugOptionsC: null,
-      debugOptionsD: null,
       matches: [],
       matchesPattern: [],
       corners: null,
