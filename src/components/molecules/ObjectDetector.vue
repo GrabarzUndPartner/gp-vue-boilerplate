@@ -2,15 +2,15 @@
   <div>
     <h2>Pattern: Original + Canvas</h2>
     <atom-canvas-image
-      url="/original.jpg"
+      url="/original_square.jpg"
       @imagedata="onPatternUpdate"
     />
-    <h2>Grayscale</h2>
-    <atom-canvas-debug :options="debugOptionsImageA" />
-    <h2>Gaussian</h2>
-    <atom-canvas-debug :options="debugOptionsImageB" />
-    <h2>Corners</h2>
-    <atom-canvas-debug :options="debugOptionsImageC" />
+    <h2>Detected Corners</h2>
+    <atom-canvas-debug
+      v-for="(config, index) in options"
+      :key="index"
+      :options="config"
+    />
 
     <h2>Cam: Original + Canvas</h2>
     <atom-canvas-video @imagedata="onUpdate" />
@@ -41,9 +41,9 @@ export default {
 
   data () {
     return {
-      debugOptionsImageA: null,
-      debugOptionsImageB: null,
-      debugOptionsImageC: null,
+      options: [],
+      imageData: null,
+      pattern: new Pattern(),
       debugOptionsA: null,
       debugOptionsB: null,
       debugOptionsC: null,
@@ -67,39 +67,18 @@ export default {
 
   methods: {
     onPatternUpdate (e) {
-
-      console.log(e);
-      // console.log(e);
-      // const matrixA = getGrayscaleMatrix(e);
-      // console.log(matrixA);
-
-      const pattern = new Pattern();
-      const testMatrix = pattern.train(e);
-      this.debugOptionsImageA = {
-        imageData: e,
-        matrix: testMatrix
-      };
-
-      // const matrixB = addGaussianBlur(matrixA, 3);
-      // this.debugOptionsImageB = {
-      //   imageData: e,
-      //   matrix: matrixB
-      // };
-
-      // const corners = detectCorners(matrixB, this.matchesPattern);
-      // const numCorners = detectKeypoints(matrixB, corners);
-      // jsfeat.orb.describe(matrixB, corners, numCorners, this.pattern_descriptors);
-
-      // this.debugOptionsImageC = {
-      //   imageData: e,
-      //   matrix: matrixB,
-      //   corners: {
-      //     list: corners,
-      //     count: numCorners
-      //   }
-      // };
-      // this.cornersPattern = corners;
-      // this.cornersPatternCount = numCorners;
+      this.imageData = e;
+      this.pattern.setup(e);
+      const matrices = this.pattern.train();
+      this.options = this.pattern.corners.map((corners, index) => {
+        return {
+          matrix: matrices[Number(index)],
+          corners: {
+            list: corners,
+            count: this.pattern.cornersCount[Number(index)]
+          }
+        };
+      });
     },
 
     onUpdate () {
@@ -350,4 +329,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+canvas {
+  display: block;
+}
 </style>

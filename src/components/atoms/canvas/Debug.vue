@@ -29,54 +29,53 @@ export default {
     };
   },
 
-  watch: {
-    options: {
-      handler (options) {
-        const imageData = this.context.createImageData(options.imageData);
-        this.width = imageData.width;
-        this.height = imageData.height;
-
-        if (options.matrix) {
-          addMatrixToImageData(options.matrix, imageData);
-        }
-
-        if (options.corners) {
-          const matrix = renderCorners(options.corners.list, options.corners.count, imageData, this.width);
-          renderImage(imageData.data, matrix, this.width, this.height);
-        }
-        this.$nextTick(() => {
-          this.context.putImageData(imageData, 0, 0);
-          if (options.matches) {
-            render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
-          }
-        });
-
-      }
-    }
-  },
+  // watch: {
+  //   options: {
+  //     handler () { }
+  //   }
+  // },
 
   mounted () {
     this.context = this.$el.getContext('2d');
+    // console.log(this.options);
+    let options = this.options;
+    if (options && options.matrix) {
+      this.width = options.matrix.cols;
+      this.height = options.matrix.rows;
+
+      const imageData = this.context.createImageData(this.width, this.height);
+      const imageData_u32 = new Uint32Array(imageData.data.buffer);
+
+      addMatrixToImageData(imageData_u32, options.matrix);
+
+      if (options.corners) {
+        renderCorners(options.corners.list, options.corners.count, imageData_u32, this.width);
+      }
+
+      this.$nextTick(() => {
+        this.context.putImageData(imageData, 0, 0);
+        if (options.matches) {
+          render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
+        }
+      });
+    }
   },
 
   methods: {
 
   }
 };
-
-function addMatrixToImageData (grayscaleMatrix, imageData) {
-  let data_u32 = new Uint32Array(imageData.data.buffer);
-  let i = grayscaleMatrix.cols * grayscaleMatrix.rows, pix = 0;
-
-  let alpha = (0xff << 24);
-  while (--i >= 0) {
-    pix = grayscaleMatrix.data[Number(i)];
-    data_u32[Number(i)] = alpha | (pix << 16) | (pix << 8) | pix;
+function addMatrixToImageData (data_u32, matrix) {
+  var alpha = (0xff << 24);
+  for (var i = 0; i < matrix.rows; ++i) {
+    for (var j = 0; j < matrix.cols; ++j) {
+      var pix = matrix.data[i * matrix.cols + j];
+      data_u32[i * matrix.cols + j] = alpha | (pix << 16) | (pix << 8) | pix;
+    }
   }
 }
 
-function renderCorners (corners, count, img, step) {
-  var data_u32 = new Uint32Array(img.data.buffer);
+function renderCorners (corners, count, data_u32, step) {
   var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
   for (var i = 0; i < count; ++i) {
     var x = corners[Number(i)].x;
@@ -87,17 +86,6 @@ function renderCorners (corners, count, img, step) {
     data_u32[off + 1] = pix;
     data_u32[off - step] = pix;
     data_u32[off + step] = pix;
-  }
-  return data_u32;
-}
-
-function renderImage (src, dst, sw, sh, dw) {
-  var alpha = (0xff << 24);
-  for (var i = 0; i < sh; ++i) {
-    for (var j = 0; j < sw; ++j) {
-      var pix = src[i * sw + j];
-      dst[i * dw + j] = alpha | (pix << 16) | (pix << 8) | pix;
-    }
   }
 }
 
