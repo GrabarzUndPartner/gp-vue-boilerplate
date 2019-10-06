@@ -39,6 +39,7 @@ export default {
     onLoad (e) {
       this.width = e.target.videoWidth;
       this.height = e.target.videoHeight;
+      this.$emit('load', { width: this.width, height: this.height });
     },
 
     onUpdate (e) {

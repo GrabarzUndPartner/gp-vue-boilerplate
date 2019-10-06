@@ -1,8 +1,8 @@
 import jsfeat from 'jsfeat';
-import { detectKeypoints } from '@/utils/jsfeat/featureDetection';
+import { generateResizedBlurMatrix, detectCorners } from '@/utils/jsfeat/base';
 
 const maxPatternSize = 512;
-const max_per_level = 300;
+const maxPerLevel = 300;
 const scale_factor = Math.sqrt(2.0); // magic number ;)
 const numTrainLevels = 4;
 const blur = 5;
@@ -14,7 +14,6 @@ export default class Pattern {
     this.corners = [];
     this.cornersCount = [];
     this.descriptors = [];
-    this.matrices = [];
   }
 
   setup (imageData) {
@@ -33,7 +32,7 @@ export default class Pattern {
       matrices[Number(lev)] = subLevelImgMatrix;
 
       const corners = this.corners[Number(lev)];
-      this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)]);
+      this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)], maxPerLevel, true);
       // for (let i = 0; i < this.cornersCount[Number(lev)]; ++i) {
       //   corners[Number(i)].x *= 1. / subScale;
       //   corners[Number(i)].y *= 1. / subScale;
@@ -54,33 +53,6 @@ function prepareLevelResults (imgMatrix, scale, corners, descriptors) {
     while (--i >= 0) {
       corners[Number(lev)][Number(i)] = new jsfeat.keypoint_t(0, 0, 0, 0, -1);
     }
-    descriptors[Number(lev)] = new jsfeat.matrix_t(32, max_per_level, jsfeat.U8_t | jsfeat.C1_t);
+    descriptors[Number(lev)] = new jsfeat.matrix_t(32, maxPerLevel, jsfeat.U8_t | jsfeat.C1_t);
   }
-}
-
-function generateResizedBlurMatrix (imgMatrix, scale, blur) {
-  const resultMatrix = resizeImgMatrix(imgMatrix, scale);
-  addGaussianBlur(resultMatrix, blur);
-  return resultMatrix;
-}
-
-function resizeImgMatrix (imgMatrix, scale) {
-  let width = (imgMatrix.cols * scale) | 0;
-  let height = (imgMatrix.rows * scale) | 0;
-
-  let resultMatrix = new jsfeat.matrix_t(imgMatrix.cols, imgMatrix.rows, jsfeat.U8_t | jsfeat.C1_t);
-  jsfeat.imgproc.resample(imgMatrix, resultMatrix, width, height);
-  return resultMatrix;
-}
-
-function addGaussianBlur (imgMatrix, blur) {
-  jsfeat.imgproc.gaussian_blur(imgMatrix, imgMatrix, blur | 0);
-}
-
-function detectCorners (imgMatrix, corners, descr) {
-  const num = detectKeypoints(imgMatrix, corners, max_per_level);
-  // optional code line. implemented for optimized dataflow to debug canvas
-  corners.splice(num);
-  jsfeat.orb.describe(imgMatrix, corners, num, descr);
-  return num;
 }

@@ -29,40 +29,44 @@ export default {
     };
   },
 
-  // watch: {
-  //   options: {
-  //     handler () { }
-  //   }
-  // },
+  watch: {
+    options: {
+      handler (options) {
+        this.update(options);
+      }
+    }
+  },
 
   mounted () {
     this.context = this.$el.getContext('2d');
     // console.log(this.options);
-    let options = this.options;
-    if (options && options.matrix) {
-      this.width = options.matrix.cols;
-      this.height = options.matrix.rows;
+    this.update(this.options);
 
-      const imageData = this.context.createImageData(this.width, this.height);
-      const imageData_u32 = new Uint32Array(imageData.data.buffer);
-
-      addMatrixToImageData(imageData_u32, options.matrix);
-
-      if (options.corners) {
-        renderCorners(options.corners.list, options.corners.count, imageData_u32, this.width);
-      }
-
-      this.$nextTick(() => {
-        this.context.putImageData(imageData, 0, 0);
-        if (options.matches) {
-          render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
-        }
-      });
-    }
   },
 
   methods: {
+    update (options) {
+      if (options && options.matrix) {
+        this.width = options.matrix.cols;
+        this.height = options.matrix.rows;
 
+        const imageData = this.context.createImageData(this.width, this.height);
+        const imageData_u32 = new Uint32Array(imageData.data.buffer);
+
+        addMatrixToImageData(imageData_u32, options.matrix);
+
+        if (options.corners) {
+          renderCorners(options.corners.list, options.corners.count, imageData_u32, this.width);
+        }
+
+        this.$nextTick(() => {
+          this.context.putImageData(imageData, 0, 0);
+          if (options.matches) {
+            render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
+          }
+        });
+      }
+    }
   }
 };
 function addMatrixToImageData (data_u32, matrix) {

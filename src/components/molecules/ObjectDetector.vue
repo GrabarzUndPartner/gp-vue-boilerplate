@@ -13,7 +13,10 @@
     />
 
     <h2>Cam: Original + Canvas</h2>
-    <atom-canvas-video @imagedata="onUpdate" />
+    <atom-canvas-video
+      @load="onVideoLoad"
+      @imagedata="onUpdate"
+    />
     <h2>Grayscale</h2>
     <atom-canvas-debug :options="debugOptionsA" />
     <h2>Gaussian</h2>
@@ -31,6 +34,7 @@ import AtomCanvasVideo from '@/components/atoms/canvas/Video';
 import AtomCanvasDebug from '@/components/atoms/canvas/Debug';
 import jsfeat from 'jsFeat';
 import Pattern from '@/classes/Pattern';
+import Source from '@/classes/Source';
 
 export default {
   components: {
@@ -44,6 +48,7 @@ export default {
       options: [],
       imageData: null,
       pattern: new Pattern(),
+      source: new Source(),
       debugOptionsA: null,
       debugOptionsB: null,
       debugOptionsC: null,
@@ -61,8 +66,6 @@ export default {
     jsfeat.yape06.min_eigen_value_threshold = 25 | 0;
     this.screen_descriptors = new jsfeat.matrix_t(32, 500, jsfeat.U8_t | jsfeat.C1_t);
     this.pattern_descriptors = new jsfeat.matrix_t(32, 300, jsfeat.U8_t | jsfeat.C1_t);
-
-    // console.log(jsfeat);
   },
 
   methods: {
@@ -81,7 +84,14 @@ export default {
       });
     },
 
-    onUpdate () {
+    onVideoLoad (dimension) {
+      console.log(dimension);
+      this.source.setup(dimension);
+    },
+
+    onUpdate (e) {
+      let option = this.source.detect(e);
+      this.debugOptionsA = option;
       // const matrixA = getGrayscaleMatrix(e);
       // this.debugOptionsA = {
       //   imageData: e,
