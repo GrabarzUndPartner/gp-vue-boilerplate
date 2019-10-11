@@ -98,7 +98,7 @@
     "@nuxtjs/robots": "^2.4.1",
     "default-passive-events": "^1.0.10",
     "intersection-observer": "^0.7.0",
-    "nuxt": "^2.9.2",
+    "nuxt": "^2.10.0",
     "nuxt-i18n": "^6.3.0",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
