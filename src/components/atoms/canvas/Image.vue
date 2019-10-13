@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-/* img {
-  width: 640px;
-} */
+img {
+  width: 100%;
+}
 </style>

@@ -2,7 +2,7 @@ import jsfeat from 'jsfeat';
 import Match from '@/classes/Match';
 import { addGaussianBlur, detectCorners } from '@/utils/jsfeat/base';
 
-const blur = 10;
+const blur = 5;
 const maxCorners = 300;
 let homo3x3 = new jsfeat.matrix_t(3, 3, jsfeat.F32C1_t);
 let match_mask = new jsfeat.matrix_t(500, 1, jsfeat.U8C1_t);
@@ -21,18 +21,18 @@ export default class Pattern {
     this.descriptor = prepareResults(this.matrix, this.corners, this.matches);
   }
 
-  detect (imageData, patternDescriptor, patternCorners) {
+  detect (imageData, pattern) {
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     addGaussianBlur(this.matrix, blur);
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
-    const numMatches = matchPattern(this.descriptor, patternDescriptor, patternDescriptor.length, this.matches, 48);
-    const numGoodMatches = find_transform(this.matches, numMatches, this.corners, patternCorners);
+    const numMatches = matchPattern(this.descriptor, pattern.descriptors, pattern.descriptors.length, this.matches, 48);
+    const numGoodMatches = find_transform(this.matches, numMatches, this.corners, pattern.corners);
     console.log(numGoodMatches);
     let shape = [];
     if (numGoodMatches > 8) {
       // what is the right dimension?
       // https://github.com/inspirit/jsfeat/blob/gh-pages/sample_orb.html#L507
-      shape = tCorners(homo3x3.data, 57, 90);
+      shape = tCorners(homo3x3.data, pattern.matrix.rows, pattern.matrix.cols);
     }
 
     // console.log(numMatches);

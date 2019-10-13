@@ -2,7 +2,7 @@
   <div>
     <h2>Pattern: Original + Canvas</h2>
     <atom-canvas-image
-      url="/original_cropped.jpg"
+      url="/original2_square.jpg"
       @imagedata="onPatternUpdate"
     />
     <h2>Detected Corners</h2>
@@ -79,12 +79,12 @@ export default {
     },
 
     onVideoLoad (dimension) {
-      console.log(dimension);
+      // console.log(dimension);
       this.source.setup(dimension);
     },
 
     onUpdate (e) {
-      let option = this.source.detect(e, this.pattern.descriptors, this.pattern.corners);
+      let option = this.source.detect(e, this.pattern);
       this.debugOptionsA = option;
       // const matrixA = getGrayscaleMatrix(e);
       // this.debugOptionsA = {

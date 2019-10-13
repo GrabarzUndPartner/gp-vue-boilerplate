@@ -6,7 +6,7 @@ const u_max = new Int32Array([
 
 export function detectKeypoints (img, corners, max_allowed) {
   // detect features
-  let count = jsfeat.yape06.detect(img, corners, 4);
+  let count = jsfeat.fast_corners.detect(img, corners, 3);
   // sort by score and reduce the count if needed
   if (count > max_allowed) {
     jsfeat.math.qsort(corners, 0, count - 1, function (a, b) { return (b.score < a.score); });

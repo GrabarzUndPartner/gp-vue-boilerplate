@@ -5,7 +5,7 @@ const maxPatternSize = 512;
 const maxPerLevel = 300;
 const scale_factor = Math.sqrt(1.5); // magic number ;)
 const numTrainLevels = 10;
-const blur = 10;
+const blur = 5;
 
 export default class Pattern {
   constructor() {
@@ -33,10 +33,10 @@ export default class Pattern {
 
       const corners = this.corners[Number(lev)];
       this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)], maxPerLevel, true);
-      // for (let i = 0; i < this.cornersCount[Number(lev)]; ++i) {
-      //   corners[Number(i)].x *= 1. / subScale;
-      //   corners[Number(i)].y *= 1. / subScale;
-      // }
+      for (let i = 0; i < this.cornersCount[Number(lev)]; ++i) {
+        corners[Number(i)].x *= 1. / subScale;
+        corners[Number(i)].y *= 1. / subScale;
+      }
       subScale /= scale_factor;
       console.log('train ' + subLevelImgMatrix.cols + 'x' + subLevelImgMatrix.rows + ' points: ' + this.cornersCount[Number(lev)]);
     }
