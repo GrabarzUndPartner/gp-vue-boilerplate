@@ -56,7 +56,7 @@ export default {
         addMatrixToImageData(imageData_u32, options.matrix);
 
         if (options.corners) {
-          renderCorners(options.corners.list, options.corners.count, imageData_u32, this.width);
+          renderCorners(options.corners.list, options.corners.count, options.corners.scale, imageData_u32, this.width);
         }
 
         this.$nextTick(() => {
@@ -84,11 +84,11 @@ function addMatrixToImageData (data_u32, matrix) {
   }
 }
 
-function renderCorners (corners, count, data_u32, step) {
+function renderCorners (corners, count, scale, data_u32, step) {
   var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
   for (var i = 0; i < count; ++i) {
-    var x = corners[Number(i)].x;
-    var y = corners[Number(i)].y;
+    var x = corners[Number(i)].x / scale;
+    var y = corners[Number(i)].y / scale;
     var off = (x + y * step);
     data_u32[Number(off)] = pix;
     data_u32[off - 1] = pix;

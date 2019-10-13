@@ -72,7 +72,8 @@ export default {
           matrix: matrices[Number(index)],
           corners: {
             list: corners,
-            count: this.pattern.cornersCount[Number(index)]
+            count: this.pattern.cornersCount[Number(index)],
+            scale: this.pattern.scales[Number(index)]
           }
         };
       });

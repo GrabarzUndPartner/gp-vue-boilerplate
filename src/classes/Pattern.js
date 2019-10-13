@@ -14,6 +14,7 @@ export default class Pattern {
     this.corners = [];
     this.cornersCount = [];
     this.descriptors = [];
+    this.scales = [];
   }
 
   setup (imageData) {
@@ -31,12 +32,14 @@ export default class Pattern {
       const subLevelImgMatrix = generateResizedBlurMatrix(this.matrix, subScale, blur);
       matrices[Number(lev)] = subLevelImgMatrix;
 
+      const scale = 1. / subScale;
       const corners = this.corners[Number(lev)];
       this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)], maxPerLevel, true);
       for (let i = 0; i < this.cornersCount[Number(lev)]; ++i) {
-        corners[Number(i)].x *= 1. / subScale;
-        corners[Number(i)].y *= 1. / subScale;
+        corners[Number(i)].x *= scale;
+        corners[Number(i)].y *= scale;
       }
+      this.scales[Number(lev)] = scale;
       subScale /= scale_factor;
       console.log('train ' + subLevelImgMatrix.cols + 'x' + subLevelImgMatrix.rows + ' points: ' + this.cornersCount[Number(lev)]);
     }
