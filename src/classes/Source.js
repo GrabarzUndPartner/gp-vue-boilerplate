@@ -27,7 +27,7 @@ export default class Pattern {
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
     const numMatches = matchPattern(this.descriptor, pattern.descriptors, pattern.descriptors.length, this.matches, 48);
     const numGoodMatches = find_transform(this.matches, numMatches, this.corners, pattern.corners);
-    console.log(numGoodMatches);
+
     let shape = [];
     if (numGoodMatches > 8) {
       // what is the right dimension?

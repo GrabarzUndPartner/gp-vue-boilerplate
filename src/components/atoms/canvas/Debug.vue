@@ -66,7 +66,6 @@ export default {
           }
 
           if (options.shape && options.shape.length) {
-            console.log('AHA');
             renderShape(this.context, options.shape);
           }
         });
@@ -84,7 +83,7 @@ function addMatrixToImageData (data_u32, matrix) {
   }
 }
 
-function renderCorners (corners, count, scale, data_u32, step) {
+function renderCorners (corners, count, scale = 1, data_u32, step) {
   var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
   for (var i = 0; i < count; ++i) {
     var x = corners[Number(i)].x / scale;
