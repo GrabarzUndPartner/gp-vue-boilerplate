@@ -9,8 +9,8 @@
 /reports/
 /w3c/
 /src/static/sitemap.xml
-/src/static/js
-/src/static/css
+#/src/static/js
+#/src/static/css
 
 
 # IntelliJ project files

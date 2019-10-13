@@ -3,9 +3,9 @@ import { generateResizedBlurMatrix, detectCorners } from '@/utils/jsfeat/base';
 
 const maxPatternSize = 512;
 const maxPerLevel = 300;
-const scale_factor = Math.sqrt(2.0); // magic number ;)
-const numTrainLevels = 4;
-const blur = 5;
+const scale_factor = Math.sqrt(1.5); // magic number ;)
+const numTrainLevels = 10;
+const blur = 10;
 
 export default class Pattern {
   constructor() {

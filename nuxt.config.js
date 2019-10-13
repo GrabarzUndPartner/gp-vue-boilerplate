@@ -28,6 +28,17 @@ module.exports = {
 
   modern: 'client',
   build: {
+    extend(config, { isClient }) {
+      // config.output.globalObject = "this"
+
+      if (isClient) { // web workers are only available client-side
+        config.module.rules.push({
+          test: /\.worker\.js$/, // this will pick up all .js files that ends with ".worker.js"
+          loader: 'worker-loader',
+          exclude: /(node_modules)/
+        });
+      }
+    },
     analyze: false,
     filenames: {
       app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
@@ -98,7 +109,8 @@ module.exports = {
 
   plugins: [
     { src: '@/plugins/intersectionObserver' },
-    { src: '@/plugins/lazyHydrate' }
+    { src: '@/plugins/lazyHydrate' },
+    { src: '~/plugins/inject-ww', ssr: false }
   ],
 
   modules: [

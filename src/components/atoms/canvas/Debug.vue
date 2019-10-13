@@ -64,6 +64,11 @@ export default {
           if (options.matches) {
             render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);
           }
+
+          if (options.shape && options.shape.length) {
+            console.log('AHA');
+            renderShape(this.context, options.shape);
+          }
         });
       }
     }
@@ -111,6 +116,18 @@ function render_matches (ctx, screen_corners, pattern_corners, match_mask, match
     ctx.lineWidth = 1;
     ctx.stroke();
   }
+}
+
+function renderShape (ctx, shape_pts) {
+  ctx.strokeStyle = 'rgb(0,255,0)';
+  ctx.beginPath();
+  ctx.moveTo(shape_pts[0].x, shape_pts[0].y);
+  ctx.lineTo(shape_pts[1].x, shape_pts[1].y);
+  ctx.lineTo(shape_pts[2].x, shape_pts[2].y);
+  ctx.lineTo(shape_pts[3].x, shape_pts[3].y);
+  ctx.lineTo(shape_pts[0].x, shape_pts[0].y);
+  ctx.lineWidth = 4;
+  ctx.stroke();
 }
 </script>
 

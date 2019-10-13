@@ -26,7 +26,7 @@
     "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
-    "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-path .gitignore ./",
+    "lint:es": "eslint --fix --ext .js,.vue --ext .json --ignore-pattern '/src/static/' --ignore-path .gitignore ./",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html",
     "cypress:open": "npx cypress open",
@@ -90,7 +90,8 @@
     "stylelint-config-standard": "^19.0.0",
     "svgo-loader": "^2.2.1",
     "terser": "^4.3.2",
-    "webpack-virtual-modules": "0.1.12"
+    "webpack-virtual-modules": "0.1.12",
+    "worker-loader": "^2.0.0"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.6.0",
@@ -99,7 +100,7 @@
     "default-passive-events": "^1.0.10",
     "intersection-observer": "^0.7.0",
     "jsfeat": "0.0.8",
-    "nuxt": "^2.9.2",
+    "nuxt": "^2.10.0",
     "nuxt-i18n": "^6.2.1",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",

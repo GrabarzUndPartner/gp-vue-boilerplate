@@ -43,6 +43,7 @@ export default {
     onLoad () {
       this.width = this.$refs.image.width;
       this.height = this.$refs.image.height;
+      this.$emit('image', this.$refs.image);
       this.$nextTick(() => {
         this.context.drawImage(this.$refs.image, 0, 0, this.width, this.height);
         this.$nextTick(() => {

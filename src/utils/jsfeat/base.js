@@ -1,5 +1,5 @@
 import jsfeat from 'jsfeat';
-import { detectKeypoints } from '@/utils/jsfeat/featureDetection';
+import { detectKeypoints } from '@/utils/jsfeat/feature';
 
 export function generateResizedBlurMatrix (imgMatrix, scale, blur, targetMatrix) {
   const resultMatrix = resizeImgMatrix(imgMatrix, scale, targetMatrix);

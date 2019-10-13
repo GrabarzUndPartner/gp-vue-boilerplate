@@ -1,44 +1,22 @@
 <i18n>
 {
   "en": {
-    "test": "message23",
-    "hello": "hello world!",
-    "sources": [
-      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
-      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
-      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
-      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
-      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
-      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
-    ]
+
   },
   "de": {
-    "test": "nachricht 123",
-    "hello": "hallo welt",
-    "sources": [
-      {"media": "default", "src": "retina/sample-a/1152x600.jpg"},
-      {"media": "xs", "src": "retina/sample-a/1536x600.jpg"},
-      {"media": "sm", "src": "retina/sample-a/1984x600.jpg"},
-      {"media": "md", "src": "retina/sample-a/2400x600.jpg"},
-      {"media": "lg", "src": "retina/sample-a/3200x600.jpg"},
-      {"media": "xl", "src": "retina/sample-a/3840x600.jpg"}
-    ]
+
   }
 }
 </i18n>
 
 <template>
   <div class="test">
-    hello2 huhu234 {{ $t('configxyz') }}
-    {{ $t('test') }}
-    <br>
-    <svg-inline src="image3.svg" />
-    <svg-inline src="image2.svg" />
+    <molecule-open-cv />
   </div>
 </template>
 
 <script>
-import SvgInline from '@/components/atoms/SvgInline';
+import MoleculeOpenCv from '@/components/molecules/OpenCv';
 
 export default {
   nuxtI18n: {
@@ -48,7 +26,7 @@ export default {
     }
   },
   components: {
-    SvgInline
+    MoleculeOpenCv
   },
   data () {
     return {

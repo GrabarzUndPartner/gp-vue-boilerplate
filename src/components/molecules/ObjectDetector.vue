@@ -2,7 +2,7 @@
   <div>
     <h2>Pattern: Original + Canvas</h2>
     <atom-canvas-image
-      url="/original_square.jpg"
+      url="/original_cropped.jpg"
       @imagedata="onPatternUpdate"
     />
     <h2>Detected Corners</h2>
@@ -84,7 +84,7 @@ export default {
     },
 
     onUpdate (e) {
-      let option = this.source.detect(e);
+      let option = this.source.detect(e, this.pattern.descriptors, this.pattern.corners);
       this.debugOptionsA = option;
       // const matrixA = getGrayscaleMatrix(e);
       // this.debugOptionsA = {
