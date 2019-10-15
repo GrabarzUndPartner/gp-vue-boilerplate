@@ -3,6 +3,8 @@ import jsfeat from 'jsfeat';
 const u_max = new Int32Array([
   15, 15, 15, 15, 14, 14, 14, 13, 13, 12, 11, 10, 9, 8, 6, 3, 0
 ]);
+let homo3x3 = new jsfeat.matrix_t(3, 3, jsfeat.F32C1_t);
+let match_mask = new jsfeat.matrix_t(500, 1, jsfeat.U8C1_t);
 
 export function detectKeypoints (img, corners, max_allowed) {
   // detect features
@@ -19,7 +21,7 @@ export function detectKeypoints (img, corners, max_allowed) {
   return count;
 }
 
-export function match (screen_descriptors, pattern_descriptors, num_train_levels = 4, matches, threshold) {
+export function match (screen_descriptors, pattern_descriptors, num_train_levels = 4, matches, threshold = null) {
   var q_cnt = screen_descriptors.rows;
   var query_u32 = screen_descriptors.buffer.i32; // cast to integer buffer
   var qd_off = 0;
@@ -53,21 +55,23 @@ export function match (screen_descriptors, pattern_descriptors, num_train_levels
       }
     }
     // filter out by some threshold
-    if (best_dist < threshold) {
-      matches[Number(num_matches)].screen_idx = qidx;
-      matches[Number(num_matches)].pattern_lev = best_lev;
-      matches[Number(num_matches)].pattern_idx = best_idx;
-      num_matches++;
-    }
-    //
-    /* filter using the ratio between 2 closest matches
-    if(best_dist < 0.8*best_dist2) {
-        matches[num_matches].screen_idx = qidx;
-        matches[num_matches].pattern_lev = best_lev;
-        matches[num_matches].pattern_idx = best_idx;
+    if (threshold) {
+      if (best_dist < threshold) {
+        matches[Number(num_matches)].screen_idx = qidx;
+        matches[Number(num_matches)].pattern_lev = best_lev;
+        matches[Number(num_matches)].pattern_idx = best_idx;
         num_matches++;
+      }
+    } else {
+      /* filter using the ratio between 2 closest matches*/
+      if (best_dist < 0.8 * best_dist2) {
+        matches[Number(num_matches)].screen_idx = qidx;
+        matches[Number(num_matches)].pattern_lev = best_lev;
+        matches[Number(num_matches)].pattern_idx = best_idx;
+        num_matches++;
+      }
     }
-    */
+
     qd_off += 8; // next query descriptor
   }
   return num_matches;
@@ -100,4 +104,61 @@ function popcnt32 (n) {
   n -= ((n >> 1) & 0x55555555);
   n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
   return (((n + (n >> 4)) & 0xF0F0F0F) * 0x1010101) >> 24;
+}
+
+export function find_transform (matches, count, screen_corners, pattern_corners) {
+  // motion kernel
+  var mm_kernel = new jsfeat.motion_model.homography2d();
+  // ransac params
+  var num_model_points = 4;
+  var reproj_threshold = 3;
+  var ransac_param = new jsfeat.ransac_params_t(num_model_points,
+    reproj_threshold, 0.5, 0.99);
+  var pattern_xy = [];
+  var screen_xy = [];
+  // construct correspondences
+  for (var i = 0; i < count; ++i) {
+    var m = matches[Number(i)];
+    var s_kp = screen_corners[m.screen_idx];
+    var p_kp = pattern_corners[m.pattern_lev][m.pattern_idx];
+    pattern_xy[Number(i)] = { 'x': p_kp.x, 'y': p_kp.y };
+    screen_xy[Number(i)] = { 'x': s_kp.x, 'y': s_kp.y };
+  }
+  // estimate motion
+  var ok = false;
+  ok = jsfeat.motion_estimator.ransac(ransac_param, mm_kernel,
+    pattern_xy, screen_xy, count, homo3x3, match_mask, 1000);
+  // extract good matches and re-estimate
+  var good_cnt = 0;
+  if (ok) {
+    for (var j = 0; j < count; ++j) {
+      if (match_mask.data[Number(j)]) {
+        pattern_xy[Number(good_cnt)].x = pattern_xy[Number(j)].x;
+        pattern_xy[Number(good_cnt)].y = pattern_xy[Number(j)].y;
+        screen_xy[Number(good_cnt)].x = screen_xy[Number(j)].x;
+        screen_xy[Number(good_cnt)].y = screen_xy[Number(j)].y;
+        good_cnt++;
+      }
+    }
+    // run kernel directly with inliers only
+    mm_kernel.run(pattern_xy, screen_xy, homo3x3, good_cnt);
+  } else {
+    jsfeat.matmath.identity_3x3(homo3x3, 1.0);
+  }
+  return good_cnt;
+}
+
+export function tCorners (w, h) {
+  var pt = [
+    { 'x': 0, 'y': 0 }, { 'x': w, 'y': 0 }, { 'x': w, 'y': h }, { 'x': 0, 'y': h }
+  ];
+  var z = 0.0, i = 0, px = 0.0, py = 0.0;
+  for (; i < 4; ++i) {
+    px = homo3x3.data[0] * pt[Number(i)].x + homo3x3.data[1] * pt[Number(i)].y + homo3x3.data[2];
+    py = homo3x3.data[3] * pt[Number(i)].x + homo3x3.data[4] * pt[Number(i)].y + homo3x3.data[5];
+    z = homo3x3.data[6] * pt[Number(i)].x + homo3x3.data[7] * pt[Number(i)].y + homo3x3.data[8];
+    pt[Number(i)].x = px / z;
+    pt[Number(i)].y = py / z;
+  }
+  return pt;
 }
