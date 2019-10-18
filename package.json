@@ -97,6 +97,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.4.2",
     "default-passive-events": "^1.0.10",
+    "dom-parser": "^0.1.6",
     "intersection-observer": "^0.7.0",
     "nuxt": "^2.10.0",
     "nuxt-i18n": "^6.3.0",
@@ -104,8 +105,8 @@
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "picturefill": "^3.0.3",
     "rxjs": "^6.5.3",
-    "vue-lazy-hydration": "^1.0.0-beta.9",
-    "snyk": "^1.234.0"
+    "snyk": "^1.234.0",
+    "vue-lazy-hydration": "^1.0.0-beta.9"
   },
   "snyk": true
 }

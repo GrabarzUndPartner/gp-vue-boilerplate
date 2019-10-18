@@ -23,13 +23,17 @@ export default {
   created () {
     this.item = {
       asyncComponent: () => {
-
         return import(/* webpackMode: "lazy-once" */'@/assets/svg/' + this.src + '?include').then((result) => {
           return {
             render (create) {
-              return create('span', {
+              let node = getSVGNodeFromString(result.default);
+              return create('svg', {
+                attrs: Array.from(node.attributes).reduce((result, item) => {
+                  result[item.name] = item.value;
+                  return result;
+                }, {}),
                 domProps: {
-                  innerHTML: result.default
+                  innerHTML: node.innerHTML
                 }
               });
             }
@@ -39,6 +43,15 @@ export default {
     };
   }
 };
+
+function getSVGNodeFromString (html) {
+  let DOMParser = global.DOMParser;
+  if (process.server) {
+    DOMParser = require('dom-parser');
+  }
+  let dom = new DOMParser().parseFromString(html, 'image/svg+xml');
+  return dom.getElementsByTagName('svg')[0];
+}
 </script>
 
 <style lang="postcss">
