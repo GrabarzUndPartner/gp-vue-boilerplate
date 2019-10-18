@@ -95,7 +95,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "@nuxtjs/robots": "^2.4.1",
+    "@nuxtjs/robots": "^2.4.2",
     "default-passive-events": "^1.0.10",
     "intersection-observer": "^0.7.0",
     "nuxt": "^2.10.0",
