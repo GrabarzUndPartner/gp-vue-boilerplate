@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.31.0...v1.32.0) (2019-10-18)
+
+
+### Features
+
+* **svg:** update SvgInline ([b339ae6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b339ae6ab8a8d4c5fc6706c76d3b79bfe8bde640))
+
 # [1.31.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.30.2...v1.31.0) (2019-10-18)
 
 
