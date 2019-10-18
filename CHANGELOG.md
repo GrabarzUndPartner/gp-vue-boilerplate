@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.30.2...v1.31.0) (2019-10-18)
+
+
+### Features
+
+* **addon-actions:** update package ([9f399b9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9f399b9a2247a4cdf5e0fda63645bbd436a737dd))
+
 ## [1.30.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.30.1...v1.30.2) (2019-10-04)
 
 
