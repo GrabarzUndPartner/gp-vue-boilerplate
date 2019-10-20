@@ -22,7 +22,6 @@ export function detectKeypoints (img, corners, max_allowed) {
   }
   return count;
 }
-
 export function matchCorners (screen_descriptors, pattern_descriptors, num_train_levels = 4, threshold = null) {
   var q_cnt = screen_descriptors.rows;
   var matches = [];
@@ -33,29 +32,29 @@ export function matchCorners (screen_descriptors, pattern_descriptors, num_train
     matches.push(splitMatchCorners(screen_descriptors, pattern_descriptors, num_train_levels, threshold, step, stop));
   }
 
-  return Promise.all(matches.flat());
+  return Promise.all(matches)
+    .then((values) => {
+      return values.flat();
+    });
 }
 
 function splitMatchCorners (screen_descriptors, pattern_descriptors, num_train_levels, threshold, start, stop) {
-  const matches = [];
-  for (let qidx = start; qidx < stop; ++qidx) {
-    const worker = workerPool.getInstance('match');
+  const worker = workerPool.getInstance('match');
 
-    matches.push(worker.then((worker) => {
-      let promise = new Promise((resolve) => {
-        worker.resolve = resolve;
-      });
-      worker.postMessage({ screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx });
-      return promise;
-    }).catch((e) => {
-      console.error(e);
-    }));
+  const matches = worker.then((worker) => {
+    let promise = new Promise((resolve) => {
+      worker.resolve = resolve;
+    });
+    worker.postMessage({ screen_descriptors, pattern_descriptors, num_train_levels, threshold, start, stop });
+    return promise;
+  }).catch((e) => {
+    console.error(e);
+  });
 
-    // var result = matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx);
-    // if (result) {
-    //   matches.push(Promise.resolve(result));
-    // }
-  }
+  // var result = matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx);
+  // if (result) {
+  //   matches.push(Promise.resolve(result));
+  // }
   return matches;
 }
 

@@ -5,10 +5,14 @@ fromEvent(self, 'message').subscribe((e) => {
   let pattern_descriptors = e.data.pattern_descriptors;
   let num_train_levels = e.data.num_train_levels;
   let threshold = e.data.threshold;
-  let qidx = e.data.qidx;
+  let start = e.data.start;
+  let stop = e.data.stop;
+  let result = [];
 
-  let result = matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx);
-  self.postMessage(result);
+  for (let qidx = start; qidx < stop; ++qidx) {
+    result.push(matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx));
+  }
+  self.postMessage(result.flat());
   // const array = new Uint8ClampedArray(e.data.buffer);
   // screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx
   // setTimeout(() => {
