@@ -1,9 +1,7 @@
 <template>
   <div>
-    <atom-cam
-      @loadedmetadata.native="onLoad"
-      @progress.native="onUpdate"
-    />
+    <atom-cam @loadedmetadata.native="onLoad" />
+    <!-- @progress.native="onUpdate" -->
     <canvas
       ref="canvas"
       :width="width"
@@ -27,7 +25,8 @@ export default {
   data () {
     return {
       width: 0,
-      height: 0
+      height: 0,
+      video: null
     };
   },
 
@@ -40,11 +39,15 @@ export default {
       this.width = e.target.videoWidth;
       this.height = e.target.videoHeight;
       this.$emit('load', { width: this.width, height: this.height });
+      this.video = e.target;
+      this.onUpdate();
     },
 
-    onUpdate (e) {
-      this.context.drawImage(e.target, 0, 0, this.width, this.height);
+    onUpdate () {
+      window.requestAnimationFrame(this.onUpdate);
+      this.context.drawImage(this.video, 0, 0, this.width, this.height);
       this.$emit('imagedata', this.context.getImageData(0, 0, this.width, this.height));
+
     }
   }
 };
