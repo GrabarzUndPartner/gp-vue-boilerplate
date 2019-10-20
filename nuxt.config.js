@@ -28,7 +28,7 @@ module.exports = {
 
   modern: 'client',
   build: {
-    extend(config, { isClient }) {
+    extend (config, { isClient }) {
       // config.output.globalObject = "this"
 
       if (isClient) { // web workers are only available client-side
@@ -109,8 +109,7 @@ module.exports = {
 
   plugins: [
     { src: '@/plugins/intersectionObserver' },
-    { src: '@/plugins/lazyHydrate' },
-    { src: '~/plugins/inject-ww', ssr: false }
+    { src: '@/plugins/lazyHydrate' }
   ],
 
   modules: [

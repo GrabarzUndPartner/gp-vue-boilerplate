@@ -10,14 +10,10 @@
 </i18n>
 
 <template>
-  <div class="test">
-    <molecule-open-cv />
-  </div>
+  <div class="test" />
 </template>
 
 <script>
-import MoleculeOpenCv from '@/components/molecules/OpenCv';
-
 export default {
   nuxtI18n: {
     paths: {
@@ -26,7 +22,7 @@ export default {
     }
   },
   components: {
-    MoleculeOpenCv
+
   },
   data () {
     return {

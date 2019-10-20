@@ -1,10 +1,12 @@
 import jsfeat from 'jsfeat';
+import WorkerPool from '@/classes/parallel/WorkerPool';
 
 const u_max = new Int32Array([
   15, 15, 15, 15, 14, 14, 14, 13, 13, 12, 11, 10, 9, 8, 6, 3, 0
 ]);
 let homo3x3 = new jsfeat.matrix_t(3, 3, jsfeat.F32C1_t);
 let match_mask = new jsfeat.matrix_t(500, 1, jsfeat.U8C1_t);
+const workerPool = new WorkerPool();
 
 export function detectKeypoints (img, corners, max_allowed) {
   // detect features
@@ -21,60 +23,92 @@ export function detectKeypoints (img, corners, max_allowed) {
   return count;
 }
 
-export function match (screen_descriptors, pattern_descriptors, num_train_levels = 4, matches, threshold = null) {
+export function matchCorners (screen_descriptors, pattern_descriptors, num_train_levels = 4, threshold = null) {
   var q_cnt = screen_descriptors.rows;
-  var query_u32 = screen_descriptors.buffer.i32; // cast to integer buffer
-  var qd_off = 0;
-  var qidx = 0, lev = 0, pidx = 0, k = 0;
-  var num_matches = 0;
-  for (qidx = 0; qidx < q_cnt; ++qidx) {
-    var best_dist = 256;
-    var best_dist2 = 256;
-    var best_idx = -1;
-    var best_lev = -1;
-    for (lev = 0; lev < num_train_levels; ++lev) {
-      var lev_descr = pattern_descriptors[Number(lev)];
-      var ld_cnt = lev_descr.rows;
-      var ld_i32 = lev_descr.buffer.i32; // cast to integer buffer
-      var ld_off = 0;
-      for (pidx = 0; pidx < ld_cnt; ++pidx) {
-        var curr_d = 0;
-        // our descriptor is 32 bytes so we have 8 Integers
-        for (k = 0; k < 8; ++k) {
-          curr_d += popcnt32(query_u32[qd_off + k] ^ ld_i32[ld_off + k]);
-        }
-        if (curr_d < best_dist) {
-          best_dist2 = best_dist;
-          best_dist = curr_d;
-          best_lev = lev;
-          best_idx = pidx;
-        } else if (curr_d < best_dist2) {
-          best_dist2 = curr_d;
-        }
-        ld_off += 8; // next descriptor
-      }
-    }
-    // filter out by some threshold
-    if (threshold) {
-      if (best_dist < threshold) {
-        matches[Number(num_matches)].screen_idx = qidx;
-        matches[Number(num_matches)].pattern_lev = best_lev;
-        matches[Number(num_matches)].pattern_idx = best_idx;
-        num_matches++;
-      }
-    } else {
-      /* filter using the ratio between 2 closest matches*/
-      if (best_dist < 0.8 * best_dist2) {
-        matches[Number(num_matches)].screen_idx = qidx;
-        matches[Number(num_matches)].pattern_lev = best_lev;
-        matches[Number(num_matches)].pattern_idx = best_idx;
-        num_matches++;
-      }
-    }
+  var matches = [];
 
-    qd_off += 8; // next query descriptor
+  const steps = Math.ceil(q_cnt / 4);
+  for (let step = 0; step < q_cnt; step += steps) {
+    let stop = Math.min(step + steps, q_cnt);
+    matches.push(splitMatchCorners(screen_descriptors, pattern_descriptors, num_train_levels, threshold, step, stop));
   }
-  return num_matches;
+
+  return Promise.all(matches.flat());
+}
+
+function splitMatchCorners (screen_descriptors, pattern_descriptors, num_train_levels, threshold, start, stop) {
+  const matches = [];
+  for (let qidx = start; qidx < stop; ++qidx) {
+    const worker = workerPool.getInstance('match');
+
+    matches.push(worker.then((worker) => {
+      let promise = new Promise((resolve) => {
+        worker.resolve = resolve;
+      });
+      worker.postMessage({ screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx });
+      return promise;
+    }).catch((e) => {
+      console.error(e);
+    }));
+
+    // var result = matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx);
+    // if (result) {
+    //   matches.push(Promise.resolve(result));
+    // }
+  }
+  return matches;
+}
+
+export function matchCorner (screen_descriptors, pattern_descriptors, num_train_levels = 4, threshold = null, qidx) {
+  var query_u32 = screen_descriptors.buffer.i32; // cast to integer buffer
+  var lev = 0, pidx = 0, k = 0;
+
+  var best_dist = 256;
+  var best_dist2 = 256;
+  var best_idx = -1;
+  var best_lev = -1;
+  for (lev = 0; lev < num_train_levels; ++lev) {
+    var lev_descr = pattern_descriptors[Number(lev)];
+    var ld_cnt = lev_descr.rows;
+    var ld_i32 = lev_descr.buffer.i32; // cast to integer buffer
+    var ld_off = 0;
+    for (pidx = 0; pidx < ld_cnt; ++pidx) {
+      var curr_d = 0;
+      // our descriptor is 32 bytes so we have 8 Integers
+      for (k = 0; k < 8; ++k) {
+        curr_d += popcnt32(query_u32[(qidx * 8) + k] ^ ld_i32[ld_off + k]);
+      }
+      if (curr_d < best_dist) {
+        best_dist2 = best_dist;
+        best_dist = curr_d;
+        best_lev = lev;
+        best_idx = pidx;
+      } else if (curr_d < best_dist2) {
+        best_dist2 = curr_d;
+      }
+      ld_off += 8; // next descriptor
+    }
+  }
+  // filter out by some threshold
+  if (threshold) {
+    if (best_dist < threshold) {
+      return {
+        screen_idx: qidx,
+        pattern_lev: best_lev,
+        pattern_idx: best_idx
+      };
+    }
+  } else {
+    /* filter using the ratio between 2 closest matches*/
+    if (best_dist < 0.8 * best_dist2) {
+      return {
+        screen_idx: qidx,
+        pattern_lev: best_lev,
+        pattern_idx: best_idx
+      };
+    }
+  }
+  return;
 }
 
 function ic_angle (img, px, py) {
@@ -106,7 +140,7 @@ function popcnt32 (n) {
   return (((n + (n >> 4)) & 0xF0F0F0F) * 0x1010101) >> 24;
 }
 
-export function find_transform (matches, count, screen_corners, pattern_corners) {
+export function find_transform (matches, screen_corners, pattern_corners) {
   // motion kernel
   var mm_kernel = new jsfeat.motion_model.homography2d();
   // ransac params
@@ -117,7 +151,7 @@ export function find_transform (matches, count, screen_corners, pattern_corners)
   var pattern_xy = [];
   var screen_xy = [];
   // construct correspondences
-  for (var i = 0; i < count; ++i) {
+  for (var i = 0; i < matches.length; ++i) {
     var m = matches[Number(i)];
     var s_kp = screen_corners[m.screen_idx];
     var p_kp = pattern_corners[m.pattern_lev][m.pattern_idx];
@@ -127,11 +161,11 @@ export function find_transform (matches, count, screen_corners, pattern_corners)
   // estimate motion
   var ok = false;
   ok = jsfeat.motion_estimator.ransac(ransac_param, mm_kernel,
-    pattern_xy, screen_xy, count, homo3x3, match_mask, 1000);
+    pattern_xy, screen_xy, matches.length, homo3x3, match_mask, 1000);
   // extract good matches and re-estimate
   var good_cnt = 0;
   if (ok) {
-    for (var j = 0; j < count; ++j) {
+    for (var j = 0; j < matches.length; ++j) {
       if (match_mask.data[Number(j)]) {
         pattern_xy[Number(good_cnt)].x = pattern_xy[Number(j)].x;
         pattern_xy[Number(good_cnt)].y = pattern_xy[Number(j)].y;

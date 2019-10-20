@@ -27,17 +27,17 @@ export default {
   },
 
   mounted () {
-    let worker = this.$worker.createWorker();
-    worker.postMessage({ action: 'expensive', time: '22982198491' });
-    setTimeout(() => {
-        this.prepare();
-      }, 1000);
+    // let worker = this.$worker.createWorker();
+    // worker.postMessage({ action: 'expensive', time: '22982198491' });
+    // setTimeout(() => {
+    //     this.prepare();
+    //   }, 1000);
   },
 
   methods: {
     ready () {
       console.log('TOLL');
-      
+
       global.cv.onRuntimeInitialized = this.prepare;
 
     },
@@ -73,29 +73,29 @@ export default {
         if (m.distance < ratio * n.distance) {
           const t = new global.cv.DMatchVector();
           t.push_back(m);
-          good.push_back(t);  
+          good.push_back(t);
         }
-      } 
+      }
       console.log('AJA');
       var obj = new global.cv.Point2fVector();
       var scene = new global.cv.Point2fVector();
       for (let i = 0; i < matches.size(); i++) {
         if (matches.get(i).size() < 2) {
-            continue;
+          continue;
         } // SKIP IF NOT TWO PTS
         const m = matches.get(i).get(0),
-            n = matches.get(i).get(1);  
+          n = matches.get(i).get(1);
         const passedRatioTest = m.distance < ratio * n.distance;
-        if (passedRatioTest && m.distance < 100) {          
-            obj.push_back(kpA.get(m.queryIdx).pt);
-            scene.push_back(kpB.get(m.trainIdx).pt);
+        if (passedRatioTest && m.distance < 100) {
+          obj.push_back(kpA.get(m.queryIdx).pt);
+          scene.push_back(kpB.get(m.trainIdx).pt);
         }
       }
       console.log(obj, scene);
-      
-    //   if (good.length>1) { 
-        console.log(global.cv.findHomographyEasyMask(obj, scene, global.cv.FM_RANSAC, 3.0, mask)); 
-    // }
+
+      //   if (good.length>1) {
+      console.log(global.cv.findHomographyEasyMask(obj, scene, global.cv.FM_RANSAC, 3.0, mask));
+      // }
 
       // const bestMatches = dm.sort(
       //   (match1, match2) => match1.distance - match2.distance
