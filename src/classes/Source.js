@@ -8,6 +8,7 @@ const maxCorners = 300;
 
 export default class Pattern {
   constructor() {
+    this.detectPromise = undefined;
     this.matrix = null;
     this.corners = [];
     this.cornersCount = [];
@@ -20,10 +21,15 @@ export default class Pattern {
   }
 
   detect (imageData, pattern) {
+
+    if (this.detectPromise) {
+      return this.detectPromise;
+    }
+
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     addGaussianBlur(this.matrix, blur);
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
-    return matchCorners(this.descriptor, pattern.descriptors, pattern.descriptors.length, 48)
+    this.detectPromise = matchCorners(this.descriptor, pattern.descriptors, pattern.descriptors.length, 48)
       .then((matches) => {
         matches = matches.filter(n => n);
         const numGoodMatches = find_transform(matches, this.corners, pattern.corners);
@@ -42,8 +48,12 @@ export default class Pattern {
           },
           shape: shape
         };
+      })
+      .finally(() => {
+        this.detectPromise = undefined;
       });
 
+    return this.detectPromise;
   }
 }
 
