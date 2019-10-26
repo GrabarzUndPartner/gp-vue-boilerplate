@@ -1,3 +1,17 @@
+# [1.33.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.32.0...v1.33.0) (2019-10-26)
+
+
+### Bug Fixes
+
+* **eslint:** refactored package script command ([0168b91](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0168b91de77b537ad72693f842381cf347a942bb))
+* **lint-stage:** configured ([bed7ab3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bed7ab352cca202e96ab5ee12ed8c3144b2e561d))
+* **lint-stage:** embedded package ([baaa6f5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/baaa6f56ad08a25c97d1150dd7cf0c05183aaf92))
+
+
+### Features
+
+* **lint-stage:** only lint staged files ([2d8ab30](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2d8ab30e0789e5235b6340ee602ef3e9def58f8d))
+
 # [1.32.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.31.0...v1.32.0) (2019-10-18)
 
 
