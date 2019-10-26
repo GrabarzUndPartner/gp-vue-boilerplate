@@ -1,0 +1,10 @@
+{
+  "*.(js|vue|json)": [
+    "eslint --fix --ignore-path .gitignore ./",
+    "git add"
+  ],
+  "*.(vue|css)": [
+    "stylelint --fix",
+    "git add"
+  ]
+}

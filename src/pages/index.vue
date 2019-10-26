@@ -31,7 +31,7 @@
     </lazy-hydrate>
     <lazy-hydrate ssr-only>
       <svg-inline src="image2.svg" />
-    </lazy-hydrate>    
+    </lazy-hydrate>
   </div>
 </template>
 
@@ -52,7 +52,7 @@ export default {
 
   data () {
     return {
-      
+
     };
   },
 

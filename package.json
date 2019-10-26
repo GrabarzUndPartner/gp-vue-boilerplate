@@ -109,15 +109,5 @@
     "snyk": "^1.234.0",
     "vue-lazy-hydration": "^1.0.0-beta.9"
   },
-  "snyk": true,
-  "lint-staged": {
-    "*.(js|vue|json)": [
-      "eslint --fix --ignore-path .gitignore ./",
-      "git add"
-    ],
-    "*.vue": [
-      "stylelint --fix",
-      "git add"
-    ]
-  }
+  "snyk": true
 }
