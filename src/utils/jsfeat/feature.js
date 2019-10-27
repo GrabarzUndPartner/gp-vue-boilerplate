@@ -45,7 +45,11 @@ function splitMatchCorners (screen_descriptors, pattern_descriptors, num_train_l
     let promise = new Promise((resolve) => {
       worker.resolve = resolve;
     });
-    worker.postMessage({ screen_descriptors, pattern_descriptors, num_train_levels, threshold, start, stop });
+
+    const query_u32 = screen_descriptors.buffer.i32;
+    pattern_descriptors = pattern_descriptors.map(({ rows, buffer: { i32 } }) => ({ rows, buffer: { i32 } }));
+
+    worker.postMessage({ query_u32, pattern_descriptors, num_train_levels, threshold, start, stop });
     return promise;
   }).catch((e) => {
     console.error(e);
