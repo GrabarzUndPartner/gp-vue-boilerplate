@@ -26,11 +26,15 @@ export default class Pattern {
 
   train () {
     const matrices = [];
+    // const matrices = [
+    //   new jsfeat.matrix_t(this.matrix.rows, this.matrix.cols, jsfeat.U8_t | jsfeat.C1_t)
+    // ];
     let subScale = this.scaleToMaxPatternSize;
 
     for (let lev = 0; lev < numTrainLevels; ++lev) {
       const subLevelImgMatrix = generateResizedBlurMatrix(this.matrix, subScale, blur);
       matrices[Number(lev)] = subLevelImgMatrix;
+      // jsfeat.matmath.transpose(matrices[0], subLevelImgMatrix);
 
       const scale = 1. / subScale;
       const corners = this.corners[Number(lev)];

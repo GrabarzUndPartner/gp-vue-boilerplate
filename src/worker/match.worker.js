@@ -1,18 +1,14 @@
 import { fromEvent } from 'rxjs';
 
 fromEvent(self, 'message').subscribe((e) => {
-  let { query_u32, pattern_descriptors, threshold, start, stop, num_train_levels } = e.data;
+  let { query_u32, pattern_descriptors, threshold, start, stop } = e.data;
   let result = [];
 
   for (let qidx = start; qidx < stop; ++qidx) {
-    result.push(matchCorner(query_u32, pattern_descriptors, num_train_levels, threshold, qidx));
+    result.push(matchCorner(query_u32, pattern_descriptors, threshold, qidx));
   }
-  self.postMessage(result.flat());
-  // const array = new Uint8ClampedArray(e.data.buffer);
-  // screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx
-  // setTimeout(() => {
-  //   self.postMessage(array);
-  // }, 2000);
+  // console.log(result);
+  self.postMessage(result.filter(function (e) { return e; }).flat());
 });
 
 function getDistance (query_u32, qidx, ld_i32, pidx) {
@@ -27,13 +23,13 @@ function getDistance (query_u32, qidx, ld_i32, pidx) {
 
 }
 
-function matchCorner (query_u32, pattern_descriptors, num_train_levels = 4, threshold = null, qidx) {
+function matchCorner (query_u32, pattern_descriptors, threshold = null, qidx) {
   var lev = 0, pidx = 0;
   var best_dist = 256;
   var best_dist2 = 256;
   var best_idx = -1;
   var best_lev = -1;
-  for (lev = 0; lev < num_train_levels; ++lev) {
+  for (lev = 0; lev < pattern_descriptors.length; ++lev) {
     var lev_descr = pattern_descriptors[Number(lev)];
     var ld_cnt = lev_descr.rows;
     var ld_i32 = lev_descr.buffer.i32; // cast to integer buffer

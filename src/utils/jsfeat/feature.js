@@ -22,14 +22,15 @@ export function detectKeypoints (img, corners, max_allowed) {
   }
   return count;
 }
-export function matchCorners (screen_descriptors, pattern_descriptors, num_train_levels = 4, threshold = null) {
+export function matchCorners (screen_descriptors, pattern_descriptors, threshold = null) {
+  // console.log(pattern_descriptors);
   var q_cnt = screen_descriptors.rows;
   var matches = [];
 
   const steps = Math.ceil(q_cnt / 2);
   for (let step = 0; step < q_cnt; step += steps) {
     let stop = Math.min(step + steps, q_cnt);
-    matches.push(splitMatchCorners(screen_descriptors, pattern_descriptors, num_train_levels, threshold, step, stop));
+    matches.push(splitMatchCorners(screen_descriptors, pattern_descriptors, threshold, step, stop));
   }
 
   return Promise.all(matches)
@@ -38,7 +39,7 @@ export function matchCorners (screen_descriptors, pattern_descriptors, num_train
     });
 }
 
-function splitMatchCorners (screen_descriptors, pattern_descriptors, num_train_levels, threshold, start, stop) {
+function splitMatchCorners (screen_descriptors, pattern_descriptors, threshold, start, stop) {
   const worker = workerPool.getInstance('match');
 
   const matches = worker.then((worker) => {
@@ -48,21 +49,16 @@ function splitMatchCorners (screen_descriptors, pattern_descriptors, num_train_l
 
     const query_u32 = screen_descriptors.buffer.i32;
     pattern_descriptors = pattern_descriptors.map(({ rows, buffer: { i32 } }) => ({ rows, buffer: { i32 } }));
-
-    worker.postMessage({ query_u32, pattern_descriptors, num_train_levels, threshold, start, stop });
+    worker.postMessage({ query_u32, pattern_descriptors, threshold, start, stop });
     return promise;
   }).catch((e) => {
     console.error(e);
   });
 
-  // var result = matchCorner(screen_descriptors, pattern_descriptors, num_train_levels, threshold, qidx);
-  // if (result) {
-  //   matches.push(Promise.resolve(result));
-  // }
   return matches;
 }
 
-export function matchCorner (screen_descriptors, pattern_descriptors, num_train_levels = 4, threshold = null, qidx) {
+export function matchCorner (screen_descriptors, pattern_descriptors, threshold = null, qidx) {
   var query_u32 = screen_descriptors.buffer.i32; // cast to integer buffer
   var lev = 0, pidx = 0, k = 0;
 
@@ -70,7 +66,7 @@ export function matchCorner (screen_descriptors, pattern_descriptors, num_train_
   var best_dist2 = 256;
   var best_idx = -1;
   var best_lev = -1;
-  for (lev = 0; lev < num_train_levels; ++lev) {
+  for (lev = 0; lev < pattern_descriptors.length; ++lev) {
     var lev_descr = pattern_descriptors[Number(lev)];
     var ld_cnt = lev_descr.rows;
     var ld_i32 = lev_descr.buffer.i32; // cast to integer buffer

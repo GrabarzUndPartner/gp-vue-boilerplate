@@ -29,7 +29,7 @@ export default class Pattern {
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     addGaussianBlur(this.matrix, blur);
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
-    this.detectPromise = matchCorners(this.descriptor, pattern.descriptors, pattern.descriptors.length, 48)
+    this.detectPromise = matchCorners(this.descriptor, pattern.descriptors, 48)
       .then((matches) => {
         matches = matches.filter(n => n);
         const numGoodMatches = find_transform(matches, this.corners, pattern.corners);
