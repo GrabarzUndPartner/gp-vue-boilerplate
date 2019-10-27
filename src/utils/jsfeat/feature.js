@@ -26,7 +26,7 @@ export function matchCorners (screen_descriptors, pattern_descriptors, num_train
   var q_cnt = screen_descriptors.rows;
   var matches = [];
 
-  const steps = Math.ceil(q_cnt / 4);
+  const steps = Math.ceil(q_cnt / 2);
   for (let step = 0; step < q_cnt; step += steps) {
     let stop = Math.min(step + steps, q_cnt);
     matches.push(splitMatchCorners(screen_descriptors, pattern_descriptors, num_train_levels, threshold, step, stop));

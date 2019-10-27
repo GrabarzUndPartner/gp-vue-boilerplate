@@ -45,8 +45,11 @@ export default {
 
     onUpdate () {
       window.requestAnimationFrame(this.onUpdate);
+
       this.context.drawImage(this.video, 0, 0, this.width, this.height);
-      this.$emit('imagedata', { context: this.context, width: this.width, height: this.height });
+      setTimeout(() => {
+        this.$emit('imagedata', { context: this.context, width: this.width, height: this.height });
+      });
 
     }
   }
@@ -54,4 +57,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+video,
+canvas {
+  display: none;
+}
 </style>
