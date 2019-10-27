@@ -20,12 +20,12 @@ export default class Pattern {
     this.descriptor = prepareResults(this.matrix, this.corners);
   }
 
-  detect (imageData, pattern) {
-
+  detect (options, pattern) {
     if (this.detectPromise) {
       return this.detectPromise;
     }
 
+    const imageData = options.context.getImageData(0, 0, options.width, options.height);
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     addGaussianBlur(this.matrix, blur);
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);

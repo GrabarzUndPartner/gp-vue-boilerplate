@@ -99,7 +99,6 @@ export default {
     },
 
     onUpdate (e) {
-      // console.log(e);
       this.source.detect(e, this.pattern).then((option) => {
         this.debugOptionsA = option;
         return;
