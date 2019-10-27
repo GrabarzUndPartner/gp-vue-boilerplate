@@ -14,6 +14,7 @@
 
     <h2>Cam: Original + Canvas</h2>
     <atom-canvas-video
+      :fps="Number(10)"
       @load="onVideoLoad"
       @imagedata="onUpdate"
     />

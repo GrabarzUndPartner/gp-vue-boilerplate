@@ -19,14 +19,20 @@ export default {
   },
 
   props: {
-
+    fps: {
+      type: Number,
+      default () {
+        return 60;
+      }
+    }
   },
 
   data () {
     return {
       width: 0,
       height: 0,
-      video: null
+      video: null,
+      lastTime: 0
     };
   },
 
@@ -43,13 +49,16 @@ export default {
       this.onUpdate();
     },
 
-    onUpdate () {
+    onUpdate (currentTime) {
       window.requestAnimationFrame(this.onUpdate);
+      if ((currentTime - this.lastTime) / 1000 >= 1 / this.fps) {
+        this.lastTime = currentTime;
 
-      this.context.drawImage(this.video, 0, 0, this.width, this.height);
-      setTimeout(() => {
-        this.$emit('imagedata', { context: this.context, width: this.width, height: this.height });
-      });
+        this.context.drawImage(this.video, 0, 0, this.width, this.height);
+        setTimeout(() => {
+          this.$emit('imagedata', { context: this.context, width: this.width, height: this.height });
+        });
+      }
 
     }
   }
