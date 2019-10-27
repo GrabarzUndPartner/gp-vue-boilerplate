@@ -59,7 +59,7 @@ export default {
           renderCorners(options.corners.list, options.corners.count, options.corners.scale, imageData_u32, this.width);
         }
 
-        this.$nextTick(() => {
+        global.requestAnimationFrame(() => {
           this.context.putImageData(imageData, 0, 0);
           if (options.matches) {
             render_matches(this.context, options.corners.list, options.pattern.list, options.match_mask, options.matches.list, options.matches.count);

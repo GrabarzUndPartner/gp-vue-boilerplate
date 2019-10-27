@@ -50,7 +50,7 @@ export default {
     },
 
     onUpdate (currentTime) {
-      window.requestAnimationFrame(this.onUpdate);
+      global.requestAnimationFrame(this.onUpdate);
       if ((currentTime - this.lastTime) / 1000 >= 1 / this.fps) {
         this.lastTime = currentTime;
 
