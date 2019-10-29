@@ -58,6 +58,24 @@ function splitMatchCorners (screen_descriptors, pattern_descriptors, threshold, 
   return matches;
 }
 
+export function subMatchCorners (imageData, pattern_descriptors) {
+  const worker = workerPool.getInstance('submatch');
+
+  const matches = worker.then((worker) => {
+    let promise = new Promise((resolve) => {
+      worker.resolve = resolve;
+    });
+
+    pattern_descriptors = pattern_descriptors.map(({ rows, buffer: { i32 } }) => ({ rows, buffer: { i32 } }));
+    worker.postMessage({ imageData, pattern_descriptors });
+    return promise;
+  }).catch((e) => {
+    console.error(e);
+  });
+
+  return matches;
+}
+
 export function matchCorner (screen_descriptors, pattern_descriptors, threshold = null, qidx) {
   var query_u32 = screen_descriptors.buffer.i32; // cast to integer buffer
   var lev = 0, pidx = 0, k = 0;
