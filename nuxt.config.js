@@ -163,12 +163,6 @@ module.exports = {
     [
       'nuxt-polyfill', {
         features: [
-          /*
-              Feature with detect:
-
-              Detection is better because the polyfill will not be
-              loaded, parsed and executed if it's not necessary.
-          */
           {
             require: 'object-fit-images',
             detect: () => 'objectFit' in document.documentElement.style,
