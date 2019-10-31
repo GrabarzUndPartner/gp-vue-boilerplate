@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.0...v1.33.1) (2019-10-31)
+
+
+### Bug Fixes
+
+* **packages:** updated versions manually ([2b1a292](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2b1a292178d18357f9137f5a2ff842c1fa199698))
+
 # [1.33.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.32.0...v1.33.0) (2019-10-26)
 
 
