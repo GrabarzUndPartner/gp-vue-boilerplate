@@ -8,7 +8,7 @@
     <img
       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
       :alt="alt"
-      loading="lazy"
+      @load="onLoad"
     >
   </picture>
 </template>
@@ -58,14 +58,11 @@ export default {
     }
   },
 
-  mounted () {
-    if ('objectFit' in document.documentElement.style === false) {
-      import('object-fit-images').then((objectFitImages) => {
-        objectFitImages(this.$el);
-        return null;
-      }).catch((e) => {
-        throw e;
-      });
+  methods: {
+    onLoad () {
+      if (global.objectFitImages) {
+        global.objectFitImages(this.$el.querySelector('img'));
+      }
     }
   }
 };
