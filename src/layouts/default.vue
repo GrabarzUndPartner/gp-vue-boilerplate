@@ -1,22 +1,25 @@
 <template>
   <div>
     <lazy-hydrate when-idle>
-      <page-header :navigation="$t('header.navigation')" />
+      <gp-page-header :navigation="$t('header.navigation')" />
     </lazy-hydrate>
     <main>
       <nuxt />
     </main>
     <lazy-hydrate when-visible>
-      <page-footer :navigation="$t('footer.navigation')" />
+      <gp-page-footer :navigation="$t('footer.navigation')" />
     </lazy-hydrate>
   </div>
 </template>
 
 <script>
+import gpPageHeader from '@/components/page/Header';
+import gpPageFooter from '@/components/page/Footer';
+
 export default {
   components: {
-    PageHeader: () => import(/* webpackMode: "eager" */'../components/page/Header'),
-    PageFooter: () => import(/* webpackMode: "eager" */'../components/page/Footer')
+    gpPageHeader,
+    gpPageFooter
   },
   head () {
     const pattern = {

@@ -11,7 +11,7 @@ import LinkList from '~/components/molecules/LinkList';
 
 export default {
   components: {
-    'link-list': LinkList
+    LinkList
   },
   props: {
     navigation: {

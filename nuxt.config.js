@@ -163,14 +163,17 @@ module.exports = {
     [
       'nuxt-polyfill', {
         features: [
-          /*
-              Feature with detect:
-
-              Detection is better because the polyfill will not be
-              loaded, parsed and executed if it's not necessary.
-          */
+          {
+            require: 'object-fit-images',
+            detect: () => 'objectFit' in document.documentElement.style,
+            install: (objectFitImages) => window.objectFitImages = objectFitImages
+          },
           {
             require: 'picturefill',
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+          },
+          {
+            require: 'picturefill/dist/plugins/mutation/pf.mutation',
             detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
           },
           {
@@ -276,7 +279,6 @@ module.exports = {
 
   head: {
     meta: [
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ]
   }

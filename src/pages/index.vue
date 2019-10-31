@@ -37,11 +37,12 @@
 
 <script>
 import SvgInline from '@/components/atoms/SvgInline';
+import Stage from '@/components/organisms/Stage';
 
 export default {
   components: {
     SvgInline,
-    Stage: () => import('@/components/organisms/Stage')
+    Stage
   },
 
   head () {
