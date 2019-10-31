@@ -1,3 +1,11 @@
+## [1.33.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.1...v1.33.2) (2019-10-31)
+
+
+### Bug Fixes
+
+* **nuxt.config:** removed comment ([e62bc9c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e62bc9c6075520400383e7d5e1258293cbfab8d2))
+* **object-fit-images:** fixed picturefill init and object-fit-image ([3a4508c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3a4508cb687d6b1b01bbffc0c483144cf2ac32bb))
+
 ## [1.33.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.0...v1.33.1) (2019-10-31)
 
 
