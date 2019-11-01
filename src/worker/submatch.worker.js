@@ -25,11 +25,13 @@ class Pattern {
   detect (imageData, pattern_descriptors) {
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     jsfeat.imgproc.gaussian_blur(this.matrix, this.matrix, blur | 0);
-    /* const c = */ detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
+    const c = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
     //console.log('corners', c);
     const matches = matchCorners(this.descriptor, pattern_descriptors, 48);
-    extendMatches(matches, this.corners);
-    return matches;
+    return {
+      matches,
+      corners: this.corners.slice(0, c)
+    };
   }
 }
 
@@ -44,14 +46,6 @@ fromEvent(self, 'message').subscribe((e) => {
   //console.log('result', result.length);
   self.postMessage(result);
 });
-
-function extendMatches (matches, screen_corners) {
-  return matches.forEach(m => {
-    const { x, y } = screen_corners[m.screen_idx];
-    m.x = x;
-    m.y = y;
-  });
-}
 
 function prepareResults (imgMatrix, corners) {
   let i = (imgMatrix.cols | 0) * (imgMatrix.rows | 0);
@@ -149,7 +143,8 @@ function detectKeypoints (img, corners, max_allowed) {
   }
   // calculate dominant orientation for each keypoint
   for (let i = 0; i < count; ++i) {
-    corners[Number(i)].angle = ic_angle(img, corners[Number(i)].x, corners[Number(i)].y);
+    const corner = corners[Number(i)];
+    corner.angle = ic_angle(img, corner.x, corner.y);
   }
   return count;
 }
