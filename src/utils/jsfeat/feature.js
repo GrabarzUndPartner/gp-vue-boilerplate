@@ -158,6 +158,13 @@ function popcnt32 (n) {
 }
 
 export function find_transform (matches, screen_corners, pattern_corners) {
+  // motion kernel
+  var mm_kernel = new jsfeat.motion_model.homography2d();
+  // ransac params
+  var num_model_points = 4;
+  var reproj_threshold = 3;
+  var ransac_param = new jsfeat.ransac_params_t(num_model_points,
+    reproj_threshold, 0.5, 0.99);
   var pattern_xy = [];
   var screen_xy = [];
   // construct correspondences
@@ -168,26 +175,14 @@ export function find_transform (matches, screen_corners, pattern_corners) {
     pattern_xy[Number(i)] = { 'x': p_kp.x, 'y': p_kp.y };
     screen_xy[Number(i)] = { 'x': s_kp.x, 'y': s_kp.y };
   }
-  return find_transformXY(pattern_xy, screen_xy);
-}
-
-export function find_transformXY (pattern_xy, screen_xy) {
-  // motion kernel
-  var mm_kernel = new jsfeat.motion_model.homography2d();
-  // ransac params
-  var num_model_points = 4;
-  var reproj_threshold = 3;
-  var ransac_param = new jsfeat.ransac_params_t(num_model_points,
-    reproj_threshold, 0.5, 0.99);
-
   // estimate motion
   var ok = false;
   ok = jsfeat.motion_estimator.ransac(ransac_param, mm_kernel,
-    pattern_xy, screen_xy, pattern_xy.length, homo3x3, match_mask, 1000);
+    pattern_xy, screen_xy, matches.length, homo3x3, match_mask, 1000);
   // extract good matches and re-estimate
   var good_cnt = 0;
   if (ok) {
-    for (var j = 0; j < pattern_xy.length; ++j) {
+    for (var j = 0; j < matches.length; ++j) {
       if (match_mask.data[Number(j)]) {
         pattern_xy[Number(good_cnt)].x = pattern_xy[Number(j)].x;
         pattern_xy[Number(good_cnt)].y = pattern_xy[Number(j)].y;
