@@ -5,18 +5,15 @@ const blur = 5;
 const maxCorners = 300;
 
 class Pattern {
-  constructor() {
+  constructor(dimension) {
     this.matrix = null;
     this.corners = [];
     this.cornersCount = [];
     this.descriptor = [];
+    this.setup(dimension);
   }
 
   setup (dimension) {
-    if (this.dimension && dimension.width === this.dimension.width && dimension.height === this.dimension.height) {
-      return;
-    }
-    console.log('submatch setup called', dimension, this.dimension);
     this.dimension = dimension;
     this.matrix = new jsfeat.matrix_t(dimension.width, dimension.height, jsfeat.U8_t | jsfeat.C1_t);
     this.descriptor = prepareResults(this.matrix, this.corners);
@@ -35,10 +32,17 @@ class Pattern {
   }
 }
 
-const pattern = new Pattern();
+const patterns = new Map();
 
 fromEvent(self, 'message').subscribe((e) => {
   let { imageData, pattern_descriptors } = e.data;
+  const patternKey = `${imageData.width};${imageData.height}`;
+  let pattern = patterns.get(patternKey);
+  if (!pattern) {
+    pattern = new Pattern(imageData);
+    patterns.set(patternKey, pattern);
+    console.log('new pattern made', patternKey);
+  }
   pattern.setup(imageData);
 
   let result = pattern.detect(imageData, pattern_descriptors);

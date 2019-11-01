@@ -6,20 +6,18 @@ export default class Pattern {
   constructor() {
     this.matrix = null;
 
-    this.splitRules = [
-      { x: 0.0, y: 0.0, w: 0.5, h: 0.5 },
-      { x: 0.5, y: 0.0, w: 0.5, h: 0.5 },
-      { x: 0.0, y: 0.5, w: 0.5, h: 0.5 },
-      { x: 0.5, y: 0.5, w: 0.5, h: 0.5 }
-    ];
+    this.border = 4;
 
-    // this.splitRules = [
-    //   { x: 0.0, y: 0, w: 0.5, h: 1 },
-    //   { x: 0.5, y: 0, w: 0.5, h: 1 }
-    // ];
-    // this.splitRules = [
-    //   { x: 0, y: 0, w: 1, h: 1 }
-    // ];
+    this.splitRules = [];
+
+    const w = 1;
+    const h = 1;
+    for (let x = 0; x < w; x++) {
+      for (let y = 0; y < h; y++) {
+        this.splitRules.push({ x: x / w, y: y / h, w: 1 / w, h: 1 / h });
+      }
+    }
+    console.log('splitRules', w, h, this.splitRules);
   }
 
   setup (dimension) {
@@ -62,19 +60,29 @@ export default class Pattern {
 
   matchCorners (options, pattern) {
     const { context, width, height } = options;
+    const { border, splitRules } = this;
 
-    const matches = this.splitRules.map(async ({ x, y, w, h }) => {
-      const imageData = context.getImageData(Math.floor(width * x), Math.floor(height * y), Math.floor(width * w), Math.floor(height * h));
+    console.time('concurrent match corners');
+
+    const matches = splitRules.map(async ({ x, y, w, h }) => {
+      const fx = Math.max(0, Math.floor(width * x - border));
+      const fy = Math.max(0, Math.floor(height * y - border));
+      const tx = Math.min(width, Math.floor(width * x + width * w + border));
+      const ty = Math.min(height, Math.floor(height * y + height * h + border));
+
+      const imageData = context.getImageData(fx, fy, tx - fx, ty - fy);
       const matchGroup = await subMatchCorners(imageData, pattern);
       matchGroup.corners.forEach(corner => {
-        corner.x = corner.x + Math.floor(width * x);
-        corner.y = corner.y + Math.floor(height * y);
+        corner.x += fx;
+        corner.y += fy;
       });
       return matchGroup;
     });
 
     return Promise.all(matches)
       .then(allMatches => {
+        console.timeEnd('concurrent match corners');
+
         let offset = 0;
         const resCorners = [];
         const resMatches = [];
