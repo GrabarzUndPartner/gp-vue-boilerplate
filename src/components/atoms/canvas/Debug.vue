@@ -84,11 +84,22 @@ function addMatrixToImageData (data_u32, matrix) {
 }
 
 function renderCorners (corners, count, scale = 1, data_u32, step) {
-  var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
+  var yellow = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00;
+  var blue = (0xff << 24) | (0xff << 16) | (0x00 << 8) | 0x00;
   for (var i = 0; i < count; ++i) {
-    var x = corners[Number(i)].x / scale;
-    var y = corners[Number(i)].y / scale;
+    const corner = corners[Number(i)];
+    var x = corner.x / scale;
+    var y = corner.y / scale;
     var off = (x + y * step);
+    let pix = yellow;
+    if (corner.matched !== undefined) {
+      if (corner.matched) {
+        pix = yellow;
+      } else {
+        pix = blue;
+      }
+    }
+
     data_u32[Number(off)] = pix;
     data_u32[off - 1] = pix;
     data_u32[off + 1] = pix;

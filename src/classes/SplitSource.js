@@ -6,12 +6,12 @@ export default class Pattern {
   constructor() {
     this.matrix = null;
 
-    this.border = 4;
+    this.border = 10;
 
     this.splitRules = [];
 
-    const w = 1;
-    const h = 1;
+    const w = 2;
+    const h = 2;
     for (let x = 0; x < w; x++) {
       for (let y = 0; y < h; y++) {
         this.splitRules.push({ x: x / w, y: y / h, w: 1 / w, h: 1 / h });
@@ -71,12 +71,13 @@ export default class Pattern {
       const ty = Math.min(height, Math.floor(height * y + height * h + border));
 
       const imageData = context.getImageData(fx, fy, tx - fx, ty - fy);
-      const matchGroup = await subMatchCorners(imageData, pattern);
-      matchGroup.corners.forEach(corner => {
-        corner.x += fx;
-        corner.y += fy;
+      return subMatchCorners(imageData, pattern).then(matchGroup => {
+        matchGroup.corners.forEach(corner => {
+          corner.x += fx;
+          corner.y += fy;
+        });
+        return matchGroup;
       });
-      return matchGroup;
     });
 
     return Promise.all(matches)
@@ -95,6 +96,7 @@ export default class Pattern {
           resMatches.push(...matches);
           resCorners.push(...corners);
         });
+        // console.log({ corners: resCorners, matches: resMatches });
         return { corners: resCorners, matches: resMatches };
       });
 

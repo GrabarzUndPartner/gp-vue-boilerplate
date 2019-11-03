@@ -25,12 +25,14 @@ export default class Pattern {
       return this.detectPromise;
     }
 
+    console.time('concurrent match corners');
     const imageData = options.context.getImageData(0, 0, options.width, options.height);
     jsfeat.imgproc.grayscale(imageData.data, imageData.width, imageData.height, this.matrix);
     addGaussianBlur(this.matrix, blur);
     const num = detectCorners(this.matrix, this.corners, this.descriptor, maxCorners);
     this.detectPromise = matchCorners(this.descriptor, pattern.descriptors, 48)
       .then((matches) => {
+        console.timeEnd('concurrent match corners');
         matches = matches.filter(n => n);
         const numGoodMatches = find_transform(matches, this.corners, pattern.corners);
         let shape = [];

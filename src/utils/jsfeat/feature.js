@@ -128,21 +128,37 @@ export function matchCorner (screen_descriptors, pattern_descriptors, threshold 
   return;
 }
 
+function getImageVal ({ cols, rows, data }, x, y) {
+  let i = x;
+  let j = y;
+  if (i < 0) {
+    i = 0;
+  } else if (i > cols - 1) {
+    i = cols - 1;
+  }
+  if (j < 0) {
+    j = 0;
+  } else if (j > rows - 1) {
+    j = rows - 1;
+  }
+  return data[(j * cols + i) | 0];
+}
 function ic_angle (img, px, py) {
   const half_k = 15; // half patch size
-  const src = img.data, step = img.cols, center_off = (py * step + px) | 0;
   let m_01 = 0, m_10 = 0, u = 0, v = 0, v_sum = 0, d = 0, val_plus = 0, val_minus = 0;
   // Treat the center line differently, v=0
-  for (u = -half_k; u <= half_k; ++u)
-    m_10 += u * src[center_off + u];
+  for (u = -half_k; u <= half_k; ++u) {
+    m_10 += u * getImageVal(img, px + u, py);
+  }
+
   // Go line by line in the circular patch
   for (v = 1; v <= half_k; ++v) {
     // Proceed over the two lines
     v_sum = 0;
     d = u_max[Number(v)];
     for (u = -d; u <= d; ++u) {
-      val_plus = src[center_off + u + v * step];
-      val_minus = src[center_off + u - v * step];
+      val_plus = getImageVal(img, px + u, py + v);
+      val_minus = getImageVal(img, px + u, py - v);
       v_sum += (val_plus - val_minus);
       m_10 += u * (val_plus + val_minus);
     }
