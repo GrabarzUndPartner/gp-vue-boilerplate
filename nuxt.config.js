@@ -10,6 +10,23 @@ module.exports = {
   css: [],
   env: {},
 
+  features: {
+    store: false,
+    layouts: true,
+    meta: true,
+    middleware: true,
+    transitions: false,
+    deprecations: false,
+    validate: false,
+    asyncData: true,
+    fetch: false,
+    clientOnline: false,
+    clientPrefetch: false,
+    clientUseUrl: true,
+    componentAliases: false,
+    componentClientOnly: false
+  },
+
   server: {
     port: 8050,
     timing: false,
@@ -40,7 +57,7 @@ module.exports = {
           [
             require.resolve('@nuxt/babel-preset-app'), {
               targets,
-              useBuiltIns: 'usage'
+              useBuiltIns: 'entry'
             }
           ]
         ];
@@ -87,7 +104,7 @@ module.exports = {
   },
 
   render: {
-    resourceHints: false,
+    resourceHints: true,
     http2: { push: true }
   },
 
@@ -142,22 +159,27 @@ module.exports = {
         locales: [
           {
             code: 'en',
-            iso: 'en-US',
-            file: 'en.json',
+            iso: 'en-US'
           },
           {
             code: 'de',
-            iso: 'de-DE',
-            file: 'de.json'
+            iso: 'de-DE'
           }
         ],
-        parsePages: true,
-        lazy: true,
-        langDir: 'globals/locales/',
+        // parsePages: true,
+        // lazy: true,
+        // langDir: 'globals/locales/',
         defaultLocale: 'de',
         strategy: 'prefix_except_default',
-        seo: true,
-        vueI18nLoader: true
+        seo: false,
+        vueI18nLoader: false,
+        vueI18n: {
+          fallbackLocale: 'de',
+          messages: {
+            en: require('./src/globals/locales/en.json'),
+            de: require('./src/globals/locales/de.json')
+          }
+        }
       }
     ],
     [
@@ -167,16 +189,13 @@ module.exports = {
             require: 'object-fit-images',
             detect: () => 'objectFit' in document.documentElement.style,
             install: (objectFitImages) => window.objectFitImages = objectFitImages
-          },
-          {
+          }, {
             require: 'picturefill',
             detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
-          },
-          {
+          }, {
             require: 'picturefill/dist/plugins/mutation/pf.mutation',
             detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
-          },
-          {
+          }, {
             require: 'intersection-observer',
             detect: () => 'IntersectionObserver' in window,
           },
@@ -279,6 +298,7 @@ module.exports = {
 
   head: {
     meta: [
+      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ]
   }

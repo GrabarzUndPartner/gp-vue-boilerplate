@@ -16,7 +16,6 @@ export default {
   props: {
     navigation: {
       type: Array,
-      required: true,
       default: function () {
         return [];
       }

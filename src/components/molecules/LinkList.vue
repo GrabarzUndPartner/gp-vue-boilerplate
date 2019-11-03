@@ -1,8 +1,8 @@
 <template>
   <ul>
     <li
-      v-for="(item) in list"
-      :key="item.title"
+      v-for="(item, index) in list"
+      :key="`${index}_${timestamp}`"
     >
       <nuxt-link :to="localePath(item.url)">
         {{ item.title }}
@@ -16,12 +16,17 @@ export default {
   props: {
     list: {
       type: Array,
-      required: true,
       default: function () {
         return [];
       }
     }
   },
+
+  data () {
+    return {
+      timestamp: Date.now()
+    };
+  }
 };
 </script>
 

@@ -11,8 +11,9 @@
 
 <template>
   <div class="content">
-    <stage />
-    <div
+    <headline-text />
+    <!-- <stage /> -->
+    <!-- <div
       v-for="(item, index) in components"
       :key="index"
     >
@@ -31,18 +32,24 @@
     </lazy-hydrate>
     <lazy-hydrate ssr-only>
       <svg-inline src="image2.svg" />
-    </lazy-hydrate>
+    </lazy-hydrate> -->
   </div>
 </template>
 
 <script>
-import SvgInline from '@/components/atoms/SvgInline';
-import Stage from '@/components/organisms/Stage';
+// import SvgInline from '@/components/atoms/SvgInline';
+// import Stage from '@/components/organisms/Stage';
+import HeadlineText from '@/components/organisms/article/HeadlineText';
+
+// import {
+//   hydrateWhenIdle
+// } from 'vue-lazy-hydration';
 
 export default {
   components: {
-    SvgInline,
-    Stage
+    // SvgInline,
+    // Stage
+    HeadlineText //: hydrateWhenIdle(() => import('@/components/organisms/article/HeadlineText')),
   },
 
   head () {
@@ -99,14 +106,20 @@ export default {
   },
 
   created () {
-    this.components = this.components.map((item) => {
-      return {
-        asyncComponent: () => import(`@/components/organisms/${item.c}`),
-        load: item.load,
-        data: item.data
-      };
-    });
+    // this.components = this.components.map((item) => {
+    //   return {
+    //     asyncComponent: () => import(`@/components/organisms/${item.c}`),
+    //     load: item.load,
+    //     data: item.data
+    //   };
+    // });
 
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.content {
+  height: 2000px;
+}
+</style>

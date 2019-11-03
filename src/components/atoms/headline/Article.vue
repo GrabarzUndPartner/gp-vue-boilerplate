@@ -12,11 +12,11 @@ export default {
 
 <style lang="postcss">
 h2 {
-  font-family: serif;
-  font-weight: 600;
+  font-family: "Amatic SC", serif;
+  font-weight: 400;
 }
 
-.visible h2 {
-  font-family: "Raleway", serif;
+.font_amatic-sc_700 h2 {
+  font-weight: 700;
 }
 </style>

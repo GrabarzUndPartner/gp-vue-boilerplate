@@ -32,13 +32,13 @@
     hello2 huhu234 {{ $t('configxyz') }}
     {{ $t('test') }}
     <br>
-    <svg-inline src="image3.svg" />
-    <svg-inline src="image2.svg" />
+    <!-- <svg-inline src="image3.svg" />
+    <svg-inline src="image2.svg" /> -->
   </div>
 </template>
 
 <script>
-import SvgInline from '@/components/atoms/SvgInline';
+// import SvgInline from '@/components/atoms/SvgInline';
 
 export default {
   nuxtI18n: {
@@ -48,7 +48,7 @@ export default {
     }
   },
   components: {
-    SvgInline
+    // SvgInline
   },
   data () {
     return {
