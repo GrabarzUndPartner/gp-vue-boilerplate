@@ -47,24 +47,30 @@ export default {
           {
             href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'),
             rel: 'preload',
-            'data-class': 'font_amatic-sc_400',
-            onload: 'var className = event.target.dataset.class; document.documentElement.classList.add(className);'
+            'data-set': 'amatic-sc',
+            'data-weight': '400',
+            onload: 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);'
           }, {
             href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'),
             rel: 'delay-prefetch',
-            'data-class': 'font_amatic-sc_700'
+            'data-set': 'amatic-sc',
+            'data-weight': '700'
           }, {
             href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
             rel: 'delay-prefetch',
-            'data-class': 'font_raleway_400'
+            'data-set': 'raleway',
+            'data-weight': '400',
+            'data-required': 'true'
           }, {
             href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
             rel: 'delay-prefetch',
-            'data-class': 'font_raleway_500'
+            'data-set': 'raleway',
+            'data-weight': '500'
           }, {
             href: require('@/assets/fonts/raleway-v13-latin-600.woff2'),
             rel: 'delay-prefetch',
-            'data-class': 'font_raleway_600'
+            'data-set': 'raleway',
+            'data-weight': '600'
           }
         ]
       }
@@ -73,14 +79,19 @@ export default {
 };
 
 if (process.client) {
-  var preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+  var preloads = [];
+  if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
+    preloads = document.querySelectorAll('link[rel=\'delay-prefetch\'][data-required=\'true\']');
+  } else {
+    preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+  }
   prefetchFonts(Array.from(preloads));
 }
 
 function prefetchFonts (preloads, classList = []) {
   let range = preloads.splice(0, Math.min(2, preloads.length));
   global.requestIdleCallback(() => {
-    document.documentElement.classList.add(...classList);
+    document.documentElement.classList.add(...classList.flat());
     if (range.length) {
       Promise.all(range.map((item) => {
         return prefetchFont(item);
@@ -112,7 +123,10 @@ function prefetchFont (item) {
 }
 
 function loadFont (options) {
-  return options.class;
+  return [
+    `font_${options.set}`,
+    `font_${options.set}_${options.weight}`
+  ];
   // return document.fonts.load(`${options.width} 1em "${options.family}"`)
   //   .then(() => {
   //     return options.class;

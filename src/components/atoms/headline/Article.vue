@@ -16,7 +16,7 @@ h2 {
   font-weight: 400;
 }
 
-.visible h2 {
+.font_amatic-sc .visible h2 {
   font-family: "Amatic SC", serif;
 }
 
