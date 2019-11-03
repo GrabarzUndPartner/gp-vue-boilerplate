@@ -42,13 +42,11 @@ export default {
       resolve([
         {
           c: 'article/HeadlineTextB',
-          load: 'visible',
           data: {
 
           }
         }, {
           c: 'article/HeadlineTextC',
-          load: 'visible',
           data: {
 
           }
@@ -68,7 +66,6 @@ export default {
           () => import(`@/components/organisms/${item.c}`),
           { observerOptions: { rootMargin: '100px' } }
         ),
-        load: item.load,
         data: item.data
       };
     });
