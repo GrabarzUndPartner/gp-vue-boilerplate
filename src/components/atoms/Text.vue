@@ -16,7 +16,7 @@ p {
   font-weight: 400;
 }
 
-.font_raleway_400 p {
+.font_raleway_400 .visible p {
   font-family: "Raleway", serif;
 }
 </style>

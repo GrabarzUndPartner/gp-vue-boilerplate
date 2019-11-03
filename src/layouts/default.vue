@@ -57,8 +57,7 @@ export default {
             href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
             rel: 'delay-prefetch',
             'data-class': 'font_raleway_400'
-          }
-          , {
+          }, {
             href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
             rel: 'delay-prefetch',
             'data-class': 'font_raleway_500'
