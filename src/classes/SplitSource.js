@@ -6,7 +6,7 @@ export default class Pattern {
   constructor() {
     this.matrix = null;
 
-    this.border = 10;
+    this.border = 15;
 
     this.splitRules = [];
 
@@ -71,13 +71,12 @@ export default class Pattern {
       const ty = Math.min(height, Math.floor(height * y + height * h + border));
 
       const imageData = context.getImageData(fx, fy, tx - fx, ty - fy);
-      return subMatchCorners(imageData, pattern).then(matchGroup => {
-        matchGroup.corners.forEach(corner => {
-          corner.x += fx;
-          corner.y += fy;
+      return subMatchCorners(imageData, pattern)
+        .then(matchGroup => {
+          matchGroup.corners = matchGroup.corners
+            .map(({ x, y, ...corner }) => ({ ...corner, x: x + fx, y: y + fy }));
+          return matchGroup;
         });
-        return matchGroup;
-      });
     });
 
     return Promise.all(matches)
@@ -86,7 +85,7 @@ export default class Pattern {
 
         let offset = 0;
         const resCorners = [];
-        const resMatches = [];
+        let resMatches = [];
 
         allMatches.forEach(({ matches, corners }) => {
           matches.forEach(match => {
@@ -96,6 +95,19 @@ export default class Pattern {
           resMatches.push(...matches);
           resCorners.push(...corners);
         });
+        const dups = new Set();
+
+        // const count = resMatches.length;
+        resMatches = resMatches.filter(m => {
+          var s_kp = resCorners[m.screen_idx];
+          const key = `${s_kp.x};${s_kp.y}`;
+          if (dups.has(key)) {
+            return false;
+          }
+          dups.add(key);
+          return true;
+        });
+        // console.log('filtered', count, resMatches.length);
         // console.log({ corners: resCorners, matches: resMatches });
         return { corners: resCorners, matches: resMatches };
       });
