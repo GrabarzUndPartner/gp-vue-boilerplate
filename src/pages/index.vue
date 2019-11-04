@@ -1,15 +1,11 @@
 <template>
   <div class="content">
-    <headline-text-a class="visible" />
-    <div
+    <component
+      :is="item.asyncComponent"
       v-for="(item, index) in components"
       :key="index"
-    >
-      <component
-        :is="item.asyncComponent"
-        :content="item.data.content"
-      />
-    </div>
+      :content="item.data.content"
+    />
   </div>
 </template>
 
