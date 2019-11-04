@@ -51,13 +51,13 @@ module.exports = {
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
     },
     babel: {
-      presets ({ isServer }) {
+      presets ({ isServer, isModern }) {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
         return [
           [
             require.resolve('@nuxt/babel-preset-app'), {
               targets,
-              useBuiltIns: 'entry'
+              useBuiltIns: isModern ? 'entry' : 'usage'
             }
           ]
         ];
