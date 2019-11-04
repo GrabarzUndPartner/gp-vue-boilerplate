@@ -4,6 +4,7 @@
       :is="item.asyncComponent"
       v-for="(item, index) in components"
       :key="index"
+      :class="item.class"
       :content="item.data.content"
     />
   </div>
@@ -70,6 +71,7 @@ export default {
       }
       return {
         asyncComponent: hydrateWhenIdle(asyncLoad),
+        class: 'visible',
         data: item.data
       };
     });
