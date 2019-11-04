@@ -21,10 +21,6 @@ import {
 } from 'vue-lazy-hydration';
 
 export default {
-  components: {
-    HeadlineTextA: hydrateWhenIdle(() => import('@/components/organisms/article/HeadlineTextA')),
-  },
-
   head () {
     return {
       title: 'title of page'
@@ -41,6 +37,11 @@ export default {
     return new Promise((resolve) => {
       resolve([
         {
+          c: 'article/HeadlineTextA',
+          data: {
+
+          }
+        }, {
           c: 'article/HeadlineTextB',
           data: {
 
@@ -60,12 +61,18 @@ export default {
   },
 
   created () {
-    this.components = this.components.map((item) => {
+    this.components = this.components.map((item, index) => {
+      if (index) {
+        return {
+          asyncComponent: hydrateWhenVisible(
+            () => import(`@/components/organisms/${item.c}`),
+            { observerOptions: { rootMargin: '100px' } }
+          ),
+          data: item.data
+        };
+      }
       return {
-        asyncComponent: hydrateWhenVisible(
-          () => import(`@/components/organisms/${item.c}`),
-          { observerOptions: { rootMargin: '100px' } }
-        ),
+        asyncComponent: hydrateWhenIdle(() => import(`@/components/organisms/${item.c}`)),
         data: item.data
       };
     });
