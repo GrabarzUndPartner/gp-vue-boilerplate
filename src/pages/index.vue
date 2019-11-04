@@ -33,17 +33,17 @@ export default {
     return new Promise((resolve) => {
       resolve([
         {
-          c: 'article/HeadlineTextA',
+          component: 'article/HeadlineTextA',
           data: {
 
           }
         }, {
-          c: 'article/HeadlineTextB',
+          component: 'article/HeadlineTextB',
           data: {
 
           }
         }, {
-          c: 'article/HeadlineTextC',
+          component: 'article/HeadlineTextC',
           data: {
 
           }
@@ -58,17 +58,18 @@ export default {
 
   created () {
     this.components = this.components.map((item, index) => {
+      let asyncLoad = () => import(`@/components/organisms/${item.component}`);
       if (index) {
         return {
           asyncComponent: hydrateWhenVisible(
-            () => import(`@/components/organisms/${item.c}`),
+            asyncLoad,
             { observerOptions: { rootMargin: '100px' } }
           ),
           data: item.data
         };
       }
       return {
-        asyncComponent: hydrateWhenIdle(() => import(`@/components/organisms/${item.c}`)),
+        asyncComponent: hydrateWhenIdle(asyncLoad),
         data: item.data
       };
     });
