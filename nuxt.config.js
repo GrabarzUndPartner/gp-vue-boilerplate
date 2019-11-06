@@ -190,15 +190,15 @@ module.exports = {
             detect: () => 'objectFit' in document.documentElement.style,
             install: (objectFitImages) => window.objectFitImages = objectFitImages
           }, {
-            require: 'picturefill',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+            require: 'polyfill-library/polyfills/HTMLPictureElement/polyfill',
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
           }, {
-            require: 'picturefill/dist/plugins/mutation/pf.mutation',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+            require: 'polyfill-library/polyfills/IntersectionObserver/polyfill',
+            detect: () => 'IntersectionObserver' in window
           }, {
-            require: 'intersection-observer',
-            detect: () => 'IntersectionObserver' in window,
-          },
+            require: 'polyfill-library/polyfills/requestIdleCallback/polyfill',
+            detect: () => 'requestIdleCallback' in window
+          }
         ]
       }
     ],

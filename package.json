@@ -99,12 +99,11 @@
     "@nuxtjs/robots": "^2.4.2",
     "default-passive-events": "^1.0.10",
     "dom-parser": "^0.1.6",
-    "intersection-observer": "^0.7.0",
     "nuxt": "^2.10.2",
     "nuxt-i18n": "^6.3.0",
     "nuxt-polyfill": "^1.0.3",
     "object-fit-images": "^3.2.4",
-    "picturefill": "^3.0.3",
+    "polyfill-library": "^3.41.0",
     "rxjs": "^6.5.3",
     "snyk": "^1.240.1",
     "vue-lazy-hydration": "^1.0.0-beta.9"
