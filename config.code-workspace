@@ -5,17 +5,16 @@
     }
   ],
   "settings": {
-    "path-intellisense.mappings": {
-      "@": "${workspaceRoot}/src",
-      "@@": "${workspaceRoot}"
-    },
-    "vetur.format.defaultFormatter.js": "vscode-typescript",
-    "vetur.format.defaultFormatter.html": "js-beautify-html",
-    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "eslint.autoFixOnSave": true,
-    "eslint.alwaysShowStatus": true,
+    "breadcrumbs.enabled": true,
+    "editor.cursorBlinking": "phase",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 200,
+    "editor.minimap.showSlider": "always",
+    "editor.smoothScrolling": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.alwaysShowStatus": true,
     "eslint.validate": [
       "javascript",
       "javascriptreact",
@@ -59,7 +58,18 @@
       "*.css": "postcss",
       "*.pcss": "postcss",
       ".*ignore": "ignore"
-    }
+    },
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "path-intellisense.mappings": {
+      "@": "${workspaceRoot}/src",
+      "@@": "${workspaceRoot}"
+    },
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+    "workbench.settings.enableNaturalLanguageSearch": false,
   },
   "extensions": {
     "recommendations": [
