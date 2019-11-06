@@ -58,10 +58,11 @@ export default {
             'data-weight': '700'
           }, {
             href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
-            rel: 'delay-prefetch',
+            rel: 'preload',
             'data-set': 'raleway',
             'data-weight': '400',
-            'data-required': 'true'
+            onload: 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);'
+            // 'data-required': 'true'
           }, {
             href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
             rel: 'delay-prefetch',
