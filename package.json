@@ -37,7 +37,8 @@
     "storybook:prod": "build-storybook -c .storybook -o storybook",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
-    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
+    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/",
+    "baqend-deploy-pagespeed": "baqend deploy -f './dist' -b 'www' pagespeed"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.2.1",
@@ -87,18 +88,22 @@
     "sharp": "^0.23.2",
     "stylelint": "^11.1.1",
     "stylelint-config-css-modules": "^1.5.0",
+    "stylelint-config-lost": "0.0.3",
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^19.0.0",
     "svgo-loader": "^2.2.1",
     "terser": "^4.3.9",
+    "vue-svg-loader": "^0.12.0",
     "webpack-virtual-modules": "0.2.0"
   },
   "dependencies": {
+    "@js-basics/vector": "^1.40.1",
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/robots": "^2.4.2",
     "default-passive-events": "^1.0.10",
     "dom-parser": "^0.1.6",
+    "lost": "^8.3.1",
     "nuxt": "^2.10.2",
     "nuxt-i18n": "^6.3.0",
     "nuxt-polyfill": "^1.0.3",
@@ -106,6 +111,7 @@
     "polyfill-library": "^3.41.0",
     "rxjs": "^6.5.3",
     "snyk": "^1.240.1",
+    "verge": "^1.10.2",
     "vue-lazy-hydration": "^1.0.0-beta.9"
   },
   "snyk": true

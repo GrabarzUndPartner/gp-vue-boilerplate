@@ -1,36 +1,29 @@
 <template>
   <article>
-    <gp-headline>
-      {{ headline }}
-    </gp-headline>
-    <gp-subline>
-      {{ subline }}
-    </gp-subline>
+    <header>
+      <gp-atom-headline
+        v-bind="headline"
+        tag="h2"
+      />
+    </header>
     <slot />
   </article>
 </template>
 
 <script>
-import gpHeadline from '@/components/atoms/headline/Article';
-import gpSubline from '@/components/atoms/subline/Article';
+import gpAtomHeadline from '@/components/atoms/Headline';
 
 export default {
   components: {
-    gpHeadline,
-    gpSubline
+    gpAtomHeadline
   },
 
   props: {
     headline: {
-      type: String,
+      type: Object,
+      required: false,
       default () {
-        return '';
-      }
-    },
-    subline: {
-      type: String,
-      default () {
-        return '';
+        return {};
       }
     }
   }

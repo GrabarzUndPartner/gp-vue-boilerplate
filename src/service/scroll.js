@@ -1,19 +1,28 @@
-import { fromEvent } from 'rxjs';
+// import { fromEvent } from 'rxjs';
+// import { startWith, map, share } from 'rxjs/operators';
+// import { Victor } from '@js-basics/vector';
 
-const observer = new Map();
-const pos = { x: 0, y: 0 };
+// const observer = new Map();
 
-export function subscribeToScroll(fn, el = global) {
-  if (!observer.has(el)) {
-    observer.set(el, fromEvent(el, 'scroll'));
-  }
-  return observer.get(el).subscribe(fn);
-}
+// export const scrollObserver = getScrollObserver();
 
-export function getScrollPos(el = global) {
-  const w = global;
-  const e = global.document.documentElement;
-  pos.x = el.scrollLeft || w.pageXOffset || e.scrollLeft;
-  pos.y = el.scrollTop || w.pageYOffset || e.scrollTop;
-  return pos;
-}
+// export function getScrollObserver (el = global) {
+//   if (!observer.has(el)) {
+//     observer.set(el, fromEvent(el, 'scroll'));
+//   }
+//   return observer.get(el)
+//     .pipe(
+//       startWith(0),
+//       map(() => {
+//         return getScrollPos(el);
+//       }),
+//       share()
+//     );
+// }
+
+// export function getScrollPos (el = global) {
+//   return new Victor(
+//     el.scrollLeft || global.pageXOffset || global.document.documentElement.scrollLeft,
+//     el.scrollTop || global.pageYOffset || global.document.documentElement.scrollTop,
+//   );
+// }

@@ -1,42 +1,43 @@
 <template>
   <ul>
-    <li
-      v-for="(item, index) in list"
-      :key="`${index}_${timestamp}`"
-    >
-      <nuxt-link :to="localePath(item.url)">
-        {{ item.title }}
-      </nuxt-link>
-    </li>
+    <slot>
+      <li
+        v-for="(item) in list"
+        :key="item.title"
+      >
+        <gp-atom-link :url="localePath(item.url)">
+          {{ item.title }}
+        </gp-atom-link>
+      </li>
+    </slot>
   </ul>
 </template>
 
 <script>
+import gpAtomLink from '@/components/atoms/Link';
+
 export default {
+  components: {
+    gpAtomLink
+  },
   props: {
     list: {
       type: Array,
+      required: false,
       default: function () {
         return [];
       }
     }
   },
-
-  data () {
-    return {
-      timestamp: Date.now()
-    };
-  }
 };
 </script>
 
-<style module>
-:global(a.nuxt-link-active) {
-  color: green;
-}
-
-a {
-  line-height: 2em;
+<style lang="postcss">
+/* a {
   color: black;
-}
+
+  &.nuxt-link-active {
+    color: green;
+  }
+} */
 </style>

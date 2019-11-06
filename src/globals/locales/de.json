@@ -1,39 +1,46 @@
 {
-  "header": {
+  "header": {},
+  "menu": {
     "navigation": [
       {
-        "title": "Start",
+        "title": "Home",
         "url": "index"
       },
       {
-        "title": "Über uns",
+        "title": "About",
         "url": "about"
       },
       {
-        "title": "Sub",
-        "url": "sub"
-      },
-      {
-        "title": "Projekte",
-        "url": "sub-projects"
+        "title": "Projects",
+        "url": "sub-projects",
+        "links": [
+          {
+            "title": "Project 1",
+            "url": "Project 1"
+          },
+          {
+            "title": "Project 2",
+            "url": "Project 2"
+          }
+        ]
       }
     ]
   },
   "footer": {
     "navigation": [
       {
-        "title": "Kontakt",
+        "title": "Contact",
         "url": "contact"
       },
       {
-        "title": "Nutzungsbedingungen",
+        "title": "Terms of use",
         "url": "terms"
       },
       {
-        "title": "Datenschutz",
+        "title": "Legals",
         "url": "legals"
       }
     ]
   },
-  "configxyz": "Ich bin eine Headline"
+  "configxyz": "I'm a Headline"
 }

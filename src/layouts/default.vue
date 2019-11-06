@@ -1,6 +1,12 @@
 <template>
   <div>
-    <gp-page-header :navigation="$t('header.navigation')" />
+    <!-- <gp-page-header
+      v-bind="pageHeader"
+      sticky
+    /> -->
+    <!-- <gp-page-menu v-bind="pageMenu" /> -->
+    <!-- <gp-page-menu-button /> -->
+
     <main>
       <nuxt />
     </main>
@@ -9,15 +15,23 @@
 </template>
 
 <script>
+
+const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
+
 import { loadFonts } from '@/utils/fonts';
-import gpPageHeader from '@/components/page/Header';
+
+// import gpPageHeader from '@/components/page/Header';
+// import { directionDetectionObserver } from '@/service/viewport';
+
 import {
   hydrateWhenVisible
 } from 'vue-lazy-hydration';
 
 export default {
   components: {
-    gpPageHeader,
+    // gpPageHeader,
+    // gpPageMenu: hydrateWhenIdle(() => import('@/components/page/Menu')),
+    // gpPageMenuButton: hydrateWhenIdle(() => import('@/components/page/MenuButton')),
     gpPageFooter: hydrateWhenVisible(
       () => import('@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
@@ -40,7 +54,6 @@ export default {
       }).concat(seo.link)
     };
   },
-
   data () {
     return {
       fonts: {
@@ -77,7 +90,43 @@ export default {
         ]
       }
     };
-  }
+  },
+
+  computed: {
+    preventScrolling: function () {
+      return this.$store.getters['layout/preventScrolling'];
+    },
+    pageHeader () {
+      return this.$t('header');
+    },
+    pageMenu () {
+      return this.$t('menu');
+    }
+  },
+
+  watch: {
+    preventScrolling: function (value) {
+      if (value) {
+        document.documentElement.classList.add(STYLE_CLASS_PREVENT_SCROLLING);
+      } else {
+        document.documentElement.classList.remove(STYLE_CLASS_PREVENT_SCROLLING);
+      }
+    }
+  },
+
+  // mounted () {
+  //   this.subscriptions = [
+  //     directionDetectionObserver.subscribe(this.onDirectionChange)
+  //   ];
+  // },
+  // destroyed () {
+  //   this.subscriptions.forEach(subscription => subscription.unsubscribe());
+  // },
+  methods: {
+    onDirectionChange (value) {
+      this.$store.dispatch('layout/toggleDirection', value > 0);
+    }
+  },
 };
 
 if (process.client) {

@@ -1,65 +1,62 @@
 <template>
-  <div class="organisms-stage">
-    <gp-picture
-      class="background"
-      :sources="content.sources"
-    />
-
-    <div class="headline-subline">
-      <gp-headline class="headline">
-        {{ content.headline }}
-      </gp-headline>
-      <gp-subline class="subline">
-        {{ content.subline }}
-      </gp-subline>
-    </div>
+  <div class="gp-organism-stage">
+    <gp-atom-picture v-bind="picture" />
   </div>
 </template>
 
 <script>
-import gpHeadline from '@/components/atoms/headline/Page';
-import gpSubline from '@/components/atoms/subline/Page';
-import gpPicture from '@/components/atoms/Picture';
+import gpAtomPicture from '@/components/atoms/PictureStatic';
 
 export default {
   components: {
-    gpHeadline,
-    gpSubline,
-    gpPicture
+    gpAtomPicture
   },
 
   props: {
-    content: {
+
+    picture: {
       type: Object,
+      required: false,
       default () {
         return {
-          headline: 'STAGE HEADLINE',
-          subline: 'STAGE SUBLINE',
-
+          sources: [
+            { 'media': 'default', 'srcset': 'img/1/576x324.jpg' },
+            { 'media': 'xs', 'srcset': 'img/1/768x432.jpg' },
+            { 'media': 'sm', 'srcset': 'img/1/992x558.jpg' },
+            { 'media': 'md', 'srcset': 'img/1/1200x675.jpg' },
+            { 'media': 'lg', 'srcset': 'img/1/1600x900.jpg' },
+            { 'media': 'xl', 'srcset': 'img/1/1920x1080.jpg' },
+          ]
         };
       }
     }
   }
+
 };
 </script>
 
 <style lang="postcss">
-.organisms-stage {
+.gp-organism-stage {
   position: relative;
   width: 100%;
 
-  & .background {
-    & img {
-      object-fit: cover;
-      height: 300px;
-    }
-  }
+  & picture {
+    position: relative;
+    display: block;
 
-  & .headline-subline {
-    position: absolute;
-    right: 2em;
-    bottom: 0;
-    color: black;
+    &::before {
+      display: block;
+      width: 100%;
+      padding-top: calc(9 / 16 * 100%);
+      content: "";
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 }
 </style>

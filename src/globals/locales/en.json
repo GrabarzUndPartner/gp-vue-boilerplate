@@ -1,5 +1,6 @@
 {
-  "header": {
+  "header": {},
+  "menu": {
     "navigation": [
       {
         "title": "Home",
@@ -10,12 +11,18 @@
         "url": "about"
       },
       {
-        "title": "Sub",
-        "url": "sub"
-      },
-      {
         "title": "Projects",
-        "url": "sub-projects"
+        "url": "sub-projects",
+        "links": [
+          {
+            "title": "Project 1",
+            "url": "Project 1"
+          },
+          {
+            "title": "Project 2",
+            "url": "Project 2"
+          }
+        ]
       }
     ]
   },

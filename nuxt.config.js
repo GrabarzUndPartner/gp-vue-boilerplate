@@ -11,7 +11,7 @@ module.exports = {
   env: {},
 
   features: {
-    store: false,
+    store: true,
     layouts: true,
     meta: true,
     middleware: true,
@@ -24,7 +24,7 @@ module.exports = {
     clientPrefetch: false,
     clientUseUrl: true,
     componentAliases: false,
-    componentClientOnly: false
+    componentClientOnly: true
   },
 
   server: {
@@ -65,6 +65,12 @@ module.exports = {
     },
     postcss: {
       plugins: {
+        'postcss-custom-media': {
+          importFrom: [
+            'src/globals/postcss.js'
+          ]
+        },
+        'postcss-nesting': {},
         'postcss-normalize': {},
         'postcss-url': {},
         'postcss-object-fit-images': {},
@@ -84,12 +90,19 @@ module.exports = {
         'postcss-momentum-scrolling': [
           'scroll'
         ],
-        'rucksack-css': {}
+        'rucksack-css': {},
+        'lost': {
+          gutter: '15px',
+          flexbox: 'flex',
+          cycle: 'auto'
+        }
       },
       preset: {
+        preserve: false,
         stage: 0,
         features: {
-          'nesting-rules': true
+          'custom-media-queries': false,
+          'nesting-rules': false
         },
         importFrom: 'src/globals/postcss.js'
       }
@@ -113,10 +126,7 @@ module.exports = {
     prefetchLinks: true
   },
 
-  plugins: [
-    { src: '@/plugins/intersectionObserver' },
-    { src: '@/plugins/lazyHydrate' }
-  ],
+  plugins: [],
 
   modules: [
     //'@/modules/codesandbox',
@@ -203,64 +213,6 @@ module.exports = {
       }
     ],
     [
-      '@nuxtjs/pwa', {
-        dev: isDev,
-        icon: {
-          iconSrc: 'src/static/favicon.png',
-          sizes: [
-            16, 120, 144, 152, 192, 384, 512
-          ]
-        },
-        meta: {
-          charset: 'utf-8',
-          viewport: 'width=device-width, initial-scale=1',
-          mobileApp: true,
-          mobileAppIOS: true,
-          appleStatusBarStyle: 'default',
-          favicon: true,
-          name: 'TITLE',
-          author: 'metaAuthor',
-          description: 'metaDescription',
-          theme_color: 'black',
-          lang: 'de',
-          ogType: 'website',
-          ogSiteName: 'ogSITE_NAME',
-          ogTitle: 'ogTITLE',
-          ogDescription: 'ogDESCRIPTION',
-          ogHost: undefined,
-          ogImage: true
-        },
-        manifest: {
-          name: 'Sample MANIFEST',
-          short_name: 'Sample',
-          lang: 'de'
-        }
-      }
-    ],
-    [
-      '@nuxtjs/sitemap', {
-        path: 'sitemap.xml',
-        hostname: 'https://localhost:8050',
-        cacheTime: 1000 * 60 * 15,
-        gzip: false,
-        exclude: [],
-        routes: [],
-        defaults: {
-          changefreq: 'daily',
-          priority: 1,
-          lastmod: new Date(),
-          lastmodrealtime: true
-        }
-      }
-    ],
-    [
-      '@nuxtjs/robots', {
-        UserAgent: '*',
-        Disallow: '',
-        Sitemap: 'https://localhost:8050/sitemap.xml'
-      }
-    ],
-    [
       '@/modules/licence', {
         perChunkOutput: false,
         unacceptableLicenseTest: (licenseType) => (licenseType === 'GPL'),
@@ -294,6 +246,68 @@ module.exports = {
         }
       }
     ]
+  ],
+
+  buildModules: [
+
+    // [
+    //   '@nuxtjs/pwa', {
+    //     dev: isDev,
+    //     icon: {
+    //       iconSrc: 'src/static/favicon.png',
+    //       sizes: [
+    //         16, 120, 144, 152, 192, 384, 512
+    //       ]
+    //     },
+    //     meta: {
+    //       charset: 'utf-8',
+    //       viewport: 'width=device-width, initial-scale=1',
+    //       mobileApp: true,
+    //       mobileAppIOS: true,
+    //       appleStatusBarStyle: 'default',
+    //       favicon: true,
+    //       name: 'TITLE',
+    //       author: 'metaAuthor',
+    //       description: 'metaDescription',
+    //       theme_color: 'black',
+    //       lang: 'de',
+    //       ogType: 'website',
+    //       ogSiteName: 'ogSITE_NAME',
+    //       ogTitle: 'ogTITLE',
+    //       ogDescription: 'ogDESCRIPTION',
+    //       ogHost: undefined,
+    //       ogImage: true
+    //     },
+    //     manifest: {
+    //       name: 'Sample MANIFEST',
+    //       short_name: 'Sample',
+    //       lang: 'de'
+    //     }
+    //   }
+    // ],
+    [
+      '@nuxtjs/sitemap', {
+        path: 'sitemap.xml',
+        hostname: 'https://localhost:8050',
+        cacheTime: 1000 * 60 * 15,
+        gzip: false,
+        exclude: [],
+        routes: [],
+        defaults: {
+          changefreq: 'daily',
+          priority: 1,
+          lastmod: new Date(),
+          lastmodrealtime: true
+        }
+      }
+    ],
+    [
+      '@nuxtjs/robots', {
+        UserAgent: '*',
+        Disallow: '',
+        Sitemap: 'https://localhost:8050/sitemap.xml'
+      }
+    ],
   ],
 
   head: {
