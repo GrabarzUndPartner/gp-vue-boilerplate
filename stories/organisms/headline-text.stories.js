@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 
-import GpHeadlineText from '@/components/organisms/article/HeadlineText.vue';
+import GpHeadlineText from '@/components/organisms/article/HeadlineTextA.vue';
 
 storiesOf('organisms/article', module)
   .add('Headline Text', () => ({
