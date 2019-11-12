@@ -1,3 +1,11 @@
+## [1.33.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.2...v1.33.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* **actions:** test ([b5132d7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b5132d715403dcfe1fecad7e100a6e094d5ebbc6))
+* **actions:** test workflow ([f682ba3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f682ba36361e3d9d7a3efd984de84cfccca0284e))
+
 ## [1.33.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.1...v1.33.2) (2019-10-31)
 
 
