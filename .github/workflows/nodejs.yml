@@ -11,8 +11,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Node.js
       uses: dcodeIO/setup-node-nvm@master
-      with:
-        node-version: node  
     - name: npm install, build, and test
       run: |
         npm ci
