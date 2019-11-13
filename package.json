@@ -106,7 +106,7 @@
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
     "rxjs": "^6.5.3",
-    "snyk": "^1.241.0",
+    "snyk": "^1.242.0",
     "vue-lazy-hydration": "^1.0.0-beta.9"
   },
   "snyk": true
