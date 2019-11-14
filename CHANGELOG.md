@@ -1,3 +1,12 @@
+# Project Changelog
+
+## [1.33.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.4...v1.33.5) (2019-11-14)
+
+
+### Bug Fixes
+
+* **semantic-release:** changed config ([4ae223a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4ae223a3406be8471bd45fe2da85483dd257c2fe))
+
 ## [1.33.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.2...v1.33.3) (2019-11-12)
 
 

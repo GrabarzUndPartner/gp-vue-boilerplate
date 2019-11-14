@@ -1,15 +1,35 @@
 {
-  "verifyConditions": [
-    "@semantic-release/changelog",
-    "@semantic-release/git"
-  ],
-  "prepare": [
-    "@semantic-release/changelog",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Project Changelog"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "verifyReleaseCmd": "echo '{\"version\": \"${nextRelease.version}\", \"branch\": \"${options.branch}\", \"date\": \"${Date.now()}\"}' > release.json"
+      }
+    ],
     "@semantic-release/npm",
-    {
-      "path": "@semantic-release/git",
-      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-    }
-  ],
-  "publish": ["@semantic-release/github"]
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "CHANGELOG_PROJECT.md",
+          "package.json",
+          "package-lock.json",
+          "npm-shrinkwrap.json"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/github"
+    ]
+  ]
 }
