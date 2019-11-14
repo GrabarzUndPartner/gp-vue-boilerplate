@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "1.33.3",
+  "version": "1.33.5",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -76,7 +76,7 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
     "postcss-momentum-scrolling": "^1.9.15",
-    "postcss-nested": "^4.1.2",
+    "postcss-nested": "^4.2.0",
     "postcss-normalize": "^8.0.1",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-url": "^8.0.0",
