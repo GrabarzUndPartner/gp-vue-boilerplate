@@ -1,3 +1,40 @@
+# Project Changelog
+
+# [1.34.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.5...v1.34.0) (2019-11-15)
+
+
+### Bug Fixes
+
+* **semantic-release:** updated travis process ([cebff42](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cebff422e7450ebb753098bdb4b37c6762fb6a2d))
+
+
+### Features
+
+* **semantic-release:** multi repo providers ([5c75c9a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5c75c9ac456691bffe5bc7c79c86ab39528a7ca5))
+
+## [1.33.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.4...v1.33.5) (2019-11-14)
+
+
+### Bug Fixes
+
+* **semantic-release:** changed config ([4ae223a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4ae223a3406be8471bd45fe2da85483dd257c2fe))
+
+## [1.33.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.2...v1.33.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* **actions:** test ([b5132d7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b5132d715403dcfe1fecad7e100a6e094d5ebbc6))
+* **actions:** test workflow ([f682ba3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f682ba36361e3d9d7a3efd984de84cfccca0284e))
+
+## [1.33.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.1...v1.33.2) (2019-10-31)
+
+
+### Bug Fixes
+
+* **nuxt.config:** removed comment ([e62bc9c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e62bc9c6075520400383e7d5e1258293cbfab8d2))
+* **object-fit-images:** fixed picturefill init and object-fit-image ([3a4508c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3a4508cb687d6b1b01bbffc0c483144cf2ac32bb))
+
 ## [1.33.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.0...v1.33.1) (2019-10-31)
 
 

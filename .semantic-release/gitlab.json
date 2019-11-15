@@ -5,7 +5,7 @@
     [
       "@semantic-release/changelog",
       {
-        "changelogFile": "CHANGELOG.md",
+        "changelogFile": "CHANGELOG_PROJECT.md",
         "changelogTitle": "# Project Changelog"
       }
     ],
@@ -29,7 +29,10 @@
       }
     ],
     [
-      "@semantic-release/github"
+      "@semantic-release/gitlab",
+      {
+        "gitlabUrl": "https://gitlab.grabarzundpartner.dev"
+      }
     ]
   ]
 }

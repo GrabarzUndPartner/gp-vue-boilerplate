@@ -32,10 +32,10 @@
       }
     ],
     "files.exclude": {
-      ".nuxt/": true,
+      ".nuxt/": false,
       ".scannerwork/": true,
-      "dist/": true,
-      "node_modules/": true,
+      "dist/": false,
+      "node_modules/": false,
       "output/": true,
       "test/wdio/": true,
       "**/.idea": true,
