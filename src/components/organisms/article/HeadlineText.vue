@@ -1,8 +1,5 @@
 <template>
-  <gp-layout-default-container
-    :class="styleClasses"
-    class="gp-organism-article-headline-text"
-  >
+  <gp-layout-default-container class="gp-organism-article-headline-text">
     <gp-molecule-article :headline="headline">
       <gp-atom-rich-text :content="text" />
     </gp-molecule-article>
@@ -25,7 +22,6 @@ export default {
   props: {
     headline: {
       type: Object,
-      required: false,
       default () {
         return {
           overline: 'Overline HeadlineText',
@@ -37,25 +33,17 @@ export default {
 
     text: {
       type: String,
-      required: false,
       default () {
         return '<p>Scelerisque morbi blandit voluptate possimus vitae illum tristique, atque perspiciatis maecenas laudantium! Morbi, venenatis purus amet, rem eius ligula! Penatibus eleifend curabitur temporibus asperiores tempora cum accumsan egestas viverra laborum.</p><p>Arcu primis enim, parturient! Excepturi adipisci! Incidunt quibusdam ex. Non, impedit est. Ullam eiusmod semper pretium necessitatibus nostrum voluptatem ullamcorper, hac condimentum! Vestibulum rhoncus? Impedit culpa, error tempus. Ligula diam.</p>';
       }
-    }
-  },
-
-  data () {
-    return {
-      isVisible: process.browser ? true : false
-    };
-  },
-  computed: {
-    styleClasses () {
-      return { 'js--visible': this.isVisible };
     }
   }
 };
 </script>
 
-<style>
+<style lang="postcss">
+.gp-organism-article-headline-text {
+  /* empty */
+}
 </style>
+

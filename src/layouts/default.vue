@@ -1,16 +1,19 @@
 <template>
   <div>
-    <!-- <gp-page-header
+    <gp-page-header
       v-bind="pageHeader"
       sticky
-    /> -->
-    <!-- <gp-page-menu v-bind="pageMenu" /> -->
-    <!-- <gp-page-menu-button /> -->
-
+    />
+    <gp-page-menu
+      ref="pageMenu"
+      v-bind="pageMenu"
+      opened
+    />
+    <gp-page-menu-button @click.native="onClickMenuButton" />
     <main>
       <nuxt />
     </main>
-    <gp-page-footer :navigation="$t('footer.navigation')" />
+    <gp-page-footer v-bind="pageFooter" />
   </div>
 </template>
 
@@ -20,18 +23,23 @@ const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
 
 import { loadFonts } from '@/utils/fonts';
 
-// import gpPageHeader from '@/components/page/Header';
-// import { directionDetectionObserver } from '@/service/viewport';
+import gpPageHeader from '@/components/page/Header';
+import gpPageMenuButton from '@/components/page/MenuButton';
+import { directionDetectionObserver } from '@/service/viewport';
 
 import {
-  hydrateWhenVisible
+  hydrateWhenVisible,
+  hydrateOnInteraction
 } from 'vue-lazy-hydration';
 
 export default {
+
   components: {
-    // gpPageHeader,
-    // gpPageMenu: hydrateWhenIdle(() => import('@/components/page/Menu')),
-    // gpPageMenuButton: hydrateWhenIdle(() => import('@/components/page/MenuButton')),
+    gpPageHeader,
+    gpPageMenuButton,
+    gpPageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
+      event: 'hydrate'
+    }),
     gpPageFooter: hydrateWhenVisible(
       () => import('@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
@@ -54,8 +62,10 @@ export default {
       }).concat(seo.link)
     };
   },
+
   data () {
     return {
+
       fonts: {
         preload: [
           {
@@ -101,6 +111,9 @@ export default {
     },
     pageMenu () {
       return this.$t('menu');
+    },
+    pageFooter () {
+      return this.$t('footer');
     }
   },
 
@@ -114,17 +127,37 @@ export default {
     }
   },
 
-  // mounted () {
-  //   this.subscriptions = [
-  //     directionDetectionObserver.subscribe(this.onDirectionChange)
-  //   ];
-  // },
-  // destroyed () {
-  //   this.subscriptions.forEach(subscription => subscription.unsubscribe());
-  // },
+  mounted () {
+
+    this.subscriptions = [
+      directionDetectionObserver.subscribe(this.onDirectionChange)
+    ];
+
+    /**
+     * Tritt ein bei Seitenwechsel über nuxt router.scrollBehavior.js (@/app/router.scrollBehavior.js)
+     * https://router.vuejs.org/guide/advanced/scroll-behavior.html
+     * Setzt die direction wieder auf initial.
+     */
+    this.$nuxt.$on('triggerScroll', () => {
+      this.onDirectionChange(null, true);
+    });
+
+  },
+  destroyed () {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+  },
+
   methods: {
-    onDirectionChange (value) {
-      this.$store.dispatch('layout/toggleDirection', value > 0);
+    onDirectionChange (value, reset = false) {
+      if (reset) {
+        this.$store.dispatch('layout/toggleDirection', false);
+      } else {
+        this.$store.dispatch('layout/toggleDirection', value > 0);
+      }
+    },
+
+    onClickMenuButton () {
+      this.$refs.pageMenu.$el.dispatchEvent(new CustomEvent('hydrate'));
     }
   },
 };
@@ -139,6 +172,13 @@ if (process.client) {
 body {
   margin: 0;
 }
+
+html.js--prevent-scrolling {
+  & body {
+    overflow: hidden;
+  }
+}
+
 /* stylelint-disable */
 
 /* amatic-sc-regular - latin */

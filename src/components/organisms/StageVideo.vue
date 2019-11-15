@@ -1,18 +1,36 @@
 <template>
-  <gp-layout-stage-container class="gp-organism-stage-video">
+  <gp-layout-default-container
+    class="gp-organism-stage-video"
+    :options="options"
+  >
     <template slot="background">
-      <gp-atom-video v-bind="video" />
+      <gp-atom-video
+        v-if="video"
+        v-bind="video"
+      />
     </template>
-  </gp-layout-stage-container>
+  </gp-layout-default-container>
 </template>
 
 <script>
-import gpLayoutStageContainer from '@/components/layouts/StageContainer';
+import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 import gpAtomVideo from '@/components/atoms/Video';
 
 export default {
-  components: { gpLayoutStageContainer, gpAtomVideo },
+  components: {
+    gpLayoutDefaultContainer,
+    gpAtomVideo
+  },
+
   props: {
+
+    options: {
+      type: Object,
+      default () {
+        return null;
+      }
+    },
+
     video: {
       type: Object,
       required: false,
@@ -35,6 +53,7 @@ export default {
 
 <style lang="postcss">
 .gp-organism-stage-video {
-  /* empty */
+  position: relative;
+  width: 100%;
 }
 </style>

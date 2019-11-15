@@ -7,20 +7,30 @@
         "url": "index"
       },
       {
-        "title": "About",
+        "title": "Über uns",
         "url": "about"
       },
       {
-        "title": "Projects",
-        "url": "sub-projects",
-        "links": [
+        "title": "Projekte",
+        "url": "projects",
+        "childrens": [
           {
-            "title": "Project 1",
-            "url": "Project 1"
+            "title": "Projekt 1",
+            "url": {
+              "name": "projects-project",
+              "params": {
+                "project": "projekt-1"
+              }
+            }
           },
           {
-            "title": "Project 2",
-            "url": "Project 2"
+            "title": "Projekt 2",
+            "url": {
+              "name": "projects-project",
+              "params": {
+                "project": "projekt-2"
+              }
+            }
           }
         ]
       }
@@ -29,18 +39,17 @@
   "footer": {
     "navigation": [
       {
-        "title": "Contact",
+        "title": "Kontakt",
         "url": "contact"
       },
       {
-        "title": "Terms of use",
+        "title": "Nutzungsbedingungen",
         "url": "terms"
       },
       {
-        "title": "Legals",
+        "title": "Rechtliche Hinweise",
         "url": "legals"
       }
     ]
-  },
-  "configxyz": "I'm a Headline"
+  }
 }

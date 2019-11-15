@@ -4,6 +4,8 @@ const path = require('path');
 const fs = require('fs');
 const isDev = process.env.NODE_ENV === 'development';
 
+const DEFAULT_LANG = 'de';
+
 module.exports = {
   dev: isDev,
   srcDir: 'src/',
@@ -44,6 +46,7 @@ module.exports = {
   },
 
   modern: 'client',
+
   build: {
     analyze: false,
     filenames: {
@@ -113,7 +116,8 @@ module.exports = {
   },
 
   generate: {
-    dir: 'dist'
+    dir: 'dist',
+    routes: getProjectRoutes(DEFAULT_LANG)
   },
 
   render: {
@@ -129,9 +133,10 @@ module.exports = {
   plugins: [],
 
   modules: [
+    // '@/modules/virtual',
+    'nuxt-payload-extractor',
     //'@/modules/codesandbox',
     '@/modules/fix/image',
-    '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
     '@/modules/analyzer',
@@ -179,12 +184,12 @@ module.exports = {
         // parsePages: true,
         // lazy: true,
         // langDir: 'globals/locales/',
-        defaultLocale: 'de',
+        defaultLocale: DEFAULT_LANG,
         strategy: 'prefix_except_default',
         seo: false,
         vueI18nLoader: false,
         vueI18n: {
-          fallbackLocale: 'de',
+          fallbackLocale: DEFAULT_LANG,
           messages: {
             en: require('./src/globals/locales/en.json'),
             de: require('./src/globals/locales/de.json')
@@ -199,14 +204,34 @@ module.exports = {
             require: 'object-fit-images',
             detect: () => 'objectFit' in document.documentElement.style,
             install: (objectFitImages) => window.objectFitImages = objectFitImages
-          }, {
-            require: 'polyfill-library/polyfills/HTMLPictureElement/polyfill',
+          },
+          {
+            require: 'picturefill',
             detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
-          }, {
-            require: 'polyfill-library/polyfills/IntersectionObserver/polyfill',
+          },
+          {
+            require: 'picturefill/dist/plugins/mutation/pf.mutation.js',
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
+          },
+          {
+            require: 'custom-event-polyfill',
+            detect: () => 'CustomEvent' in window &&
+              // In Safari, typeof CustomEvent == 'object' but it otherwise works fine
+              (typeof window.CustomEvent === 'function' ||
+                (window.CustomEvent.toString().indexOf('CustomEventConstructor') > -1))
+          },
+          {
+            require: 'intersection-observer',
             detect: () => 'IntersectionObserver' in window
-          }, {
-            require: 'polyfill-library/polyfills/requestIdleCallback/polyfill',
+          },
+          {
+            require: 'domtokenlist-shim',
+            detect: () => 'DOMTokenList' in window && (function (x) {
+              return 'classList' in x ? !x.classList.toggle('x', false) && !x.className : true;
+            })(document.createElement('x'))
+          },
+          {
+            require: 'requestIdleCallback',
             detect: () => 'requestIdleCallback' in window
           }
         ]
@@ -242,7 +267,9 @@ module.exports = {
             OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             SOFTWARE.`,
           'consola': 'MIT License',
-          'intersection-observer': 'W3C Software and Document License'
+          'intersection-observer': 'W3C Software and Document License',
+          'requestidlecallback': 'MIT License',
+          'vue-browserupdate': 'MIT License'
         }
       }
     ]
@@ -321,3 +348,31 @@ module.exports = {
 function getBasePath () {
   return process.env.npm_config_base || '/';
 }
+
+function getProjectRoutes (defaultLang) {
+  const projectsByLocale =
+    [
+      {
+        locale: 'de',
+        path: '/projekte',
+        items: [
+          'projekt-1', 'projekt-2'
+        ]
+      },
+      {
+        locale: 'en',
+        path: '/projects',
+        items: [
+          'project-1', 'project-2'
+        ]
+      }
+    ];
+  return () => projectsByLocale.reduce((result, projects) => {
+    return projects.items.reduce((result, item) => {
+      const localePath = projects.locale !== defaultLang ? `/${projects.locale}` : '';
+      result.push(localePath + projects.path + '/' + item);
+      return result;
+    }, result);
+  }, []);
+}
+

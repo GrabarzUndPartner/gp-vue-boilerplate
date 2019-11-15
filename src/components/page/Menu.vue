@@ -2,11 +2,29 @@
   <gp-layout-modal
     class="gp-organism-menu"
     name="menu"
+    :options="options"
   >
-    <gp-molecule-link-list
-      :list="navigation"
-      class="links"
-    />
+    <nav>
+      <gp-molecule-link-list
+        class="links"
+        type="page-menu-links"
+      >
+        <li
+          v-for="(item) in navigation"
+          :key="item.title"
+        >
+          <gp-atom-link :url="localePath(item.url)">
+            {{ item.title }}
+          </gp-atom-link>
+          <gp-molecule-link-list
+            v-if="item.childrens && item.childrens.length"
+            :list="item.childrens"
+            class="childs"
+            type="page-menu-links"
+          />
+        </li>
+      </gp-molecule-link-list>
+    </nav>
     <gp-language-switch class="language-switch" />
   </gp-layout-modal>
 </template>
@@ -14,14 +32,20 @@
 <script>
 import gpLayoutModal from '@/components/layouts/Modal';
 import gpMoleculeLinkList from '@/components/molecules/LinkList';
+import gpAtomLink from '@/components/atoms/Link';
 import gpLanguageSwitch from '@/components/molecules/LanguageSwitch';
 
 export default {
-  components: { gpLayoutModal, gpMoleculeLinkList, gpLanguageSwitch },
+  components: { gpLayoutModal, gpAtomLink, gpMoleculeLinkList, gpLanguageSwitch },
   props: {
+    opened: {
+      type: Boolean,
+      default () {
+        return false;
+      }
+    },
     navigation: {
       type: Array,
-      required: false,
       default () {
         return [
           { title: 'Link 1.', url: '#link-1', target: '_self' },
@@ -30,12 +54,26 @@ export default {
         ];
       }
     }
+  },
+  computed: {
+    options () {
+      return {
+        opened: this.opened
+      };
+    }
+  },
+  mounted () {
+    if (this.opened) {
+      this.$store.dispatch('layout/togglePreventScrolling', true);
+    }
   }
 };
 </script>
 
 <style lang="postcss" scoped>
 .gp-organism-menu {
+  margin: 0;
+
   & .language-switch {
     display: inline-block;
     width: 100%;
@@ -44,77 +82,11 @@ export default {
     @media (--xs) {
       margin-top: 20px;
     }
-
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
-
-    & >>> a {
-      color: var(--color-black);
-      text-decoration: none;
-      text-transform: uppercase;
-      opacity: 0.6;
-
-      &.nuxt-link-exact-active {
-        opacity: 1;
-      }
-    }
   }
 
   & .links {
     width: 100%;
     text-align: center;
-  }
-
-  & >>> .links,
-  & >>> .links ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    & li {
-      display: block;
-      font-family: Georgia, serif;
-      font-size: calc(32 / 375 * 100vw);
-      line-height: 2em;
-
-      @media (--xs) {
-        font-size: 32px;
-      }
-
-      @media (--md) {
-        font-size: 36px;
-      }
-
-      & a {
-        color: var(--color-black);
-        text-decoration: none;
-        opacity: 0.6;
-
-        &.nuxt-link-exact-active {
-          opacity: 1;
-        }
-      }
-    }
-
-    & .childrens {
-      & li {
-        display: block;
-        font-family: Verdana, Geneva, sans-serif;
-        font-size: calc(18 / 375 * 100vw);
-
-        @media (--xs) {
-          font-size: 18px;
-        }
-
-        @media (--md) {
-          font-size: 20px;
-        }
-
-        & a {
-          text-decoration: none;
-        }
-      }
-    }
   }
 }
 </style>

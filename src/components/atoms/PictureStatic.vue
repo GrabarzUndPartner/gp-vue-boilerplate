@@ -12,6 +12,7 @@
       :loading="loading"
       :width="width"
       :height="height"
+      @load="onLoad"
     >
   </picture>
 </template>
@@ -57,12 +58,12 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'srcset': 'img/1/576x324.jpg' },
-          { 'media': 'xs', 'srcset': 'img/1/768x432.jpg' },
-          { 'media': 'sm', 'srcset': 'img/1/992x558.jpg' },
-          { 'media': 'md', 'srcset': 'img/1/1200x675.jpg' },
-          { 'media': 'lg', 'srcset': 'img/1/1600x900.jpg' },
-          { 'media': 'xl', 'srcset': 'img/1/1920x1080.jpg' }
+          { 'media': 'default', 'srcset': 'img/sample-a-16-9/576x324.jpg' },
+          { 'media': 'xs', 'srcset': 'img/sample-a-16-9/768x432.jpg' },
+          { 'media': 'sm', 'srcset': 'img/sample-a-16-9/992x558.jpg' },
+          { 'media': 'md', 'srcset': 'img/sample-a-16-9/1200x675.jpg' },
+          { 'media': 'lg', 'srcset': 'img/sample-a-16-9/1600x900.jpg' },
+          { 'media': 'xl', 'srcset': 'img/sample-a-16-9/1920x1080.jpg' }
         ];
       }
     },
@@ -116,14 +117,11 @@ export default {
     }
   },
 
-  mounted () {
-    if ('objectFit' in document.documentElement.style === false) {
-      import('object-fit-images').then((objectFitImages) => {
-        objectFitImages(this.$el);
-        return null;
-      }).catch((e) => {
-        throw e;
-      });
+  methods: {
+    onLoad () {
+      if ('objectFitImages' in global) {
+        global.objectFitImages(this.$el.querySelector('img'));
+      }
     }
   }
 };

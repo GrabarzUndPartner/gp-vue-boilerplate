@@ -13,6 +13,14 @@ module.exports = function () {
           resourceQuery: /vue-template/,
           use: [
             {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  '@babel/preset-env'
+                ]
+              }
+            },
+            {
               loader: 'vue-svg-loader',
               options: { svgo: svgoConfig }
             }

@@ -5,12 +5,27 @@ export function loadFonts () {
   } else {
     preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
   }
-  prefetchFonts(Array.from(preloads));
+
+  if (linkFeatureDetection()) {
+    prefetchFonts(Array.from(preloads));
+  } else {
+    // not support link rel prefetch
+    const classList = Array.from(preloads).reduce((result, preload) => result.concat(getRegisteredFontClasses(preload.dataset)), []);
+    document.documentElement.classList.add(...classList);
+  }
+}
+
+function linkFeatureDetection () {
+  const link = document.createElement('link');
+  if ('relList' in link) {
+    return link.relList.supports('prefetch');
+  }
+  return false;
 }
 
 function prefetchFonts (preloads, classList = []) {
   let range = preloads.splice(0, Math.min(2, preloads.length));
-  global.requestIdleCallback(() => {
+  (global.requestIdleCallback || global.setTimeout)(() => {
     document.documentElement.classList.add(...classList.flat());
     if (range.length) {
       Promise.all(range.map((item) => {

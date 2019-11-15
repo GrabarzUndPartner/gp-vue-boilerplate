@@ -30,17 +30,38 @@ import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 export default {
   components: { gpLayoutDefaultContainer },
   props: {
+    options: {
+      type: Object,
+      default () {
+        return {
+          opened: false
+        };
+      }
+    },
+
     name: {
       type: String,
       required: true
     },
     closeButton: {
       type: Boolean,
-      required: false,
       default () {
         return false;
       }
     },
+
+    onOpen: {
+      type: Function,
+      default () {
+        return null;
+      }
+    },
+    onClose: {
+      type: Function,
+      default () {
+        return null;
+      }
+    }
 
   },
   computed: {
@@ -48,20 +69,36 @@ export default {
       return {};
     },
     opened: function () {
-      return this.$store.getters['layout/isModelOpened']('menu');
+      return this.$store.getters['modal/isModelOpened']('menu');
+    }
+  },
+
+  watch: {
+    opened (opened) {
+      if (opened) {
+        if (this.onOpen) {
+          this.onOpen();
+        }
+      } else {
+        if (this.onClose) {
+          this.onClose();
+        }
+      }
     }
   },
 
   mounted () {
     this.$router.afterEach(this.onRouterAfterEach);
-    this.$store.dispatch('layout/registerModal', this.name);
+    this.$store.dispatch('modal/registerModal', { name: this.name, opened: this.options.opened });
   },
   destroyed () {
-    this.$store.dispatch('layout/unregisterModal', this);
+    this.$store.dispatch('modal/unregisterModal', this);
   },
   methods: {
     close () {
-      this.$store.dispatch('layout/toggleModal', this.name, false);
+      this.$store.dispatch('modal/toggleModal', {
+        name: this.name, flag: false
+      });
     },
 
     // events

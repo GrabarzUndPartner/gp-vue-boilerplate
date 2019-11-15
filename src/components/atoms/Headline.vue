@@ -77,6 +77,9 @@ export default {
 
 <style lang="postcss" scoped>
 .gp-atom-headline {
+  font-style: normal;
+  font-weight: 400;
+
   & > * {
     display: block;
   }
@@ -90,11 +93,15 @@ export default {
   &.headline--h2 {
     & .overline,
     & .subline {
-      font-size: 12px;
+      font-size: calc(12 / 375 * 100vw);
       font-weight: normal;
 
+      @media (--xs) {
+        font-size: 12px;
+      }
+
       @nest .font_raleway .js--visible & {
-        font-family: "Raleway", serif;
+        font-family: "Raleway", sans-serif;
       }
     }
 
@@ -105,7 +112,11 @@ export default {
     }
 
     & .headline {
-      font-size: 36px;
+      font-size: calc(36 / 375 * 100vw);
+
+      @media (--xs) {
+        font-size: 36px;
+      }
 
       @nest .font_amatic-sc .js--visible & {
         font-family: "Amatic SC", serif;

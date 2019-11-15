@@ -1,53 +1,52 @@
 import { storiesOf } from '@storybook/vue';
 
-import GpArticleHeadline from '@/components/atoms/headline/Article.vue';
-import GpPageHeadline from '@/components/atoms/headline/Page.vue';
-import GpSectionHeadline from '@/components/atoms/headline/Section.vue';
+import gpAtomHeadline from '@/components/atoms/Headline';
 
-storiesOf('atoms/Headlines', module)
+storiesOf('atoms/Headline', module)
   .add('Overview', () => ({
     components: {
-      GpArticleHeadline,
-      GpPageHeadline,
-      GpSectionHeadline
+      gpAtomHeadline
     },
     template: `<div>
-      <gp-page-headline>{{textPageHeadline}}</gp-page-headline>
-      <gp-article-headline>{{textArticleHeadline}}</gp-article-headline>
-      <gp-section-headline>{{textSectionHeadline}}</gp-section-headline>
+        <gp-atom-headline v-bind="headlineH1" tag="h1" />
+        <gp-atom-headline v-bind="headlineH2" tag="h2" />
+        <gp-atom-headline v-bind="headlineH3" tag="h3" />
+        <gp-atom-headline v-bind="headlineH4" tag="h4" />
+        <gp-atom-headline v-bind="headlineH5" tag="h5" />
+        <gp-atom-headline v-bind="headlineH6" tag="h6" />
       </div>`,
     data: () => {
       return {
-        textPageHeadline: 'Page Headline H1',
-        textArticleHeadline: 'Article Headline H2',
-        textSectionHeadline: 'Section Headline H3'
+        headlineH1: {
+          overline: 'Overline H1',
+          headline: 'Headline H1',
+          subline: 'Subline H1'
+        },
+        headlineH2: {
+          overline: 'Overline H2',
+          headline: 'Headline H2',
+          subline: 'Subline H2'
+        },
+        headlineH3: {
+          overline: 'Overline H3',
+          headline: 'Headline H3',
+          subline: 'Subline H3'
+        },
+        headlineH4: {
+          overline: 'Overline H4',
+          headline: 'Headline H4',
+          subline: 'Subline H4'
+        },
+        headlineH5: {
+          overline: 'Overline H5',
+          headline: 'Headline H5',
+          subline: 'Subline H5'
+        },
+        headlineH6: {
+          overline: 'Overline H6',
+          headline: 'Headline H6',
+          subline: 'Subline H6'
+        }
       };
-    }
-  }))
-  .add('Page', () => ({
-    components: {
-      GpPageHeadline,
-    },
-    template: '<gp-page-headline>{{text}}</gp-page-headline>',
-    data: () => {
-      return { text: 'Page Headline H1' };
-    }
-  }))
-  .add('Article', () => ({
-    components: {
-      GpArticleHeadline,
-    },
-    template: '<gp-article-headline>{{text}}</gp-article-headline>',
-    data: () => {
-      return { text: 'Article Headline H2' };
-    }
-  }))
-  .add('Section', () => ({
-    components: {
-      GpSectionHeadline,
-    },
-    template: '<gp-section-headline>{{text}}</gp-section-headline>',
-    data: () => {
-      return { text: 'Section Headline H3' };
     }
   }));

@@ -19,7 +19,7 @@ export default {
   components: { gpAtomSvgInline },
   computed: {
     isMenuOpened () {
-      return this.$store.getters['layout/isModelOpened']('menu');
+      return this.$store.getters['modal/isModelOpened']('menu');
     },
     toggleDirection: function () {
       return this.$store.getters['layout/toggleDirection'] || false;
@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     onClickMenu () {
-      this.$store.dispatch('layout/toggleModal', 'menu', true);
+      this.$store.dispatch('modal/toggleModal', {
+        name: 'menu'
+      });
     }
   }
 };

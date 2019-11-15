@@ -6,7 +6,9 @@
   >
     <template slot="container">
       <div class="logo">
-        Logo
+        <gp-atom-link url="/">
+          Logo
+        </gp-atom-link>
       </div>
     </template>
   </gp-layout-default-container>
@@ -14,8 +16,9 @@
 
 <script>
 import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import gpAtomLink from '@/components/atoms/Link';
 export default {
-  components: { gpLayoutDefaultContainer },
+  components: { gpLayoutDefaultContainer, gpAtomLink },
   props: {
     sticky: {
       type: Boolean,
@@ -43,6 +46,7 @@ export default {
   left: 0;
   z-index: 100;
   width: 100%;
+  margin: 0;
   transition: transform 0.2s linear, opacity 0.2s linear;
 
   &.sticky {
@@ -62,6 +66,11 @@ export default {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(4px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    & a {
+      color: var(--color-black);
+      text-decoration: none;
+    }
   }
 }
 </style>

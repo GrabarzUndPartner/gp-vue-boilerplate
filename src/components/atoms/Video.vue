@@ -3,18 +3,20 @@
     class="gp-atom-video"
     :class="styleClasses"
   >
-    <video
-      ref="video"
-      v-bind="videoAttributes"
-      @play="onPlay"
-      @pause="onPause"
-    >
-      <source
-        v-for="(source, index) in filteredSources"
-        :key="index"
-        v-bind="source"
+    <client-only>
+      <video
+        ref="video"
+        v-bind="videoAttributes"
+        @play="onPlay"
+        @pause="onPause"
       >
-    </video>
+        <source
+          v-for="(source, index) in filteredSources"
+          :key="index"
+          v-bind="source"
+        >
+      </video>
+    </client-only>
     <gp-atom-picture
       v-bind="poster"
       class="poster"
@@ -152,9 +154,12 @@ export default {
     }
   },
   mounted () {
-    if (this.autoplay) {
-      this.$refs.video.play();
-    }
+    this.$nextTick(() => {
+      // Muss in den nextTick, da Video wegen "client-only" zum Mounted warum auch immer nocht nicht verfügbar ist.
+      if (this.autoplay) {
+        this.$refs.video.play();
+      }
+    });
   },
   methods: {
     isMedia (media) {

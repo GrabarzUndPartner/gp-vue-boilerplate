@@ -22,11 +22,24 @@ export default {
 
 <style lang="postcss" scoped>
 .gp-atom-rich-text {
-  font-family: serif;
+  & strong,
+  & b,
+  & i,
+  & em {
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  font-family: sans-serif;
+  font-size: calc(16 / 375 * 100vw);
   font-weight: 400;
 
-  @nest .font_raleway_400 .js--visible {
-    font-family: "Raleway", serif;
+  @media (--xs) {
+    font-size: 16px;
+  }
+
+  @nest .font_raleway .js--visible & {
+    font-family: "Raleway", sans-serif;
   }
 }
 </style>

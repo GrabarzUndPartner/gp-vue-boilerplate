@@ -2,10 +2,14 @@
   <component
     :is="tag"
     class="gp-layouts-default-container"
+    :class="styleClasses"
   >
     <slot name="background" />
     <slot name="container">
-      <div class="lost-flex-container">
+      <div
+        v-if="$slots.default"
+        class="lost-flex-container"
+      >
         <slot />
       </div>
     </slot>
@@ -22,6 +26,19 @@ export default {
       default () {
         return 'div';
       }
+    },
+
+    visible: {
+      type: Boolean,
+      default () {
+        return process.browser ? true : false;
+      }
+    }
+  },
+
+  computed: {
+    styleClasses () {
+      return { 'js--visible': this.visible };
     }
   }
 };
@@ -30,6 +47,17 @@ export default {
 
 <style lang="postcss">
 .gp-layouts-default-container {
+  margin: 40px 0;
+  visibility: hidden;
+
+  &.js--visible {
+    visibility: visible;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
   & .lost-flex-container {
     display: flex;
 
