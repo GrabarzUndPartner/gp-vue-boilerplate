@@ -1,5 +1,17 @@
 # Project Changelog
 
+# [1.34.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.5...v1.34.0) (2019-11-15)
+
+
+### Bug Fixes
+
+* **semantic-release:** updated travis process ([cebff42](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cebff422e7450ebb753098bdb4b37c6762fb6a2d))
+
+
+### Features
+
+* **semantic-release:** multi repo providers ([5c75c9a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5c75c9ac456691bffe5bc7c79c86ab39528a7ca5))
+
 ## [1.33.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.4...v1.33.5) (2019-11-14)
 
 
