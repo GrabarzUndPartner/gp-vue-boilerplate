@@ -76,7 +76,7 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
     "postcss-momentum-scrolling": "^1.9.15",
-    "postcss-nested": "^4.2.0",
+    "postcss-nested": "^4.2.1",
     "postcss-normalize": "^8.0.1",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-url": "^8.0.0",
