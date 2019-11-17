@@ -231,7 +231,7 @@ module.exports = {
             })(document.createElement('x'))
           },
           {
-            require: 'requestIdleCallback',
+            require: 'requestidlecallback',
             detect: () => 'requestIdleCallback' in window
           }
         ]
