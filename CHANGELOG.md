@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [1.34.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.34.0...v1.34.1) (2019-11-16)
+
+
+### Bug Fixes
+
+* **semantic-release:** removed releaserc ([b265640](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b2656402989d20f4a3c94ca4fae9a81a36cd0884))
+
 # [1.34.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.33.5...v1.34.0) (2019-11-15)
 
 
