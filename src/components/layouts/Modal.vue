@@ -66,7 +66,9 @@ export default {
   },
   computed: {
     styleClasses: function () {
-      return {};
+      return {
+        'js--opened': this.opened
+      };
     },
     opened: function () {
       return this.$store.getters['modal/isModelOpened']('menu');

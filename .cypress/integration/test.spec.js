@@ -9,7 +9,7 @@ createTestInAllResolutions((res) => {
     });
 
     it('language switch', function () {
-      cy.get('.gp-organism-menu').should('have.class', 'js--visible').then(() => {
+      cy.get('.gp-layout-modal').should('have.class', 'js--opened').then(() => {
         cy.get('.language-switch').first().click();
       })
     });
