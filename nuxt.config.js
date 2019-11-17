@@ -130,6 +130,16 @@ module.exports = {
     prefetchLinks: true
   },
 
+  workbox: {
+    cachingExtensions: '@/workbox/workbox-range-request.js',
+    runtimeCaching: [
+      {
+        urlPattern: /\/.*/,
+        handler: 'networkFirst'
+      }
+    ]
+  },
+
   plugins: [],
 
   modules: [
@@ -277,41 +287,41 @@ module.exports = {
 
   buildModules: [
 
-    // [
-    //   '@nuxtjs/pwa', {
-    //     dev: isDev,
-    //     icon: {
-    //       iconSrc: 'src/static/favicon.png',
-    //       sizes: [
-    //         16, 120, 144, 152, 192, 384, 512
-    //       ]
-    //     },
-    //     meta: {
-    //       charset: 'utf-8',
-    //       viewport: 'width=device-width, initial-scale=1',
-    //       mobileApp: true,
-    //       mobileAppIOS: true,
-    //       appleStatusBarStyle: 'default',
-    //       favicon: true,
-    //       name: 'TITLE',
-    //       author: 'metaAuthor',
-    //       description: 'metaDescription',
-    //       theme_color: 'black',
-    //       lang: 'de',
-    //       ogType: 'website',
-    //       ogSiteName: 'ogSITE_NAME',
-    //       ogTitle: 'ogTITLE',
-    //       ogDescription: 'ogDESCRIPTION',
-    //       ogHost: undefined,
-    //       ogImage: true
-    //     },
-    //     manifest: {
-    //       name: 'Sample MANIFEST',
-    //       short_name: 'Sample',
-    //       lang: 'de'
-    //     }
-    //   }
-    // ],
+    [
+      '@nuxtjs/pwa', {
+        dev: isDev,
+        icon: {
+          iconSrc: 'src/static/favicon.png',
+          sizes: [
+            16, 120, 144, 152, 192, 384, 512
+          ]
+        },
+        meta: {
+          charset: 'utf-8',
+          viewport: 'width=device-width, initial-scale=1',
+          mobileApp: true,
+          mobileAppIOS: true,
+          appleStatusBarStyle: 'default',
+          favicon: true,
+          name: 'TITLE',
+          author: 'metaAuthor',
+          description: 'metaDescription',
+          theme_color: 'black',
+          lang: 'de',
+          ogType: 'website',
+          ogSiteName: 'ogSITE_NAME',
+          ogTitle: 'ogTITLE',
+          ogDescription: 'ogDESCRIPTION',
+          ogHost: undefined,
+          ogImage: true
+        },
+        manifest: {
+          name: 'Sample MANIFEST',
+          short_name: 'Sample',
+          lang: 'de'
+        }
+      }
+    ],
     [
       '@nuxtjs/sitemap', {
         path: 'sitemap.xml',
