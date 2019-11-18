@@ -129,6 +129,9 @@ export default {
 
   mounted () {
 
+    console.log('Test normal log');
+    console.error('Test error log');
+
     this.subscriptions = [
       directionDetectionObserver.subscribe(this.onDirectionChange)
     ];
