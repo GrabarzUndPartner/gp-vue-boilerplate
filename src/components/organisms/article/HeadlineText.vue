@@ -1,53 +1,49 @@
-<i18n>
-{
-  "en": {
-    "content": {
-      "headline": "ARTICLE HEADLINE",
-      "subline": "ARTICLE SUBLINE",
-      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna."
-    }
-  }
-}
-</i18n>
-
 <template>
-  <gp-article
-    :headline="content.headline"
-    :subline="content.subline"
-    :class="{ visible: isVisible }"
-  >
-    <gp-text>
-      {{ content.text }}
-    </gp-text>
-  </gp-article>
+  <gp-layout-default-container class="gp-organism-article-headline-text">
+    <gp-molecule-article :headline="headline">
+      <gp-atom-rich-text :content="text" />
+    </gp-molecule-article>
+  </gp-layout-default-container>
 </template>
 
 <script>
-import gpArticle from '@/components/molecules/Article';
-import gpText from '@/components/atoms/Text';
+
+import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import gpMoleculeArticle from '@/components/molecules/Article';
+import gpAtomRichText from '@/components/atoms/RichText';
 
 export default {
   components: {
-    gpArticle,
-    gpText
+    gpLayoutDefaultContainer,
+    gpMoleculeArticle,
+    gpAtomRichText
   },
 
   props: {
-    content: {
+    headline: {
       type: Object,
       default () {
-        return this.$t('content', 'en');
+        return {
+          overline: 'Overline HeadlineText',
+          headline: 'Headline',
+          subline: 'Subline',
+        };
+      }
+    },
+
+    text: {
+      type: String,
+      default () {
+        return '<p>Scelerisque morbi blandit voluptate possimus vitae illum tristique, atque perspiciatis maecenas laudantium! Morbi, venenatis purus amet, rem eius ligula! Penatibus eleifend curabitur temporibus asperiores tempora cum accumsan egestas viverra laborum.</p><p>Arcu primis enim, parturient! Excepturi adipisci! Incidunt quibusdam ex. Non, impedit est. Ullam eiusmod semper pretium necessitatibus nostrum voluptatem ullamcorper, hac condimentum! Vestibulum rhoncus? Impedit culpa, error tempus. Ligula diam.</p>';
       }
     }
-  },
-
-  data () {
-    return {
-      isVisible: process.browser ? true : false
-    };
   }
 };
 </script>
 
-<style>
+<style lang="postcss">
+.gp-organism-article-headline-text {
+  /* empty */
+}
 </style>
+

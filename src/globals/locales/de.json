@@ -1,8 +1,9 @@
 {
-  "header": {
+  "header": {},
+  "menu": {
     "navigation": [
       {
-        "title": "Start",
+        "title": "Home",
         "url": "index"
       },
       {
@@ -10,12 +11,28 @@
         "url": "about"
       },
       {
-        "title": "Sub",
-        "url": "sub"
-      },
-      {
         "title": "Projekte",
-        "url": "sub-projects"
+        "url": "projects",
+        "childrens": [
+          {
+            "title": "Projekt 1",
+            "url": {
+              "name": "projects-project",
+              "params": {
+                "project": "projekt-1"
+              }
+            }
+          },
+          {
+            "title": "Projekt 2",
+            "url": {
+              "name": "projects-project",
+              "params": {
+                "project": "projekt-2"
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -30,10 +47,9 @@
         "url": "terms"
       },
       {
-        "title": "Datenschutz",
+        "title": "Rechtliche Hinweise",
         "url": "legals"
       }
     ]
-  },
-  "configxyz": "Ich bin eine Headline"
+  }
 }

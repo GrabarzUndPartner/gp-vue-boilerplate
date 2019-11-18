@@ -1,9 +1,19 @@
 
 <template>
-  <component :is="item.asyncComponent" />
+  <component :is="asyncComponent" />
 </template>
 
 <script>
+
+const context = require.context('@/assets/svg/.?vue-template', true,
+  /\.svg$/, 'lazy');
+
+const svgs = context.keys().reduce((result, key) => {
+  const name = key.replace(/^\.\//, '');
+  result[String(name)] = () => context(key);
+  return result;
+}, {});
+
 export default {
   props: {
     src: {
@@ -13,45 +23,13 @@ export default {
       }
     }
   },
-
-  data () {
-    return {
-      item: null
-    };
-  },
-
-  created () {
-    this.item = {
-      asyncComponent: () => {
-        return import(/* webpackMode: "lazy-once" */'@/assets/svg/' + this.src + '?include').then((result) => {
-          return {
-            render (create) {
-              let node = getSVGNodeFromString(result.default);
-              return create('svg', {
-                attrs: Array.from(node.attributes).reduce((result, item) => {
-                  result[item.name] = item.value;
-                  return result;
-                }, {}),
-                domProps: {
-                  innerHTML: node.innerHTML
-                }
-              });
-            }
-          };
-        });
-      }
-    };
+  computed: {
+    asyncComponent () {
+      return svgs[String(this.src)];
+    }
   }
 };
 
-function getSVGNodeFromString (html) {
-  let DOMParser = global.DOMParser;
-  if (process.server) {
-    DOMParser = require('dom-parser');
-  }
-  let dom = new DOMParser().parseFromString(html, 'image/svg+xml');
-  return dom.getElementsByTagName('svg')[0];
-}
 </script>
 
 <style lang="postcss">

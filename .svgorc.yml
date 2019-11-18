@@ -29,7 +29,7 @@ plugins:
   - cleanupListOfValues: true
   - moveElemsAttrsToGroup: true
   - moveGroupAttrsToElems: true
-  - collapseGroups: true
+  - collapseGroups: false
   - mergePaths: true
   - convertShapeToPath: true
   # WARNING DANGER DANGER

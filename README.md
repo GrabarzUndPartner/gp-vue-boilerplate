@@ -260,7 +260,9 @@ npm run storybook:prod
   - [ ] storybook
 - testing
   - [ ] cypress
-
+- [x] components
+  - [x] load components lazy (vue-lazy-hydration)
+  
 ***
 
 ## ToDo
