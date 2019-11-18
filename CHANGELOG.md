@@ -1,5 +1,45 @@
 # Project Changelog
 
+# [1.35.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.34.1...v1.35.0) (2019-11-18)
+
+
+### Bug Fixes
+
+* **babel:** add polyfills for legacy build ([2f0f347](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2f0f3471ff8b8e104c52b088f43f8657e41784b9))
+* **component:** added js--opened class (Modal.vue) ([eadb6a0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eadb6a0dc42b44b8d25c42c1e1c7b86a7b634f4d))
+* **cypress:** code test ([19f82ff](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/19f82ff993c25c7ee55a366560e9d6b345b9a846))
+* **cypress:** delayed click on language switch ([e7822fd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e7822fda107a3cd686a73f10c792f7822c0dcb2d))
+* **cypress-task:** added browser param (Chrome) ([03b499d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/03b499dd3ced77b4a83bff99db5b4ff70b75e979))
+* **cypress-test:** disable extended test ([60d4790](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/60d4790398cbd66b98335186d4ccf61c1ce3b478))
+* **cypress-test:** fix test "test" ([dadaa99](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dadaa99dbc2e0358be8155f94d603ea52405f3b2))
+* **cypress-test:** fix test "test" ([ced1d4c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ced1d4ca49554ae896ff63c0ac48091f24084ff5))
+* **dependencies:** clean dependencies and fix ([8915089](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8915089906116394d5cebd4ab54e0701a8736e28))
+* **lazy-hydrate:** optimized component loading ([ba57ae4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ba57ae4150ecd19e2e55dd1dd6e9b28314d9121a))
+* **nuxt-polyfill:** fix dep. name ([72f5277](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/72f5277f31d3072efbb80a750f12666bd0b939b6))
+* **page:** added visible class to first component ([36ed44e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/36ed44ec918370e29bf9f9493a905c6244e07453))
+* **page:** cleanup ([3adfbcf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3adfbcf191e5bdd705910322914ff02eea35843c))
+* **page:** cleanup in page/index, removed attrs ([342cb3a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/342cb3a8e8abc86451cf4cfa9689be6dcc14c32e))
+* **page:** cleanup index ([7f846ec](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7f846ecd7aef7eb7454e6e44f41ffac0c817a43a))
+* **pagespeed:** optimized font loader ([44d373d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/44d373d7cdff3c7a86744aace1899a943ed5fdab))
+* **polyfills:** embedded new polyfill source ([994a270](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/994a270a530f16b3483916208798198d9926993a))
+* **preload:** second font ([0ac6678](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0ac6678d846238d8a0e560bdf9946ee285ab9fea))
+* **pwa:** activate pwa ([5c3be95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5c3be95d1a73d24d624b70d1458f005e805d2eba))
+* **storybook:** removed lazyHydrate plugin ([4a757ef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4a757ef865da638ed82583a3b5a1cd96b8b716ec))
+* **storybook:** updated vue component import ([85f43b5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/85f43b5ef9f720ebd27ac07fbdb27b1b11f99159))
+* **vscode-config:** optimized ([5c3b15b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5c3b15b268859e1f44c73a997bdaad3fbb62f274))
+
+
+### Features
+
+* **lazy-hydrate:** dynamic component load ([0e7c0f1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0e7c0f16767e5765e3bebbf261b1a9d462950311))
+* **pagespeed:** optimized font loading ([64c9212](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/64c9212dd004be00d55a966e2884d07174178d88))
+* **temp-branch:** save tmp ([66777fe](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/66777feeb404f70d0b69db0705a794e74faa69cc))
+
+
+### Performance Improvements
+
+* **components-polyfills:** added example components ([a7e2d82](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a7e2d82408d1427ce31e8143b35902487063835b))
+
 ## [1.34.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.34.0...v1.34.1) (2019-11-16)
 
 
