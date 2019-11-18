@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "1.34.1",
+  "version": "1.35.0",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -11,6 +11,10 @@
     {
       "name": "Boris Horn",
       "email": "boris.horn@grabarzundpartner.de"
+    },
+    {
+      "name": "Thorn-Welf Walli",
+      "email": "thorn.walli@grabarzundpartner.de"
     }
   ],
   "license": "MIT",
@@ -29,15 +33,16 @@
     "lint:es": "eslint --fix --ext .js,.vue,.json --ignore-path .gitignore ./",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html",
-    "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run",
+    "cypress:open": "npx cypress open --browser chrome",
+    "cypress:run": "npx cypress run --browser chrome",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
     "storybook:prod": "build-storybook -c .storybook -o storybook",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
-    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
+    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/",
+    "baqend-deploy-pagespeed": "baqend deploy -f './dist' -b 'www' pagespeed"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.2.1",
@@ -48,9 +53,9 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "@nuxtjs/sitemap": "^2.0.0",
     "@packtracker/webpack-plugin": "^2.2.0",
-    "@storybook/addon-a11y": "^5.2.5",
-    "@storybook/addon-actions": "^5.2.5",
-    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-a11y": "^5.2.6",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.2.5",
     "@storybook/vue": "^5.2.5",
@@ -72,6 +77,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "license-webpack-plugin": "^2.1.3",
     "lint-staged": "^9.4.2",
+    "lost": "^8.3.1",
     "node-gyp": "^6.0.1",
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
@@ -87,27 +93,36 @@
     "sharp": "^0.23.2",
     "stylelint": "^11.1.1",
     "stylelint-config-css-modules": "^1.5.0",
+    "stylelint-config-lost": "0.0.3",
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^19.0.0",
     "svgo-loader": "^2.2.1",
     "terser": "^4.3.9",
+    "vue-svg-loader": "^0.12.0",
     "webpack-virtual-modules": "0.2.0"
   },
   "dependencies": {
+    "@js-basics/vector": "^1.40.5",
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/robots": "^2.4.2",
-    "default-passive-events": "^1.0.10",
-    "dom-parser": "^0.1.6",
-    "intersection-observer": "^0.7.0",
     "nuxt": "^2.10.2",
     "nuxt-i18n": "^6.3.0",
+    "nuxt-payload-extractor": "0.0.14",
     "nuxt-polyfill": "^1.0.3",
-    "object-fit-images": "^3.2.4",
-    "picturefill": "^3.0.3",
     "rxjs": "^6.5.3",
     "snyk": "^1.244.0",
+    "verge": "^1.10.2",
     "vue-lazy-hydration": "^1.0.0-beta.9"
+  },
+  "optionalDependencies": {
+    "picturefill": "^3.0.3",
+    "custom-event-polyfill": "^1.0.7",
+    "default-passive-events": "^1.0.10",
+    "domtokenlist-shim": "^1.2.0",
+    "intersection-observer": "^0.7.0",
+    "requestidlecallback": "^0.3.0",
+    "object-fit-images": "github:StephanGerbeth/object-fit-images"
   },
   "snyk": true
 }
