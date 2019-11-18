@@ -18,3 +18,15 @@ import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+
+Cypress.on('window:before:load', win => {
+  cy.stub(win.console, 'log', msg => {
+    cy.task('log', `console.log --> ${msg}`)
+  })
+  cy.stub(win.console, 'error', msg => {
+    cy.task('log', `console.error --> ${msg}`)
+  })
+})
+
