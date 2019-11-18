@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/vue';
 
-import GpSvgInline from '@/components/atoms/SvgInline.vue';
+import gpAtomSvgInline from '@/components/atoms/SvgInline.vue';
 
 storiesOf('atoms/SVG', module)
   .add('SVG Inline', () => ({
     components: {
-      GpSvgInline
+      gpAtomSvgInline
     },
-    template: '<gp-svg-inline :src="src"/>',
+    template: '<gp-atom-svg-inline :src="src"/>',
     data: () => {
       return {
         src: 'image2.svg'

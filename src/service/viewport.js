@@ -1,25 +1,26 @@
-import { fromEvent, timer } from 'rxjs';
-import { debounce, map } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+import { shareReplay, bufferCount, pluck, map, filter } from 'rxjs/operators';
+import { resizeObserver, scrollObserver } from './window';
 
-let x = 0;
-let y = 0;
-const w = global || {};
-const d = w.document || {};
-const e = d.documentElement;
-let g = null;
-if (e) {
-  g = d.getElementsByTagName('body')[0];
-}
+export const viewportObserver = combineLatest(resizeObserver, scrollObserver)
+  .pipe(
+    shareReplay({
+      refCount: true,
+      bufferSize: 1
+    })
+  );
 
-const observer = fromEvent(global, 'resize').pipe(
-  debounce(() => timer(350)),
-  map(() => {
-    x = w.innerWidth || e.clientWidth || g.clientWidth;
-    y = w.innerHeight || e.clientHeight || g.clientHeight;
-    return { x: x, y: y };
-  })
-);
-
-export function subscribeToViewport (fn) {
-  observer.subscribe(value => fn(value));
-}
+const DIRECTION_BUFFER_COUNT = 3;
+export const directionDetectionObserver =
+  viewportObserver
+    .pipe(pluck(1))
+    .pipe(pluck('direction'))
+    .pipe(bufferCount(DIRECTION_BUFFER_COUNT, 1))
+    .pipe(map((buffer) => buffer.reduce((result, direction) => result + direction.y, 0) / buffer.length))
+    .pipe(filter((direction) => !(direction % 1)))
+    .pipe(
+      shareReplay({
+        refCount: true,
+        bufferSize: 1
+      })
+    );

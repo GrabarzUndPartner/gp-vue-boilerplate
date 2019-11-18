@@ -5,7 +5,8 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-recess-order",
-    "stylelint-config-css-modules"
+    "stylelint-config-css-modules",
+    "stylelint-config-lost"
   ],
   "ignoreFiles": [
     "./**/*.js"

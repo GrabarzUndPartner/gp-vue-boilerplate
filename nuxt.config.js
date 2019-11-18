@@ -4,11 +4,30 @@ const path = require('path');
 const fs = require('fs');
 const isDev = process.env.NODE_ENV === 'development';
 
+const DEFAULT_LANG = 'de';
+
 module.exports = {
   dev: isDev,
   srcDir: 'src/',
   css: [],
   env: {},
+
+  features: {
+    store: true,
+    layouts: true,
+    meta: true,
+    middleware: true,
+    transitions: false,
+    deprecations: false,
+    validate: false,
+    asyncData: true,
+    fetch: false,
+    clientOnline: false,
+    clientPrefetch: false,
+    clientUseUrl: true,
+    componentAliases: false,
+    componentClientOnly: true
+  },
 
   server: {
     port: 8050,
@@ -27,6 +46,7 @@ module.exports = {
   },
 
   modern: 'client',
+
   build: {
     analyze: false,
     filenames: {
@@ -34,13 +54,13 @@ module.exports = {
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
     },
     babel: {
-      presets ({ isServer }) {
+      presets ({ isServer, isModern }) {
         const targets = isServer ? { node: 'current' } : { ie: 11 };
         return [
           [
             require.resolve('@nuxt/babel-preset-app'), {
               targets,
-              useBuiltIns: 'usage'
+              useBuiltIns: isModern ? 'entry' : 'usage'
             }
           ]
         ];
@@ -48,6 +68,12 @@ module.exports = {
     },
     postcss: {
       plugins: {
+        'postcss-custom-media': {
+          importFrom: [
+            'src/globals/postcss.js'
+          ]
+        },
+        'postcss-nesting': {},
         'postcss-normalize': {},
         'postcss-url': {},
         'postcss-object-fit-images': {},
@@ -67,12 +93,19 @@ module.exports = {
         'postcss-momentum-scrolling': [
           'scroll'
         ],
-        'rucksack-css': {}
+        'rucksack-css': {},
+        'lost': {
+          gutter: '15px',
+          flexbox: 'flex',
+          cycle: 'auto'
+        }
       },
       preset: {
+        preserve: false,
         stage: 0,
         features: {
-          'nesting-rules': true
+          'custom-media-queries': false,
+          'nesting-rules': false
         },
         importFrom: 'src/globals/postcss.js'
       }
@@ -83,11 +116,12 @@ module.exports = {
   },
 
   generate: {
-    dir: 'dist'
+    dir: 'dist',
+    routes: getProjectRoutes(DEFAULT_LANG)
   },
 
   render: {
-    resourceHints: false,
+    resourceHints: true,
     http2: { push: true }
   },
 
@@ -96,15 +130,23 @@ module.exports = {
     prefetchLinks: true
   },
 
-  plugins: [
-    { src: '@/plugins/intersectionObserver' },
-    { src: '@/plugins/lazyHydrate' }
-  ],
+  workbox: {
+    cachingExtensions: '@/workbox/workbox-range-request.js',
+    runtimeCaching: [
+      {
+        urlPattern: /\/.*/,
+        handler: 'networkFirst'
+      }
+    ]
+  },
+
+  plugins: [],
 
   modules: [
+    // '@/modules/virtual',
+    'nuxt-payload-extractor',
     //'@/modules/codesandbox',
     '@/modules/fix/image',
-    '@/modules/virtual',
     '@/modules/svg',
     '@/modules/image',
     '@/modules/analyzer',
@@ -142,22 +184,27 @@ module.exports = {
         locales: [
           {
             code: 'en',
-            iso: 'en-US',
-            file: 'en.json',
+            iso: 'en-US'
           },
           {
             code: 'de',
-            iso: 'de-DE',
-            file: 'de.json'
+            iso: 'de-DE'
           }
         ],
-        parsePages: true,
-        lazy: true,
-        langDir: 'globals/locales/',
-        defaultLocale: 'de',
+        // parsePages: true,
+        // lazy: true,
+        // langDir: 'globals/locales/',
+        defaultLocale: DEFAULT_LANG,
         strategy: 'prefix_except_default',
-        seo: true,
-        vueI18nLoader: true
+        seo: false,
+        vueI18nLoader: false,
+        vueI18n: {
+          fallbackLocale: DEFAULT_LANG,
+          messages: {
+            en: require('./src/globals/locales/en.json'),
+            de: require('./src/globals/locales/de.json')
+          }
+        }
       }
     ],
     [
@@ -170,19 +217,76 @@ module.exports = {
           },
           {
             require: 'picturefill',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
           },
           {
-            require: 'picturefill/dist/plugins/mutation/pf.mutation',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window,
+            require: 'picturefill/dist/plugins/mutation/pf.mutation.js',
+            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
+          },
+          {
+            require: 'custom-event-polyfill',
+            detect: () => 'CustomEvent' in window &&
+              // In Safari, typeof CustomEvent == 'object' but it otherwise works fine
+              (typeof window.CustomEvent === 'function' ||
+                (window.CustomEvent.toString().indexOf('CustomEventConstructor') > -1))
           },
           {
             require: 'intersection-observer',
-            detect: () => 'IntersectionObserver' in window,
+            detect: () => 'IntersectionObserver' in window
           },
+          {
+            require: 'domtokenlist-shim',
+            detect: () => 'DOMTokenList' in window && (function (x) {
+              return 'classList' in x ? !x.classList.toggle('x', false) && !x.className : true;
+            })(document.createElement('x'))
+          },
+          {
+            require: 'requestidlecallback',
+            detect: () => 'requestIdleCallback' in window
+          }
         ]
       }
     ],
+    [
+      '@/modules/licence', {
+        perChunkOutput: false,
+        unacceptableLicenseTest: (licenseType) => (licenseType === 'GPL'),
+        handleMissingLicenseText: (packageName) => {
+          return 'NO LICENSE TEXT: ' + packageName;
+        },
+        licenseTextOverrides: {
+          'regenerator-runtime': `MIT License
+
+            Copyright (c) 2014-present, Facebook, Inc.
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.`,
+          'consola': 'MIT License',
+          'intersection-observer': 'W3C Software and Document License',
+          'requestidlecallback': 'MIT License',
+          'vue-browserupdate': 'MIT License'
+        }
+      }
+    ]
+  ],
+
+  buildModules: [
+
     [
       '@nuxtjs/pwa', {
         dev: isDev,
@@ -241,44 +345,11 @@ module.exports = {
         Sitemap: 'https://localhost:8050/sitemap.xml'
       }
     ],
-    [
-      '@/modules/licence', {
-        perChunkOutput: false,
-        unacceptableLicenseTest: (licenseType) => (licenseType === 'GPL'),
-        handleMissingLicenseText: (packageName) => {
-          return 'NO LICENSE TEXT: ' + packageName;
-        },
-        licenseTextOverrides: {
-          'regenerator-runtime': `MIT License
-
-            Copyright (c) 2014-present, Facebook, Inc.
-
-            Permission is hereby granted, free of charge, to any person obtaining a copy
-            of this software and associated documentation files (the "Software"), to deal
-            in the Software without restriction, including without limitation the rights
-            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-            copies of the Software, and to permit persons to whom the Software is
-            furnished to do so, subject to the following conditions:
-
-            The above copyright notice and this permission notice shall be included in all
-            copies or substantial portions of the Software.
-
-            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-            SOFTWARE.`,
-          'consola': 'MIT License',
-          'intersection-observer': 'W3C Software and Document License'
-        }
-      }
-    ]
   ],
 
   head: {
     meta: [
+      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ]
   }
@@ -287,3 +358,31 @@ module.exports = {
 function getBasePath () {
   return process.env.npm_config_base || '/';
 }
+
+function getProjectRoutes (defaultLang) {
+  const projectsByLocale =
+    [
+      {
+        locale: 'de',
+        path: '/projekte',
+        items: [
+          'projekt-1', 'projekt-2'
+        ]
+      },
+      {
+        locale: 'en',
+        path: '/projects',
+        items: [
+          'project-1', 'project-2'
+        ]
+      }
+    ];
+  return () => projectsByLocale.reduce((result, projects) => {
+    return projects.items.reduce((result, item) => {
+      const localePath = projects.locale !== defaultLang ? `/${projects.locale}` : '';
+      result.push(localePath + projects.path + '/' + item);
+      return result;
+    }, result);
+  }, []);
+}
+

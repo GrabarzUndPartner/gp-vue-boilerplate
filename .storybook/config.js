@@ -1,5 +1,5 @@
 import { configure } from '@storybook/vue';
-import '@/plugins/lazyHydrate';
+//import '@/plugins/lazyHydrate';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /\.stories\.js$/);

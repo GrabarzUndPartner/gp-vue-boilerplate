@@ -31,12 +31,12 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'src': 'retina/sample-a/1152x600.jpg' },
-          { 'media': 'xs', 'src': 'retina/sample-a/1536x600.jpg' },
-          { 'media': 'sm', 'src': 'retina/sample-a/1984x600.jpg' },
-          { 'media': 'md', 'src': 'retina/sample-a/2400x600.jpg' },
-          { 'media': 'lg', 'src': 'retina/sample-a/3200x600.jpg' },
-          { 'media': 'xl', 'src': 'retina/sample-a/3840x600.jpg' }
+          { 'media': 'default', 'src': 'img/sample-a-16-9/retina/1152x648.jpg' },
+          { 'media': 'xs', 'src': 'img/sample-a-16-9/retina/1536x864.jpg' },
+          { 'media': 'sm', 'src': 'img/sample-a-16-9/retina/1984x1116.jpg' },
+          { 'media': 'md', 'src': 'img/sample-a-16-9/retina/2400x1350.jpg' },
+          { 'media': 'lg', 'src': 'img/sample-a-16-9/retina/3200x1800.jpg' },
+          { 'media': 'xl', 'src': 'img/sample-a-16-9/retina/3840x2160.jpg' }
         ];
       }
     },
@@ -60,7 +60,7 @@ export default {
 
   methods: {
     onLoad () {
-      if (global.objectFitImages) {
+      if ('objectFitImages' in global) {
         global.objectFitImages(this.$el.querySelector('img'));
       }
     }
