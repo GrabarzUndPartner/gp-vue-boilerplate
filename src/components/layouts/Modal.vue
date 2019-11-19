@@ -4,6 +4,7 @@
       v-show="opened"
       class="gp-layout-modal"
       :class="styleClasses"
+      v-bind="options"
     >
       <template v-slot:container>
         <div class="lost-flex-container">

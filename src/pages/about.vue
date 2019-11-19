@@ -1,9 +1,9 @@
 <script>
-import LocalFileContent from '@/extends/LocalFileContent';
+import ModuleLocales from '@/extends/ModuleLocales';
 
 export default {
   name: 'About',
-  extends: LocalFileContent,
+  extends: ModuleLocales,
   nuxtI18n: {
     paths: {
       en: '/about',

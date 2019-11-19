@@ -143,8 +143,7 @@ module.exports = {
   plugins: [],
 
   modules: [
-    // '@/modules/virtual',
-    'nuxt-payload-extractor',
+    '@/modules/virtual',
     //'@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/svg',

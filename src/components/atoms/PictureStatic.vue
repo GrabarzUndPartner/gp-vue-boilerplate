@@ -58,7 +58,7 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'srcset': 'img/sample-a-16-9/576x324.jpg' },
+          { 'media': 'default', 'srcset': 'img/sample-a-16-9/412x232.jpg' },
           { 'media': 'xs', 'srcset': 'img/sample-a-16-9/768x432.jpg' },
           { 'media': 'sm', 'srcset': 'img/sample-a-16-9/992x558.jpg' },
           { 'media': 'md', 'srcset': 'img/sample-a-16-9/1200x675.jpg' },
@@ -99,7 +99,7 @@ export default {
 
   computed: {
     sorted () {
-      let list = this.sources;
+      let list = [].concat(this.sources);
       return sortBy(list, Array.from(breakpoint.keys())).reverse();
     },
     items () {
@@ -109,7 +109,7 @@ export default {
         if (this.sourceClientOnly && !process.client) {
           source.srcset = '';
         } else {
-          source.type = mimeTypes[getMimeType(source.srcset)];
+          source.type = mimeTypes[getMimeType(source.srcset.replace(/.*\.(\w{3,4}).*$/, '$1'))];
         }
         source.media = breakpoint.get(source.media);
         return source;
