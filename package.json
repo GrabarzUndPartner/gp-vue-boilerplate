@@ -98,7 +98,7 @@
     "stylelint-config-standard": "^19.0.0",
     "svgo-loader": "^2.2.1",
     "terser": "^4.3.9",
-    "vue-svg-loader": "^0.12.0",
+    "vue-svg-loader": "^0.14.0",
     "webpack-virtual-modules": "0.2.0"
   },
   "dependencies": {
