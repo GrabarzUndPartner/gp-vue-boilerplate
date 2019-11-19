@@ -103,7 +103,7 @@ function getPages () {
 }
 
 function getPageMeta (filePath) {
-  var matches = filePath.match(/^\/(\w{2})\/(.*)/);
+  var matches = filePath.match(/^[\\/\\](\w{2})[\\/\\](.*)/);
   const locale = matches[1], path = matches[2];
   return { locale, path };
 }
