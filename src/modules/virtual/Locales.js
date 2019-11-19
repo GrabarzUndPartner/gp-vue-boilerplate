@@ -3,7 +3,7 @@ const VirtualModule = require('webpack-virtual-modules');
 const glob = require('glob');
 const nodeify = require('nodeify');
 var chokidar = require('chokidar');
-var path = require('path');
+var path = require('upath');
 
 const fs = require('fs');
 
@@ -96,15 +96,14 @@ function getPages () {
   return new Promise(resolve => {
     glob(path.resolve(LOCALES_PATH + '/**/*.json'), (e, files) => {
       const rootPath = path.resolve(process.cwd(), LOCALES_PATH, '');
-      files = files.map(file => getPageContent(file.replace(rootPath, '')));
+      files = files.map(file => getPageContent(path.normalize(file).replace(rootPath, '')));
       return resolve(Promise.all(files));
     });
   });
 }
 
 function getPageMeta (filePath) {
-  console.log(filePath);
-  var matches = filePath.match(/^[\\/\\](\w{2})[\\/\\](.*)/);
+  var matches = filePath.match(/^\/(\w{2})\/(.*)/);
   const locale = matches[1], path = matches[2];
   return { locale, path };
 }
