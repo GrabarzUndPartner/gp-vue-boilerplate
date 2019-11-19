@@ -4,6 +4,7 @@
       v-if="!toggleDirection"
       class="gp-page-menu-button"
       :class="{'js--selected': isMenuOpened}"
+      :aria-label="label"
       @click="onClickMenu"
     >
       <i>
@@ -17,6 +18,12 @@
 import gpAtomSvgInline from '@/components/atoms/SvgInline';
 export default {
   components: { gpAtomSvgInline },
+  props: {
+    label: {
+      type: String,
+      default () { return 'Menu Open/Close'; }
+    }
+  },
   computed: {
     isMenuOpened () {
       return this.$store.getters['modal/isModelOpened']('menu');

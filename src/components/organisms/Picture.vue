@@ -1,7 +1,7 @@
 <template>
   <gp-layout-default-container
     class="gp-organism-picture"
-    :options="options"
+    v-bind="options"
   >
     <template v-slot:container>
       <gp-atom-picture v-bind="picture" />
@@ -34,7 +34,7 @@ export default {
       default () {
         return {
           sources: [
-            { 'media': 'default', 'srcset': 'img/sample-a-16-9/576x324.jpg' },
+            { 'media': 'default', 'srcset': 'img/sample-a-16-9/412x232.jpg' },
             { 'media': 'xs', 'srcset': 'img/sample-a-16-9/768x432.jpg' },
             { 'media': 'sm', 'srcset': 'img/sample-a-16-9/992x558.jpg' },
             { 'media': 'md', 'srcset': 'img/sample-a-16-9/1200x675.jpg' },
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-stage-image {
+.gp-organism-picture {
   position: relative;
   width: 100%;
 

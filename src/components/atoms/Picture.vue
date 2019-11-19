@@ -31,7 +31,7 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'src': 'img/sample-a-16-9/retina/1152x648.jpg' },
+          { 'media': 'default', 'src': 'img/sample-a-16-9/retina/824x464.jpg' },
           { 'media': 'xs', 'src': 'img/sample-a-16-9/retina/1536x864.jpg' },
           { 'media': 'sm', 'src': 'img/sample-a-16-9/retina/1984x1116.jpg' },
           { 'media': 'md', 'src': 'img/sample-a-16-9/retina/2400x1350.jpg' },

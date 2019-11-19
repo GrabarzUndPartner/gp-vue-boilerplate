@@ -21,7 +21,7 @@
           "sources": [
             {
               "media": "default",
-              "srcset": "img/sample-b-16-9/576x324.jpg 1x, img/sample-b-16-9/retina/1152x648.jpg 2x"
+              "srcset": "img/sample-b-16-9/412x232.jpg 1x, img/sample-b-16-9/retina/824x464.jpg 2x"
             },
             {
               "media": "xs",

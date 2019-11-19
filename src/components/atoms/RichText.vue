@@ -14,7 +14,7 @@ export default {
     content: {
       type: String,
       required: false,
-      default: '<p>Reiciendis mollis omnis aut aptent, bibendum, est litora totam tortor.</p><p>Omnis egestas! Doloribus eu aliqua laudantium congue laudantium! Praesent eligendi.</p>'
+      default: '<p>Example Text</p>'
     }
   }
 };
