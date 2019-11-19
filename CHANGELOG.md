@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [1.35.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.0...v1.35.1) (2019-11-18)
+
+
+### Bug Fixes
+
+* **synk:** fix hotfix/snyk-upgrade-7655eb2a6b409f22d1a8fdb4e2edddc3 ([fd9b893](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fd9b893513bf8f7eaff49079f1fefa13b166f86d))
+
 # [1.35.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.34.1...v1.35.0) (2019-11-18)
 
 
