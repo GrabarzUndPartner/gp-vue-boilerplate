@@ -6,15 +6,16 @@ createTestInAllResolutions((res) => {
     it('menu button', function () {
       cy.visit('/');
       cy.get('.gp-page-menu-button').first().click();
+      cy.wait(5000);
     });
 
-    // it('language switch', function () {
-    //   cy.visit('/');
-    //   cy.get('.gp-page-menu-button').first().click();
-    //   cy.get('.gp-layout-modal').should('have.class', 'js--opened').then(() => {
-    //     cy.get('.language-switch').first().click();
-    //   });
-    // });
+    it('language switch', function () {
+      cy.visit('/');
+      cy.get('.gp-page-menu-button').first().click();
+      cy.get('.gp-layout-modal').should('have.class', 'js--opened').then(() => {
+        cy.get('.language-switch').first().click();
+      });
+    });
 
   });
 });
