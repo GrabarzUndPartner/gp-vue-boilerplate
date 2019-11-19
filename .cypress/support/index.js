@@ -24,7 +24,7 @@ Cypress.on('window:before:load', function (window) {
 
   window.EventTarget.prototype.addEventListener = function () {
     if (arguments && arguments[0] === 'beforeunload') {
-      return
+      return null;
     }
     return original.apply(this, arguments)
   }
