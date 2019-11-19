@@ -48,11 +48,6 @@ export default {
 <style lang="postcss">
 .gp-layouts-default-container {
   margin: 40px 0;
-  visibility: hidden;
-
-  &.js--visible {
-    visibility: visible;
-  }
 
   &:first-child {
     margin-top: 0;

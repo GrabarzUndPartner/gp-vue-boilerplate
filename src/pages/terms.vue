@@ -1,8 +1,8 @@
 <script>
-import LocalFileContent from '@/extends/LocalFileContent';
+import ModuleLocales from '@/extends/ModuleLocales';
 
 export default {
-  extends: LocalFileContent,
+  extends: ModuleLocales,
 
   nuxtI18n: {
     paths: {

@@ -30,17 +30,7 @@ export default {
     };
   },
 
-  asyncData ({ store, $axios, app, $payloadURL, route, error }) {
-    if (process.static && process.client) {
-      return $axios.$get($payloadURL(route)).then(data => {
-        if (data) {
-          return data;
-        } else {
-          error({ statusCode: 404, message: 'page not found' });
-          return;
-        }
-      });
-    }
+  asyncData ({ store, app, route, error }) {
 
     const path = (route.fullPath + '/')
       // remove lang prefix
@@ -48,7 +38,7 @@ export default {
       .replace(/^\w{2}\//, '')
       .replace(/\/$/, '') || 'index';
 
-    return import(`@/locales/${app.i18n.locale}/${path}.json`).then(data => {
+    return import(/* webpackMode: "lazy" */`@/locales/${app.i18n.locale}/${path}.json`).then(data => {
       if ('routeParams' in data) {
         // set other locale slugs for languageSwitch
         store.dispatch('i18n/setRouteParams', data.routeParams);

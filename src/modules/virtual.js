@@ -1,7 +1,7 @@
-const VirtualLang = require('./virtual/Language');
+const VirtualLocales = require('./virtual/Locales');
 
 module.exports = function () {
   this.extendBuild(config => {
-    config.plugins.push(new VirtualLang());
+    config.plugins.push(new VirtualLocales());
   });
 };

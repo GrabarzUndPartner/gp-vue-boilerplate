@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-stage-image {
+.gp-organism-picture {
   position: relative;
   width: 100%;
 

@@ -9,7 +9,10 @@
       v-bind="pageMenu"
       opened
     />
-    <gp-page-menu-button @click.native="onClickMenuButton" />
+    <gp-page-menu-button
+      v-bind="pageMenuButton"
+      @click.native="onClickMenuButton"
+    />
     <main>
       <nuxt />
     </main>
@@ -22,21 +25,19 @@
 const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
 
 import { loadFonts } from '@/utils/fonts';
-
-import gpPageHeader from '@/components/page/Header';
-import gpPageMenuButton from '@/components/page/MenuButton';
 import { directionDetectionObserver } from '@/service/viewport';
 
 import {
   hydrateWhenVisible,
-  hydrateOnInteraction
+  hydrateOnInteraction,
+  hydrateWhenIdle
 } from 'vue-lazy-hydration';
 
 export default {
 
   components: {
-    gpPageHeader,
-    gpPageMenuButton,
+    gpPageHeader: hydrateWhenIdle(() => import('@/components/page/Header')),
+    gpPageMenuButton: hydrateWhenIdle(() => import('@/components/page/MenuButton')),
     gpPageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
     }),
@@ -111,6 +112,9 @@ export default {
     },
     pageMenu () {
       return this.$t('menu');
+    },
+    pageMenuButton () {
+      return this.$t('menuButton');
     },
     pageFooter () {
       return this.$t('footer');
