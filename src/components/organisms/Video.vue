@@ -1,7 +1,7 @@
 <template>
   <gp-layout-default-container
     class="gp-organism-video"
-    :options="options"
+    v-bind="options"
   >
     <template slot="container">
       <gp-atom-video v-bind="video" />

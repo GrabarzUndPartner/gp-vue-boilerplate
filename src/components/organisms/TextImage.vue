@@ -52,7 +52,7 @@ export default {
       default () {
         return {
           sources: [
-            { 'media': 'default', 'srcset': 'img/sample-b-16-9/576x324.jpg 1x, img/sample-b-16-9/retina/1152x648.jpg 2x' },
+            { 'media': 'default', 'srcset': 'img/sample-b-16-9/412x232.jpg 1x, img/sample-b-16-9/retina/824x464.jpg 2x' },
             { 'media': 'xs', 'srcset': 'img/sample-b-16-9/768x432.jpg 1x, img/sample-b-16-9/retina/1536x864.jpg 2x' },
             { 'media': 'sm', 'srcset': 'img/sample-b-16-9/992x558.jpg 1x, img/sample-b-16-9/retina/1984x1116.jpg 2x' },
             { 'media': 'md', 'srcset': 'img/sample-b-16-9/1200x675.jpg 1x, img/sample-b-16-9/retina/2400x1350.jpg 2x' },

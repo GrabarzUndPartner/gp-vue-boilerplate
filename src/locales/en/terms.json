@@ -1,5 +1,5 @@
 {
-  "title": "Nutzungsbedingungen",
+  "title": "Terms",
   "components": [
     {
       "component": "StagePicture",
@@ -9,27 +9,51 @@
           "sources": [
             {
               "media": "default",
-              "srcset": "img/sample-a-16-9/retina/1152x648.jpg"
+              "srcset": "img/sample-a-16-9/412x232.jpg 1x, img/sample-a-16-9/retina/824x464.jpg 2x"
+            },
+            {
+              "media": "default",
+              "srcset": "img/sample-a-16-9/412x232.webp 1x, img/sample-a-16-9/retina/824x464.webp 2x"
             },
             {
               "media": "xs",
-              "srcset": "img/sample-a-16-9/retina/1536x864.jpg"
+              "srcset": "img/sample-a-16-9/768x432.jpg 1x, img/sample-a-16-9/retina/1536x864.jpg 2x"
+            },
+            {
+              "media": "xs",
+              "srcset": "img/sample-a-16-9/768x432.webp 1x, img/sample-a-16-9/retina/1536x864.webp 2x"
             },
             {
               "media": "sm",
-              "srcset": "img/sample-a-16-9/retina/1984x1116.jpg"
+              "srcset": "img/sample-a-16-9/992x558.jpg 1x, img/sample-a-16-9/retina/1984x1116.jpg 2x"
+            },
+            {
+              "media": "sm",
+              "srcset": "img/sample-a-16-9/992x558.webp 1x, img/sample-a-16-9/retina/1984x1116.webp 2x"
             },
             {
               "media": "md",
-              "srcset": "img/sample-a-16-9/retina/2400x1350.jpg"
+              "srcset": "img/sample-a-16-9/1200x675.jpg 1x, img/sample-a-16-9/retina/2400x1350.jpg 2x"
+            },
+            {
+              "media": "md",
+              "srcset": "img/sample-a-16-9/1200x675.webp 1x, img/sample-a-16-9/retina/2400x1350.webp 2x"
             },
             {
               "media": "lg",
-              "srcset": "img/sample-a-16-9/retina/3200x1800.jpg"
+              "srcset": "img/sample-a-16-9/1600x900.jpg 1x, img/sample-a-16-9/retina/3200x1800.jpg 2x"
+            },
+            {
+              "media": "lg",
+              "srcset": "img/sample-a-16-9/1600x900.webp 1x, img/sample-a-16-9/retina/3200x1800.webp 2x"
             },
             {
               "media": "xl",
-              "srcset": "img/sample-a-16-9/retina/3840x2160.jpg"
+              "srcset": "img/sample-a-16-9/1920x1080.jpg 1x, img/sample-a-16-9/retina/3840x2160.jpg 2x"
+            },
+            {
+              "media": "xl",
+              "srcset": "img/sample-a-16-9/1920x1080.webp 1x, img/sample-a-16-9/retina/3840x2160.webp 2x"
             }
           ]
         }
@@ -75,27 +99,51 @@
           "sources": [
             {
               "media": "default",
-              "srcset": "img/sample-b-16-9/576x324.jpg"
+              "srcset": "img/sample-b-16-9/412x232.jpg 1x, img/sample-b-16-9/retina/824x464.jpg 2x"
+            },
+            {
+              "media": "default",
+              "srcset": "img/sample-b-16-9/412x232.webp 1x, img/sample-b-16-9/retina/824x464.webp 2x"
             },
             {
               "media": "xs",
-              "srcset": "img/sample-b-16-9/768x432.jpg"
+              "srcset": "img/sample-b-16-9/768x432.jpg 1x, img/sample-b-16-9/retina/1536x864.jpg 2x"
+            },
+            {
+              "media": "xs",
+              "srcset": "img/sample-b-16-9/768x432.webp 1x, img/sample-b-16-9/retina/1536x864.webp 2x"
             },
             {
               "media": "sm",
-              "srcset": "img/sample-b-16-9/992x558.jpg"
+              "srcset": "img/sample-b-16-9/992x558.jpg 1x, img/sample-b-16-9/retina/1984x1116.jpg 2x"
+            },
+            {
+              "media": "sm",
+              "srcset": "img/sample-b-16-9/992x558.webp 1x, img/sample-b-16-9/retina/1984x1116.webp 2x"
             },
             {
               "media": "md",
-              "srcset": "img/sample-b-16-9/1200x675.jpg"
+              "srcset": "img/sample-b-16-9/1200x675.jpg 1x, img/sample-b-16-9/retina/2400x1350.jpg 2x"
+            },
+            {
+              "media": "md",
+              "srcset": "img/sample-b-16-9/1200x675.webp 1x, img/sample-b-16-9/retina/2400x1350.webp 2x"
             },
             {
               "media": "lg",
-              "srcset": "img/sample-b-16-9/1200x675.jpg"
+              "srcset": "img/sample-b-16-9/1600x900.jpg 1x, img/sample-b-16-9/retina/3200x1800.jpg 2x"
+            },
+            {
+              "media": "lg",
+              "srcset": "img/sample-b-16-9/1600x900.webp 1x, img/sample-b-16-9/retina/3200x1800.webp 2x"
             },
             {
               "media": "xl",
-              "srcset": "img/sample-b-16-9/1920x1080.jpg"
+              "srcset": "img/sample-b-16-9/1920x1080.jpg 1x, img/sample-b-16-9/retina/3840x2160.jpg 2x"
+            },
+            {
+              "media": "xl",
+              "srcset": "img/sample-b-16-9/1920x1080.webp 1x, img/sample-b-16-9/retina/3840x2160.webp 2x"
             }
           ]
         }
