@@ -19,16 +19,30 @@ import './commands';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+Cypress.on('window:before:load', function (window) {
+  const original = window.EventTarget.prototype.addEventListener
 
+  window.EventTarget.prototype.addEventListener = function () {
+    if (arguments && arguments[0] === 'beforeunload') {
+      return
+    }
+    return original.apply(this, arguments)
+  }
 
-Cypress.on('window:before:load', win => {
-  cy.stub(win.console, 'log', msg => {
-    cy.task('log', `console.log --> ${msg}`)
-  })
-  cy.stub(win.console, 'error', msg => {
-    msg.then(function (msg) {
-      cy.task('log', `console.error --> ${msg}`)
-    })
+  Object.defineProperty(window, 'onbeforeunload', {
+    get: function () { },
+    set: function () { }
   })
 })
+
+// Cypress.on('window:before:load', win => {
+//   cy.stub(win.console, 'log', msg => {
+//     cy.task('log', `console.log --> ${msg}`)
+//   })
+//   cy.stub(win.console, 'error', msg => {
+//     msg.then(function (msg) {
+//       cy.task('log', `console.error --> ${msg}`)
+//     })
+//   })
+// })
 
