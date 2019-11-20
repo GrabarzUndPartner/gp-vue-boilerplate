@@ -1,5 +1,17 @@
 # Project Changelog
 
+# [2.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.36.0...v2.0.0) (2019-11-20)
+
+
+### Performance Improvements
+
+* **snyk-upgrade:** fix snyk-upgrade ([1b7463c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1b7463c4d3ab31b034560eb5c8df086917aa1a11))
+
+
+### BREAKING CHANGES
+
+* **snyk-upgrade:** fix snyk-upgrade
+
 # [1.36.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.1...v1.36.0) (2019-11-19)
 
 
