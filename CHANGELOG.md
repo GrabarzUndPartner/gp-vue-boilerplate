@@ -1,5 +1,25 @@
 # Project Changelog
 
+# [1.36.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.1...v1.36.0) (2019-11-19)
+
+
+### Bug Fixes
+
+* **locales:** added upath for filepath normalize ([733ec3d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/733ec3d2b93515a228f9550d9ad209d59498a72c))
+* **locales:** fix regex for windows ([5b1c21a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5b1c21a020b58066a2818b04015eeed96828589e))
+* **optimize:** fix images ([0b32abd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0b32abdd8e70a247d6cd532522e41d3c7a5c3ca2))
+* **test-windows:** get filePath ([dfdad2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dfdad2be785ea805007e65c57fd9025db442cfd2))
+
+
+### Features
+
+* **optimize:** added page content load via require (virtualModule) ([bd18725](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bd18725a31e10edb332e8e1d092eb4e66166ee8a))
+
+
+### Performance Improvements
+
+* **optimize:** fix components visible ([eaf0397](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eaf0397ac0f659a889905285333ddf04a350c613))
+
 ## [1.35.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.0...v1.35.1) (2019-11-18)
 
 
