@@ -28,7 +28,6 @@ class Pattern {
     this.dimension = dimension;
     this.matrix = new jsfeat.matrix_t(dimension.width, dimension.height, jsfeat.U8_t | jsfeat.C1_t);
     this.descriptor = prepareResults(this.matrix, this.corners);
-    console.log('this.corners', this.corners);
   }
 
   detect (imageData, pattern_descriptors) {
@@ -55,7 +54,6 @@ fromEvent(self, 'message').subscribe((e) => {
     pattern = new Pattern(imageData);
     patterns.set(patternKey, pattern);
     console.log('new pattern made', patternKey);
-    pattern.setup(imageData);
   }
 
   let result = pattern.detect(imageData, pattern_descriptors);
