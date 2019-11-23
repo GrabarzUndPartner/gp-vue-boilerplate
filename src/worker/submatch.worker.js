@@ -1,5 +1,16 @@
 import jsfeat from 'jsfeat';
 import { fromEvent } from 'rxjs';
+// import bigInt from 'big-integer';
+
+// const arr = new Array(8);
+// function getLen (u32, idx) {
+//   let k = 0;
+//   for (k = 0; k < 8; ++k) {
+//     arr[k] = popcnt32(u32[(idx * 8) + k]);
+//   }
+//   console.log('biggy?', arr.join(''));
+//   return bigInt(arr.join(''));
+// }
 
 const blur = 5;
 const maxCorners = 300;
@@ -17,6 +28,7 @@ class Pattern {
     this.dimension = dimension;
     this.matrix = new jsfeat.matrix_t(dimension.width, dimension.height, jsfeat.U8_t | jsfeat.C1_t);
     this.descriptor = prepareResults(this.matrix, this.corners);
+    console.log('this.corners', this.corners);
   }
 
   detect (imageData, pattern_descriptors) {
@@ -43,8 +55,8 @@ fromEvent(self, 'message').subscribe((e) => {
     pattern = new Pattern(imageData);
     patterns.set(patternKey, pattern);
     console.log('new pattern made', patternKey);
+    pattern.setup(imageData);
   }
-  pattern.setup(imageData);
 
   let result = pattern.detect(imageData, pattern_descriptors);
 
@@ -61,20 +73,19 @@ function prepareResults (imgMatrix, corners) {
 }
 
 function getDistance (query_u32, qidx, ld_i32, pidx) {
-  var k = 0;
+  let k = 0;
 
-  var curr_d = 0;
+  let curr_d = 0;
   // our descriptor is 32 bytes so we have 8 Integers
   for (k = 0; k < 8; ++k) {
     curr_d += popcnt32(query_u32[(qidx * 8) + k] ^ ld_i32[(pidx * 8) + k]);
   }
   return curr_d;
-
 }
 
 function matchCorners (screen_descriptors, pattern_descriptors, corners, threshold = null) {
-  var q_cnt = screen_descriptors.rows;
-  var query_u32 = screen_descriptors.buffer.i32;
+  let q_cnt = screen_descriptors.rows;
+  let query_u32 = screen_descriptors.buffer.i32;
 
   const result = [];
   for (let qidx = 0; qidx < q_cnt; ++qidx) {
@@ -90,18 +101,18 @@ function matchCorners (screen_descriptors, pattern_descriptors, corners, thresho
 }
 
 function matchCorner (query_u32, pattern_descriptors, threshold = null, qidx) {
-  var lev = 0, pidx = 0;
-  var best_dist = 256;
-  var best_dist2 = 256;
-  var best_idx = -1;
-  var best_lev = -1;
+  let lev = 0, pidx = 0;
+  let best_dist = 256;
+  let best_dist2 = 256;
+  let best_idx = -1;
+  let best_lev = -1;
   for (lev = 0; lev < pattern_descriptors.length; ++lev) {
-    var lev_descr = pattern_descriptors[Number(lev)];
-    var ld_cnt = lev_descr.rows;
-    var ld_i32 = lev_descr.buffer.i32; // cast to integer buffer
+    let lev_descr = pattern_descriptors[Number(lev)];
+    let ld_cnt = lev_descr.rows;
+    let ld_i32 = lev_descr.buffer.i32; // cast to integer buffer
 
     for (pidx = 0; pidx < ld_cnt; ++pidx) {
-      var curr_d = getDistance(query_u32, qidx, ld_i32, pidx);
+      let curr_d = getDistance(query_u32, qidx, ld_i32, pidx);
 
       if (curr_d < best_dist) {
         best_dist2 = best_dist;
