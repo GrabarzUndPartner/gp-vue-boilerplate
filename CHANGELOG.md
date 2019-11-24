@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.0.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.0...v2.0.1) (2019-11-24)
+
+
+### Bug Fixes
+
+* **locales:** fix module compile ([f689bef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f689befe9387452411d280d6fa7585c5a832ca6d))
+
 # [2.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.36.0...v2.0.0) (2019-11-20)
 
 
