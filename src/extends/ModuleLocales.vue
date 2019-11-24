@@ -38,7 +38,7 @@ export default {
       .replace(/^\w{2}\//, '')
       .replace(/\/$/, '') || 'index';
 
-    return import(/* webpackMode: "lazy" */`@/locales/${app.i18n.locale}/${path}.json`).then(data => {
+    return import(/* webpackMode: "lazy" */`@/virtual-locales/${app.i18n.locale}/${path}.json`).then(data => {
       if ('routeParams' in data) {
         // set other locale slugs for languageSwitch
         store.dispatch('i18n/setRouteParams', data.routeParams);
