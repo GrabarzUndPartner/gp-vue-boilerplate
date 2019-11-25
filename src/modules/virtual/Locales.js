@@ -20,7 +20,7 @@ module.exports = class VirtualPageContent extends VirtualModule {
     if (process.env.NODE_ENV !== 'production') {
       const onChange = filePath => {
         getPageContent(filePath.replace(LOCALES_PATH, ''))
-          .then(page => writePageModule(page))
+          .then(page => writePageModule(this, page))
           .catch(e => { throw e; });
       };
       chokidar
@@ -37,7 +37,7 @@ module.exports = class VirtualPageContent extends VirtualModule {
         .on('unlink', filePath => {
           const page = getPageMeta(filePath.replace(LOCALES_PATH, ''));
           page.content = null;
-          writePageModule(page);
+          writePageModule(this, page);
         });
     }
 
@@ -52,15 +52,11 @@ function onBeforeCompile (params, callback) {
   }
 }
 
-let isCompiled = false;
 function onCompilation (compilation, params) {
-  if (!isCompiled) {
-    isCompiled = true;
-    const pages = getPagesFromParams(params);
-    pages.forEach(page => {
-      writePageModule(this, page);
-    });
-  }
+  const pages = getPagesFromParams(params);
+  pages.forEach(page => {
+    writePageModule(this, page);
+  });
 }
 
 function writePageModule (virtualContent, page) {
@@ -80,7 +76,7 @@ function setPagesFromParams (params, pages) {
   return pages;
 }
 
-const MODULE_PATH = 'src/locales';
+const MODULE_PATH = 'src/virtual-locales';
 
 function getVirtualFilePath (page) {
   return path.join(MODULE_PATH, page.locale, page.path);
