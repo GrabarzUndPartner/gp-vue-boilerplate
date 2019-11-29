@@ -1,5 +1,13 @@
 # Project Changelog
 
+## [2.0.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.1...v2.0.2) (2019-11-29)
+
+
+### Bug Fixes
+
+* **package-lock:** fix package-lock.json ([14c3a2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/14c3a2b17fd84dd57abfd0a6042b3d1f18aafc64))
+* upgrade vue-svg-loader from 0.14.0 to 0.15.0 ([443e79e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/443e79ef1e199acbff74fc88274914ff1b767bca))
+
 ## [2.0.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.0...v2.0.1) (2019-11-24)
 
 
