@@ -8,16 +8,17 @@
       @click="onClickMenu"
     >
       <i>
-        <gp-atom-svg-inline src="icons/menu-close.svg" />
+        <svg-icon-menu-close />
       </i>
     </button>
   </transition>
 </template>
 
 <script>
-import gpAtomSvgInline from '@/components/atoms/SvgInline';
+import svgIconMenuClose from '@/assets/svg/icons/menu-close.svg?vue-template';
+
 export default {
-  components: { gpAtomSvgInline },
+  components: { svgIconMenuClose },
   props: {
     label: {
       type: String,

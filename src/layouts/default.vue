@@ -22,8 +22,6 @@
 
 <script>
 
-const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
-
 import { loadFonts } from '@/utils/fonts';
 import { directionDetectionObserver } from '@/service/viewport';
 
@@ -33,16 +31,18 @@ import {
   hydrateWhenIdle
 } from 'vue-lazy-hydration';
 
+const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
+
 export default {
 
   components: {
-    gpPageHeader: hydrateWhenIdle(() => import('@/components/page/Header')),
-    gpPageMenuButton: hydrateWhenIdle(() => import('@/components/page/MenuButton')),
-    gpPageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
+    gpPageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    gpPageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
+    gpPageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
       event: 'hydrate'
     }),
     gpPageFooter: hydrateWhenVisible(
-      () => import('@/components/page/Footer'),
+      () => import(/* webpackMode: "lazy" */'@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
     )
   },
