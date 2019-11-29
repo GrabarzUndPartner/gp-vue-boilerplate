@@ -1,5 +1,28 @@
 # Project Changelog
 
+## [2.0.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.2...v2.0.3) (2019-11-29)
+
+
+### Bug Fixes
+
+* **package-lock:** fix package-lock.json ([6217409](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/62174096cda4de54019fabb401a3a1424b694678))
+* upgrade snyk from 1.249.1 to 1.250.0 ([cecebb7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cecebb74e577207116d0e2b592d1ef6275f1d6e5))
+
+## [2.0.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.1...v2.0.2) (2019-11-29)
+
+
+### Bug Fixes
+
+* **package-lock:** fix package-lock.json ([14c3a2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/14c3a2b17fd84dd57abfd0a6042b3d1f18aafc64))
+* upgrade vue-svg-loader from 0.14.0 to 0.15.0 ([443e79e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/443e79ef1e199acbff74fc88274914ff1b767bca))
+
+## [2.0.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.0...v2.0.1) (2019-11-24)
+
+
+### Bug Fixes
+
+* **locales:** fix module compile ([f689bef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f689befe9387452411d280d6fa7585c5a832ca6d))
+
 # [2.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.36.0...v2.0.0) (2019-11-20)
 
 
