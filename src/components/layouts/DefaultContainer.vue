@@ -53,6 +53,10 @@ export default {
     margin-top: 0;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   & .lost-flex-container {
     display: flex;
 

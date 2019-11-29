@@ -17,15 +17,15 @@ module.exports = {
     layouts: true,
     meta: true,
     middleware: true,
-    transitions: false,
+    transitions: true,
     deprecations: false,
-    validate: false,
+    validate: true,
     asyncData: true,
-    fetch: false,
-    clientOnline: false,
-    clientPrefetch: false,
+    fetch: true,
+    clientOnline: true,
+    clientPrefetch: true,
     clientUseUrl: true,
-    componentAliases: false,
+    componentAliases: true,
     componentClientOnly: true
   },
 
@@ -45,7 +45,7 @@ module.exports = {
     })()
   },
 
-  modern: 'client',
+  modern: isDev ? false : 'client',
 
   build: {
     analyze: false,

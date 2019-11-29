@@ -14,7 +14,7 @@
             @click="close"
           >
             <i>
-              <gp-svg-inline src="icons/close.svg" />
+              <svg-icon-close />
             </i>
           </button>
           <div class="content">
@@ -28,8 +28,11 @@
 
 <script>
 import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+
+import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
+
 export default {
-  components: { gpLayoutDefaultContainer },
+  components: { gpLayoutDefaultContainer, svgIconClose },
   props: {
     options: {
       type: Object,

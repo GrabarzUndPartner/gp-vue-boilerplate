@@ -2,6 +2,6 @@
 import ModuleLocales from '@/extends/ModuleLocales';
 
 export default {
-  extends: ModuleLocales,
+  extends: ModuleLocales
 };
 </script>
