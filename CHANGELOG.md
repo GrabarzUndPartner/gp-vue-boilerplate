@@ -1,5 +1,13 @@
 # Project Changelog
 
+# [2.1.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.3...v2.1.0) (2019-11-29)
+
+
+### Features
+
+* **svg:** remove svg-inline storybook story ([85f39e7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/85f39e7db486a098e72f3c5b755bdcbb00e4cf1c))
+* **svg:** replace SvgInlines with direct imports ([d421f5d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d421f5dc8eea1f8f601d7b8c118d8e8b8a5390c4))
+
 ## [2.0.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.2...v2.0.3) (2019-11-29)
 
 
