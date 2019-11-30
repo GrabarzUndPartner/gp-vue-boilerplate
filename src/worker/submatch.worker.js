@@ -1,16 +1,5 @@
 import jsfeat from 'jsfeat';
 import { fromEvent } from 'rxjs';
-// import bigInt from 'big-integer';
-
-// const arr = new Array(8);
-// function getLen (u32, idx) {
-//   let k = 0;
-//   for (k = 0; k < 8; ++k) {
-//     arr[k] = popcnt32(u32[(idx * 8) + k]);
-//   }
-//   console.log('biggy?', arr.join(''));
-//   return bigInt(arr.join(''));
-// }
 
 const blur = 5;
 const maxCorners = 300;
@@ -76,7 +65,19 @@ function getDistance (query_u32, qidx, ld_i32, pidx) {
   let curr_d = 0;
   // our descriptor is 32 bytes so we have 8 Integers
   for (k = 0; k < 8; ++k) {
-    curr_d += popcnt32(query_u32[(qidx * 8) + k] ^ ld_i32[(pidx * 8) + k]);
+    const v = query_u32[(qidx * 8) + k] ^ ld_i32[(pidx * 8) + k];
+    const d = popcnt32(v);
+
+    // if (Math.random() > 0.98) {
+    //   const md = (v >>> 0).toString(2)
+    //     .split('')
+    //     .reduce((acc, val) => (
+    //       acc + parseInt(val, 10)
+    //     ), 0);
+
+    //   console.log('jaja', d, md);
+    // }
+    curr_d += d;
   }
   return curr_d;
 }
@@ -89,6 +90,11 @@ function matchCorners (screen_descriptors, pattern_descriptors, corners, thresho
   for (let qidx = 0; qidx < q_cnt; ++qidx) {
     const m = matchCorner(query_u32, pattern_descriptors, threshold, qidx);
     if (m) {
+      const arr = new Int32Array(8);
+      for (let k = 0; k < 8; ++k) {
+        arr[k] = query_u32[(qidx * 8) + k];
+      }
+      m.arr = arr;
       corners[qidx].matched = true;
       result.push(m);
     } else {

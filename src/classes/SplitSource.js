@@ -40,6 +40,8 @@ export default class Pattern {
           // https://github.com/inspirit/jsfeat/blob/gh-pages/sample_orb.html#L507
           shape = tCorners(pattern.matrix.rows, pattern.matrix.cols);
           // console.log('found', matches);
+
+          moveMatchToPattern(matches, pattern.descriptors);
         }
 
         return {
@@ -113,4 +115,17 @@ export default class Pattern {
       });
 
   }
+}
+
+function moveMatchToPattern (matches, pattern_descriptors) {
+
+  matches.forEach(match => {
+
+    let lev_descr = pattern_descriptors[match.pattern_lev];
+    let ld_i32 = lev_descr.buffer.i32;
+
+    for (let k = 0; k < 8; k++) {
+      ld_i32[match.pattern_idx * 8 + k] = match.arr[k];
+    }
+  });
 }
