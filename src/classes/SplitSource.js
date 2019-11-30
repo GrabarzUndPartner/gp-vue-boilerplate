@@ -120,7 +120,9 @@ export default class Pattern {
 function moveMatchToPattern (matches, pattern_descriptors) {
 
   matches.forEach(match => {
-
+    if (!match.good) {
+      return;
+    }
     let lev_descr = pattern_descriptors[match.pattern_lev];
     let ld_i32 = lev_descr.buffer.i32;
 

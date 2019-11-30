@@ -188,7 +188,7 @@ export function find_transform (matches, screen_corners, pattern_corners) {
     var m = matches[Number(i)];
     var s_kp = screen_corners[m.screen_idx];
     var p_kp = pattern_corners[m.pattern_lev][m.pattern_idx];
-    pattern_xy[Number(i)] = { 'x': p_kp.x, 'y': p_kp.y };
+    pattern_xy[Number(i)] = { 'x': p_kp.x, 'y': p_kp.y, m };
     screen_xy[Number(i)] = { 'x': s_kp.x, 'y': s_kp.y };
   }
   // estimate motion
@@ -200,6 +200,8 @@ export function find_transform (matches, screen_corners, pattern_corners) {
   if (ok) {
     for (var j = 0; j < matches.length; ++j) {
       if (match_mask.data[Number(j)]) {
+        pattern_xy[Number(j)].m.good = true;
+
         pattern_xy[Number(good_cnt)].x = pattern_xy[Number(j)].x;
         pattern_xy[Number(good_cnt)].y = pattern_xy[Number(j)].y;
         screen_xy[Number(good_cnt)].x = screen_xy[Number(j)].x;
