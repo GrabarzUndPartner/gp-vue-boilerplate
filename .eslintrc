@@ -10,12 +10,7 @@
     "node": true,
     "es6": true
   },
-  "plugins": [
-    "json",
-    "vue",
-    "security",
-    "promise"
-  ],
+  "plugins": ["json", "vue", "security", "promise"],
   "extends": [
     "plugin:vue/recommended",
     "eslint:recommended",
@@ -42,20 +37,14 @@
     "no-console": "off",
     "no-empty-function": "error",
     "vue/no-v-html": "off",
-    "semi": [
-      "error",
-      "always"
-    ],
+    "semi": ["error", "always"],
     "complexity": [
       "error",
       {
-        "max": 10
+        "max": 20
       }
     ],
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quotes": ["error", "single"],
     "security/detect-non-literal-fs-filename": "off"
   }
 }

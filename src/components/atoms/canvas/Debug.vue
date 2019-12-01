@@ -42,19 +42,25 @@ export default {
     // console.log(this.options);
     this.update(this.options);
 
+    this.$el.addEventListener('click', (e) => this.lastClick = e);
+
   },
 
   methods: {
     update (options) {
-      if (options && options.matrix) {
+      if (!options) {
+        return;
+      }
+      if (options.matrix) {
         this.width = options.matrix.cols;
         this.height = options.matrix.rows;
 
         const imageData = this.context.createImageData(this.width, this.height);
         const imageData_u32 = new Uint32Array(imageData.data.buffer);
 
-        addMatrixToImageData(imageData_u32, options.matrix);
-
+        if (options.matrix.data) {
+          addMatrixToImageData(imageData_u32, options.matrix);
+        }
         if (options.corners) {
           renderCorners(options.corners.list, options.corners.count, options.corners.scale, imageData_u32, this.width);
         }
@@ -69,6 +75,10 @@ export default {
             renderShape(this.context, options.shape);
           }
         });
+      }
+      if (options.clickListener && this.lastClick) {
+        options.clickListener(this.lastClick);
+        this.lastClick = null;
       }
     }
   }

@@ -45,7 +45,7 @@ export default class Pattern {
         }
 
         return {
-          matrix: this.matrix,
+          matrix: { rows: this.matrix.rows, cols: this.matrix.cols },
           corners: {
             list: corners,
             count: corners.length

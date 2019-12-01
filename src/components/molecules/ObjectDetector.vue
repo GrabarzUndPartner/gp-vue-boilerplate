@@ -31,7 +31,9 @@ import AtomCanvasVideo from '@/components/atoms/canvas/Video';
 import AtomCanvasDebug from '@/components/atoms/canvas/Debug';
 import jsfeat from 'jsFeat';
 import Pattern from '@/classes/Pattern';
-import Source from '@/classes/Source';
+// import Source from '@/classes/Source';
+import Source from '@/classes/SplitSource';
+import DynamicPattern from '@/classes/DynamicPattern';
 
 export default {
   components: {
@@ -47,6 +49,7 @@ export default {
       imageData: null,
       pattern: new Pattern(),
       source: new Source(),
+      dynamic: new DynamicPattern(),
       debugOptionsA: null,
       debugOptionsB: null,
       matches: [],
@@ -99,8 +102,14 @@ export default {
       this.source.setup(dimension);
     },
 
-    onUpdate (e) {
-      this.source.detect(e, this.pattern).then((option) => {
+    onUpdate (options) {
+      this.source.detect(options, this.pattern).then((option) => {
+
+        option.clickListener = (e) => {
+          const img = this.dynamic.update(e, options.context);
+          this.pattern = new Pattern();
+          this.onPatternUpdate(img);
+        };
         this.debugOptionsA = option;
         return;
       }).catch((e) => { console.error(e); });
