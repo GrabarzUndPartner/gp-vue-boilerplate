@@ -1,7 +1,7 @@
 import jsfeat from 'jsfeat';
 import { fromEvent } from 'rxjs';
 
-const blur = 5;
+const blur = 2;
 const maxCorners = 300;
 
 class Pattern {
@@ -158,7 +158,7 @@ function popcnt32 (n) {
 
 function detectKeypoints (img, corners, max_allowed) {
   // detect features
-  let count = jsfeat.fast_corners.detect(img, corners, 3);
+  let count = jsfeat.yape06.detect(img, corners, 3);
   // sort by score and reduce the count if needed
   if (count > max_allowed) {
     jsfeat.math.qsort(corners, 0, count - 1, function (a, b) { return (b.score < a.score); });

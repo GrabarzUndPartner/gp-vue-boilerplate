@@ -55,11 +55,17 @@ export default {
         this.width = options.matrix.cols;
         this.height = options.matrix.rows;
 
-        const imageData = this.context.createImageData(this.width, this.height);
-        const imageData_u32 = new Uint32Array(imageData.data.buffer);
+        let imageData;
+        let imageData_u32;
 
         if (options.matrix.data) {
+          imageData = this.context.createImageData(this.width, this.height);
+          imageData_u32 = new Uint32Array(imageData.data.buffer);
+
           addMatrixToImageData(imageData_u32, options.matrix);
+        } else {
+          imageData = options.context.getImageData(0, 0, this.width, this.height);
+          imageData_u32 = new Uint32Array(imageData.data.buffer);
         }
         if (options.corners) {
           renderCorners(options.corners.list, options.corners.count, options.corners.scale, imageData_u32, this.width);

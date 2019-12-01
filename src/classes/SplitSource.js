@@ -45,6 +45,7 @@ export default class Pattern {
         }
 
         return {
+          context: options.context,
           matrix: { rows: this.matrix.rows, cols: this.matrix.cols },
           corners: {
             list: corners,
