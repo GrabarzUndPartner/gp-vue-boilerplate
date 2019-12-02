@@ -30,10 +30,9 @@ export default {
     };
   },
 
-  asyncData ({ store, app, route, error }) {
-
-    const path = route.fullPath
-      .replace(/^([\\/]?)\w{2}\//, '/')
+  asyncData ({ store, app, error }) {
+    const path = getRoutePath(app)
+      .replace(RegExp(`^/${app.i18n.locale}`), '')
       .replace(/^\/([^?.#]*)[\\/?#]{0,1}[^\\/]*$/, '$1')
       .replace(/\/index|\/$/, '') || 'index';
 
@@ -56,5 +55,9 @@ export default {
   }
 
 };
+
+function getRoutePath (app) {
+  return app.router.matcher.match(app.localePath(app.getRouteBaseName())).path;
+}
 
 </script>
