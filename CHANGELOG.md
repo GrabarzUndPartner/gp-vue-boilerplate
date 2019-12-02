@@ -1,5 +1,18 @@
 # Project Changelog
 
+# [2.2.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.1.0...v2.2.0) (2019-12-02)
+
+
+### Bug Fixes
+
+* **menu:** fix menu open when changing layout ([13fdc47](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/13fdc47fb343de46e4dd214a39ce66289f851759))
+* **module-locales:** fix route path ([ed5acd2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed5acd2359ffa7ab22251711a1f885bbc0ea2f17))
+
+
+### Features
+
+* **module-locales:** update route path ([2f0ad95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2f0ad95aed236d2d3e9e007c11c2bfe58109070c))
+
 # [2.1.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.3...v2.1.0) (2019-11-29)
 
 
