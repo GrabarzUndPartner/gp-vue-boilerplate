@@ -30,13 +30,11 @@ export default {
     };
   },
 
-  asyncData ({ store, app, route, error }) {
-
-    const path = (route.fullPath + '/')
-      // remove lang prefix
-      .replace(/^\//, '')
-      .replace(/^\w{2}\//, '')
-      .replace(/\/$/, '') || 'index';
+  asyncData ({ store, app, error }) {
+    const path = getRoutePath(app)
+      .replace(RegExp(`^/${app.i18n.locale}`), '')
+      .replace(/^\/([^?.#]*)[\\/?#]{0,1}[^\\/]*$/, '$1')
+      .replace(/\/index|\/$/, '') || 'index';
 
     return import(/* webpackMode: "lazy" */`@/virtual-locales/${app.i18n.locale}/${path}.json`).then(data => {
       if ('routeParams' in data) {
@@ -57,5 +55,9 @@ export default {
   }
 
 };
+
+function getRoutePath (app) {
+  return app.router.matcher.match(app.localePath(app.getRouteBaseName())).path;
+}
 
 </script>

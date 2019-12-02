@@ -96,6 +96,10 @@ export default {
   mounted () {
     this.$router.afterEach(this.onRouterAfterEach);
     this.$store.dispatch('modal/registerModal', { name: this.name, opened: this.options.opened });
+
+    if (this.opened) {
+      this.$store.dispatch('layout/togglePreventScrolling', true);
+    }
   },
   destroyed () {
     this.$store.dispatch('modal/unregisterModal', this);
