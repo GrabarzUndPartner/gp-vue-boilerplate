@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.4.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.3.0...v2.4.0) (2019-12-06)
+
+
+### Features
+
+* upgrade stylelint-config-css-modules from 1.5.0 to 2.1.0 ([f3edaaf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f3edaaf249f3b045a530d504c74923a59d72475c))
+
 # [2.3.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.2.0...v2.3.0) (2019-12-06)
 
 
