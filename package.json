@@ -114,7 +114,8 @@
     "snyk": "^1.250.0",
     "upath": "^1.2.0",
     "verge": "^1.10.2",
-    "vue-lazy-hydration": "^1.0.0-beta.9"
+    "vue-lazy-hydration": "^1.0.0-beta.9",
+    "object-fit-images": "github:StephanGerbeth/object-fit-images"
   },
   "optionalDependencies": {
     "picturefill": "^3.0.3",
@@ -122,8 +123,7 @@
     "default-passive-events": "^1.0.10",
     "domtokenlist-shim": "^1.2.0",
     "intersection-observer": "^0.7.0",
-    "requestidlecallback": "^0.3.0",
-    "object-fit-images": "github:StephanGerbeth/object-fit-images"
+    "requestidlecallback": "^0.3.0"
   },
   "snyk": true
 }
