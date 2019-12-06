@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.5.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.4.0...v2.5.0) (2019-12-06)
+
+
+### Features
+
+* upgrade postcss-momentum-scrolling from 1.9.15 to 2.1.3 ([c10be97](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c10be97fa5135aa4f15449385328194501487282))
+
 # [2.4.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.3.0...v2.4.0) (2019-12-06)
 
 
