@@ -1,5 +1,18 @@
 # Project Changelog
 
+# [2.3.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.2.0...v2.3.0) (2019-12-06)
+
+
+### Bug Fixes
+
+* **package-json:** change object-fit-images dependency to dependencies ([d5a8a9e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d5a8a9e4d0715d1191b385aafcf5157a48f66bcc))
+* **package-lock:** update package-lock ([6772885](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/677288595f4007fb306de63d21c03314d56aa5f9))
+
+
+### Features
+
+* upgrade eslint-plugin-vue from 5.2.3 to 6.0.1 ([679ff5c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/679ff5c5a249cd2519be3399727d30d009ea3629))
+
 # [2.2.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.1.0...v2.2.0) (2019-12-02)
 
 
