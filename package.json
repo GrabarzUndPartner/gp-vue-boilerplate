@@ -84,7 +84,7 @@
     "postcss-nested": "^4.2.1",
     "postcss-normalize": "^8.0.1",
     "postcss-object-fit-images": "^1.1.2",
-    "postcss-url": "^8.0.0",
+    "postcss-url": "^9.0.0",
     "raw-loader": "^3.1.0",
     "reqlim": "0.0.0",
     "responsive-loader": "^1.2.0",
