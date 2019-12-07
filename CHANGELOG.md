@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.6.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.5.0...v2.6.0) (2019-12-07)
+
+
+### Features
+
+* upgrade postcss-url from 8.0.0 to 9.0.0 ([2075967](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/207596722ffde0e2ca6a55546b712c86513c9ae7))
+
 # [2.5.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.4.0...v2.5.0) (2019-12-06)
 
 
