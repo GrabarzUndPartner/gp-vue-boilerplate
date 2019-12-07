@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.7.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.6.0...v2.7.0) (2019-12-07)
+
+
+### Features
+
+* upgrade raw-loader from 3.1.0 to 4.0.0 ([3db19f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3db19f6f9d2ba7da6ee4e5baaeac3ec76e7548ce))
+
 # [2.6.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.5.0...v2.6.0) (2019-12-07)
 
 
