@@ -7,9 +7,12 @@
     <gp-page-menu
       ref="pageMenu"
       v-bind="pageMenu"
-      opened
+      :opened="!preventMenuOpened"
     />
-    <gp-page-menu-button @click.native="onClickMenuButton" />
+    <gp-page-menu-button
+      v-bind="pageMenuButton"
+      @click.native="onClickMenuButton"
+    />
     <main>
       <nuxt />
     </main>
@@ -19,29 +22,27 @@
 
 <script>
 
-const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
-
 import { loadFonts } from '@/utils/fonts';
-
-import gpPageHeader from '@/components/page/Header';
-import gpPageMenuButton from '@/components/page/MenuButton';
 import { directionDetectionObserver } from '@/service/viewport';
 
 import {
   hydrateWhenVisible,
-  hydrateOnInteraction
+  hydrateOnInteraction,
+  hydrateWhenIdle
 } from 'vue-lazy-hydration';
+
+const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
 
 export default {
 
   components: {
-    gpPageHeader,
-    gpPageMenuButton,
-    gpPageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
+    gpPageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    gpPageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
+    gpPageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
       event: 'hydrate'
     }),
     gpPageFooter: hydrateWhenVisible(
-      () => import('@/components/page/Footer'),
+      () => import(/* webpackMode: "lazy" */'@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
     )
   },
@@ -65,6 +66,11 @@ export default {
 
   data () {
     return {
+      /**
+       * Is deactivated when the menu is activated.
+       * Serves as workaround for ignoring the "hydrateOnInteraction" when changing error.vue (layout) to default.vue (layout).
+       */
+      preventMenuOpened: true,
 
       fonts: {
         preload: [
@@ -112,6 +118,9 @@ export default {
     pageMenu () {
       return this.$t('menu');
     },
+    pageMenuButton () {
+      return this.$t('menuButton');
+    },
     pageFooter () {
       return this.$t('footer');
     }
@@ -137,9 +146,9 @@ export default {
     ];
 
     /**
-     * Tritt ein bei Seitenwechsel über nuxt router.scrollBehavior.js (@/app/router.scrollBehavior.js)
+     * Occurs when changing pages via nuxt router.scrollBehavior.js (@/app/router.scrollBehavior.js)
      * https://router.vuejs.org/guide/advanced/scroll-behavior.html
-     * Setzt die direction wieder auf initial.
+     * Sets the direction back to initial.
      */
     this.$nuxt.$on('triggerScroll', () => {
       this.onDirectionChange(null, true);
@@ -160,6 +169,7 @@ export default {
     },
 
     onClickMenuButton () {
+      this.preventMenuOpened = false;
       this.$refs.pageMenu.$el.dispatchEvent(new CustomEvent('hydrate'));
     }
   },

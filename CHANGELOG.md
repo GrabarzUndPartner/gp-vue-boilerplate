@@ -1,5 +1,108 @@
 # Project Changelog
 
+# [2.5.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.4.0...v2.5.0) (2019-12-06)
+
+
+### Features
+
+* upgrade postcss-momentum-scrolling from 1.9.15 to 2.1.3 ([c10be97](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c10be97fa5135aa4f15449385328194501487282))
+
+# [2.4.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.3.0...v2.4.0) (2019-12-06)
+
+
+### Features
+
+* upgrade stylelint-config-css-modules from 1.5.0 to 2.1.0 ([f3edaaf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f3edaaf249f3b045a530d504c74923a59d72475c))
+
+# [2.3.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.2.0...v2.3.0) (2019-12-06)
+
+
+### Bug Fixes
+
+* **package-json:** change object-fit-images dependency to dependencies ([d5a8a9e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d5a8a9e4d0715d1191b385aafcf5157a48f66bcc))
+* **package-lock:** update package-lock ([6772885](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/677288595f4007fb306de63d21c03314d56aa5f9))
+
+
+### Features
+
+* upgrade eslint-plugin-vue from 5.2.3 to 6.0.1 ([679ff5c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/679ff5c5a249cd2519be3399727d30d009ea3629))
+
+# [2.2.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.1.0...v2.2.0) (2019-12-02)
+
+
+### Bug Fixes
+
+* **menu:** fix menu open when changing layout ([13fdc47](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/13fdc47fb343de46e4dd214a39ce66289f851759))
+* **module-locales:** fix route path ([ed5acd2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed5acd2359ffa7ab22251711a1f885bbc0ea2f17))
+
+
+### Features
+
+* **module-locales:** update route path ([2f0ad95](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2f0ad95aed236d2d3e9e007c11c2bfe58109070c))
+
+# [2.1.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.3...v2.1.0) (2019-11-29)
+
+
+### Features
+
+* **svg:** remove svg-inline storybook story ([85f39e7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/85f39e7db486a098e72f3c5b755bdcbb00e4cf1c))
+* **svg:** replace SvgInlines with direct imports ([d421f5d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d421f5dc8eea1f8f601d7b8c118d8e8b8a5390c4))
+
+## [2.0.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.2...v2.0.3) (2019-11-29)
+
+
+### Bug Fixes
+
+* **package-lock:** fix package-lock.json ([6217409](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/62174096cda4de54019fabb401a3a1424b694678))
+* upgrade snyk from 1.249.1 to 1.250.0 ([cecebb7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cecebb74e577207116d0e2b592d1ef6275f1d6e5))
+
+## [2.0.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.1...v2.0.2) (2019-11-29)
+
+
+### Bug Fixes
+
+* **package-lock:** fix package-lock.json ([14c3a2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/14c3a2b17fd84dd57abfd0a6042b3d1f18aafc64))
+* upgrade vue-svg-loader from 0.14.0 to 0.15.0 ([443e79e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/443e79ef1e199acbff74fc88274914ff1b767bca))
+
+## [2.0.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.0.0...v2.0.1) (2019-11-24)
+
+
+### Bug Fixes
+
+* **locales:** fix module compile ([f689bef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f689befe9387452411d280d6fa7585c5a832ca6d))
+
+# [2.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.36.0...v2.0.0) (2019-11-20)
+
+
+### Performance Improvements
+
+* **snyk-upgrade:** fix snyk-upgrade ([1b7463c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1b7463c4d3ab31b034560eb5c8df086917aa1a11))
+
+
+### BREAKING CHANGES
+
+* **snyk-upgrade:** fix snyk-upgrade
+
+# [1.36.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.1...v1.36.0) (2019-11-19)
+
+
+### Bug Fixes
+
+* **locales:** added upath for filepath normalize ([733ec3d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/733ec3d2b93515a228f9550d9ad209d59498a72c))
+* **locales:** fix regex for windows ([5b1c21a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5b1c21a020b58066a2818b04015eeed96828589e))
+* **optimize:** fix images ([0b32abd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0b32abdd8e70a247d6cd532522e41d3c7a5c3ca2))
+* **test-windows:** get filePath ([dfdad2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dfdad2be785ea805007e65c57fd9025db442cfd2))
+
+
+### Features
+
+* **optimize:** added page content load via require (virtualModule) ([bd18725](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bd18725a31e10edb332e8e1d092eb4e66166ee8a))
+
+
+### Performance Improvements
+
+* **optimize:** fix components visible ([eaf0397](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eaf0397ac0f659a889905285333ddf04a350c613))
+
 ## [1.35.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v1.35.0...v1.35.1) (2019-11-18)
 
 

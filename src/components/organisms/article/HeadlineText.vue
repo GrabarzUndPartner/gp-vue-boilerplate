@@ -1,5 +1,8 @@
 <template>
-  <gp-layout-default-container class="gp-organism-article-headline-text">
+  <gp-layout-default-container
+    class="gp-organism-article-headline-text"
+    v-bind="options"
+  >
     <gp-molecule-article :headline="headline">
       <gp-atom-rich-text :content="text" />
     </gp-molecule-article>
@@ -20,6 +23,14 @@ export default {
   },
 
   props: {
+
+    options: {
+      type: Object,
+      default () {
+        return null;
+      }
+    },
+
     headline: {
       type: Object,
       default () {
@@ -34,7 +45,7 @@ export default {
     text: {
       type: String,
       default () {
-        return '<p>Scelerisque morbi blandit voluptate possimus vitae illum tristique, atque perspiciatis maecenas laudantium! Morbi, venenatis purus amet, rem eius ligula! Penatibus eleifend curabitur temporibus asperiores tempora cum accumsan egestas viverra laborum.</p><p>Arcu primis enim, parturient! Excepturi adipisci! Incidunt quibusdam ex. Non, impedit est. Ullam eiusmod semper pretium necessitatibus nostrum voluptatem ullamcorper, hac condimentum! Vestibulum rhoncus? Impedit culpa, error tempus. Ligula diam.</p>';
+        return '<p>Example Text</p>';
       }
     }
   }

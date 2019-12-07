@@ -61,11 +61,6 @@ export default {
         opened: this.opened
       };
     }
-  },
-  mounted () {
-    if (this.opened) {
-      this.$store.dispatch('layout/togglePreventScrolling', true);
-    }
   }
 };
 </script>

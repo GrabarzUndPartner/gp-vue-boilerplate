@@ -36,6 +36,9 @@
       }
     ]
   },
+  "menuButton": {
+    "label": "Menu Open/Close"
+  },
   "footer": {
     "navigation": [
       {

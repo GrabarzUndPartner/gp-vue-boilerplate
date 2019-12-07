@@ -4,6 +4,7 @@
       v-show="opened"
       class="gp-layout-modal"
       :class="styleClasses"
+      v-bind="options"
     >
       <template v-slot:container>
         <div class="lost-flex-container">
@@ -13,7 +14,7 @@
             @click="close"
           >
             <i>
-              <gp-svg-inline src="icons/close.svg" />
+              <svg-icon-close />
             </i>
           </button>
           <div class="content">
@@ -27,8 +28,11 @@
 
 <script>
 import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+
+import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
+
 export default {
-  components: { gpLayoutDefaultContainer },
+  components: { gpLayoutDefaultContainer, svgIconClose },
   props: {
     options: {
       type: Object,
@@ -92,6 +96,10 @@ export default {
   mounted () {
     this.$router.afterEach(this.onRouterAfterEach);
     this.$store.dispatch('modal/registerModal', { name: this.name, opened: this.options.opened });
+
+    if (this.opened) {
+      this.$store.dispatch('layout/togglePreventScrolling', true);
+    }
   },
   destroyed () {
     this.$store.dispatch('modal/unregisterModal', this);

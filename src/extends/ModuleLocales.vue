@@ -30,25 +30,13 @@ export default {
     };
   },
 
-  asyncData ({ store, $axios, app, $payloadURL, route, error }) {
-    if (process.static && process.client) {
-      return $axios.$get($payloadURL(route)).then(data => {
-        if (data) {
-          return data;
-        } else {
-          error({ statusCode: 404, message: 'page not found' });
-          return;
-        }
-      });
-    }
+  asyncData ({ store, app, error }) {
+    const path = getRoutePath(app)
+      .replace(RegExp(`^/${app.i18n.locale}`), '')
+      .replace(/^\/([^?.#]*)[\\/?#]{0,1}[^\\/]*$/, '$1')
+      .replace(/\/index|\/$/, '') || 'index';
 
-    const path = (route.fullPath + '/')
-      // remove lang prefix
-      .replace(/^\//, '')
-      .replace(/^\w{2}\//, '')
-      .replace(/\/$/, '') || 'index';
-
-    return import(`@/locales/${app.i18n.locale}/${path}.json`).then(data => {
+    return import(/* webpackMode: "lazy" */`@/virtual-locales/${app.i18n.locale}/${path}.json`).then(data => {
       if ('routeParams' in data) {
         // set other locale slugs for languageSwitch
         store.dispatch('i18n/setRouteParams', data.routeParams);
@@ -67,5 +55,9 @@ export default {
   }
 
 };
+
+function getRoutePath (app) {
+  return app.router.matcher.match(app.localePath(app.getRouteBaseName())).path;
+}
 
 </script>

@@ -4,19 +4,27 @@
       v-if="!toggleDirection"
       class="gp-page-menu-button"
       :class="{'js--selected': isMenuOpened}"
+      :aria-label="label"
       @click="onClickMenu"
     >
       <i>
-        <gp-atom-svg-inline src="icons/menu-close.svg" />
+        <svg-icon-menu-close />
       </i>
     </button>
   </transition>
 </template>
 
 <script>
-import gpAtomSvgInline from '@/components/atoms/SvgInline';
+import svgIconMenuClose from '@/assets/svg/icons/menu-close.svg?vue-template';
+
 export default {
-  components: { gpAtomSvgInline },
+  components: { svgIconMenuClose },
+  props: {
+    label: {
+      type: String,
+      default () { return 'Menu Open/Close'; }
+    }
+  },
   computed: {
     isMenuOpened () {
       return this.$store.getters['modal/isModelOpened']('menu');
