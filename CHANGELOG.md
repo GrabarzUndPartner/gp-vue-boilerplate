@@ -1,5 +1,13 @@
 # Project Changelog
 
+# [2.8.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.7.0...v2.8.0) (2019-12-10)
+
+
+### Features
+
+* **font-loader:** move preload var ([72aa457](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/72aa45797c6ef23739f3f09af484959908108f9e))
+* **font-loader:** update font-loader ([ed344d0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed344d0a2c5f81c89bedb6c674db2dbab4b56a7b))
+
 # [2.7.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.6.0...v2.7.0) (2019-12-07)
 
 
