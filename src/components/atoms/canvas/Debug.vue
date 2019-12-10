@@ -80,6 +80,10 @@ export default {
           if (options.shape && options.shape.length) {
             renderShape(this.context, options.shape);
           }
+          if (options.point) {
+            renderPoint(this.context, options.point);
+          }
+
         });
       }
       if (options.clickListener && this.lastClick) {
@@ -154,6 +158,12 @@ function renderShape (ctx, shape_pts) {
   ctx.lineTo(shape_pts[0].x, shape_pts[0].y);
   ctx.lineWidth = 4;
   ctx.stroke();
+}
+function renderPoint (ctx, point) {
+  ctx.fillStyle = 'rgb(0,255,0)';
+  ctx.beginPath();
+  ctx.arc(point.x, point.y, 20, 0, Math.PI * 2, true);
+  ctx.fill();
 }
 </script>
 

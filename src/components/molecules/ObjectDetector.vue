@@ -102,18 +102,33 @@ export default {
       this.source.setup(dimension);
     },
 
+    updateDynamicSource ({ x, y, context }) {
+      const img = this.dynamic.updateSource({ x, y }, context);
+      this.pattern = new Pattern(true);
+      this.onPatternUpdate(img);
+    },
+
+    updateDynamic ({ x, y, context }) {
+      const img = this.dynamic.update({ x, y }, context);
+      if (!img) {
+        return;
+      }
+      this.pattern = new Pattern(true);
+      this.onPatternUpdate(img);
+    },
+
     onUpdate (options) {
       this.source.detect(options, this.pattern).then((option) => {
 
         option.clickListener = (e) => {
-          const img = this.dynamic.update(e, options.context);
-          this.pattern = new Pattern();
-          this.onPatternUpdate(img);
+          this.updateDynamicSource({ x: e.layerX, y: e.layerY, context: options.context });
         };
+        if (option.point) {
+          this.updateDynamic({ x: option.point.x, y: option.point.y, context: options.context });
+        }
         this.debugOptionsA = option;
         return;
       }).catch((e) => { console.error(e); });
-
     }
   }
 };

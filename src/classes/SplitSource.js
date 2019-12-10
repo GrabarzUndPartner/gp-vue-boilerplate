@@ -1,6 +1,6 @@
 import jsfeat from 'jsfeat';
 
-import { subMatchCorners, find_transform, tCorners } from '@/utils/jsfeat/feature';
+import { subMatchCorners, find_transform, tCorners, tCorner } from '@/utils/jsfeat/feature';
 
 export default class Pattern {
   constructor() {
@@ -34,12 +34,15 @@ export default class Pattern {
 
         const numGoodMatches = find_transform(matches, corners, pattern.corners);
         let shape = [];
+        let point;
         // console.log('numGoodMatches', numGoodMatches, matches, corners);
         if (numGoodMatches > 8) {
           // what is the right dimension?
           // https://github.com/inspirit/jsfeat/blob/gh-pages/sample_orb.html#L507
           shape = tCorners(pattern.matrix.rows, pattern.matrix.cols);
-          // console.log('found', matches);
+
+          // point = shape.reduce((t, p) => (t.x += p.x / 4, t.y += p.y / 4, t), { x: 0, y: 0 });
+          point = tCorner({ x: pattern.matrix.rows * 0.5, y: pattern.matrix.cols * 0.5 });
 
           moveMatchToPattern(matches, pattern.descriptors);
         }
@@ -51,7 +54,8 @@ export default class Pattern {
             list: corners,
             count: corners.length
           },
-          shape: shape
+          shape,
+          point
         };
       })
       .finally(() => {
