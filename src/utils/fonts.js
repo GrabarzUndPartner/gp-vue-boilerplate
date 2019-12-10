@@ -1,12 +1,11 @@
 export function loadFonts () {
-  var preloads = [];
 
   if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
     return;
   }
 
   if (linkFeatureDetection()) {
-    preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+    const preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
     if (preloads.length) {
       prefetchFonts(Array.from(preloads));
     }
