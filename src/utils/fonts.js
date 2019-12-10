@@ -1,21 +1,54 @@
 export function loadFonts () {
-  var preloads = [];
+
   if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
-    preloads = document.querySelectorAll('link[rel=\'delay-prefetch\'][data-required=\'true\']');
-  } else {
-    preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+    return;
   }
 
   if (linkFeatureDetection()) {
-    prefetchFonts(Array.from(preloads));
+    const preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+    if (preloads.length) {
+      prefetchFonts(Array.from(preloads));
+    }
   } else {
-    // not support link rel prefetch
-    const classList = Array.from(preloads).reduce((result, preload) => result.concat(getRegisteredFontClasses(preload.dataset)), []);
+    // not supported features (prefetch or firefox with preload https://bugzilla.mozilla.org/show_bug.cgi?id=1405761)
+    const links = getAllPrefetchPreloadLinks();
+    const classList = Array.from(links).reduce((result, link) => result.concat(getRegisteredFontClasses(link.dataset)), []);
     document.documentElement.classList.add(...classList);
   }
+
+}
+
+function getAllPrefetchPreloadLinks () {
+  return document.querySelectorAll('link[rel=\'delay-prefetch\'][as="font"],link[rel=\'preload\'][as="font"]');
+}
+
+export function fontsToLinks (fonts, pattern) {
+  pattern = Object.assign({
+    as: 'font',
+    type: 'font/woff2',
+    crossorigin: 'anonymous'
+  }, pattern);
+  return fonts.preload.map((font) => {
+    return Object.assign(font, pattern);
+  });
+}
+
+export function prepareFonts (fonts) {
+  const preload = fonts.map(font => {
+    if (font.rel === 'preload') {
+      font.onload = 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);';
+    }
+    return font;
+  });
+  return {
+    preload
+  };
 }
 
 function linkFeatureDetection () {
+  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+    return false;
+  }
   const link = document.createElement('link');
   if ('relList' in link) {
     return link.relList.supports('prefetch');
@@ -26,18 +59,19 @@ function linkFeatureDetection () {
 function prefetchFonts (preloads, classList = []) {
   let range = preloads.splice(0, Math.min(2, preloads.length));
   (global.requestIdleCallback || global.setTimeout)(() => {
-    document.documentElement.classList.add(...classList.flat());
     if (range.length) {
       Promise.all(range.map((item) => {
         return prefetchFont(item);
       }))
         .then((list) => {
-          prefetchFonts(preloads, list);
+          prefetchFonts(preloads, classList.concat(list));
           return;
         })
         .catch((e) => {
           throw e;
         });
+    } else {
+      document.documentElement.classList.add(...classList.flat());
     }
   });
 }
@@ -64,10 +98,4 @@ function getRegisteredFontClasses (options) {
     `font_${options.set}`,
     `font_${options.set}_${options.weight}`
   ];
-  // return document.fonts.load(`${options.width} 1em "${options.family}"`)
-  //   .then(() => {
-  //     return options.class;
-  //   }).catch((e) => {
-  //     throw e;
-  //   });
 }

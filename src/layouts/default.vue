@@ -22,7 +22,7 @@
 
 <script>
 
-import { loadFonts } from '@/utils/fonts';
+import { loadFonts, prepareFonts, fontsToLinks } from '@/utils/fonts';
 import { directionDetectionObserver } from '@/service/viewport';
 
 import {
@@ -47,23 +47,6 @@ export default {
     )
   },
 
-  head () {
-    const pattern = {
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: 'anonymous'
-    };
-
-    const seo = this.$nuxtI18nSeo();
-    return {
-      htmlAttrs: seo.htmlAttrs,
-      meta: seo.meta,
-      link: this.fonts.preload.map((font) => {
-        return Object.assign(font, pattern);
-      }).concat(seo.link)
-    };
-  },
-
   data () {
     return {
       /**
@@ -72,39 +55,34 @@ export default {
        */
       preventMenuOpened: true,
 
-      fonts: {
-        preload: [
-          {
-            href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'),
-            rel: 'preload',
-            'data-set': 'amatic-sc',
-            'data-weight': '400',
-            onload: 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);'
-          }, {
-            href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'),
-            rel: 'delay-prefetch',
-            'data-set': 'amatic-sc',
-            'data-weight': '700'
-          }, {
-            href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
-            rel: 'preload',
-            'data-set': 'raleway',
-            'data-weight': '400',
-            onload: 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);'
-            // 'data-required': 'true'
-          }, {
-            href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
-            rel: 'delay-prefetch',
-            'data-set': 'raleway',
-            'data-weight': '500'
-          }, {
-            href: require('@/assets/fonts/raleway-v13-latin-600.woff2'),
-            rel: 'delay-prefetch',
-            'data-set': 'raleway',
-            'data-weight': '600'
-          }
-        ]
-      }
+      fonts: prepareFonts([
+        {
+          href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'),
+          rel: 'preload',
+          'data-set': 'amatic-sc',
+          'data-weight': '400'
+        }, {
+          href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'),
+          rel: 'delay-prefetch',
+          'data-set': 'amatic-sc',
+          'data-weight': '700'
+        }, {
+          href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
+          rel: 'preload',
+          'data-set': 'raleway',
+          'data-weight': '400'
+        }, {
+          href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
+          rel: 'delay-prefetch',
+          'data-set': 'raleway',
+          'data-weight': '500'
+        }, {
+          href: require('@/assets/fonts/raleway-v13-latin-600.woff2'),
+          rel: 'delay-prefetch',
+          'data-set': 'raleway',
+          'data-weight': '600'
+        }
+      ])
     };
   },
 
@@ -169,6 +147,12 @@ export default {
       this.preventMenuOpened = false;
       this.$refs.pageMenu.$el.dispatchEvent(new CustomEvent('hydrate'));
     }
+  },
+
+  head () {
+    const seo = this.$nuxtI18nSeo();
+    seo.link = seo.link.concat(fontsToLinks(this.fonts));
+    return seo;
   },
 };
 
