@@ -83,6 +83,9 @@ export default {
           if (options.point) {
             renderPoint(this.context, options.point);
           }
+          if (options.goodMatches) {
+            renderText(this.context, 10, 10, options.goodMatches + '');
+          }
 
         });
       }
@@ -164,6 +167,14 @@ function renderPoint (ctx, point) {
   ctx.beginPath();
   ctx.arc(point.x, point.y, 20, 0, Math.PI * 2, true);
   ctx.fill();
+}
+function renderText (ctx, x, y, text) {
+  ctx.save();
+  ctx.shadowColor = 'rgba(0, 0, 0, 1.0)';
+  ctx.fillStyle = 'rgb(255,255,255)';
+  ctx.shadowBlur = 2;
+  ctx.fillText(text, x, y);
+  ctx.restore();
 }
 </script>
 

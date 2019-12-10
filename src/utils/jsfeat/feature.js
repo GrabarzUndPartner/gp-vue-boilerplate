@@ -8,12 +8,13 @@ let homo3x3 = new jsfeat.matrix_t(3, 3, jsfeat.F32C1_t);
 let match_mask = new jsfeat.matrix_t(500, 1, jsfeat.U8C1_t);
 const workerPool = new WorkerPool();
 
-export function detectKeypoints (img, corners, max_allowed) {
+export function detectKeypoints (img, corners, max_allowed, comp) {
   // detect features
   let count = jsfeat.yape06.detect(img, corners, 3);
+  // let count = jsfeat.fast_corners.detect(img, corners, 5);
   // sort by score and reduce the count if needed
   if (count > max_allowed) {
-    jsfeat.math.qsort(corners, 0, count - 1, function (a, b) { return (b.score < a.score); });
+    jsfeat.math.qsort(corners, 0, count - 1, comp || function (a, b) { return (b.score < a.score); });
     count = max_allowed;
   }
   // calculate dominant orientation for each keypoint
@@ -221,13 +222,18 @@ export function tCorners (w, h) {
   var pt = [
     { 'x': 0, 'y': 0 }, { 'x': w, 'y': 0 }, { 'x': w, 'y': h }, { 'x': 0, 'y': h }
   ];
-  var z = 0.0, i = 0, px = 0.0, py = 0.0;
+  var i = 0;
   for (; i < 4; ++i) {
-    px = homo3x3.data[0] * pt[Number(i)].x + homo3x3.data[1] * pt[Number(i)].y + homo3x3.data[2];
-    py = homo3x3.data[3] * pt[Number(i)].x + homo3x3.data[4] * pt[Number(i)].y + homo3x3.data[5];
-    z = homo3x3.data[6] * pt[Number(i)].x + homo3x3.data[7] * pt[Number(i)].y + homo3x3.data[8];
-    pt[Number(i)].x = px / z;
-    pt[Number(i)].y = py / z;
+    tCorner(pt[Number(i)]);
   }
   return pt;
+}
+
+export function tCorner (point) {
+  const px = homo3x3.data[0] * point.x + homo3x3.data[1] * point.y + homo3x3.data[2];
+  const py = homo3x3.data[3] * point.x + homo3x3.data[4] * point.y + homo3x3.data[5];
+  const z = homo3x3.data[6] * point.x + homo3x3.data[7] * point.y + homo3x3.data[8];
+  point.x = px / z;
+  point.y = py / z;
+  return point;
 }

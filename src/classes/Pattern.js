@@ -8,7 +8,8 @@ const numTrainLevels = 10;
 const blur = 5;
 
 export default class Pattern {
-  constructor() {
+  constructor(cutCenter) {
+    this.cutCenter = cutCenter;
     this.matrix = null;
     this.scaleToMaxPatternSize = 1;
     this.corners = [];
@@ -36,9 +37,25 @@ export default class Pattern {
       matrices[Number(lev)] = subLevelImgMatrix;
       // jsfeat.matmath.transpose(matrices[0], subLevelImgMatrix);
 
+      let max = maxPerLevel;
+      let comp;
+      if (this.cutCenter) {
+        const center = { x: subLevelImgMatrix.cols / 2, y: subLevelImgMatrix.rows / 2 };
+        comp = (a, b) => {
+          const aDist = -Math.sqrt(Math.pow(a.x - center.x, 2) + Math.pow(a.y - center.y, 2));
+          const bDist = -Math.sqrt(Math.pow(b.x - center.x, 2) + Math.pow(b.y - center.y, 2));
+          const aScore = a.score * 1;
+          const bScore = b.score * 1;
+          return (bDist + bScore) < (aDist + aScore);
+          // return bDist < aDist;
+          // return (b.score < a.score);
+        };
+        max = 100;
+      }
+
       const scale = 1. / subScale;
       const corners = this.corners[Number(lev)];
-      this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)], maxPerLevel, true);
+      this.cornersCount[Number(lev)] = detectCorners(subLevelImgMatrix, corners, this.descriptors[Number(lev)], max, true, comp);
       for (let i = 0; i < this.cornersCount[Number(lev)]; ++i) {
         corners[Number(i)].x *= scale;
         corners[Number(i)].y *= scale;

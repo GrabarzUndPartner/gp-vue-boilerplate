@@ -36,7 +36,7 @@ export default class Pattern {
         let shape = [];
         let point;
         // console.log('numGoodMatches', numGoodMatches, matches, corners);
-        if (numGoodMatches > 8) {
+        if (numGoodMatches > 20) {
           // what is the right dimension?
           // https://github.com/inspirit/jsfeat/blob/gh-pages/sample_orb.html#L507
           shape = tCorners(pattern.matrix.rows, pattern.matrix.cols);
@@ -55,7 +55,8 @@ export default class Pattern {
             count: corners.length
           },
           shape,
-          point
+          point,
+          goodMatches: numGoodMatches
         };
       })
       .finally(() => {

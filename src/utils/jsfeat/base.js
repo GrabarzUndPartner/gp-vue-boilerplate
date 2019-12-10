@@ -19,8 +19,8 @@ export function addGaussianBlur (imgMatrix, blur) {
   jsfeat.imgproc.gaussian_blur(imgMatrix, imgMatrix, blur | 0);
 }
 
-export function detectCorners (imgMatrix, corners, descr, max, splice = false) {
-  const num = detectKeypoints(imgMatrix, corners, max);
+export function detectCorners (imgMatrix, corners, descr, max, splice = false, comp) {
+  const num = detectKeypoints(imgMatrix, corners, max, comp);
   // optional code line. implemented for optimized dataflow to debug canvas
   if (splice) {
     corners.splice(num);
