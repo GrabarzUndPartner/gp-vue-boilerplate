@@ -25,7 +25,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "static": "nuxt generate",
-    "static:now": "npm run static && cp now.json dist/website && cd dist/website/ && now",
+    "static:now": "npm run static && cp now.json dist && cd dist/ && now",
     "start": "nuxt start",
     "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
