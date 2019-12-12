@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.8.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.0...v2.8.1) (2019-12-12)
+
+
+### Bug Fixes
+
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([6ff4bcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6ff4bcdb58775552afce26719f8c085a0ca217a0))
+
 # [2.8.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.7.0...v2.8.0) (2019-12-10)
 
 
