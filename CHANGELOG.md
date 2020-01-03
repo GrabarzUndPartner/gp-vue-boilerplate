@@ -1,5 +1,13 @@
 # Project Changelog
 
+# [2.9.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.2...v2.9.0) (2020-01-03)
+
+
+### Features
+
+* **vscode-stylelint:** added eslint fix all ([86ad1f8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/86ad1f898073f4ded2a8be12978b2d21cf7880eb))
+* **vscode-stylelint:** change stylelint plugin, update workspace config ([e5c5a89](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e5c5a89a52e6113826b8b38b200ad7d4d566402e))
+
 ## [2.8.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.1...v2.8.2) (2020-01-03)
 
 
