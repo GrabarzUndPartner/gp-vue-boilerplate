@@ -1,5 +1,13 @@
 # Project Changelog
 
+## [2.8.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.1...v2.8.2) (2020-01-03)
+
+
+### Bug Fixes
+
+* **mochawesome-merge:** fix mochawesome-merge travis command ([48f7d58](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/48f7d58b7e959f976a9ea38a600420f776e76835))
+* **videos:** reduced size ([12f7d85](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/12f7d85d7258821efbfa7246de6aad79330e8ab5))
+
 ## [2.8.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.0...v2.8.1) (2019-12-12)
 
 
