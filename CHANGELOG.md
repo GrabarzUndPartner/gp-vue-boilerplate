@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.10.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.9.0...v2.10.0) (2020-01-06)
+
+
+### Features
+
+* **vscode-stylelint:** update configs ([a1ac888](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a1ac8883c2ae286257ed098047c0ed8be36b049a))
+
 # [2.9.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.2...v2.9.0) (2020-01-03)
 
 
