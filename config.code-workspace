@@ -14,21 +14,14 @@
     "editor.minimap.showSlider": "always",
     "editor.smoothScrolling": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll": false
-    },
-    "[vue]": {
-      "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": false
-      }
+      "source.fixAll": true
     },
     "eslint.alwaysShowStatus": true,
     "eslint.validate": [
       "javascript",
       "javascriptreact",
       "vue",
-      "html",
-      "javascript"
+      "html"
     ],
     "files.exclude": {
       ".nuxt/": false,
