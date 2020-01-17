@@ -1,5 +1,13 @@
 # Project Changelog
 
+# [2.11.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.10.0...v2.11.0) (2020-01-17)
+
+
+### Features
+
+* **clean:** remove CHANGELOG_PROJECT.md ([80e9c10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/80e9c1042459c49a48a084a2fbfc0562f68379bc))
+* **optimize:** change prevent-scroll styleclass with data attribute ([2605495](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/26054958fc436b8771904af84a3b108a1122cf68))
+
 # [2.10.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.9.0...v2.10.0) (2020-01-06)
 
 
