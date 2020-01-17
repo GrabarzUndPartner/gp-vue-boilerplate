@@ -31,7 +31,7 @@ import {
   hydrateWhenIdle
 } from 'vue-lazy-hydration';
 
-const STYLE_CLASS_PREVENT_SCROLLING = 'js--prevent-scrolling';
+const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
 
 export default {
 
@@ -104,16 +104,6 @@ export default {
     }
   },
 
-  watch: {
-    preventScrolling: function (value) {
-      if (value) {
-        document.documentElement.classList.add(STYLE_CLASS_PREVENT_SCROLLING);
-      } else {
-        document.documentElement.classList.remove(STYLE_CLASS_PREVENT_SCROLLING);
-      }
-    }
-  },
-
   mounted () {
 
     this.subscriptions = [
@@ -152,6 +142,7 @@ export default {
   head () {
     const seo = this.$nuxtI18nSeo();
     seo.link = seo.link.concat(fontsToLinks(this.fonts));
+    seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
     return seo;
   },
 };
@@ -167,7 +158,7 @@ body {
   margin: 0;
 }
 
-html.js--prevent-scrolling {
+html[data-prevent-scrolling] {
   & body {
     overflow: hidden;
   }
@@ -182,7 +173,9 @@ html.js--prevent-scrolling {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("Amatic SC Regular"), local("AmaticSC-Regular"),
+  src:
+    local("Amatic SC Regular"),
+    local("AmaticSC-Regular"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff") format("woff");
 }
@@ -194,7 +187,9 @@ html.js--prevent-scrolling {
   font-weight: 700;
   font-display: fallback;
   unicode-range: U+000-5FF;
-  src: local("Amatic SC Bold"), local("AmaticSC-Bold"),
+  src:
+    local("Amatic SC Bold"),
+    local("AmaticSC-Bold"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff") format("woff");
 }
@@ -206,7 +201,9 @@ html.js--prevent-scrolling {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("Raleway"), local("Raleway-Regular"),
+  src:
+    local("Raleway"),
+    local("Raleway-Regular"),
     url("~assets/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-regular.woff") format("woff");
 }
@@ -218,7 +215,9 @@ html.js--prevent-scrolling {
   font-weight: 500;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("Raleway Medium"), local("Raleway-Medium"),
+  src:
+    local("Raleway Medium"),
+    local("Raleway-Medium"),
     url("~assets/fonts/raleway-v13-latin-500.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-500.woff") format("woff");
 }
@@ -230,11 +229,12 @@ html.js--prevent-scrolling {
   font-weight: 600;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("Raleway SemiBold"), local("Raleway-SemiBold"),
+  src:
+    local("Raleway SemiBold"),
+    local("Raleway-SemiBold"),
     url("~assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-600.woff") format("woff");
 }
-
 /* stylelint-enable */
 </style>
 
