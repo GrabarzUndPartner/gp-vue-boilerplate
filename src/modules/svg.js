@@ -8,7 +8,9 @@ module.exports = function () {
   this.extendBuild((config) => {
     const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
-    svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+    if (svgRule) {
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+    }
 
     config.module.rules.push({
       test: /\.svg$/,
