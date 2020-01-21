@@ -6,6 +6,12 @@ const svgoConfig = Object.assign({}, yaml.safeLoad(fs.readFileSync(process.cwd()
 
 module.exports = function () {
   this.extendBuild((config) => {
+    const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+
+    if (svgRule) {
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+    }
+
     config.module.rules.push({
       test: /\.svg$/,
       oneOf: [
