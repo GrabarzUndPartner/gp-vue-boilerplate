@@ -1,5 +1,13 @@
 # Project Changelog
 
+## [2.11.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.0...v2.11.1) (2020-01-21)
+
+
+### Bug Fixes
+
+* **svg-module:** check if rule exists and then overwrite ([5d68e91](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5d68e912bb215a248f2de52825a5e102e9123753))
+* **svg-module:** removed svg from the webpack image rule test ([ea56a5d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ea56a5d6b6eef18fc49faf335e83aa273aec46d2))
+
 # [2.11.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.10.0...v2.11.0) (2020-01-17)
 
 
