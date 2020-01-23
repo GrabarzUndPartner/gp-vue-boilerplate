@@ -52,7 +52,7 @@
       "outputCapture": "std",
       "args": [
         "build"
-      ],
+      ]
     }
   ]
 }
