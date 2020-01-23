@@ -1,4 +1,5 @@
 # Folders
+/.tmp/
 /.nuxt/
 /dist/
 /storybook/
