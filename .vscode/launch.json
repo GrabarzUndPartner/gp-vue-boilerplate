@@ -24,7 +24,7 @@
       "outputCapture": "std",
       "args": [
         "generate"
-      ],
+      ]
     },
     {
       "type": "node",
@@ -38,7 +38,7 @@
       "outputCapture": "std",
       "args": [
         "start"
-      ],
+      ]
     },
     {
       "type": "node",
