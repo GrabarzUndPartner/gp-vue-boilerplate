@@ -1,5 +1,14 @@
 # Project Changelog
 
+# [2.12.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.3...v2.12.0) (2020-01-23)
+
+
+### Features
+
+* **clean:** clean launch.json ([208a72b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/208a72b6701d1dc47b7bf836c4fe55c75c43fccd))
+* **clean:** clean launch.json ([e3ea655](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e3ea65525755c33ce54aeb3cc9c61d2d91c12d05))
+* **update:** added launch.json with debug task ([8f61c79](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8f61c79d37984aa19da3772545dd4e6859188c37))
+
 ## [2.11.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.2...v2.11.3) (2020-01-23)
 
 
