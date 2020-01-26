@@ -100,28 +100,4 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-stage-picture {
-  position: relative;
-  width: 100%;
-
-  & picture {
-    position: relative;
-    display: block;
-    object-fit: cover;
-
-    &::before {
-      display: block;
-      width: 100%;
-      padding-top: calc(9 / 16 * 100%);
-      content: "";
-    }
-
-    & img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-}
 </style>

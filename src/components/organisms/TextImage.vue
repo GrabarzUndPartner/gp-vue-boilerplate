@@ -35,32 +35,32 @@
       default: select('Image', {
         'Set A': {
           sources: [
-            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
-            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
-            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
-            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
-            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
-            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/800' }
           ]
         },
         'Set B': {
           sources: [
-            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/200' },
-            { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/200' },
-            { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/200' },
-            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/200' },
-            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/200' },
-            { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/200' }
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/800' }
           ]
         }
       }, {
           sources: [
-            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
-            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
-            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
-            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
-            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
-            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/800' }
           ]
         })
     }
@@ -122,26 +122,3 @@ export default {
   }
 };
 </script>
-
-<style lang="postcss">
-.gp-organism-text-image {
-  & picture {
-    position: relative;
-    display: block;
-
-    &::before {
-      display: block;
-      width: 100%;
-      padding-top: calc(9 / 16 * 100%);
-      content: "";
-    }
-
-    & img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-}
-</style>

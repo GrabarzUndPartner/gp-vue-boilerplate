@@ -149,7 +149,7 @@ export default {
       const test = this.sorted.map(source => {
         source = Object.assign({}, source);
         source.type = '';
-                
+
         if (this.sourceClientOnly && !process.client) {
           source.srcset = '';
         } else {
@@ -189,6 +189,8 @@ function getMimeType (url) {
 
 <style lang="postcss">
 picture {
+  display: block;
+
   & img {
     display: block;
     width: 100%;
