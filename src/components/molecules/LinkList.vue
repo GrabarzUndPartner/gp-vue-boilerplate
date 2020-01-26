@@ -8,20 +8,20 @@
         v-for="(item) in list"
         :key="item.title"
       >
-        <gp-atom-link :url="localePath(item.url)">
+        <gp-atom-link-to :url="localePath(item.url)">
           {{ item.title }}
-        </gp-atom-link>
+        </gp-atom-link-to>
       </li>
     </slot>
   </ul>
 </template>
 
 <script>
-import gpAtomLink from '@/components/atoms/Link';
+import gpAtomLinkTo from '@/components/atoms/LinkTo';
 
 export default {
   components: {
-    gpAtomLink
+    gpAtomLinkTo
   },
   props: {
     type: {

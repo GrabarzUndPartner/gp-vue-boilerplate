@@ -6,9 +6,9 @@
   >
     <template slot="container">
       <div class="logo">
-        <gp-atom-link url="/">
+        <gp-atom-link-to url="/">
           Logo
-        </gp-atom-link>
+        </gp-atom-link-to>
       </div>
     </template>
   </gp-layout-default-container>
@@ -16,9 +16,9 @@
 
 <script>
 import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomLink from '@/components/atoms/Link';
+import gpAtomLinkTo from '@/components/atoms/LinkTo';
 export default {
-  components: { gpLayoutDefaultContainer, gpAtomLink },
+  components: { gpLayoutDefaultContainer, gpAtomLinkTo },
   props: {
     sticky: {
       type: Boolean,

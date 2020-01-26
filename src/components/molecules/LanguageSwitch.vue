@@ -4,7 +4,7 @@
       v-for="language in languages"
       :key="language.code"
     >
-      <gp-atom-link
+      <gp-atom-link-to
         :url="switchLocalePath(language.code)"
         class="language-switch"
         :title="language.code"
@@ -16,12 +16,12 @@
 <script>
 
 import gpMoleculeLinkList from '@/components/molecules/LinkList';
-import gpAtomLink from '@/components/atoms/Link';
+import gpAtomLinkTo from '@/components/atoms/LinkTo';
 
 export default {
   components: {
     gpMoleculeLinkList,
-    gpAtomLink
+    gpAtomLinkTo
   },
   props: {
     filterCurrentLang: {

@@ -33,6 +33,28 @@
   </component>
 </template>
 
+<story
+  name="Headline"
+  group="Atoms"
+  knobs="{
+    tag: {
+      default: select('Type', {
+        h1: 'h1',
+        h2: 'h2',
+        h3: 'h3',
+        h4: 'h4',
+        h5: 'h5',
+        h6: 'h6'
+      }, 'h2')
+    },
+    text: {
+      default: text('Text', 'Lorem ipsum')
+    }
+  }"
+  >
+  <headline :tag="tag" :overline="text" :headline="text" :subline="text"/>
+</story>
+
 <script>
 export default {
   props: {
@@ -40,7 +62,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return 'Lorem Overline';
+        return 'h1';
       }
     },
     overline: {
@@ -79,6 +101,7 @@ export default {
 .gp-atom-headline {
   font-style: normal;
   font-weight: 400;
+  line-height: 1.5;
 
   & > * {
     display: block;

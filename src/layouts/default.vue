@@ -158,7 +158,7 @@ body {
   margin: 0;
 }
 
-html[data-prevent-scrolling] {
+html[data-prevent-scrolling="true"] {
   & body {
     overflow: hidden;
   }
@@ -173,9 +173,7 @@ html[data-prevent-scrolling] {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Amatic SC Regular"),
-    local("AmaticSC-Regular"),
+  src: local("Amatic SC Regular"), local("AmaticSC-Regular"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff") format("woff");
 }
@@ -187,9 +185,7 @@ html[data-prevent-scrolling] {
   font-weight: 700;
   font-display: fallback;
   unicode-range: U+000-5FF;
-  src:
-    local("Amatic SC Bold"),
-    local("AmaticSC-Bold"),
+  src: local("Amatic SC Bold"), local("AmaticSC-Bold"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff") format("woff");
 }
@@ -201,9 +197,7 @@ html[data-prevent-scrolling] {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway"),
-    local("Raleway-Regular"),
+  src: local("Raleway"), local("Raleway-Regular"),
     url("~assets/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-regular.woff") format("woff");
 }
@@ -215,9 +209,7 @@ html[data-prevent-scrolling] {
   font-weight: 500;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway Medium"),
-    local("Raleway-Medium"),
+  src: local("Raleway Medium"), local("Raleway-Medium"),
     url("~assets/fonts/raleway-v13-latin-500.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-500.woff") format("woff");
 }
@@ -229,9 +221,7 @@ html[data-prevent-scrolling] {
   font-weight: 600;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway SemiBold"),
-    local("Raleway-SemiBold"),
+  src: local("Raleway SemiBold"), local("Raleway-SemiBold"),
     url("~assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-600.woff") format("woff");
 }

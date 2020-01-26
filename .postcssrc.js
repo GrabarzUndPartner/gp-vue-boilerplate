@@ -1,12 +1,11 @@
 module.exports = {
   plugins: {
-    'postcss-preset-env': {
-      stage: 0,
-      features: {
-        'nesting-rules': true
-      },
-      importFrom: 'src/globals/postcss.js'
+    'postcss-custom-media': {
+      importFrom: [
+        'src/globals/postcss.js'
+      ]
     },
+    'postcss-nesting': {},
     'postcss-normalize': {},
     'postcss-url': {},
     'postcss-object-fit-images': {},
@@ -26,12 +25,19 @@ module.exports = {
     'postcss-momentum-scrolling': [
       'scroll'
     ],
-    'rucksack-css': {}
+    'rucksack-css': {},
+    'lost': {
+      gutter: '15px',
+      flexbox: 'flex',
+      cycle: 'auto'
+    }
   },
   preset: {
+    preserve: false,
     stage: 0,
     features: {
-      'nesting-rules': true
+      'custom-media-queries': false,
+      'nesting-rules': false
     },
     importFrom: 'src/globals/postcss.js'
   }

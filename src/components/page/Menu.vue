@@ -13,9 +13,9 @@
           v-for="(item) in navigation"
           :key="item.title"
         >
-          <gp-atom-link :url="localePath(item.url)">
+          <gp-atom-link-to :url="localePath(item.url)">
             {{ item.title }}
-          </gp-atom-link>
+          </gp-atom-link-to>
           <gp-molecule-link-list
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
@@ -32,11 +32,11 @@
 <script>
 import gpLayoutModal from '@/components/layouts/Modal';
 import gpMoleculeLinkList from '@/components/molecules/LinkList';
-import gpAtomLink from '@/components/atoms/Link';
+import gpAtomLinkTo from '@/components/atoms/LinkTo';
 import gpLanguageSwitch from '@/components/molecules/LanguageSwitch';
 
 export default {
-  components: { gpLayoutModal, gpAtomLink, gpMoleculeLinkList, gpLanguageSwitch },
+  components: { gpLayoutModal, gpAtomLinkTo, gpMoleculeLinkList, gpLanguageSwitch },
   props: {
     opened: {
       type: Boolean,
