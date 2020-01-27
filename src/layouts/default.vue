@@ -1,47 +1,46 @@
 <template>
   <div>
-    <gp-page-header
+    <page-header
       v-bind="pageHeader"
       sticky
     />
-    <gp-page-menu
+    <page-menu
       ref="pageMenu"
       v-bind="pageMenu"
       :opened="!preventMenuOpened"
     />
-    <gp-page-menu-button
+    <page-menu-button
       v-bind="pageMenuButton"
       @click.native="onClickMenuButton"
     />
     <main>
       <nuxt />
     </main>
-    <gp-page-footer v-bind="pageFooter" />
+    <page-footer v-bind="pageFooter" />
   </div>
 </template>
 
 <script>
-
-import { loadFonts, prepareFonts, fontsToLinks } from '@/utils/fonts';
-import { directionDetectionObserver } from '@/service/viewport';
 
 import {
   hydrateWhenVisible,
   hydrateOnInteraction,
   hydrateWhenIdle
 } from 'vue-lazy-hydration';
+import { loadFonts, prepareFonts, fontsToLinks } from '@/utils/fonts';
+import { directionDetectionObserver } from '@/service/viewport';
 
 const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
 
 export default {
 
   components: {
-    gpPageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
-    gpPageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
-    gpPageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
+    PageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    PageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
+    PageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
       event: 'hydrate'
     }),
-    gpPageFooter: hydrateWhenVisible(
+    PageFooter: hydrateWhenVisible(
       () => import(/* webpackMode: "lazy" */'@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
     )
@@ -87,7 +86,7 @@ export default {
   },
 
   computed: {
-    preventScrolling: function () {
+    preventScrolling () {
       return this.$store.getters['layout/preventScrolling'];
     },
     pageHeader () {
@@ -105,7 +104,6 @@ export default {
   },
 
   mounted () {
-
     this.subscriptions = [
       directionDetectionObserver.subscribe(this.onDirectionChange)
     ];
@@ -118,7 +116,6 @@ export default {
     this.$nuxt.$on('triggerScroll', () => {
       this.onDirectionChange(null, true);
     });
-
   },
   destroyed () {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
@@ -144,7 +141,7 @@ export default {
     seo.link = seo.link.concat(fontsToLinks(this.fonts));
     seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
     return seo;
-  },
+  }
 };
 
 if (process.client) {
@@ -225,6 +222,7 @@ html[data-prevent-scrolling="true"] {
     url("~assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-600.woff") format("woff");
 }
+
 /* stylelint-enable */
 </style>
 
