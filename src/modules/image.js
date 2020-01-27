@@ -2,7 +2,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminWebp = require('imagemin-webp');
 
 module.exports = function () {
-  this.extendBuild(config => {
+  this.extendBuild((config) => {
     config.module.rules.push({
       test: /\.(jpe?g|png)$/i,
       oneOf: [

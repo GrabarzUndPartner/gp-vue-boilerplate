@@ -16,7 +16,7 @@ let lastPosition = new Victor(verge.scrollX(), verge.scrollY());
 
 export const scrollObserver = getScrollObserver().pipe(
   map((position) => {
-    let direction = new Victor(() => (position - lastPosition) / Math.abs(position - lastPosition));
+    const direction = new Victor(() => (position - lastPosition) / Math.abs(position - lastPosition));
     lastPosition = position;
     return {
       position,

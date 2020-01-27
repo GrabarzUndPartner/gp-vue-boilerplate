@@ -1,12 +1,12 @@
 
-var yaml = require('js-yaml');
-var fs = require('fs');
+const fs = require('fs');
+const yaml = require('js-yaml');
 
 const svgoConfig = Object.assign({}, yaml.safeLoad(fs.readFileSync(process.cwd() + '/.svgorc.yml', 'utf8')));
 
 module.exports = function () {
   this.extendBuild((config) => {
-    config.module.rules = config.module.rules.map(rule => {
+    config.module.rules = config.module.rules.map((rule) => {
       if (rule.test && rule.test.toString().includes('svg')) {
         const test = rule.test.toString().replace(/svg\|?/, '').replace(/\//g, '');
         return { ...rule, test: new RegExp(test) };

@@ -28,7 +28,7 @@ export default {
         return {
           overline: 'Article Overline',
           headline: 'Article Headline',
-          subline: 'Article Subline',
+          subline: 'Article Subline'
         };
       }
     },

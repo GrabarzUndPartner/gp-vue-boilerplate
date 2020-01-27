@@ -61,8 +61,8 @@ export default {
   },
 
   computed: {
-    isExternal: function () {
-      if (typeof String === this.url) {
+    isExternal () {
+      if (typeof this.url === 'string') {
         return /^(http(s)?|ftp):\/\//.test(this.url) || this.url.startsWith('#');
       }
       return false;

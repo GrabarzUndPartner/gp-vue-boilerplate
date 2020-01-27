@@ -1,23 +1,23 @@
 'use strict';
 
-var sharp = require('sharp');
+const sharp = require('sharp');
 
 module.exports = function (imagePath) {
-  var image = sharp(imagePath);
+  const image = sharp(imagePath);
 
   return {
     metadata: function metadata () {
       return image.metadata();
     },
     resize: function resize (_ref) {
-      var width = _ref.width,
-        mime = _ref.mime,
-        options = _ref.options;
+      let width = _ref.width;
+      const mime = _ref.mime;
+      const options = _ref.options;
       return new Promise(function (resolve, reject) {
         if (options.nonretina) {
           width /= 2;
         }
-        var resized = image.clone().resize(width, null);
+        let resized = image.clone().resize(width, null);
         if (options.background) {
           resized = resized.background(options.background).flatten();
         }
@@ -29,7 +29,7 @@ module.exports = function (imagePath) {
         }
 
         resized.toBuffer(function (err, data, _ref2) {
-          var height = _ref2.height;
+          const height = _ref2.height;
           if (err) {
             reject(err);
           } else {

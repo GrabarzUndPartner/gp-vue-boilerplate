@@ -27,12 +27,12 @@ export default {
   },
   computed: {
     styleClasses () {
-      return { 'js--toggle': this.toggleDirection, 'sticky': this.sticky };
+      return { 'js--toggle': this.toggleDirection, sticky: this.sticky };
     },
     isMenuOpened () {
       return this.$store.getters['layout/isModelOpened']('menu');
     },
-    toggleDirection: function () {
+    toggleDirection () {
       return this.$store.getters['layout/toggleDirection'];
     }
   }

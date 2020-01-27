@@ -34,12 +34,12 @@ export default {
       default () {
         return {
           sources: [
-            { 'media': 'default', 'srcset': 'img/sample-a-16-9/412x232.jpg' },
-            { 'media': 'xs', 'srcset': 'img/sample-a-16-9/768x432.jpg' },
-            { 'media': 'sm', 'srcset': 'img/sample-a-16-9/992x558.jpg' },
-            { 'media': 'md', 'srcset': 'img/sample-a-16-9/1200x675.jpg' },
-            { 'media': 'lg', 'srcset': 'img/sample-a-16-9/1600x900.jpg' },
-            { 'media': 'xl', 'srcset': 'img/sample-a-16-9/1920x1080.jpg' },
+            { media: 'default', srcset: 'img/sample-a-16-9/412x232.jpg' },
+            { media: 'xs', srcset: 'img/sample-a-16-9/768x432.jpg' },
+            { media: 'sm', srcset: 'img/sample-a-16-9/992x558.jpg' },
+            { media: 'md', srcset: 'img/sample-a-16-9/1200x675.jpg' },
+            { media: 'lg', srcset: 'img/sample-a-16-9/1600x900.jpg' },
+            { media: 'xl', srcset: 'img/sample-a-16-9/1920x1080.jpg' }
           ]
         };
       }

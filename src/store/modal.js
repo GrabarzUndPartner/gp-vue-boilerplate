@@ -7,7 +7,7 @@ export const mutations = {
   toggleModal (state, options) {
     const modal = state.modals.find(modal => modal.name === options.name);
     if (modal) {
-      modal.opened = options.flag != undefined ? options.flag : !modal.opened;
+      modal.opened = options.flag !== undefined ? options.flag : !modal.opened;
     }
     this.dispatch('layout/togglePreventScrolling', !!state.modals.find(modal => modal.opened));
   },

@@ -1,5 +1,4 @@
 export function loadFonts () {
-
   if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
     return;
   }
@@ -15,7 +14,6 @@ export function loadFonts () {
     const classList = Array.from(links).reduce((result, link) => result.concat(getRegisteredFontClasses(link.dataset)), []);
     document.documentElement.classList.add(...classList);
   }
-
 }
 
 function getAllPrefetchPreloadLinks () {
@@ -34,7 +32,7 @@ export function fontsToLinks (fonts, pattern) {
 }
 
 export function prepareFonts (fonts) {
-  const preload = fonts.map(font => {
+  const preload = fonts.map((font) => {
     if (font.rel === 'preload') {
       font.onload = 'var options = event.target.dataset; document.documentElement.classList.add("font_" + options.set, "font_" + options.set + "_" + options.weight);';
     }
@@ -46,7 +44,7 @@ export function prepareFonts (fonts) {
 }
 
 function linkFeatureDetection () {
-  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+  if (navigator.userAgent.toLowerCase().includes('firefox')) {
     return false;
   }
   const link = document.createElement('link');
@@ -57,16 +55,13 @@ function linkFeatureDetection () {
 }
 
 function prefetchFonts (preloads, classList = []) {
-  let range = preloads.splice(0, Math.min(2, preloads.length));
+  const range = preloads.splice(0, Math.min(2, preloads.length));
   (global.requestIdleCallback || global.setTimeout)(() => {
     if (range.length) {
       Promise.all(range.map((item) => {
         return prefetchFont(item);
       }))
-        .then((list) => {
-          prefetchFonts(preloads, classList.concat(list));
-          return;
-        })
+        .then(list => prefetchFonts(preloads, classList.concat(list)))
         .catch((e) => {
           throw e;
         });

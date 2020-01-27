@@ -6,7 +6,7 @@ import {
 
 export function getAsyncComponents (componentsData, initialVisibleComponents = 1) {
   return componentsData.map((item, index) => {
-    let asyncLoad = () => import(`@/components/organisms/${item.component}`);
+    const asyncLoad = () => import('@/components/organisms/' + item.component);
     item.data.options = item.data.options || {};
     if (index >= initialVisibleComponents) {
       return {
