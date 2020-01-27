@@ -36,6 +36,27 @@
 <story
   name="Headline"
   group="Atoms"
+  knobs="{
+    tag: {
+      default: select('Type', {
+        h1: 'h1',
+        h2: 'h2',
+        h3: 'h3',
+        h4: 'h4',
+        h5: 'h5',
+        h6: 'h6'
+      }, 'h2')
+    },
+    overline: {
+      default: text('Overline', 'Lorem ipsum')
+    },
+    headline: {
+      default: text('Headline', 'Lorem ipsum')
+    },
+    subline: {
+      default: text('Subline', 'Lorem ipsum')
+    }
+  }"
   >
   <headline :tag="tag" :type="type" :overline="overline" :headline="headline" :subline="subline"/>
 </story>
@@ -48,13 +69,6 @@ export default {
       required: false,
       default () {
         return 'h1';
-      }
-    },
-    type: {
-      type: String,
-      required: false,
-      default () {
-        return 'default';
       }
     },
     overline: {
@@ -83,7 +97,6 @@ export default {
     styleClasses () {
       const classes = {};
       classes[`headline--${this.tag}`] = true;
-      classes[`headline--${this.type}`] = true;
       return classes;
     }
   }
