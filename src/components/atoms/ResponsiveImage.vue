@@ -1,5 +1,5 @@
 <template>
-  <picture class="cover">
+  <picture class="atom-responsive-image">
     <component
       :is="item.asyncComponent"
       v-for="(item, index) in sorted"
@@ -31,12 +31,12 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'src': 'img/sample-a-16-9/retina/824x464.jpg' },
-          { 'media': 'xs', 'src': 'img/sample-a-16-9/retina/1536x864.jpg' },
-          { 'media': 'sm', 'src': 'img/sample-a-16-9/retina/1984x1116.jpg' },
-          { 'media': 'md', 'src': 'img/sample-a-16-9/retina/2400x1350.jpg' },
-          { 'media': 'lg', 'src': 'img/sample-a-16-9/retina/3200x1800.jpg' },
-          { 'media': 'xl', 'src': 'img/sample-a-16-9/retina/3840x2160.jpg' }
+          { 'media': 'default', 'src': 'sample-a-16-9/retina/824x464.jpg' },
+          { 'media': 'xs', 'src': 'sample-a-16-9/retina/1536x864.jpg' },
+          { 'media': 'sm', 'src': 'sample-a-16-9/retina/1984x1116.jpg' },
+          { 'media': 'md', 'src': 'sample-a-16-9/retina/2400x1350.jpg' },
+          { 'media': 'lg', 'src': 'sample-a-16-9/retina/3200x1800.jpg' },
+          { 'media': 'xl', 'src': 'sample-a-16-9/retina/3840x2160.jpg' }
         ];
       }
     },
@@ -109,8 +109,8 @@ function createDefaultImageConfig (item) {
   return createAsyncSource(
     item,
     Promise.all([
-      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize'),
-      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?resize&nonretina')
+      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?resize'),
+      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?resize&nonretina')
     ])
   );
 }
@@ -119,8 +119,8 @@ function createWebpImageConfig (item) {
   return createAsyncSource(
     item,
     Promise.all([
-      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp'),
-      import(/* webpackMode: "lazy-once" */'@/assets/' + item.src + '?webp&resize&nonretina')
+      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?webp'),
+      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?webp&resize&nonretina')
     ])
   );
 }

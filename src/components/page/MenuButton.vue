@@ -2,7 +2,7 @@
   <transition name="button-toggle">
     <button
       v-if="!toggleDirection"
-      class="gp-page-menu-button"
+      class="page-menu-button"
       :class="{'js--selected': isMenuOpened}"
       :aria-label="label"
       @click="onClickMenu"
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-page-menu-button {
+.page-menu-button {
   position: fixed;
   bottom: 10vh;
   left: calc(50% - (48px / 2));

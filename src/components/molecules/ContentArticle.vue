@@ -1,24 +1,24 @@
 <template>
-  <article class="gp-molecule-article">
+  <article class="molecule-article">
     <header v-if="headline">
-      <gp-atom-headline
+      <atom-headline
         v-bind="headline"
         tag="h2"
       />
     </header>
     <slot>
-      <gp-atom-rich-text :content="content" />
+      <atom-rich-text :content="content" />
     </slot>
   </article>
 </template>
 
 <script>
-import gpAtomHeadline from '@/components/atoms/Headline';
-import gpAtomRichText from '@/components/atoms/RichText';
+import AtomHeadline from '@/components/atoms/Headline';
+import AtomRichText from '@/components/atoms/RichText';
 
 export default {
   components: {
-    gpAtomHeadline, gpAtomRichText
+    AtomHeadline, AtomRichText
   },
 
   props: {
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-molecule-article {
+.molecule-article {
   /* empty */
 }
 </style>

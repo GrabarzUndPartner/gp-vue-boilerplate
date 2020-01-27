@@ -1,11 +1,11 @@
 <template>
-  <gp-layout-modal
-    class="gp-organism-menu"
+  <layout-modal
+    class="organism-menu"
     name="menu"
     :options="options"
   >
     <nav>
-      <gp-molecule-link-list
+      <molecule-link-list
         class="links"
         type="page-menu-links"
       >
@@ -13,30 +13,30 @@
           v-for="(item) in navigation"
           :key="item.title"
         >
-          <gp-atom-link :url="localePath(item.url)">
+          <atom-link-to :url="localePath(item.url)">
             {{ item.title }}
-          </gp-atom-link>
-          <gp-molecule-link-list
+          </atom-link-to>
+          <molecule-link-list
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
             class="childs"
             type="page-menu-links"
           />
         </li>
-      </gp-molecule-link-list>
+      </molecule-link-list>
     </nav>
-    <gp-language-switch class="language-switch" />
-  </gp-layout-modal>
+    <language-switch class="language-switch" />
+  </layout-modal>
 </template>
 
 <script>
-import gpLayoutModal from '@/components/layouts/Modal';
-import gpMoleculeLinkList from '@/components/molecules/LinkList';
-import gpAtomLink from '@/components/atoms/Link';
-import gpLanguageSwitch from '@/components/molecules/LanguageSwitch';
+import LayoutModal from '@/components/layouts/Modal';
+import MoleculeLinkList from '@/components/molecules/LinkList';
+import AtomLinkTo from '@/components/atoms/LinkTo';
+import LanguageSwitch from '@/components/molecules/LanguageSwitch';
 
 export default {
-  components: { gpLayoutModal, gpAtomLink, gpMoleculeLinkList, gpLanguageSwitch },
+  components: { LayoutModal, AtomLinkTo, MoleculeLinkList, LanguageSwitch },
   props: {
     opened: {
       type: Boolean,
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.gp-organism-menu {
+.organism-menu {
   margin: 0;
 
   & .language-switch {

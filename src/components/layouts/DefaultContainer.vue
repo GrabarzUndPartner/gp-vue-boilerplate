@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    class="gp-layouts-default-container"
+    class="layouts-default-container"
     :class="styleClasses"
   >
     <slot name="background" />
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-layouts-default-container {
+.layouts-default-container {
   margin: 40px 0;
 
   &:first-child {

@@ -15,12 +15,6 @@
 import { getAsyncComponents } from '@/utils/async-components';
 export default {
 
-  head () {
-    return {
-      title: this.error.statusCode
-    };
-  },
-
   props: {
     error: {
       type: Object,
@@ -72,6 +66,12 @@ export default {
 
   created () {
     this.components = getAsyncComponents(this.dataComponents);
+  },
+
+  head () {
+    return {
+      title: this.error.statusCode
+    };
   }
 };
 </script>

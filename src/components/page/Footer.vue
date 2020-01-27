@@ -1,6 +1,6 @@
 <template>
-  <gp-layout-default-container
-    class="gp-page-footer"
+  <layout-default-container
+    class="page-footer"
     tag="footer"
   >
     <nav>
@@ -9,16 +9,16 @@
         type="page-footer"
       />
     </nav>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 import LinkList from '~/components/molecules/LinkList';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
+    LayoutDefaultContainer,
     LinkList
   },
   props: {
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-page-footer {
+.page-footer {
   padding: calc(20 / 375 * 100%) 0;
   margin: 0;
 

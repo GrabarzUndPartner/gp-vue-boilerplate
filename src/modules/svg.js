@@ -6,11 +6,14 @@ const svgoConfig = Object.assign({}, yaml.safeLoad(fs.readFileSync(process.cwd()
 
 module.exports = function () {
   this.extendBuild((config) => {
-    const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
-
-    if (svgRule) {
-      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
-    }
+    config.module.rules = config.module.rules.map(rule => {
+      if (rule.test && rule.test.toString().includes('svg')) {
+        const test = rule.test.toString().replace(/svg\|?/, '').replace(/\//g, '');
+        return { ...rule, test: new RegExp(test) };
+      } else {
+        return rule;
+      }
+    });
 
     config.module.rules.push({
       test: /\.svg$/,

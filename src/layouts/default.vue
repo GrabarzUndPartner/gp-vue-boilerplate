@@ -1,47 +1,46 @@
 <template>
   <div>
-    <gp-page-header
+    <page-header
       v-bind="pageHeader"
       sticky
     />
-    <gp-page-menu
+    <page-menu
       ref="pageMenu"
       v-bind="pageMenu"
       :opened="!preventMenuOpened"
     />
-    <gp-page-menu-button
+    <page-menu-button
       v-bind="pageMenuButton"
       @click.native="onClickMenuButton"
     />
     <main>
       <nuxt />
     </main>
-    <gp-page-footer v-bind="pageFooter" />
+    <page-footer v-bind="pageFooter" />
   </div>
 </template>
 
 <script>
-
-import { loadFonts, prepareFonts, fontsToLinks } from '@/utils/fonts';
-import { directionDetectionObserver } from '@/service/viewport';
 
 import {
   hydrateWhenVisible,
   hydrateOnInteraction,
   hydrateWhenIdle
 } from 'vue-lazy-hydration';
+import { loadFonts, prepareFonts, fontsToLinks } from '@/utils/fonts';
+import { directionDetectionObserver } from '@/service/viewport';
 
 const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
 
 export default {
 
   components: {
-    gpPageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
-    gpPageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
-    gpPageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
+    PageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    PageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
+    PageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
       event: 'hydrate'
     }),
-    gpPageFooter: hydrateWhenVisible(
+    PageFooter: hydrateWhenVisible(
       () => import(/* webpackMode: "lazy" */'@/components/page/Footer'),
       { observerOptions: { rootMargin: '100px' } }
     )
@@ -87,7 +86,7 @@ export default {
   },
 
   computed: {
-    preventScrolling: function () {
+    preventScrolling () {
       return this.$store.getters['layout/preventScrolling'];
     },
     pageHeader () {
@@ -105,7 +104,6 @@ export default {
   },
 
   mounted () {
-
     this.subscriptions = [
       directionDetectionObserver.subscribe(this.onDirectionChange)
     ];
@@ -118,7 +116,6 @@ export default {
     this.$nuxt.$on('triggerScroll', () => {
       this.onDirectionChange(null, true);
     });
-
   },
   destroyed () {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
@@ -144,7 +141,7 @@ export default {
     seo.link = seo.link.concat(fontsToLinks(this.fonts));
     seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
     return seo;
-  },
+  }
 };
 
 if (process.client) {
@@ -158,7 +155,7 @@ body {
   margin: 0;
 }
 
-html[data-prevent-scrolling] {
+html[data-prevent-scrolling="true"] {
   & body {
     overflow: hidden;
   }
@@ -173,9 +170,7 @@ html[data-prevent-scrolling] {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Amatic SC Regular"),
-    local("AmaticSC-Regular"),
+  src: local("Amatic SC Regular"), local("AmaticSC-Regular"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-regular.woff") format("woff");
 }
@@ -187,9 +182,7 @@ html[data-prevent-scrolling] {
   font-weight: 700;
   font-display: fallback;
   unicode-range: U+000-5FF;
-  src:
-    local("Amatic SC Bold"),
-    local("AmaticSC-Bold"),
+  src: local("Amatic SC Bold"), local("AmaticSC-Bold"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff2") format("woff2"),
     url("~assets/fonts/amatic-sc-v12-latin-700.woff") format("woff");
 }
@@ -201,9 +194,7 @@ html[data-prevent-scrolling] {
   font-weight: 400;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway"),
-    local("Raleway-Regular"),
+  src: local("Raleway"), local("Raleway-Regular"),
     url("~assets/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-regular.woff") format("woff");
 }
@@ -215,9 +206,7 @@ html[data-prevent-scrolling] {
   font-weight: 500;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway Medium"),
-    local("Raleway-Medium"),
+  src: local("Raleway Medium"), local("Raleway-Medium"),
     url("~assets/fonts/raleway-v13-latin-500.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-500.woff") format("woff");
 }
@@ -229,12 +218,11 @@ html[data-prevent-scrolling] {
   font-weight: 600;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src:
-    local("Raleway SemiBold"),
-    local("Raleway-SemiBold"),
+  src: local("Raleway SemiBold"), local("Raleway-SemiBold"),
     url("~assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
     url("~assets/fonts/raleway-v13-latin-600.woff") format("woff");
 }
+
 /* stylelint-enable */
 </style>
 

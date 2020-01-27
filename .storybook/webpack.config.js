@@ -1,12 +1,15 @@
-const path = require('path')
+const { Nuxt } = require('nuxt');
+const nuxt = new Nuxt(require('../nuxt.config.js'))
+const svg = require('../src/modules/svg');
+
+const postcssOptions = Object.assign({}, nuxt.options.build.postcss);
+postcssOptions.plugins = Object.keys(postcssOptions.plugins).map(pluginName => {
+  return require(pluginName)(postcssOptions.plugins[pluginName]);
+});
 
 module.exports = ({ config }) => {
-  config.resolve.alias = Object.assign(config.resolve.alias, {
-    '@': path.resolve(__dirname, "../src"),
-    '@@': path.resolve(__dirname, "../"),
-    '~': path.resolve(__dirname, "../src"),
-    '~~': path.resolve(__dirname, "../")
-  });
+  config.resolve.alias = Object.assign(config.resolve.alias, nuxt.options.alias);
+  svg.bind({ extendBuild (fn) { fn(config) } })();
 
   config.module.rules.push({
     resourceQuery: /postcss/,
@@ -15,45 +18,28 @@ module.exports = ({ config }) => {
       'css-loader',
       {
         loader: 'postcss-loader',
-        options: {
-          config: {
-            path: '.storybook/'
-          }
-        }
+        options: postcssOptions
       }
     ]
-  });
-
-  config.module.rules = config.module.rules.map(rule => {
-    if (rule.test && rule.test.toString().includes('svg')) {
-      const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
-      return { ...rule, test: new RegExp(test) }
-    } else {
-      return rule
-    }
-  });
-
-  config.module.rules.push({
-    test: /\.svg$/,
-    oneOf: [{
-      resourceQuery: /include/,
-      use: [{
-        loader: 'raw-loader',
-        options: {}
-      }, {
-        loader: 'svgo-loader',
-        options: {
-          externalConfig: '.svgorc.yml'
-        }
-      }]
+  }, {
+    resourceQuery: /blockType=story/,
+    loader: "vue-storybook"
+  }, {
+    test: /\.vue$/,
+    loader: 'vue-docgen-loader',
+    options: {
+      docgenOptions: {
+        alias: config.resolve.alias
+      }
     },
-    {
-      use: [{
-        loader: 'file-loader',
-        options: {}
-      }]
-    }]
+    enforce: 'post'
+  }, {
+    test: /\.js$/,
+    resourceQuery: /component/,
+    loader: 'vue-docgen-loader',
+    enforce: 'post'
   });
 
   return config;
 }
+

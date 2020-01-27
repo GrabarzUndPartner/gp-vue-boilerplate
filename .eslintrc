@@ -42,6 +42,14 @@
     "no-console": "off",
     "no-empty-function": "error",
     "vue/no-v-html": "off",
+    "vue/component-name-in-template-casing": [
+      "error",
+      "kebab-case",
+      {
+        "registeredComponentsOnly": true,
+        "ignores": []
+      }
+    ],
     "semi": [
       "error",
       "always"

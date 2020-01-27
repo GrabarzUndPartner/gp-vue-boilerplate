@@ -99,7 +99,7 @@
       }
     },
     {
-      "component": "Video",
+      "component": "SingleVideo",
       "data": {}
     },
     {
@@ -111,7 +111,7 @@
       }
     },
     {
-      "component": "Picture",
+      "component": "SinglePicture",
       "data": {
         "picture": {
           "sources": [

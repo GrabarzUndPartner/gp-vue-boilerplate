@@ -1,26 +1,82 @@
 <template>
-  <gp-layout-two-column-container
-    class="gp-organism-text-image"
+  <layout-two-column-container
+    class="organism-text-image"
     :options="options"
   >
     <template v-slot:left>
-      <gp-atom-picture v-bind="picture" />
+      <atom-responsive-image v-bind="picture" />
     </template>
     <template v-slot:right>
-      <gp-molecule-article v-bind="article" />
+      <molecule-content-article v-bind="article" />
     </template>
-  </gp-layout-two-column-container>
+  </layout-two-column-container>
 </template>
+
+<story
+  name="TextImage"
+  group="Organisms"
+  knobs="{
+    mirror: {
+      default: boolean('Mirror', false)
+    },
+    overline: {
+      default: text('Overline', 'Lorem Overline')
+    },
+    headline: {
+      default: text('Headline', 'Lorem Headline')
+    },
+    subline: {
+      default: text('Subline', 'Lorem Subline')
+    },
+    content: {
+      default: text('Content', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.')
+    },
+    picture: {
+      default: select('Image', {
+        'Set A': {
+          sources: [
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/800' }
+          ]
+        },
+        'Set B': {
+          sources: [
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/800' }
+          ]
+        }
+      }, {
+          sources: [
+            { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/800' },
+            { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/800' },
+            { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/800' },
+            { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/1600' },
+            { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/800' },
+            { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/800' }
+          ]
+        })
+    }
+  }">
+  <text-image :picture="picture" :article="{headline: {overline, headline, subline}, content}" :options="{mirror}"/>
+</story>
 
 <script>
 
-import gpLayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
-import gpMoleculeArticle from '@/components/molecules/Article';
-import gpAtomPicture from '@/components/atoms/PictureStatic';
+import LayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
+import MoleculeContentArticle from '@/components/molecules/ContentArticle';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
 
 export default {
   components: {
-    gpLayoutTwoColumnContainer, gpMoleculeArticle, gpAtomPicture
+    LayoutTwoColumnContainer, MoleculeContentArticle, AtomResponsiveImage
   },
 
   props: {
@@ -66,26 +122,3 @@ export default {
   }
 };
 </script>
-
-<style lang="postcss">
-.gp-organism-text-image {
-  & picture {
-    position: relative;
-    display: block;
-
-    &::before {
-      display: block;
-      width: 100%;
-      padding-top: calc(9 / 16 * 100%);
-      content: "";
-    }
-
-    & img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-}
-</style>

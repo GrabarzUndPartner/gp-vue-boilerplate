@@ -1,16 +1,16 @@
 <template>
   <div class="error">
-    <gp-organism-stage-picture v-bind="stagePicture" />
-    <gp-organism-text v-bind="text" />
+    <organism-stage-picture v-bind="stagePicture" />
+    <organism-text v-bind="text" />
   </div>
 </template>
 
 <script>
 
-import gpOrganismStagePicture from '@/components/organisms/StagePicture';
-import gpOrganismText from '@/components/organisms/Text';
+import OrganismStagePicture from '@/components/organisms/StagePicture';
+import OrganismText from '@/components/organisms/Text';
 export default {
-  components: { gpOrganismStagePicture, gpOrganismText },
+  components: { OrganismStagePicture, OrganismText },
 
   props: {
     error: {
@@ -21,7 +21,7 @@ export default {
     }
   },
 
-  data: function () {
+  data () {
     return {
 
       stagePicture: {
@@ -29,8 +29,8 @@ export default {
           sourceClientOnly: false,
           sources: [
             {
-              'media': 'default',
-              'srcset': 'img/error.jpg'
+              media: 'default',
+              srcset: 'img/error.jpg'
             }
           ]
         }

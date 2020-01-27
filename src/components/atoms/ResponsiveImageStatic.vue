@@ -1,5 +1,5 @@
 <template>
-  <picture>
+  <picture class="atom-responsive-image">
     <source
       v-for="(source, index) in items"
       :key="index"
@@ -16,6 +16,48 @@
     >
   </picture>
 </template>
+
+<story
+  name="ResponsiveImage"
+  group="Atoms"
+  knobs="{
+    sources: {
+      default: select('Images', {
+        'ImageSet Unknown': [],
+        'ImageSet A': [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+        ],
+        'ImageSet B': [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/200' }
+        ]
+      }, [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+        ])
+    },
+    title: {
+      default: text('Title', 'Sample Title')
+    },
+    description: {
+      default: text('Description', 'Sample Description')
+    }
+  }">
+  <picture-static :sources="sources" :title="title" :alt="description"/>
+</story>
 
 <script>
 import { default as breakpoint } from '../../utils/breakpoint';
@@ -103,9 +145,11 @@ export default {
       return sortBy(list, Array.from(breakpoint.keys())).reverse();
     },
     items () {
-      return this.sorted.map(source => {
+
+      const test = this.sorted.map(source => {
         source = Object.assign({}, source);
         source.type = '';
+
         if (this.sourceClientOnly && !process.client) {
           source.srcset = '';
         } else {
@@ -114,6 +158,7 @@ export default {
         source.media = breakpoint.get(source.media);
         return source;
       });
+      return test;
     }
   },
 
@@ -144,6 +189,8 @@ function getMimeType (url) {
 
 <style lang="postcss">
 picture {
+  display: block;
+
   & img {
     display: block;
     width: 100%;

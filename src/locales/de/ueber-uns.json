@@ -20,7 +20,7 @@
       }
     },
     {
-      "component": "Picture",
+      "component": "SinglePicture",
       "data": {
         "picture": {
           "sources": [
