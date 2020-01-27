@@ -1,5 +1,22 @@
 # Project Changelog
 
+# [2.13.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.12.0...v2.13.0) (2020-01-27)
+
+
+### Bug Fixes
+
+* **cleanup:** removed stories folder ([5b6ef0e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5b6ef0e18506dad3e857cd2aa73f0784e10c1cb7))
+* **component-prefixes:** fix component prefixes ([0cef0a1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0cef0a1bfd25738ecef60b59d52a314e3659444d))
+* **packages:** update husky ([a400eb5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a400eb5d97f148e8c0be20b94717efb29b1180d1))
+* **picturestatic:** fixed sizing of picture ([f8182eb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f8182eb1b7a3f0b0f602a632a6c05af12bd27836))
+* **setup:** configured and prepared samples ([b89fa6c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b89fa6cdbc1b4344a783dbd55f06b7708613d7f0))
+
+
+### Features
+
+* **cleanup:** unused storybook addons ([c60e574](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c60e574313be6565596a07b6910f338c21d885c7))
+* **storybook:** fix postcss; update components; clean ([0a1e347](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0a1e347e52ed0b2d5683bd48fdb40898d0866090))
+
 # [2.12.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.3...v2.12.0) (2020-01-23)
 
 
