@@ -17,17 +17,32 @@
     "promise"
   ],
   "extends": [
-    "plugin:vue/recommended",
-    "eslint:recommended",
+    "@nuxtjs",
     "plugin:security/recommended",
     "plugin:promise/recommended"
   ],
   "rules": {
+    "block-spacing": "error",
+    "no-debugger": "off",
+    "no-console": "off",
+    "no-empty-function": "error",
+    "vue/no-v-html": "off",
+    "security/detect-non-literal-fs-filename": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
     "array-bracket-newline": [
       "error",
       {
         "multiline": true,
         "minItems": 1
+      }
+    ],
+    "complexity": [
+      "error",
+      {
+        "max": 7
       }
     ],
     "no-multiple-empty-lines": [
@@ -37,11 +52,10 @@
         "maxEOF": 1
       }
     ],
-    "block-spacing": "error",
-    "no-debugger": "off",
-    "no-console": "off",
-    "no-empty-function": "error",
-    "vue/no-v-html": "off",
+    "vue/name-property-casing": [
+      "error",
+      "PascalCase"
+    ],
     "vue/component-name-in-template-casing": [
       "error",
       "kebab-case",
@@ -49,21 +63,6 @@
         "registeredComponentsOnly": true,
         "ignores": []
       }
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "complexity": [
-      "error",
-      {
-        "max": 7
-      }
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "security/detect-non-literal-fs-filename": "off"
+    ]
   }
 }

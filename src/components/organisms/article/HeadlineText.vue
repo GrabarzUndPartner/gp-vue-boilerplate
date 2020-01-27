@@ -37,7 +37,7 @@ export default {
         return {
           overline: 'Overline HeadlineText',
           headline: 'Headline',
-          subline: 'Subline',
+          subline: 'Subline'
         };
       }
     },

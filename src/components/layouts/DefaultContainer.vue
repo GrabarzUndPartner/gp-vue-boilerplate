@@ -31,7 +31,7 @@ export default {
     visible: {
       type: Boolean,
       default () {
-        return process.browser ? true : false;
+        return !!process.browser;
       }
     }
   },

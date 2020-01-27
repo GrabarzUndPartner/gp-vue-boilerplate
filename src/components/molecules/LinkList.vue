@@ -26,13 +26,13 @@ export default {
   props: {
     type: {
       type: String,
-      default: function () {
+      default () {
         return null;
       }
     },
     list: {
       type: Array,
-      default: function () {
+      default () {
         return [];
       }
     }

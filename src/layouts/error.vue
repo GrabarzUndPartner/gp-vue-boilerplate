@@ -24,7 +24,7 @@ export default {
     }
   },
 
-  data: function () {
+  data () {
     return {
       components: []
     };
@@ -34,22 +34,22 @@ export default {
     dataComponents () {
       return [
         {
-          'component': 'StagePicture',
-          'data': {
-            'picture': {
-              'sourceClientOnly': false,
-              'sources': [
+          component: 'StagePicture',
+          data: {
+            picture: {
+              sourceClientOnly: false,
+              sources: [
                 {
-                  'media': 'default',
-                  'srcset': 'img/error.jpg'
+                  media: 'default',
+                  srcset: 'img/error.jpg'
                 }
               ]
             }
           }
         },
         {
-          'component': 'Text',
-          'data': {
+          component: 'Text',
+          data: {
             article: {
               headline: {
                 overline: null,

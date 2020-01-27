@@ -16,8 +16,8 @@ export const directionDetectionObserver =
     .pipe(pluck(1))
     .pipe(pluck('direction'))
     .pipe(bufferCount(DIRECTION_BUFFER_COUNT, 1))
-    .pipe(map((buffer) => buffer.reduce((result, direction) => result + direction.y, 0) / buffer.length))
-    .pipe(filter((direction) => !(direction % 1)))
+    .pipe(map(buffer => buffer.reduce((result, direction) => result + direction.y, 0) / buffer.length))
+    .pipe(filter(direction => !(direction % 1)))
     .pipe(
       shareReplay({
         refCount: true,

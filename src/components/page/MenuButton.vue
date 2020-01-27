@@ -29,7 +29,7 @@ export default {
     isMenuOpened () {
       return this.$store.getters['modal/isModelOpened']('menu');
     },
-    toggleDirection: function () {
+    toggleDirection () {
       return this.$store.getters['layout/toggleDirection'] || false;
     }
   },

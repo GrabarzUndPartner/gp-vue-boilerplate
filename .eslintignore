@@ -1,1 +1,14 @@
-/node_modules/*
+# Folders
+/.tmp/
+/.nuxt/
+/dist/
+/storybook/
+/node_modules/
+/env/nuxt/cert/
+/output/
+/public/
+/reports/
+/w3c/
+
+# Files
+src/static/sw.js

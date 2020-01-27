@@ -32,9 +32,9 @@ export default {
   },
 
   computed: {
-    languages: function () {
+    languages () {
       return this.$i18n.locales.filter((locale) => {
-        return !this.filterCurrentLang || this.filterCurrentLang && locale.code !== this.$i18n.locale;
+        return !this.filterCurrentLang || (this.filterCurrentLang && locale.code !== this.$i18n.locale);
       });
     }
   }

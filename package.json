@@ -30,7 +30,7 @@
     "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
-    "lint:es": "eslint --fix --ext .js,.vue,.json --ignore-path .gitignore ./",
+    "lint:es": "eslint --fix --ext .js,.vue,.json ./",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html",
     "cypress:open": "npx cypress open --browser chrome",
@@ -109,6 +109,7 @@
   "dependencies": {
     "@js-basics/vector": "^1.41.1",
     "@nuxtjs/axios": "^5.9.3",
+    "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/robots": "^2.4.2",
     "nodeify": "^1.0.1",
@@ -116,12 +117,12 @@
     "nuxt-i18n": "^6.5.0",
     "nuxt-payload-extractor": "0.0.14",
     "nuxt-polyfill": "^1.0.3",
+    "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "^6.5.4",
     "snyk": "^1.279.1",
     "upath": "^1.2.0",
     "verge": "^1.10.2",
-    "vue-lazy-hydration": "^1.0.0-beta.12",
-    "object-fit-images": "github:StephanGerbeth/object-fit-images"
+    "vue-lazy-hydration": "^1.0.0-beta.12"
   },
   "optionalDependencies": {
     "picturefill": "^3.0.3",

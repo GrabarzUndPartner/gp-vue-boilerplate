@@ -30,7 +30,7 @@ export default {
     },
     navigation: {
       type: Array,
-      default: function () {
+      default () {
         return [];
       }
     }

@@ -17,26 +17,13 @@ import { getAsyncComponents } from '@/utils/async-components';
 export default {
   scrollToTop: true,
 
-  data () {
-    return {
-      title: 'title of page',
-      components: []
-    };
-  },
-
-  head () {
-    return {
-      title: this.title
-    };
-  },
-
   asyncData ({ store, app, error }) {
     const path = getRoutePath(app)
       .replace(RegExp(`^/${app.i18n.locale}`), '')
       .replace(/^\/([^?.#]*)[\\/?#]{0,1}[^\\/]*$/, '$1')
       .replace(/\/index|\/$/, '') || 'index';
 
-    return import(/* webpackMode: "lazy" */`@/virtual-locales/${app.i18n.locale}/${path}.json`).then(data => {
+    return import(/* webpackMode: "lazy" */'@/virtual-locales/' + app.i18n.locale + '/' + path + '.json').then((data) => {
       if ('routeParams' in data) {
         // set other locale slugs for languageSwitch
         store.dispatch('i18n/setRouteParams', data.routeParams);
@@ -50,8 +37,21 @@ export default {
     });
   },
 
+  data () {
+    return {
+      title: 'title of page',
+      components: []
+    };
+  },
+
   created () {
     this.components = getAsyncComponents(this.components);
+  },
+
+  head () {
+    return {
+      title: this.title
+    };
   }
 
 };

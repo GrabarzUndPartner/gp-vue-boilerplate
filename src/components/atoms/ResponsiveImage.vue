@@ -31,12 +31,12 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'src': 'sample-a-16-9/retina/824x464.jpg' },
-          { 'media': 'xs', 'src': 'sample-a-16-9/retina/1536x864.jpg' },
-          { 'media': 'sm', 'src': 'sample-a-16-9/retina/1984x1116.jpg' },
-          { 'media': 'md', 'src': 'sample-a-16-9/retina/2400x1350.jpg' },
-          { 'media': 'lg', 'src': 'sample-a-16-9/retina/3200x1800.jpg' },
-          { 'media': 'xl', 'src': 'sample-a-16-9/retina/3840x2160.jpg' }
+          { media: 'default', src: 'sample-a-16-9/retina/824x464.jpg' },
+          { media: 'xs', src: 'sample-a-16-9/retina/1536x864.jpg' },
+          { media: 'sm', src: 'sample-a-16-9/retina/1984x1116.jpg' },
+          { media: 'md', src: 'sample-a-16-9/retina/2400x1350.jpg' },
+          { media: 'lg', src: 'sample-a-16-9/retina/3200x1800.jpg' },
+          { media: 'xl', src: 'sample-a-16-9/retina/3840x2160.jpg' }
         ];
       }
     },
@@ -163,7 +163,7 @@ function getSource (urls) {
 }
 
 function getMimeType (url) {
-  let mime = /\w+$/.exec(url);
+  const mime = /\w+$/.exec(url);
   return mime[0];
 }
 </script>

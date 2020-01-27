@@ -94,7 +94,7 @@ module.exports = {
           'scroll'
         ],
         'rucksack-css': {},
-        'lost': {
+        lost: {
           gutter: '15px',
           flexbox: 'flex',
           cycle: 'auto'
@@ -145,7 +145,7 @@ module.exports = {
 
   modules: [
     '@/modules/virtual',
-    //'@/modules/codesandbox',
+    // '@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/svg',
     '@/modules/image',
@@ -213,7 +213,7 @@ module.exports = {
           {
             require: 'object-fit-images',
             detect: () => 'objectFit' in document.documentElement.style,
-            install: (objectFitImages) => window.objectFitImages = objectFitImages
+            install: objectFitImages => (window.objectFitImages = objectFitImages)
           },
           {
             require: 'picturefill',
@@ -228,7 +228,7 @@ module.exports = {
             detect: () => 'CustomEvent' in window &&
               // In Safari, typeof CustomEvent == 'object' but it otherwise works fine
               (typeof window.CustomEvent === 'function' ||
-                (window.CustomEvent.toString().indexOf('CustomEventConstructor') > -1))
+                (window.CustomEvent.toString().includes('CustomEventConstructor')))
           },
           {
             require: 'intersection-observer',
@@ -250,7 +250,7 @@ module.exports = {
     [
       '@/modules/licence', {
         perChunkOutput: false,
-        unacceptableLicenseTest: (licenseType) => (licenseType === 'GPL'),
+        unacceptableLicenseTest: licenseType => (licenseType === 'GPL'),
         handleMissingLicenseText: (packageName) => {
           return 'NO LICENSE TEXT: ' + packageName;
         },
@@ -276,9 +276,9 @@ module.exports = {
             LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
             OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             SOFTWARE.`,
-          'consola': 'MIT License',
+          consola: 'MIT License',
           'intersection-observer': 'W3C Software and Document License',
-          'requestidlecallback': 'MIT License',
+          requestidlecallback: 'MIT License',
           'vue-browserupdate': 'MIT License'
         }
       }
@@ -344,13 +344,13 @@ module.exports = {
         Disallow: '',
         Sitemap: 'https://localhost:8050/sitemap.xml'
       }
-    ],
+    ]
   ],
 
   head: {
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ]
   }
 };

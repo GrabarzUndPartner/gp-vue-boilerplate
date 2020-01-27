@@ -69,12 +69,12 @@ export default {
 
   },
   computed: {
-    styleClasses: function () {
+    styleClasses () {
       return {
         'js--opened': this.opened
       };
     },
-    opened: function () {
+    opened () {
       return this.$store.getters['modal/isModelOpened']('menu');
     }
   },
@@ -85,10 +85,8 @@ export default {
         if (this.onOpen) {
           this.onOpen();
         }
-      } else {
-        if (this.onClose) {
-          this.onClose();
-        }
+      } else if (this.onClose) {
+        this.onClose();
       }
     }
   },

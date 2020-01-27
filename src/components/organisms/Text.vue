@@ -34,7 +34,7 @@ export default {
           headline: {
             overline: 'Text Overline',
             headline: 'Text Headline',
-            subline: 'Text Subline',
+            subline: 'Text Subline'
           },
           content: '<p>Example Text</p>'
         };

@@ -1,12 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const VirtualModule = require('webpack-virtual-modules');
-var chokidar = require('chokidar');
+const chokidar = require('chokidar');
 module.exports = class VirtualLang extends VirtualModule {
-  constructor() {
-    super();
-  }
-
   apply (compiler) {
     super.apply(compiler);
 
@@ -26,7 +22,7 @@ function getFile (filePath) {
 }
 
 function readContent (compiler, filePath) {
-  let target = getLangFilePath(filePath);
+  const target = getLangFilePath(filePath);
   if (
     compiler.inputFileSystem._virtualFiles &&
     compiler.inputFileSystem._virtualFiles[path.resolve(target)]
@@ -46,11 +42,11 @@ function writeContent (virtualContent, filePath, content) {
 }
 
 function mergeContent (compiler, virtualContent, filePath) {
-  let lang = getLangByFilePath(filePath);
-  let result = readContent(compiler, filePath);
+  const lang = getLangByFilePath(filePath);
+  const result = readContent(compiler, filePath);
 
-  let file = getFile(path.resolve(filePath));
-  let content = Object.assign(result, { [lang]: JSON.parse(file) });
+  const file = getFile(path.resolve(filePath));
+  const content = Object.assign(result, { [lang]: JSON.parse(file) });
   writeContent(virtualContent, filePath, content);
 }
 

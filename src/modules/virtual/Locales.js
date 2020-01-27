@@ -1,27 +1,22 @@
 
+const fs = require('fs');
 const VirtualModule = require('webpack-virtual-modules');
 const glob = require('glob');
 const nodeify = require('nodeify');
-var chokidar = require('chokidar');
-var path = require('upath');
-
-const fs = require('fs');
+const chokidar = require('chokidar');
+const path = require('upath');
 
 const LOCALES_PATH = 'src/locales';
 
 module.exports = class VirtualPageContent extends VirtualModule {
-  constructor() {
-    super();
-  }
-
   apply (compiler) {
     super.apply(compiler);
 
     if (process.env.NODE_ENV !== 'production') {
-      const onChange = filePath => {
+      const onChange = (filePath) => {
         getPageContent(filePath.replace(LOCALES_PATH, ''))
           .then(page => writePageModule(this, page))
-          .catch(e => { throw e; });
+          .catch((e) => { throw e; });
       };
       chokidar
         .watch(
@@ -34,7 +29,7 @@ module.exports = class VirtualPageContent extends VirtualModule {
         )
         .on('change', onChange)
         .on('add', onChange)
-        .on('unlink', filePath => {
+        .on('unlink', (filePath) => {
           const page = getPageMeta(filePath.replace(LOCALES_PATH, ''));
           page.content = null;
           writePageModule(this, page);
@@ -48,13 +43,13 @@ module.exports = class VirtualPageContent extends VirtualModule {
 
 function onBeforeCompile (params, callback) {
   if (!(FIELD_PAGES in params)) {
-    nodeify(getPages().then(pages => setPagesFromParams(params, pages)).catch(e => { throw e; }), callback);
+    nodeify(getPages().then(pages => setPagesFromParams(params, pages)).catch((e) => { throw e; }), callback);
   }
 }
 
 function onCompilation (compilation, params) {
   const pages = getPagesFromParams(params);
-  pages.forEach(page => {
+  pages.forEach((page) => {
     writePageModule(this, page);
   });
 }
@@ -89,7 +84,7 @@ function getVirtualFilePath (page) {
  * @override
  */
 function getPages () {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     glob(path.resolve(LOCALES_PATH + '/**/*.json'), (e, files) => {
       const rootPath = path.resolve(process.cwd(), LOCALES_PATH, '');
       files = files.map(file => getPageContent(path.normalize(file).replace(rootPath, '')));
@@ -99,22 +94,25 @@ function getPages () {
 }
 
 function getPageMeta (filePath) {
-  var matches = filePath.match(/^\/(\w{2})\/(.*)/);
-  const locale = matches[1], path = matches[2];
+  const matches = filePath.match(/^\/(\w{2})\/(.*)/);
+  const locale = matches[1]; const path = matches[2];
   return { locale, path };
 }
 
 function getPageContent (filePath) {
   const page = getPageMeta(filePath);
-  return getFileContent(page.locale, page.path).then(content => {
+  return getFileContent(page.locale, page.path).then((content) => {
     page.content = content;
     return page;
   });
 }
 
 function getFileContent (locale, filePath) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     fs.readFile(path.resolve(LOCALES_PATH, locale, filePath), 'utf8', function (err, content) {
+      if (err) {
+        throw err;
+      }
       resolve(content);
     });
   });

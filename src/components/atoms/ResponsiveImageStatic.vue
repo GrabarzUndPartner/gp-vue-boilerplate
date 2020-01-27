@@ -60,7 +60,7 @@
 </story>
 
 <script>
-import { default as breakpoint } from '../../utils/breakpoint';
+import breakpoint from '../../utils/breakpoint';
 
 const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
@@ -100,12 +100,12 @@ export default {
       ],
       default () {
         return [
-          { 'media': 'default', 'srcset': 'img/sample-a-16-9/412x232.jpg' },
-          { 'media': 'xs', 'srcset': 'img/sample-a-16-9/768x432.jpg' },
-          { 'media': 'sm', 'srcset': 'img/sample-a-16-9/992x558.jpg' },
-          { 'media': 'md', 'srcset': 'img/sample-a-16-9/1200x675.jpg' },
-          { 'media': 'lg', 'srcset': 'img/sample-a-16-9/1600x900.jpg' },
-          { 'media': 'xl', 'srcset': 'img/sample-a-16-9/1920x1080.jpg' }
+          { media: 'default', srcset: 'img/sample-a-16-9/412x232.jpg' },
+          { media: 'xs', srcset: 'img/sample-a-16-9/768x432.jpg' },
+          { media: 'sm', srcset: 'img/sample-a-16-9/992x558.jpg' },
+          { media: 'md', srcset: 'img/sample-a-16-9/1200x675.jpg' },
+          { media: 'lg', srcset: 'img/sample-a-16-9/1600x900.jpg' },
+          { media: 'xl', srcset: 'img/sample-a-16-9/1920x1080.jpg' }
         ];
       }
     },
@@ -141,12 +141,11 @@ export default {
 
   computed: {
     sorted () {
-      let list = [].concat(this.sources);
+      const list = [].concat(this.sources);
       return sortBy(list, Array.from(breakpoint.keys())).reverse();
     },
     items () {
-
-      const test = this.sorted.map(source => {
+      const test = this.sorted.map((source) => {
         source = Object.assign({}, source);
         source.type = '';
 
@@ -182,7 +181,7 @@ function sortBy (list, pattern) {
 }
 
 function getMimeType (url) {
-  let mime = /\w+$/.exec(url);
+  const mime = /\w+$/.exec(url);
   return mime[0];
 }
 </script>
