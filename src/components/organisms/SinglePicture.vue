@@ -1,22 +1,22 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-picture"
+  <layout-default-container
+    class="organism-picture"
     v-bind="options"
   >
     <template v-slot:container>
-      <gp-atom-picture v-bind="picture" />
+      <atom-responsive-image v-bind="picture" />
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomPicture from '@/components/atoms/PictureStatic';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
-    gpAtomPicture
+    LayoutDefaultContainer,
+    AtomResponsiveImage
   },
 
   props: {
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-picture {
+.organism-picture {
   position: relative;
   width: 100%;
 

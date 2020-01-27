@@ -1,25 +1,25 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-article-headline-text"
+  <layout-default-container
+    class="organism-article-headline-text"
     v-bind="options"
   >
-    <gp-molecule-article :headline="headline">
-      <gp-atom-rich-text :content="text" />
-    </gp-molecule-article>
-  </gp-layout-default-container>
+    <molecule-content-article :headline="headline">
+      <atom-rich-text :content="text" />
+    </molecule-content-article>
+  </layout-default-container>
 </template>
 
 <script>
 
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpMoleculeArticle from '@/components/molecules/Article';
-import gpAtomRichText from '@/components/atoms/RichText';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import MoleculeContentArticle from '@/components/molecules/ContentArticle';
+import AtomRichText from '@/components/atoms/RichText';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
-    gpMoleculeArticle,
-    gpAtomRichText
+    LayoutDefaultContainer,
+    MoleculeContentArticle,
+    AtomRichText
   },
 
   props: {
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-article-headline-text {
+.organism-article-headline-text {
   /* empty */
 }
 </style>

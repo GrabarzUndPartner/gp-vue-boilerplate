@@ -1,8 +1,8 @@
 <template>
   <transition name="modal-toggle">
-    <gp-layout-default-container
+    <layout-default-container
       v-show="opened"
-      class="gp-layout-modal"
+      class="layout-modal"
       :class="styleClasses"
       v-bind="options"
     >
@@ -22,17 +22,17 @@
           </div>
         </div>
       </template>
-    </gp-layout-default-container>
+    </layout-default-container>
   </transition>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 
 import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
 
 export default {
-  components: { gpLayoutDefaultContainer, svgIconClose },
+  components: { LayoutDefaultContainer, svgIconClose },
   props: {
     options: {
       type: Object,
@@ -122,7 +122,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-layout-modal {
+.layout-modal {
   position: fixed;
   top: 0;
   left: 0;

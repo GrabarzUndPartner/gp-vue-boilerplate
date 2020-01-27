@@ -1,5 +1,5 @@
 <template>
-  <div class="gp-atom-rich-text">
+  <div class="atom-rich-text">
     <div
       v-if="!$slots.default"
       v-html="content"
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.gp-atom-rich-text {
+.atom-rich-text {
   & strong,
   & b,
   & i,

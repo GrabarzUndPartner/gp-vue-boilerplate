@@ -1,6 +1,6 @@
 <template>
   <div
-    class="gp-atom-video"
+    class="atom-responsive-video"
     :class="styleClasses"
   >
     <client-only>
@@ -17,7 +17,7 @@
         >
       </video>
     </client-only>
-    <gp-atom-picture
+    <atom-responsive-image
       v-bind="poster"
       class="poster"
     />
@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import gpAtomPicture from '@/components/atoms/PictureStatic';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
 export default {
-  components: { gpAtomPicture },
+  components: { AtomResponsiveImage },
   props: {
 
     poster: {
@@ -185,7 +185,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.gp-atom-video {
+.atom-responsive-video {
   position: relative;
   background: var(--color-black);
 

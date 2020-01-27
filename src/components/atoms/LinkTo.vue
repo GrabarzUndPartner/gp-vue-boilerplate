@@ -41,7 +41,10 @@
 export default {
   props: {
     url: {
-      type: String,
+      type: [
+        // Type Object for Route Objects { path: '/page' }
+        String, Object
+      ],
       required: false,
       default: 'http://example.com'
     },
@@ -59,7 +62,10 @@ export default {
 
   computed: {
     isExternal: function () {
-      return this.url.match(/^(http(s)?|ftp):\/\//) || this.url.match(/^#/);
+      if (typeof String === this.url) {
+        return /^(http(s)?|ftp):\/\//.test(this.url) || this.url.startsWith('#');
+      }
+      return false;
     }
   }
 };

@@ -1,21 +1,21 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-text"
+  <layout-default-container
+    class="organism-text"
     v-bind="options"
   >
-    <gp-molecule-article v-bind="article" />
-  </gp-layout-default-container>
+    <molecule-content-article v-bind="article" />
+  </layout-default-container>
 </template>
 
 <script>
 
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpMoleculeArticle from '@/components/molecules/Article';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import MoleculeContentArticle from '@/components/molecules/ContentArticle';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
-    gpMoleculeArticle
+    LayoutDefaultContainer,
+    MoleculeContentArticle
   },
 
   props: {
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-text {
+.organism-text {
   /* empty */
 }
 </style>

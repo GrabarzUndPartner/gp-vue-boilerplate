@@ -1,6 +1,6 @@
 <template>
-  <gp-layout-default-container
-    class="gp-layout-two-column-container"
+  <layout-default-container
+    class="layout-two-column-container"
     :class="styleClasses"
     :visible="options.visible"
   >
@@ -14,16 +14,16 @@
         </div>
       </div>
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
 
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 
 export default {
 
-  components: { gpLayoutDefaultContainer },
+  components: { LayoutDefaultContainer },
 
   props: {
 
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-layout-two-column-container {
+.layout-two-column-container {
   & .lost-flex-container {
     align-items: center;
 

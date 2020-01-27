@@ -1,15 +1,15 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-stage-picture"
+  <layout-default-container
+    class="organism-stage-picture"
     v-bind="options"
   >
     <template slot="background">
-      <gp-atom-picture
+      <atom-responsive-image
         v-if="picture"
         v-bind="picture"
       />
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <story
@@ -54,13 +54,13 @@
 </story>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomPicture from '@/components/atoms/PictureStatic';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
-    gpAtomPicture
+    LayoutDefaultContainer,
+    AtomResponsiveImage
   },
 
   props: {

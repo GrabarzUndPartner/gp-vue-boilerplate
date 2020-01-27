@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="gp-molecule-link-list"
+    class="molecule-link-list"
     :class="styleClasses"
   >
     <slot>
@@ -8,20 +8,20 @@
         v-for="(item) in list"
         :key="item.title"
       >
-        <gp-atom-link-to :url="localePath(item.url)">
+        <atom-link-to :url="getUrl(item)">
           {{ item.title }}
-        </gp-atom-link-to>
+        </atom-link-to>
       </li>
     </slot>
   </ul>
 </template>
 
 <script>
-import gpAtomLinkTo from '@/components/atoms/LinkTo';
+import AtomLinkTo from '@/components/atoms/LinkTo';
 
 export default {
   components: {
-    gpAtomLinkTo
+    AtomLinkTo
   },
   props: {
     type: {
@@ -43,12 +43,22 @@ export default {
       classes[`type--${this.type}`] = this.type;
       return classes;
     }
+  },
+  methods: {
+    getUrl (item) {
+      if ('locale' in this) {
+        // use when nuxtI18n exists
+        this.localePath(item.url);
+      } else {
+        return item.url;
+      }
+    }
   }
 };
 </script>
 
 <style lang="postcss">
-.gp-molecule-link-list {
+.molecule-link-list {
   &.type--page-menu-links {
     padding: 0;
     margin: 0;

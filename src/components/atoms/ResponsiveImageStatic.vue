@@ -1,5 +1,5 @@
 <template>
-  <picture>
+  <picture class="atom-responsive-image">
     <source
       v-for="(source, index) in items"
       :key="index"
@@ -18,7 +18,7 @@
 </template>
 
 <story
-  name="PictureStatic"
+  name="ResponsiveImage"
   group="Atoms"
   knobs="{
     sources: {

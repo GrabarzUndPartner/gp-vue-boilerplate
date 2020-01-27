@@ -1,27 +1,27 @@
 <template>
-  <gp-molecule-link-list class="gp-molecule-language-switch">
+  <molecule-link-list class="molecule-language-switch">
     <li
       v-for="language in languages"
       :key="language.code"
     >
-      <gp-atom-link-to
+      <atom-link-to
         :url="switchLocalePath(language.code)"
         class="language-switch"
         :title="language.code"
       />
     </li>
-  </gp-molecule-link-list>
+  </molecule-link-list>
 </template>
 
 <script>
 
-import gpMoleculeLinkList from '@/components/molecules/LinkList';
-import gpAtomLinkTo from '@/components/atoms/LinkTo';
+import MoleculeLinkList from '@/components/molecules/LinkList';
+import AtomLinkTo from '@/components/atoms/LinkTo';
 
 export default {
   components: {
-    gpMoleculeLinkList,
-    gpAtomLinkTo
+    MoleculeLinkList,
+    AtomLinkTo
   },
   props: {
     filterCurrentLang: {
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.gp-molecule-language-switch {
+.molecule-language-switch {
   padding: 0;
   margin: 0;
   font-family: sans-serif;

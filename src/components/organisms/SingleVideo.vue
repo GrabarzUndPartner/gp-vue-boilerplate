@@ -1,20 +1,20 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-video"
+  <layout-default-container
+    class="organism-single-video"
     v-bind="options"
   >
     <template slot="container">
-      <gp-atom-video v-bind="video" />
+      <atom-responsive-video v-bind="video" />
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomVideo from '@/components/atoms/Video';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import AtomResponsiveVideo from '@/components/atoms/ResponsiveVideo';
 
 export default {
-  components: { gpLayoutDefaultContainer, gpAtomVideo },
+  components: { LayoutDefaultContainer, AtomResponsiveVideo },
   props: {
 
     options: {
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-video {
+.organism-single-video {
   /* empty */
 }
 </style>

@@ -1,25 +1,25 @@
 <template>
-  <gp-layout-default-container
-    class="gp-organism-stage-video"
+  <layout-default-container
+    class="organism-stage-video"
     v-bind="options"
   >
     <template slot="background">
-      <gp-atom-video
+      <atom-responsive-video
         v-if="video"
         v-bind="video"
       />
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomVideo from '@/components/atoms/Video';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import AtomResponsiveVideo from '@/components/atoms/ResponsiveVideo';
 
 export default {
   components: {
-    gpLayoutDefaultContainer,
-    gpAtomVideo
+    LayoutDefaultContainer,
+    AtomResponsiveVideo
   },
 
   props: {
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.gp-organism-stage-video {
+.organism-stage-video {
   position: relative;
   width: 100%;
 }

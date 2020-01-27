@@ -1,24 +1,24 @@
 <template>
-  <gp-layout-default-container
-    class="gp-page-header"
+  <layout-default-container
+    class="page-header"
     :class="styleClasses"
     tag="header"
   >
     <template slot="container">
       <div class="logo">
-        <gp-atom-link-to url="/">
+        <atom-link-to url="/">
           Logo
-        </gp-atom-link-to>
+        </atom-link-to>
       </div>
     </template>
-  </gp-layout-default-container>
+  </layout-default-container>
 </template>
 
 <script>
-import gpLayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import gpAtomLinkTo from '@/components/atoms/LinkTo';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import AtomLinkTo from '@/components/atoms/LinkTo';
 export default {
-  components: { gpLayoutDefaultContainer, gpAtomLinkTo },
+  components: { LayoutDefaultContainer, AtomLinkTo },
   props: {
     sticky: {
       type: Boolean,
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.gp-page-header {
+.page-header {
   position: fixed;
   top: 0;
   left: 0;

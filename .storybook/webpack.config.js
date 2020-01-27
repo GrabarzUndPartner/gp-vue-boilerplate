@@ -2,6 +2,11 @@ const { Nuxt } = require('nuxt');
 const nuxt = new Nuxt(require('../nuxt.config.js'))
 const svg = require('../src/modules/svg');
 
+const postcssOptions = Object.assign({}, nuxt.options.build.postcss);
+postcssOptions.plugins = Object.keys(postcssOptions.plugins).map(pluginName => {
+  return require(pluginName)(postcssOptions.plugins[pluginName]);
+});
+
 module.exports = ({ config }) => {
   config.resolve.alias = Object.assign(config.resolve.alias, nuxt.options.alias);
   svg.bind({ extendBuild (fn) { fn(config) } })();
@@ -13,11 +18,7 @@ module.exports = ({ config }) => {
       'css-loader',
       {
         loader: 'postcss-loader',
-        options: {
-          config: {
-            path: './'
-          }
-        }
+        options: postcssOptions
       }
     ]
   }, {

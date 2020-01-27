@@ -1,15 +1,15 @@
 <template>
-  <gp-layout-two-column-container
-    class="gp-organism-text-image"
+  <layout-two-column-container
+    class="organism-text-image"
     :options="options"
   >
     <template v-slot:left>
-      <gp-atom-picture v-bind="picture" />
+      <atom-responsive-image v-bind="picture" />
     </template>
     <template v-slot:right>
-      <gp-molecule-article v-bind="article" />
+      <molecule-content-article v-bind="article" />
     </template>
-  </gp-layout-two-column-container>
+  </layout-two-column-container>
 </template>
 
 <story
@@ -70,13 +70,13 @@
 
 <script>
 
-import gpLayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
-import gpMoleculeArticle from '@/components/molecules/Article';
-import gpAtomPicture from '@/components/atoms/PictureStatic';
+import LayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
+import MoleculeContentArticle from '@/components/molecules/ContentArticle';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
 
 export default {
   components: {
-    gpLayoutTwoColumnContainer, gpMoleculeArticle, gpAtomPicture
+    LayoutTwoColumnContainer, MoleculeContentArticle, AtomResponsiveImage
   },
 
   props: {
