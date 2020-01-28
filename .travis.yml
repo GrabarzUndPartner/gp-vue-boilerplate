@@ -84,7 +84,7 @@ jobs:
         - touch gh-pages/.nojekyll
       deploy:
         provider: pages
-        skip_cleanup: true
+        cleanup: false
         github_token: $GH_TOKEN
         local_dir: gh-pages/
         on:
