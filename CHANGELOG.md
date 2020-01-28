@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.15.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.1...v2.15.2) (2020-01-28)
+
+
+### Bug Fixes
+
+* **travis:** fix deploy, added edge for travis deployment v2 ([68284ef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/68284ef60a5bc89e8c7b7efa34756558544036a8))
+
 ## [2.15.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.0...v2.15.1) (2020-01-28)
 
 
