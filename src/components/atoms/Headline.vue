@@ -58,7 +58,7 @@
     }
   }"
   >
-  <headline :tag="tag" :type="type" :overline="overline" :headline="headline" :subline="subline"/>
+  <headline :tag="tag" :overline="overline" :headline="headline" :subline="subline"/>
 </story>
 
 <script>
