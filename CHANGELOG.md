@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.15.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.2...v2.15.3) (2020-01-28)
+
+
+### Bug Fixes
+
+* **husky-lint-staged:** downgrade versions ([da82a75](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/da82a75c6f59f55a28b821a1626c1f24b7632048))
+
 ## [2.15.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.1...v2.15.2) (2020-01-28)
 
 
