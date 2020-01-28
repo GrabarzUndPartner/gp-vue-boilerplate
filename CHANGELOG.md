@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.15.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.14.0...v2.15.0) (2020-01-28)
+
+
+### Features
+
+* **storybook:** added frontend env stuff ([cec3904](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cec3904b7d0259ccf16ec7fe606e0b75f8cd9be4))
+
 # [2.14.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.13.0...v2.14.0) (2020-01-28)
 
 
