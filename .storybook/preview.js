@@ -6,8 +6,10 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withInfo, setDefaults } from 'storybook-addon-vue-info';
 import { action, configureActions } from '@storybook/addon-actions';
 
+import './prepare';
+
 const req = require.context("../src/components", true, /\.vue$/);
-process.client = true;
+
 addParameters({
   backgrounds: [
     { name: 'green', value: '#2bc4b6' },
