@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.14.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.13.0...v2.14.0) (2020-01-28)
+
+
+### Features
+
+* **update:** fix deprecated key skip_cleanup ([b62c1e5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b62c1e5a4047bd2a489a0db5c3e9b1d6160d5112))
+
 # [2.13.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.12.0...v2.13.0) (2020-01-27)
 
 
