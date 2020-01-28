@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.15.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.0...v2.15.1) (2020-01-28)
+
+
+### Bug Fixes
+
+* **storybook:** fix postcss plugins ([b81e59c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b81e59c05ba96178b8c876e7e49b3fc224c3f15a))
+
 # [2.15.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.14.0...v2.15.0) (2020-01-28)
 
 
