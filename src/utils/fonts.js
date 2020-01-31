@@ -91,6 +91,6 @@ function prefetchFont (item) {
 function getRegisteredFontClasses (options) {
   return [
     `font_${options.set}`,
-    `font_${options.set}_${options.weight}`
+    `font_${options.set}_${options.weight}_${options.style}`
   ];
 }
