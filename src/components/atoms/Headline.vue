@@ -135,7 +135,7 @@ export default {
     }
 
     & .subline {
-      @nest .font_raleway_500 .js--visible & {
+      @nest .font_raleway_500_normal .js--visible & {
         font-weight: 500;
       }
     }
@@ -151,7 +151,7 @@ export default {
         font-family: "Amatic SC", serif;
       }
 
-      @nest .font_amatic-sc_700 .js--visible & {
+      @nest .font_amatic-sc_700_normal .js--visible & {
         font-weight: 700;
       }
     }

@@ -59,27 +59,32 @@ export default {
           href: require('@/assets/fonts/amatic-sc-v12-latin-regular.woff2'),
           rel: 'preload',
           'data-set': 'amatic-sc',
-          'data-weight': '400'
+          'data-weight': '400',
+          'data-style': 'normal'
         }, {
           href: require('@/assets/fonts/amatic-sc-v12-latin-700.woff2'),
           rel: 'delay-prefetch',
           'data-set': 'amatic-sc',
-          'data-weight': '700'
+          'data-weight': '700',
+          'data-style': 'normal'
         }, {
           href: require('@/assets/fonts/raleway-v13-latin-regular.woff2'),
           rel: 'preload',
           'data-set': 'raleway',
-          'data-weight': '400'
+          'data-weight': '400',
+          'data-style': 'normal'
         }, {
           href: require('@/assets/fonts/raleway-v13-latin-500.woff2'),
           rel: 'delay-prefetch',
           'data-set': 'raleway',
-          'data-weight': '500'
+          'data-weight': '500',
+          'data-style': 'normal'
         }, {
           href: require('@/assets/fonts/raleway-v13-latin-600.woff2'),
           rel: 'delay-prefetch',
           'data-set': 'raleway',
-          'data-weight': '600'
+          'data-weight': '600',
+          'data-style': 'normal'
         }
       ])
     };
