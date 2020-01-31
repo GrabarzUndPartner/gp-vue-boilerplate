@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.15.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.3...v2.15.4) (2020-01-31)
+
+
+### Bug Fixes
+
+* **font-loader:** add font-style ([162e051](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/162e0513706cda63a02de82f616fdb89b2863264))
+
 ## [2.15.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.2...v2.15.3) (2020-01-28)
 
 
