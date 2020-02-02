@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.15.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.5...v2.15.6) (2020-02-02)
+
+
+### Bug Fixes
+
+* **travis-preview:** add keep_history property ([e71a20b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e71a20bb2690dd485dcb6d640f9f57422f5ebc1b))
+
 ## [2.15.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.4...v2.15.5) (2020-02-01)
 
 
