@@ -5,6 +5,7 @@ environment:
     secure: 8HHcJP7ARHNAWFRocNJtjNf3djhJd1IdDApO1cTnoBhW4Xr5gbfeY6GS1hAfVVI7
 
 install:
+  - dir C:\avvm\node
   - ps: $nodejs_version = Get-Content .nvmrc -Raw | foreach{ $_.Trim()}
   - ps: Install-Product node 12.16.0
   - npm install
