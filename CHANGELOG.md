@@ -1,5 +1,17 @@
 # Project Changelog
 
+## [2.15.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.6...v2.15.7) (2020-02-18)
+
+
+### Bug Fixes
+
+* **appveyor:** test build ([30a284c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/30a284cf131898169c9b2f2dd7427837fc6d8926))
+* **appveyor:** test build ([4029b2b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4029b2b440ed9fe655c4c6ce134fa80acf654fcf))
+* **appveyor:** test build ([51f807a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/51f807a9ebd5751bf94cfd7b401156947b838ed5))
+* **appveyor:** test build ([d2c32d8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d2c32d8b19420506bf7d236defb55d1b36807ec8))
+* **appveyor:** test build ([69013ec](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/69013ec8876c59014caf055a58c57447a3d5d8b0))
+* **appveyor:** test build ([b61d6f1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b61d6f12202612ff98bb98c6eec82f9b442e9d76))
+
 ## [2.15.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.5...v2.15.6) (2020-02-02)
 
 
