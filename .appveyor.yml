@@ -6,7 +6,7 @@ environment:
 
 install:
   - ps: $nodejs_version = Get-Content .nvmrc -Raw | foreach{ $_.Trim()}
-  - ps: Install-Product node $nodejs_version x64
+  - ps: Install-Product node $nodejs_version x86
   - npm install
 
 build: off
