@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.16.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.8...v2.16.0) (2020-02-19)
+
+
+### Features
+
+* **package:** bulk update of different dependencies ([a7cb058](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a7cb0586daf298ac556501aad387d31489879434))
+
 ## [2.15.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.15.7...v2.15.8) (2020-02-19)
 
 
