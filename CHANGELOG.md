@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.17.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.16.1...v2.17.0) (2020-02-22)
+
+
+### Features
+
+* **update-clean:** clean package, config and update components ([eb7e1cd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eb7e1cd180cd86e78749692b1dfe526b5a3f6557))
+
 ## [2.16.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.16.0...v2.16.1) (2020-02-22)
 
 
