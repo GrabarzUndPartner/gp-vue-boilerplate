@@ -4,6 +4,9 @@
     :class="styleClasses"
     :visible="options.visible"
   >
+    <template v-slot:background>
+      <slot name="background" />
+    </template>
     <template v-slot:container>
       <div class="lost-flex-container">
         <div>
