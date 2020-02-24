@@ -118,7 +118,7 @@
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.5.4",
-    "snyk": "1.295.0",
+    "snyk": "1.296.0",
     "upath": "1.2.0",
     "verge": "1.10.2",
     "vue-lazy-hydration": "1.0.0-beta.12"
