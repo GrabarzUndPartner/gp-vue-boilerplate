@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.17.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.0...v2.17.1) (2020-02-27)
+
+
+### Bug Fixes
+
+* **mocha:** updated package version ([de023c6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/de023c673771fbc787098b31156dbcd797959255))
+
 # [2.17.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.16.1...v2.17.0) (2020-02-22)
 
 
