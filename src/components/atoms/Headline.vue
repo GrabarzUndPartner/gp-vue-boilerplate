@@ -147,11 +147,11 @@ export default {
         font-size: 36px;
       }
 
-      @nest .font_amatic-sc .js--visible & {
+      @nest .font_amatic_sc .js--visible & {
         font-family: "Amatic SC", serif;
       }
 
-      @nest .font_amatic-sc_700_normal .js--visible & {
+      @nest .font_amatic_sc_700_normal .js--visible & {
         font-weight: 700;
       }
     }
