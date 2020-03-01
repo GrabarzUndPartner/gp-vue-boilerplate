@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.1...v2.18.0) (2020-03-01)
+
+
+### Features
+
+* **fonts:** added nuxt-font-loader-strategy for font load ([eb16fcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eb16fcdb48ce664acc34a24aed25d3ef4cce0747))
+
 ## [2.17.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.0...v2.17.1) (2020-02-27)
 
 
