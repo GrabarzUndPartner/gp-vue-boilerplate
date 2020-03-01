@@ -47,8 +47,8 @@
       ".releaserc": "json",
       ".stylelintrc": "json",
       ".vcmrc": "json",
-      "*.css": "css",
-      "*.pcss": "css",
+      "*.css": "postcss",
+      "*.pcss": "postcss",
       ".*ignore": "ignore",
       "*.js.tmpl": "javascript",
       "*.html.tmpl": "html"
@@ -88,7 +88,9 @@
       "dariofuzinato.vue-peek",
       "formulahendry.auto-close-tag",
       "formulahendry.auto-rename-tag",
-      "jcbuisson.vue"
+      "jcbuisson.vue",
+      "naumovs.color-highlight",
+      "csstools.postcss"
     ]
   }
 }
