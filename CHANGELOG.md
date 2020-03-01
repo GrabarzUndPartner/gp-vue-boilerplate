@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.18.0...v2.18.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency nuxt-font-loader-strategy to 1.0.0 ([1e2d22e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1e2d22eb55d9c3e9633b6fb0391628c21aa7ceab))
+
 # [2.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.1...v2.18.0) (2020-03-01)
 
 
