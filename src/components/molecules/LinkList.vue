@@ -48,7 +48,7 @@ export default {
     getUrl (item) {
       if ('$i18n' in this) {
         // use when nuxtI18n exists
-        this.localePath(item.url);
+        return this.localePath(item.url);
       } else {
         return item.url;
       }

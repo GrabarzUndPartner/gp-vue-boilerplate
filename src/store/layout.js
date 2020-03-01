@@ -1,10 +1,14 @@
 
 export const state = () => ({
+  data: {},
   preventScrolling: false,
   toggleDirection: false
 });
 
 export const mutations = {
+  data (state, data) {
+    state.data = data;
+  },
   preventScrolling (state, data) {
     state.preventScrolling = Boolean(data);
   },
@@ -14,6 +18,9 @@ export const mutations = {
 };
 
 export const getters = {
+  data (state) {
+    return state.data;
+  },
   preventScrolling (state) {
     return state.preventScrolling;
   },
@@ -23,7 +30,9 @@ export const getters = {
 };
 
 export const actions = {
-
+  setData (context, value) {
+    context.commit('data', value);
+  },
   toggleDirection (context, value) {
     context.commit('toggleDirection', value);
   },

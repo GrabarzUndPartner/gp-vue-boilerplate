@@ -1,0 +1,122 @@
+{
+  "de": {
+    "components": {
+      "pageHeader": {},
+      "pageMenu": {
+        "navigation": [
+          {
+            "title": "Home",
+            "url": "index"
+          },
+          {
+            "title": "Über uns",
+            "url": "about"
+          },
+          {
+            "title": "Projekte",
+            "url": "projects",
+            "childrens": [
+              {
+                "title": "Projekt 1",
+                "url": {
+                  "name": "projects-project",
+                  "params": {
+                    "project": "projekt-1"
+                  }
+                }
+              },
+              {
+                "title": "Projekt 2",
+                "url": {
+                  "name": "projects-project",
+                  "params": {
+                    "project": "projekt-2"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "pageMenuButton": {
+        "label": "Menu Öffnen/Schließen"
+      },
+      "pageFooter": {
+        "navigation": [
+          {
+            "title": "Kontakt",
+            "url": "contact"
+          },
+          {
+            "title": "Nutzungsbedingungen",
+            "url": "terms"
+          },
+          {
+            "title": "Rechtliche Hinweise",
+            "url": "legals"
+          }
+        ]
+      }
+    }
+  },
+  "en": {
+    "components": {
+      "pageHeader": {},
+      "pageMenu": {
+        "navigation": [
+          {
+            "title": "Home",
+            "url": "index"
+          },
+          {
+            "title": "About",
+            "url": "about"
+          },
+          {
+            "title": "Projects",
+            "url": "projects",
+            "childrens": [
+              {
+                "title": "Project 1",
+                "url": {
+                  "name": "projects-project",
+                  "params": {
+                    "project": "project-1"
+                  }
+                }
+              },
+              {
+                "title": "Project 2",
+                "url": {
+                  "name": "projects-project",
+                  "params": {
+                    "project": "project-2"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "pageMenuButton": {
+        "label": "Menu Open/Close"
+      },
+      "pageFooter": {
+        "navigation": [
+          {
+            "title": "Contact",
+            "url": "contact"
+          },
+          {
+            "title": "Terms of use",
+            "url": "terms"
+          },
+          {
+            "title": "Legals",
+            "url": "legals"
+          }
+        ]
+      }
+    }
+  }
+}
