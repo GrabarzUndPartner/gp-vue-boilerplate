@@ -1,22 +1,22 @@
 <template>
   <div>
     <page-header
-      v-bind="pageHeader"
+      v-bind="layoutComponents.pageHeader"
       sticky
     />
     <page-menu
       ref="pageMenu"
-      v-bind="pageMenu"
+      v-bind="layoutComponents.pageMenu"
       :opened="!preventMenuOpened"
     />
     <page-menu-button
-      v-bind="pageMenuButton"
+      v-bind="layoutComponents.pageMenuButton"
       @click.native="onClickMenuButton"
     />
     <main>
       <nuxt />
     </main>
-    <page-footer v-bind="pageFooter" />
+    <page-footer v-bind="layoutComponents.pageFooter" />
   </div>
 </template>
 
@@ -57,20 +57,15 @@ export default {
   },
 
   computed: {
+
+    layoutData () {
+      return this.$store.getters['layout/data'][this.$i18n.locale];
+    },
+    layoutComponents () {
+      return this.layoutData.components;
+    },
     preventScrolling () {
       return this.$store.getters['layout/preventScrolling'];
-    },
-    pageHeader () {
-      return this.$t('header');
-    },
-    pageMenu () {
-      return this.$t('menu');
-    },
-    pageMenuButton () {
-      return this.$t('menuButton');
-    },
-    pageFooter () {
-      return this.$t('footer');
     }
   },
 

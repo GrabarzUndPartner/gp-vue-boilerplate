@@ -6,7 +6,7 @@ const nodeify = require('nodeify');
 const chokidar = require('chokidar');
 const path = require('upath');
 
-const LOCALES_PATH = 'src/locales';
+const LOCALES_PATH = 'src/locales/pages';
 
 module.exports = class VirtualPageContent extends VirtualModule {
   apply (compiler) {
