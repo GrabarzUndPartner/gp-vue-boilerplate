@@ -1,6 +1,6 @@
 import { registerStories } from 'vue-storybook'
 import { configure, storiesOf, addParameters, addDecorator } from '@storybook/vue'
-import { withKnobs, text, color, select, boolean } from "@storybook/addon-knobs/vue";
+import { withKnobs, text, number, color, select, boolean } from "@storybook/addon-knobs/vue";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withA11y } from '@storybook/addon-a11y';
 import { withInfo, setDefaults } from 'storybook-addon-vue-info';
@@ -41,6 +41,7 @@ function loadStories () {
     const config = {
       knobs: {
         text,
+        number,
         boolean,
         color,
         select
@@ -53,7 +54,7 @@ function loadStories () {
         // withInfo
       ],
       methods: {
-        // action
+        action
       }
     }
     registerStories(req, filename, storiesOf, config)

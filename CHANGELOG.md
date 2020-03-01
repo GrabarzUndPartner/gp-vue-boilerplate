@@ -1,5 +1,26 @@
 # Project Changelog
 
+# [2.19.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.18.1...v2.19.0) (2020-03-01)
+
+
+### Features
+
+* **locales:** update locales ([fa79a1a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fa79a1addd9771040f1aec2b89982104d379af39))
+
+## [2.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.18.0...v2.18.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency nuxt-font-loader-strategy to 1.0.0 ([1e2d22e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1e2d22eb55d9c3e9633b6fb0391628c21aa7ceab))
+
+# [2.18.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.1...v2.18.0) (2020-03-01)
+
+
+### Features
+
+* **fonts:** added nuxt-font-loader-strategy for font load ([eb16fcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eb16fcdb48ce664acc34a24aed25d3ef4cce0747))
+
 ## [2.17.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.17.0...v2.17.1) (2020-02-27)
 
 
