@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.19.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.18.1...v2.19.0) (2020-03-01)
+
+
+### Features
+
+* **locales:** update locales ([fa79a1a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fa79a1addd9771040f1aec2b89982104d379af39))
+
 ## [2.18.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.18.0...v2.18.1) (2020-03-01)
 
 
