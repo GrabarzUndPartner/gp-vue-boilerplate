@@ -113,7 +113,7 @@
     "@nuxtjs/robots": "2.4.2",
     "nodeify": "1.0.1",
     "nuxt": "2.11.0",
-    "nuxt-font-loader-strategy": "^1.0.0",
+    "nuxt-font-loader-strategy": "1.0.0",
     "nuxt-i18n": "6.6.0",
     "nuxt-payload-extractor": "0.0.14",
     "nuxt-polyfill": "1.0.3",
