@@ -41,7 +41,7 @@
 
 ## Description
 
-G&P Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites with vuejs.
+The Grabarz & Partner Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites with vuejs.
 .
 ### Demo
 
