@@ -2,5 +2,19 @@
   "extends": [
     "config:base"
   ],
-  "ignoreDeps": ["husky", "lint-staged"]
+  "ignoreDeps": [
+    "husky",
+    "lint-staged"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
 }
