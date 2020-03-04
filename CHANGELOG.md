@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.1...v2.19.2) (2020-03-04)
+
+
+### Bug Fixes
+
+* **renovate:** automerge packages (excluded major updates) ([7b4b2ff](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7b4b2ff3f286597238afbe9d6b20e39557eb1577))
+
 ## [2.19.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.0...v2.19.1) (2020-03-03)
 
 
