@@ -90,7 +90,8 @@
       "formulahendry.auto-rename-tag",
       "jcbuisson.vue",
       "naumovs.color-highlight",
-      "csstools.postcss"
+      "csstools.postcss",
+      "christian-kohler.npm-intellisense"
     ]
   }
 }
