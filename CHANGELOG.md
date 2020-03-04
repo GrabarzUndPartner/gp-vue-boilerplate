@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.3...v2.19.4) (2020-03-04)
+
+
+### Bug Fixes
+
+* **vscode-config:** added npm intellisense plugin ([5137af1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5137af16d66a0bdeca00f06afe2c1386868c7d39))
+
 ## [2.19.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.2...v2.19.3) (2020-03-04)
 
 
