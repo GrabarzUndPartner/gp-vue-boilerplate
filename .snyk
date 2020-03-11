@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.0
+version: v1.13.5
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-MIXINDEEP-450212:
@@ -193,6 +193,166 @@ ignore:
     - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
         reason: None given
         expires: '2019-07-25T13:41:47.348Z'
+  SNYK-JS-JSYAML-174129:
+    - verge > grunt > js-yaml:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+  SNYK-JS-LODASH-450202:
+    - verge > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt-contrib-uglify > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-util > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+  SNYK-JS-LODASH-73638:
+    - verge > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt-contrib-uglify > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-util > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+  SNYK-JS-LODASH-73639:
+    - verge > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt-contrib-uglify > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-util > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+  'npm:lodash:20180130':
+    - verge > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt-contrib-uglify > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > findup-sync > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt > grunt-legacy-util > lodash:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+  SNYK-JS-MINIMIST-559764:
+    - verge > grunt-contrib-uglify > maxmin > pretty-bytes > meow > minimist:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+      snyk > @snyk/update-notifier > latest-version > package-json > registry-auth-token > rc > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - snyk > @snyk/update-notifier > latest-version > package-json > registry-url > rc > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > babel-loader > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > cache-loader > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > hard-source-webpack-plugin > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > postcss-url > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > webpack > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > webpack-bundle-analyzer > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > webpack-dev-middleware > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.889Z'
+    - nuxt > @nuxt/webpack > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > optimize-css-assets-webpack-plugin > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > tar > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-10T16:49:37.890Z'
+  'npm:cli:20160615':
+    - verge > cli:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
+    - verge > grunt-contrib-jshint > jshint > cli:
+        reason: None given
+        expires: '2020-04-10T14:05:29.963Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-AXIOS-174505:
@@ -259,3 +419,18 @@ patch:
   SNYK-JS-TREEKILL-536781:
     - snyk > snyk-sbt-plugin > tree-kill:
         patched: '2019-12-12T02:12:52.261Z'
+  'npm:minimatch:20160620':
+    - verge > cli > glob > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > grunt > glob > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > grunt-contrib-jshint > jshint > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > grunt-contrib-jshint > jshint > cli > glob > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > findup-sync > glob > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > grunt > findup-sync > glob > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'
+    - verge > grunt > minimatch:
+        patched: '2020-03-11T14:01:54.236Z'

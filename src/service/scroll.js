@@ -21,8 +21,10 @@ export function getScrollObserver (el = global) {
 }
 
 export function getScrollPos (el = global) {
+  const doc = global.document;
+  const docElem = (doc && doc.documentElement) || { scrollLeft: 0, scrollTop: 0 };
   return new Victor(
-    el.scrollLeft || global.pageXOffset || global.document.documentElement.scrollLeft,
-    el.scrollTop || global.pageYOffset || global.document.documentElement.scrollTop
+    el.scrollLeft || global.pageXOffset || docElem.scrollLeft,
+    el.scrollTop || global.pageYOffset || docElem.scrollTop
   );
 }
