@@ -111,6 +111,8 @@
     "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/robots": "2.4.2",
+    "minimist": "^1.2.2",
+    "node-pre-gyp": "^0.14.0",
     "nodeify": "1.0.1",
     "nuxt": "^2.11.0",
     "nuxt-font-loader-strategy": "^1.0.0",
