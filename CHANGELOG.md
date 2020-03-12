@@ -1,5 +1,17 @@
 # Project Changelog
 
+## [2.19.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.5...v2.19.6) (2020-03-12)
+
+
+### Bug Fixes
+
+* **cleanup:** package cleanup ([c4e7332](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c4e73325eb42507dde67b5d215ab865f86b10239))
+* **lint:** eslint & stylelint ([b39eb02](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b39eb02fb7c8847175b66e9a3afd8b9848969411))
+* **package:** remove snyk test call ([8abb1ce](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8abb1ce9f401f8473a3674bc6cb4810a30b77331))
+* **packages:** reordered and clean upped dependencies ([8854777](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/885477778e5aaad2e3eff0df5bc1b33645038f7f))
+* **snyk:** handled vulnerabilities ([f11aeab](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f11aeabcedb23f5e7e9149a92e5acee397640d55))
+* **snyk:** wizard ([b22e734](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b22e734a167629b2614dbed81cd2a944e647bbfb))
+
 ## [2.19.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.4...v2.19.5) (2020-03-07)
 
 
