@@ -1,261 +1,393 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.0
+version: v1.13.5
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  SNYK-JS-MIXINDEEP-450212:
-    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > mixin-deep:
+  SNYK-JS-MINIMIST-559764:
+    - nuxt > @nuxt/webpack > babel-loader > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.340Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > mixin-deep':
+        expires: '2020-04-11T08:40:03.766Z'
+      minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > mixin-deep':
+        expires: '2020-04-11T10:23:22.896Z'
+    - nuxt > @nuxt/webpack > cache-loader > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      node-pre-gyp > rc > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.896Z'
+    - nuxt > @nuxt/webpack > hard-source-webpack-plugin > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        expires: '2020-04-11T08:40:03.766Z'
+      babel-loader > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > postcss-url > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > mixin-deep':
+        expires: '2020-04-11T08:40:03.766Z'
+      eslint > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        expires: '2020-04-11T08:40:03.766Z'
+      imagemin-webpack-plugin > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack-bundle-analyzer > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      node-gyp > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack-dev-middleware > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.341Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      postcss-url > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      '@packtracker/webpack-plugin > webpack-bundle-analyzer > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      '@storybook/vue > webpack > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T08:40:03.766Z'
+      node-gyp > tar > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-  SNYK-JS-SETVALUE-450213:
-    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.766Z'
+      sharp > prebuild-install > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > cache-base > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.342Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > cache-base > set-value':
+        expires: '2020-04-11T08:40:03.766Z'
+      '@commitlint/cli > @commitlint/read > @marionebl/sander > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.766Z'
+      '@storybook/vue > @storybook/core > webpack > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > optimize-css-assets-webpack-plugin > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.766Z'
+      '@storybook/vue > @storybook/core > webpack-dev-middleware > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.766Z'
+      imagemin-webpack-plugin > imagemin-svgo > svgo > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.766Z'
+      vue-svg-loader > svg-to-vue > svgo > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > tar > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:40:03.767Z'
+      sharp > prebuild-install > tar-fs > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > rc > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.343Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T08:59:17.138Z'
+      '@storybook/vue > webpack > terser-webpack-plugin > cacache > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:08:40.540Z'
+      '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - node-pre-gyp > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:08:40.540Z'
+      '@storybook/vue > @storybook/core > terser-webpack-plugin > cacache > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - node-pre-gyp > tar > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.344Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value:
+        expires: '2020-04-11T10:08:40.540Z'
+      eslint > file-entry-cache > flat-cache > write > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - stylelint > file-entry-cache > flat-cache > write > mkdirp > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > webpack > terser-webpack-plugin > cacache > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.345Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.346Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > terser-webpack-plugin > cacache > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > braces > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.899Z'
+    - '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist':
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.899Z'
+    - stylelint > postcss-sass > gonzales-pe > minimist:
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.899Z'
+  SNYK-JS-DECOMPRESS-557358:
+    - imagemin-mozjpeg > mozjpeg > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webp > cwebp-bin > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > download > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.347Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webp > cwebp-bin > bin-build > download > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-    - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-mozjpeg > mozjpeg > bin-wrapper > download > decompress:
         reason: None given
-        expires: '2019-07-25T13:41:47.348Z'
-# patches apply the minimum changes required to fix a vulnerability
-patch:
-  SNYK-JS-AXIOS-174505:
-    - '@nuxtjs/axios > axios':
-        patched: '2019-05-06T02:12:12.801Z'
-  SNYK-JS-LODASH-450202:
-    - nuxt > @nuxt/webpack > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/builder > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > html-webpack-plugin > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > hard-source-webpack-plugin > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @babel/core > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > webpack-bundle-analyzer > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @babel/core > @babel/traverse > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > lodash':
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/core > @babel/helpers > @babel/traverse > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-module-imports > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-modules-umd > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/generator > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
-        patched: '2019-07-04T02:12:19.225Z'
-    - snyk > inquirer > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-nodejs-lockfile-parser > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-mvn-plugin > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-config > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-nuget-plugin > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > @snyk/dep-graph > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > snyk-go-plugin > graphlib > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-    - snyk > @snyk/dep-graph > graphlib > lodash:
-        patched: '2019-07-06T08:24:25.649Z'
-  SNYK-JS-HTTPSPROXYAGENT-469131:
-    - snyk > proxy-agent > https-proxy-agent:
-        patched: '2019-10-04T02:12:16.374Z'
-    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
-        patched: '2019-10-04T02:12:16.374Z'
-  SNYK-JS-TREEKILL-536781:
-    - snyk > snyk-sbt-plugin > tree-kill:
-        patched: '2019-12-12T02:12:52.261Z'
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webp > cwebp-bin > bin-wrapper > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-wrapper > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-wrapper > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+  SNYK-JS-DECOMPRESSTAR-559095:
+    - imagemin-mozjpeg > mozjpeg > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webp > cwebp-bin > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - imagemin-webp > cwebp-bin > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-mozjpeg > mozjpeg > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.897Z'
+    - imagemin-webp > cwebp-bin > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-build > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-gifsicle > gifsicle > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-optipng > optipng-bin > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress > decompress-targz > decompress-tar:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+  SNYK-JS-DOTPROP-543489:
+    - '@commitlint/config-conventional > conventional-changelog-conventionalcommits > compare-func > dot-prop':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@commitlint/cli > @commitlint/lint > @commitlint/parse > conventional-changelog-angular > compare-func > dot-prop':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+patch: {}

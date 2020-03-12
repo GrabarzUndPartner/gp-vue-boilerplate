@@ -1,18 +1,17 @@
 import { fromEvent, timer } from 'rxjs';
 import { map, debounce, startWith, share } from 'rxjs/operators';
-import verge from 'verge';
 import { Victor } from '@js-basics/vector';
-import { getScrollObserver } from './scroll';
+import { getScrollObserver, getScrollPos } from './scroll';
 
 export const resizeObserver = fromEvent(global, 'resize')
   .pipe(
     startWith(0),
     debounce(() => timer(350)),
-    map(() => new Victor(verge.viewportW(), verge.viewportH())),
+    map(() => getWindowSize()),
     share()
   );
 
-let lastPosition = new Victor(verge.scrollX(), verge.scrollY());
+let lastPosition = getScrollPos();
 
 export const scrollObserver = getScrollObserver().pipe(
   map((position) => {
@@ -30,6 +29,17 @@ export const orientationObserver = fromEvent(global, 'orientationchange')
   .pipe(
     startWith(0),
     debounce(() => timer(350)),
-    map(() => new Victor(verge.viewportW(), verge.viewportH())),
+    map(() => getWindowSize()),
     share()
   );
+
+function getWindowSize () {
+  const win = typeof global !== 'undefined' && global;
+  const doc = typeof win.document !== 'undefined' && win.document;
+  const docElem = doc && doc.documentElement;
+  return new Victor(getSize(docElem.clientWidth, win.innerWidth), getSize(docElem.clientHeight, win.innerHeight));
+}
+
+function getSize (a, b) {
+  return a < b ? b : a;
+}

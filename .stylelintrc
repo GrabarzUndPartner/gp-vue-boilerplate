@@ -20,6 +20,8 @@
           "after-comment"
         ]
       }
-    ]
+    ],
+    "block-closing-brace-empty-line-before": null,
+    "max-empty-lines": null
   }
 }
