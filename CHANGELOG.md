@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.6...v2.19.7) (2020-03-13)
+
+
+### Bug Fixes
+
+* **storybook:** added removed babel-preset-vue plugin ([8842285](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8842285d8cf0cc73d4771b5a9c287c27f9f00208))
+
 ## [2.19.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.5...v2.19.6) (2020-03-12)
 
 
