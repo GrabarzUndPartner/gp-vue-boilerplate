@@ -96,7 +96,7 @@
     "stylelint": "13.2.1",
     "stylelint-config-css-modules": "2.2.0",
     "stylelint-config-lost": "0.0.3",
-    "stylelint-config-recess-order": "2.0.3",
+    "stylelint-config-recess-order": "2.0.4",
     "stylelint-config-standard": "20.0.0",
     "svgo-loader": "2.2.1",
     "terser": "4.6.6",
