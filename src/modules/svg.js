@@ -8,8 +8,8 @@ module.exports = function () {
   this.extendBuild((config) => {
     config.module.rules = config.module.rules.map((rule) => {
       if (rule.test && rule.test.toString().includes('svg')) {
-        const test = rule.test.toString().replace(/svg\|?/, '').replace(/\//g, '');
-        return { ...rule, test: new RegExp(test) };
+        const source = rule.test.source.replace(/svg\|?/, '');
+        return { ...rule, test: new RegExp(source, rule.test.flags) };
       } else {
         return rule;
       }
