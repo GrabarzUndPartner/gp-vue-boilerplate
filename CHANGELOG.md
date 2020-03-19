@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.7...v2.19.8) (2020-03-18)
+
+
+### Bug Fixes
+
+* **svg-loader:** fix rule test, flags was ignored… ([d15bac7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d15bac7e92525deb400b04b66743b32db12f084a))
+
 ## [2.19.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.6...v2.19.7) (2020-03-13)
 
 
