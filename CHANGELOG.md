@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.10...v2.19.11) (2020-04-24)
+
+
+### Bug Fixes
+
+* **update:** update scrollBehavior and fix empty resource ([2ea93f7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2ea93f7deda2574febdb7117af3c9066af0545aa))
+
 ## [2.19.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.9...v2.19.10) (2020-04-24)
 
 
