@@ -217,39 +217,9 @@ module.exports = {
 
     '@/modules/virtual',
     // '@/modules/codesandbox',
-    '@/modules/fix/image',
     '@/modules/svg',
-    '@/modules/image',
     '@/modules/analyzer',
     '@nuxtjs/axios',
-    [
-      '@bazzite/nuxt-optimized-images', {
-        handleImages: [
-          'jpeg', 'png', 'gif'
-        ],
-        responsive: {
-          adapter: require('./src/modules/responsive-loader/adapter.js')
-        },
-        optimizeImagesInDev: false,
-        mozjpeg: {
-          quality: 70,
-          progressive: true,
-          sample: [
-            '2x2'
-          ]
-        },
-        pngquant: {
-          quality: '75-100'
-        },
-        optipng: {
-          optimizationLevel: 3
-        },
-        gifsicle: {
-          interlaced: true,
-          optimizationLevel: 3
-        }
-      }
-    ],
     [
       'nuxt-i18n', {
         locales: [

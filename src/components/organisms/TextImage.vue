@@ -72,7 +72,7 @@
 
 import LayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
 import MoleculeContentArticle from '@/components/molecules/ContentArticle';
-import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImage';
 
 export default {
   components: {

@@ -1,20 +1,68 @@
 <template>
   <picture class="atom-responsive-image">
-    <component
-      :is="item.asyncComponent"
-      v-for="(item, index) in sorted"
+    <source
+      v-for="(source, index) in items"
       :key="index"
-    />
+      v-bind="source"
+    >
     <img
-      src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+      :src="placeholder"
       :alt="alt"
+      :title="title"
+      :loading="loading"
+      :width="width"
+      :height="height"
       @load="onLoad"
     >
   </picture>
 </template>
 
+<story
+  name="ResponsiveImage"
+  group="Atoms"
+  knobs="{
+    sources: {
+      default: select('Images', {
+        'ImageSet Unknown': [],
+        'ImageSet A': [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+        ],
+        'ImageSet B': [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/200' }
+        ]
+      }, [
+          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
+          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
+          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
+          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
+          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
+          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
+        ])
+    },
+    title: {
+      default: text('Title', 'Sample Title')
+    },
+    description: {
+      default: text('Description', 'Sample Description')
+    }
+  }">
+  <picture-static :sources="sources" :title="title" :alt="description"/>
+</story>
+
 <script>
 import breakpoint from '../../utils/breakpoint';
+
+const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
 const mimeTypes = {
   jpg: 'image/jpeg',
@@ -25,19 +73,61 @@ const mimeTypes = {
 
 export default {
   props: {
+    loading: {
+      type: String,
+      required: false,
+      default () {
+        return 'auto'; // auto, lazy
+      }
+    },
+    sourceClientOnly: {
+      type: Boolean,
+      required: false,
+      default () {
+        return true;
+      }
+    },
+    placeholder: {
+      type: String,
+      required: false,
+      default () {
+        return PLACEHOLDER;
+      }
+    },
     sources: {
       type: [
         Array, Object
       ],
       default () {
         return [
-          { media: 'default', src: 'sample-a-16-9/retina/824x464.jpg' },
-          { media: 'xs', src: 'sample-a-16-9/retina/1536x864.jpg' },
-          { media: 'sm', src: 'sample-a-16-9/retina/1984x1116.jpg' },
-          { media: 'md', src: 'sample-a-16-9/retina/2400x1350.jpg' },
-          { media: 'lg', src: 'sample-a-16-9/retina/3200x1800.jpg' },
-          { media: 'xl', src: 'sample-a-16-9/retina/3840x2160.jpg' }
+          { media: 'default', srcset: 'img/sample-a-16-9/412x232.jpg' },
+          { media: 'xs', srcset: 'img/sample-a-16-9/768x432.jpg' },
+          { media: 'sm', srcset: 'img/sample-a-16-9/992x558.jpg' },
+          { media: 'md', srcset: 'img/sample-a-16-9/1200x675.jpg' },
+          { media: 'lg', srcset: 'img/sample-a-16-9/1600x900.jpg' },
+          { media: 'xl', srcset: 'img/sample-a-16-9/1920x1080.jpg' }
         ];
+      }
+    },
+    width: {
+      type: Number,
+      required: false,
+      default () {
+        return null;
+      }
+    },
+    height: {
+      type: Number,
+      required: false,
+      default () {
+        return null;
+      }
+    },
+    title: {
+      type: String,
+      required: false,
+      default () {
+        return 'image title';
       }
     },
     alt: {
@@ -51,10 +141,23 @@ export default {
 
   computed: {
     sorted () {
-      let list = this.sources;
-      list = sortBy(list, Array.from(breakpoint.keys()));
-      list = completeEntries(list);
-      return list.reverse();
+      const list = [].concat(this.sources);
+      return sortBy(list, Array.from(breakpoint.keys())).reverse();
+    },
+    items () {
+      const test = this.sorted.map((source) => {
+        source = Object.assign({}, source);
+        source.type = '';
+
+        if (this.sourceClientOnly && !process.client) {
+          source.srcset = '';
+        } else {
+          source.type = mimeTypes[getMimeType(source.srcset.replace(/.*\.(\w{3,4}).*$/, '$1'))];
+        }
+        source.media = breakpoint.get(source.media);
+        return source;
+      });
+      return test;
     }
   },
 
@@ -67,34 +170,6 @@ export default {
   }
 };
 
-function completeEntries (list) {
-  return list.reduce((result, item) => {
-    if (item.src) {
-      if (item.src.search('http') === -1) {
-        result.push(createDefaultImageConfig(item));
-        result.push(createWebpImageConfig(item));
-      } else {
-        result.push(createAsyncSource(
-          item,
-          Promise.all([
-            Promise.resolve({ default: { src: item.src } })
-          ])
-        ));
-      }
-    } else {
-      const srcsetMap = new Map(Object.entries(item.srcset));
-      result.push(createAsyncSource(
-        item,
-        Promise.all(Array.from(srcsetMap.keys(), (key) => {
-          return Promise.resolve({ default: { src: srcsetMap.get(key) } });
-        })
-        )
-      ));
-    }
-    return result;
-  }, []);
-}
-
 function sortBy (list, pattern) {
   return list.sort(function (a, b) {
     if (pattern.indexOf(a.media) === pattern.indexOf(b.media)) {
@@ -105,63 +180,6 @@ function sortBy (list, pattern) {
   });
 }
 
-function createDefaultImageConfig (item) {
-  return createAsyncSource(
-    item,
-    Promise.all([
-      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?resize'),
-      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?resize&nonretina')
-    ])
-  );
-}
-
-function createWebpImageConfig (item) {
-  return createAsyncSource(
-    item,
-    Promise.all([
-      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?webp'),
-      import(/* webpackMode: "lazy-once" */'@/assets/img/' + item.src + '?webp&resize&nonretina')
-    ])
-  );
-}
-
-function createAsyncSource (item, urls) {
-  return {
-    asyncComponent: () => {
-      return urls.then((urls) => {
-        return {
-          render (create) {
-            return createSourceElement(create, item, urls);
-          }
-        };
-      });
-    }
-  };
-}
-
-function createSourceElement (create, item, urls) {
-  return create('source', {
-    attrs: Object.assign({
-      media: breakpoint.get(item.media),
-      type: mimeTypes[getMimeType(urls[0].default.src)]
-    }, getSource(urls))
-  });
-}
-
-function getSource (urls) {
-  if (urls.length > 1) {
-    return {
-      srcset: urls.map((url, index) => {
-        return `${url.default.src} ${urls.length - index}x`;
-      }).join(',')
-    };
-  } else {
-    return {
-      srcset: `${urls[0].default.src}`
-    };
-  }
-}
-
 function getMimeType (url) {
   const mime = /\w+$/.exec(url);
   return mime[0];
@@ -170,8 +188,11 @@ function getMimeType (url) {
 
 <style lang="postcss">
 picture {
+  display: block;
+
   & img {
     display: block;
+    width: 100%;
     max-width: 100%;
   }
 }
