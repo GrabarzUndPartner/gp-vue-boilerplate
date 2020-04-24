@@ -460,5 +460,5 @@ function getPort () {
 }
 
 function getHost () {
-  return process.env.npm_config_hostname || process.env.HOST || 'http://localhost:8050';
+  return process.env.npm_config_host || process.env.HOST || 'http://localhost:8050';
 }
