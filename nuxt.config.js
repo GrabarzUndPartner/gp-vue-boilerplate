@@ -411,7 +411,7 @@ module.exports = {
       '@nuxtjs/robots', {
         UserAgent: '*',
         Disallow: '',
-        Sitemap: path.join(getHost(), 'sitemap.xml')
+        Sitemap: path.join(getHost(), getBasePath(), 'sitemap.xml')
       }
     ]
   ],
