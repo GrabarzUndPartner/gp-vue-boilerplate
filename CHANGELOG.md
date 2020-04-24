@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.19.13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.12...v2.19.13) (2020-04-24)
+
+
+### Bug Fixes
+
+* **robots:** add basePath ([54b386d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/54b386d6db2f277c83539efaa3d8d22b0b36e11f))
+
 ## [2.19.12](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.11...v2.19.12) (2020-04-24)
 
 
