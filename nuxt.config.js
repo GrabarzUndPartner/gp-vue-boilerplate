@@ -30,8 +30,8 @@ module.exports = {
   },
 
   server: {
-    host: getHost(),
-    port: getPort(),
+    host: getServerHost(),
+    port: getServerPort(),
     timing: false,
     https: (function () {
       const dir = './env/cert';
@@ -455,10 +455,14 @@ function getBasePath () {
   return process.env.npm_config_base || process.env.BASE_PATH || '/';
 }
 
-function getPort () {
-  return process.env.npm_config_port || process.env.PORT || 8050;
-}
-
 function getHost () {
   return process.env.npm_config_host || process.env.HOST || 'http://localhost:8050';
+}
+
+function getServerHost () {
+  return process.env.npm_config_server_host || process.env.SERVER_HOST || 'localhost';
+}
+
+function getServerPort () {
+  return process.env.npm_config_server_port || process.env.SERVER_PORT || 8050;
 }
