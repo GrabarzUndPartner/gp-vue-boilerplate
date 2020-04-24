@@ -1,5 +1,14 @@
 # Project Changelog
 
+## [2.19.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.9...v2.19.10) (2020-04-24)
+
+
+### Bug Fixes
+
+* **args:** fix host arg-name ([1aae57d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1aae57dc366184d3de53f38ec16ed24a37a7e67a))
+* **server:** config transfer updated ([76eb8c2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/76eb8c2bd5bb4a1d14f612f78753956904a8844e))
+* **sitemap:** fix sitemap routes & add host config ([c30400b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c30400bbd8da2ed166cc0c0235eb991c010e920e))
+
 ## [2.19.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.8...v2.19.9) (2020-03-21)
 
 
