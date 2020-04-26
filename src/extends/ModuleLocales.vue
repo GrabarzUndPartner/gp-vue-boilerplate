@@ -17,12 +17,11 @@ import { getAsyncComponents } from '@/utils/async-components';
 export default {
   scrollToTop: true,
 
-  asyncData ({ store, app, error }) {
-    const path = getRoutePath(app)
+  asyncData ({ store, app, error, route }) {
+    const path = route.path
       .replace(RegExp(`^/${app.i18n.locale}`), '')
       .replace(/^\/([^?.#]*)[\\/?#]{0,1}[^\\/]*$/, '$1')
       .replace(/\/index|\/$/, '') || 'index';
-
     return import(/* webpackMode: "lazy" */'@/virtual-locales/' + app.i18n.locale + '/' + path + '.json').then((data) => {
       if ('routeParams' in data) {
         // set other locale slugs for languageSwitch
@@ -55,9 +54,5 @@ export default {
   }
 
 };
-
-function getRoutePath (app) {
-  return app.router.matcher.match(app.localePath(app.getRouteBaseName())).path;
-}
 
 </script>

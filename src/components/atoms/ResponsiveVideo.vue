@@ -41,8 +41,8 @@ export default {
       default () {
         return {
           sources: [
-            { media: 'default', srcset: 'video/9_16/poster/576.jpg' },
-            { media: 'xs', srcset: 'video/16_9/poster/576.jpg' },
+            { media: 'default', srcset: 'video/9_16/poster/412.jpg' },
+            { media: 'xs', srcset: 'video/16_9/poster/412.jpg' },
             { media: 'sm', srcset: 'video/16_9/poster/768.jpg' },
             { media: 'md', srcset: 'video/16_9/poster/992.jpg' },
             { media: 'lg', srcset: 'video/16_9/poster/1200.jpg' },

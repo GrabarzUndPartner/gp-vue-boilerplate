@@ -1,5 +1,42 @@
 # Project Changelog
 
+## [2.19.14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.13...v2.19.14) (2020-04-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.311.0 ([cccbdc9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cccbdc967e9dd148a9665e157ba3468bc103c17e))
+
+## [2.19.13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.12...v2.19.13) (2020-04-24)
+
+
+### Bug Fixes
+
+* **robots:** add basePath ([54b386d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/54b386d6db2f277c83539efaa3d8d22b0b36e11f))
+
+## [2.19.12](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.11...v2.19.12) (2020-04-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.310.1 ([339ac0c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/339ac0cfc64648f321086015e50f0beae2f6fa2f))
+
+## [2.19.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.10...v2.19.11) (2020-04-24)
+
+
+### Bug Fixes
+
+* **update:** update scrollBehavior and fix empty resource ([2ea93f7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2ea93f7deda2574febdb7117af3c9066af0545aa))
+
+## [2.19.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.9...v2.19.10) (2020-04-24)
+
+
+### Bug Fixes
+
+* **args:** fix host arg-name ([1aae57d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1aae57dc366184d3de53f38ec16ed24a37a7e67a))
+* **server:** config transfer updated ([76eb8c2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/76eb8c2bd5bb4a1d14f612f78753956904a8844e))
+* **sitemap:** fix sitemap routes & add host config ([c30400b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c30400bbd8da2ed166cc0c0235eb991c010e920e))
+
 ## [2.19.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.8...v2.19.9) (2020-03-21)
 
 
