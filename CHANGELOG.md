@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [2.20.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.14...v2.20.0) (2020-04-26)
+
+
+### Features
+
+* **optimize:** remove image optimizations ([d4c816c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d4c816cfc959fe515d9a464ed79ff0b75a746284))
+
 ## [2.19.14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.19.13...v2.19.14) (2020-04-24)
 
 
