@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import AtomResponsiveImage from '@/components/atoms/ResponsiveImageStatic';
+import AtomResponsiveImage from '@/components/atoms/ResponsiveImage';
 export default {
   components: { AtomResponsiveImage },
   props: {
