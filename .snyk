@@ -1,134 +1,71 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-MINIMIST-559764:
     - nuxt > @nuxt/webpack > babel-loader > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.896Z'
     - nuxt > @nuxt/webpack > cache-loader > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      node-pre-gyp > rc > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.896Z'
     - nuxt > @nuxt/webpack > hard-source-webpack-plugin > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      babel-loader > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > postcss-url > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      eslint > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      imagemin-webpack-plugin > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack-bundle-analyzer > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      node-gyp > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack-dev-middleware > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      postcss-url > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      '@packtracker/webpack-plugin > webpack-bundle-analyzer > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      '@storybook/vue > webpack > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      node-gyp > tar > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      sharp > prebuild-install > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      '@commitlint/cli > @commitlint/read > @marionebl/sander > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      '@storybook/vue > @storybook/core > webpack > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > optimize-css-assets-webpack-plugin > cssnano > cssnano-preset-default > postcss-svgo > svgo > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      '@storybook/vue > @storybook/core > webpack-dev-middleware > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > move-concurrently > copy-concurrently > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      imagemin-webpack-plugin > imagemin-svgo > svgo > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.766Z'
-      vue-svg-loader > svg-to-vue > svgo > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > tar > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T08:40:03.767Z'
-      sharp > prebuild-install > tar-fs > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - nuxt > @nuxt/webpack > webpack > watchpack > chokidar > fsevents > node-pre-gyp > rc > minimist:
         reason: None given
         expires: '2020-04-11T08:59:17.138Z'
-      '@storybook/vue > webpack > terser-webpack-plugin > cacache > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T10:08:40.540Z'
-      '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - node-pre-gyp > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T10:08:40.540Z'
-      '@storybook/vue > @storybook/core > terser-webpack-plugin > cacache > mkdirp > minimist':
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - node-pre-gyp > tar > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T10:08:40.540Z'
-      eslint > file-entry-cache > flat-cache > write > mkdirp > minimist:
-        reason: None given
-        expires: '2020-04-11T10:23:22.898Z'
     - stylelint > file-entry-cache > flat-cache > write > mkdirp > minimist:
         reason: None given
         expires: '2020-04-11T10:23:22.898Z'
@@ -165,6 +102,69 @@ ignore:
     - stylelint > postcss-sass > gonzales-pe > minimist:
         reason: None given
         expires: '2020-04-11T10:23:22.899Z'
+    - minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - node-pre-gyp > rc > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.896Z'
+    - babel-loader > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - eslint > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - node-gyp > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - postcss-url > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@packtracker/webpack-plugin > webpack-bundle-analyzer > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > webpack > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - node-gyp > tar > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - sharp > prebuild-install > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@commitlint/cli > @commitlint/read > @marionebl/sander > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > webpack > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > webpack-dev-middleware > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - imagemin-webpack-plugin > imagemin-svgo > svgo > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - vue-svg-loader > svg-to-vue > svgo > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - sharp > prebuild-install > tar-fs > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > webpack > terser-webpack-plugin > cacache > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > corejs-upgrade-webpack-plugin > webpack > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - '@storybook/vue > @storybook/core > terser-webpack-plugin > cacache > mkdirp > minimist':
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
+    - eslint > file-entry-cache > flat-cache > write > mkdirp > minimist:
+        reason: None given
+        expires: '2020-04-11T10:23:22.898Z'
   SNYK-JS-DECOMPRESS-557358:
     - imagemin-mozjpeg > mozjpeg > bin-build > decompress:
         reason: None given
@@ -390,4 +390,54 @@ ignore:
     - '@commitlint/cli > @commitlint/lint > @commitlint/parse > conventional-changelog-angular > compare-func > dot-prop':
         reason: None given
         expires: '2020-04-11T10:23:22.898Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - nuxt-i18n > @babel/traverse > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - '@nuxtjs/axios > @nuxtjs/proxy > http-proxy-middleware > lodash':
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt-i18n > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > @babel/core > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > hard-source-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > html-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > webpack-bundle-analyzer > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt-i18n > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @babel/core > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > hard-source-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > html-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > webpack-bundle-analyzer > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt-i18n > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-04-30T19:18:05.030Z'
