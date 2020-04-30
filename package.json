@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "2.20.3",
+  "version": "2.20.5",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -95,7 +95,7 @@
     "svgo-loader": "2.2.1",
     "terser": "4.6.12",
     "upath": "1.2.0",
-    "vue-docgen-api": "4.19.1",
+    "vue-docgen-api": "4.19.2",
     "vue-docgen-loader": "1.5.0",
     "vue-storybook": "1.2.0",
     "vue-svg-loader": "0.16.0",
@@ -112,7 +112,7 @@
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.5.5",
-    "snyk": "1.314.0",
+    "snyk": "1.316.1",
     "vue-lazy-hydration": "1.0.0-beta.12"
   },
   "optionalDependencies": {
