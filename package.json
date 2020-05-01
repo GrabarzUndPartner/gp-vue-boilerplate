@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "2.20.4",
+  "version": "2.20.5",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -93,7 +93,7 @@
     "stylelint-config-recess-order": "2.0.4",
     "stylelint-config-standard": "20.0.0",
     "svgo-loader": "2.2.1",
-    "terser": "4.6.12",
+    "terser": "4.6.13",
     "upath": "1.2.0",
     "vue-docgen-api": "4.19.2",
     "vue-docgen-loader": "1.5.0",
@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "@js-basics/vector": "1.46.2",
-    "@nuxtjs/axios": "5.10.2",
+    "@nuxtjs/axios": "5.10.3",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/robots": "2.4.2",
     "nuxt": "2.12.2",
