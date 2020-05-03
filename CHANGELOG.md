@@ -1,5 +1,14 @@
 # Project Changelog
 
+## [2.20.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.7...v2.20.8) (2020-05-03)
+
+
+### Bug Fixes
+
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([2d98d13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2d98d1331e3e679a271bece93b4d63449f00b50f))
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([22a3f47](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/22a3f4705831f242d1588cef66ec7c3a194edca4))
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([6395a16](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6395a16480e9bc81959aa61dc6c778fb545cca9a))
+
 ## [2.20.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.6...v2.20.7) (2020-05-02)
 
 
