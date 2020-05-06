@@ -46,7 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
-    "@fullhuman/postcss-purgecss": "2.1.2",
+    "@fullhuman/postcss-purgecss": "2.2.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "2.0.2",
     "@nuxtjs/sitemap": "2.2.1",
