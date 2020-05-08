@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.12](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.11...v2.20.12) (2020-05-08)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency snyk to 1.319.1 ([1f86cfa](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1f86cfa6822cc7c30f64ce0a74a6b8b7d526ca93))
+
 ## [2.20.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.10...v2.20.11) (2020-05-07)
 
 
