@@ -63,7 +63,7 @@
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "babel-preset-vue": "2.0.2",
-    "branch-name-lint": "1.2.0",
+    "branch-name-lint": "1.3.0",
     "eslint": "7.0.0",
     "eslint-plugin-chai-friendly": "0.6.0",
     "eslint-plugin-cypress": "2.10.3",
