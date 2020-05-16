@@ -8,13 +8,12 @@
   ],
   "packageRules": [
     {
-      "updateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
+      "depTypeList": [
+        "devDependencies",
+        "dependencies"
       ],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "pr"
     }
   ]
 }
