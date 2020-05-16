@@ -1,5 +1,19 @@
 # Project Changelog
 
+## [2.20.15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.14...v2.20.15) (2020-05-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.320.2 ([f60d54b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f60d54b978d2db25796912fdf1b61dcc7f221d3b))
+
+## [2.20.14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.13...v2.20.14) (2020-05-11)
+
+
+### Bug Fixes
+
+* **audit:** solved vulnerabilities ([ca0fc8a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ca0fc8afa9b2c94acbe7fb87f01a747d0af26663))
+
 ## [2.20.13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.12...v2.20.13) (2020-05-09)
 
 

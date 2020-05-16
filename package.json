@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "2.20.13",
+  "version": "2.20.15",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -48,8 +48,8 @@
     "@commitlint/config-conventional": "8.3.4",
     "@fullhuman/postcss-purgecss": "2.2.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
-    "@nuxtjs/eslint-config": "2.0.2",
-    "@nuxtjs/sitemap": "2.2.1",
+    "@nuxtjs/eslint-config": "3.0.0",
+    "@nuxtjs/sitemap": "2.3.0",
     "@packtracker/webpack-plugin": "2.2.0",
     "@storybook/addon-a11y": "5.3.18",
     "@storybook/addon-actions": "5.3.18",
@@ -95,14 +95,14 @@
     "svgo-loader": "2.2.1",
     "terser": "4.6.13",
     "upath": "1.2.0",
-    "vue-docgen-api": "4.21.0",
+    "vue-docgen-api": "4.23.1",
     "vue-docgen-loader": "1.5.0",
     "vue-storybook": "1.2.0",
     "vue-svg-loader": "0.16.0",
     "webpack-virtual-modules": "0.2.2"
   },
   "dependencies": {
-    "@js-basics/vector": "1.46.2",
+    "@js-basics/vector": "1.47.0",
     "@nuxtjs/axios": "5.10.3",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/robots": "2.4.2",
@@ -112,7 +112,7 @@
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.5.5",
-    "snyk": "1.319.2",
+    "snyk": "1.321.0",
     "vue-lazy-hydration": "1.0.0-beta.12"
   },
   "optionalDependencies": {
