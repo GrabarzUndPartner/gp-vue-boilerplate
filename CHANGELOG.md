@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.16](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.15...v2.20.16) (2020-05-16)
+
+
+### Bug Fixes
+
+* **renovate:** automerge ([67affef](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/67affef64ecc1243d5a9e9962356e0bbc467c65f))
+
 ## [2.20.15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.14...v2.20.15) (2020-05-12)
 
 
