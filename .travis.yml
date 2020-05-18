@@ -55,7 +55,7 @@ jobs:
         - if [ -z "$TRAVIS_PULL_REQUEST_SHA" ]; then export PT_COMMIT=$TRAVIS_COMMIT; else export PT_COMMIT=$TRAVIS_PULL_REQUEST_SHA; fi
         # - echo $PT_COMMIT
         # - echo $PT_BRANCH
-        - npm run static --base=/gp-vue-boilerplate/ --host=https://grabarzundpartner.github.io/
+        - npm run static --base=/gp-vue-boilerplate/ --website-host=https://grabarzundpartner.github.io/
         - npm run packtracker
     - stage: storybook
       name: build
