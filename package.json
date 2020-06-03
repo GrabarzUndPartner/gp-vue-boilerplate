@@ -108,7 +108,7 @@
     "@nuxtjs/robots": "2.4.2",
     "nuxt": "2.12.2",
     "nuxt-font-loader-strategy": "1.1.0",
-    "nuxt-i18n": "6.12.1",
+    "nuxt-i18n": "6.12.2",
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.5.5",
