@@ -49,7 +49,7 @@
     "@fullhuman/postcss-purgecss": "2.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "3.0.0",
-    "@nuxtjs/sitemap": "2.3.1",
+    "@nuxtjs/sitemap": "2.3.2",
     "@packtracker/webpack-plugin": "2.3.0",
     "@storybook/addon-a11y": "5.3.19",
     "@storybook/addon-actions": "5.3.19",
