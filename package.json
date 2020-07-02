@@ -106,7 +106,7 @@
     "@nuxtjs/axios": "5.11.0",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/robots": "2.4.2",
-    "nuxt": "2.13.1",
+    "nuxt": "2.13.2",
     "nuxt-font-loader-strategy": "1.1.1",
     "nuxt-i18n": "6.12.2",
     "nuxt-polyfill": "1.0.3",
