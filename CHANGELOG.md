@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.22](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.21...v2.20.22) (2020-07-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rxjs to v6.6.0 ([1ecc8bc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1ecc8bc008deb45fbfa124fad561d51e6e94259d))
+
 ## [2.20.21](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.20...v2.20.21) (2020-07-01)
 
 
