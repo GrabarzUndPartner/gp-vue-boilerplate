@@ -118,7 +118,7 @@
   "optionalDependencies": {
     "picturefill": "^3.0.3",
     "custom-event-polyfill": "^1.0.7",
-    "default-passive-events": "^1.0.10",
+    "default-passive-events": "^2.0.0",
     "domtokenlist-shim": "^1.2.0",
     "intersection-observer": "^0.11.0",
     "requestidlecallback": "^0.3.0"
