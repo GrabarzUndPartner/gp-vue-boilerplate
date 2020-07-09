@@ -80,7 +80,7 @@
     "postcss-custom-media": "7.0.8",
     "postcss-loader": "3.0.0",
     "postcss-momentum-scrolling": "2.7.17",
-    "postcss-nested": "4.2.2",
+    "postcss-nested": "4.2.3",
     "postcss-normalize": "9.0.0",
     "postcss-object-fit-images": "1.1.2",
     "postcss-url": "9.0.0",
