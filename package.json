@@ -44,8 +44,8 @@
     "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
-    "@commitlint/cli": "9.0.1",
-    "@commitlint/config-conventional": "9.0.1",
+    "@commitlint/cli": "9.1.1",
+    "@commitlint/config-conventional": "9.1.1",
     "@fullhuman/postcss-purgecss": "2.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "3.0.0",
