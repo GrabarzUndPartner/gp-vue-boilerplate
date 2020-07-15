@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.31](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.30...v2.20.31) (2020-07-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @js-basics/vector to v1.51.2 ([b7a31fe](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b7a31fef830b663fd29fd0663379cc4deb6912fb))
+
 ## [2.20.30](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.29...v2.20.30) (2020-07-10)
 
 
