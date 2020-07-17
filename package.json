@@ -113,7 +113,7 @@
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.6.0",
     "snyk": "1.361.3",
-    "vue-lazy-hydration": "1.0.0-beta.13"
+    "vue-lazy-hydration": "1.0.0-beta.14"
   },
   "optionalDependencies": {
     "picturefill": "^3.0.3",
