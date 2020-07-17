@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.33](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.32...v2.20.33) (2020-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency vue-lazy-hydration to v1.0.0-beta.14 ([27916c5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/27916c544f206d588c41c2beb27ff3dd6996ea63))
+
 ## [2.20.32](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.31...v2.20.32) (2020-07-16)
 
 
