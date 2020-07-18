@@ -79,7 +79,7 @@
     "nodeify": "1.0.1",
     "postcss-custom-media": "7.0.8",
     "postcss-loader": "3.0.0",
-    "postcss-momentum-scrolling": "2.8.17",
+    "postcss-momentum-scrolling": "2.8.18",
     "postcss-nested": "4.2.3",
     "postcss-normalize": "9.0.0",
     "postcss-object-fit-images": "1.1.2",
