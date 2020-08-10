@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.50](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.49...v2.20.50) (2020-08-10)
+
+
+### Bug Fixes
+
+* **package:** updated versions ([afafcb0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/afafcb0e1669c5f020a5d7a7b5a06019a2a46255))
+
 ## [2.20.49](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.48...v2.20.49) (2020-08-09)
 
 
