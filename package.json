@@ -44,7 +44,7 @@
     "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
-    "@commitlint/cli": "9.1.1",
+    "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "9.1.1",
     "@fullhuman/postcss-purgecss": "2.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
@@ -112,7 +112,7 @@
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.6.2",
-    "snyk": "1.368.1",
+    "snyk": "^1.370.1",
     "vue-lazy-hydration": "1.0.0-beta.14"
   },
   "optionalDependencies": {
