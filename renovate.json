@@ -2,10 +2,7 @@
   "extends": [
     "config:base"
   ],
-  "ignoreDeps": [
-    "husky",
-    "lint-staged"
-  ],
+  "ignoreDeps": [],
   "automerge": true,
   "major": {
     "automerge": false
