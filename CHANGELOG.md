@@ -1,5 +1,13 @@
 # Project Changelog
 
+## [2.20.52](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.51...v2.20.52) (2020-08-11)
+
+
+### Bug Fixes
+
+* **package:** updated renovate config ([d06930a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d06930a656645948f94ea81ef2048b8eb35911ad))
+* **packages:** removed terser package ([dbbb286](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dbbb2865b481c0b9c942b93136471a3177e172ca))
+
 ## [2.20.51](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.50...v2.20.51) (2020-08-11)
 
 
