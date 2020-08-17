@@ -103,7 +103,7 @@
   "dependencies": {
     "@js-basics/vector": "1.53.0",
     "@nuxtjs/axios": "5.12.1",
-    "@nuxtjs/pwa": "3.0.0",
+    "@nuxtjs/pwa": "3.0.1",
     "@nuxtjs/robots": "2.4.2",
     "nuxt": "2.14.3",
     "nuxt-font-loader-strategy": "1.1.1",
