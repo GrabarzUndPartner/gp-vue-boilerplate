@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.64](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.63...v2.20.64) (2020-08-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt-i18n to v6.13.11 ([d569b98](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d569b981928109af99c80b40e3ba586554c0711b))
+
 ## [2.20.63](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.62...v2.20.63) (2020-08-21)
 
 
