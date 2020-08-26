@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.67](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.66...v2.20.67) (2020-08-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/axios to v5.12.2 ([88fd298](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/88fd298cb41c309da3537a9936109ab256af7d83))
+
 ## [2.20.66](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.65...v2.20.66) (2020-08-26)
 
 
