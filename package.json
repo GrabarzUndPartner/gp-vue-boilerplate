@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "9.1.2",
-    "@commitlint/config-conventional": "9.1.2",
+    "@commitlint/config-conventional": "^10.0.0",
     "@fullhuman/postcss-purgecss": "2.3.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "3.1.0",
@@ -111,7 +111,7 @@
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "rxjs": "6.6.2",
-    "snyk": "1.377.2",
+    "snyk": "^1.385.0",
     "vue-lazy-hydration": "1.0.0-beta.14"
   },
   "optionalDependencies": {
