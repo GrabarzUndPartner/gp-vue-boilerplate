@@ -101,7 +101,7 @@
     "webpack-virtual-modules": "0.2.2"
   },
   "dependencies": {
-    "@js-basics/vector": "1.56.2",
+    "@js-basics/vector": "1.56.3",
     "@nuxtjs/axios": "5.12.2",
     "@nuxtjs/pwa": "3.0.2",
     "@nuxtjs/robots": "2.4.2",
