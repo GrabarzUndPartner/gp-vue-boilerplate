@@ -98,7 +98,7 @@
     "vue-docgen-loader": "1.5.0",
     "vue-storybook": "1.2.0",
     "vue-svg-loader": "0.16.0",
-    "webpack-virtual-modules": "0.2.2"
+    "webpack-virtual-modules": "0.3.0"
   },
   "dependencies": {
     "@js-basics/vector": "1.56.3",
