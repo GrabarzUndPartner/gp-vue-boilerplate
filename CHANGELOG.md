@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.20.90](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.89...v2.20.90) (2020-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/pwa to v3.1.2 ([3991867](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/399186715c148dafa0c264fe3c7dd5ac8c20f57c))
+
 ## [2.20.89](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.88...v2.20.89) (2020-10-07)
 
 
