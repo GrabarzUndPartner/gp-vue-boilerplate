@@ -73,7 +73,7 @@
     "express": "4.17.1",
     "husky": "4.3.0",
     "license-webpack-plugin": "2.3.0",
-    "lint-staged": "10.4.1",
+    "lint-staged": "10.4.2",
     "lost": "8.3.1",
     "node-gyp": "7.1.1",
     "nodeify": "1.0.1",
