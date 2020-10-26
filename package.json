@@ -32,7 +32,7 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:es": "eslint --fix --ext .js,.vue,.json ./",
     "lint:css": "stylelint \"src/**/*.vue\"",
-    "audit": "npm audit --json | npx npm-audit-html --output reports/audit.html",
+    "audit": "npm audit --json | npx npm-audit-html --output .reports/audit.html",
     "cypress:open": "npx cypress open --browser chrome",
     "cypress:run": "npx cypress run --browser chrome",
     "semantic-release": "semantic-release",
@@ -41,7 +41,7 @@
     "storybook:prod": "build-storybook -c .storybook -o storybook",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
-    "packtracker": "packtracker-upload --stats=reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
+    "packtracker": "packtracker-upload --stats=.reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",

@@ -7,7 +7,7 @@
 /env/nuxt/cert/
 /output/
 /public/
-/reports/
+/.reports/
 /w3c/
 
 # Files
