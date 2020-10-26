@@ -2,10 +2,12 @@
   "title": "Projekt 1",
   "routeParams": {
     "en": {
-      "project": "project-1"
+      "sub": "projects",
+      "child": "project-1"
     },
     "de": {
-      "project": "projekt-1"
+      "sub": "projekte",
+      "child": "projekt-1"
     }
   },
   "components": [

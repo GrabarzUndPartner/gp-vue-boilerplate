@@ -4,13 +4,14 @@ const path = require('path');
 const fs = require('fs');
 const isDev = process.env.NODE_ENV === 'development';
 
-const DEFAULT_LANG = 'de';
+const DEFAULT_LANG = 'en';
 
 module.exports = {
   dev: isDev,
   srcDir: 'src/',
   css: [],
   env: {},
+  target: 'static',
 
   features: {
     store: true,
@@ -113,8 +114,7 @@ module.exports = {
     },
 
     parallel: false,
-    transpile: [],
-    crossorigin: 'anonymous'
+    transpile: []
   },
 
   generate: {
@@ -123,6 +123,7 @@ module.exports = {
   },
 
   render: {
+    crossorigin: 'anonymous',
     resourceHints: true,
     http2: { push: true }
   },
@@ -145,6 +146,7 @@ module.exports = {
   plugins: [],
 
   modules: [
+    '@nuxt/content',
 
     [
       'nuxt-font-loader-strategy', {

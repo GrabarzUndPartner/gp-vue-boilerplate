@@ -1,4 +1,12 @@
 {
+  "routeParams": {
+    "en": {
+      "page": "terms"
+    },
+    "de": {
+      "page": "nutzungsbedingungen"
+    }
+  },
   "title": "Nutzungsbedingungen",
   "components": [
     {
