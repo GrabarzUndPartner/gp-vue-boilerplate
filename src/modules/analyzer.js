@@ -6,8 +6,8 @@ module.exports = function () {
   this.extendBuild((config) => {
     if (!isDev) {
       config.plugins.push(new BundleAnalyzerPlugin({
-        reportFilename: path.resolve(`reports/webpack/${config.name}.html`),
-        statsFilename: path.resolve(`reports/webpack/stats/${config.name}.json`),
+        reportFilename: path.resolve(`.reports/webpack/${config.name}.html`),
+        statsFilename: path.resolve(`.reports/webpack/stats/${config.name}.json`),
         analyzerMode: 'static',
         generateStatsFile: true,
         openAnalyzer: false,

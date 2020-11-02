@@ -34,14 +34,14 @@ cache:
   npm: true
   directories:
     - dist
-    - reports
+    - .reports
     - storybook
 jobs:
   include:
     - stage: prepare cache
       name: install
       before_install:
-        - rm -rf dist reports storybook
+        - rm -rf dist .reports storybook
       install:
         - npm i
     - stage: website
@@ -69,8 +69,8 @@ jobs:
         - npm run start:static & npx wait-on http://localhost:8050
         - npm run cypress:run -- --record
         - kill $(jobs -p) || true
-        - npx mochawesome-merge ./reports/cypress/results/mochawesome*.json > ./reports/cypress/mochawesome.json
-        - npx mochawesome-report-generator ./reports/cypress/mochawesome.json --reportDir=./reports/ --reportFilename=cypress.html
+        - npx mochawesome-merge ./.reports/cypress/results/mochawesome*.json > ./.reports/cypress/mochawesome.json
+        - npx mochawesome-report-generator ./.reports/cypress/mochawesome.json --reportDir=./.reports/ --reportFilename=cypress.html
     - stage: deploy
       if: branch = master
       install:
@@ -80,7 +80,7 @@ jobs:
         - mkdir gh-pages gh-pages/storybook gh-pages/reports
         - cp -R dist/* gh-pages/
         - cp -R storybook/* gh-pages/storybook/
-        - cp -R reports/* gh-pages/reports/
+        - cp -R .reports/* gh-pages/reports/
         - touch gh-pages/.nojekyll
       deploy:
         provider: pages
