@@ -17,26 +17,6 @@
   </nuxt-link>
 </template>
 
-<story
-  name="LinkTo"
-  group="Atoms"
-  knobs="{
-    url: {
-      default: text('URL', 'https://grabarzundpartner.de')
-    },
-    title: {
-      default: text('Title', 'Grabarz & Partner')
-    },
-    target: {
-      default: select('Target', {
-        external: '_blank',
-        internal: '_self'
-      }, '_blank')
-    }
-  }">
-  <link-to :url="url" :title="title" :target="target"/>
-</story>
-
 <script>
 export default {
   props: {
@@ -45,17 +25,14 @@ export default {
         // Type Object for Route Objects { path: '/page' }
         String, Object
       ],
-      required: false,
-      default: 'http://example.com'
+      default: '#'
     },
     title: {
       type: String,
-      required: false,
       default: null
     },
     target: {
       type: String,
-      required: false,
       default: '_blank'
     }
   },

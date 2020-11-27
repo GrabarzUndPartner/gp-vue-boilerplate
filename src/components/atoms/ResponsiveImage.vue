@@ -17,52 +17,8 @@
   </picture>
 </template>
 
-<story
-  name="ResponsiveImage"
-  group="Atoms"
-  knobs="{
-    sources: {
-      default: select('Images', {
-        'ImageSet Unknown': [],
-        'ImageSet A': [
-          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
-          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
-          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
-          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
-          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
-          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
-        ],
-        'ImageSet B': [
-          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/238/1920/200' },
-          { 'media': 'l', 'srcset': 'https://picsum.photos/id/238/1599/200' },
-          { 'media': 'md', 'srcset': 'https://picsum.photos/id/238/1199/200' },
-          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/238/991/200' },
-          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/238/767/200' },
-          { 'media': 'default', 'srcset': 'https://picsum.photos/id/238/575/200' }
-        ]
-      }, [
-          { 'media': 'xl', 'srcset': 'https://picsum.photos/id/237/1920/200' },
-          { 'media': 'l', 'srcset': 'https://picsum.photos/id/237/1599/200' },
-          { 'media': 'md', 'srcset': 'https://picsum.photos/id/237/1199/200' },
-          { 'media': 'sm', 'srcset': 'https://picsum.photos/id/237/991/200' },
-          { 'media': 'xs', 'srcset': 'https://picsum.photos/id/237/767/200' },
-          { 'media': 'default', 'srcset': 'https://picsum.photos/id/237/575/200' }
-        ])
-    },
-    title: {
-      default: text('Title', 'Sample Title')
-    },
-    description: {
-      default: text('Description', 'Sample Description')
-    }
-  }">
-  <picture-static :sources="sources" :title="title" :alt="description"/>
-</story>
-
 <script>
 import breakpoint from '../../utils/breakpoint';
-
-const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
 const mimeTypes = {
   jpg: 'image/jpeg',
@@ -75,24 +31,15 @@ export default {
   props: {
     loading: {
       type: String,
-      required: false,
-      default () {
-        return 'auto'; // auto, lazy
-      }
+      default: 'auto'
     },
     sourceClientOnly: {
       type: Boolean,
-      required: false,
-      default () {
-        return true;
-      }
+      default: true
     },
     placeholder: {
       type: String,
-      required: false,
-      default () {
-        return PLACEHOLDER;
-      }
+      default: 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
     },
     sources: {
       type: [
@@ -111,31 +58,20 @@ export default {
     },
     width: {
       type: Number,
-      required: false,
-      default () {
-        return null;
-      }
+      default: null
     },
     height: {
       type: Number,
-      required: false,
-      default () {
-        return null;
-      }
+      default: null
     },
     title: {
       type: String,
-      required: false,
-      default () {
-        return 'image title';
-      }
+      default: 'image title'
+
     },
     alt: {
       type: String,
-      required: false,
-      default () {
-        return 'image description';
-      }
+      default: 'image description'
     }
   },
 
