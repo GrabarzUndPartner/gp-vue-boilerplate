@@ -73,7 +73,6 @@
     "node-gyp": "7.1.2",
     "nodeify": "1.0.1",
     "postcss-custom-media": "7.0.8",
-    "postcss-loader": "3.0.0",
     "postcss-momentum-scrolling": "2.8.20",
     "postcss-nested": "5.0.1",
     "postcss-normalize": "9.0.0",
@@ -94,7 +93,7 @@
     "webpack-virtual-modules": "0.3.2"
   },
   "dependencies": {
-    "@js-basics/vector": "1.56.7",
+    "@js-basics/vector": "1.56.8",
     "@nuxtjs/axios": "5.12.2",
     "@nuxtjs/pwa": "3.2.2",
     "@nuxtjs/robots": "2.4.2",
