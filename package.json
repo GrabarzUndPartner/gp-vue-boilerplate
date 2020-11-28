@@ -70,7 +70,6 @@
     "license-webpack-plugin": "2.3.1",
     "lint-staged": "10.5.2",
     "lost": "8.3.1",
-    "node-gyp": "7.1.2",
     "nodeify": "1.0.1",
     "postcss-custom-media": "7.0.8",
     "postcss-momentum-scrolling": "2.8.20",
@@ -87,8 +86,6 @@
     "stylelint-config-standard": "20.0.0",
     "svgo-loader": "2.2.1",
     "upath": "2.0.1",
-    "vue-docgen-api": "4.34.0",
-    "vue-docgen-loader": "1.5.0",
     "vue-svg-loader": "0.16.0",
     "webpack-virtual-modules": "0.3.2"
   },
