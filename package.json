@@ -90,7 +90,7 @@
     "vue-docgen-api": "4.34.0",
     "vue-docgen-loader": "1.5.0",
     "vue-svg-loader": "0.16.0",
-    "webpack-virtual-modules": "0.3.2"
+    "webpack-virtual-modules": "0.4.1"
   },
   "dependencies": {
     "@js-basics/vector": "1.56.8",
