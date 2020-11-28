@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.21.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.2...v2.21.3) (2020-11-28)
+
+
+### Bug Fixes
+
+* **update:** update from master ([43f5dd8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/43f5dd8fa180d510c7437667f2841ad83553ae87))
+
 ## [2.21.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.1...v2.21.2) (2020-11-28)
 
 
