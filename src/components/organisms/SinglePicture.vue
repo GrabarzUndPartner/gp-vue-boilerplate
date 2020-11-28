@@ -3,7 +3,7 @@
     class="organism-picture"
     v-bind="options"
   >
-    <template v-slot:container>
+    <template #container>
       <atom-responsive-image v-bind="picture" />
     </template>
   </layout-default-container>

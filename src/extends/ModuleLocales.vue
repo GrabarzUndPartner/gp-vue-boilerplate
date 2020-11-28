@@ -43,14 +43,14 @@ export default {
     };
   },
 
-  created () {
-    this.components = getAsyncComponents(this.components);
-  },
-
   head () {
     return {
       title: this.title
     };
+  },
+
+  created () {
+    this.components = getAsyncComponents(this.components);
   }
 
 };

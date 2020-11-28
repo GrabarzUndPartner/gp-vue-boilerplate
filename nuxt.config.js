@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const isDev = process.env.NODE_ENV === 'development';
 
-const DEFAULT_LANG = 'de';
+const DEFAULT_LANG = 'en';
 
 module.exports = {
   dev: isDev,
@@ -160,6 +160,7 @@ module.exports = {
   plugins: [],
 
   modules: [
+    '@nuxt/content',
 
     [
       'nuxt-font-loader-strategy', {

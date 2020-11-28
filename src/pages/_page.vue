@@ -6,8 +6,8 @@ export default {
   extends: ContentExtend,
   nuxtI18n: {
     paths: {
-      de: '/',
-      en: '/'
+      de: '/:page',
+      en: '/:page'
     }
   }
 };

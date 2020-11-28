@@ -1,5 +1,5 @@
 
-import layoutData from '@/locales/layout.json';
+import layoutData from '@/content/layout.json';
 
 export const actions = {
   nuxtServerInit ({ dispatch }) {

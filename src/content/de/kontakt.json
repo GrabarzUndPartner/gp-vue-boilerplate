@@ -1,4 +1,12 @@
 {
+  "routeParams": {
+    "en": {
+      "page": "contact"
+    },
+    "de": {
+      "page": "kontakt"
+    }
+  },
   "title": "Kontakt",
   "components": [
     {

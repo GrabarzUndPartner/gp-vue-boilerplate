@@ -1,9 +1,9 @@
 /* global workbox */
 workbox.routing.registerRoute(
   /.*\.(mp4|webm)/,
-  workbox.strategies.cacheFirst({
+  new workbox.strategies.CacheFirst({
     plugins: [
-      new workbox.rangeRequests.Plugin()
+      new workbox.rangeRequests.RangeRequestsPlugin()
     ]
   }),
   'GET'

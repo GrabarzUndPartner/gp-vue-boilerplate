@@ -1,5 +1,13 @@
 {
-  "title": "About",
+  "routeParams": {
+    "en": {
+      "page": "about"
+    },
+    "de": {
+      "page": "ueber-uns"
+    }
+  },
+  "title": "Über uns",
   "components": [
     {
       "component": "StageVideo",

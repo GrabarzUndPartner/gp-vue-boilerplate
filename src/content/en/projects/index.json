@@ -1,5 +1,13 @@
 {
-  "title": "Projekte",
+  "routeParams": {
+    "en": {
+      "page": "projects"
+    },
+    "de": {
+      "page": "projekte"
+    }
+  },
+  "title": "Projects",
   "components": [
     {
       "component": "Text",

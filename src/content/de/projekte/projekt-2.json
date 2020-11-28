@@ -1,11 +1,13 @@
 {
-  "title": "Project 2",
+  "title": "Projekt 2",
   "routeParams": {
     "en": {
-      "project": "project-2"
+      "sub": "projects",
+      "child": "project-2"
     },
     "de": {
-      "project": "projekt-2"
+      "sub": "projekte",
+      "child": "projekt-2"
     }
   },
   "components": [
@@ -49,7 +51,7 @@
         "article": {
           "headline": {
             "overline": null,
-            "headline": "Project 2",
+            "headline": "Projekt 2",
             "subline": null
           },
           "content": "<p>Laboriosam, blanditiis non ducimus tortor. Voluptate reprehenderit placerat voluptates itaque cillum sociosqu, mauris rem nesciunt ipsam aliqua, pharetra odit animi distinctio! Aut, orci euismod? Malesuada, tempore sit corporis nostrud posuere? Repellat hac eiusmod tellus. Ut bibendum? Convallis cillum aliquam, voluptatum.</p><p>Excepteur condimentum ac voluptate ea fugit nihil alias molestias ullamco architecto ipsam, sequi magnis cillum, etiam. Assumenda eveniet! Adipisicing architecto quibusdam primis hymenaeos ultrices! Quas doloribus libero? Class! Occaecati rerum arcu, blanditiis illum elementum curabitur adipiscing! Elementum hendrerit morbi excepteur.</p>"

@@ -1,4 +1,12 @@
 {
+  "routeParams": {
+    "en": {
+      "page": "home"
+    },
+    "de": {
+      "page": "home"
+    }
+  },
   "title": "Home",
   "components": [
     {
