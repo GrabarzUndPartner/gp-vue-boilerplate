@@ -44,21 +44,21 @@
     "packtracker": "packtracker-upload --stats=.reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
-    "@babel/runtime-corejs3": "^7.12.5",
+    "@babel/runtime-corejs3": "7.12.5",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@fullhuman/postcss-purgecss": "3.0.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "5.0.0",
     "@nuxtjs/sitemap": "2.4.0",
-    "@nuxtjs/storybook": "^3.2.0",
+    "@nuxtjs/storybook": "3.2.0",
     "@packtracker/webpack-plugin": "2.3.0",
-    "@storybook/addon-a11y": "^6.1.8",
+    "@storybook/addon-a11y": "6.1.8",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
     "babel-preset-vue": "2.0.2",
     "branch-name-lint": "1.4.0",
-    "core-js": "^3.8.0",
+    "core-js": "3.8.0",
     "eslint": "7.14.0",
     "eslint-plugin-chai-friendly": "0.6.0",
     "eslint-plugin-cypress": "2.11.2",
@@ -87,7 +87,7 @@
     "svgo-loader": "2.2.1",
     "upath": "2.0.1",
     "vue-svg-loader": "0.16.0",
-    "webpack-virtual-modules": "0.3.2"
+    "webpack-virtual-modules": "0.4.1"
   },
   "dependencies": {
     "@js-basics/vector": "1.56.8",
