@@ -1,5 +1,17 @@
 # Project Changelog
 
+# [2.21.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.112...v2.21.0) (2020-11-28)
+
+
+### Bug Fixes
+
+* **postcss:** removed loader package ([c105acb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c105acbcb0ee3762778e43a06de4a57b0d28ec7a))
+
+
+### Features
+
+* **storybook:** upgrade ([488ed27](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/488ed2751c0f1de9c092d1753d5e3534eb4c34dc))
+
 ## [2.20.112](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.111...v2.20.112) (2020-11-21)
 
 
