@@ -30,6 +30,12 @@ export default {
     };
   },
 
+  head () {
+    return {
+      title: this.error.statusCode
+    };
+  },
+
   computed: {
     dataComponents () {
       return [
@@ -66,12 +72,6 @@ export default {
 
   created () {
     this.components = getAsyncComponents(this.dataComponents);
-  },
-
-  head () {
-    return {
-      title: this.error.statusCode
-    };
   }
 };
 </script>

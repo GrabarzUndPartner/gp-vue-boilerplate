@@ -24,9 +24,7 @@ export default {
 
     let data = await $content(path).fetch()
       // eslint-disable-next-line handle-callback-err
-      .catch((err) => {
-        error({ statusCode: 404, message: 'Page not found' });
-      });
+      .catch(err => error(err));
 
     if (Array.isArray(data)) {
       data = data.find(({ slug }) => slug === 'index');
@@ -49,14 +47,14 @@ export default {
     };
   },
 
-  created () {
-    this.components = getAsyncComponents(this.components);
-  },
-
   head () {
     return {
       title: this.title
     };
+  },
+
+  created () {
+    this.components = getAsyncComponents(this.components);
   }
 
 };

@@ -6,7 +6,7 @@
       :class="styleClasses"
       v-bind="options"
     >
-      <template v-slot:container>
+      <template #container>
         <div class="lost-flex-container">
           <button
             v-if="closeButton"

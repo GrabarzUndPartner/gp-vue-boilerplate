@@ -9,7 +9,7 @@
         v-if="$slots.overline || overline"
         class="overline"
       >
-        <slot name="overline">
+        <slot name="overline-slot">
           {{ overline }}
         </slot>
       </span>
@@ -17,7 +17,7 @@
         v-if="$slots.headline || headline"
         class="headline"
       >
-        <slot name="headline">
+        <slot name="headline-slot">
           {{ headline }}
         </slot>
       </span>
@@ -25,7 +25,7 @@
         v-if="$slots.subline || subline"
         class="subline"
       >
-        <slot name="subline">
+        <slot name="subline-slot">
           {{ subline }}
         </slot>
       </span>
@@ -33,64 +33,24 @@
   </component>
 </template>
 
-<story
-  name="Headline"
-  group="Atoms"
-  knobs="{
-    tag: {
-      default: select('Type', {
-        h1: 'h1',
-        h2: 'h2',
-        h3: 'h3',
-        h4: 'h4',
-        h5: 'h5',
-        h6: 'h6'
-      }, 'h2')
-    },
-    overline: {
-      default: text('Overline', 'Lorem ipsum')
-    },
-    headline: {
-      default: text('Headline', 'Lorem ipsum')
-    },
-    subline: {
-      default: text('Subline', 'Lorem ipsum')
-    }
-  }"
-  >
-  <headline :tag="tag" :overline="overline" :headline="headline" :subline="subline"/>
-</story>
-
 <script>
 export default {
   props: {
     tag: {
       type: String,
-      required: false,
-      default () {
-        return 'h1';
-      }
+      default: 'h1'
     },
     overline: {
       type: String,
-      required: false,
-      default () {
-        return 'Lorem Overline';
-      }
+      default: 'Lorem Overline'
     },
     headline: {
       type: String,
-      required: false,
-      default () {
-        return 'Lorem Headline';
-      }
+      default: 'Lorem Headline'
     },
     subline: {
       type: String,
-      required: false,
-      default () {
-        return 'Lorem Subline';
-      }
+      default: 'Lorem Subline'
     }
   },
   computed: {

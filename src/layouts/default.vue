@@ -56,6 +56,12 @@ export default {
     };
   },
 
+  head () {
+    const seo = this.$nuxtI18nSeo();
+    seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
+    return seo;
+  },
+
   computed: {
 
     layoutData () {
@@ -100,12 +106,6 @@ export default {
       this.preventMenuOpened = false;
       this.$refs.pageMenu.$el.dispatchEvent(new CustomEvent('hydrate'));
     }
-  },
-
-  head () {
-    const seo = this.$nuxtI18nSeo();
-    seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
-    return seo;
   }
 };
 

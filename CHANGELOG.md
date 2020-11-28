@@ -1,5 +1,102 @@
 # Project Changelog
 
+## [2.21.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.1...v2.21.2) (2020-11-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.431.2 ([b340134](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b340134f69b0e1e045c397faf10cb264c0d2bcb3))
+
+## [2.21.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.0...v2.21.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* **packages:** pinned versions ([9e6c440](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9e6c440660b6e1e28ae4805fdac95e96cb516651))
+* **packages:** removed unused packages ([00a11be](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/00a11be7d6c387315567fa8aec386dc94b6b836a))
+
+# [2.21.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.112...v2.21.0) (2020-11-28)
+
+
+### Bug Fixes
+
+* **postcss:** removed loader package ([c105acb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c105acbcb0ee3762778e43a06de4a57b0d28ec7a))
+
+
+### Features
+
+* **storybook:** upgrade ([488ed27](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/488ed2751c0f1de9c092d1753d5e3534eb4c34dc))
+
+## [2.20.112](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.111...v2.20.112) (2020-11-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.430.0 ([bdbc314](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bdbc314b63354f26c7732744aa95562c5d535614))
+
+## [2.20.111](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.110...v2.20.111) (2020-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.428.2 ([1696ee7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1696ee7965586f5b82a55b68b3d6e7277daad18c))
+
+## [2.20.110](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.109...v2.20.110) (2020-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.428.0 ([90ae635](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/90ae6352c47876d98eb14f7da3c6db797a1c48ea))
+
+## [2.20.109](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.108...v2.20.109) (2020-11-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.427.0 ([906d0c7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/906d0c75d041f59b0bdc76d73549ced9ef8f4860))
+
+## [2.20.108](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.107...v2.20.108) (2020-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.426.0 ([a5bd7d3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a5bd7d32f04a3725685d94fc5f19d2525f0b0324))
+
+## [2.20.107](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.106...v2.20.107) (2020-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.425.3 ([72c15cd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/72c15cdcaa3ac41eb932f5cfee18bba1fb40aeed))
+
+## [2.20.106](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.105...v2.20.106) (2020-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.425.1 ([25a9f57](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/25a9f57512c603e0c3f68f1fab5ef7f12c64a30d))
+
+## [2.20.105](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.104...v2.20.105) (2020-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.424.4 ([fb8b781](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fb8b78175cb1bfe2d2f893f1f5e2b87997ea5b3f))
+
+## [2.20.104](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.103...v2.20.104) (2020-11-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.424.0 ([f76b958](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f76b958a2fb2f782dc381e63eaf2890b7739b582))
+
+## [2.20.103](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.102...v2.20.103) (2020-11-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency snyk to v1.422.0 ([310e463](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/310e463d342da28c2c573e7aba20a48717e8f778))
+
 ## [2.20.102](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.101...v2.20.102) (2020-10-30)
 
 

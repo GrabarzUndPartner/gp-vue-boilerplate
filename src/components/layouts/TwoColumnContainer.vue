@@ -4,10 +4,10 @@
     :class="styleClasses"
     :visible="options.visible"
   >
-    <template v-slot:background>
+    <template #background>
       <slot name="background" />
     </template>
-    <template v-slot:container>
+    <template #container>
       <div class="lost-flex-container">
         <div>
           <slot name="left" />
@@ -33,9 +33,14 @@ export default {
     options: {
       type: Object,
       default () {
-        return {
-          mirror: false
-        };
+        return {};
+      }
+    },
+
+    mirror: {
+      type: Boolean,
+      default () {
+        return false;
       }
     }
 
@@ -44,8 +49,8 @@ export default {
   computed: {
     styleClasses () {
       return {
-        'column-align--left': !this.options.mirror,
-        'column-align--right': this.options.mirror
+        'column-align--left': !this.mirror,
+        'column-align--right': this.mirror
       };
     }
   }

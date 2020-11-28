@@ -8,10 +8,10 @@ const DEFAULT_LANG = 'en';
 
 module.exports = {
   dev: isDev,
+  target: 'static',
   srcDir: 'src/',
   css: [],
   env: {},
-  target: 'static',
 
   features: {
     store: true,
@@ -56,13 +56,27 @@ module.exports = {
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js'
     },
     babel: {
-      presets ({ isServer, isModern }) {
-        const targets = isServer ? { node: 'current' } : { ie: 11 };
+      presets ({ envName, isServer, isModern }) {
+        const envTargets = {
+          client: {
+            browsers: [
+              'last 2 versions'
+            ],
+            ie: 11
+          },
+          server: { node: 'current' }
+        };
+        const envUseBuiltins = {
+          client: 'usage',
+          modern: 'entry'
+        };
         return [
           [
+            // polyfill options -> https://www.npmjs.com/package/@nuxt/babel-preset-app-edge
             require.resolve('@nuxt/babel-preset-app'), {
-              targets,
-              useBuiltIns: isModern ? 'entry' : 'usage'
+              targets: envTargets[String(envName)],
+              useBuiltIns: envUseBuiltins[String(envName)],
+              corejs: { version: 3 }
             }
           ]
         ];
@@ -333,7 +347,7 @@ module.exports = {
       '@nuxtjs/pwa', {
         dev: isDev,
         icon: {
-          iconSrc: 'src/static/favicon.png',
+          source: 'src/static/favicon.png',
           sizes: [
             16, 120, 144, 152, 192, 384, 512
           ]
