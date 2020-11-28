@@ -1,5 +1,13 @@
 # Project Changelog
 
+## [2.21.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.0...v2.21.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* **packages:** pinned versions ([9e6c440](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9e6c440660b6e1e28ae4805fdac95e96cb516651))
+* **packages:** removed unused packages ([00a11be](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/00a11be7d6c387315567fa8aec386dc94b6b836a))
+
 # [2.21.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.20.112...v2.21.0) (2020-11-28)
 
 
