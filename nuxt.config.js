@@ -162,75 +162,75 @@ module.exports = {
   modules: [
     '@nuxt/content',
 
-    [
-      'nuxt-font-loader-strategy', {
-        ignoredEffectiveTypes: [
-          '2g', 'slow-2g'
-        ],
-        fonts: [
-          {
-            fileExtensions: [
-              'woff2', 'woff'
-            ],
-            fontFamily: 'Amatic SC',
-            fontFaces: [
-              {
-                preload: true,
-                localSrc: [
-                  'Amatic SC Regular',
-                  'AmaticSC-Regular'
-                ],
-                src: '@/assets/fonts/amatic-sc-v12-latin-regular',
-                fontWeight: 400,
-                fontStyle: 'normal'
-              },
-              // Font-Face
-              {
-                localSrc: [
-                  'Amatic SC Bold', 'AmaticSC-Bold'
-                ],
-                src: '@/assets/fonts/amatic-sc-v12-latin-700',
-                fontWeight: 700,
-                fontStyle: 'normal'
-              }
-            ]
-          },
-          {
-            fileExtensions: [
-              'woff2', 'woff'
-            ],
-            fontFamily: 'Raleway',
-            fontFaces: [
-              {
-                preload: true,
-                localSrc: [
-                  'Raleway', 'Raleway-Regular'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-regular',
-                fontWeight: 400,
-                fontStyle: 'normal'
-              },
-              {
-                localSrc: [
-                  'Raleway Medium', 'Raleway-Medium'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-500',
-                fontWeight: 500,
-                fontStyle: 'normal'
-              },
-              {
-                localSrc: [
-                  'Raleway SemiBold', 'Raleway-SemiBold'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-600',
-                fontWeight: 600,
-                fontStyle: 'normal'
-              }
-            ]
-          }
-        ]
-      }
-    ],
+    // [
+    //   'nuxt-font-loader-strategy', {
+    //     ignoredEffectiveTypes: [
+    //       '2g', 'slow-2g'
+    //     ],
+    //     fonts: [
+    //       {
+    //         fileExtensions: [
+    //           'woff2', 'woff'
+    //         ],
+    //         fontFamily: 'Amatic SC',
+    //         fontFaces: [
+    //           {
+    //             preload: true,
+    //             localSrc: [
+    //               'Amatic SC Regular',
+    //               'AmaticSC-Regular'
+    //             ],
+    //             src: '@/assets/fonts/amatic-sc-v12-latin-regular',
+    //             fontWeight: 400,
+    //             fontStyle: 'normal'
+    //           },
+    //           // Font-Face
+    //           {
+    //             localSrc: [
+    //               'Amatic SC Bold', 'AmaticSC-Bold'
+    //             ],
+    //             src: '@/assets/fonts/amatic-sc-v12-latin-700',
+    //             fontWeight: 700,
+    //             fontStyle: 'normal'
+    //           }
+    //         ]
+    //       },
+    //       {
+    //         fileExtensions: [
+    //           'woff2', 'woff'
+    //         ],
+    //         fontFamily: 'Raleway',
+    //         fontFaces: [
+    //           {
+    //             preload: true,
+    //             localSrc: [
+    //               'Raleway', 'Raleway-Regular'
+    //             ],
+    //             src: '@/assets/fonts/raleway-v13-latin-regular',
+    //             fontWeight: 400,
+    //             fontStyle: 'normal'
+    //           },
+    //           {
+    //             localSrc: [
+    //               'Raleway Medium', 'Raleway-Medium'
+    //             ],
+    //             src: '@/assets/fonts/raleway-v13-latin-500',
+    //             fontWeight: 500,
+    //             fontStyle: 'normal'
+    //           },
+    //           {
+    //             localSrc: [
+    //               'Raleway SemiBold', 'Raleway-SemiBold'
+    //             ],
+    //             src: '@/assets/fonts/raleway-v13-latin-600',
+    //             fontWeight: 600,
+    //             fontStyle: 'normal'
+    //           }
+    //         ]
+    //       }
+    //     ]
+    //   }
+    // ],
 
     '@/modules/codesandbox',
     '@/modules/svg',
