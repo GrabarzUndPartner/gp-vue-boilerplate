@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.21.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.5...v2.21.6) (2020-11-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt-font-loader-strategy to v1.1.2 ([6c8bf3f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6c8bf3f60a8bb69c7b56fe9d2592fb85c8a7a6e0))
+
 ## [2.21.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.4...v2.21.5) (2020-11-29)
 
 

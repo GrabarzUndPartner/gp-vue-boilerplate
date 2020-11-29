@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "2.21.5",
+  "version": "2.21.6",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -53,7 +53,7 @@
     "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/storybook": "3.2.0",
     "@packtracker/webpack-plugin": "2.3.0",
-    "@storybook/addon-a11y": "6.1.8",
+    "@storybook/addon-a11y": "6.1.9",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
     "babel-preset-vue": "2.0.2",
