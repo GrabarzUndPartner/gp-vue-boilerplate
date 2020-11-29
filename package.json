@@ -86,14 +86,13 @@
     "vue-svg-loader": "0.16.0"
   },
   "dependencies": {
-    "node": "12.19.0",
     "@js-basics/vector": "1.56.8",
     "@nuxt/content": "1.11.1",
     "@nuxtjs/axios": "5.12.2",
     "@nuxtjs/pwa": "3.3.1",
     "@nuxtjs/robots": "2.4.2",
     "nuxt": "2.14.7",
-    "nuxt-font-loader-strategy": "1.1.1",
+    "nuxt-font-loader-strategy": "1.1.2",
     "nuxt-i18n": "6.15.4",
     "nuxt-polyfill": "1.0.3",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
