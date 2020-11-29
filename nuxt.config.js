@@ -232,7 +232,6 @@ module.exports = {
       }
     ],
 
-    '@/modules/virtual',
     // '@/modules/codesandbox',
     '@/modules/svg',
     '@/modules/analyzer',
