@@ -1,5 +1,14 @@
 # Project Changelog
 
+## [2.21.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.6...v2.21.7) (2020-11-29)
+
+
+### Bug Fixes
+
+* **codesandbox:** added support ([79d4ae7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/79d4ae77fe54c39e9d03e5456c8f211d668b215b))
+* **codesandbox:** corrected node version number ([16538b6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/16538b6ea86d4debe67778ee8c9bfa7fe59a8e9f))
+* **codesandbox:** removed font module ([1f40199](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1f4019997c14c83e114319558ca0b10c5318a8c7))
+
 ## [2.21.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.5...v2.21.6) (2020-11-29)
 
 
