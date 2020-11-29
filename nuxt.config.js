@@ -232,7 +232,7 @@ module.exports = {
       }
     ],
 
-    // '@/modules/codesandbox',
+    '@/modules/codesandbox',
     '@/modules/svg',
     '@/modules/analyzer',
     '@nuxtjs/axios',
