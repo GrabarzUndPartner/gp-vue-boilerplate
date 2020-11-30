@@ -133,7 +133,7 @@ module.exports = {
 
   generate: {
     dir: 'dist',
-    routes: getProjectRoutes(DEFAULT_LANG)
+    crawler: true
   },
 
   render: {
@@ -408,33 +408,6 @@ module.exports = {
     ]
   }
 };
-
-function getProjectRoutes (defaultLang) {
-  const projectsByLocale =
-    [
-      {
-        locale: 'de',
-        path: '/projekte',
-        items: [
-          'projekt-1', 'projekt-2'
-        ]
-      },
-      {
-        locale: 'en',
-        path: '/projects',
-        items: [
-          'project-1', 'project-2'
-        ]
-      }
-    ];
-  return () => projectsByLocale.reduce((result, projects) => {
-    return projects.items.reduce((result, item) => {
-      const localePath = projects.locale !== defaultLang ? `/${projects.locale}` : '';
-      result.push(localePath + projects.path + '/' + item);
-      return result;
-    }, result);
-  }, []);
-}
 
 function getBasePath () {
   return process.env.npm_config_base || process.env.BASE_PATH || '/';
