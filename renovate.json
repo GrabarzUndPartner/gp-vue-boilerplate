@@ -20,6 +20,11 @@
       "schedule": ["before 2am on monday"],
       "automerge": true,
       "automergeType": "branch"
+    }, {
+      "packagePatterns": [ "snyk" ],
+      "groupName": "snyk",         
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
