@@ -50,7 +50,7 @@ The Grabarz & Partner Boilerplate is a professional front-end template for build
 
 ### Sandbox
 
-[![Edit gp-vue-boilerplate master](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/GrabarzUndPartner/gp-vue-boilerplate)
+[![Edit gp-vue-boilerplate master](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gp-vue-boilerplate-ruwxe)
 
 ### Reports
 
