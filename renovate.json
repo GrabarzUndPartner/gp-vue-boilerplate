@@ -2,7 +2,7 @@
   "extends": [
     "config:base"
   ],
-  "ignoreDeps": [],
+  "ignoreDeps": ["postcss-url", "postcss-momentum-scrolling"],
   "automerge": true,
   "major": {
     "automerge": false
