@@ -10,7 +10,19 @@
   "packageRules": [
     {
       "packagePatterns": [ "eslint" ],
-      "groupName": "eslint",      
+      "groupName": "eslint",    
+      "schedule": ["before 2am on monday"],
+      "automerge": true,
+      "automergeType": "branch"
+    }, {
+      "packagePatterns": [ "stylelint" ],
+      "groupName": "stylelint",    
+      "schedule": ["before 2am on monday"],
+      "automerge": true,
+      "automergeType": "branch"
+    }, {
+      "packagePatterns": [ "snyk" ],
+      "groupName": "snyk",         
       "automerge": true,
       "automergeType": "branch"
     }
