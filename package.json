@@ -86,7 +86,7 @@
     "vue-svg-loader": "0.16.0"
   },
   "dependencies": {
-    "@js-basics/vector": "1.56.8",
+    "@js-basics/vector": "1.56.9",
     "@nuxt/content": "1.11.1",
     "@nuxtjs/axios": "5.12.3",
     "@nuxtjs/pwa": "3.3.1",
