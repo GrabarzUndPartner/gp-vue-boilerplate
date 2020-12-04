@@ -51,7 +51,7 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "5.0.0",
     "@nuxtjs/sitemap": "2.4.0",
-    "@nuxtjs/storybook": "3.2.0",
+    "@nuxtjs/storybook": "3.3.0",
     "@packtracker/webpack-plugin": "2.3.0",
     "@storybook/addon-a11y": "6.1.9",
     "babel-eslint": "10.1.0",
