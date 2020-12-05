@@ -1,5 +1,26 @@
 # Project Changelog
 
+## [2.21.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.10...v2.21.11) (2020-12-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @js-basics/vector to v1.56.9 ([e936208](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e936208ceb73ac2a8a34be935b9e507b476f29e9))
+
+## [2.21.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.9...v2.21.10) (2020-12-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt to v2.14.9 ([98d21d0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/98d21d00079805a573bc0f99b7223694b024b273))
+
+## [2.21.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.8...v2.21.9) (2020-12-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt to v2.14.8 ([acf9ba1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/acf9ba1aa117c527e8532d8a500ed482cf2371a8))
+
 ## [2.21.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.7...v2.21.8) (2020-12-01)
 
 
