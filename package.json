@@ -89,7 +89,7 @@
     "@js-basics/vector": "1.56.9",
     "@nuxt/content": "1.11.1",
     "@nuxtjs/axios": "5.12.3",
-    "@nuxtjs/pwa": "3.3.1",
+    "@nuxtjs/pwa": "3.3.2",
     "@nuxtjs/robots": "2.4.2",
     "nuxt": "2.14.9",
     "nuxt-font-loader-strategy": "1.1.2",
