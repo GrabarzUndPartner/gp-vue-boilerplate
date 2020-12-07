@@ -59,7 +59,7 @@
     "babel-preset-vue": "2.0.2",
     "branch-name-lint": "1.4.0",
     "core-js": "3.8.1",
-    "eslint": "7.14.0",
+    "eslint": "7.15.0",
     "eslint-plugin-chai-friendly": "0.6.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-json": "2.1.2",
