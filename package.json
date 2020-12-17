@@ -91,7 +91,7 @@
     "@nuxtjs/axios": "5.12.4",
     "@nuxtjs/pwa": "3.3.2",
     "@nuxtjs/robots": "2.4.2",
-    "nuxt": "2.14.11",
+    "nuxt": "2.14.12",
     "nuxt-font-loader-strategy": "1.1.2",
     "nuxt-i18n": "6.16.0",
     "nuxt-polyfill": "1.0.3",
