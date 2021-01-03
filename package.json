@@ -58,7 +58,7 @@
     "babel-loader": "8.2.2",
     "babel-preset-vue": "2.0.2",
     "branch-name-lint": "1.4.0",
-    "core-js": "3.8.1",
+    "core-js": "3.8.2",
     "eslint": "7.16.0",
     "eslint-plugin-chai-friendly": "0.6.0",
     "eslint-plugin-cypress": "2.11.2",
