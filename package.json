@@ -87,7 +87,7 @@
   },
   "dependencies": {
     "@js-basics/vector": "1.56.10",
-    "@nuxt/content": "1.11.1",
+    "@nuxt/content": "1.12.0",
     "@nuxtjs/axios": "5.12.5",
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.4.2",
