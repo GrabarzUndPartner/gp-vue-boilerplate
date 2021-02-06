@@ -61,16 +61,16 @@ jobs:
       name: build
       script:
         - npm run storybook:static
-    - stage: test
-      name: cypress
-      install:
-        - npm i mocha mochawesome --no-save
-      script:
-        - npm run start:static & npx wait-on http://localhost:8050
-        - npm run cypress:run -- --record
-        - kill $(jobs -p) || true
-        - npx mochawesome-merge ./.reports/cypress/results/mochawesome*.json > ./.reports/cypress/mochawesome.json
-        - npx mochawesome-report-generator ./.reports/cypress/mochawesome.json --reportDir=./.reports/ --reportFilename=cypress.html
+    # - stage: test
+    #   name: cypress
+    #   install:
+    #     - npm i mocha mochawesome --no-save
+    #   script:
+    #     - npm run start:static & npx wait-on http://localhost:8050
+    #     - npm run cypress:run -- --record
+    #     - kill $(jobs -p) || true
+    #     - npx mochawesome-merge ./.reports/cypress/results/mochawesome*.json > ./.reports/cypress/mochawesome.json
+    #     - npx mochawesome-report-generator ./.reports/cypress/mochawesome.json --reportDir=./.reports/ --reportFilename=cypress.html
     - stage: deploy
       if: branch = master
       install:
