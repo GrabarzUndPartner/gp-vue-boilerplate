@@ -21,7 +21,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: cache node_modules (Example)
+      - name: cache node_modules
         uses: actions/cache@v2
         id: cache
         with:
@@ -86,7 +86,7 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
       - name: Build
         run: |
-          npm run generate --build-analyze --base=/gp-vue-boilerplate/ --website-host=https://grabarzundpartner.github.io/gp-vue-boilerplate
+          npm run static --build-analyze --base=/gp-vue-boilerplate/ --website-host=https://grabarzundpartner.github.io/gp-vue-boilerplate
           mkdir dist/reports dist/reports/webpack
           cp -R .reports/webpack/* dist/reports/webpack
           touch dist/.nojekyll
