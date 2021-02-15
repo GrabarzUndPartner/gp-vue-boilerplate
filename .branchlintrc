@@ -1,6 +1,6 @@
 {
   "branchNameLinter": {
-    "prefixes": ["feature", "hotfix", "release"],
+    "prefixes": ["feature", "hotfix", "release", "develop"],
     "suggestions": {
       "features": "feature",
       "feat": "feature",
