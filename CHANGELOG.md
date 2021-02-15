@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.21.36](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.35...v2.21.36) (2021-02-15)
+
+
+### Bug Fixes
+
+* **package-lock:** update package-lock ([ddbd3f0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ddbd3f0c2097e103cb083a47a010a13a2b85360f))
+
 ## [2.21.35](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.21.34...v2.21.35) (2021-01-31)
 
 
