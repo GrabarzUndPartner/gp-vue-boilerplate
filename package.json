@@ -55,7 +55,6 @@
     "@storybook/addon-a11y": "6.1.18",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
-    "babel-preset-vue": "2.0.2",
     "branch-name-lint": "2.0.0",
     "core-js": "3.8.3",
     "css-loader": "5.0.2",
