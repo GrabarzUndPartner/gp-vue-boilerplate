@@ -84,6 +84,15 @@ module.exports = {
     },
     postcss: {
       plugins: {
+        'postcss-preset-env': {
+          preserve: false,
+          stage: 0,
+          features: {
+            'custom-media-queries': false,
+            'nesting-rules': false
+          },
+          importFrom: 'src/globals/postcss.js'
+        },
         'postcss-custom-media': {
           importFrom: [
             'src/globals/postcss.js'
@@ -115,15 +124,6 @@ module.exports = {
           flexbox: 'flex',
           cycle: 'auto'
         }
-      },
-      preset: {
-        preserve: false,
-        stage: 0,
-        features: {
-          'custom-media-queries': false,
-          'nesting-rules': false
-        },
-        importFrom: 'src/globals/postcss.js'
       }
     },
 
