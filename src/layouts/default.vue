@@ -17,10 +17,12 @@
       <nuxt />
     </main>
     <page-footer v-bind="layoutComponents.pageFooter" />
+    <page-info-layer critical />
   </div>
 </template>
 
 <script>
+import PageInfoLayer from '@/components/page/InfoLayer';
 
 import {
   hydrateOnInteraction
@@ -37,7 +39,8 @@ export default {
     PageMenuButton,
     PageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
-    })
+    }),
+    PageInfoLayer
   },
 
   speedkitComponents: {

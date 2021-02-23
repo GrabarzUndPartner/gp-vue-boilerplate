@@ -72,55 +72,65 @@ module.exports = {
         };
         return [
           [
-            // polyfill options -> https://www.npmjs.com/package/@nuxt/babel-preset-app-edge
             require.resolve('@nuxt/babel-preset-app'), {
               targets: envTargets[String(envName)],
               useBuiltIns: envUseBuiltins[String(envName)],
-              corejs: { version: 3 }
+              // #####
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3, proposals: true },
+              forceAllTransforms: !isDev && !isModern && !isServer,
+              shippedProposals: true,
+              loose: true,
+              bugfixes: true,
+              polyfills: [
+                'es.promise',
+                'es.symbol'
+              ]
             }
           ]
         ];
       }
+
     },
     postcss: {
       plugins: {
-        'postcss-preset-env': {
-          preserve: false,
-          stage: 0,
-          features: {
-            'custom-media-queries': false,
-            'nesting-rules': false
-          },
-          importFrom: 'src/globals/postcss.js'
-        },
-        'postcss-custom-media': {
-          importFrom: [
-            'src/globals/postcss.js'
-          ]
-        },
-        'postcss-nesting': {},
-        'postcss-normalize': {},
-        'postcss-url': {},
-        'postcss-object-fit-images': {},
-        '@fullhuman/postcss-purgecss': {
-          content: [
-            'src/pages/**/*.vue',
-            'src/layouts/**/*.vue',
-            'src/components/**/*.vue'
-          ],
-          safelist: [
-            'html', 'body', /nuxt-/
-          ]
-        },
-        'postcss-momentum-scrolling': [
-          'scroll'
-        ],
-        'rucksack-css': {},
-        lost: {
-          gutter: '15px',
-          flexbox: 'flex',
-          cycle: 'auto'
-        }
+        // 'postcss-preset-env': {
+        //   preserve: false,
+        //   stage: 0,
+        //   features: {
+        //     'custom-media-queries': false,
+        //     'nesting-rules': false
+        //   },
+        //   importFrom: 'src/globals/postcss.js'
+        // },
+        // 'postcss-custom-media': {
+        //   importFrom: [
+        //     'src/globals/postcss.js'
+        //   ]
+        // },
+        // 'postcss-nesting': {},
+        // 'postcss-normalize': {},
+        // 'postcss-url': {},
+        // 'postcss-object-fit-images': {},
+        // '@fullhuman/postcss-purgecss': {
+        //   content: [
+        //     'src/pages/**/*.vue',
+        //     'src/layouts/**/*.vue',
+        //     'src/components/**/*.vue'
+        //   ],
+        //   safelist: [
+        //     'html', 'body', /nuxt-/
+        //   ]
+        // },
+        // 'postcss-momentum-scrolling': [
+        //   'scroll'
+        // ],
+        // 'rucksack-css': {},
+        // lost: {
+        //   gutter: '15px',
+        //   flexbox: 'flex',
+        //   cycle: 'auto'
+        // }
       }
     },
 
@@ -329,6 +339,8 @@ module.exports = {
   ],
 
   buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
 
     [
       '@nuxtjs/pwa', {

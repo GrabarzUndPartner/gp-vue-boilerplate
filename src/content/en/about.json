@@ -14,7 +14,7 @@
       "data": {
         "video": {
           "playsinline": true,
-          "autoplay": false,
+          "autoplay": true,
           "muted": true,
           "loop": true,
           "controls": false

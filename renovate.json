@@ -9,6 +9,7 @@
     "postcss-loader"
   ],
   "automerge": true,
+  "rangeStrategy": "pin",
   "major": {
     "automerge": false
   },

@@ -68,7 +68,7 @@ export default {
     }
 
     & > div {
-      lost-column: 12/12;
+      lost-column: 12/12 0 0;
 
       @media (--sm) {
         lost-column: 6/12;

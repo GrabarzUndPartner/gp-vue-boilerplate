@@ -57,7 +57,7 @@ export default {
                   {
                     width: 1024,
                     media: '(min-width: 1024px)',
-                    url: 'video/16_9/poster/1024.webp'
+                    url: 'video/16_9/poster/992.webp'
                   },
                   {
                     width: 1200,
@@ -87,7 +87,7 @@ export default {
                   {
                     width: 1024,
                     media: '(min-width: 1024px)',
-                    url: 'video/16_9/poster/1024.jpg'
+                    url: 'video/16_9/poster/992.jpg'
                   },
                   {
                     width: 1200,
