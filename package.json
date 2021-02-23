@@ -44,7 +44,7 @@
     "packtracker": "packtracker-upload --stats=.reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
-    "@babel/runtime-corejs3": "7.13.4",
+    "@babel/runtime-corejs3": "7.13.6",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@fullhuman/postcss-purgecss": "3.1.3",
