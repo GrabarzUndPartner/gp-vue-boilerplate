@@ -10,7 +10,7 @@
   "title": "Projekte",
   "components": [
     {
-      "component": "Text",
+      "component": "ArticleText",
       "data": {
         "article": {
           "headline": {
@@ -23,7 +23,7 @@
       }
     },
     {
-      "component": "TextImage",
+      "component": "ArticleTextImage",
       "data": {
         "options": {
           "mirror": true
@@ -39,7 +39,7 @@
       }
     },
     {
-      "component": "TextImage",
+      "component": "ArticleTextImage",
       "data": {
         "article": {
           "headline": {

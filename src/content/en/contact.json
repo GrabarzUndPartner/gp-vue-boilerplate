@@ -10,7 +10,7 @@
   "title": "Kontakt",
   "components": [
     {
-      "component": "Text",
+      "component": "ArticleText",
       "data": {
         "article": {
           "headline": {

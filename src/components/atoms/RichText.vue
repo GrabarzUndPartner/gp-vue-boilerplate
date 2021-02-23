@@ -1,5 +1,12 @@
 <template>
-  <div class="atom-rich-text">
+  <div
+    v-font="[
+      $getFont('Raleway'),
+      $getFont('Raleway', 700, 'normal', {selector:'strong'}),
+      $getFont('Raleway', 400, 'italic', {selector:'em'})
+    ]"
+    class="atom-rich-text"
+  >
     <div
       v-if="!$slots.default"
       v-html="content"
@@ -22,24 +29,12 @@ export default {
 
 <style lang="postcss" scoped>
 .atom-rich-text {
-  & strong,
-  & b,
-  & i,
-  & em {
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  font-family: sans-serif;
   font-size: calc(16 / 375 * 100vw);
-  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: calc(0.9 / 16 * 1em);
 
   @media (--xs) {
     font-size: 16px;
-  }
-
-  @nest .font_raleway .js--visible & {
-    font-family: "Raleway", sans-serif;
   }
 }
 </style>
