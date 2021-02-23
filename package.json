@@ -30,7 +30,7 @@
     "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
-    "lint:es": "eslint --fix --ext .js,.vue,.json ./",
+    "lint:es": "eslint --ext .js,.vue,.json .",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output .reports/audit.html",
     "cypress:open": "npx cypress open --browser chrome",

@@ -91,6 +91,6 @@
     ],
     "no-debugger": "off",
     "no-console": "off",
-    "no-empty-function": "error",
+    "no-empty-function": "error"
   }
 }
