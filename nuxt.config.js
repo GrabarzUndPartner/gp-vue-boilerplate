@@ -221,8 +221,8 @@ module.exports = {
             style: 'italic',
             weight: 700,
             sources: [
-              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700Italic.woff', type: 'woff' },
-              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700Italic.woff2', type: 'woff2' }
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700italic.woff', type: 'woff' },
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700italic.woff2', type: 'woff2' }
             ]
           }
         ]
