@@ -108,11 +108,8 @@ module.exports = {
             'src/layouts/**/*.vue',
             'src/components/**/*.vue'
           ],
-          whitelist: [
-            'html', 'body'
-          ],
-          whitelistPatterns: [
-            /nuxt-/
+          safelist: [
+            'html', 'body', /nuxt-/
           ]
         },
         'postcss-momentum-scrolling': [
@@ -138,8 +135,7 @@ module.exports = {
 
   render: {
     crossorigin: 'anonymous',
-    resourceHints: true,
-    http2: { push: true }
+    resourceHints: true
   },
 
   router: {
@@ -157,111 +153,103 @@ module.exports = {
     ]
   },
 
-  plugins: [],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US'
+      },
+      {
+        code: 'de',
+        iso: 'de-DE'
+      }
+    ],
+    parsePages: true,
+    defaultLocale: DEFAULT_LANG,
+    strategy: 'prefix_except_default',
+    seo: false,
+    vueI18nLoader: false,
+    vueI18n: {
+      fallbackLocale: DEFAULT_LANG,
+      messages: {
+        en: require('./src/globals/locales/en.json'),
+        de: require('./src/globals/locales/de.json')
+      }
+    }
+  },
 
-  modules: [
-    '@nuxt/content',
-
-    [
-      'nuxt-font-loader-strategy', {
-        ignoredEffectiveTypes: [
-          '2g', 'slow-2g'
+  speedkit: {
+    fonts: [
+      {
+        family: 'Raleway',
+        fallback: [
+          'sans-serif'
         ],
-        fonts: [
+        variances: [
           {
-            fileExtensions: [
-              'woff2', 'woff'
-            ],
-            fontFamily: 'Amatic SC',
-            fontFaces: [
-              {
-                preload: true,
-                localSrc: [
-                  'Amatic SC Regular',
-                  'AmaticSC-Regular'
-                ],
-                src: '@/assets/fonts/amatic-sc-v12-latin-regular',
-                fontWeight: 400,
-                fontStyle: 'normal'
-              },
-              // Font-Face
-              {
-                localSrc: [
-                  'Amatic SC Bold', 'AmaticSC-Bold'
-                ],
-                src: '@/assets/fonts/amatic-sc-v12-latin-700',
-                fontWeight: 700,
-                fontStyle: 'normal'
-              }
+            style: 'normal',
+            weight: 400,
+            sources: [
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-regular.woff', type: 'woff' },
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-regular.woff2', type: 'woff2' }
             ]
-          },
+          }, {
+            style: 'italic',
+            weight: 400,
+            sources: [
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-italic.woff', type: 'woff' },
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-italic.woff2', type: 'woff2' }
+            ]
+          }, {
+            style: 'normal',
+            weight: 700,
+            sources: [
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700.woff', type: 'woff' },
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700.woff2', type: 'woff2' }
+            ]
+          }, {
+            style: 'italic',
+            weight: 700,
+            sources: [
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700Italic.woff', type: 'woff' },
+              { src: '@/assets/fonts/raleway-v19-latin/raleway-v19-latin-700Italic.woff2', type: 'woff2' }
+            ]
+          }
+        ]
+      }, {
+        family: 'Roboto Slab',
+        fallback: [
+          'serif'
+        ],
+        variances: [
           {
-            fileExtensions: [
-              'woff2', 'woff'
-            ],
-            fontFamily: 'Raleway',
-            fontFaces: [
-              {
-                preload: true,
-                localSrc: [
-                  'Raleway', 'Raleway-Regular'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-regular',
-                fontWeight: 400,
-                fontStyle: 'normal'
-              },
-              {
-                localSrc: [
-                  'Raleway Medium', 'Raleway-Medium'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-500',
-                fontWeight: 500,
-                fontStyle: 'normal'
-              },
-              {
-                localSrc: [
-                  'Raleway SemiBold', 'Raleway-SemiBold'
-                ],
-                src: '@/assets/fonts/raleway-v13-latin-600',
-                fontWeight: 600,
-                fontStyle: 'normal'
-              }
+            style: 'normal',
+            weight: 400,
+            sources: [
+              { src: '@/assets/fonts/roboto-slab-v13-latin/roboto-slab-v13-latin-regular.woff', type: 'woff' },
+              { src: '@/assets/fonts/roboto-slab-v13-latin/roboto-slab-v13-latin-regular.woff2', type: 'woff2' }
+            ]
+          }, {
+            style: 'normal',
+            weight: 700,
+            sources: [
+              { src: '@/assets/fonts/roboto-slab-v13-latin/roboto-slab-v13-latin-700.woff', type: 'woff' },
+              { src: '@/assets/fonts/roboto-slab-v13-latin/roboto-slab-v13-latin-700.woff2', type: 'woff2' }
             ]
           }
         ]
       }
-    ],
+    ]
+  },
 
+  modules: [
+    'nuxt-speedkit',
+    '@nuxt/content',
     '@/modules/codesandbox',
     '@/modules/svg',
     '@/modules/analyzer',
     '@nuxtjs/axios',
-    [
-      'nuxt-i18n', {
-        locales: [
-          {
-            code: 'en',
-            iso: 'en-US'
-          },
-          {
-            code: 'de',
-            iso: 'de-DE'
-          }
-        ],
-        parsePages: true,
-        defaultLocale: DEFAULT_LANG,
-        strategy: 'prefix_except_default',
-        seo: false,
-        vueI18nLoader: false,
-        vueI18n: {
-          fallbackLocale: DEFAULT_LANG,
-          messages: {
-            en: require('./src/globals/locales/en.json'),
-            de: require('./src/globals/locales/de.json')
-          }
-        }
-      }
-    ],
+    'nuxt-i18n',
     [
       'nuxt-polyfill', {
         features: [

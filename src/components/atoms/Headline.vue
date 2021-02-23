@@ -7,6 +7,7 @@
     <slot>
       <span
         v-if="$slots.overline || overline"
+        v-font="$getFont('Raleway')"
         class="overline"
       >
         <slot name="overline-slot">
@@ -15,6 +16,7 @@
       </span>
       <span
         v-if="$slots.headline || headline"
+        v-font="$getFont('Roboto Slab', 700)"
         class="headline"
       >
         <slot name="headline-slot">
@@ -23,6 +25,7 @@
       </span>
       <span
         v-if="$slots.subline || subline"
+        v-font="$getFont('Raleway', 700)"
         class="subline"
       >
         <slot name="subline-slot">
@@ -65,8 +68,7 @@ export default {
 
 <style lang="postcss" scoped>
 .atom-headline {
-  font-style: normal;
-  font-weight: 400;
+  margin: 0;
   line-height: 1.5;
 
   & > * {
@@ -80,23 +82,19 @@ export default {
   }
 
   &.headline--h2 {
-    & .overline,
-    & .subline {
+    & .overline {
       font-size: calc(12 / 375 * 100vw);
-      font-weight: normal;
 
       @media (--xs) {
         font-size: 12px;
       }
-
-      @nest .font_raleway .js--visible & {
-        font-family: "Raleway", sans-serif;
-      }
     }
 
     & .subline {
-      @nest .font_raleway_500_normal .js--visible & {
-        font-weight: 500;
+      font-size: calc(16 / 375 * 100vw);
+
+      @media (--xs) {
+        font-size: 16px;
       }
     }
 
@@ -107,30 +105,7 @@ export default {
         font-size: 36px;
       }
 
-      @nest .font_amatic_sc .js--visible & {
-        font-family: "Amatic SC", serif;
-      }
-
-      @nest .font_amatic_sc_700_normal .js--visible & {
-        font-weight: 700;
-      }
     }
-  }
-
-  &.headline--h3 {
-    /* empty */
-  }
-
-  &.headline--h4 {
-    /* empty */
-  }
-
-  &.headline--h5 {
-    /* empty */
-  }
-
-  &.headline--h6 {
-    /* empty */
   }
 }
 </style>

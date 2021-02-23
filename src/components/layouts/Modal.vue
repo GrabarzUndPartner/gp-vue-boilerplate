@@ -4,7 +4,6 @@
       v-show="opened"
       class="layout-modal"
       :class="styleClasses"
-      v-bind="options"
     >
       <template #container>
         <div class="lost-flex-container">
@@ -47,6 +46,7 @@ export default {
       type: String,
       required: true
     },
+
     closeButton: {
       type: Boolean,
       default () {

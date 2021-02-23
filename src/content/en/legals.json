@@ -68,7 +68,7 @@
       }
     },
     {
-      "component": "Text",
+      "component": "ArticleText",
       "data": {
         "article": {
           "headline": {
@@ -79,7 +79,7 @@
       }
     },
     {
-      "component": "Text",
+      "component": "ArticleText",
       "data": {
         "article": {
           "headline": null,

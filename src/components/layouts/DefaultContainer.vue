@@ -2,7 +2,6 @@
   <component
     :is="tag"
     class="layouts-default-container"
-    :class="styleClasses"
   >
     <slot name="background" />
     <slot name="container">
@@ -26,19 +25,6 @@ export default {
       default () {
         return 'div';
       }
-    },
-
-    visible: {
-      type: Boolean,
-      default () {
-        return !!process.browser;
-      }
-    }
-  },
-
-  computed: {
-    styleClasses () {
-      return { 'js--visible': this.visible };
     }
   }
 };
@@ -53,9 +39,11 @@ export default {
     margin-top: 0;
   }
 
+  /*
+
   &:last-child {
     margin-bottom: 0;
-  }
+  } */
 
   & .lost-flex-container {
     display: flex;
