@@ -2,20 +2,22 @@
 <template>
   <div class="content">
     <component
-      :is="item.asyncComponent"
+      :is="item.component"
       v-for="(item, index) in components"
       :key="index"
       v-bind="item.data"
+      :critical="index < 1"
     />
   </div>
 </template>
 
 <script>
-
-import { getAsyncComponents } from '@/utils/async-components';
-
+import ComponentsExtend from './Components';
 export default {
-  scrollToTop: true,
+  // scrollToTop: true,
+
+  extends: ComponentsExtend,
+
   async asyncData ({ $content, store, app, error, route }) {
     const locale = app.i18n.locale;
 
@@ -51,17 +53,15 @@ export default {
     return {
       title: this.title
     };
-  },
-
-  created () {
-    this.components = getAsyncComponents(this.components);
   }
 
 };
 
 function normalizePath (path, locale) {
-  path = path.replace(/^\//, '')
+  path = path
+    .replace(/^\//, '')
     .replace(locale, '')
+    .replace(/^[\\/]?p/, '')
     .replace(/^\//, '');
   return `${locale}/${path || 'index'}`;
 }

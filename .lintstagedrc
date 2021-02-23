@@ -1,6 +1,6 @@
 {
-  "*.(js|vue|json)": [
-    "eslint --fix --ext .js,.vue,.json ./"
+  "*.(js|vue)": [
+    "eslint --ext .js,.vue ."
   ],
   "*.(vue|css)": [
     "stylelint --fix"

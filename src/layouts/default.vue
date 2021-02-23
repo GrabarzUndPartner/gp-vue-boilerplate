@@ -17,32 +17,35 @@
       <nuxt />
     </main>
     <page-footer v-bind="layoutComponents.pageFooter" />
+    <page-info-layer critical />
   </div>
 </template>
 
 <script>
+import PageInfoLayer from '@/components/page/InfoLayer';
 
 import {
-  hydrateWhenVisible,
-  hydrateOnInteraction,
-  hydrateWhenIdle
+  hydrateOnInteraction
 } from 'vue-lazy-hydration';
 import { directionDetectionObserver } from '@/service/viewport';
 
-const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
+import PageMenuButton from '@/components/page/MenuButton';
+
+const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling'; ;
 
 export default {
 
   components: {
-    PageHeader: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
-    PageMenuButton: hydrateWhenIdle(() => import(/* webpackMode: "eager" */'@/components/page/MenuButton')),
-    PageMenu: hydrateOnInteraction(() => import(/* webpackMode: "lazy" */'@/components/page/Menu'), {
+    PageMenuButton,
+    PageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
     }),
-    PageFooter: hydrateWhenVisible(
-      () => import(/* webpackMode: "lazy" */'@/components/page/Footer'),
-      { observerOptions: { rootMargin: '100px' } }
-    )
+    PageInfoLayer
+  },
+
+  speedkitComponents: {
+    PageHeader: () => import(/* webpackMode: "eager" */'@/components/page/Header'),
+    PageFooter: () => import('@/components/page/Footer')
   },
 
   data () {
@@ -114,6 +117,8 @@ export default {
 <style lang="postcss">
 body {
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html[data-prevent-scrolling="true"] {

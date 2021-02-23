@@ -29,6 +29,7 @@ logs
 # Files
 .DS_Store
 .scannerwork
+.eslintcache
 sw.*
 env/cert/*
 !env/cert/README.md

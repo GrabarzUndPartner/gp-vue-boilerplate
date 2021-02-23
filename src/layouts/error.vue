@@ -2,7 +2,7 @@
 <template>
   <div class="content">
     <component
-      :is="item.asyncComponent"
+      :is="item.component"
       v-for="(item, index) in components"
       :key="index"
       v-bind="item.data"
@@ -11,9 +11,10 @@
 </template>
 
 <script>
-
-import { getAsyncComponents } from '@/utils/async-components';
+import ComponentsExtend from '@/extends/Components';
 export default {
+
+  extends: ComponentsExtend,
 
   props: {
     error: {
@@ -24,12 +25,6 @@ export default {
     }
   },
 
-  data () {
-    return {
-      components: []
-    };
-  },
-
   head () {
     return {
       title: this.error.statusCode
@@ -37,7 +32,7 @@ export default {
   },
 
   computed: {
-    dataComponents () {
+    components () {
       return [
         {
           component: 'StagePicture',
@@ -54,7 +49,7 @@ export default {
           }
         },
         {
-          component: 'Text',
+          component: 'ArticleText',
           data: {
             article: {
               headline: {
@@ -68,13 +63,7 @@ export default {
         }
       ];
     }
-  },
-
-  created () {
-    this.components = getAsyncComponents(this.dataComponents);
   }
+
 };
 </script>
-
-<style>
-</style>
