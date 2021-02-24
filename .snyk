@@ -418,6 +418,14 @@ ignore:
     - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > glob-base > glob-parent':
         reason: None given
         expires: '2021-03-26T11:43:49.831Z'
+  SNYK-JS-TRIM-1017038:
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @mdx-js/loader > @mdx-js/mdx > remark-mdx > remark-parse > trim':
+        reason: None given
+        expires: '2021-03-26T11:52:10.995Z'
+  SNYK-JS-USERAGENT-174737:
+    - nuxt-speedkit > browserslist-useragent-regexp > useragent:
+        reason: None given
+        expires: '2021-03-26T11:52:10.995Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:
