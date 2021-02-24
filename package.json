@@ -91,7 +91,7 @@
     "postcss-normalize": "9.0.0",
     "postcss-object-fit-images": "1.1.2",
     "postcss-url": "10.1.1",
-    "@fullhuman/postcss-purgecss": "4.0.0",
+    "@fullhuman/postcss-purgecss": "4.0.2",
     "@nuxtjs/storybook": "3.3.1",
     "@storybook/addon-a11y": "6.1.18",
     "reqlim": "0.0.0",
