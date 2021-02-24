@@ -1,3 +1,24 @@
+/*! npm.im/object-fit-images 3.2.4 */
+
+
+/*! Gecko-Picture - v1.0
+ * https://github.com/scottjehl/picturefill/tree/3.0/src/plugins/gecko-picture
+ * Firefox's early picture implementation (prior to FF41) is static and does
+ * not react to viewport changes. This tiny module fixes this.
+ */
+
+/*! Picturefill - v3.0.2
+ * http://scottjehl.github.io/picturefill
+ * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt;
+ *  License: MIT
+ */
+
+/*! picturefill - v3.0.2 - 2016-02-12
+ * https://scottjehl.github.io/picturefill/
+ * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
+ */
+
+
 /*!
   * vue-router v3.5.1
   * (c) 2021 Evan You
@@ -26,15 +47,29 @@
  */
 
 /*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
  * vue-client-only v2.0.0
  * (c) 2019-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
 
 /*!
- * vuex v3.6.2
- * (c) 2021 Evan You
- * @license MIT
+ * vue-i18n v8.22.4 
+ * (c) 2021 kazuya kawaguchi
+ * Released under the MIT License.
  */
 
 /*! *****************************************************************************
@@ -52,21 +87,4 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
-/*! Gecko-Picture - v1.0
- * https://github.com/scottjehl/picturefill/tree/3.0/src/plugins/gecko-picture
- * Firefox's early picture implementation (prior to FF41) is static and does
- * not react to viewport changes. This tiny module fixes this.
- */
-
-/*! Picturefill - v3.0.2
- * http://scottjehl.github.io/picturefill
- * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt;
- *  License: MIT
- */
-
-/*! npm.im/object-fit-images 3.2.4 */
-
-/*! picturefill - v3.0.2 - 2016-02-12
- * https://scottjehl.github.io/picturefill/
- * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
- */
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
