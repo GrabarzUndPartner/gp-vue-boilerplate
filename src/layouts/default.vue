@@ -71,7 +71,7 @@ export default {
       return this.$store.getters['layout/data'][this.$i18n.locale];
     },
     layoutComponents () {
-      return this.layoutData.components;
+      return (this.layoutData || { components: [] }).components;
     },
     preventScrolling () {
       return this.$store.getters['layout/preventScrolling'];

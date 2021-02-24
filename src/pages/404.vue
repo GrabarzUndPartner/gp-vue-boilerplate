@@ -16,13 +16,13 @@ export default {
 
   extends: ComponentsExtend,
 
-  props: {
-    error: {
-      type: Object,
-      default () {
-        return {};
+  data () {
+    return {
+      error: {
+        statusCode: 404,
+        message: 'This page could not be found'
       }
-    }
+    };
   },
 
   head () {
