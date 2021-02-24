@@ -86,7 +86,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.4.2",
     "@nuxtjs/sitemap": "2.4.0",
-    "@nuxtjs/storybook": "^3.3.1",
+    "@nuxtjs/storybook": "3.3.1",
     "@storybook/addon-a11y": "6.1.19",
     "core-js": "3.9.0",
     "css-loader": "5.0.2",
