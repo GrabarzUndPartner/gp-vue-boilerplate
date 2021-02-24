@@ -1,5 +1,6 @@
 <template>
   <ul
+    v-font="$getFont('Raleway')"
     class="molecule-link-list"
     :class="styleClasses"
   >
@@ -66,14 +67,7 @@ export default {
 
     & li {
       display: block;
-      font-family: sans-serif;
       font-size: calc(32 / 375 * 100vw);
-      font-weight: 400;
-
-      @nest .font_raleway .js--visible & {
-        font-family: "Raleway", sans-serif;
-      }
-
       line-height: 2em;
 
       @media (--xs) {
@@ -102,14 +96,7 @@ export default {
       & li {
         display: inline-block;
         margin: 0 calc(10 / 375 * 100vw);
-        font-family: sans-serif;
         font-size: calc(22 / 375 * 100vw);
-        font-weight: 400;
-
-        @nest .font_raleway .js--visible & {
-          font-family: "Raleway", sans-serif;
-        }
-
         line-height: 1.5em;
 
         @media (--xs) {
@@ -136,14 +123,7 @@ export default {
     & li {
       display: inline-block;
       margin-right: calc(10 / 375 * 100vw);
-      font-family: sans-serif;
-
-      @nest .font_raleway .js--visible & {
-        font-family: "Raleway", sans-serif;
-      }
-
       font-size: calc(16 / 375 * 100vw);
-      font-weight: 400;
       line-height: 2em;
 
       @media (--xs) {

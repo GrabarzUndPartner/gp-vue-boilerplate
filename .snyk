@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.16.0
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-MINIMIST-559764:
@@ -390,6 +390,42 @@ ignore:
     - '@commitlint/cli > @commitlint/lint > @commitlint/parse > conventional-changelog-angular > compare-func > dot-prop':
         reason: None given
         expires: '2020-04-11T10:23:22.898Z'
+  SNYK-JS-GLOBPARENT-1016905:
+    - '@nuxt/content > chokidar > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.830Z'
+    - nuxt > @nuxt/cli > globby > fast-glob > glob-parent:
+        reason: None given
+        expires: '2021-03-26T11:43:49.830Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > webpack > watchpack > chokidar > glob-parent:
+        reason: None given
+        expires: '2021-03-26T11:43:49.830Z'
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > react-dev-utils > globby > fast-glob > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.830Z'
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > webpack > watchpack > chokidar > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.830Z'
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > cpy > globby > fast-glob > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.831Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
+        reason: None given
+        expires: '2021-03-26T11:43:49.831Z'
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.831Z'
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > glob-base > glob-parent':
+        reason: None given
+        expires: '2021-03-26T11:43:49.831Z'
+  SNYK-JS-TRIM-1017038:
+    - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @mdx-js/loader > @mdx-js/mdx > remark-mdx > remark-parse > trim':
+        reason: None given
+        expires: '2021-03-26T11:52:10.995Z'
+  SNYK-JS-USERAGENT-174737:
+    - nuxt-speedkit > browserslist-useragent-regexp > useragent:
+        reason: None given
+        expires: '2021-03-26T11:52:10.995Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:

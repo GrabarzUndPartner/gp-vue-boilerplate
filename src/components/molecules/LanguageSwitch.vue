@@ -45,12 +45,6 @@ export default {
 .molecule-language-switch {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
-
-  @nest .font_raleway .js--visible & {
-    font-family: "Raleway", sans-serif;
-  }
-
   text-align: center;
   list-style: none;
 

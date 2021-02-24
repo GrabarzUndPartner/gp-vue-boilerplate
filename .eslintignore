@@ -12,3 +12,5 @@
 
 # Files
 src/static/sw.js
+src/app/router.scrollBehavior.js
+.eslintrc.json
