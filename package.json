@@ -95,7 +95,7 @@
     "nuxt": "2.15.2",
     "nuxt-i18n": "6.20.3",
     "nuxt-polyfill": "1.0.3",
-    "nuxt-speedkit": "1.1.19",
+    "nuxt-speedkit": "1.1.20",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "postcss-custom-media": "8.0.0",
     "postcss-import": "14.0.0",
