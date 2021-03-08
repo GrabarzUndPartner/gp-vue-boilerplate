@@ -93,7 +93,7 @@
     "license-webpack-plugin": "2.3.15",
     "lost": "8.3.1",
     "nuxt": "2.15.2",
-    "nuxt-i18n": "6.20.5",
+    "nuxt-i18n": "6.20.6",
     "nuxt-polyfill": "1.0.3",
     "nuxt-speedkit": "1.1.21",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
