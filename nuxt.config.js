@@ -339,18 +339,13 @@ module.exports = {
   ],
 
   buildModules: [
+    'nuxt-postcss8',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
 
     [
       '@nuxtjs/pwa', {
         dev: isDev,
-        icon: {
-          source: 'src/static/favicon.png',
-          sizes: [
-            16, 120, 144, 152, 192, 384, 512
-          ]
-        },
         meta: {
           charset: 'utf-8',
           viewport: 'width=device-width, initial-scale=1',
