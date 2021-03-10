@@ -31,7 +31,7 @@ import { directionDetectionObserver } from '@/service/viewport';
 
 import PageMenuButton from '@/components/page/MenuButton';
 
-const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling'; ;
+const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
 
 export default {
 
