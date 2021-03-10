@@ -95,6 +95,7 @@
     "nuxt": "2.15.2",
     "nuxt-i18n": "6.20.6",
     "nuxt-polyfill": "1.0.3",
+    "nuxt-postcss8": "1.0.3",
     "nuxt-speedkit": "1.1.21",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "postcss-custom-media": "8.0.0",
@@ -117,9 +118,6 @@
     "domtokenlist-shim": "1.2.0",
     "intersection-observer": "0.12.0",
     "requestidlecallback": "0.3.0"
-  },
-  "peerDependencies": {
-    "postcss": "8.2.8"
   },
   "snyk": true
 }
