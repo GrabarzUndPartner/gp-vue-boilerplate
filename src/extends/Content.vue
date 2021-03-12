@@ -61,7 +61,7 @@ function normalizePath (path, locale) {
   path = path
     .replace(/^\//, '')
     .replace(locale, '')
-    .replace(/^[\\/]?p/, '')
+    .replace(/^[\\/]?/, '')
     .replace(/^\//, '');
   return `${locale}/${path || 'index'}`;
 }
