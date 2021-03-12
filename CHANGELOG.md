@@ -1,5 +1,16 @@
 # Project Changelog
 
+## [2.22.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.2...v2.22.3) (2021-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/robots to v2.5.0 ([e620d70](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e620d7092e9f4f70dde8b1837ea941fe6f27c32e))
+* **deps:** update dependency css-loader to v5.1.2 ([e451b10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e451b1046653f153da8f8cdde074d0669cab5645))
+* **deps:** update dependency nuxt to v2.15.3 ([cda69c9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cda69c92519e96b5143951f1690ed801d18809b6))
+* **deps:** update dependency nuxt-i18n to v6.21.0 ([777526b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/777526b926e81a33f9535fe92ba8c886f315d718))
+* **deps:** update dependency nuxt-postcss8 to v1.1.2 ([26e6cff](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/26e6cffafd15bc11312db15430ff3bdbc9d873c7))
+
 ## [2.22.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.1...v2.22.2) (2021-03-10)
 
 
