@@ -105,7 +105,7 @@
     "postcss-nested": "5.0.5",
     "postcss-normalize": "9.0.0",
     "postcss-object-fit-images": "1.1.2",
-    "postcss-url": "10.1.1",
+    "postcss-url": "10.1.3",
     "reqlim": "0.0.0",
     "rucksack-css": "1.0.2",
     "rxjs": "6.6.6",
