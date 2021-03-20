@@ -79,7 +79,7 @@
     "vue-svg-loader": "0.16.0"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "4.0.2",
+    "@fullhuman/postcss-purgecss": "4.0.3",
     "@js-basics/vector": "1.56.10",
     "@nuxt/content": "1.14.0",
     "@nuxtjs/axios": "5.13.1",
