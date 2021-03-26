@@ -90,7 +90,7 @@
     "@storybook/addon-a11y": "6.1.21",
     "core-js": "3.9.1",
     "css-loader": "5.2.0",
-    "license-webpack-plugin": "2.3.15",
+    "license-webpack-plugin": "2.3.16",
     "lost": "8.3.1",
     "nuxt": "2.15.3",
     "nuxt-i18n": "6.22.1",
