@@ -16,7 +16,7 @@
 
 import LayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
 import MoleculeContentArticle from '@/components/molecules/ContentArticle';
-import SpeedkitPicture from 'nuxt-speedkit-components/SpeedkitPicture';
+import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
 
 export default {
   components: {
