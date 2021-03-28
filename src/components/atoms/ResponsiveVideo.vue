@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import SpeedkitPicture from 'nuxt-speedkit-components/SpeedkitPicture';
+import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
 export default {
   components: { SpeedkitPicture },
   props: {

@@ -12,7 +12,7 @@
 
 <script>
 import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import SpeedkitPicture from 'nuxt-speedkit-components/SpeedkitPicture';
+import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
 
 export default {
   components: {
