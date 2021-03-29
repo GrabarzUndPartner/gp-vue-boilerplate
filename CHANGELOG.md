@@ -1,5 +1,28 @@
 # Project Changelog
 
+## [2.22.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.3...v2.22.4) (2021-03-29)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency nuxt-speedkit to 1.1.26 ([fc0f41b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fc0f41b148884c884d130897e4d81d453ccd368d))
+* **deps:** update dependency @fullhuman/postcss-purgecss to v4.0.3 ([abbd8c8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/abbd8c85bee649f850dcb62c99df19b0eb1ad5ae))
+* **deps:** update dependency css-loader to v5.1.3 ([2e185ea](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2e185ea5fba6aae01acefd1ac70b690936f8111e))
+* **deps:** update dependency css-loader to v5.1.4 ([3d47314](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3d47314e73b3ecc3245a044fa744c3f85a7b7ba0))
+* **deps:** update dependency css-loader to v5.2.0 ([1eb987f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1eb987fdc39d93969dd029fd48f199b4bdb8c577))
+* **deps:** update dependency license-webpack-plugin to v2.3.16 ([d6bb85a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d6bb85a98d0e323cf467c2079a2639ffc925a0d2))
+* **deps:** update dependency nuxt-i18n to v6.21.1 ([cf115a6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cf115a6acee4e3df349d0882c3a283b7ef77612d))
+* **deps:** update dependency nuxt-i18n to v6.22.0 ([f2e053c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f2e053cfbd90bc7d745bafad210129437e16fd76))
+* **deps:** update dependency nuxt-i18n to v6.22.1 ([9a06e40](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9a06e40e93b98efc6161d2637c7b5a64092cff4c))
+* **deps:** update dependency nuxt-i18n to v6.22.2 ([60b6dd1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/60b6dd16c7552570c6677dbbba15626a0c492f71))
+* **deps:** update dependency nuxt-speedkit to v1.1.23 ([209d759](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/209d7590ba9e9aa6ad281cc3fad5a33a216b2bc5))
+* **deps:** update dependency nuxt-speedkit to v1.1.24 ([4b39f6c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4b39f6c2687be819b6fd75099270749d060bf071))
+* **deps:** update dependency postcss-url to v10.1.3 ([9a1b13e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9a1b13efe02d72bb5bd8dddd9ac27a3a9eb71609))
+* **deps:** update dependency rxjs to v6.6.7 ([ff09983](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ff0998398db1dc79085d55035180edc7eb965ccc))
+* **deps:** update dependency snyk to v1.485.0 ([80ea659](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/80ea659c38459241833a225a3d1c9ae16860f1a6))
+* **deps:** update dependency snyk to v1.502.0 ([597b27f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/597b27fc3c120311edadc4856f3b3ad11086df23))
+* **deps:** update dependency snyk to v1.511.0 ([33551b2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/33551b27e24e9849fd8a73ad9e424e969cd94727))
+
 ## [2.22.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.2...v2.22.3) (2021-03-12)
 
 
