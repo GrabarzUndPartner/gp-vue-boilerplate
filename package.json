@@ -108,7 +108,7 @@
     "postcss-url": "10.1.3",
     "reqlim": "0.0.0",
     "rucksack-css": "1.0.2",
-    "rxjs": "6.6.6",
+    "rxjs": "6.6.7",
     "snyk": "1.511.0"
   },
   "optionalDependencies": {
