@@ -99,7 +99,7 @@
     "nuxt-speedkit": "1.1.28",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "postcss-custom-media": "8.0.0",
-    "postcss-import": "14.0.0",
+    "postcss-import": "14.0.1",
     "postcss-loader": "4.2.0",
     "postcss-momentum-scrolling": "3.9.17",
     "postcss-nested": "5.0.5",
