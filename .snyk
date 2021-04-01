@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.19.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-MINIMIST-559764:
@@ -394,15 +394,27 @@ ignore:
     - '@nuxt/content > chokidar > glob-parent':
         reason: None given
         expires: '2021-03-26T11:43:49.830Z'
+      '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > cpy > globby > fast-glob > glob-parent':
+        reason: None given
+        expires: '2021-05-01T07:24:55.029Z'
     - nuxt > @nuxt/cli > globby > fast-glob > glob-parent:
         reason: None given
         expires: '2021-03-26T11:43:49.830Z'
+      nuxt > @nuxt/builder > @nuxt/webpack > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
+        reason: None given
+        expires: '2021-05-01T07:24:55.029Z'
     - nuxt > @nuxt/builder > @nuxt/webpack > webpack > watchpack > chokidar > glob-parent:
         reason: None given
         expires: '2021-03-26T11:43:49.830Z'
+      '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent':
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
     - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > react-dev-utils > globby > fast-glob > glob-parent':
         reason: None given
         expires: '2021-03-26T11:43:49.830Z'
+      '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > glob-base > glob-parent':
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
     - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @storybook/core > webpack > watchpack > chokidar > glob-parent':
         reason: None given
         expires: '2021-03-26T11:43:49.830Z'
@@ -421,11 +433,29 @@ ignore:
   SNYK-JS-TRIM-1017038:
     - '@nuxtjs/storybook > @storybook/addon-essentials > @storybook/addon-docs > @mdx-js/loader > @mdx-js/mdx > remark-mdx > remark-parse > trim':
         reason: None given
-        expires: '2021-03-26T11:52:10.995Z'
+        expires: '2021-05-01T07:24:55.030Z'
   SNYK-JS-USERAGENT-174737:
     - nuxt-speedkit > browserslist-useragent-regexp > useragent:
         reason: None given
-        expires: '2021-03-26T11:52:10.995Z'
+        expires: '2021-05-01T07:24:55.030Z'
+  SNYK-JS-ISSVG-1085627:
+    - nuxt > @nuxt/builder > @nuxt/webpack > cssnano > cssnano-preset-default > postcss-svgo > is-svg:
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
+  SNYK-JS-LODASHTEMPLATE-1088054:
+    - '@nuxtjs/pwa > lodash.template':
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > postcss-preset-env > postcss-initial > lodash.template:
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
+    - nuxt > @nuxt/core > @nuxt/server > @nuxt/vue-renderer > vue-server-renderer > lodash.template:
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
+  SNYK-JS-SSRI-1085630:
+    - nuxt > @nuxt/builder > @nuxt/webpack > webpack > terser-webpack-plugin > cacache > ssri:
+        reason: None given
+        expires: '2021-05-01T07:24:55.030Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:

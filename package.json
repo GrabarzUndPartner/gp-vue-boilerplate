@@ -22,7 +22,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "husky install",
-    "test": "npm run lint && npm run static",
+    "test": "snyk test && npm run lint && npm run static",
     "dev": "nuxt",
     "build": "nuxt build",
     "static": "nuxt generate",
@@ -86,7 +86,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
-    "@nuxtjs/storybook": "3.3.1",
+    "@nuxtjs/storybook": "^3.3.1",
     "@storybook/addon-a11y": "6.1.21",
     "core-js": "3.9.1",
     "css-loader": "5.2.0",
