@@ -22,7 +22,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "husky install",
-    "test": "snyk test && npm run lint && npm run static",
+    "test": "npm run lint && npm run static",
     "dev": "nuxt",
     "build": "nuxt build",
     "static": "nuxt generate",
