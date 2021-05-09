@@ -92,7 +92,7 @@
     "css-loader": "5.2.4",
     "license-webpack-plugin": "2.3.18",
     "lost": "8.3.1",
-    "nuxt": "2.15.4",
+    "nuxt": "2.15.5",
     "nuxt-i18n": "6.27.0",
     "nuxt-polyfill": "1.0.3",
     "nuxt-postcss8": "1.1.2",
