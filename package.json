@@ -82,7 +82,7 @@
     "@fullhuman/postcss-purgecss": "4.0.3",
     "@js-basics/vector": "1.57.1",
     "@nuxt/content": "1.14.0",
-    "@nuxtjs/axios": "5.13.1",
+    "@nuxtjs/axios": "5.13.3",
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
