@@ -101,7 +101,7 @@
     "postcss-custom-media": "8.0.0",
     "postcss-import": "14.0.2",
     "postcss-loader": "4.2.0",
-    "postcss-momentum-scrolling": "3.11.20",
+    "postcss-momentum-scrolling": "3.12.21",
     "postcss-nested": "5.0.5",
     "postcss-normalize": "9.0.0",
     "postcss-object-fit-images": "1.1.2",
