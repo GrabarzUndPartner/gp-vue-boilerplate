@@ -109,7 +109,7 @@
     "reqlim": "0.0.0",
     "rucksack-css": "1.0.2",
     "rxjs": "6.6.7",
-    "snyk": "1.595.0"
+    "snyk": "1.605.0"
   },
   "optionalDependencies": {
     "picturefill": "3.0.3",
