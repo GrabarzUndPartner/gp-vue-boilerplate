@@ -88,7 +88,7 @@
     "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/storybook": "3.3.2",
     "@storybook/addon-a11y": "6.2.9",
-    "core-js": "3.12.1",
+    "core-js": "3.13.0",
     "css-loader": "5.2.6",
     "license-webpack-plugin": "2.3.18",
     "lost": "8.3.1",
