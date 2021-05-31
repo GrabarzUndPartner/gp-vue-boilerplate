@@ -6,7 +6,8 @@
     "develop"
   ],
   "ignoreDeps": [
-    "postcss-loader"
+    "postcss-loader",
+    "@fullhuman/postcss-purgecss"
   ],
   "automerge": true,
   "rangeStrategy": "pin",
