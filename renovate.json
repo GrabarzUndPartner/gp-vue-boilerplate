@@ -6,7 +6,10 @@
     "develop"
   ],
   "ignoreDeps": [
-    "postcss-loader"
+    "postcss-loader",
+    "@fullhuman/postcss-purgecss",
+    "postcss-momentum-scrolling",
+    "postcss-custom-media"
   ],
   "automerge": true,
   "rangeStrategy": "pin",
