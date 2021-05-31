@@ -31,6 +31,8 @@ import { directionDetectionObserver } from '@/service/viewport';
 
 import PageMenuButton from '@/components/page/MenuButton';
 
+import layoutData from '@/content/layout.json';
+
 const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
 
 export default {
@@ -66,9 +68,8 @@ export default {
   },
 
   computed: {
-
     layoutData () {
-      return this.$store.getters['layout/data'][this.$i18n.locale];
+      return layoutData[this.$i18n.locale];
     },
     layoutComponents () {
       return (this.layoutData || { components: [] }).components;
