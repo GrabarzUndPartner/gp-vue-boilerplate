@@ -140,7 +140,8 @@ module.exports = {
 
   generate: {
     dir: 'dist',
-    crawler: true
+    crawler: true,
+    fallback: '404.html'
   },
 
   render: {
