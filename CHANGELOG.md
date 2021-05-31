@@ -1,5 +1,15 @@
 # Project Changelog
 
+## [2.22.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.6...v2.22.7) (2021-05-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/storybook to v4 ([92eb3e6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/92eb3e6a2508a2d25b917d21a0d9f83eca2982c2))
+* **deps:** update dependency @nuxtjs/storybook to v4.0.3 ([1cb4a37](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1cb4a3722f2efb4fa1fa667f5ab95129d16810e9))
+* **deps:** update dependency postcss-nested to v5 ([0bf1eb5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0bf1eb5db5851a9ae73605acd53f9d67691e68ea))
+* **deps:** update dependency rxjs to v7 ([36d495c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/36d495c30d7452147fc7be51dfdf2361e00f3169))
+
 ## [2.22.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.5...v2.22.6) (2021-05-31)
 
 
