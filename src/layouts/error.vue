@@ -49,13 +49,13 @@ export default {
                 {
                   format: 'jpg',
                   sizes: [
-                    { width: 414, media: 'all', url: 'img/error/414.jpg' },
-                    { width: 576, media: '(min-width: 576px)', url: 'img/error/576.jpg' },
-                    { width: 768, media: '(min-width: 768px)', url: 'img/error/768.jpg' },
-                    { width: 992, media: '(min-width: 992px)', url: 'img/error/992.jpg' },
-                    { width: 1200, media: '(min-width: 1200px)', url: 'img/error/1200px.jpg' },
-                    { width: 1600, media: '(min-width: 1600px)', url: 'img/error/1600.jpg' },
-                    { width: 1600, media: '(min-width: 1900)', url: 'img/error/1920.jpg' }
+                    { width: 414, media: 'all', url: require('@/static/img/error/414.jpg') },
+                    { width: 576, media: '(min-width: 576px)', url: require('@/static/img/error/576.jpg') },
+                    { width: 768, media: '(min-width: 768px)', url: require('@/static/img/error/768.jpg') },
+                    { width: 992, media: '(min-width: 992px)', url: require('@/static/img/error/992.jpg') },
+                    { width: 1200, media: '(min-width: 1200px)', url: require('@/static/img/error/1200.jpg') },
+                    { width: 1600, media: '(min-width: 1600px)', url: require('@/static/img/error/1600.jpg') },
+                    { width: 1600, media: '(min-width: 1900)', url: require('@/static/img/error/1920.jpg') }
                   ]
                 }
               ]

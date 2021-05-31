@@ -92,26 +92,19 @@ module.exports = {
       }
 
     },
+
     postcss: {
       plugins: {
-        'postcss-preset-env': {
-          preserve: false,
-          stage: 0,
-          features: {
-            'custom-media-queries': false,
-            'nesting-rules': false
-          },
-          importFrom: 'src/globals/postcss.js'
-        },
         'postcss-custom-media': {
-          importFrom: [
-            'src/globals/postcss.js'
-          ]
+          importFrom: 'src/globals/postcss.js'
         },
         'postcss-nesting': {},
         'postcss-normalize': {},
-        'postcss-url': {},
         'postcss-object-fit-images': {},
+        'postcss-momentum-scrolling': [
+          'scroll'
+        ],
+        'rucksack-css': {},
         '@fullhuman/postcss-purgecss': {
           content: [
             'src/pages/**/*.vue',
@@ -122,25 +115,30 @@ module.exports = {
             'html', 'body', /nuxt-/
           ]
         },
-        'postcss-momentum-scrolling': [
-          'scroll'
-        ],
-        'rucksack-css': {},
         lost: {
           gutter: '15px',
           flexbox: 'flex',
           cycle: 'auto'
         }
+      },
+      preset: {
+        preserve: false,
+        stage: 0,
+        features: {
+          'custom-media-queries': false,
+          'nesting-rules': false
+        },
+        importFrom: [
+          'src/globals/postcss.js'
+        ]
       }
-    },
-
-    parallel: false,
-    transpile: []
+    }
   },
 
   generate: {
     dir: 'dist',
-    crawler: true
+    crawler: true,
+    fallback: '404.html'
   },
 
   render: {
@@ -339,7 +337,6 @@ module.exports = {
   ],
 
   buildModules: [
-    'nuxt-postcss8',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
 
