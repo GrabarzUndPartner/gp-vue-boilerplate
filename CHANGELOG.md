@@ -1,5 +1,17 @@
 # Project Changelog
 
+## [2.22.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.7...v2.22.8) (2021-06-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/axios to v5.13.6 ([e3cd9db](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e3cd9dbb047ffad16383a1703333e931c3752f9a))
+* **deps:** update dependency @nuxtjs/storybook to v4.0.4 ([e340b54](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e340b54c55806f0c05271cddd01ad80ad429c2b4))
+* **deps:** update dependency core-js to v3.14.0 ([051bea1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/051bea1306dac20951603c657ec3819f5bb68caa))
+* **deps:** update dependency license-webpack-plugin to v2.3.19 ([2c099ab](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2c099ab7e8d53bbee30117738ef568ac8fda5e30))
+* **deps:** update dependency snyk to v1.621.0 ([1b853e7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1b853e73256c19d806a4ad9edbf2863921b74bd5))
+* **deps:** update dependency snyk to v1.622.0 ([051943a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/051943aa2db95c36953d7da67cd590e5577526e5))
+
 ## [2.22.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.6...v2.22.7) (2021-05-31)
 
 
