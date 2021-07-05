@@ -101,7 +101,7 @@
     "postcss-object-fit-images": "1.1.2",
     "reqlim": "0.0.0",
     "rucksack-css": "1.0.2",
-    "rxjs": "7.1.0",
+    "rxjs": "7.2.0",
     "snyk": "1.653.0"
   },
   "optionalDependencies": {
