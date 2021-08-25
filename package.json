@@ -65,7 +65,7 @@
     "eslint-plugin-sonarjs": "0.6.0",
     "eslint-plugin-xss": "0.1.10",
     "express": "4.17.1",
-    "husky": "7.0.1",
+    "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "stylelint": "13.8.0",
     "stylelint-config-css-modules": "2.2.0",
