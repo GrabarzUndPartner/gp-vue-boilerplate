@@ -41,8 +41,8 @@
     "packtracker": "packtracker-upload --stats=.reports/webpack/stats/modern.json --output-path=dist/_nuxt/"
   },
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-conventional": "13.1.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.3.0",
     "@nuxtjs/eslint-config": "5.0.0",
     "@nuxtjs/eslint-module": "3.0.2",
@@ -52,7 +52,7 @@
     "babel-loader": "8.2.2",
     "babel-preset-vue": "2.0.2",
     "branch-name-lint": "1.4.1",
-    "commitlint": "12.1.4",
+    "commitlint": "13.1.0",
     "eslint": "7.16.0",
     "eslint-formatter-json-relative": "0.1.0",
     "eslint-plugin-chai-friendly": "0.6.0",
