@@ -54,7 +54,7 @@
     "babel-loader": "8.2.2",
     "branch-name-lint": "2.1.1",
     "commitlint": "13.1.0",
-    "compression": "^1.7.4",
+    "compression": "1.7.4",
     "eslint": "7.32.0",
     "eslint-formatter-json-relative": "0.1.0",
     "eslint-plugin-chai-friendly": "0.7.2",
