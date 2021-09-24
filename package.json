@@ -71,7 +71,6 @@
     "license-webpack-plugin": "2.3.21",
     "lint-staged": "11.1.2",
     "lost": "8.3.1",
-    "postcss-custom-media": "8.0.0",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
     "postcss-object-fit-images": "1.1.2",
