@@ -5,12 +5,6 @@
   "baseBranches": [
     "develop"
   ],
-  "ignoreDeps": [
-    "postcss-loader",
-    "@fullhuman/postcss-purgecss",
-    "postcss-momentum-scrolling",
-    "postcss-custom-media"
-  ],
   "automerge": true,
   "rangeStrategy": "pin",
   "major": {
