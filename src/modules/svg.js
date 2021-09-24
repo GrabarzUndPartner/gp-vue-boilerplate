@@ -2,7 +2,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
-const svgoConfig = Object.assign({}, yaml.safeLoad(fs.readFileSync(process.cwd() + '/.svgorc.yml', 'utf8')));
+const svgoConfig = Object.assign({}, yaml.load(fs.readFileSync(process.cwd() + '/.svgorc.yml', 'utf8')));
 
 module.exports = function () {
   this.extendBuild((config) => {

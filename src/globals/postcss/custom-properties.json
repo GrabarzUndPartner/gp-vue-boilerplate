@@ -1,5 +1,6 @@
 {
   "--color-black": "#000",
+  "--color-red": "#f00",
   "--color-white": "#fff",
   "--color-light-grey": "#EEE"
 }

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
+import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
 
 export default {
   components: {
