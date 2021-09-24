@@ -95,10 +95,13 @@ module.exports = {
 
     postcss: {
       plugins: {
-        'postcss-custom-media': {
-          importFrom: 'src/globals/postcss.js'
+        'postcss-preset-env': {
+          preserve: false,
+          stage: 0,
+          importFrom: [
+            'src/globals/postcss.js'
+          ]
         },
-        'postcss-nesting': {},
         'postcss-normalize': {},
         'postcss-object-fit-images': {},
         'postcss-momentum-scrolling': [
@@ -121,17 +124,7 @@ module.exports = {
           cycle: 'auto'
         }
       },
-      preset: {
-        preserve: false,
-        stage: 0,
-        features: {
-          'custom-media-queries': false,
-          'nesting-rules': false
-        },
-        importFrom: [
-          'src/globals/postcss.js'
-        ]
-      }
+      order: 'cssnanoLast'
     }
   },
 
@@ -339,6 +332,7 @@ module.exports = {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@nuxt/postcss8',
 
     [
       '@nuxtjs/pwa', {

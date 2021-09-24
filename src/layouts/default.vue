@@ -22,12 +22,10 @@
 </template>
 
 <script>
-import PageInfoLayer from '@/components/page/InfoLayer';
-
 import {
   hydrateOnInteraction
 } from 'vue-lazy-hydration';
-import { directionDetectionObserver } from '@/service/viewport';
+import PageInfoLayer from '@/components/page/InfoLayer';
 
 import PageMenuButton from '@/components/page/MenuButton';
 
@@ -79,7 +77,9 @@ export default {
     }
   },
 
-  mounted () {
+  async mounted () {
+    const { directionDetectionObserver } = await import('@/service/viewport');
+
     this.subscriptions = [
       directionDetectionObserver.subscribe(this.onDirectionChange)
     ];

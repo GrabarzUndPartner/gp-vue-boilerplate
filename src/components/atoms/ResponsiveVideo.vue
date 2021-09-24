@@ -25,14 +25,16 @@
       v-if="!autoplay"
       class="play-button"
       @click="onClickPlayButton"
-    ><i /></span>
+    ><svg-icon-play /></span>
   </div>
 </template>
 
 <script>
 import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
+import SvgIconPlay from '@/assets/svg/icons/play.svg?vue-template';
+
 export default {
-  components: { SpeedkitPicture },
+  components: { SpeedkitPicture, SvgIconPlay },
   props: {
 
     poster: {
@@ -339,20 +341,15 @@ export default {
     height: 100%;
     cursor: pointer;
 
-    & i {
+    & svg {
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 64px;
+      height: 64px;
+      color: var(--color-white);
+      filter: drop-shadow(0 0 6px black);
       transform: translate(-50%, -50%);
-
-      &::before {
-        display: block;
-        width: 48px;
-        height: 48px;
-        content: "";
-        background: red;
-        border-radius: 50%;
-      }
     }
   }
 
