@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.15.7",
-    "@commitlint/cli": "13.2.0",
+    "@commitlint/cli": "13.2.1",
     "@commitlint/config-conventional": "13.2.0",
     "@fullhuman/postcss-purgecss": "4.0.3",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
@@ -53,7 +53,7 @@
     "@storybook/addon-a11y": "6.3.10",
     "babel-loader": "8.2.2",
     "branch-name-lint": "2.1.1",
-    "commitlint": "13.2.0",
+    "commitlint": "13.2.1",
     "compression": "1.7.4",
     "eslint": "7.32.0",
     "eslint-formatter-json-relative": "0.1.0",
