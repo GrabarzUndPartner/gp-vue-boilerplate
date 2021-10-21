@@ -51,7 +51,7 @@
     "@nuxtjs/storybook": "4.1.1",
     "@nuxtjs/stylelint-module": "4.0.0",
     "@storybook/addon-a11y": "6.3.12",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "branch-name-lint": "2.1.1",
     "commitlint": "13.2.1",
     "compression": "1.7.4",
