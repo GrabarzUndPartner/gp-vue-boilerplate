@@ -1,5 +1,16 @@
 # Project Changelog
 
+## [2.22.12](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.11...v2.22.12) (2021-10-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxt/content to v1.15.0 ([c0fb63b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c0fb63b19d3900c3ae50ea38f3b4acc4edf7e77f))
+* **deps:** update dependency core-js to v3.18.3 ([a44d39e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a44d39e7af848279ba07564a0079799d2778e205))
+* **deps:** update dependency rxjs to v7.4.0 ([0fb70f9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0fb70f985ed3423802142e85565311b7ef86021f))
+* **deps:** update dependency snyk to v1.733.0 ([d95c6f7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d95c6f7d9dec79cfe6ca52b90263c2b2df514f07))
+* **deps:** update dependency snyk to v1.737.0 ([0718fb9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0718fb94cf4ec5607eb66b578d9ca67871b61a7e))
+
 ## [2.22.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.10...v2.22.11) (2021-10-06)
 
 
