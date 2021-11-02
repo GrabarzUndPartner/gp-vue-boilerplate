@@ -89,7 +89,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
-    "core-js": "3.19.0",
+    "core-js": "3.19.1",
     "nuxt": "2.15.8",
     "nuxt-i18n": "6.28.1",
     "nuxt-polyfill": "1.0.3",
