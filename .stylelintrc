@@ -5,6 +5,7 @@
     "stylelint-config-css-modules",
     "stylelint-config-lost"
   ],
+  "customSyntax": "postcss-html",
   "ignoreFiles": [
     "./**/*.js"
   ],
@@ -22,6 +23,8 @@
       }
     ],
     "block-closing-brace-empty-line-before": null,
-    "max-empty-lines": null
+    "max-empty-lines": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null
   }
 }

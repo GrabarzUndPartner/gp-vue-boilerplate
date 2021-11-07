@@ -71,15 +71,16 @@
     "license-webpack-plugin": "3.0.0",
     "lint-staged": "11.2.6",
     "lost": "8.3.1",
+    "postcss-html": "^1.2.0",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
     "postcss-object-fit-images": "1.1.2",
     "rucksack-css": "1.0.2",
-    "stylelint": "13.13.1",
+    "stylelint": "^14.0.1",
     "stylelint-config-css-modules": "2.2.0",
     "stylelint-config-lost": "0.0.3",
     "stylelint-config-recess-order": "2.5.0",
-    "stylelint-config-standard": "22.0.0",
+    "stylelint-config-standard": "^23.0.0",
     "vue-svg-loader": "0.16.0"
   },
   "dependencies": {
