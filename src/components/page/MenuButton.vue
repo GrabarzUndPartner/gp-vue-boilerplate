@@ -55,13 +55,13 @@ export default {
   padding: 12px;
   cursor: pointer;
   user-select: none;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgb(255 255 255 / 60%);
   border: none;
   appearance: none;
   border-radius: 50%;
   outline: none;
   backdrop-filter: blur(2px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   -webkit-tap-highlight-color: transparent;
 
   @media (--xs) {
@@ -99,27 +99,27 @@ export default {
     transform-origin: center center;
 
     &:last-child {
-      opacity: 0;
+      opacity: 0%;
       transition: transform 0.15s linear, opacity 0.15s linear;
       transform: scale(0.4);
     }
   }
 
   &.js--selected {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgb(0 0 0 / 50%);
 
     & svg {
       fill: white;
 
       & g {
         &:first-child {
-          opacity: 0;
+          opacity: 0%;
           transition: transform 0.15s linear, opacity 0.15s linear;
           transform: scale(0.4);
         }
 
         &:last-child {
-          opacity: 1;
+          opacity: 100%;
           transform: scale(1);
         }
       }
@@ -134,7 +134,7 @@ export default {
 
 .button-toggle-enter,
 .button-toggle-leave-to {
-  opacity: 0;
+  opacity: 0%;
   transition: transform 0.15s linear, opacity 0.15s linear;
   transform: scale(0.4);
 }

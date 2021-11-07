@@ -81,10 +81,10 @@ export default {
       & a {
         color: var(--color-black);
         text-decoration: none;
-        opacity: 0.6;
+        opacity: 60%;
 
         &.nuxt-link-exact-active {
-          opacity: 1;
+          opacity: 100%;
         }
       }
     }
@@ -133,10 +133,10 @@ export default {
       & a {
         color: var(--color-black);
         text-decoration: none;
-        opacity: 0.6;
+        opacity: 60%;
 
         &.nuxt-link-exact-active {
-          opacity: 1;
+          opacity: 100%;
         }
       }
     }

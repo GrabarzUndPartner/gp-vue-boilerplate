@@ -54,7 +54,7 @@ export default {
   }
 
   &.js--toggle {
-    opacity: 0;
+    opacity: 0%;
     transform: translateY(-60%);
   }
 
@@ -63,9 +63,9 @@ export default {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255 255 255 / 50%);
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
 
     & a {
       color: var(--color-black);

@@ -74,7 +74,7 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgb(0 0 0 / 25%);
-    opacity: 0;
+    opacity: 0%;
     animation-name: fade-in;
     animation-duration: 0.2s;
     animation-delay: 3s;
@@ -121,7 +121,7 @@ ul {
 
 @keyframes fade-in {
   100% {
-    opacity: 1;
+    opacity: 100%;
   }
 }
 
