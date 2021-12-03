@@ -98,7 +98,7 @@
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "reqlim": "0.0.0",
     "rxjs": "7.4.0",
-    "snyk": "1.775.0"
+    "snyk": "1.783.0"
   },
   "optionalDependencies": {
     "picturefill": "3.0.3",
