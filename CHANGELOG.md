@@ -1,5 +1,144 @@
 # Project Changelog
 
+## [2.22.14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.13...v2.22.14) (2022-02-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @js-basics/vector to v2 ([b289c6f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b289c6fd9ad8a0a55aca3702021bc764234adf94))
+* **deps:** update dependency @nuxt/content to v1.15.1 ([890a43e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/890a43ea72917982099fed3733beda8abfa3a7fc))
+* **deps:** update dependency core-js to v3.19.2 ([344c87e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/344c87eec76d1ca2fc2143066bb54f71f91c192a))
+* **deps:** update dependency core-js to v3.19.3 ([2f04277](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2f04277abcfa0b96871bc7fe1c8ffa05e4d810d4))
+* **deps:** update dependency core-js to v3.20.0 ([ed272f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed272f688b83ee166ca92b92c95069ccbb811b7d))
+* **deps:** update dependency core-js to v3.20.1 ([1604a70](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1604a70f88977dad7752ec1528b8ce2a3f40c3f1))
+* **deps:** update dependency core-js to v3.20.2 ([57c1a49](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/57c1a49955cbfdaf14305a5b49f9894bb90a0c3f))
+* **deps:** update dependency core-js to v3.20.3 ([e4ce9d7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e4ce9d7d7a676f82056b4f0929ea4f63e0a246b0))
+* **deps:** update dependency core-js to v3.21.0 ([31996f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/31996f6a0e5e53faa485100ac7203f6fc1767d00))
+* **deps:** update dependency rxjs to v7.5.0 ([cbe3df3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cbe3df381eb0f4cd9318e988cf99fb658cca9cdc))
+* **deps:** update dependency rxjs to v7.5.1 ([2bcf2b8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2bcf2b8e20750119bb5d73e4c361b3e2585c506a))
+* **deps:** update dependency rxjs to v7.5.2 ([0d23d96](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0d23d966b8c0ab2f33204b160874162f10166ff3))
+* **deps:** update dependency rxjs to v7.5.3 ([f21fa61](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f21fa615815ec4f617d8763bc489a368ff8488ba))
+* **deps:** update dependency rxjs to v7.5.4 ([2af8809](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2af88093bddfba75b636f5711b7c5a9e4cf2dae1))
+* **deps:** update dependency snyk to v1.759.0 ([fbda61a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fbda61af2c67243eb33d251c9bf8715918c81b13))
+* **deps:** update dependency snyk to v1.760.0 ([6dee38d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6dee38dab6bc1006ece8bf3b02efa9b001b3a79a))
+* **deps:** update dependency snyk to v1.763.0 ([0d70ce9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0d70ce9e0e13c2e7a0c9784fb3ccb2d2d377b212))
+* **deps:** update dependency snyk to v1.766.0 ([91e7845](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/91e7845a9108052ae9956953ad4ca1ded59208ee))
+* **deps:** update dependency snyk to v1.767.0 ([9fc222d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9fc222d1e902b4e9b187c07fa6294cb40e86a8fb))
+* **deps:** update dependency snyk to v1.773.0 ([db00b27](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/db00b2708847a3df2ea720e7e3de5122855df510))
+* **deps:** update dependency snyk to v1.775.0 ([0bd4f1b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0bd4f1b748a197c21b813bf5d3d33253ae1bebb3))
+* **deps:** update dependency snyk to v1.783.0 ([3938fc4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3938fc419d340cef21d9c1c481077b33eeb07bf2))
+* **deps:** update dependency snyk to v1.787.0 ([94da3f0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/94da3f0ef3626081a82c62b16a698c67f9e30650))
+* **deps:** update dependency snyk to v1.789.0 ([4d200bf](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4d200bf007c601c291d928220161cc3962fa3093))
+* **deps:** update dependency snyk to v1.790.0 ([6c4d5f8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6c4d5f8d5fa66d9e126212a4fd9a0e3d068bf788))
+* **deps:** update dependency snyk to v1.797.0 ([58f669b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/58f669bed7bd16ae6caf3260193d1dd45f88216f))
+* **deps:** update dependency snyk to v1.806.0 ([c4606c0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c4606c0c11b1a189cdaf0a8b456f1e0d8a72d34d))
+* **deps:** update dependency snyk to v1.809.0 ([516008d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/516008db575b948f4be026184fbf6cf456816e76))
+* **deps:** update dependency snyk to v1.812.0 ([b5a451b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b5a451b353bf91544b693d04be208efce935fca4))
+* **deps:** update dependency snyk to v1.813.0 ([184035f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/184035f92e03701a1a793cde29fabd69451ab706))
+* **deps:** update dependency snyk to v1.819.0 ([885338a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/885338aa210949b01f62287b08ebfff460f08b3e))
+* **deps:** update dependency snyk to v1.826.0 ([be5fa67](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/be5fa674afa1bcebbfece1163a99f26c0a77c7d2))
+* **deps:** update dependency snyk to v1.833.0 ([fda0013](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fda0013cf68838abbf09dacca89bca5359e40054))
+* **deps:** update dependency snyk to v1.834.0 ([4e7f26b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4e7f26b433036ef7cf8f8c0593a8df9589a94e55))
+* **deps:** update dependency snyk to v1.836.0 ([7e79b33](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7e79b33d910b036cb99181e49fa04ba19e699381))
+* **deps:** update dependency snyk to v1.840.0 ([9495d64](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9495d64cff48c3ad935921dc0b1afd605e270c4a))
+* **deps:** update dependency snyk to v1.848.0 ([fcc4bb0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fcc4bb0d9891a767830b95e8852c8eb93a60dcb8))
+
+## [2.22.13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.12...v2.22.13) (2021-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.19.0 ([fc823e3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fc823e3924afaa71a03639b7bacde3ec5262ff68))
+* **deps:** update dependency core-js to v3.19.1 ([7e28527](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7e2852707f7a5d91f9db981982ab3703fbbbe0fb))
+* **deps:** update dependency nuxt-speedkit to v1.3.1 ([e8c3d74](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e8c3d74bf97212b95ef8dbb6a12598eb2dfea005))
+* **deps:** update dependency snyk to v1.744.0 ([0b884d3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0b884d3f80b25c22717583eb984db6f6c7eb73a9))
+* **deps:** update dependency snyk to v1.746.0 ([609726f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/609726fb9ee7c5c257469f13aa6683af67dbdbba))
+* **deps:** update dependency snyk to v1.748.0 ([29514de](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/29514de309689eaea70d0bfd4892d47fc9cf824a))
+* **deps:** update dependency snyk to v1.749.0 ([4c0187d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4c0187d2b3d1f32f2c2e3ac3d414fd71296527b3))
+* **deps:** update dependency snyk to v1.752.0 ([91d71fd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/91d71fd5c27e394f5db6b8b0713f5cf89000f74e))
+* **deps:** update dependency snyk to v1.753.0 ([7f1ff94](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7f1ff9464a92585289f09c021d14c0634def1230))
+
+## [2.22.12](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.11...v2.22.12) (2021-10-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxt/content to v1.15.0 ([c0fb63b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c0fb63b19d3900c3ae50ea38f3b4acc4edf7e77f))
+* **deps:** update dependency core-js to v3.18.3 ([a44d39e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a44d39e7af848279ba07564a0079799d2778e205))
+* **deps:** update dependency rxjs to v7.4.0 ([0fb70f9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0fb70f985ed3423802142e85565311b7ef86021f))
+* **deps:** update dependency snyk to v1.733.0 ([d95c6f7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d95c6f7d9dec79cfe6ca52b90263c2b2df514f07))
+* **deps:** update dependency snyk to v1.737.0 ([0718fb9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0718fb94cf4ec5607eb66b578d9ca67871b61a7e))
+
+## [2.22.11](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.10...v2.22.11) (2021-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.18.1 ([cbecbd4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cbecbd443f3e5a2d45c37afa705cfb64b01ae5b7))
+* **deps:** update dependency core-js to v3.18.2 ([5cddf1b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5cddf1b292050a45e7e7c265880e0c222d1405a8))
+* **deps:** update dependency rxjs to v7.3.1 ([f57527e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f57527e9172ba66a304b8be2785e2de51d8cd3fc))
+* **deps:** update dependency snyk to v1.728.0 ([6342f57](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6342f574ef2da00a47bc61750457ec72f71f07b5))
+* **deps:** update dependency snyk to v1.729.0 ([f858290](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f8582905fea60269d4d5b8d8d7a11b1a93592b5b))
+
+## [2.22.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.9...v2.22.10) (2021-09-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @js-basics/vector to v1.57.2 ([17ccab8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/17ccab8e0e0c54a662d09cbe29653404b937b89f))
+* **deps:** update dependency @js-basics/vector to v1.57.3 ([4266bf7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4266bf7203290b27997d5e324a9423f451aabd0a))
+* **deps:** update dependency @nuxtjs/storybook to v4.1.0 ([753fe30](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/753fe306f34944d7c5705cf7fa54fa53240a89d0))
+* **deps:** update dependency @nuxtjs/storybook to v4.1.1 ([a1a7964](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a1a7964d303e53918cd8d8445ba20500589fb14a))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.3 ([9d1b3b6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9d1b3b619066a49cd81f3092734ea9485d86d2ca))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.4 ([645103d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/645103d6f5c543bfed7f886cd76fcf5d57cfdb8d))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.5 ([17e4e2c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/17e4e2c248df57a536939ee0a58b3e4577140e79))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.6 ([3c8ebdc](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3c8ebdc178cb4c13986bbdb977de7d51ce6da37a))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.7 ([2bc8eb0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2bc8eb055e92cc4d598c28a453bf00f19d2b144f))
+* **deps:** update dependency @storybook/addon-a11y to v6.3.8 ([8e2a0e5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8e2a0e5d79df7660f6589575053e157991bef72b))
+* **deps:** update dependency core-js to v3.16.0 ([a7cd6d5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a7cd6d55a7eae6fc36a81ad76928cdcb0c990430))
+* **deps:** update dependency core-js to v3.16.1 ([5152c71](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5152c7130fc8792746f23768cdf5dc02dc06d1a5))
+* **deps:** update dependency core-js to v3.16.2 ([f1ad654](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f1ad654136ca221b1c18e276d8ad2c8fcf1b2b67))
+* **deps:** update dependency core-js to v3.16.3 ([d29389d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d29389d60fb3fbd9e6e165c1c533dd1017296fa5))
+* **deps:** update dependency core-js to v3.16.4 ([097c6a3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/097c6a3b0216cc89f5f93803aceca45730bed3cd))
+* **deps:** update dependency core-js to v3.17.0 ([618e8c0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/618e8c08db2a8fc93d3809c3183e415678fafbda))
+* **deps:** update dependency core-js to v3.17.1 ([f23ba97](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f23ba979508cdb9fa340440c5768e6b5ed71cd27))
+* **deps:** update dependency core-js to v3.17.2 ([ac67d9a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ac67d9ad69575500fe400a56f13eae0748ef6db8))
+* **deps:** update dependency core-js to v3.17.3 ([bce6e33](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bce6e33cfda25793c707d84eedb1cbca0ec76a20))
+* **deps:** update dependency core-js to v3.18.0 ([cc11470](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cc11470304ae32a2bbb6e1c9664e2f1de65c204f))
+* **deps:** update dependency css-loader to v5.2.7 ([f459d7e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f459d7e25f52ae4375ffb0cd4767d80219dcf046))
+* **deps:** update dependency license-webpack-plugin to v2.3.20 ([2a13628](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/2a13628afe1a8e804ed1f600a60252de86f24af2))
+* **deps:** update dependency license-webpack-plugin to v2.3.21 ([fbfbff2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fbfbff2e3fec200389eab8361396643a6bd336d3))
+* **deps:** update dependency nuxt to v2.15.8 ([63dc48e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/63dc48e7d6e34056b98e94e1ef9feb26ef9c8783))
+* **deps:** update dependency nuxt-i18n to v6.27.3 ([45f0e13](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/45f0e132fb41a8b23acb949d0173b5f6c41bd289))
+* **deps:** update dependency nuxt-i18n to v6.28.0 ([6062b8d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6062b8d325929c4dab55261ec3127a557afd96aa))
+* **deps:** update dependency nuxt-i18n to v6.28.1 ([f02d350](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f02d3509be0822f25af579d81077d5c2de69701d))
+* **deps:** update dependency nuxt-speedkit to v1.3.0 ([1e3738e](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1e3738e1acc82bf8245207d4458f1e147974260d))
+* **deps:** update dependency postcss-nested to v5.0.6 ([d2ec604](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d2ec6043ea16d94dbe06526b2c2ff398ee54946c))
+* **deps:** update dependency rxjs to v7.2.0 ([3092e60](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3092e6057cff557d3032f1c9c529a83dd35bb24e))
+* **deps:** update dependency rxjs to v7.3.0 ([ed88135](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed8813572057ec924c109303624e0035629887b2))
+* **deps:** update dependency snyk to v1.653.0 ([4a98fd5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4a98fd5272332e7264ca5ce06260a8d3d9763ab8))
+* **deps:** update dependency snyk to v1.658.0 ([506da9c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/506da9c34dd59bf21ca1c65c313f5c2f74889418))
+* **deps:** update dependency snyk to v1.660.0 ([db52756](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/db52756b380b6884f6d4d6a7b8a83fd02538a194))
+* **deps:** update dependency snyk to v1.662.0 ([4d61211](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4d61211ac330cf84efb2c2850f4d9ffff3af1b91))
+* **deps:** update dependency snyk to v1.663.0 ([4d7c099](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4d7c09993c6fee99de6bfc97c54c5640dd6f032f))
+* **deps:** update dependency snyk to v1.664.0 ([3c2eff3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/3c2eff3ef509bf606566c22865d209b01f451683))
+* **deps:** update dependency snyk to v1.666.0 ([a2be1f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a2be1f609f6bb4598ab87cebbe150c14ffc36310))
+* **deps:** update dependency snyk to v1.672.0 ([b12d5ea](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b12d5eace5c26de428e961593d066a501e8a0e14))
+* **deps:** update dependency snyk to v1.675.0 ([ff4a075](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ff4a0753b4baab5f522245dc7a60198ccb0d4722))
+* **deps:** update dependency snyk to v1.676.0 ([fc200f4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fc200f44d4590aa6d1b3a2e772e6a471c22253a4))
+* **deps:** update dependency snyk to v1.679.0 ([be3036b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/be3036b7e7f60cf07a81104c0f97f52388d0ffdb))
+* **deps:** update dependency snyk to v1.681.0 ([93416d4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/93416d4d84b791107682bf953aa3874c173eebfc))
+* **deps:** update dependency snyk to v1.683.0 ([7c6b477](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7c6b4771bd1ecfa79d02404ae5c56b3bb2e52c94))
+* **deps:** update dependency snyk to v1.684.0 ([98ca343](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/98ca343d8dbc2884c2255b4141402f878856ef19))
+* **deps:** update dependency snyk to v1.687.0 ([05b0860](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/05b0860d72c98a19dad7280d6f80d1a613e1974f))
+* **deps:** update dependency snyk to v1.694.0 ([b82f1ce](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b82f1ce8e5beb2da49925492222dc100a0b881a9))
+* **deps:** update dependency snyk to v1.695.0 ([d19c4d5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/d19c4d5d22bd07dbf71b88be9a4f514d48ebc888))
+* **deps:** update dependency snyk to v1.696.0 ([996520c](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/996520c81f734c26d6246df9e344250ccbbeafcc))
+* **deps:** update dependency snyk to v1.697.0 ([4d8e9f9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/4d8e9f91f4c78aa4a315fdf4fd2fe9e5f893e60c))
+* **deps:** update dependency snyk to v1.704.0 ([b30a733](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b30a7331885446f8b75225ee1b6d68130bfd43e7))
+* **deps:** update dependency snyk to v1.717.0 ([dc8495b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/dc8495b8345131ef1f60404b7eeb0bb473d2644a))
+* **deps:** update dependency snyk to v1.720.0 ([6456f35](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6456f35181b45c8e6039512b280a12459169e7d6))
+
 ## [2.22.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.8...v2.22.9) (2021-07-02)
 
 
