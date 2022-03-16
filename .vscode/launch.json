@@ -53,40 +53,6 @@
       "args": [
         "build"
       ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Storybook (dev)",
-      "runtimeVersion": "12.1.0",
-      "runtimeArgs": [
-        "--inspect"
-      ],
-      "program": "${workspaceFolder}/node_modules/.bin/start-storybook",
-      "outputCapture": "std",
-      "args": [
-        "-p",
-        "6006",
-        "-c",
-        ".storybook"
-      ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Storybook (prod)",
-      "runtimeVersion": "12.1.0",
-      "runtimeArgs": [
-        "--inspect"
-      ],
-      "program": "${workspaceFolder}/node_modules/.bin/build-storybook",
-      "outputCapture": "std",
-      "args": [
-        "-c",
-        ".storybook",
-        "-o",
-        "storybook"
-      ]
     }
   ]
 }

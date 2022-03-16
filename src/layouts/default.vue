@@ -25,13 +25,14 @@
 import {
   hydrateOnInteraction
 } from 'vue-lazy-hydration';
+import speedkitHydrate from 'nuxt-speedkit/hydrate';
 import PageInfoLayer from '@/components/page/InfoLayer';
 
 import PageMenuButton from '@/components/page/MenuButton';
 
 import layoutData from '@/content/layout.json';
 
-const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
+const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling'; ;
 
 export default {
 
@@ -40,12 +41,9 @@ export default {
     PageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
     }),
-    PageInfoLayer
-  },
-
-  speedkitComponents: {
-    PageHeader: () => import(/* webpackMode: "eager" */'@/components/page/Header'),
-    PageFooter: () => import('@/components/page/Footer')
+    PageInfoLayer,
+    PageHeader: speedkitHydrate(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    PageFooter: speedkitHydrate(() => import('@/components/page/Footer'))
   },
 
   data () {

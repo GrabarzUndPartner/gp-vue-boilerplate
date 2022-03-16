@@ -1,13 +1,15 @@
 
 <script>
+import speedkitHydrate from 'nuxt-speedkit/hydrate';
+
 export default {
-  speedkitComponents: {
-    StagePicture: () => import('@/components/organisms/StagePicture'),
-    StageVideo: () => import('@/components/organisms/StageVideo'),
-    ArticleText: () => import('@/components/organisms/ArticleText'),
-    ArticleTextImage: () => import('@/components/organisms/ArticleTextImage'),
-    SinglePicture: () => import('@/components/organisms/SinglePicture'),
-    SingleVideo: () => import('@/components/organisms/SingleVideo')
+  components: {
+    StagePicture: speedkitHydrate(() => import('@/components/organisms/StagePicture')),
+    StageVideo: speedkitHydrate(() => import('@/components/organisms/StageVideo')),
+    ArticleText: speedkitHydrate(() => import('@/components/organisms/ArticleText')),
+    ArticleTextImage: speedkitHydrate(() => import('@/components/organisms/ArticleTextImage')),
+    SinglePicture: speedkitHydrate(() => import('@/components/organisms/SinglePicture')),
+    SingleVideo: speedkitHydrate(() => import('@/components/organisms/SingleVideo'))
   }
 };
 </script>

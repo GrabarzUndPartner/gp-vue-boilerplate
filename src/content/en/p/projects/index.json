@@ -53,9 +53,7 @@
     },
     {
       "component": "SingleVideo",
-      "data": {
-        "video": {}
-      }
+      "data": {}
     }
   ]
 }

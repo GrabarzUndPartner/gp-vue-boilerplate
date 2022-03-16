@@ -33,9 +33,6 @@
     "cypress:open": "npx cypress open --browser chrome",
     "cypress:run": "npx cypress run --browser chrome",
     "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once",
-    "storybook": "npx nuxt storybook",
-    "storybook:static": "npx nuxt storybook build",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
@@ -48,9 +45,7 @@
     "@nuxt/postcss8": "1.1.3",
     "@nuxtjs/eslint-config": "6.0.1",
     "@nuxtjs/eslint-module": "3.0.2",
-    "@nuxtjs/storybook": "4.2.0",
     "@nuxtjs/stylelint-module": "4.0.0",
-    "@storybook/addon-a11y": "6.4.18",
     "babel-loader": "8.2.3",
     "branch-name-lint": "2.1.1",
     "commitlint": "16.1.0",
@@ -94,18 +89,18 @@
     "nuxt": "2.15.8",
     "nuxt-i18n": "6.28.1",
     "nuxt-polyfill": "1.0.3",
-    "nuxt-speedkit": "1.3.1",
+    "nuxt-speedkit": "^2.0.0-beta.44",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "reqlim": "0.0.0",
     "rxjs": "7.5.4",
     "snyk": "1.848.0"
   },
   "optionalDependencies": {
-    "picturefill": "3.0.3",
     "custom-event-polyfill": "1.0.7",
     "default-passive-events": "2.0.0",
     "domtokenlist-shim": "1.2.0",
     "intersection-observer": "0.12.0",
+    "picturefill": "3.0.3",
     "requestidlecallback": "0.3.0"
   },
   "snyk": true

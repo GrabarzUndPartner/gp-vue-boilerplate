@@ -34,10 +34,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd03937e022947fe867c7a33fdf707f9)](https://www.codacy.com/app/stephan.gerbeth/gp-vue-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GrabarzUndPartner/gp-vue-boilerplate&amp;utm_campaign=Badge_Grade)
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 
-[![OSX/Linux Build Status](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate.svg?branch=master)](https://travis-ci.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1/branch/master?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate/branch/master)
 
-[![Storybook badge](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
 
 ## Description
 
@@ -60,9 +58,6 @@ The Grabarz & Partner Boilerplate is a professional front-end template for build
 - [packtracker modern](https://app.packtracker.io/organizations/310/projects/247)
 - [cypress](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html)
 
-### Component Overview
-
-- [storybook](https://grabarzundpartner.github.io/gp-vue-boilerplate/storybook/?path=/story/atoms-headlines--overview)
 
 ***
 
@@ -172,20 +167,6 @@ http://localhost:8050
 npm run cypress:open
 ```
 
-## Storybook
-
-### Run storybook in dev-mode
-
-```bash
-npm run storybook:dev
-```
-
-### Run storybook production-build
-
-```bash
-npm run storybook:prod
-```
-
 ***
 
 ## Features
@@ -245,7 +226,6 @@ npm run storybook:prod
     - [x] npm release version
   - [x] changelog generator
 - continous integration
-  - [x] travis
   - [ ] appveyor
 - vulnerability scanner  
   - [x] snyk
@@ -256,8 +236,6 @@ npm run storybook:prod
     - [x] custom project settings
     - [x] disabled prettier config
     - [x] file association map
-- documentation
-  - [ ] storybook
 - testing
   - [ ] cypress
 - [x] components
@@ -351,7 +329,6 @@ All processes are working automatically. Nevertheless you should check before go
     - [ ] send license list to the security department of your client (optional)
   - Documentation
     - [ ] technical concept
-    - [ ] living styleguide (storybook)
     - [ ] git changelog with reference to ticket numbers (if applicable)
     - [ ] deployment pipeline
 - launch
