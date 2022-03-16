@@ -1,5 +1,22 @@
 # Project Changelog
 
+## [2.22.15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.14...v2.22.15) (2022-03-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.21.1 ([a654ac6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/a654ac6fdaf74dc4fea6dff0ab3c55594ea6827e))
+* **deps:** update dependency nuxt-speedkit to v1.3.2 ([046fb70](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/046fb705c2eb3427db8976ddf7931948d19afaed))
+* **deps:** update dependency rxjs to v7.5.5 ([cf692ff](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/cf692ff3fd6903929c3e71d4b01c2e06342d9d8e))
+* **deps:** update dependency snyk to v1.852.0 ([9824a0b](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/9824a0bc7dd9ac26c74c6e21473798f4546a81f2))
+* **deps:** update dependency snyk to v1.855.0 ([0dcce08](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/0dcce08c901148c79a6be180ce49fba918bc58b3))
+* **deps:** update dependency snyk to v1.856.0 ([f0bd8f6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f0bd8f60bfee2e59d3807ca64ed69f3117774190))
+* **deps:** update dependency snyk to v1.858.0 ([eb0a111](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/eb0a1110b9c9ea7da611ca01457bed7322df195d))
+* **deps:** update dependency snyk to v1.859.0 ([5f36186](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5f3618639361cd09bb56eddc39b4b052f9280638))
+* **deps:** update dependency snyk to v1.863.0 ([e161630](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e161630f286082fec53cce0290f4c1265ce123e7))
+* **deps:** update dependency snyk to v1.864.0 ([1831ada](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1831ada068d93a5590cb9727f42d6d65a55c5e4a))
+* **deps:** update dependency snyk to v1.868.0 ([e9bdb59](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/e9bdb59c4bbf954c4daa83b19424e7529c764f15))
+
 ## [2.22.14](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.13...v2.22.14) (2022-02-11)
 
 
