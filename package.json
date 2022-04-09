@@ -50,7 +50,7 @@
     "@nuxtjs/eslint-module": "3.0.2",
     "@nuxtjs/storybook": "4.3.0",
     "@nuxtjs/stylelint-module": "4.0.0",
-    "@storybook/addon-a11y": "6.4.20",
+    "@storybook/addon-a11y": "6.4.21",
     "babel-loader": "8.2.4",
     "branch-name-lint": "2.1.1",
     "commitlint": "16.2.3",
