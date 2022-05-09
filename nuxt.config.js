@@ -101,7 +101,6 @@ export default {
           functions: postcssFunctions
         },
         'postcss-normalize': {},
-        'postcss-object-fit-images': {},
         'postcss-momentum-scrolling': [
           'scroll'
         ],
@@ -252,19 +251,6 @@ export default {
     [
       'nuxt-polyfill', {
         features: [
-          {
-            require: 'object-fit-images',
-            detect: () => 'objectFit' in document.documentElement.style,
-            install: objectFitImages => (window.objectFitImages = objectFitImages)
-          },
-          {
-            require: 'picturefill',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
-          },
-          {
-            require: 'picturefill/dist/plugins/mutation/pf.mutation.js',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
-          },
           {
             require: 'custom-event-polyfill',
             detect: () => 'CustomEvent' in window &&
