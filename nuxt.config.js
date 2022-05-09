@@ -1,12 +1,18 @@
 // process.env.DEBUG = 'nuxt:*';
 
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
+import babelPresetApp from '@nuxt/babel-preset-app';
+import * as postcssFunctions from './src/globals/postcss/functions';
+
+import i18nMessageEn from './src/globals/locales/en.json';
+import i18nMessageDe from './src/globals/locales/de.json';
+
 const isDev = process.env.NODE_ENV === 'development';
 
 const DEFAULT_LANG = 'en';
 
-module.exports = {
+export default {
   dev: isDev,
   target: 'static',
   srcDir: 'src/',
@@ -72,7 +78,7 @@ module.exports = {
         };
         return [
           [
-            require.resolve('@nuxt/babel-preset-app'), {
+            babelPresetApp, {
               targets: envTargets[String(envName)],
               useBuiltIns: envUseBuiltins[String(envName)],
               // #####
@@ -107,6 +113,9 @@ module.exports = {
         'postcss-momentum-scrolling': [
           'scroll'
         ],
+        'postcss-functions': {
+          functions: postcssFunctions
+        },
         'rucksack-css': {},
         '@fullhuman/postcss-purgecss': {
           content: [
@@ -173,8 +182,8 @@ module.exports = {
     vueI18n: {
       fallbackLocale: DEFAULT_LANG,
       messages: {
-        en: require('./src/globals/locales/en.json'),
-        de: require('./src/globals/locales/de.json')
+        en: i18nMessageEn,
+        de: i18nMessageDe
       }
     }
   },

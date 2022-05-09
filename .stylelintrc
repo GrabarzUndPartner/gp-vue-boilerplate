@@ -31,6 +31,16 @@
       {
         "camelCaseSvgKeywords": true
       }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "lost-vars",
+          "em",
+          "vw"
+        ]
+      }
     ]
   }
 }

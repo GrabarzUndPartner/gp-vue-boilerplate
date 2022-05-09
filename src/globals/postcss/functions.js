@@ -1,4 +1,3 @@
-
 export function rem (value, base = 16) {
   value = resolveValue(value);
   return `${parseInt(value) / base}rem`;

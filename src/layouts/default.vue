@@ -118,6 +118,26 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: 375px) {
+    font-size: vw(16, 375);
+  }
+
+  @media (min-width: 576px) {
+    font-size: vw(16, 576);
+  }
+
+  @media (min-width: 768px) {
+    font-size: vw(16, 768);
+  }
+
+  @media (min-width: 992px) {
+    font-size: vw(16, 992);
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
 }
 
 html[data-prevent-scrolling="true"] {
