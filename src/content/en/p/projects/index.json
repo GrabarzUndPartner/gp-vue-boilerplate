@@ -28,26 +28,56 @@
         "options": {
           "mirror": true
         },
-        "article": {
-          "headline": {
-            "overline": null,
-            "headline": "Project 1",
-            "subline": null
-          },
-          "content": "<p>Laboriosam, blanditiis non ducimus tortor. Voluptate reprehenderit placerat voluptates itaque cillum sociosqu, mauris rem nesciunt ipsam aliqua, pharetra odit animi distinctio! Aut, orci euismod? Malesuada, tempore sit corporis nostrud posuere? Repellat hac eiusmod tellus. Ut bibendum? Convallis cillum aliquam, voluptatum.</p><p>Excepteur condimentum ac voluptate ea fugit nihil alias molestias ullamco architecto ipsam, sequi magnis cillum, etiam. Assumenda eveniet! Adipisicing architecto quibusdam primis hymenaeos ultrices! Quas doloribus libero? Class! Occaecati rerum arcu, blanditiis illum elementum curabitur adipiscing! Elementum hendrerit morbi excepteur.</p>"
+        "overline": null,
+        "headline": "Project 1",
+        "subline": null,
+        "content": "<p>Laboriosam, blanditiis non ducimus tortor. Voluptate reprehenderit placerat voluptates itaque cillum sociosqu, mauris rem nesciunt ipsam aliqua, pharetra odit animi distinctio! Aut, orci euismod? Malesuada, tempore sit corporis nostrud posuere? Repellat hac eiusmod tellus. Ut bibendum? Convallis cillum aliquam, voluptatum.</p><p>Excepteur condimentum ac voluptate ea fugit nihil alias molestias ullamco architecto ipsam, sequi magnis cillum, etiam. Assumenda eveniet! Adipisicing architecto quibusdam primis hymenaeos ultrices! Quas doloribus libero? Class! Occaecati rerum arcu, blanditiis illum elementum curabitur adipiscing! Elementum hendrerit morbi excepteur.</p>",
+        "picture": {
+          "title": "Project 1",
+          "alt": "Project 1",
+          "sources": [
+            {
+              "src": "/img/sample-a-16-9.jpg",
+              "sizes": {
+                "default": "100vw",
+                "xxs": "100vw",
+                "xs": "100vw",
+                "sm": "100vw",
+                "md": "100vw",
+                "lg": "100vw",
+                "xl": "100vw",
+                "xxl": "100vw"
+              }
+            }
+          ]
         }
       }
     },
     {
       "component": "ArticleTextImage",
       "data": {
-        "article": {
-          "headline": {
-            "overline": null,
-            "headline": "Project 2",
-            "subline": null
-          },
-          "content": "<p>Laboriosam, blanditiis non ducimus tortor. Voluptate reprehenderit placerat voluptates itaque cillum sociosqu, mauris rem nesciunt ipsam aliqua, pharetra odit animi distinctio! Aut, orci euismod? Malesuada, tempore sit corporis nostrud posuere? Repellat hac eiusmod tellus. Ut bibendum? Convallis cillum aliquam, voluptatum.</p><p>Excepteur condimentum ac voluptate ea fugit nihil alias molestias ullamco architecto ipsam, sequi magnis cillum, etiam. Assumenda eveniet! Adipisicing architecto quibusdam primis hymenaeos ultrices! Quas doloribus libero? Class! Occaecati rerum arcu, blanditiis illum elementum curabitur adipiscing! Elementum hendrerit morbi excepteur.</p>"
+        "overline": null,
+        "headline": "Project 2",
+        "subline": null,
+        "content": "<p>Laboriosam, blanditiis non ducimus tortor. Voluptate reprehenderit placerat voluptates itaque cillum sociosqu, mauris rem nesciunt ipsam aliqua, pharetra odit animi distinctio! Aut, orci euismod? Malesuada, tempore sit corporis nostrud posuere? Repellat hac eiusmod tellus. Ut bibendum? Convallis cillum aliquam, voluptatum.</p><p>Excepteur condimentum ac voluptate ea fugit nihil alias molestias ullamco architecto ipsam, sequi magnis cillum, etiam. Assumenda eveniet! Adipisicing architecto quibusdam primis hymenaeos ultrices! Quas doloribus libero? Class! Occaecati rerum arcu, blanditiis illum elementum curabitur adipiscing! Elementum hendrerit morbi excepteur.</p>",
+        "picture": {
+          "title": "Project 2",
+          "alt": "Project 2",
+          "sources": [
+            {
+              "src": "/img/sample-b-16-9.jpg",
+              "sizes": {
+                "default": "100vw",
+                "xxs": "100vw",
+                "xs": "100vw",
+                "sm": "100vw",
+                "md": "100vw",
+                "lg": "100vw",
+                "xl": "100vw",
+                "xxl": "100vw"
+              }
+            }
+          ]
         }
       }
     },

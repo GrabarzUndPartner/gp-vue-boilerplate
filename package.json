@@ -29,8 +29,8 @@
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output .reports/audit.html",
     "semantic-release": "semantic-release",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.17.0",
@@ -75,18 +75,21 @@
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/stylelint-module": "4.1.0",
+    "@snyk/protect": "^1.657.0",
     "core-js": "3.21.1",
+    "dotenv": "^16.0.0",
     "lost": "^8.3.1",
     "nuxt": "2.15.8",
     "nuxt-polyfill": "1.0.3",
     "nuxt-speedkit": "^2.0.6",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
+    "postcss-functions": "^4.0.2",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
     "postcss-object-fit-images": "1.1.2",
+    "postcss-preset-env": "^6.2.0",
     "rucksack-css": "1.0.2",
     "rxjs": "7.5.5",
-    "snyk": "1.868.0",
     "suppress-warnings": "^1.0.2"
   },
   "optionalDependencies": {

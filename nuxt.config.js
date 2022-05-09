@@ -2,7 +2,9 @@
 
 import path from 'path';
 import fs from 'fs';
-import babelPresetApp from '@nuxt/babel-preset-app';
+import nuxtBabelPresetApp from '@nuxt/babel-preset-app';
+import { config } from 'dotenv';
+import * as postcssPresetEnvImportFrom from './src/globals/postcss/preset-env/importFrom';
 import * as postcssFunctions from './src/globals/postcss/functions';
 
 import i18nMessageEn from './src/globals/locales/en.json';
@@ -12,29 +14,18 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const DEFAULT_LANG = 'en';
 
+config();
+
 export default {
   dev: isDev,
   target: 'static',
   srcDir: 'src/',
-  css: [],
-  env: {},
 
-  features: {
-    store: true,
-    layouts: true,
-    meta: true,
-    middleware: true,
-    transitions: true,
-    deprecations: false,
-    validate: true,
-    asyncData: true,
-    fetch: true,
-    clientOnline: true,
-    clientPrefetch: true,
-    clientUseUrl: true,
-    componentAliases: true,
-    componentClientOnly: true
-  },
+  css: [
+    '@/assets/css/vars.css'
+  ],
+
+  env: {},
 
   server: {
     host: getHost(),
@@ -42,8 +33,8 @@ export default {
     timing: false,
     https: (function () {
       const dir = './env/cert';
-      const key = path.join(dir, 'server.key');
-      const crt = path.join(dir, 'server.crt');
+      const key = process.env.SERVER_SSL_KEY_PATH || path.join(dir, 'server.key');
+      const crt = process.env.SERVER_SSL_CRT_PATH || path.join(dir, 'server.crt');
 
       if (fs.existsSync(key) && fs.existsSync(crt)) {
         return { key: fs.readFileSync(key), cert: fs.readFileSync(crt) };
@@ -78,7 +69,7 @@ export default {
         };
         return [
           [
-            babelPresetApp, {
+            nuxtBabelPresetApp, {
               targets: envTargets[String(envName)],
               useBuiltIns: envUseBuiltins[String(envName)],
               // #####
@@ -102,20 +93,18 @@ export default {
     postcss: {
       plugins: {
         'postcss-preset-env': {
-          preserve: false,
+          preserve: true,
           stage: 0,
-          importFrom: [
-            'src/globals/postcss.js'
-          ]
+          importFrom: postcssPresetEnvImportFrom
+        },
+        'postcss-functions': {
+          functions: postcssFunctions
         },
         'postcss-normalize': {},
         'postcss-object-fit-images': {},
         'postcss-momentum-scrolling': [
           'scroll'
         ],
-        'postcss-functions': {
-          functions: postcssFunctions
-        },
         'rucksack-css': {},
         '@fullhuman/postcss-purgecss': {
           content: [
@@ -413,9 +402,9 @@ function getWebsiteHost () {
 }
 
 function getHost () {
-  return process.env.npm_config_host || process.env.HOST || 'localhost';
+  return process.env.npm_config_host || process.env.SERVER_HOST || 'localhost';
 }
 
 function getPort () {
-  return process.env.npm_config_port || process.env.PORT || 8050;
+  return process.env.npm_config_port || process.env.SERVER_PORT || 8050;
 }

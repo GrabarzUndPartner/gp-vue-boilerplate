@@ -13,7 +13,7 @@ export function vw (value, viewport = 375, min = '1rem') {
   return `max(${value / viewport * 100}vw, ${min})`;
 }
 
-const resolveValue = (value) => {
+function resolveValue (value) {
   if (value.endsWith('value')) {
     return parseInt(value);
   } else {
