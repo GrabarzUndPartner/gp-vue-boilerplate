@@ -21,6 +21,8 @@ export default {
       default () {
         return {
           poster: {
+            title: 'Text Image',
+            alt: 'Text Image',
             sources: [
               { src: '/img/sample-a-16-9.jpg', sizes: { default: '100vw', xxs: '100vw', xs: '100vw', sm: '100vw', md: '100vw', lg: '100vw', xl: '100vw', xxl: '100vw' } }
             ]

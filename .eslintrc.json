@@ -58,6 +58,7 @@
     ],
     "no-debugger": 1,
     "no-console": 1,
-    "no-empty-function": "error"
+    "no-empty-function": "error",
+    "vue/multi-word-component-names": "off"
   }
 }

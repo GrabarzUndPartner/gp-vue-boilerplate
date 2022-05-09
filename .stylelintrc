@@ -25,6 +25,12 @@
     "block-closing-brace-empty-line-before": null,
     "max-empty-lines": null,
     "selector-class-pattern": null,
-    "selector-id-pattern": null
+    "selector-id-pattern": null,
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true
+      }
+    ]
   }
 }

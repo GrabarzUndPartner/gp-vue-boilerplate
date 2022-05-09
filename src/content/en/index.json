@@ -48,6 +48,8 @@
       "component": "ArticleTextImage",
       "data": {
         "picture": {
+          "title": "Text Image",
+          "alt": "Text Image",
           "sources": [
             {
               "src": "/img/sample-b-16-9.jpg",
@@ -85,6 +87,8 @@
       "component": "SinglePicture",
       "data": {
         "picture": {
+          "title": "Single Image",
+          "alt": "Single Image",
           "sources": [
             {
               "src": "/img/sample-a-16-9.jpg",

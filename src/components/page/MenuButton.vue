@@ -99,7 +99,7 @@ export default {
     transform-origin: center center;
 
     &:last-child {
-      opacity: 0%;
+      opacity: 0;
       transition: transform 0.15s linear, opacity 0.15s linear;
       transform: scale(0.4);
     }
@@ -113,13 +113,13 @@ export default {
 
       & g {
         &:first-child {
-          opacity: 0%;
+          opacity: 0;
           transition: transform 0.15s linear, opacity 0.15s linear;
           transform: scale(0.4);
         }
 
         &:last-child {
-          opacity: 100%;
+          opacity: 1;
           transform: scale(1);
         }
       }
@@ -134,7 +134,7 @@ export default {
 
 .button-toggle-enter,
 .button-toggle-leave-to {
-  opacity: 0%;
+  opacity: 0;
   transition: transform 0.15s linear, opacity 0.15s linear;
   transform: scale(0.4);
 }

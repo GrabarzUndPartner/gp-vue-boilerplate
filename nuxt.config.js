@@ -246,11 +246,11 @@ module.exports = {
   modules: [
     'nuxt-speedkit',
     '@nuxt/content',
-    '@/modules/codesandbox',
+    // '@/modules/codesandbox',
     '@/modules/svg',
     '@/modules/analyzer',
     '@nuxtjs/axios',
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
     [
       'nuxt-polyfill', {
         features: [
@@ -396,7 +396,7 @@ module.exports = {
 };
 
 function getBasePath () {
-  return process.env.npm_config_base || process.env.BASE_PATH || '/';
+  return process.env.npm_config_base || process.env.BASE || '/';
 }
 
 function getWebsiteHost () {

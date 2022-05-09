@@ -32,7 +32,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate/badge.svg)](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd03937e022947fe867c7a33fdf707f9)](https://www.codacy.com/app/stephan.gerbeth/gp-vue-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GrabarzUndPartner/gp-vue-boilerplate&amp;utm_campaign=Badge_Grade)
-[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1/branch/master?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate/branch/master)
 
@@ -56,8 +55,6 @@ The Grabarz & Partner Boilerplate is a professional front-end template for build
 - [webpack modern](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/modern.html)
 - [webpack server](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/webpack/server.html)
 - [packtracker modern](https://app.packtracker.io/organizations/310/projects/247)
-- [cypress](https://grabarzundpartner.github.io/gp-vue-boilerplate/reports/cypress.html)
-
 
 ***
 
@@ -155,16 +152,6 @@ npm run production
 
 ```bash
 http://localhost:8050
-```
-
-***
-
-## Cypress
-
-### Run local test instance
-
-```bash
-npm run cypress:open
 ```
 
 ***

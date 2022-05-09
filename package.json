@@ -18,13 +18,11 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "husky install",
-    "test": "npm run lint && npm run static",
+    "test": "npm run lint && npm run generate",
     "dev": "nuxt",
     "build": "nuxt build",
-    "static": "nuxt generate",
-    "static:now": "npm run static && cp now.json dist && cd dist/ && now",
+    "generate": "nuxt generate",
     "start": "nuxt start",
-    "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:es": "eslint --ext .js,.vue .",
@@ -53,7 +51,6 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-sonarjs": "0.12.0",
     "eslint-plugin-xss": "0.1.11",
-    "express": "4.17.3",
     "husky": "7.0.4",
     "license-webpack-plugin": "4.0.2",
     "lint-staged": "12.3.6",
@@ -63,7 +60,7 @@
     "stylelint-config-lost": "0.0.3",
     "stylelint-config-recess-order": "3.0.0",
     "stylelint-config-standard": "^25.0.0",
-    "vue-svg-loader": "0.16.0"
+    "vue-svg-loader": "^0.16.0"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "4.1.3",
@@ -79,17 +76,18 @@
     "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/stylelint-module": "4.1.0",
     "core-js": "3.21.1",
-    "lost": "8.3.1",
+    "lost": "^8.3.1",
     "nuxt": "2.15.8",
     "nuxt-polyfill": "1.0.3",
-    "nuxt-speedkit": "^2.0.0-beta.44",
+    "nuxt-speedkit": "^2.0.6",
     "object-fit-images": "github:StephanGerbeth/object-fit-images",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
     "postcss-object-fit-images": "1.1.2",
     "rucksack-css": "1.0.2",
     "rxjs": "7.5.5",
-    "snyk": "1.868.0"
+    "snyk": "1.868.0",
+    "suppress-warnings": "^1.0.2"
   },
   "optionalDependencies": {
     "custom-event-polyfill": "1.0.7",

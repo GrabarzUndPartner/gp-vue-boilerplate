@@ -58,7 +58,7 @@ export default {
   },
 
   head () {
-    const seo = this.$nuxtI18nSeo();
+    const seo = this.$nuxtI18nHead();
     seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
     return seo;
   },

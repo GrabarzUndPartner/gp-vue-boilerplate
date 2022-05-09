@@ -54,7 +54,7 @@ export default {
   }
 
   &.js--toggle {
-    opacity: 0%;
+    opacity: 0;
     transform: translateY(-60%);
   }
 

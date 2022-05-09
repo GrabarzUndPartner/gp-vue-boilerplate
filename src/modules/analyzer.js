@@ -4,7 +4,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = function () {
   this.extendBuild((config) => {
-    if (!isDev) {
+    if (!isDev && process.env.BUILD_ANALYZE) {
       config.plugins.push(new BundleAnalyzerPlugin({
         reportFilename: path.resolve(`.reports/webpack/${config.name}.html`),
         statsFilename: path.resolve(`.reports/webpack/stats/${config.name}.json`),
