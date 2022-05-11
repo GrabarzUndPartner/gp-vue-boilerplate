@@ -1,5 +1,13 @@
 # Project Changelog
 
+# [2.23.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.15...v2.23.0) (2022-05-11)
+
+
+### Features
+
+* **update:** remove unused stuff; update deps and code ([6e0f6ab](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6e0f6ab4805de962032e630fc8e97b9f1aa44807))
+* **update:** update speedkit; clean project ([ba33bab](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ba33bab248104493e17403317f3e2b4b3e9fec6c))
+
 ## [2.22.15](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.14...v2.22.15) (2022-03-16)
 
 
