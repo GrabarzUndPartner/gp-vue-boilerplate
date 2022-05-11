@@ -1,4 +1,0 @@
-# local gitlab config yml
-include:
-  - project: 'intern/gitlab-ci-config'
-    file: '/src/gp-vue-boilerplate.yml'

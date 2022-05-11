@@ -1,5 +1,3 @@
-const github = require('./.semantic-release/github.json');
-const gitlab = require('./.semantic-release/gitlab.json');
 
 const args = process.argv
   .slice(2)
@@ -11,4 +9,6 @@ const args = process.argv
     return args;
   }, {});
 
-module.exports = (args.provider === 'gitlab') ? gitlab : github;
+module.exports = {
+  github: require('./.semantic-release/github.json')
+}[String(args.provider || 'github')];
