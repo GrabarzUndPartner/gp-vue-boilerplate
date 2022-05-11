@@ -25,13 +25,14 @@
 import {
   hydrateOnInteraction
 } from 'vue-lazy-hydration';
+import speedkitHydrate from 'nuxt-speedkit/hydrate';
 import PageInfoLayer from '@/components/page/InfoLayer';
 
 import PageMenuButton from '@/components/page/MenuButton';
 
 import layoutData from '@/content/layout.json';
 
-const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling';
+const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling'; ;
 
 export default {
 
@@ -40,12 +41,9 @@ export default {
     PageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
     }),
-    PageInfoLayer
-  },
-
-  speedkitComponents: {
-    PageHeader: () => import(/* webpackMode: "eager" */'@/components/page/Header'),
-    PageFooter: () => import('@/components/page/Footer')
+    PageInfoLayer,
+    PageHeader: speedkitHydrate(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
+    PageFooter: speedkitHydrate(() => import('@/components/page/Footer'))
   },
 
   data () {
@@ -60,7 +58,7 @@ export default {
   },
 
   head () {
-    const seo = this.$nuxtI18nSeo();
+    const seo = this.$nuxtI18nHead();
     seo.htmlAttrs[String(DATA_ATTR_PREVENT_SCROLLING)] = this.preventScrolling;
     return seo;
   },
@@ -120,6 +118,26 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: 375px) {
+    font-size: vw(16, 375);
+  }
+
+  @media (min-width: 576px) {
+    font-size: vw(16, 576);
+  }
+
+  @media (min-width: 768px) {
+    font-size: vw(16, 768);
+  }
+
+  @media (min-width: 992px) {
+    font-size: vw(16, 992);
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
 }
 
 html[data-prevent-scrolling="true"] {

@@ -62,10 +62,10 @@ export default {
     color: var(--color-black);
     text-decoration: none;
     text-transform: uppercase;
-    opacity: 60%;
+    opacity: 0.6;
 
     &.nuxt-link-exact-active {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 }

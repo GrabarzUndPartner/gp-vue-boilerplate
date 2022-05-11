@@ -72,11 +72,7 @@ export default {
   & .language-switch {
     display: inline-block;
     width: 100%;
-    margin-top: calc(20 / 375 * 100vw);
-
-    @media (--xs) {
-      margin-top: 20px;
-    }
+    margin-top: em(20);
   }
 
   & .links {

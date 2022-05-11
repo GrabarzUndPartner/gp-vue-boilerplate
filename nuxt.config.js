@@ -1,34 +1,31 @@
 // process.env.DEBUG = 'nuxt:*';
 
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
+import nuxtBabelPresetApp from '@nuxt/babel-preset-app';
+import { config } from 'dotenv';
+import * as postcssPresetEnvImportFrom from './src/globals/postcss/preset-env/importFrom';
+import * as postcssFunctions from './src/globals/postcss/functions';
+
+import i18nMessageEn from './src/globals/locales/en.json';
+import i18nMessageDe from './src/globals/locales/de.json';
+
 const isDev = process.env.NODE_ENV === 'development';
 
 const DEFAULT_LANG = 'en';
 
-module.exports = {
+config();
+
+export default {
   dev: isDev,
   target: 'static',
   srcDir: 'src/',
-  css: [],
-  env: {},
 
-  features: {
-    store: true,
-    layouts: true,
-    meta: true,
-    middleware: true,
-    transitions: true,
-    deprecations: false,
-    validate: true,
-    asyncData: true,
-    fetch: true,
-    clientOnline: true,
-    clientPrefetch: true,
-    clientUseUrl: true,
-    componentAliases: true,
-    componentClientOnly: true
-  },
+  css: [
+    '@/assets/css/vars.css'
+  ],
+
+  env: {},
 
   server: {
     host: getHost(),
@@ -36,8 +33,8 @@ module.exports = {
     timing: false,
     https: (function () {
       const dir = './env/cert';
-      const key = path.join(dir, 'server.key');
-      const crt = path.join(dir, 'server.crt');
+      const key = process.env.SERVER_SSL_KEY_PATH || path.join(dir, 'server.key');
+      const crt = process.env.SERVER_SSL_CRT_PATH || path.join(dir, 'server.crt');
 
       if (fs.existsSync(key) && fs.existsSync(crt)) {
         return { key: fs.readFileSync(key), cert: fs.readFileSync(crt) };
@@ -72,7 +69,7 @@ module.exports = {
         };
         return [
           [
-            require.resolve('@nuxt/babel-preset-app'), {
+            nuxtBabelPresetApp, {
               targets: envTargets[String(envName)],
               useBuiltIns: envUseBuiltins[String(envName)],
               // #####
@@ -96,14 +93,14 @@ module.exports = {
     postcss: {
       plugins: {
         'postcss-preset-env': {
-          preserve: false,
+          preserve: true,
           stage: 0,
-          importFrom: [
-            'src/globals/postcss.js'
-          ]
+          importFrom: postcssPresetEnvImportFrom
+        },
+        'postcss-functions': {
+          functions: postcssFunctions
         },
         'postcss-normalize': {},
-        'postcss-object-fit-images': {},
         'postcss-momentum-scrolling': [
           'scroll'
         ],
@@ -173,8 +170,8 @@ module.exports = {
     vueI18n: {
       fallbackLocale: DEFAULT_LANG,
       messages: {
-        en: require('./src/globals/locales/en.json'),
-        de: require('./src/globals/locales/de.json')
+        en: i18nMessageEn,
+        de: i18nMessageDe
       }
     }
   },
@@ -246,27 +243,14 @@ module.exports = {
   modules: [
     'nuxt-speedkit',
     '@nuxt/content',
-    '@/modules/codesandbox',
+    // '@/modules/codesandbox',
     '@/modules/svg',
     '@/modules/analyzer',
     '@nuxtjs/axios',
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
     [
       'nuxt-polyfill', {
         features: [
-          {
-            require: 'object-fit-images',
-            detect: () => 'objectFit' in document.documentElement.style,
-            install: objectFitImages => (window.objectFitImages = objectFitImages)
-          },
-          {
-            require: 'picturefill',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
-          },
-          {
-            require: 'picturefill/dist/plugins/mutation/pf.mutation.js',
-            detect: () => 'HTMLPictureElement' in window || 'picturefill' in window
-          },
           {
             require: 'custom-event-polyfill',
             detect: () => 'CustomEvent' in window &&
@@ -396,7 +380,7 @@ module.exports = {
 };
 
 function getBasePath () {
-  return process.env.npm_config_base || process.env.BASE_PATH || '/';
+  return process.env.npm_config_base || process.env.BASE || '/';
 }
 
 function getWebsiteHost () {
@@ -404,9 +388,9 @@ function getWebsiteHost () {
 }
 
 function getHost () {
-  return process.env.npm_config_host || process.env.HOST || 'localhost';
+  return process.env.npm_config_host || process.env.SERVER_HOST || 'localhost';
 }
 
 function getPort () {
-  return process.env.npm_config_port || process.env.PORT || 8050;
+  return process.env.npm_config_port || process.env.SERVER_PORT || 8050;
 }

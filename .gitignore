@@ -2,10 +2,7 @@
 /.history/
 /.tmp/
 /.nuxt/
-/.nuxt-storybook/
 /dist/
-/storybook/
-/storybook-static/
 /node_modules/
 /env/nuxt/cert/
 /output/
@@ -33,3 +30,4 @@ logs
 sw.*
 env/cert/*
 !env/cert/README.md
+.env

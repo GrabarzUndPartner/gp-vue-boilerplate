@@ -85,12 +85,15 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
       - name: Build
         run: |
-          npm run static --build-analyze --base=/gp-vue-boilerplate/ --website-host=https://grabarzundpartner.github.io/gp-vue-boilerplate
+          npm run generate --build-analyze --base= --website-host=
           mkdir dist/reports dist/reports/webpack
           cp -R .reports/webpack/* dist/reports/webpack
           touch dist/.nojekyll
         env:
           DIST_PATH: dist
+          BASE: /gp-vue-boilerplate/
+          WEBSITE_HOST: https://grabarzundpartner.github.io/gp-vue-boilerplate
+          BUILD_ANALYZE: true
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:

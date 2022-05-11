@@ -2,7 +2,6 @@
 /.tmp/
 /.nuxt/
 /dist/
-/storybook/
 /node_modules/
 /env/nuxt/cert/
 /output/

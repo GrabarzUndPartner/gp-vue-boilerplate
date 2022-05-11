@@ -176,7 +176,7 @@ export default {
 
 .modal-toggle-enter,
 .modal-toggle-leave-to {
-  opacity: 0%;
+  opacity: 0;
   transition: transform 0.15s ease-in, opacity 0.15s linear;
   transform: scale(0.6);
 }
