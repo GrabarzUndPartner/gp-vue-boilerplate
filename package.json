@@ -38,7 +38,6 @@
     "@commitlint/config-conventional": "16.2.4",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
     "babel-loader": "8.2.5",
-    "branch-name-lint": "2.1.1",
     "commitlint": "16.2.4",
     "compression": "1.7.4",
     "eslint": "8.11.0",
@@ -85,7 +84,7 @@
     "postcss-functions": "4.0.2",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
-    "postcss-preset-env": "6.7.1",
+    "postcss-preset-env": "^6.7.0",
     "rucksack-css": "1.0.2",
     "rxjs": "7.5.5",
     "suppress-warnings": "1.0.2"
