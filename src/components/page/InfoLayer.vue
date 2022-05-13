@@ -5,31 +5,31 @@
         Sorry, but you will have a limited user experience due to a…
       </p>
       <ul v-font="$getFont('Raleway', 700, 'normal')">
-        <li id="nuxt-speedkit__message__nojs">
+        <li id="nuxt-speedkit-message-nojs">
           disabled javascript
         </li>
-        <li id="nuxt-speedkit__message__unsupported-browser">
+        <li id="nuxt-speedkit-message-unsupported-browser">
           outdated browser
         </li>
-        <li id="nuxt-speedkit__message__outdated-device">
+        <li id="nuxt-speedkit-message-outdated-device">
           outdated device
         </li>
-        <li id="nuxt-speedkit__message__slow-connection">
+        <li id="nuxt-speedkit-message-slow-connection">
           slow connection
         </li>
       </ul>
-      <div class="info_layer__buttons">
-        <base-button id="nuxt-speedkit__button__init-nojs">
-          <label for="nuxt-speedkit__speedkit-layer__close">
+      <div class="buttons">
+        <base-button id="nuxt-speedkit-button-init-nojs">
+          <label for="nuxt-speedkit-layer-close">
             OK
           </label>
         </base-button>
-        <base-button id="nuxt-speedkit__button__init-font" onclick="window.__NUXT_SPEEDKIT_FONT_INIT__ = true;">
-          <label for="nuxt-speedkit__speedkit-layer__close">
+        <base-button id="nuxt-speedkit-button-init-font" onclick="window.__NUXT_SPEEDKIT_FONT_INIT__ = true;">
+          <label for="nuxt-speedkit-layer-close">
             No
           </label>
         </base-button>
-        <base-button id="nuxt-speedkit__button__init-app" label="Yes" onclick="window.__NUXT_SPEEDKIT_AUTO_INIT__ = true;" />
+        <base-button id="nuxt-speedkit-button-init-app" label="Yes" onclick="window.__NUXT_SPEEDKIT_AUTO_INIT__ = true;" />
       </div>
     </div>
   </speedkit-layer>
@@ -66,7 +66,7 @@ export default {
 
 <style lang="postcss" scoped>
 .page-info-layer {
-  & >>> #nuxt-speedkit__speedkit-layer__content {
+  & >>> #nuxt-speedkit-layer-content {
     position: fixed;
     top: 0;
     left: 0;
@@ -95,9 +95,17 @@ export default {
     }
   }
 
-  &.nuxt-speedkit__speedkit-layer--visible {
-    & >>> #nuxt-speedkit__speedkit-layer__content {
+  &.nuxt-speedkit-layer-visible {
+    & >>> #nuxt-speedkit-layer-content {
       animation-delay: initial;
+    }
+  }
+
+  & .buttons {
+    margin: calc(10 / 16 * 1em) 0;
+
+    & > * {
+      margin: 0 calc(5 / 16 * 1em);
     }
   }
 }
@@ -108,14 +116,6 @@ ul {
 
   & > li {
     display: none;
-  }
-}
-
-.info_layer__buttons {
-  margin: calc(10 / 16 * 1em) 0;
-
-  & > * {
-    margin: 0 calc(5 / 16 * 1em);
   }
 }
 
