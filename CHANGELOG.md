@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.23.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.0...v2.23.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* **speedkit:** fix info-layer tag ids and classes ([ecb5ac5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ecb5ac59ed1c62ab81530c845e50a02689933977))
+
 # [2.23.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.22.15...v2.23.0) (2022-05-11)
 
 
