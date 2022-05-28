@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .organism-picture {
   position: relative;
   width: 100%;
