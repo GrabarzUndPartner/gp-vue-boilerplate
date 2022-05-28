@@ -10,9 +10,6 @@
   "major": {
     "automerge": false
   },
-  "ignoreDeps": [
-    "postcss-preset-env"
-  ],
   "packageRules": [
     {
       "packagePatterns": [
