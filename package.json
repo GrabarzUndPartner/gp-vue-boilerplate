@@ -52,7 +52,7 @@
     "eslint-plugin-xss": "0.1.11",
     "husky": "7.0.4",
     "license-webpack-plugin": "4.0.2",
-    "lint-staged": "12.4.3",
+    "lint-staged": "12.5.0",
     "postcss-html": "1.4.1",
     "stylelint": "^14.6.0",
     "stylelint-config-css-modules": "4.1.0",
