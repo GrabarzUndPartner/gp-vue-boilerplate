@@ -295,7 +295,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 intersection-observer
-W3C-20150513
+Apache-2.0
 W3C Software and Document License
 
 isarray
