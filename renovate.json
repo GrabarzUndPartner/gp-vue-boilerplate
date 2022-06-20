@@ -5,11 +5,7 @@
   "baseBranches": [
     "main"
   ],
-  "automerge": true,
   "rangeStrategy": "pin",
-  "major": {
-    "automerge": false
-  },
   "ignoreDeps": [
     "postcss-preset-env"
   ],
@@ -18,9 +14,7 @@
       "packagePatterns": [
         "snyk"
       ],
-      "groupName": "snyk",
-      "automerge": true,
-      "automergeType": "branch"
+      "groupName": "snyk"
     }
   ]
 }
