@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .organism-stage-video {
   position: relative;
   width: 100%;

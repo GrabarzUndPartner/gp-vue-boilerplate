@@ -52,14 +52,14 @@ export default {
     };
   },
   head () {
-    return {
+    return this.$speedkit.head({
       noscript: [
         getStyleDescription('.page-info-layer > div { animation-delay: initial !important; }', true)
       ],
       __dangerouslyDisableSanitizers: [
         'noscript'
       ]
-    };
+    });
   }
 };
 </script>

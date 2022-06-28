@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.23.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.1...v2.23.2) (2022-05-28)
+
+
+### Bug Fixes
+
+* **components:** improve ([2777737](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/27777371e24533ffc25c196a9f7befada8fe3880))
+
 ## [2.23.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.0...v2.23.1) (2022-05-13)
 
 
