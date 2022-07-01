@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.23.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.3...v2.23.4) (2022-07-01)
+
+
+### Bug Fixes
+
+* **postcss:** fix cssnano options ([03f7209](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/03f720953adaee02ef3e67cd5f0f95bae4f51f55))
+
 ## [2.23.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.2...v2.23.3) (2022-07-01)
 
 
