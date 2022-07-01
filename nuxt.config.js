@@ -122,6 +122,14 @@ export default {
           gutter: '15px',
           flexbox: 'flex',
           cycle: 'auto'
+        },
+        cssnano: {
+          preset: [
+            'default', {
+              discardDuplicates: false,
+              mergeRules: false
+            }
+          ]
         }
       },
       order: 'cssnanoLast'
