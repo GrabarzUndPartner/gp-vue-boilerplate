@@ -12,7 +12,7 @@
  */
 
 /*!
- * vue-i18n v8.27.1 
+ * vue-i18n v8.27.2 
  * (c) 2022 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -27,8 +27,8 @@
 
 
 /*!
-  * vue-router v3.5.3
-  * (c) 2021 Evan You
+  * vue-router v3.5.4
+  * (c) 2022 Evan You
   * @license MIT
   */
 
