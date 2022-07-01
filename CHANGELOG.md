@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.23.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.2...v2.23.3) (2022-07-01)
+
+
+### Bug Fixes
+
+* **postcss:** update `lost` & `postcss-preset-env` ([f589989](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/f589989d30c2ecd50ee0caa75cef450b36e0d79c))
+
 ## [2.23.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.1...v2.23.2) (2022-05-28)
 
 
