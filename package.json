@@ -77,7 +77,7 @@
     "@snyk/protect": "1.961.0",
     "core-js": "3.23.3",
     "dotenv": "16.0.1",
-    "lost": "8.3.1",
+    "lost": "9.0.0",
     "nuxt": "2.15.8",
     "nuxt-polyfill": "1.0.3",
     "nuxt-speedkit": "2.0.14",
