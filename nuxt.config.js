@@ -4,14 +4,11 @@ import path from 'path';
 import fs from 'fs';
 import nuxtBabelPresetApp from '@nuxt/babel-preset-app';
 import { config } from 'dotenv';
-import * as postcssPresetEnvImportFrom from './src/globals/postcss/preset-env/importFrom';
+import postcssPresetEnvImportFrom from './src/globals/postcss/preset-env/importFrom';
 import * as postcssFunctions from './src/globals/postcss/functions';
-
-import i18nMessageEn from './src/globals/locales/en.json';
-import i18nMessageDe from './src/globals/locales/de.json';
+import { i18nMessageDe, i18nMessageEn } from './src/globals/locales';
 
 const isDev = process.env.NODE_ENV === 'development';
-
 const DEFAULT_LANG = 'en';
 
 config();
@@ -95,7 +92,13 @@ export default {
         'postcss-preset-env': {
           preserve: true,
           stage: 0,
-          importFrom: postcssPresetEnvImportFrom
+          importFrom: postcssPresetEnvImportFrom,
+          features: {
+            'custom-properties': {
+              disableDeprecationNotice: true
+            },
+            'nesting-rules': true
+          }
         },
         'postcss-functions': {
           functions: postcssFunctions

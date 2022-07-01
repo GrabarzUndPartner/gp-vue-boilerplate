@@ -6,9 +6,6 @@
     "main"
   ],
   "rangeStrategy": "pin",
-  "ignoreDeps": [
-    "postcss-preset-env"
-  ],
   "packageRules": [
     {
       "packagePatterns": [
