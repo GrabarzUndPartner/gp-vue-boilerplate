@@ -84,7 +84,7 @@
     "postcss-functions": "4.0.2",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
-    "postcss-preset-env": "^7.6.0",
+    "postcss-preset-env": "7.7.2",
     "rucksack-css": "1.0.2",
     "rxjs": "7.5.5",
     "suppress-warnings": "1.0.2"
