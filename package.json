@@ -40,7 +40,7 @@
     "babel-loader": "8.2.5",
     "commitlint": "17.1.2",
     "compression": "1.7.4",
-    "eslint": "8.24.0",
+    "eslint": "8.25.0",
     "eslint-formatter-json-relative": "0.1.0",
     "eslint-plugin-chai-friendly": "0.7.2",
     "eslint-plugin-json": "3.1.0",
