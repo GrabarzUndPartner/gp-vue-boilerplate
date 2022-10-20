@@ -74,7 +74,7 @@
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/stylelint-module": "4.1.0",
-    "@snyk/protect": "1.1032.0",
+    "@snyk/protect": "1.1038.0",
     "core-js": "3.25.5",
     "dotenv": "16.0.3",
     "lost": "9.0.1",
