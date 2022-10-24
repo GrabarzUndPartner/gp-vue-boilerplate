@@ -1,20 +1,18 @@
 <template>
-  <layout-default-container
-    class="organism-text"
-  >
-    <molecule-content-article v-bind="article" />
-  </layout-default-container>
+  <layout-lost-container class="organism-full-text">
+    <molecule-content v-bind="article" />
+  </layout-lost-container>
 </template>
 
 <script>
 
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
-import MoleculeContentArticle from '@/components/molecules/ContentArticle';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
+import MoleculeContent from '@/components/molecules/Content';
 
 export default {
   components: {
-    LayoutDefaultContainer,
-    MoleculeContentArticle
+    LayoutLostContainer,
+    MoleculeContent
   },
 
   props: {
@@ -36,7 +34,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.organism-text {
+.organism-full-text {
   /* empty */
 }
 </style>

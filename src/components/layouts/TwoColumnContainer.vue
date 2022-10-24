@@ -1,5 +1,5 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="layout-two-column-container"
     :class="styleClasses"
     :visible="options.visible"
@@ -17,16 +17,16 @@
         </div>
       </div>
     </template>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
 
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 
 export default {
 
-  components: { LayoutDefaultContainer },
+  components: { LayoutLostContainer },
 
   props: {
 

@@ -1,9 +1,5 @@
 <template>
-  <component
-    :is="tag"
-    class="atom-headline"
-    :class="styleClasses"
-  >
+  <base-content-headline class="atom-headline">
     <slot>
       <span
         v-if="$slots.overline || overline"
@@ -33,11 +29,13 @@
         </slot>
       </span>
     </slot>
-  </component>
+  </base-content-headline>
 </template>
 
 <script>
+import BaseContentHeadline from '@/components/base/ContentHeadline';
 export default {
+  components: { BaseContentHeadline },
   props: {
     tag: {
       type: String,
@@ -54,13 +52,6 @@ export default {
     subline: {
       type: String,
       default: 'Lorem Subline'
-    }
-  },
-  computed: {
-    styleClasses () {
-      const classes = {};
-      classes[`headline--${this.tag}`] = true;
-      return classes;
     }
   }
 };
@@ -81,7 +72,7 @@ export default {
     /* empty */
   }
 
-  &.headline--h2 {
+  &h2 {
     & .overline {
       font-size: calc(12 / 375 * 100vw);
 

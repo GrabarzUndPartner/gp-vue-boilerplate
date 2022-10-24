@@ -1,24 +1,28 @@
 <template>
-  <div>
-    <page-header
-      v-bind="layoutComponents.pageHeader"
-      sticky
-    />
-    <page-menu
-      ref="pageMenu"
-      v-bind="layoutComponents.pageMenu"
-      :opened="!preventMenuOpened"
-    />
-    <page-menu-button
-      v-bind="layoutComponents.pageMenuButton"
-      @click.native="onClickMenuButton"
-    />
-    <main>
+  <base-content-container>
+    <template #before>
+      <page-header
+        v-bind="layoutComponents.pageHeader"
+        sticky
+      />
+    </template>
+    <template #default>
+      <page-menu
+        ref="pageMenu"
+        v-bind="layoutComponents.pageMenu"
+        :opened="!preventMenuOpened"
+      />
+      <page-menu-button
+        v-bind="layoutComponents.pageMenuButton"
+        @click.native="onClickMenuButton"
+      />
       <nuxt />
-    </main>
-    <page-footer v-bind="layoutComponents.pageFooter" />
-    <page-info-layer critical />
-  </div>
+    </template>
+    <template #after>
+      <page-footer v-bind="layoutComponents.pageFooter" />
+    </template>
+    <!-- <page-info-layer critical /> -->
+  </base-content-container>
 </template>
 
 <script>
@@ -29,6 +33,7 @@ import speedkitHydrate from 'nuxt-speedkit/hydrate';
 import PageInfoLayer from '@/components/page/InfoLayer';
 
 import PageMenuButton from '@/components/page/MenuButton';
+import BaseContentContainer from '@/components/base/ContentContainer';
 
 import layoutData from '@/content/layout.json';
 
@@ -37,10 +42,12 @@ const DATA_ATTR_PREVENT_SCROLLING = 'data-prevent-scrolling'; ;
 export default {
 
   components: {
+    BaseContentContainer,
     PageMenuButton,
     PageMenu: hydrateOnInteraction(() => import('@/components/page/Menu'), {
       event: 'hydrate'
     }),
+    // eslint-disable-next-line vue/no-unused-components
     PageInfoLayer,
     PageHeader: speedkitHydrate(() => import(/* webpackMode: "eager" */'@/components/page/Header')),
     PageFooter: speedkitHydrate(() => import('@/components/page/Footer'))

@@ -1,19 +1,19 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="organism-single-video"
   >
     <template slot="container">
       <atom-responsive-video v-bind="video" />
     </template>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 import AtomResponsiveVideo from '@/components/atoms/ResponsiveVideo';
 
 export default {
-  components: { LayoutDefaultContainer, AtomResponsiveVideo },
+  components: { LayoutLostContainer, AtomResponsiveVideo },
   props: {
 
     video: {

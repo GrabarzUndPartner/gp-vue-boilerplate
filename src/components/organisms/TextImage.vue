@@ -1,27 +1,31 @@
 <template>
-  <layout-two-column-container
-    class="organism-text-image"
-    :mirror="mirror"
-  >
-    <template #left>
-      <speedkit-picture v-bind="picture" />
-    </template>
-    <template #right>
-      <molecule-content-article v-bind="{headline: {overline, headline, subline}, content}" />
-    </template>
-  </layout-two-column-container>
+  <base-content-container>
+    <layout-two-column-container
+      class="organism-text-image"
+      :mirror="mirror"
+    >
+      <template #left>
+        <speedkit-picture v-bind="picture" />
+      </template>
+      <template #right>
+        <molecule-content v-bind="{headline: {overline, headline, subline}, content}" />
+      </template>
+    </layout-two-column-container>
+  </base-content-container>
 </template>
 
 <script>
 
 import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
+import BaseContentContainer from '@/components/base/ContentContainer';
 import LayoutTwoColumnContainer from '@/components/layouts/TwoColumnContainer';
-import MoleculeContentArticle from '@/components/molecules/ContentArticle';
+import MoleculeContent from '@/components/molecules/Content';
 
 export default {
   components: {
+    BaseContentContainer,
     LayoutTwoColumnContainer,
-    MoleculeContentArticle,
+    MoleculeContent,
     SpeedkitPicture
   },
 

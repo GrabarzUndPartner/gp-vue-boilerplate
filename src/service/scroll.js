@@ -8,7 +8,7 @@ export const scrollObserver = getScrollObserver();
 
 export function getScrollObserver (el = global) {
   if (!observer.has(el)) {
-    observer.set(el, fromEvent(el, 'scroll'));
+    observer.set(el, fromEvent(el, 'scroll', { passive: true }));
   }
   return observer.get(el)
     .pipe(
