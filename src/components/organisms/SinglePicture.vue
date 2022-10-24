@@ -1,20 +1,20 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="organism-picture"
   >
     <template #container>
       <speedkit-picture v-bind="picture" />
     </template>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
 import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 
 export default {
   components: {
-    LayoutDefaultContainer,
+    LayoutLostContainer,
     SpeedkitPicture
   },
 

@@ -1,21 +1,30 @@
 
 <template>
-  <div class="content">
+  <base-content-container class="content">
     <component
       :is="item.component"
-      v-for="(item, index) in components"
+      v-for="(item, index) in components.slice(0,1)"
       :key="index"
       v-bind="item.data"
-      :critical="index < 1"
+      critical
     />
-  </div>
+    <base-content-container>
+      <component
+        :is="item.component"
+        v-for="(item, index) in components.slice(1)"
+        :key="index"
+        v-bind="item.data"
+      />
+    </base-content-container>
+  </base-content-container>
 </template>
 
 <script>
 import ComponentsExtend from './Components';
+import BaseContentContainer from '@/components/base/ContentContainer';
 export default {
-  // scrollToTop: true,
 
+  components: { BaseContentContainer },
   extends: ComponentsExtend,
 
   async asyncData ({ $content, store, app, error, route }) {

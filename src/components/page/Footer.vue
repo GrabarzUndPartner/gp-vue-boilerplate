@@ -1,5 +1,5 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="page-footer"
     tag="footer"
   >
@@ -9,16 +9,16 @@
         type="page-footer"
       />
     </nav>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 import LinkList from '~/components/molecules/LinkList';
 
 export default {
   components: {
-    LayoutDefaultContainer,
+    LayoutLostContainer,
     LinkList
   },
   props: {

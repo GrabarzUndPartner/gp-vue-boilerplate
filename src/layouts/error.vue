@@ -47,7 +47,7 @@ export default {
           }
         },
         {
-          component: 'ArticleText',
+          component: 'Text',
           data: {
             article: {
               headline: {

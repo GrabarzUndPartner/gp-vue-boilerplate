@@ -95,7 +95,7 @@
       }
     },
     {
-      "component": "ArticleText",
+      "component": "FullText",
       "data": {
         "article": {
           "headline": {
@@ -106,7 +106,7 @@
       }
     },
     {
-      "component": "ArticleText",
+      "component": "FullText",
       "data": {
         "article": {
           "headline": null,

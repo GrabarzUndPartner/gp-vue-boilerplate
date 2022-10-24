@@ -1,5 +1,5 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="page-header"
     :class="styleClasses"
     tag="header"
@@ -11,14 +11,14 @@
         </atom-link-to>
       </div>
     </template>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 import AtomLinkTo from '@/components/atoms/LinkTo';
 export default {
-  components: { LayoutDefaultContainer, AtomLinkTo },
+  components: { LayoutLostContainer, AtomLinkTo },
   props: {
     sticky: {
       type: Boolean,

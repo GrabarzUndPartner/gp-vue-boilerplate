@@ -1,23 +1,30 @@
 <template>
-  <layout-default-container
+  <base-content-container
     class="organism-stage-picture"
   >
-    <template slot="background">
-      <speedkit-picture
-        v-bind="picture"
-      />
-    </template>
-  </layout-default-container>
+    <speedkit-picture
+      v-bind="picture"
+    />
+    <layout-lost-container>
+      <base-content-headline class="headline">
+        {{ headline }}
+      </base-content-headline>
+    </layout-lost-container>
+  </base-content-container>
 </template>
 
 <script>
 import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
+import BaseContentHeadline from '@/components/base/ContentHeadline';
+import BaseContentContainer from '@/components/base/ContentContainer';
 
 export default {
   components: {
-    LayoutDefaultContainer,
-    SpeedkitPicture
+    LayoutLostContainer,
+    SpeedkitPicture,
+    BaseContentHeadline,
+    BaseContentContainer
   },
 
   props: {
@@ -31,7 +38,39 @@ export default {
           ]
         };
       }
+    },
+    headline: {
+      type: String,
+      default: 'Stage Picture'
     }
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.organism-stage-picture {
+  position: relative;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.layouts-lost-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: em(20) 0;
+  padding-top: em(60);
+  margin: 0;
+  color: white;
+  text-align: center;
+  background: rgb(0 0 0);
+  background: linear-gradient(0deg, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 0%) 50%);
+}
+
+.headline {
+  lost-column: 12/12;
+  margin: 0;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-toggle">
-    <layout-default-container
+    <layout-lost-container
       v-show="opened"
       class="layout-modal"
       :class="styleClasses"
@@ -21,17 +21,17 @@
           </div>
         </div>
       </template>
-    </layout-default-container>
+    </layout-lost-container>
   </transition>
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 
 import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
 
 export default {
-  components: { LayoutDefaultContainer, svgIconClose },
+  components: { LayoutLostContainer, svgIconClose },
   props: {
     options: {
       type: Object,

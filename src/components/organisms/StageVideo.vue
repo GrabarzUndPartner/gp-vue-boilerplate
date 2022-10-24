@@ -1,5 +1,5 @@
 <template>
-  <layout-default-container
+  <layout-lost-container
     class="organism-stage-video"
   >
     <template slot="background">
@@ -8,16 +8,16 @@
         v-bind="video"
       />
     </template>
-  </layout-default-container>
+  </layout-lost-container>
 </template>
 
 <script>
-import LayoutDefaultContainer from '@/components/layouts/DefaultContainer';
+import LayoutLostContainer from '@/components/layouts/LostContainer';
 import AtomResponsiveVideo from '@/components/atoms/ResponsiveVideo';
 
 export default {
   components: {
-    LayoutDefaultContainer,
+    LayoutLostContainer,
     AtomResponsiveVideo
   },
 
@@ -53,6 +53,10 @@ export default {
 
 <style lang="postcss" scoped>
 .organism-stage-video {
+  &:first-child {
+    margin-top: 0;
+  }
+
   position: relative;
   width: 100%;
 }

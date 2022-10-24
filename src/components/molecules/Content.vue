@@ -1,24 +1,29 @@
 <template>
-  <article class="molecule-article">
-    <header v-if="headline">
+  <base-content-container class="molecule-article">
+    <template #header>
       <atom-headline
+        v-if="headline"
         v-bind="headline"
-        tag="h2"
       />
-    </header>
-    <slot>
-      <atom-rich-text :content="content" />
-    </slot>
-  </article>
+    </template>
+    <template #default>
+      <slot>
+        <atom-rich-text :content="content" />
+      </slot>
+    </template>
+  </base-content-container>
 </template>
 
 <script>
+import BaseContentContainer from '../base/ContentContainer';
 import AtomHeadline from '@/components/atoms/Headline';
 import AtomRichText from '@/components/atoms/RichText';
 
 export default {
   components: {
-    AtomHeadline, AtomRichText
+    AtomHeadline,
+    AtomRichText,
+    BaseContentContainer
   },
 
   props: {

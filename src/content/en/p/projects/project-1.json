@@ -36,7 +36,7 @@
       }
     },
     {
-      "component": "ArticleText",
+      "component": "FullText",
       "data": {
         "article": {
           "headline": {

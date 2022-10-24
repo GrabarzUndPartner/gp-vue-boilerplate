@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    class="layouts-default-container"
+    class="layouts-lost-container"
   >
     <slot name="background" />
     <slot name="container">
@@ -32,12 +32,8 @@ export default {
 </script>
 
 <style lang="postcss">
-.layouts-default-container {
+.layouts-lost-container {
   margin: 40px 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
 
   & .lost-flex-container {
     display: flex;
