@@ -44,6 +44,7 @@ export default {
   modern: isDev ? false : 'client',
 
   build: {
+    transpile: ['@js-basics/vector'],
     analyze: false,
     filenames: {
       app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
@@ -252,6 +253,7 @@ export default {
   },
 
   modules: [
+    '@/modules/intersect',
     'nuxt-speedkit',
     '@nuxt/content',
     // '@/modules/codesandbox',
