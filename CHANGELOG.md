@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [2.23.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.4...v2.23.5) (2022-10-24)
+
+
+### Bug Fixes
+
+* **update:** update components & clean ([1c258b4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/1c258b455050e148ef398fcc146b77bf630332bf))
+
 ## [2.23.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.3...v2.23.4) (2022-07-01)
 
 
