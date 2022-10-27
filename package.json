@@ -80,7 +80,7 @@
     "lost": "9.0.1",
     "nuxt": "2.15.8",
     "nuxt-polyfill": "1.0.3",
-    "nuxt-speedkit": "2.0.22",
+    "nuxt-speedkit": "2.1.0",
     "postcss-functions": "4.0.2",
     "postcss-momentum-scrolling": "3.14.22",
     "postcss-normalize": "10.0.1",
