@@ -12,6 +12,16 @@
         "snyk"
       ],
       "groupName": "snyk"
+    },
+    {
+      "packageNames": [
+        "node"
+      ],
+      "major": {
+        "enabled": true
+      },
+      "separateMultipleMajor": true,
+      "allowedVersions": "^16"
     }
   ]
 }
