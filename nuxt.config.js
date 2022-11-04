@@ -325,8 +325,12 @@ export default {
   ],
 
   buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/stylelint-module',
+    ...(isDev
+      ? [
+          '@nuxtjs/eslint-module',
+          '@nuxtjs/stylelint-module'
+        ]
+      : []),
     '@nuxt/postcss8',
 
     [
