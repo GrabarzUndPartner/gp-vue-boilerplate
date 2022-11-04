@@ -73,7 +73,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "2.5.0",
     "@nuxtjs/sitemap": "2.4.0",
-    "@snyk/protect": "1.1043.0",
+    "@snyk/protect": "1.1052.0",
     "core-js": "3.26.0",
     "dotenv": "16.0.3",
     "lost": "9.0.1",
