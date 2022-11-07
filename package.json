@@ -41,7 +41,7 @@
     "@nuxtjs/stylelint-module": "4.1.0",
     "commitlint": "17.2.0",
     "compression": "1.7.4",
-    "eslint": "8.26.0",
+    "eslint": "8.27.0",
     "eslint-formatter-json-relative": "0.1.0",
     "eslint-plugin-chai-friendly": "0.7.2",
     "eslint-plugin-json": "3.1.0",
