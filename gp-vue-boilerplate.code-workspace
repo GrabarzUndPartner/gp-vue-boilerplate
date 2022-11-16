@@ -24,6 +24,12 @@
       "vue",
       "html"
     ],
+    "stylelint.validate": [
+      "css",
+      "less",
+      "postcss",
+      "vue"
+    ],
     "files.exclude": {
       ".nuxt/": false,
       ".scannerwork/": true,
@@ -59,9 +65,6 @@
       "@@": "${workspaceRoot}"
     },
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "vetur.format.enable": false,
-    "vetur.format.defaultFormatter.html": "js-beautify-html",
     "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     "workbench.settings.enableNaturalLanguageSearch": false
   },
@@ -69,7 +72,7 @@
     "recommendations": [
       "stylelint.vscode-stylelint",
       "dbaeumer.vscode-eslint",
-      "octref.vetur",
+      "vue.volar",
       "christian-kohler.path-intellisense",
       "pflannery.vscode-versionlens",
       "eamodio.gitlens",
