@@ -4,7 +4,6 @@ import path from 'path';
 import fs from 'fs';
 import nuxtBabelPresetApp from '@nuxt/babel-preset-app';
 import { config } from 'dotenv';
-import postcssPresetEnvImportFrom from './src/globals/postcss/preset-env/importFrom';
 import * as postcssFunctions from './src/globals/postcss/functions';
 import { i18nMessageDe, i18nMessageEn } from './src/globals/locales';
 
@@ -88,51 +87,55 @@ export default {
     },
 
     postcss: {
-      plugins: {
-        'postcss-preset-env': {
-          preserve: true,
-          stage: 0,
-          importFrom: postcssPresetEnvImportFrom,
-          features: {
-            'custom-properties': {
-              disableDeprecationNotice: true
-            },
-            'nesting-rules': true
+      postcssOptions: {
+        plugins: {
+          'postcss-preset-env': {
+            preserve: true,
+            stage: 0,
+            features: {
+              'nesting-rules': true
+            }
+          },
+          '@csstools/postcss-global-data': {
+            files: [
+              path.resolve(__dirname, 'src/globals/postcss/preset-env/custom-media.pcss')
+            ]
+          },
+          'postcss-custom-media': {},
+          'postcss-functions': {
+            functions: postcssFunctions
+          },
+          'postcss-normalize': {},
+          'postcss-momentum-scrolling': [
+            'scroll'
+          ],
+          'rucksack-css': {},
+          '@fullhuman/postcss-purgecss': {
+            content: [
+              'src/pages/**/*.vue',
+              'src/layouts/**/*.vue',
+              'src/components/**/*.vue'
+            ],
+            safelist: [
+              'html', 'body', /nuxt-/
+            ]
+          },
+          lost: {
+            gutter: '15px',
+            flexbox: 'flex',
+            cycle: 'auto'
+          },
+          cssnano: {
+            preset: [
+              'default', {
+                discardDuplicates: false,
+                mergeRules: false
+              }
+            ]
           }
         },
-        'postcss-functions': {
-          functions: postcssFunctions
-        },
-        'postcss-normalize': {},
-        'postcss-momentum-scrolling': [
-          'scroll'
-        ],
-        'rucksack-css': {},
-        '@fullhuman/postcss-purgecss': {
-          content: [
-            'src/pages/**/*.vue',
-            'src/layouts/**/*.vue',
-            'src/components/**/*.vue'
-          ],
-          safelist: [
-            'html', 'body', /nuxt-/
-          ]
-        },
-        lost: {
-          gutter: '15px',
-          flexbox: 'flex',
-          cycle: 'auto'
-        },
-        cssnano: {
-          preset: [
-            'default', {
-              discardDuplicates: false,
-              mergeRules: false
-            }
-          ]
-        }
-      },
-      order: 'cssnanoLast'
+        order: 'cssnanoLast'
+      }
     }
   },
 
@@ -331,7 +334,6 @@ export default {
           '@nuxtjs/stylelint-module'
         ]
       : []),
-    '@nuxt/postcss8',
 
     [
       '@nuxtjs/pwa', {
