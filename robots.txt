@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: 
-Sitemap: https:/grabarzundpartner.github.io/gp-vue-boilerplate/gp-vue-boilerplate/sitemap.xml
