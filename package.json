@@ -71,7 +71,7 @@
     "@nuxtjs/eslint-config": "11.0.0",
     "@nuxtjs/i18n": "7.3.1",
     "@nuxtjs/pwa": "3.3.5",
-    "@nuxtjs/robots": "2.5.0",
+    "@nuxtjs/robots": "3.0.0",
     "@nuxtjs/sitemap": "2.4.0",
     "@snyk/protect": "1.1056.0",
     "core-js": "3.27.2",
