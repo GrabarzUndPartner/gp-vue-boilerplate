@@ -37,7 +37,7 @@
     "@commitlint/cli": "17.5.1",
     "@commitlint/config-conventional": "17.4.4",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
-    "@nuxtjs/eslint-module": "3.1.0",
+    "@nuxtjs/eslint-module": "4.0.2",
     "@nuxtjs/stylelint-module": "4.2.1",
     "commitlint": "17.5.1",
     "compression": "1.7.4",
