@@ -2,7 +2,6 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-recess-order",
-    "stylelint-config-css-modules",
     "stylelint-config-lost"
   ],
   "customSyntax": "postcss-html",
@@ -10,22 +9,7 @@
     "./**/*.js"
   ],
   "rules": {
-    "no-empty-source": null,
-    "rule-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
-    "block-closing-brace-empty-line-before": null,
-    "max-empty-lines": null,
-    "selector-class-pattern": null,
-    "selector-id-pattern": null,
+    "max-line-length": null,
     "no-descending-specificity": null,
     "value-keyword-case": [
       "lower",
@@ -59,6 +43,6 @@
           "v-deep"
         ]
       }
-    ],
+    ]
   }
 }

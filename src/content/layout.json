@@ -6,23 +6,23 @@
         "navigation": [
           {
             "title": "Home",
-            "url": "/"
+            "to": "/"
           },
           {
             "title": "Über uns",
-            "url": "/p/ueber-uns"
+            "to": "/p/ueber-uns"
           },
           {
             "title": "Projekte",
-            "url": "/p/projekte",
+            "to": "/p/projekte",
             "childrens": [
               {
                 "title": "Projekt 1",
-                "url": "/p/projekte/projekt-1"
+                "to": "/p/projekte/projekt-1"
               },
               {
                 "title": "Projekt 2",
-                "url": "/p/projekte/projekt-2"
+                "to": "/p/projekte/projekt-2"
               }
             ]
           }
@@ -35,15 +35,15 @@
         "navigation": [
           {
             "title": "Kontakt",
-            "url": "/p/kontakt"
+            "to": "/p/kontakt"
           },
           {
             "title": "Nutzungsbedingungen",
-            "url": "/p/nutzungsbedingungen"
+            "to": "/p/nutzungsbedingungen"
           },
           {
             "title": "Rechtliche Hinweise",
-            "url": "/p/rechtliche-hinweise"
+            "to": "/p/rechtliche-hinweise"
           }
         ]
       }
@@ -56,23 +56,23 @@
         "navigation": [
           {
             "title": "Home",
-            "url": "index"
+            "to": "index"
           },
           {
             "title": "About",
-            "url": "/p/about"
+            "to": "/p/about"
           },
           {
             "title": "Projects",
-            "url": "/p/projects",
+            "to": "/p/projects",
             "childrens": [
               {
                 "title": "Project 1",
-                "url": "/p/projects/project-1"
+                "to": "/p/projects/project-1"
               },
               {
                 "title": "Project 2",
-                "url": "/p/projects/project-2"
+                "to": "/p/projects/project-2"
               }
             ]
           }
@@ -85,15 +85,15 @@
         "navigation": [
           {
             "title": "Contact",
-            "url": "/p/contact"
+            "to": "/p/contact"
           },
           {
             "title": "Terms of use",
-            "url": "/p/terms"
+            "to": "/p/terms"
           },
           {
             "title": "Legals",
-            "url": "/p/legals"
+            "to": "/p/legals"
           }
         ]
       }

@@ -2,65 +2,50 @@
   <ul
     v-font="$getFont('Raleway')"
     class="molecule-link-list"
-    :class="styleClasses"
-  >
+    :class="styleClasses">
     <slot>
-      <li
-        v-for="(item) in list"
-        :key="item.title"
-      >
-        <atom-link-to :url="getUrl(item)">
+      <li v-for="item in list" :key="item.title">
+        <base-link :to="localePath(item.to)">
           {{ item.title }}
-        </atom-link-to>
+        </base-link>
       </li>
     </slot>
   </ul>
 </template>
 
-<script>
-import AtomLinkTo from '@/components/atoms/LinkTo';
+<script setup>
+import { computed } from 'vue';
+import { useLocalePath } from '#imports';
+import BaseLink from '@/components/base/Link';
+import useFonts from '#speedkit/composables/fonts';
+const { $getFont } = useFonts();
+const localePath = useLocalePath();
 
-export default {
-  components: {
-    AtomLinkTo
-  },
-  props: {
-    type: {
-      type: String,
-      default () {
-        return null;
-      }
-    },
-    list: {
-      type: Array,
-      default () {
-        return [];
-      }
+const props = defineProps({
+  type: {
+    type: String,
+    default() {
+      return null;
     }
   },
-  computed: {
-    styleClasses () {
-      const classes = {};
-      classes[`type--${this.type}`] = this.type;
-      return classes;
-    }
-  },
-  methods: {
-    getUrl (item) {
-      if ('$i18n' in this) {
-        // use when nuxtI18n exists
-        return this.localePath(item.url);
-      } else {
-        return item.url;
-      }
+  list: {
+    type: Array,
+    default() {
+      return [];
     }
   }
-};
+});
+
+const styleClasses = computed(() => {
+  const classes = {};
+  classes[`type-${props.type}`] = props.type;
+  return classes;
+});
 </script>
 
 <style lang="postcss">
 .molecule-link-list {
-  &.type--page-menu-links {
+  &.type-page-menu-links {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -89,7 +74,7 @@ export default {
       }
     }
 
-    @nest .type--page-menu-links & {
+    @nest .type-page-menu-links & {
       line-height: 1;
       text-align: center;
 
@@ -111,7 +96,7 @@ export default {
     }
   }
 
-  &.type--page-footer {
+  &.type-page-footer {
     padding: 0;
     margin: 0;
     list-style: none;

@@ -1,68 +1,55 @@
 <template>
-  <layout-modal
-    class="organism-menu"
-    name="menu"
-    :options="options"
-  >
+  <base-layout-modal class="organism-menu" name="menu" :options="options">
     <nav>
-      <molecule-link-list
-        class="links"
-        type="page-menu-links"
-      >
-        <li
-          v-for="(item) in navigation"
-          :key="item.title"
-        >
-          <atom-link-to :url="localePath(item.url)">
+      <molecule-link-list class="links" type="page-menu-links">
+        <li v-for="item in navigation" :key="item.title">
+          <base-link :to="localePath(item.to)">
             {{ item.title }}
-          </atom-link-to>
+          </base-link>
           <molecule-link-list
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
             class="childs"
-            type="page-menu-links"
-          />
+            type="page-menu-links" />
         </li>
       </molecule-link-list>
     </nav>
     <language-switch class="language-switch" />
-  </layout-modal>
+  </base-layout-modal>
 </template>
 
-<script>
-import LayoutModal from '@/components/layouts/Modal';
+<script setup>
+import { computed } from 'vue';
+import { useLocalePath } from '#imports';
+import BaseLayoutModal from '@/components/base/layout/Modal';
 import MoleculeLinkList from '@/components/molecules/LinkList';
-import AtomLinkTo from '@/components/atoms/LinkTo';
+import BaseLink from '@/components/base/Link';
 import LanguageSwitch from '@/components/molecules/LanguageSwitch';
 
-export default {
-  components: { LayoutModal, AtomLinkTo, MoleculeLinkList, LanguageSwitch },
-  props: {
-    opened: {
-      type: Boolean,
-      default () {
-        return false;
-      }
-    },
-    navigation: {
-      type: Array,
-      default () {
-        return [
-          { title: 'Link 1.', url: '#link-1', target: '_self' },
-          { title: 'Link 2.', url: '#link-2', target: '_self' },
-          { title: 'Link 3.', url: '#link-3', target: '_self' }
-        ];
-      }
+const localePath = useLocalePath();
+
+const props = defineProps({
+  opened: {
+    type: Boolean,
+    default() {
+      return false;
     }
   },
-  computed: {
-    options () {
-      return {
-        opened: this.opened
-      };
+  navigation: {
+    type: Array,
+    default() {
+      return [
+        { title: 'Link 1.', to: '#link-1', target: '_self' },
+        { title: 'Link 2.', to: '#link-2', target: '_self' },
+        { title: 'Link 3.', to: '#link-3', target: '_self' }
+      ];
     }
   }
-};
+});
+
+const options = computed(() => ({
+  opened: props.opened
+}));
 </script>
 
 <style lang="postcss" scoped>

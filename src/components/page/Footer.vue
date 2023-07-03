@@ -1,41 +1,29 @@
 <template>
-  <layout-lost-container
-    class="page-footer"
-    tag="footer"
-  >
+  <base-layout-lost-container class="page-footer" tag="footer">
     <nav>
-      <link-list
-        :list="navigation"
-        type="page-footer"
-      />
+      <link-list :list="navigation" type="page-footer" />
     </nav>
-  </layout-lost-container>
+  </base-layout-lost-container>
 </template>
 
-<script>
-import LayoutLostContainer from '@/components/layouts/LostContainer';
+<script setup>
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 import LinkList from '~/components/molecules/LinkList';
 
-export default {
-  components: {
-    LayoutLostContainer,
-    LinkList
+defineProps({
+  options: {
+    type: Object,
+    default() {
+      return {};
+    }
   },
-  props: {
-    options: {
-      type: Object,
-      default () {
-        return {};
-      }
-    },
-    navigation: {
-      type: Array,
-      default () {
-        return [];
-      }
+  navigation: {
+    type: Array,
+    default() {
+      return [];
     }
   }
-};
+});
 </script>
 
 <style lang="postcss">

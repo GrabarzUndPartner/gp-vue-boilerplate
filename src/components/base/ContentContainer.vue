@@ -1,16 +1,11 @@
 <template>
-  <component
-    :is="currentTag"
-    v-bind="$attrs"
-    :data-debug="debug"
-    v-on="$listeners"
-  >
+  <component :is="currentTag" v-bind="$attrs" :data-debug="debug">
     <slot name="before" />
-    <header v-if="$slots.header || $scopedSlots.header">
+    <header v-if="$slots.header || $slots.header">
       <slot name="header" />
     </header>
     <slot />
-    <footer v-if="$slots.footer || $scopedSlots.footer">
+    <footer v-if="$slots.footer || $slots.footer">
       <slot name="footer" />
     </footer>
     <slot name="after" />
@@ -19,60 +14,60 @@
       class="structure-debug"
       :data-debug-parent-level="parentLevel"
       :data-debug-level="currentLevel"
-      :data-debug-tag="currentTag"
-    />
+      :data-debug-tag="currentTag" />
   </component>
 </template>
 
-<script>
+<script setup>
+import { provide, inject, computed } from 'vue';
+import { useRoute } from '#imports';
 
-export default {
+defineOptions({
+  inheritAttrs: false
+});
 
-  provide () {
-    return {
-      parentLevel: this.currentLevel
-    };
+const props = defineProps({
+  tag: {
+    type: String,
+    default: null
   },
-
-  inject: {
-    parentLevel: {
-      from: 'parentLevel',
-      default: 0
+  tags: {
+    type: Array,
+    default() {
+      return ['article', 'section'];
     }
   },
-
-  inheritAttrs: false,
-
-  props: {
-    tags: {
-      type: Array,
-      default () {
-        return ['article', 'section'];
-      }
+  tagStructure: {
+    type: Array,
+    default() {
+      return ['div', 'main', 'div'];
     }
   },
-  data () {
-    return {
-      debug: false
-    };
-  },
-
-  computed: {
-
-    currentLevel () {
-      return this.parentLevel + 1;
-    },
-
-    currentTag () {
-      return ['div', 'main', 'div'][this.parentLevel] || this.tags[this.currentLevel % this.tags.length];
-    }
-  },
-
-  mounted () {
-    this.debug = 'debug-structure' in this.$route.query;
+  level: {
+    type: Number,
+    default: undefined
   }
+});
 
-};
+const parentLevel = inject('parentLevel', 0);
+
+const route = useRoute();
+
+const debug = computed(() => 'debug-structure' in route.query);
+
+const currentLevel = computed(() => {
+  return props.level !== undefined ? props.level : parentLevel + 1;
+});
+
+const currentTag = computed(() => {
+  return (
+    props.tag ||
+    props.tagStructure[Number(parentLevel)] ||
+    props.tags[currentLevel.value % props.tags.length]
+  );
+});
+
+provide('parentLevel', currentLevel.value);
 </script>
 
 <style lang="postcss" scoped>
@@ -92,10 +87,7 @@ export default {
 
   & .structure-debug {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     z-index: 10000;
     box-sizing: border-box;
     margin: 0;
@@ -103,14 +95,11 @@ export default {
 
     &::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       z-index: 10000;
       box-sizing: border-box;
       pointer-events: none;
-      content: "";
+      content: '';
       border: solid var(--tag-color-bg) 4px;
     }
 
@@ -123,14 +112,14 @@ export default {
       font-weight: bold;
       color: var(--tag-color-fg);
       pointer-events: none;
-      content: attr(data-debug-tag) " - pLevel: " attr(data-debug-parent-level) " - Level: " attr(data-debug-level);
+      content: attr(data-debug-tag) ' - pLevel: ' attr(data-debug-parent-level)
+        ' - Level: ' attr(data-debug-level);
       background: var(--tag-color-bg);
     }
   }
-
 }
 
-.structure-debug[data-debug-tag="article"] {
+.structure-debug[data-debug-tag='article'] {
   --tag-color-fg: var(--color-structure-2-fg);
   --tag-color-bg: var(--color-structure-2-bg);
 
@@ -140,7 +129,7 @@ export default {
   }
 }
 
-.structure-debug[data-debug-tag="section"] {
+.structure-debug[data-debug-tag='section'] {
   --tag-color-fg: var(--color-structure-3-fg);
   --tag-color-bg: var(--color-structure-3-bg);
 
@@ -151,7 +140,18 @@ export default {
   }
 }
 
-.structure-debug[data-debug-tag="main"] {
+.structure-debug[data-debug-tag='nav'] {
+  --tag-color-fg: var(--color-structure-4-fg);
+  --tag-color-bg: var(--color-structure-4-bg);
+
+  &::after {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.structure-debug[data-debug-tag='main'] {
   --tag-color-fg: var(--color-structure-1-fg);
   --tag-color-bg: var(--color-structure-1-bg);
 
@@ -161,7 +161,7 @@ export default {
   }
 }
 
-.structure-debug[data-debug-tag="div"] {
+.structure-debug[data-debug-tag='div'] {
   --tag-color-fg: var(--color-structure-5-fg);
   --tag-color-bg: var(--color-structure-5-bg);
 
@@ -170,5 +170,4 @@ export default {
     left: 0;
   }
 }
-
 </style>

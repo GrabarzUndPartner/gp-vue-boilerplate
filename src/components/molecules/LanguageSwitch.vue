@@ -1,44 +1,47 @@
 <template>
   <molecule-link-list class="molecule-language-switch">
-    <li
-      v-for="language in languages"
-      :key="language.code"
-    >
-      <atom-link-to
-        :url="switchLocalePath(language.code)"
+    <li v-for="language in languages" :key="language.code">
+      <base-link
+        :to="switchLocale(language.code)"
         class="language-switch"
-        :title="language.code"
-      />
+        :title="language.code" />
     </li>
   </molecule-link-list>
 </template>
 
-<script>
-
+<script setup>
+import { computed } from 'vue';
 import MoleculeLinkList from '@/components/molecules/LinkList';
-import AtomLinkTo from '@/components/atoms/LinkTo';
+import BaseLink from '@/components/base/Link';
 
-export default {
-  components: {
-    MoleculeLinkList,
-    AtomLinkTo
-  },
-  props: {
-    filterCurrentLang: {
-      type: Boolean,
-      required: false,
-      default () { return false; }
-    }
-  },
+import { useI18n, useSwitchLocalePath } from '#imports';
 
-  computed: {
-    languages () {
-      return this.$i18n.locales.filter((locale) => {
-        return !this.filterCurrentLang || (this.filterCurrentLang && locale.code !== this.$i18n.locale);
-      });
+const { locale, locales } = useI18n();
+
+const props = defineProps({
+  filterCurrentLang: {
+    type: Boolean,
+    required: false,
+    default() {
+      return false;
     }
   }
+});
+
+// Workaround for dynamic routes
+const switchLocalePath = useSwitchLocalePath();
+const switchLocale = locale => {
+  return switchLocalePath(locale);
 };
+
+const languages = computed(() =>
+  locales.value.filter(({ code }) => {
+    return (
+      !props.filterCurrentLang ||
+      (props.filterCurrentLang && code !== locale.value)
+    );
+  })
+);
 </script>
 
 <style lang="postcss" scoped>
