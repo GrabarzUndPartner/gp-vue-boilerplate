@@ -2,11 +2,11 @@
   "title": "Project 2",
   "routeParams": {
     "en": {
-      "sub": "projects",
+      "page": "projects",
       "child": "project-2"
     },
     "de": {
-      "sub": "projekte",
+      "page": "projekte",
       "child": "projekt-2"
     }
   },

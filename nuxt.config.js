@@ -2,7 +2,7 @@ import path from 'pathe';
 import { defineNuxtConfig } from 'nuxt/config';
 import svgLoader from 'vite-svg-loader';
 import * as postcssFunctions from './src/globals/postcss/functions';
-import { DEFAULT_LANG } from './src/globals/nuxt-18n.mjs';
+import { DEFAULT_LANG } from './src/globals/nuxt-18n.js';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -148,7 +148,7 @@ export default defineNuxtConfig(() => {
       defaultLocale: DEFAULT_LANG,
       strategy: 'prefix_except_default',
       dynamicRouteParams: true,
-      vueI18n: './src/globals/nuxt-18n.mjs'
+      vueI18n: './src/globals/nuxt-18n'
     },
 
     speedkit: {

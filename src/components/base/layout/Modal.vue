@@ -26,7 +26,7 @@ import { computed, watch, onMounted, onUnmounted } from 'vue';
 import BaseLayoutLostContainer from './LostContainer';
 
 import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
-import { useLayoutStore, useModalStore } from '@/stores/layout.mjs';
+import { useLayoutStore, useModalStore } from '@/stores/layout';
 
 const props = defineProps({
   options: {
@@ -164,13 +164,17 @@ function onRouterAfterEach() {
 
 .modal-toggle-enter-active,
 .modal-toggle-leave-active {
-  transition: transform 0.15s ease-out, opacity 0.15s linear;
+  transition:
+    transform 0.15s ease-out,
+    opacity 0.15s linear;
 }
 
 .modal-toggle-enter,
 .modal-toggle-leave-to {
   opacity: 0;
-  transition: transform 0.15s ease-in, opacity 0.15s linear;
+  transition:
+    transform 0.15s ease-in,
+    opacity 0.15s linear;
   transform: scale(0.6);
 }
 </style>

@@ -31,13 +31,14 @@ import speedkitHydrate from '#speedkit/hydrate';
 import BaseContentContainer from '@/components/base/ContentContainer';
 import PageMenuButton from '@/components/page/MenuButton';
 import PageHeader from '@/components/page/Header';
-import { useLayoutStore } from '@/stores/layout.mjs';
+import { useLayoutStore } from '@/stores/layout';
 
 const PageFooter = speedkitHydrate(() => import('@/components/page/Footer'));
 const PageMenu = hydrateOnInteraction(
   defineAsyncComponent(() => import('@/components/page/Menu')),
   ['hydrate']
 );
+
 const preventMenuOpened = ref(false);
 function onClickMenuButton() {
   preventMenuOpened.value = false;

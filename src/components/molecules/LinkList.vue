@@ -74,7 +74,7 @@ const styleClasses = computed(() => {
       }
     }
 
-    @nest .type-page-menu-links & {
+    .type-page-menu-links & {
       line-height: 1;
       text-align: center;
 
