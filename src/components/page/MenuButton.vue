@@ -92,12 +92,16 @@ function onClickMenu() {
   }
 
   & svg g {
-    transition: transform 0.3s linear, opacity 0.3s linear;
+    transition:
+      transform 0.3s linear,
+      opacity 0.3s linear;
     transform-origin: center center;
 
     &:last-child {
       opacity: 0;
-      transition: transform 0.15s linear, opacity 0.15s linear;
+      transition:
+        transform 0.15s linear,
+        opacity 0.15s linear;
       transform: scale(0.4);
     }
   }
@@ -111,7 +115,9 @@ function onClickMenu() {
       & g {
         &:first-child {
           opacity: 0;
-          transition: transform 0.15s linear, opacity 0.15s linear;
+          transition:
+            transform 0.15s linear,
+            opacity 0.15s linear;
           transform: scale(0.4);
         }
 
@@ -126,13 +132,17 @@ function onClickMenu() {
 
 .button-toggle-enter-active,
 .button-toggle-leave-active {
-  transition: transform 0.3s linear, opacity 0.3s linear;
+  transition:
+    transform 0.3s linear,
+    opacity 0.3s linear;
 }
 
 .button-toggle-enter,
 .button-toggle-leave-to {
   opacity: 0;
-  transition: transform 0.15s linear, opacity 0.15s linear;
+  transition:
+    transform 0.15s linear,
+    opacity 0.15s linear;
   transform: scale(0.4);
 }
 </style>

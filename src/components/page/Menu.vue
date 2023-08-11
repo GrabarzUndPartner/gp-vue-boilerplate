@@ -3,9 +3,9 @@
     <nav>
       <molecule-link-list class="links" type="page-menu-links">
         <li v-for="item in navigation" :key="item.title">
-          <base-link :to="localePath(item.to)">
+          <nuxt-link :to="localePath(item.to)">
             {{ item.title }}
-          </base-link>
+          </nuxt-link>
           <molecule-link-list
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
@@ -23,7 +23,6 @@ import { computed } from 'vue';
 import { useLocalePath } from '#imports';
 import BaseLayoutModal from '@/components/base/layout/Modal';
 import MoleculeLinkList from '@/components/molecules/LinkList';
-import BaseLink from '@/components/base/Link';
 import LanguageSwitch from '@/components/molecules/LanguageSwitch';
 
 const localePath = useLocalePath();

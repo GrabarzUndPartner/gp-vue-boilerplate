@@ -5,7 +5,7 @@
     tag="header">
     <template #container>
       <div class="logo">
-        <base-link to="/"> Logo </base-link>
+        <nuxt-link to="/"> Logo </nuxt-link>
       </div>
     </template>
   </base-layout-lost-container>
@@ -15,7 +15,6 @@
 import { computed } from 'vue';
 import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 import { useLayoutStore } from '@/stores/layout';
-import BaseLink from '@/components/base/Link';
 
 const layoutStore = useLayoutStore();
 
@@ -42,7 +41,9 @@ const styleClasses = computed(() => {
   z-index: 100;
   width: 100%;
   margin: 0;
-  transition: transform 0.2s linear, opacity 0.2s linear;
+  transition:
+    transform 0.2s linear,
+    opacity 0.2s linear;
 
   &.sticky {
     position: sticky;

@@ -1,9 +1,6 @@
-import { useRoute, useI18n, queryContent, useNuxtApp } from '#imports';
-import speedkitHydrate from '#speedkit/hydrate';
+import { useRoute, useI18n, queryContent } from '#imports';
 
 export function usePageContent() {
-  registerGlobalComponents();
-
   const route = useRoute();
   const { locale } = useI18n();
 
@@ -22,31 +19,6 @@ export function usePageContent() {
       };
     }
   };
-}
-
-function registerGlobalComponents() {
-  const { vueApp } = useNuxtApp();
-
-  const globalComponents = {
-    StagePicture: speedkitHydrate(() =>
-      import('@/components/modules/StagePicture')
-    ),
-    StageVideo: speedkitHydrate(() =>
-      import('@/components/modules/StageVideo')
-    ),
-    FullText: speedkitHydrate(() => import('@/components/modules/FullText')),
-    TextImage: speedkitHydrate(() => import('@/components/modules/TextImage')),
-    SinglePicture: speedkitHydrate(() =>
-      import('@/components/modules/SinglePicture')
-    ),
-    SingleVideo: speedkitHydrate(() =>
-      import('@/components/modules/SingleVideo')
-    )
-  };
-
-  Object.entries(globalComponents).forEach(([name, component]) => {
-    vueApp.component(name, component);
-  });
 }
 
 function normalizePath(path, locale) {

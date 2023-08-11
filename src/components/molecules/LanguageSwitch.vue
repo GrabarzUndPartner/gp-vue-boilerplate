@@ -1,10 +1,12 @@
 <template>
   <molecule-link-list class="molecule-language-switch">
-    <li v-for="language in languages" :key="language.code">
-      <base-link
-        :to="switchLocale(language.code)"
+    <li v-for="{ code } in languages" :key="code">
+      <nuxt-link
+        :to="switchLocale(code)"
         class="language-switch"
-        :title="language.code" />
+        :title="code"
+        >{{ code }}</nuxt-link
+      >
     </li>
   </molecule-link-list>
 </template>
@@ -12,7 +14,6 @@
 <script setup>
 import { computed } from 'vue';
 import MoleculeLinkList from '@/components/molecules/LinkList';
-import BaseLink from '@/components/base/Link';
 
 import { useI18n, useSwitchLocalePath } from '#imports';
 

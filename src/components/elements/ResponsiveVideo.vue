@@ -58,12 +58,12 @@ const props = defineProps({
       return [
         {
           type: 'video/mp4',
-          src: 'video/9_16/BigBuckBunny_9_16.mp4',
+          src: '/video/9_16/BigBuckBunny_9_16.mp4',
           media: 'all and (max-width:575px)'
         },
         {
           type: 'video/mp4',
-          src: 'video/16_9/BigBuckBunny_16_9.mp4',
+          src: '/video/16_9/BigBuckBunny_16_9.mp4',
           media: 'all and (min-width:576px)'
         }
       ];
