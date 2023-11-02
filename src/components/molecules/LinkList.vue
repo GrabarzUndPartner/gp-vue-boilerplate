@@ -5,7 +5,7 @@
     :class="styleClasses">
     <slot>
       <li v-for="item in list" :key="item.title">
-        <nuxt-link :to="localePath(item.to)">
+        <nuxt-link :to="item.to">
           {{ item.title }}
         </nuxt-link>
       </li>
@@ -15,10 +15,8 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useLocalePath } from '#imports';
 import useFonts from '#speedkit/composables/fonts';
 const { $getFont } = useFonts();
-const localePath = useLocalePath();
 
 const props = defineProps({
   type: {

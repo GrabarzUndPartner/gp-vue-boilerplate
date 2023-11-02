@@ -2,7 +2,6 @@ import path from 'pathe';
 import { defineNuxtConfig } from 'nuxt/config';
 import svgLoader from 'vite-svg-loader';
 import * as postcssFunctions from './src/globals/postcss/functions';
-import { DEFAULT_LANG } from './src/globals/nuxt-18n.js';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -37,25 +36,6 @@ export default defineNuxtConfig(() => {
       port: getPort(),
       host: getHost()
     },
-
-    // server: {
-    //   host: getHost(),
-    //   port: getPort(),
-    //   timing: false,
-    //   https: (function () {
-    //     const dir = './env/cert';
-    //     const key =
-    //       process.env.SERVER_SSL_KEY_PATH || path.join(dir, 'server.key');
-    //     const crt =
-    //       process.env.SERVER_SSL_CRT_PATH || path.join(dir, 'server.crt');
-
-    //     if (fs.existsSync(key) && fs.existsSync(crt)) {
-    //       return { key: fs.readFileSync(key), cert: fs.readFileSync(crt) };
-    //     } else {
-    //       return null;
-    //     }
-    //   })()
-    // },
 
     build: {
       filenames: {
@@ -108,14 +88,14 @@ export default defineNuxtConfig(() => {
         'postcss-normalize': {},
         'postcss-momentum-scrolling': ['scroll'],
         'rucksack-css': {},
-        // '@fullhuman/postcss-purgecss': {
-        //   content: [
-        //     'src/pages/**/*.vue',
-        //     'src/layouts/**/*.vue',
-        //     'src/components/**/*.vue'
-        //   ],
-        //   safelist: ['html', 'body', /nuxt-/]
-        // },
+        '@fullhuman/postcss-purgecss': {
+          content: [
+            'src/pages/**/*.vue',
+            'src/layouts/**/*.vue',
+            'src/components/**/*.vue'
+          ],
+          safelist: ['html', 'body', /nuxt-/]
+        },
         lost: {
           gutter: '15px',
           flexbox: 'flex',
@@ -134,21 +114,31 @@ export default defineNuxtConfig(() => {
       order: 'cssnanoLast'
     },
 
-    i18n: {
-      locales: [
-        {
-          code: 'en',
-          iso: 'en-US'
-        },
-        {
-          code: 'de',
-          iso: 'de-DE'
-        }
+    image: {
+      // The screen sizes predefined by `@nuxt/image`:
+      screens: {
+        default: 320,
+        xxs: 480,
+        xs: 576,
+        sm: 768,
+        md: 996,
+        lg: 1200,
+        xl: 1367,
+        xxl: 1600,
+        '4k': 1921
+      },
+      domains: [
+        'https://picsum.photos',
+        'https://img.youtube.com',
+        'https://i.vimeocdn.com',
+        'https://i.pickadummy.com'
       ],
-      defaultLocale: DEFAULT_LANG,
-      strategy: 'prefix_except_default',
-      dynamicRouteParams: true,
-      vueI18n: './src/globals/nuxt-18n'
+      alias: {
+        picsum: 'https://picsum.photos',
+        youtube: 'https://img.youtube.com',
+        vimeo: 'https://i.vimeocdn.com',
+        pickadummy: 'https://i.pickadummy.com'
+      }
     },
 
     speedkit: {
@@ -252,14 +242,7 @@ export default defineNuxtConfig(() => {
       ]
     },
 
-    modules: [
-      '@pinia/nuxt',
-      'nuxt-speedkit',
-      '@nuxt/content',
-      '@nuxtjs/i18n'
-      // '@/modules/codesandbox',
-      // '@nuxtjs/axios',
-    ],
+    modules: ['@pinia/nuxt', 'nuxt-speedkit', '@nuxt/content'],
 
     buildModules: [
       '@nuxtjs/dotenv',

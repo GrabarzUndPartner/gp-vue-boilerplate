@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { useRoute, useI18n, queryContent, useHead, useNuxtApp } from '#imports';
+import { useRoute, queryContent, useHead, useNuxtApp } from '#imports';
 import BaseContentContainer from '@/components/base/ContentContainer';
 
 import speedkitHydrate from '#speedkit/hydrate';
@@ -25,9 +25,7 @@ import speedkitHydrate from '#speedkit/hydrate';
 registerGlobalComponents();
 
 const route = useRoute();
-const { locale } = useI18n();
-
-const path = normalizePath(route.path, locale.value).replace('/index', '');
+const path = normalizePath(route.path).replace('/index', '');
 const { title, components } = await queryContent(path).findOne();
 
 useHead({

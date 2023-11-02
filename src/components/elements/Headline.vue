@@ -1,6 +1,7 @@
 <template>
   <base-content-headline class="element-headline">
     <slot>
+      {{ isCritical }}
       <span
         v-if="$slots.overline || overline"
         v-font="$getFont('Raleway')"
@@ -33,7 +34,7 @@
 import BaseContentHeadline from '@/components/base/ContentHeadline';
 
 import useFonts from '#speedkit/composables/fonts';
-const { $getFont } = useFonts();
+const { $getFont, isCritical } = useFonts();
 
 defineProps({
   tag: {

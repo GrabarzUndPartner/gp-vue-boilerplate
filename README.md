@@ -35,11 +35,11 @@
 
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1/branch/master?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate/branch/master)
 
-
 ## Description
 
 The Grabarz & Partner Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites with vuejs.
 .
+
 ### Demo
 
 - [website](https://grabarzundpartner.github.io/gp-vue-boilerplate/)
@@ -178,10 +178,10 @@ http://localhost:8050
   - [x] accessible in js
   - [x] accessible in postcss
 - i18n
-  - [x] global language files
-  - [x] page files by language
-  - [x] vue block support
-    - [x] exclusive language reference loader ".lang"
+  - [ ] global language files
+  - [ ] page files by language
+  - [ ] vue block support
+    - [ ] exclusive language reference loader ".lang"
 - PWA
   - [x] module embedded - configurable by nuxt.config.js
 - SEO

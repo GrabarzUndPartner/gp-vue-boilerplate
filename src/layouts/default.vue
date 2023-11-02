@@ -1,22 +1,20 @@
 <template>
   <base-content-container>
     <template #before>
-      <page-header
-        v-bind="layoutData[$i18n.locale].components.pageHeader"
-        sticky />
+      <page-header v-bind="layoutData.components.pageHeader" sticky />
     </template>
     <template #default>
       <page-menu
         class="page-menu"
-        v-bind="layoutData[$i18n.locale].components.pageMenu"
+        v-bind="layoutData.components.pageMenu"
         :opened="!preventMenuOpened" />
       <page-menu-button
-        v-bind="layoutData[$i18n.locale].components.pageMenuButton"
+        v-bind="layoutData.components.pageMenuButton"
         @click="onClickMenuButton" />
       <slot />
     </template>
     <template #after>
-      <page-footer v-bind="layoutData[$i18n.locale].components.pageFooter" />
+      <page-footer v-bind="layoutData.components.pageFooter" />
     </template>
   </base-content-container>
 </template>
@@ -24,7 +22,7 @@
 <script setup>
 import { hydrateOnInteraction } from 'vue3-lazy-hydration';
 import { ref, defineAsyncComponent } from 'vue';
-import { useHead, useLocaleHead, onMounted, onUnmounted } from '#imports';
+import { onMounted, onUnmounted } from '#imports';
 import layoutData from '@/content/layout.json';
 
 import speedkitHydrate from '#speedkit/hydrate';
@@ -40,6 +38,7 @@ const PageMenu = hydrateOnInteraction(
 );
 
 const preventMenuOpened = ref(false);
+
 function onClickMenuButton() {
   preventMenuOpened.value = false;
   document
@@ -71,15 +70,6 @@ function onDirectionChange(value, reset = false) {
     layoutStore.toggleScrollDirection(value > 0);
   }
 }
-
-const i18nHead = useLocaleHead();
-useHead({
-  htmlAttrs: {
-    lang: i18nHead.value.htmlAttrs?.lang
-  },
-  link: [...(i18nHead.value.link || [])],
-  meta: [...(i18nHead.value.meta || [])]
-});
 </script>
 
 <style lang="postcss">

@@ -20,7 +20,8 @@
 </template>
 
 <script setup>
-import { nextTick, ref, computed, onMounted } from '#imports';
+import { joinURL } from 'ufo';
+import { nextTick, ref, computed, onMounted, useRuntimeConfig } from '#imports';
 import SpeedkitPicture from '#speedkit/components/SpeedkitPicture';
 import SvgIconPlay from '@/assets/svg/icons/play.svg';
 
@@ -140,11 +141,23 @@ const styleClasses = computed(() => {
   };
 });
 
+const preparedSources = computed(() => {
+  return props.sources.map(source => {
+    let src = source.src;
+
+    if (/^\/[^/]+/.test(src)) {
+      src = joinURL(useRuntimeConfig().app.baseURL, src);
+    }
+
+    return { ...source, src };
+  });
+});
+
 const filteredSources = computed(() => {
   if (isServer.value) {
     return [];
   }
-  return props.sources.filter(source => isMedia(source.media));
+  return preparedSources.value.filter(source => isMedia(source.media));
 });
 
 const videoRef = ref(null);

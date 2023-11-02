@@ -1,5 +1,6 @@
 <template>
   <base-content-container class="content">
+    <div>{{ $route.path }}</div>
     <component
       :is="item.component"
       v-for="(item, index) in components.slice(0, 1)"
@@ -17,16 +18,13 @@
 </template>
 
 <script setup>
-import { useHead, usePageContent, definePageMeta } from '#imports';
-
+import { useRoute, useHead, usePageContent } from '#imports';
+const $route = useRoute();
 const { fetch } = usePageContent();
 const { components, pageMeta } = await fetch();
 
 useHead({
+  test: $route.path,
   title: () => pageMeta.title
-});
-
-definePageMeta({
-  nuxtI18n: () => pageMeta.nuxtI18n
 });
 </script>

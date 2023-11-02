@@ -5,8 +5,10 @@
 </template>
 
 <script setup>
+import useCritical from '#speedkit/composables/fonts';
 import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 import MoleculeContent from '@/components/molecules/Content';
+useCritical();
 
 defineProps({
   article: {

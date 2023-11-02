@@ -3,7 +3,7 @@
     <nav>
       <molecule-link-list class="links" type="page-menu-links">
         <li v-for="item in navigation" :key="item.title">
-          <nuxt-link :to="localePath(item.to)">
+          <nuxt-link :to="item.to">
             {{ item.title }}
           </nuxt-link>
           <molecule-link-list
@@ -14,18 +14,24 @@
         </li>
       </molecule-link-list>
     </nav>
-    <language-switch class="language-switch" />
   </base-layout-modal>
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useLocalePath } from '#imports';
+import { computed, watch } from 'vue';
+import { useRoute } from '#imports';
 import BaseLayoutModal from '@/components/base/layout/Modal';
 import MoleculeLinkList from '@/components/molecules/LinkList';
-import LanguageSwitch from '@/components/molecules/LanguageSwitch';
+import { useModalStore } from '@/stores/layout';
+const modalStore = useModalStore();
 
-const localePath = useLocalePath();
+const $route = useRoute();
+watch(
+  () => $route.path,
+  () => {
+    modalStore.closeModal({ name: 'menu' });
+  }
+);
 
 const props = defineProps({
   opened: {

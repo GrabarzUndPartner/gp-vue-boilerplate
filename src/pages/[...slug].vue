@@ -11,13 +11,14 @@
         :is="item.component"
         v-for="(item, index) in components.slice(1)"
         :key="index"
+        :critical="index < 1"
         v-bind="item.data" />
     </base-content-container>
   </base-content-container>
 </template>
 
 <script setup>
-import { useRoute, useHead, usePageContent } from '#imports';
+import { useHead, usePageContent } from '#imports';
 
 const { fetch } = usePageContent();
 const { components, pageMeta } = await fetch();
@@ -25,10 +26,4 @@ const { components, pageMeta } = await fetch();
 useHead({
   title: () => pageMeta.title
 });
-
-const route = useRoute();
-
-if (pageMeta?.nuxtI18n) {
-  route.meta.nuxtI18n = pageMeta?.nuxtI18n;
-}
 </script>

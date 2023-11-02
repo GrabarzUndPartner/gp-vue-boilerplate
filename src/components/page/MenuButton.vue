@@ -54,11 +54,11 @@ function onClickMenu() {
   cursor: pointer;
   user-select: none;
   background: rgb(255 255 255 / 60%);
+  backdrop-filter: blur(2px);
   border: none;
   border-radius: 50%;
   outline: none;
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
-  backdrop-filter: blur(2px);
   -webkit-tap-highlight-color: transparent;
 
   @media (--xs) {

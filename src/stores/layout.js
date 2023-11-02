@@ -36,6 +36,15 @@ export const useModalStore = defineStore('modal', () => {
   const unregisterModal = name => {
     modals.value.splice(modals.value.indexOf(_getModal(modals, name)), 1);
   };
+  const closeModal = ({ name }) => {
+    const modal = _getModal(modals, name);
+    if (modal) {
+      modal.opened = false;
+    }
+    layoutStore.togglePreventScrolling(
+      !!modals.value.find(modal => modal.opened)
+    );
+  };
   const toggleModal = ({ name, flag }) => {
     const modal = _getModal(modals, name);
     if (modal) {
@@ -57,7 +66,8 @@ export const useModalStore = defineStore('modal', () => {
     getModal,
     registerModal,
     unregisterModal,
-    toggleModal
+    toggleModal,
+    closeModal
   };
 });
 
