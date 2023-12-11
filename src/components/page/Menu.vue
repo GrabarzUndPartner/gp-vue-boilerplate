@@ -10,7 +10,8 @@
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
             class="childs"
-            type="page-menu-links" />
+            type="page-menu-links"
+          />
         </li>
       </molecule-link-list>
     </nav>

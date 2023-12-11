@@ -5,19 +5,19 @@ export default defineNuxtPlugin(nuxtApp => {
   const { vueApp } = nuxtApp;
 
   const globalComponents = {
-    StagePicture: speedkitHydrate(() =>
-      import('@/components/modules/StagePicture')
+    StagePicture: speedkitHydrate(
+      () => import('@/components/modules/StagePicture')
     ),
-    StageVideo: speedkitHydrate(() =>
-      import('@/components/modules/StageVideo')
+    StageVideo: speedkitHydrate(
+      () => import('@/components/modules/StageVideo')
     ),
     FullText: speedkitHydrate(() => import('@/components/modules/FullText')),
     TextImage: speedkitHydrate(() => import('@/components/modules/TextImage')),
-    SinglePicture: speedkitHydrate(() =>
-      import('@/components/modules/SinglePicture')
+    SinglePicture: speedkitHydrate(
+      () => import('@/components/modules/SinglePicture')
     ),
-    SingleVideo: speedkitHydrate(() =>
-      import('@/components/modules/SingleVideo')
+    SingleVideo: speedkitHydrate(
+      () => import('@/components/modules/SingleVideo')
     )
   };
 

@@ -2,7 +2,8 @@
   <component
     :is="tag || `h${contextLevel}`"
     v-bind="$attrs"
-    :data-debug="debug">
+    :data-debug="debug"
+  >
     <slot />
     <pre v-if="debug" :data-debug-context-level="contextLevel" />
   </component>

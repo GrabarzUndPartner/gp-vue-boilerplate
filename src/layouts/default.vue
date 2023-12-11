@@ -7,10 +7,12 @@
       <page-menu
         class="page-menu"
         v-bind="layoutData.components.pageMenu"
-        :opened="!preventMenuOpened" />
+        :opened="!preventMenuOpened"
+      />
       <page-menu-button
         v-bind="layoutData.components.pageMenuButton"
-        @click="onClickMenuButton" />
+        @click="onClickMenuButton"
+      />
       <slot />
     </template>
     <template #after>

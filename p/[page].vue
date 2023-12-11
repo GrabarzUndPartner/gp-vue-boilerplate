@@ -6,13 +6,15 @@
       v-for="(item, index) in components.slice(0, 1)"
       :key="index"
       v-bind="item.data"
-      critical />
+      critical
+    />
     <base-content-container>
       <component
         :is="item.component"
         v-for="(item, index) in components.slice(1)"
         :key="index"
-        v-bind="item.data" />
+        v-bind="item.data"
+      />
     </base-content-container>
   </base-content-container>
 </template>

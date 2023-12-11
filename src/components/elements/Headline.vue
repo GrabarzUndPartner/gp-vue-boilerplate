@@ -5,7 +5,8 @@
       <span
         v-if="$slots.overline || overline"
         v-font="$getFont('Raleway')"
-        class="overline">
+        class="overline"
+      >
         <slot name="overline-slot">
           {{ overline }}
         </slot>
@@ -13,7 +14,8 @@
       <span
         v-if="$slots.headline || headline"
         v-font="$getFont('Roboto Slab', 700)"
-        class="headline">
+        class="headline"
+      >
         <slot name="headline-slot">
           {{ headline }}
         </slot>
@@ -21,7 +23,8 @@
       <span
         v-if="$slots.subline || subline"
         v-font="$getFont('Raleway', 700)"
-        class="subline">
+        class="subline"
+      >
         <slot name="subline-slot">
           {{ subline }}
         </slot>

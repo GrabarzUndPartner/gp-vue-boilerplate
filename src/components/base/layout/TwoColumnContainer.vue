@@ -2,7 +2,8 @@
   <base-layout-lost-container
     class="layout-two-column-container"
     :class="styleClasses"
-    :visible="options.visible">
+    :visible="options.visible"
+  >
     <template #background>
       <slot name="background" />
     </template>

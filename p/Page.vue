@@ -5,13 +5,15 @@
       v-for="(item, index) in components.slice(0, 1)"
       :key="index"
       v-bind="item.data"
-      critical />
+      critical
+    />
     <base-content-container>
       <component
         :is="item.component"
         v-for="(item, index) in components.slice(1)"
         :key="index"
-        v-bind="item.data" />
+        v-bind="item.data"
+      />
     </base-content-container>
   </base-content-container>
 </template>
@@ -36,19 +38,19 @@ function registerGlobalComponents() {
   const { vueApp } = useNuxtApp();
 
   const globalComponents = {
-    StagePicture: speedkitHydrate(() =>
-      import('@/components/modules/StagePicture')
+    StagePicture: speedkitHydrate(
+      () => import('@/components/modules/StagePicture')
     ),
-    StageVideo: speedkitHydrate(() =>
-      import('@/components/modules/StageVideo')
+    StageVideo: speedkitHydrate(
+      () => import('@/components/modules/StageVideo')
     ),
     FullText: speedkitHydrate(() => import('@/components/modules/FullText')),
     TextImage: speedkitHydrate(() => import('@/components/modules/TextImage')),
-    SinglePicture: speedkitHydrate(() =>
-      import('@/components/modules/SinglePicture')
+    SinglePicture: speedkitHydrate(
+      () => import('@/components/modules/SinglePicture')
     ),
-    SingleVideo: speedkitHydrate(() =>
-      import('@/components/modules/SingleVideo')
+    SingleVideo: speedkitHydrate(
+      () => import('@/components/modules/SingleVideo')
     )
   };
 

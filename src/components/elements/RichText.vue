@@ -5,7 +5,8 @@
       $getFont('Raleway', 700, 'normal', { selector: 'strong' }),
       $getFont('Raleway', 400, 'italic', { selector: 'em' })
     ]"
-    class="element-rich-text">
+    class="element-rich-text"
+  >
     <div v-if="!$slots.default" v-html="content" />
     <slot />
   </div>

@@ -5,7 +5,8 @@
       class="page-menu-button"
       :class="{ selected: isMenuOpened }"
       :aria-label="label"
-      @click="onClickMenu">
+      @click="onClickMenu"
+    >
       <i>
         <svg-icon-menu-close />
       </i>

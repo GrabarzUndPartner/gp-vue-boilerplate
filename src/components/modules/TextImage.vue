@@ -2,13 +2,15 @@
   <base-content-container>
     <base-layout-two-column-container
       class="organism-text-image"
-      :mirror="mirror">
+      :mirror="mirror"
+    >
       <template #left>
         <speedkit-picture v-bind="picture" />
       </template>
       <template #right>
         <molecule-content
-          v-bind="{ headline: { overline, headline, subline }, content }" />
+          v-bind="{ headline: { overline, headline, subline }, content }"
+        />
       </template>
     </base-layout-two-column-container>
   </base-content-container>

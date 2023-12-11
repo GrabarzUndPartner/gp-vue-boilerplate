@@ -5,11 +5,13 @@
         ref="videoRef"
         v-bind="videoAttributes"
         @play="onPlay"
-        @pause="onPause">
+        @pause="onPause"
+      >
         <source
           v-for="(source, index) in filteredSources"
           :key="index"
-          v-bind="source" />
+          v-bind="source"
+        />
       </video>
     </client-only>
     <speedkit-picture v-bind="poster" class="poster" />

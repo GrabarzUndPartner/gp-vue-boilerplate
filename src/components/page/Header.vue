@@ -2,7 +2,8 @@
   <base-layout-lost-container
     class="page-header"
     :class="styleClasses"
-    tag="header">
+    tag="header"
+  >
     <template #container>
       <div class="logo">
         <nuxt-link to="/"> Logo </nuxt-link>

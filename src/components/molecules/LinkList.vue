@@ -2,7 +2,8 @@
   <ul
     v-font="$getFont('Raleway')"
     class="molecule-link-list"
-    :class="styleClasses">
+    :class="styleClasses"
+  >
     <slot>
       <li v-for="item in list" :key="item.title">
         <nuxt-link :to="item.to">

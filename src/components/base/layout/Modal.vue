@@ -3,7 +3,8 @@
     <base-layout-lost-container
       v-show="opened"
       class="layout-modal"
-      :class="styleClasses">
+      :class="styleClasses"
+    >
       <template #container>
         <div class="lost-flex-container">
           <button v-if="closeButton" class="close" @click="close">

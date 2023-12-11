@@ -14,7 +14,8 @@
       class="structure-debug"
       :data-debug-parent-level="parentLevel"
       :data-debug-level="currentLevel"
-      :data-debug-tag="currentTag" />
+      :data-debug-tag="currentTag"
+    />
   </component>
 </template>
 
