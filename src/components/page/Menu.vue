@@ -29,9 +29,7 @@ const modalStore = useModalStore();
 const $route = useRoute();
 watch(
   () => $route.path,
-  () => {
-    modalStore.closeModal({ name: 'menu' });
-  }
+  () => modalStore.closeModal({ name: 'menu' })
 );
 
 const props = defineProps({

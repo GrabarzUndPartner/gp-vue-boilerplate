@@ -1,15 +1,10 @@
 {
-  "vueCompilerOptions": {
-    "target": 2.7
-  },
+  "extends": ".nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "es2015",
-    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ],
       "@@/*": [
         "./*"
