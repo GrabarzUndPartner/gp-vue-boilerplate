@@ -77,7 +77,7 @@
     "core-js": "3.30.2",
     "dotenv": "16.0.3",
     "lost": "9.0.1",
-    "nuxt": "2.16.3",
+    "nuxt": "3.11.2",
     "nuxt-polyfill": "1.0.3",
     "nuxt-speedkit": "2.2.0",
     "postcss-custom-media": "9.1.3",
