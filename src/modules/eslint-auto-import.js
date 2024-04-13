@@ -2,31 +2,27 @@ import { basename, resolve } from 'pathe';
 import { useLogger, addTemplate, defineNuxtModule } from '@nuxt/kit';
 
 /**
- * Generated file must be specified as `extends` in the eslint config.
+ * Generated file must be specified as `config` in the eslint config.
  *
- * File: .eslintrc
- * {
- *   "extends": [
- *     "./.nuxt/.eslint.globals.json"
- *   ]
- * }
+ * File: eslint.config.js
+ * import eslintGlobals from './.nuxt/.eslint.globals.mjs';
  */
 
 export default defineNuxtModule({
   defaults: {
-    filename: '.eslint.globals.json',
+    filename: '.eslint.globals.mjs',
     global: [
       '$fetch',
       'useCloneDeep',
       'defineNuxtConfig',
       'definePageMeta',
       'defineI18nConfig'
-    ]
+    ],
+    files: ['**/*.js', '**/*.vue']
   },
   setup(moduleOptions, nuxt) {
     const logger = useLogger('eslint-auto-import');
 
-    const padding = ' '.repeat(4);
     const autoImports = {
       global: moduleOptions.global
     };
@@ -55,19 +51,25 @@ export default defineNuxtModule({
       const fullPath = resolve(outDir, filename);
 
       const getContents = () => {
-        let contents = '';
-        contents += '{\n';
-        contents += '  "globals": {';
+        const variables = [];
         for (const autoImport in autoImports) {
           autoImports[String(autoImport)].forEach(imp => {
-            contents += '\n' + `${padding}"${imp}": "readonly",`;
+            variables.push([imp, 'readonly']);
           });
         }
-        contents = `${contents.slice(0, -1)}\n`;
-        contents += '  }\n';
-        contents += '}\n';
-
-        return contents;
+        return (
+          'export default ' +
+          JSON.stringify(
+            {
+              languageOptions: {
+                globals: Object.fromEntries(variables)
+              },
+              files: moduleOptions.files
+            },
+            null,
+            2
+          )
+        );
       };
 
       addTemplate({

@@ -1,6 +1,5 @@
 import speedkitHydrate from '#speedkit/hydrate';
 
-// eslint-disable-next-line no-undef
 export default defineNuxtPlugin(nuxtApp => {
   const { vueApp } = nuxtApp;
 
