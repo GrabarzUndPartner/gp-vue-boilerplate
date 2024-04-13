@@ -28,7 +28,7 @@
     "lint:css": "stylelint \"src/**/*.vue\"",
     "audit": "npm audit --json | npx npm-audit-html --output .reports/audit.html",
     "semantic-release": "semantic-release",
-    "prepare": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect && nuxt prepare",
     "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
