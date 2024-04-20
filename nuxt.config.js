@@ -141,7 +141,7 @@ export default defineNuxtConfig(() => {
       }
     },
 
-    speedkit: {
+    booster: {
       fonts: [
         {
           family: 'Raleway',
@@ -242,7 +242,13 @@ export default defineNuxtConfig(() => {
       ]
     },
 
-    modules: ['@pinia/nuxt', 'nuxt-speedkit', '@nuxt/content'],
+    eslint: {
+      config: {
+        typescript: false
+      }
+    },
+
+    modules: ['@nuxt/eslint', '@pinia/nuxt', 'nuxt-booster', '@nuxt/content'],
 
     buildModules: [
       '@nuxtjs/dotenv',

@@ -16,8 +16,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import useFonts from '#speedkit/composables/fonts';
-const { $getFont } = useFonts();
+const { $getFont } = useBoosterFonts();
 
 const props = defineProps({
   type: {

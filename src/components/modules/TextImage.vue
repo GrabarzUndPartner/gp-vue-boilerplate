@@ -5,7 +5,7 @@
       :mirror="mirror"
     >
       <template #left>
-        <speedkit-picture v-bind="picture" />
+        <booster-picture v-bind="picture" />
       </template>
       <template #right>
         <molecule-content
@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import SpeedkitPicture from '#speedkit/components/SpeedkitPicture';
+import BoosterPicture from '#booster/components/BoosterPicture';
 import BaseContentContainer from '@/components/base/ContentContainer';
 import BaseLayoutTwoColumnContainer from '@/components/base/layout/TwoColumnContainer';
 import MoleculeContent from '@/components/molecules/Content';

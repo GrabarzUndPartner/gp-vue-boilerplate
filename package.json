@@ -35,7 +35,9 @@
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
+    "@nuxt/eslint": "^0.3.8",
     "@nuxt/eslint-config": "^0.3.6",
+    "@snyk/protect": "1.1288.0",
     "commitlint": "19.2.1",
     "eslint": "9.0.0",
     "eslint-config-prettier": "9.1.0",
@@ -51,8 +53,7 @@
     "stylelint-config-css-modules": "4.4.0",
     "stylelint-config-lost": "0.0.3",
     "stylelint-config-recess-order": "5.0.0",
-    "stylelint-config-standard": "^36.0.0",
-    "@snyk/protect": "1.1288.0"
+    "stylelint-config-standard": "^36.0.0"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "2.1.1",
@@ -64,7 +65,7 @@
     "@pinia/nuxt": "0.5.1",
     "lost": "9.0.2",
     "nuxt": "3.11.2",
-    "nuxt-speedkit": "^3.0.0-next.50",
+    "nuxt-booster": "^3.0.0",
     "pathe": "1.1.2",
     "pinia": "2.1.7",
     "postcss-custom-media": "10.0.4",

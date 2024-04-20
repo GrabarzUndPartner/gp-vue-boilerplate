@@ -1,13 +1,13 @@
 <template>
   <base-layout-lost-container class="organism-picture">
     <template #container>
-      <speedkit-picture v-bind="picture" />
+      <booster-picture v-bind="picture" />
     </template>
   </base-layout-lost-container>
 </template>
 
 <script setup>
-import SpeedkitPicture from '#speedkit/components/SpeedkitPicture';
+import BoosterPicture from '#booster/components/BoosterPicture';
 import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 
 defineProps({

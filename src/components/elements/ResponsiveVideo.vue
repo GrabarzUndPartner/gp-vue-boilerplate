@@ -14,7 +14,7 @@
         />
       </video>
     </client-only>
-    <speedkit-picture v-bind="poster" class="poster" />
+    <booster-picture v-bind="poster" class="poster" />
     <span v-if="!autoplay" class="play-button" @click="onClickPlayButton"
       ><svg-icon-play
     /></span>
@@ -24,7 +24,7 @@
 <script setup>
 import { joinURL } from 'ufo';
 import { nextTick, ref, computed, onMounted, useRuntimeConfig } from '#imports';
-import SpeedkitPicture from '#speedkit/components/SpeedkitPicture';
+import BoosterPicture from '#booster/components/BoosterPicture';
 import SvgIconPlay from '@/assets/svg/icons/play.svg';
 
 const props = defineProps({

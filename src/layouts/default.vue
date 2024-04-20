@@ -27,13 +27,13 @@ import { ref, defineAsyncComponent } from 'vue';
 import { onMounted, onUnmounted } from '#imports';
 import layoutData from '@/content/layout.json';
 
-import speedkitHydrate from '#speedkit/hydrate';
+import boosterHydrate from '#booster/hydrate';
 import BaseContentContainer from '@/components/base/ContentContainer';
 import PageMenuButton from '@/components/page/MenuButton';
 import PageHeader from '@/components/page/Header';
 import { useLayoutStore } from '@/stores/layout';
 
-const PageFooter = speedkitHydrate(() => import('@/components/page/Footer'));
+const PageFooter = boosterHydrate(() => import('@/components/page/Footer'));
 const PageMenu = hydrateOnInteraction(
   defineAsyncComponent(() => import('@/components/page/Menu')),
   ['hydrate']

@@ -1,6 +1,6 @@
 <template>
   <base-content-container class="organism-stage-picture">
-    <speedkit-picture v-bind="picture" />
+    <booster-picture v-bind="picture" />
     <base-layout-lost-container>
       <base-content-headline class="headline">
         {{ headline }}
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import SpeedkitPicture from '#speedkit/components/SpeedkitPicture';
+import BoosterPicture from '#booster/components/BoosterPicture';
 import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 import BaseContentHeadline from '@/components/base/ContentHeadline';
 import BaseContentContainer from '@/components/base/ContentContainer';

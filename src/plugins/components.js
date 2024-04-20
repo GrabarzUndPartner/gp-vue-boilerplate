@@ -1,21 +1,19 @@
-import speedkitHydrate from '#speedkit/hydrate';
+import boosterHydrate from '#booster/hydrate';
 
 export default defineNuxtPlugin(nuxtApp => {
   const { vueApp } = nuxtApp;
 
   const globalComponents = {
-    StagePicture: speedkitHydrate(
+    StagePicture: boosterHydrate(
       () => import('@/components/modules/StagePicture')
     ),
-    StageVideo: speedkitHydrate(
-      () => import('@/components/modules/StageVideo')
-    ),
-    FullText: speedkitHydrate(() => import('@/components/modules/FullText')),
-    TextImage: speedkitHydrate(() => import('@/components/modules/TextImage')),
-    SinglePicture: speedkitHydrate(
+    StageVideo: boosterHydrate(() => import('@/components/modules/StageVideo')),
+    FullText: boosterHydrate(() => import('@/components/modules/FullText')),
+    TextImage: boosterHydrate(() => import('@/components/modules/TextImage')),
+    SinglePicture: boosterHydrate(
       () => import('@/components/modules/SinglePicture')
     ),
-    SingleVideo: speedkitHydrate(
+    SingleVideo: boosterHydrate(
       () => import('@/components/modules/SingleVideo')
     )
   };

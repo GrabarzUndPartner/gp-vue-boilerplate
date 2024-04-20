@@ -34,9 +34,7 @@
 
 <script setup>
 import BaseContentHeadline from '@/components/base/ContentHeadline';
-
-import useFonts from '#speedkit/composables/fonts';
-const { $getFont } = useFonts();
+const { $getFont } = useBoosterFonts();
 
 defineProps({
   tag: {

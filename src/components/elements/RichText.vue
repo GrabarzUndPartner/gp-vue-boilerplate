@@ -13,8 +13,7 @@
 </template>
 
 <script setup>
-import useFonts from '#speedkit/composables/fonts';
-const { $getFont } = useFonts();
+const { $getFont } = useBoosterFonts();
 
 defineProps({
   content: {
