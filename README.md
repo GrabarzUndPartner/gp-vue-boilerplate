@@ -74,4 +74,4 @@ npm run dev
 npm run generate
 ```
 
-For more information go to official [Nuxt Documentation](#).
+For more information go to official [Nuxt Documentation](https://nuxt.com/docs/getting-started/introduction).
