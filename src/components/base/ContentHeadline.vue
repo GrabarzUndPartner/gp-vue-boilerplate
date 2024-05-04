@@ -1,62 +1,41 @@
 <template>
   <component
     :is="tag || `h${contextLevel}`"
-    v-font="font"
     v-bind="$attrs"
     :data-debug="debug"
-    v-on="$listeners"
   >
     <slot />
     <pre v-if="debug" :data-debug-context-level="contextLevel" />
   </component>
 </template>
 
-<script>
+<script setup>
+import { inject, computed } from 'vue';
+import { useRoute } from '#imports';
+const parentLevel = inject('parentLevel', 1);
 
-export default {
+const contextLevel = computed(() => {
+  return getMax((parentLevel - (parentLevel % 2)) / 2);
+});
 
-  inject: {
-    parentLevel: {
-      from: 'parentLevel',
-      default: 1
-    }
-  },
+const route = useRoute();
 
-  inheritAttrs: false,
+const debug = computed(() => 'debug-headline' in route.query);
 
-  props: {
-    tag: {
-      type: String,
-      default: null
-    },
-    font: {
-      type: [Object, Array],
-      default () {
-        return [];
-      }
-    }
-  },
-
-  data () {
-    return { debug: false };
-  },
-
-  computed: {
-    contextLevel () {
-      return getMax((this.parentLevel - (this.parentLevel % 2)) / 2);
-    }
-  },
-
-  mounted () {
-    this.debug = 'debug-headline' in this.$route.query;
+defineProps({
+  tag: {
+    type: String,
+    default: null
   }
+});
 
-};
+defineOptions({
+  inheritAttrs: false
+});
 
-function getMax (number) {
+function getMax(number) {
   return Math.max(1, Math.min(number, 6));
 }
-
 </script>
 
 <style lang="postcss" scoped>
@@ -69,10 +48,7 @@ function getMax (number) {
 
   & pre {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     z-index: 10000;
     margin: 0;
     font-family: monospace;
@@ -80,13 +56,10 @@ function getMax (number) {
 
     &::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       box-sizing: border-box;
       pointer-events: none;
-      content: "";
+      content: '';
       border: dotted #333 2px;
     }
 
@@ -99,7 +72,7 @@ function getMax (number) {
       font-size: 13px;
       color: white;
       letter-spacing: 0.1em;
-      content: "H" attr(data-debug-context-level);
+      content: 'H' attr(data-debug-context-level);
       background: #333;
     }
   }

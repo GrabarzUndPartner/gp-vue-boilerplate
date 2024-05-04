@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "./node_modules/nuxt-booster"
     }
   ],
   "settings": {
@@ -15,9 +18,8 @@
     "editor.minimap.showSlider": "always",
     "editor.smoothScrolling": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     },
-    "eslint.alwaysShowStatus": true,
     "eslint.validate": [
       "javascript",
       "javascriptreact",
@@ -64,7 +66,6 @@
       "@": "${workspaceRoot}/src",
       "@@": "${workspaceRoot}"
     },
-    "telemetry.enableCrashReporter": false,
     "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     "workbench.settings.enableNaturalLanguageSearch": false
   },

@@ -1,42 +1,37 @@
 <template>
-  <layout-lost-container
+  <base-layout-lost-container
     class="page-header"
     :class="styleClasses"
     tag="header"
   >
-    <template slot="container">
+    <template #container>
       <div class="logo">
-        <atom-link-to url="/">
-          Logo
-        </atom-link-to>
+        <nuxt-link to="/"> Logo </nuxt-link>
       </div>
     </template>
-  </layout-lost-container>
+  </base-layout-lost-container>
 </template>
 
-<script>
-import LayoutLostContainer from '@/components/layouts/LostContainer';
-import AtomLinkTo from '@/components/atoms/LinkTo';
-export default {
-  components: { LayoutLostContainer, AtomLinkTo },
-  props: {
-    sticky: {
-      type: Boolean,
-      required: false
-    }
-  },
-  computed: {
-    styleClasses () {
-      return { 'js--toggle': this.toggleDirection, sticky: this.sticky };
-    },
-    isMenuOpened () {
-      return this.$store.getters['layout/isModelOpened']('menu');
-    },
-    toggleDirection () {
-      return this.$store.getters['layout/toggleDirection'];
-    }
+<script setup>
+import { computed } from 'vue';
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
+import { useLayoutStore } from '@/stores/layout';
+
+const layoutStore = useLayoutStore();
+
+const props = defineProps({
+  sticky: {
+    type: Boolean,
+    required: false
   }
-};
+});
+
+const scrollDirection = computed(() => {
+  return layoutStore.scrollDirection;
+});
+const styleClasses = computed(() => {
+  return { toggle: scrollDirection.value, sticky: props.sticky };
+});
 </script>
 
 <style lang="postcss" scoped>
@@ -47,13 +42,15 @@ export default {
   z-index: 100;
   width: 100%;
   margin: 0;
-  transition: transform 0.2s linear, opacity 0.2s linear;
+  transition:
+    transform 0.2s linear,
+    opacity 0.2s linear;
 
   &.sticky {
     position: sticky;
   }
 
-  &.js--toggle {
+  &.toggle {
     opacity: 0;
     transform: translateY(-60%);
   }

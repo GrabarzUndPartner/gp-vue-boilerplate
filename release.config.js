@@ -1,10 +1,7 @@
-
 const args = process.argv
   .slice(2)
   .map(arg => arg.split('='))
-  .reduce((args, [
-    value, key
-  ]) => {
+  .reduce((args, [value, key]) => {
     args[String(value).replace(/-/g, '')] = key;
     return args;
   }, {});

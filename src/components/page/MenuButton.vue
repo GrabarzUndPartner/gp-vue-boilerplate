@@ -3,7 +3,7 @@
     <button
       v-if="!toggleDirection"
       class="page-menu-button"
-      :class="{'js--selected': isMenuOpened}"
+      :class="{ selected: isMenuOpened }"
       :aria-label="label"
       @click="onClickMenu"
     >
@@ -14,33 +14,31 @@
   </transition>
 </template>
 
-<script>
-import svgIconMenuClose from '@/assets/svg/icons/menu-close.svg?vue-template';
+<script setup>
+import { computed } from 'vue';
+import { useLayoutStore, useModalStore } from '@/stores/layout';
+import svgIconMenuClose from '@/assets/svg/icons/menu-close.svg';
 
-export default {
-  components: { svgIconMenuClose },
-  props: {
-    label: {
-      type: String,
-      default () { return 'Menu Open/Close'; }
-    }
-  },
-  computed: {
-    isMenuOpened () {
-      return this.$store.getters['modal/isModelOpened']('menu');
-    },
-    toggleDirection () {
-      return this.$store.getters['layout/toggleDirection'] || false;
-    }
-  },
-  methods: {
-    onClickMenu () {
-      this.$store.dispatch('modal/toggleModal', {
-        name: 'menu'
-      });
+const layoutStore = useLayoutStore();
+const modalStore = useModalStore();
+
+const isMenuOpened = computed(() => modalStore.isModalOpened('menu'));
+const toggleDirection = computed(() => layoutStore.toggleDirection);
+
+defineProps({
+  label: {
+    type: String,
+    default() {
+      return 'Menu Open/Close';
     }
   }
-};
+});
+
+function onClickMenu() {
+  modalStore.toggleModal({
+    name: 'menu'
+  });
+}
 </script>
 
 <style lang="postcss">
@@ -53,14 +51,14 @@ export default {
   display: block;
   width: calc(48 / 375 * 100vw);
   padding: 12px;
+  appearance: none;
   cursor: pointer;
   user-select: none;
   background: rgb(255 255 255 / 60%);
+  backdrop-filter: blur(2px);
   border: none;
-  appearance: none;
   border-radius: 50%;
   outline: none;
-  backdrop-filter: blur(2px);
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   -webkit-tap-highlight-color: transparent;
 
@@ -84,7 +82,7 @@ export default {
     &::before {
       display: block;
       padding-top: 100%;
-      content: "";
+      content: '';
     }
 
     & > * {
@@ -95,17 +93,21 @@ export default {
   }
 
   & svg g {
-    transition: transform 0.3s linear, opacity 0.3s linear;
+    transition:
+      transform 0.3s linear,
+      opacity 0.3s linear;
     transform-origin: center center;
 
     &:last-child {
       opacity: 0;
-      transition: transform 0.15s linear, opacity 0.15s linear;
+      transition:
+        transform 0.15s linear,
+        opacity 0.15s linear;
       transform: scale(0.4);
     }
   }
 
-  &.js--selected {
+  &.selected {
     background: rgb(0 0 0 / 50%);
 
     & svg {
@@ -114,7 +116,9 @@ export default {
       & g {
         &:first-child {
           opacity: 0;
-          transition: transform 0.15s linear, opacity 0.15s linear;
+          transition:
+            transform 0.15s linear,
+            opacity 0.15s linear;
           transform: scale(0.4);
         }
 
@@ -129,13 +133,17 @@ export default {
 
 .button-toggle-enter-active,
 .button-toggle-leave-active {
-  transition: transform 0.3s linear, opacity 0.3s linear;
+  transition:
+    transform 0.3s linear,
+    opacity 0.3s linear;
 }
 
 .button-toggle-enter,
 .button-toggle-leave-to {
   opacity: 0;
-  transition: transform 0.15s linear, opacity 0.15s linear;
+  transition:
+    transform 0.15s linear,
+    opacity 0.15s linear;
   transform: scale(0.4);
 }
 </style>

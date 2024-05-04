@@ -1,50 +1,39 @@
 <template>
   <base-content-container class="molecule-article">
     <template #header>
-      <atom-headline
-        v-if="headline"
-        v-bind="headline"
-      />
+      <element-headline v-if="headline" v-bind="headline" />
     </template>
     <template #default>
       <slot>
-        <atom-rich-text :content="content" />
+        <element-rich-text :content="content" />
       </slot>
     </template>
   </base-content-container>
 </template>
 
-<script>
+<script setup>
 import BaseContentContainer from '../base/ContentContainer';
-import AtomHeadline from '@/components/atoms/Headline';
-import AtomRichText from '@/components/atoms/RichText';
+import ElementHeadline from '@/components/elements/Headline';
+import ElementRichText from '@/components/elements/RichText';
 
-export default {
-  components: {
-    AtomHeadline,
-    AtomRichText,
-    BaseContentContainer
+defineProps({
+  headline: {
+    type: Object,
+    default() {
+      return {
+        overline: 'Article Overline',
+        headline: 'Article Headline',
+        subline: 'Article Subline'
+      };
+    }
   },
-
-  props: {
-    headline: {
-      type: Object,
-      default () {
-        return {
-          overline: 'Article Overline',
-          headline: 'Article Headline',
-          subline: 'Article Subline'
-        };
-      }
-    },
-    content: {
-      type: String,
-      default () {
-        return '<p>Example Text</p>';
-      }
+  content: {
+    type: String,
+    default() {
+      return '<p>Example Text</p>';
     }
   }
-};
+});
 </script>
 
 <style lang="postcss">

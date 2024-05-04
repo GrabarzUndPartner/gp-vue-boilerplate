@@ -4,6 +4,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   install:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
@@ -42,7 +46,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [19]
+        node: [20]
 
     steps:
       - uses: actions/setup-node@v3
@@ -66,7 +70,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [20]
 
     steps:
       - uses: actions/setup-node@v3
@@ -85,15 +89,11 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
       - name: Build
         run: |
-          npm run generate --build-analyze --base= --website-host=
-          mkdir dist/reports dist/reports/webpack
-          cp -R .reports/webpack/* dist/reports/webpack
+          npm run generate
           touch dist/.nojekyll
         env:
-          DIST_PATH: dist
-          BASE: /gp-vue-boilerplate/
+          BASE_URL: /gp-vue-boilerplate/
           WEBSITE_HOST: https://grabarzundpartner.github.io/gp-vue-boilerplate
-          BUILD_ANALYZE: true
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
@@ -107,7 +107,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [20]
     steps:
       - name: Download Artifact (Docs)
         uses: actions/download-artifact@master

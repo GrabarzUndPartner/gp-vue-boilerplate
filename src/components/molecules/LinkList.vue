@@ -5,62 +5,44 @@
     :class="styleClasses"
   >
     <slot>
-      <li
-        v-for="(item) in list"
-        :key="item.title"
-      >
-        <atom-link-to :url="getUrl(item)">
+      <li v-for="item in list" :key="item.title">
+        <nuxt-link :to="item.to">
           {{ item.title }}
-        </atom-link-to>
+        </nuxt-link>
       </li>
     </slot>
   </ul>
 </template>
 
-<script>
-import AtomLinkTo from '@/components/atoms/LinkTo';
+<script setup>
+import { computed } from 'vue';
+const { $getFont } = useBoosterFonts();
 
-export default {
-  components: {
-    AtomLinkTo
-  },
-  props: {
-    type: {
-      type: String,
-      default () {
-        return null;
-      }
-    },
-    list: {
-      type: Array,
-      default () {
-        return [];
-      }
+const props = defineProps({
+  type: {
+    type: String,
+    default() {
+      return null;
     }
   },
-  computed: {
-    styleClasses () {
-      const classes = {};
-      classes[`type--${this.type}`] = this.type;
-      return classes;
-    }
-  },
-  methods: {
-    getUrl (item) {
-      if ('$i18n' in this) {
-        // use when nuxtI18n exists
-        return this.localePath(item.url);
-      } else {
-        return item.url;
-      }
+  list: {
+    type: Array,
+    default() {
+      return [];
     }
   }
-};
+});
+
+const styleClasses = computed(() => {
+  const classes = {};
+  classes[`type-${props.type}`] = props.type;
+  return classes;
+});
 </script>
 
 <style lang="postcss">
 .molecule-link-list {
-  &.type--page-menu-links {
+  &.type-page-menu-links {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -89,7 +71,7 @@ export default {
       }
     }
 
-    @nest .type--page-menu-links & {
+    .type-page-menu-links & {
       line-height: 1;
       text-align: center;
 
@@ -111,7 +93,7 @@ export default {
     }
   }
 
-  &.type--page-footer {
+  &.type-page-footer {
     padding: 0;
     margin: 0;
     list-style: none;
