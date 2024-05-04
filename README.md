@@ -29,11 +29,6 @@
 
 [![dependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate)
 [![devDependencies Status](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate/dev-status.svg)](https://david-dm.org/GrabarzUndPartner/gp-vue-boilerplate?type=dev)
-[![Known Vulnerabilities](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate/badge.svg)](https://snyk.io/test/github/GrabarzUndPartner/gp-vue-boilerplate)
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd03937e022947fe867c7a33fdf707f9)](https://www.codacy.com/app/stephan.gerbeth/gp-vue-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GrabarzUndPartner/gp-vue-boilerplate&amp;utm_campaign=Badge_Grade)
-
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/jdxatqwkaoqbfda1/branch/master?svg=true)](https://ci.appveyor.com/project/StephanGerbeth/gp-vue-boilerplate/branch/master)
 
 ## Description
 
@@ -80,12 +75,3 @@ npm run generate
 ```
 
 For more information go to official [Nuxt Documentation](#).
-
-## Features
-
-- Performance boost via [`nuxt-booster`](#)
-- Image Optimization with [´@nuxt/image´](#)
-- Vite
-  - SVG Components
-- Preconfigured Postcss Configuration
-- …
