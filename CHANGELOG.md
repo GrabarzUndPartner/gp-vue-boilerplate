@@ -1,5 +1,29 @@
 # Project Changelog
 
+# [3.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.5...v3.0.0) (2024-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([7310665](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/731066520c7cb3a54e6b3611545b7dba79e01877))
+* **modules:** replace nuxt-speedkit with nuxt-booster ([afe3393](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/afe339338d9e4d7ff2571304ce4eb57c7ece685e))
+* **nuxt-3:** prepare for `nuxt@3` ([7e9abca](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/7e9abcae6986c680e4ef8d9a08109538f1bdd31b))
+* **nuxt-3:** prepared for `nuxt@3` ([22f1d4f](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/22f1d4f7c75f800b76468e7a8d96b7a9a9a678f9))
+* **update:** removed nuxt-i18n; update files ([b289612](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/b289612404207812245bbf36438c88d11bfbbc21))
+* **update:** update deps ([63f6715](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/63f6715695e868f624de6b7f50d971d0171e6b0f))
+* **update:** update deps ([98e7806](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/98e78067ada1735c0560981878bd8a0e15b27ce1))
+* **update:** update pkg; added module eslint auto import ([23ac9bd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/23ac9bd328665dada2f31a21ca25e86262f921dd))
+
+
+### chore
+
+* **nuxt:** nuxt 3 update ([c05b0e5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/c05b0e5ebbd9d71b1707061fc6b7918a32af8e8a))
+
+
+### BREAKING CHANGES
+
+* **nuxt:** Nuxt 3 update
+
 ## [2.23.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.4...v2.23.5) (2022-10-24)
 
 
