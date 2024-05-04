@@ -9,6 +9,7 @@ export default defineNuxtConfig(() => {
   return {
     dev: isDev,
     ssr: true,
+
     srcDir: 'src/',
 
     css: ['@/assets/css/vars.css'],
