@@ -23,10 +23,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "npm run lint:es && npm run lint:css",
+    "lint": "nuxt prepare && npm run lint:es && npm run lint:css",
     "lint:es": "eslint .",
     "lint:css": "stylelint \"src/**/*.vue\"",
-    "audit": "npm audit --json | npx npm-audit-html --output .reports/audit.html",
     "semantic-release": "semantic-release",
     "prepare": "npm run snyk-protect && nuxt prepare",
     "snyk-protect": "snyk-protect"
