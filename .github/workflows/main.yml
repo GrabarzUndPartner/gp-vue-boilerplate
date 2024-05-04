@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [20]
 
     steps:
       - uses: actions/setup-node@v3
@@ -29,10 +29,7 @@ jobs:
         uses: actions/cache@v3
         id: cache
         with:
-          path: |
-            node_modules
-            ~/.cache/ms-playwright/
-            ~\AppData\Local\ms-playwright\
+          path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
@@ -82,10 +79,7 @@ jobs:
         uses: actions/cache@v3
         id: cache
         with:
-          path: |
-            node_modules
-            ~/.cache/ms-playwright/
-            ~\AppData\Local\ms-playwright\
+          path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
       - name: Build
         run: |
