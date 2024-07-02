@@ -17,7 +17,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "postinstall": "husky install",
     "test": "npm run lint && npm run generate",
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -27,7 +26,7 @@
     "lint:es": "eslint .",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "semantic-release": "semantic-release",
-    "prepare": "npm run snyk-protect && nuxt prepare",
+    "prepare": "husky && npm run snyk-protect && nuxt prepare",
     "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
