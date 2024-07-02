@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
-import MoleculeContent from '@/components/molecules/Content';
 useBoosterCritical();
 
 defineProps({

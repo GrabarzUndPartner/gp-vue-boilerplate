@@ -15,8 +15,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useLayoutStore, useModalStore } from '@/stores/layout';
 import svgIconMenuClose from '@/assets/svg/icons/menu-close.svg';
 
 const layoutStore = useLayoutStore();

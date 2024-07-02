@@ -1,29 +1,18 @@
 <template>
   <div class="element-responsive-video" :class="styleClasses">
     <client-only>
-      <video
-        ref="videoRef"
-        v-bind="videoAttributes"
-        @play="onPlay"
-        @pause="onPause"
-      >
-        <source
-          v-for="(source, index) in filteredSources"
-          :key="index"
-          v-bind="source"
-        />
+      <video ref="videoRef" v-bind="videoAttributes" @play="onPlay" @pause="onPause">
+        <!--  eslint-disable-next-line prettier/prettier eslint-disable-next-line vue/no-parsing-error -->
+        <source v-for="(source, index) in filteredSources" :key="index" v-bind="source"></source>
       </video>
     </client-only>
     <booster-picture v-bind="poster" class="poster" />
-    <span v-if="!autoplay" class="play-button" @click="onClickPlayButton"
-      ><svg-icon-play
-    /></span>
+    <span v-if="!autoplay" class="play-button" @click="onClickPlayButton"><svg-icon-play /></span>
   </div>
 </template>
 
 <script setup>
 import { joinURL } from 'ufo';
-import { nextTick, ref, computed, onMounted, useRuntimeConfig } from '#imports';
 import BoosterPicture from '#booster/components/BoosterPicture';
 import SvgIconPlay from '@/assets/svg/icons/play.svg';
 

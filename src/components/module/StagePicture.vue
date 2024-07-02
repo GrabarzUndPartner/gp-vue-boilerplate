@@ -11,9 +11,6 @@
 
 <script setup>
 import BoosterPicture from '#booster/components/BoosterPicture';
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
-import BaseContentHeadline from '@/components/base/ContentHeadline';
-import BaseContentContainer from '@/components/base/ContentContainer';
 
 defineProps({
   picture: {

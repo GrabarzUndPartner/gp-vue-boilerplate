@@ -7,9 +7,6 @@
 </template>
 
 <script setup>
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
-import ElementResponsiveVideo from '@/components/elements/ResponsiveVideo';
-
 defineProps({
   video: {
     type: Object,

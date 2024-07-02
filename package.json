@@ -17,7 +17,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "postinstall": "husky install",
     "test": "npm run lint && npm run generate",
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -27,7 +26,7 @@
     "lint:es": "eslint .",
     "lint:css": "stylelint \"src/**/*.vue\"",
     "semantic-release": "semantic-release",
-    "prepare": "npm run snyk-protect && nuxt prepare",
+    "prepare": "husky && npm run snyk-protect && nuxt prepare",
     "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
@@ -59,8 +58,7 @@
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@js-basics/vector": "2.1.0",
     "@nuxt/content": "2.13.0",
-    "@nuxtjs/robots": "3.0.0",
-    "@nuxtjs/sitemap": "5.3.2",
+    "@nuxtjs/seo": "^2.0.0-rc.11",
     "@pinia/nuxt": "0.5.1",
     "lost": "9.0.2",
     "nuxt": "3.12.2",

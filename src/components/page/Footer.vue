@@ -1,15 +1,12 @@
 <template>
   <base-layout-lost-container class="page-footer" tag="footer">
     <nav>
-      <link-list :list="navigation" type="page-footer" />
+      <molecule-link-list :list="navigation" type="page-footer" />
     </nav>
   </base-layout-lost-container>
 </template>
 
 <script setup>
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
-import LinkList from '~/components/molecules/LinkList';
-
 defineProps({
   options: {
     type: Object,

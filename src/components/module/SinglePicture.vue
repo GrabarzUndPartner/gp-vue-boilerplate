@@ -8,7 +8,6 @@
 
 <script setup>
 import BoosterPicture from '#booster/components/BoosterPicture';
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
 
 defineProps({
   picture: {

@@ -5,17 +5,15 @@ export default defineNuxtPlugin(nuxtApp => {
 
   const globalComponents = {
     StagePicture: boosterHydrate(
-      () => import('@/components/modules/StagePicture')
+      () => import('@/components/module/StagePicture')
     ),
-    StageVideo: boosterHydrate(() => import('@/components/modules/StageVideo')),
-    FullText: boosterHydrate(() => import('@/components/modules/FullText')),
-    TextImage: boosterHydrate(() => import('@/components/modules/TextImage')),
+    StageVideo: boosterHydrate(() => import('@/components/module/StageVideo')),
+    FullText: boosterHydrate(() => import('@/components/module/FullText')),
+    TextImage: boosterHydrate(() => import('@/components/module/TextImage')),
     SinglePicture: boosterHydrate(
-      () => import('@/components/modules/SinglePicture')
+      () => import('@/components/module/SinglePicture')
     ),
-    SingleVideo: boosterHydrate(
-      () => import('@/components/modules/SingleVideo')
-    )
+    SingleVideo: boosterHydrate(() => import('@/components/module/SingleVideo'))
   };
 
   Object.entries(globalComponents).forEach(([name, component]) => {

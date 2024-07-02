@@ -13,10 +13,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
-import { useLayoutStore } from '@/stores/layout';
-
 const layoutStore = useLayoutStore();
 
 const props = defineProps({

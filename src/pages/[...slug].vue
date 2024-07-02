@@ -20,8 +20,6 @@
 </template>
 
 <script setup>
-import { useHead, usePageContent } from '#imports';
-
 const { fetch } = usePageContent();
 const { components, pageMeta } = await fetch();
 
