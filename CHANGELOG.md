@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.0...v3.0.1) (2024-07-02)
+
+
+### Bug Fixes
+
+* **update:** added `nuxtjs/seo`; renaming files for auto import ([6de7097](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6de709707f87382528d51a50ebc0214ad807f32f))
+
 # [3.0.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.23.5...v3.0.0) (2024-05-04)
 
 
