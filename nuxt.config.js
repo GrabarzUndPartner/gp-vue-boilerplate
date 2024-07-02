@@ -14,6 +14,12 @@ export default defineNuxtConfig(() => {
 
     css: ['@/assets/css/vars.css'],
 
+    site: {
+      indexable: false,
+      trailingSlash: true,
+      url: getWebsiteHost()
+    },
+
     app: {
       baseURL: getBaseUrl(),
       head: {
@@ -249,35 +255,17 @@ export default defineNuxtConfig(() => {
       }
     },
 
-    modules: ['@nuxt/eslint', '@pinia/nuxt', 'nuxt-booster', '@nuxt/content'],
+    modules: [
+      '@nuxt/eslint',
+      '@nuxtjs/seo',
+      '@nuxt/content',
+      '@pinia/nuxt',
+      'nuxt-booster'
+    ],
 
     buildModules: [
       '@nuxtjs/dotenv',
-      ...(isDev ? ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'] : []),
-      [
-        '@nuxtjs/sitemap',
-        {
-          path: 'sitemap.xml',
-          hostname: getWebsiteHost(),
-          cacheTime: 1000 * 60 * 15,
-          gzip: false,
-          exclude: [],
-          defaults: {
-            changefreq: 'daily',
-            priority: 1,
-            lastmod: new Date(),
-            lastmodrealtime: true
-          }
-        }
-      ],
-      [
-        '@nuxtjs/robots',
-        {
-          UserAgent: '*',
-          Disallow: '',
-          Sitemap: path.join(getWebsiteHost(), getBaseUrl(), 'sitemap.xml')
-        }
-      ]
+      ...(isDev ? ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'] : [])
     ]
   };
 });

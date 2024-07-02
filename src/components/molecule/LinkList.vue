@@ -6,16 +6,15 @@
   >
     <slot>
       <li v-for="item in list" :key="item.title">
-        <nuxt-link :to="item.to">
+        <site-link :to="item.to">
           {{ item.title }}
-        </nuxt-link>
+        </site-link>
       </li>
     </slot>
   </ul>
 </template>
 
 <script setup>
-import { computed } from 'vue';
 const { $getFont } = useBoosterFonts();
 
 const props = defineProps({

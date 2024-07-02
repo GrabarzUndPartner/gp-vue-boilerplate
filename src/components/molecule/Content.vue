@@ -12,10 +12,6 @@
 </template>
 
 <script setup>
-import BaseContentContainer from '../base/ContentContainer';
-import ElementHeadline from '@/components/elements/Headline';
-import ElementRichText from '@/components/elements/RichText';
-
 defineProps({
   headline: {
     type: Object,

@@ -3,9 +3,9 @@
     <nav>
       <molecule-link-list class="links" type="page-menu-links">
         <li v-for="item in navigation" :key="item.title">
-          <nuxt-link :to="item.to">
+          <site-link :to="item.to">
             {{ item.title }}
-          </nuxt-link>
+          </site-link>
           <molecule-link-list
             v-if="item.childrens && item.childrens.length"
             :list="item.childrens"
@@ -19,14 +19,10 @@
 </template>
 
 <script setup>
-import { computed, watch } from 'vue';
-import { useRoute } from '#imports';
-import BaseLayoutModal from '@/components/base/layout/Modal';
-import MoleculeLinkList from '@/components/molecules/LinkList';
-import { useModalStore } from '@/stores/layout';
 const modalStore = useModalStore();
 
 const $route = useRoute();
+
 watch(
   () => $route.path,
   () => modalStore.closeModal({ name: 'menu' })
