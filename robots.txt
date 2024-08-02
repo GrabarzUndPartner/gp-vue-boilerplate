@@ -1,5 +1,5 @@
-# START nuxt-simple-robots (indexing disabled)
+# START nuxt-robots (indexing disabled)
 User-agent: *
 Disallow: /
 
-# END nuxt-simple-robots
+# END nuxt-robots
