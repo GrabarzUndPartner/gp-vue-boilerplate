@@ -66,7 +66,7 @@ const styleClasses = computed(() => {
         text-decoration: none;
         opacity: 0.6;
 
-        &.nuxt-link-exact-active {
+        &.router-link-exact-active {
           opacity: 1;
         }
       }
@@ -118,7 +118,7 @@ const styleClasses = computed(() => {
         text-decoration: none;
         opacity: 0.6;
 
-        &.nuxt-link-exact-active {
+        &.router-link-exact-active {
           opacity: 1;
         }
       }

@@ -6,7 +6,15 @@
   >
     <template #container>
       <div class="logo">
-        <nuxt-link to="/"> Logo </nuxt-link>
+        <site-link
+          :to="
+            localePath({
+              path: '/'
+            })
+          "
+        >
+          Logo
+        </site-link>
       </div>
     </template>
   </base-layout-lost-container>
