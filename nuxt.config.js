@@ -25,8 +25,7 @@ export default defineNuxtConfig(() => {
 
     site: {
       indexable: false,
-      trailingSlash: true,
-      url: getWebsiteHost()
+      trailingSlash: true
     },
 
     app: {
@@ -131,7 +130,6 @@ export default defineNuxtConfig(() => {
     },
 
     i18n: {
-      baseUrl: getWebsiteHost(),
       locales: [
         {
           code: 'de',
@@ -299,10 +297,6 @@ export default defineNuxtConfig(() => {
     ]
   };
 });
-
-function getWebsiteHost() {
-  return process.env.npm_config_website_host || process.env.WEBSITE_HOST;
-}
 
 function getBaseUrl() {
   return process.env.npm_config_base_url || process.env.BASE_URL || '/';
