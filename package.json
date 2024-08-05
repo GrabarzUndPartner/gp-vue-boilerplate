@@ -27,7 +27,8 @@
     "lint:css": "stylelint \"src/**/*.vue\"",
     "semantic-release": "semantic-release",
     "prepare": "husky && npm run snyk-protect && nuxt prepare",
-    "snyk-protect": "snyk-protect"
+    "snyk-protect": "snyk-protect",
+    "start": "npx serve .output/public"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",

@@ -39,6 +39,5 @@ export default withNuxt({
     ],
     'vue/multi-word-component-names': 'off'
   }
-})
-  .prepend(pluginSecurity.configs.recommended, eslintPluginPrettierRecommended)
-  .remove('nuxt/import-globals');
+}).prepend(pluginSecurity.configs.recommended, eslintPluginPrettierRecommended);
+// .remove('nuxt/import-globals');

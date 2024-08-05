@@ -25,7 +25,7 @@ export default defineNuxtConfig(() => {
 
     site: {
       indexable: false,
-      trailingSlash: true
+      trailingSlash: false
     },
 
     app: {
@@ -127,6 +127,10 @@ export default defineNuxtConfig(() => {
         }
       },
       order: 'cssnanoLast'
+    },
+
+    generate: {
+      routes: ['/', '/de']
     },
 
     i18n: {
@@ -294,7 +298,15 @@ export default defineNuxtConfig(() => {
     buildModules: [
       '@nuxtjs/dotenv',
       ...(isDev ? ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'] : [])
-    ]
+    ],
+
+    schemaOrg: {
+      enabled: false
+    },
+
+    linkChecker: {
+      failOnError: false
+    }
   };
 });
 

@@ -6,18 +6,24 @@ export function usePageContent() {
 
   return {
     fetch: async () => {
-      const path = normalizePath(route.path).replace('/index', '');
-      const { title, components, i18nParams } = await queryContent(
-        'pages',
-        path
-      ).findOne();
+      try {
+        const path = normalizePath(route.path).replace('/index', '');
+        const { title, components, i18nParams } = await queryContent(
+          'pages',
+          path
+        ).findOne();
 
-      setI18nParams(i18nParams);
+        if (!import.meta.server) {
+          setI18nParams(i18nParams);
+        }
 
-      return {
-        components,
-        pageMeta: { title }
-      };
+        return {
+          components,
+          pageMeta: { title }
+        };
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 }

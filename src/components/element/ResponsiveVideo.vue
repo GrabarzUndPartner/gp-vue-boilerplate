@@ -13,7 +13,7 @@
 
 <script setup>
 import {useRuntimeConfig, nextTick} from '#imports'
-import {computed, defineProps,  onMounted, ref} from 'vue';
+import {computed, onMounted, ref} from 'vue';
 
 import { joinURL } from 'ufo';
 import BoosterPicture from '#booster/components/BoosterPicture';

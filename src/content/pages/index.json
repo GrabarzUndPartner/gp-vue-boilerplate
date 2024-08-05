@@ -1,10 +1,10 @@
 {
   "i18nParams": {
     "en": {
-      "slug": "home"
+      "slug": ""
     },
     "de": {
-      "slug": "home"
+      "slug": ""
     }
   },
   "title": "Home",
@@ -19,14 +19,7 @@
             {
               "src": "/img/sample-a-16-9.jpg",
               "sizes": {
-                "default": "100vw",
-                "xxs": "100vw",
-                "xs": "100vw",
-                "sm": "100vw",
-                "md": "100vw",
-                "lg": "100vw",
-                "xl": "100vw",
-                "xxl": "100vw"
+                "default": "100vw"
               }
             }
           ]
@@ -57,14 +50,7 @@
             {
               "src": "/img/sample-b-16-9.jpg",
               "sizes": {
-                "default": "100vw",
-                "xxs": "100vw",
-                "xs": "100vw",
-                "sm": "100vw",
-                "md": "100vw",
-                "lg": "100vw",
-                "xl": "100vw",
-                "xxl": "100vw"
+                "default": "100vw"
               }
             }
           ]
@@ -92,14 +78,7 @@
             {
               "src": "/img/sample-a-16-9.jpg",
               "sizes": {
-                "default": "100vw",
-                "xxs": "100vw",
-                "xs": "100vw",
-                "sm": "100vw",
-                "md": "100vw",
-                "lg": "100vw",
-                "xl": "100vw",
-                "xxl": "100vw"
+                "default": "100vw"
               }
             }
           ]

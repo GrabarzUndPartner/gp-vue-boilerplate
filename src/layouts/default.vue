@@ -24,7 +24,6 @@
 <script setup>
 import { queryContent, useI18n, useAsyncData } from '#imports';
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
-import { hydrateOnInteraction } from 'vue3-lazy-hydration';
 
 import boosterHydrate from '#booster/hydrate';
 
@@ -34,12 +33,9 @@ import PageMenuButton from '@/components/page/MenuButton';
 import { useLayoutStore } from '@/stores/layout';
 
 const PageFooter = boosterHydrate(() => import('@/components/page/Footer'));
-const PageMenu = hydrateOnInteraction(
-  defineAsyncComponent(() => import('@/components/page/Menu')),
-  ['hydrate']
-);
+const PageMenu = defineAsyncComponent(() => import('@/components/page/Menu'));
 
-const preventMenuOpened = ref(false);
+const preventMenuOpened = ref(true);
 
 function onClickMenuButton() {
   preventMenuOpened.value = false;
