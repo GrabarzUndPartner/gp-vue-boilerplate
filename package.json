@@ -55,7 +55,7 @@
     "stylelint-config-standard": "36.0.1"
   },
   "dependencies": {
-    "@csstools/postcss-global-data": "2.1.1",
+    "@csstools/postcss-global-data": "3.0.0",
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@js-basics/vector": "2.1.0",
     "@nuxt/content": "2.13.2",
