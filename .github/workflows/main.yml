@@ -87,7 +87,7 @@ jobs:
           touch dist/.nojekyll
         env:
           BASE_URL: /gp-vue-boilerplate/
-          WEBSITE_HOST: https://grabarzundpartner.github.io/gp-vue-boilerplate
+          NUXT_PUBLIC_SITE_URL: https://grabarzundpartner.github.io
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:

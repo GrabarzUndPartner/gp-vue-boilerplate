@@ -12,6 +12,9 @@
 </template>
 
 <script setup>
+import {useRuntimeConfig, nextTick} from '#imports'
+import {computed, onMounted, ref} from 'vue';
+
 import { joinURL } from 'ufo';
 import BoosterPicture from '#booster/components/BoosterPicture';
 import SvgIconPlay from '@/assets/svg/icons/play.svg';

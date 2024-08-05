@@ -38,3 +38,6 @@ jobs:
 
       - name: Test
         run: npm run test
+        env:
+          BASE_URL: /gp-vue-boilerplate/
+          NUXT_PUBLIC_SITE_URL: https://grabarzundpartner.github.io

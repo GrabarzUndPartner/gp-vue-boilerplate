@@ -2,6 +2,7 @@ import path from 'pathe';
 import { defineNuxtConfig } from 'nuxt/config';
 import svgLoader from 'vite-svg-loader';
 import * as postcssFunctions from './src/globals/postcss/functions';
+import { DEFAULT_LOCALE } from './i18n.config';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -14,10 +15,17 @@ export default defineNuxtConfig(() => {
 
     css: ['@/assets/css/vars.css'],
 
+    compatibilityDate: '2024-08-01',
+
+    devtools: { enabled: false },
+
+    imports: {
+      autoImport: false
+    },
+
     site: {
       indexable: false,
-      trailingSlash: true,
-      url: getWebsiteHost()
+      trailingSlash: true
     },
 
     app: {
@@ -119,6 +127,29 @@ export default defineNuxtConfig(() => {
         }
       },
       order: 'cssnanoLast'
+    },
+
+    generate: {
+      routes: ['/', '/de']
+    },
+
+    i18n: {
+      locales: [
+        {
+          code: 'de',
+          iso: 'de-DE'
+        },
+        {
+          code: 'en',
+          iso: 'en-EN'
+        }
+      ],
+      detectBrowserLanguage: {
+        useCookie: false
+      },
+      defaultLocale: DEFAULT_LOCALE,
+      strategy: 'prefix_except_default',
+      vueI18n: './i18n.config.js'
     },
 
     image: {
@@ -260,23 +291,24 @@ export default defineNuxtConfig(() => {
       '@nuxtjs/seo',
       '@nuxt/content',
       '@pinia/nuxt',
+      '@nuxtjs/i18n',
       'nuxt-booster'
     ],
 
     buildModules: [
       '@nuxtjs/dotenv',
       ...(isDev ? ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'] : [])
-    ]
+    ],
+
+    schemaOrg: {
+      enabled: false
+    },
+
+    linkChecker: {
+      failOnError: false
+    }
   };
 });
-
-function getWebsiteHost() {
-  return (
-    process.env.npm_config_website_host ||
-    process.env.WEBSITE_HOST ||
-    'http://localhost:8050'
-  );
-}
 
 function getBaseUrl() {
   return process.env.npm_config_base_url || process.env.BASE_URL || '/';

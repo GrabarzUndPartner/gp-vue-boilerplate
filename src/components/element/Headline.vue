@@ -11,12 +11,12 @@
         </slot>
       </span>
       <span
-        v-if="$slots.headline || headline"
+        v-if="$slots.default || content"
         v-font="$getFont('Roboto Slab', 700)"
         class="headline"
       >
         <slot name="headline-slot">
-          {{ headline }}
+          {{ content }}
         </slot>
       </span>
       <span
@@ -33,6 +33,7 @@
 </template>
 
 <script setup>
+import { useBoosterFonts } from '#imports';
 import BaseContentHeadline from '@/components/base/ContentHeadline';
 const { $getFont } = useBoosterFonts();
 
@@ -45,7 +46,7 @@ defineProps({
     type: String,
     default: 'Lorem Overline'
   },
-  headline: {
+  content: {
     type: String,
     default: 'Lorem Headline'
   },
