@@ -2,7 +2,7 @@
   <base-content-container class="content">
     <component
       :is="item.component"
-      v-for="(item, index) in components.slice(0, 1)"
+      v-for="(item, index) in components?.slice(0, 1)"
       :key="index"
       v-bind="item.data"
       critical
@@ -10,7 +10,7 @@
     <base-content-container>
       <component
         :is="item.component"
-        v-for="(item, index) in components.slice(1)"
+        v-for="(item, index) in components?.slice(1)"
         :key="index"
         :critical="index < 1"
         v-bind="item.data"
@@ -20,6 +20,8 @@
 </template>
 
 <script setup>
+import { usePageContent, useHead } from '#imports';
+
 const { fetch } = usePageContent();
 const { components, pageMeta } = await fetch();
 

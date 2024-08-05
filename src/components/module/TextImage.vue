@@ -8,9 +8,12 @@
         <booster-picture v-bind="picture" />
       </template>
       <template #right>
-        <molecule-content
+        <fragment-content
           v-bind="{ headline: { overline, headline, subline }, content }"
         />
+        <site-link v-if="link" v-bind="{ ...link, to: localePath(link.to) }">{{
+          link.title
+        }}</site-link>
       </template>
     </base-layout-two-column-container>
   </base-content-container>
@@ -23,6 +26,11 @@ defineProps({
   mirror: {
     type: Boolean,
     default: false
+  },
+
+  link: {
+    type: Object,
+    default: undefined
   },
 
   overline: {

@@ -1,31 +1,37 @@
 <template>
   <base-content-container>
     <template #before>
-      <page-header v-bind="layoutData.components.pageHeader" sticky />
+      <page-header v-bind="layoutData?.components.pageHeader" sticky />
     </template>
     <template #default>
       <page-menu
         class="page-menu"
-        v-bind="layoutData.components.pageMenu"
+        v-bind="layoutData?.components.pageMenu"
         :opened="!preventMenuOpened"
       />
       <page-menu-button
-        v-bind="layoutData.components.pageMenuButton"
+        v-bind="layoutData?.components.pageMenuButton"
         @click="onClickMenuButton"
       />
       <slot />
     </template>
     <template #after>
-      <page-footer v-bind="layoutData.components.pageFooter" />
+      <page-footer v-bind="layoutData?.components.pageFooter" />
     </template>
   </base-content-container>
 </template>
 
 <script setup>
+import { queryContent, useI18n, useAsyncData } from '#imports';
+import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
 import { hydrateOnInteraction } from 'vue3-lazy-hydration';
-import layoutData from '@/content/layout.json';
 
 import boosterHydrate from '#booster/hydrate';
+
+import BaseContentContainer from '@/components/base/ContentContainer';
+import PageHeader from '@/components/page/Header';
+import PageMenuButton from '@/components/page/MenuButton';
+import { useLayoutStore } from '@/stores/layout';
 
 const PageFooter = boosterHydrate(() => import('@/components/page/Footer'));
 const PageMenu = hydrateOnInteraction(
@@ -41,6 +47,16 @@ function onClickMenuButton() {
     .querySelector('.page-menu')
     .dispatchEvent(new CustomEvent('hydrate'));
 }
+
+const { locale } = useI18n();
+
+const { data: layoutData } = await useAsyncData(
+  `layout-data-${locale.value}`,
+  () => {
+    return queryContent('layout', locale.value).findOne();
+  },
+  { watch: [locale] }
+);
 
 const subscription = ref(null);
 

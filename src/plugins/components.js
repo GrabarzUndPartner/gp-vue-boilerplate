@@ -1,4 +1,5 @@
 import boosterHydrate from '#booster/hydrate';
+import { defineNuxtPlugin } from '#imports';
 
 export default defineNuxtPlugin(nuxtApp => {
   const { vueApp } = nuxtApp;

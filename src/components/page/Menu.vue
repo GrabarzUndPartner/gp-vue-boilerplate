@@ -1,24 +1,31 @@
 <template>
   <base-layout-modal class="organism-menu" name="menu" :options="options">
     <nav>
-      <molecule-link-list class="links" type="page-menu-links">
+      <fragment-link-list class="links" type="page-menu-links">
         <li v-for="item in navigation" :key="item.title">
-          <site-link :to="item.to">
+          <site-link :to="localePath(item.to)">
             {{ item.title }}
           </site-link>
-          <molecule-link-list
-            v-if="item.childrens && item.childrens.length"
-            :list="item.childrens"
+          <fragment-link-list
+            v-if="item.childs && item.childs.length"
+            :list="item.childs"
             class="childs"
             type="page-menu-links"
           />
         </li>
-      </molecule-link-list>
+      </fragment-link-list>
+      <ClientOnly>
+        <FragmentLanguageSwitch />
+      </ClientOnly>
     </nav>
   </base-layout-modal>
 </template>
 
 <script setup>
+import { useModalStore } from '@/stores/layout';
+import { useRoute } from '#imports';
+import { computed, watch } from 'vue';
+
 const modalStore = useModalStore();
 
 const $route = useRoute();
@@ -55,6 +62,12 @@ const options = computed(() => ({
 <style lang="postcss" scoped>
 .organism-menu {
   margin: 0;
+
+  & nav {
+    display: flex;
+    flex-direction: column;
+    gap: em(20);
+  }
 
   & .language-switch {
     display: inline-block;

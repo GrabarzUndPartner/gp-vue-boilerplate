@@ -13,6 +13,9 @@
 </template>
 
 <script setup>
+import { useLayoutStore } from '@/stores/layout';
+import { computed } from 'vue';
+
 const layoutStore = useLayoutStore();
 
 const props = defineProps({

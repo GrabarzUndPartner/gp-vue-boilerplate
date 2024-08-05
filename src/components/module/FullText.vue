@@ -1,10 +1,11 @@
 <template>
   <base-layout-lost-container class="organism-full-text">
-    <molecule-content v-bind="article" />
+    <fragment-content v-bind="article" />
   </base-layout-lost-container>
 </template>
 
 <script setup>
+import { useBoosterCritical } from '#imports';
 useBoosterCritical();
 
 defineProps({

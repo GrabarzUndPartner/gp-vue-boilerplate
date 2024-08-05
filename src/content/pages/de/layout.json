@@ -1,0 +1,50 @@
+{
+  "components": {
+    "pageHeader": {},
+    "pageMenu": {
+      "navigation": [
+        {
+          "title": "Home",
+          "to": "/"
+        },
+        {
+          "title": "About",
+          "to": "/about"
+        },
+        {
+          "title": "Projects",
+          "to": "/projects",
+          "childrens": [
+            {
+              "title": "Project 1",
+              "to": "/projects/project-1"
+            },
+            {
+              "title": "Project 2",
+              "to": "/projects/project-2"
+            }
+          ]
+        }
+      ]
+    },
+    "pageMenuButton": {
+      "label": "Menu Open/Close"
+    },
+    "pageFooter": {
+      "navigation": [
+        {
+          "title": "Contact",
+          "to": "/contact"
+        },
+        {
+          "title": "Terms of use",
+          "to": "/terms"
+        },
+        {
+          "title": "Legals",
+          "to": "/legals"
+        }
+      ]
+    }
+  }
+}

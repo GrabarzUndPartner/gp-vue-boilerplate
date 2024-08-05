@@ -1,7 +1,7 @@
 <template>
   <base-layout-lost-container class="page-footer" tag="footer">
     <nav>
-      <molecule-link-list :list="navigation" type="page-footer" />
+      <fragment-link-list :list="navigation" type="page-footer" />
     </nav>
   </base-layout-lost-container>
 </template>
