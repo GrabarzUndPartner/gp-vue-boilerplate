@@ -22,17 +22,22 @@
 </template>
 
 <script setup>
-import { queryContent, useI18n, useAsyncData } from '#imports';
+import {
+  queryContent,
+  useI18n,
+  useAsyncData,
+  useBoosterHydrate
+} from '#imports';
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
-
-import boosterHydrate from '#booster/hydrate';
 
 import BaseContentContainer from '@/components/base/ContentContainer';
 import PageHeader from '@/components/page/Header';
 import PageMenuButton from '@/components/page/MenuButton';
 import { useLayoutStore } from '@/stores/layout';
 
-const PageFooter = boosterHydrate(() => import('@/components/page/Footer'));
+const hydrate = useBoosterHydrate();
+
+const PageFooter = hydrate(() => import('@/components/page/Footer'));
 const PageMenu = defineAsyncComponent(() => import('@/components/page/Menu'));
 
 const preventMenuOpened = ref(true);
