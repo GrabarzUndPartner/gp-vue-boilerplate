@@ -1,20 +1,16 @@
-import boosterHydrate from '#booster/hydrate';
-import { defineNuxtPlugin } from '#imports';
+import { defineNuxtPlugin, useBoosterHydrate } from '#imports';
+const hydrate = useBoosterHydrate();
 
 export default defineNuxtPlugin(nuxtApp => {
   const { vueApp } = nuxtApp;
 
   const globalComponents = {
-    StagePicture: boosterHydrate(
-      () => import('@/components/module/StagePicture')
-    ),
-    StageVideo: boosterHydrate(() => import('@/components/module/StageVideo')),
-    FullText: boosterHydrate(() => import('@/components/module/FullText')),
-    TextImage: boosterHydrate(() => import('@/components/module/TextImage')),
-    SinglePicture: boosterHydrate(
-      () => import('@/components/module/SinglePicture')
-    ),
-    SingleVideo: boosterHydrate(() => import('@/components/module/SingleVideo'))
+    StagePicture: hydrate(() => import('@/components/module/StagePicture')),
+    StageVideo: hydrate(() => import('@/components/module/StageVideo')),
+    FullText: hydrate(() => import('@/components/module/FullText')),
+    TextImage: hydrate(() => import('@/components/module/TextImage')),
+    SinglePicture: hydrate(() => import('@/components/module/SinglePicture')),
+    SingleVideo: hydrate(() => import('@/components/module/SingleVideo'))
   };
 
   Object.entries(globalComponents).forEach(([name, component]) => {

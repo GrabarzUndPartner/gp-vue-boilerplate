@@ -137,11 +137,11 @@ export default defineNuxtConfig(() => {
       locales: [
         {
           code: 'de',
-          iso: 'de-DE'
+          language: 'de-DE'
         },
         {
           code: 'en',
-          iso: 'en-EN'
+          language: 'en-EN'
         }
       ],
       detectBrowserLanguage: {
