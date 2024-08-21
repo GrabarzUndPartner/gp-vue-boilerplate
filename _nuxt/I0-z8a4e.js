@@ -1,1 +1,0 @@
-import{_ as o,o as r,e as t,r as c}from"./D6drUPeq.js";import"./CtpdW1-h.js";const s={};function n(e,l){return r(),t("blockquote",null,[c(e.$slots,"default")])}const f=o(s,[["render",n]]);export{f as default};
