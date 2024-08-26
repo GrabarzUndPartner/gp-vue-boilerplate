@@ -59,7 +59,7 @@
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@js-basics/vector": "2.1.0",
     "@nuxt/content": "2.13.2",
-    "@nuxtjs/i18n": "8.5.0",
+    "@nuxtjs/i18n": "8.5.1",
     "@nuxtjs/seo": "2.0.0-rc.19",
     "@pinia/nuxt": "0.5.4",
     "lost": "9.0.2",
