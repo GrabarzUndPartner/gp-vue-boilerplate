@@ -35,7 +35,7 @@
     "@commitlint/config-conventional": "19.5.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
     "@nuxt/eslint": "0.5.7",
-    "@snyk/protect": "1.1293.0",
+    "@snyk/protect": "1.1293.1",
     "commitlint": "19.5.0",
     "eslint": "9.10.0",
     "eslint-config-prettier": "9.1.0",
