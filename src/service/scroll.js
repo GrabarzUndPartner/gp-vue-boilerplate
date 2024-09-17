@@ -1,5 +1,4 @@
-import { fromEvent } from 'rxjs';
-import { startWith, map, share } from 'rxjs/operators';
+import { fromEvent, startWith, map, share } from 'rxjs';
 import { Victor } from '@js-basics/vector';
 
 const observer = new Map();

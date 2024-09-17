@@ -1,5 +1,4 @@
-import { fromEvent, timer } from 'rxjs';
-import { map, debounce, startWith, share } from 'rxjs/operators';
+import { fromEvent, timer, map, debounce, startWith, share } from 'rxjs';
 import { Victor, ipoint } from '@js-basics/vector';
 import { getScrollObserver, getScrollPos } from './scroll';
 

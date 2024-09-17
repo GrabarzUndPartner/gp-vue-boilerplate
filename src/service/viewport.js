@@ -1,5 +1,11 @@
-import { combineLatest } from 'rxjs';
-import { shareReplay, bufferCount, pluck, map, filter } from 'rxjs/operators';
+import {
+  combineLatest,
+  shareReplay,
+  bufferCount,
+  pluck,
+  map,
+  filter
+} from 'rxjs';
 import { resizeObserver, scrollObserver } from './window';
 
 export const viewportObserver = combineLatest(
