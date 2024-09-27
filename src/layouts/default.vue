@@ -1,5 +1,5 @@
 <template>
-  <base-content-container>
+  <content-container>
     <template #before>
       <page-header v-bind="layoutData?.components.pageHeader" sticky />
     </template>
@@ -18,7 +18,7 @@
     <template #after>
       <page-footer v-bind="layoutData?.components.pageFooter" />
     </template>
-  </base-content-container>
+  </content-container>
 </template>
 
 <script setup>
@@ -30,7 +30,7 @@ import {
 } from '#imports';
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
 
-import BaseContentContainer from '@/components/base/ContentContainer';
+import { ContentContainer } from 'vue-semantic-structure';
 import PageHeader from '@/components/page/Header';
 import PageMenuButton from '@/components/page/MenuButton';
 import { useLayoutStore } from '@/stores/layout';

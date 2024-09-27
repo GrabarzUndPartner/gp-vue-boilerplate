@@ -1,5 +1,5 @@
 <template>
-  <base-content-container class="content">
+  <div class="content">
     <component
       :is="item.component"
       v-for="(item, index) in components?.slice(0, 1)"
@@ -7,16 +7,14 @@
       v-bind="item.data"
       critical
     />
-    <base-content-container>
-      <component
-        :is="item.component"
-        v-for="(item, index) in components?.slice(1)"
-        :key="index"
-        :critical="index < 1"
-        v-bind="item.data"
-      />
-    </base-content-container>
-  </base-content-container>
+    <component
+      :is="item.component"
+      v-for="(item, index) in components?.slice(1)"
+      :key="index"
+      :critical="index < 1"
+      v-bind="item.data"
+    />
+  </div>
 </template>
 
 <script setup>

@@ -1,16 +1,17 @@
 <template>
-  <base-content-container class="organism-stage-picture">
+  <header class="organism-stage-picture">
     <booster-picture v-bind="picture" />
     <base-layout-lost-container>
-      <base-content-headline class="headline">
+      <content-headline class="headline">
         {{ headline }}
-      </base-content-headline>
+      </content-headline>
     </base-layout-lost-container>
-  </base-content-container>
+  </header>
 </template>
 
 <script setup>
 import BoosterPicture from '#booster/components/BoosterPicture';
+import { ContentHeadline } from 'vue-semantic-structure';
 
 defineProps({
   picture: {

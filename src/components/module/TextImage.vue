@@ -1,5 +1,5 @@
 <template>
-  <base-content-container>
+  <content-container>
     <base-layout-two-column-container
       class="organism-text-image"
       :mirror="mirror"
@@ -16,12 +16,12 @@
         }}</site-link>
       </template>
     </base-layout-two-column-container>
-  </base-content-container>
+  </content-container>
 </template>
 
 <script setup>
 import BoosterPicture from '#booster/components/BoosterPicture';
-
+import { ContentContainer } from 'vue-semantic-structure';
 defineProps({
   mirror: {
     type: Boolean,

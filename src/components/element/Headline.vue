@@ -1,5 +1,5 @@
 <template>
-  <base-content-headline class="element-headline">
+  <content-headline class="element-headline">
     <slot>
       <span
         v-if="$slots.overline || overline"
@@ -29,12 +29,12 @@
         </slot>
       </span>
     </slot>
-  </base-content-headline>
+  </content-headline>
 </template>
 
 <script setup>
 import { useBoosterFonts } from '#imports';
-import BaseContentHeadline from '@/components/base/ContentHeadline';
+import { ContentHeadline } from 'vue-semantic-structure';
 const { $getFont } = useBoosterFonts();
 
 defineProps({

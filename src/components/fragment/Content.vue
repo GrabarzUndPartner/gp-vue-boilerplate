@@ -1,5 +1,5 @@
 <template>
-  <base-content-container class="fragment-article">
+  <content-container class="fragment-article">
     <template #header>
       <element-headline v-if="headline" v-bind="headline" />
     </template>
@@ -8,10 +8,11 @@
         <element-rich-text :content="content" />
       </slot>
     </template>
-  </base-content-container>
+  </content-container>
 </template>
 
 <script setup>
+import { ContentContainer } from 'vue-semantic-structure';
 defineProps({
   headline: {
     type: Object,
