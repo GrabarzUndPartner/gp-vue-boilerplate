@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.3...v3.0.4) (2024-10-01)
+
+
+### Bug Fixes
+
+* **update:** update ([67d5d04](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/67d5d04356d06bce8c25f402fa43684f7ff09fd9))
+
 ## [3.0.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.2...v3.0.3) (2024-08-21)
 
 
