@@ -21,6 +21,9 @@
 
 <script setup>
 import BoosterPicture from '#booster/components/BoosterPicture';
+import { useLocalePath } from '#imports';
+
+const localePath = useLocalePath();
 
 defineProps({
   mirror: {

@@ -5,40 +5,38 @@
         :to="switchLocalePath(language.code)"
         class="language-switch"
         :title="language.code"
-        >{{ language.code }}
+      >
+        {{ language.code }}
       </site-link>
     </li>
   </fragment-link-list>
 </template>
 
-<script>
+<script setup>
 import FragmentLinkList from '@/components/fragment/LinkList';
+import { useSwitchLocalePath, useI18n } from '#imports';
+import { computed } from 'vue';
+const switchLocalePath = useSwitchLocalePath();
+const { locales, locale: currentLocale } = useI18n();
 
-export default {
-  components: {
-    FragmentLinkList
-  },
-  props: {
-    filterCurrentLang: {
-      type: Boolean,
-      required: false,
-      default() {
-        return false;
-      }
-    }
-  },
-
-  computed: {
-    languages() {
-      return this.$i18n.locales.filter(locale => {
-        return (
-          !this.filterCurrentLang ||
-          (this.filterCurrentLang && locale.code !== this.$i18n.locale)
-        );
-      });
+const $props = defineProps({
+  filterCurrentLang: {
+    type: Boolean,
+    required: false,
+    default() {
+      return false;
     }
   }
-};
+});
+
+const languages = computed(() => {
+  return locales.value.filter(locale => {
+    return (
+      !$props.filterCurrentLang ||
+      ($props.filterCurrentLang && locale.code !== currentLocale.value)
+    );
+  });
+});
 </script>
 
 <style lang="postcss" scoped>

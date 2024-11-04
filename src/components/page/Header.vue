@@ -23,8 +23,10 @@
 <script setup>
 import { useLayoutStore } from '@/stores/layout';
 import { computed } from 'vue';
+import { useLocalePath } from '#imports';
 
 const layoutStore = useLayoutStore();
+const localePath = useLocalePath();
 
 const props = defineProps({
   sticky: {
