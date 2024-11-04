@@ -15,8 +15,10 @@
 </template>
 
 <script setup>
-import { useBoosterFonts } from '#imports';
+import { useBoosterFonts, useLocalePath } from '#imports';
 import { computed } from 'vue';
+
+const localePath = useLocalePath();
 const { $getFont } = useBoosterFonts();
 
 const props = defineProps({

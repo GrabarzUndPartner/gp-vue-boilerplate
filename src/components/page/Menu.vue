@@ -23,10 +23,11 @@
 
 <script setup>
 import { useModalStore } from '@/stores/layout';
-import { useRoute } from '#imports';
+import { useRoute, useLocalePath } from '#imports';
 import { computed, watch } from 'vue';
 
 const modalStore = useModalStore();
+const localePath = useLocalePath();
 
 const $route = useRoute();
 
