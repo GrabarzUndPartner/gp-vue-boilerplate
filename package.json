@@ -38,7 +38,7 @@
     "@snyk/protect": "1.1295.0",
     "commitlint": "19.6.1",
     "eslint": "9.18.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.1",
     "eslint-plugin-no-secrets": "2.1.1",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-security": "3.0.1",
