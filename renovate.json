@@ -1,18 +1,9 @@
 {
   "extends": [
-    "@nuxtjs"
+    "@nuxtjs",
+    ":semanticCommits"
   ],
-  "baseBranches": [
-    "main"
-  ],
-  "rangeStrategy": "pin",
   "packageRules": [
-    {
-      "packagePatterns": [
-        "snyk"
-      ],
-      "groupName": "snyk"
-    },
     {
       "packageNames": [
         "node"
@@ -21,7 +12,11 @@
         "enabled": true
       },
       "separateMultipleMajor": true,
-      "allowedVersions": "^16"
+      "allowedVersions": "^20"
     }
-  ]
+  ],
+  "baseBranches": [
+    "main"
+  ],
+  "rangeStrategy": "pin"
 }

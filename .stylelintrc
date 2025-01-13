@@ -16,6 +16,14 @@
         "camelCaseSvgKeywords": true
       }
     ],
+    "declaration-property-value-no-unknown": [
+      true,
+      {
+        "ignoreProperties": {
+          "/.+/": "/(vw|em|lost-gutter|lost-vars)+/"
+        }
+      }
+    ],
     "function-no-unknown": [
       true,
       {
