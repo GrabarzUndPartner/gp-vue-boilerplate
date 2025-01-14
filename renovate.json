@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "@nuxtjs",
-    ":semanticCommits"
-  ],
+  "extends": ["@nuxtjs", ":semanticCommits"],
   "packageRules": [
     {
-      "packageNames": [
-        "node"
-      ],
+      "matchPackageNames": ["node"],
       "major": {
         "enabled": true
       },
@@ -15,8 +10,6 @@
       "allowedVersions": "^20"
     }
   ],
-  "baseBranches": [
-    "main"
-  ],
+  "baseBranches": ["main"],
   "rangeStrategy": "pin"
 }
