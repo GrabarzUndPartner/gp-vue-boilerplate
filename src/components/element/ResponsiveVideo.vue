@@ -16,7 +16,7 @@ import {useRuntimeConfig, nextTick} from '#imports'
 import {computed, onMounted, ref} from 'vue';
 
 import { joinURL } from 'ufo';
-import BoosterPicture from '#booster/components/BoosterPicture';
+import BoosterPicture from '#booster/components/BoosterPicture.vue';
 import SvgIconPlay from '@/assets/svg/icons/play.svg';
 
 const props = defineProps({

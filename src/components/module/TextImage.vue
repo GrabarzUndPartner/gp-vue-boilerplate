@@ -1,5 +1,5 @@
 <template>
-  <base-content-container>
+  <content-container>
     <base-layout-two-column-container
       class="organism-text-image"
       :mirror="mirror"
@@ -11,16 +11,20 @@
         <fragment-content
           v-bind="{ headline: { overline, headline, subline }, content }"
         />
-        <nuxt-link v-if="link" v-bind="{ ...link, to: localePath(link.to) }">{{
-          link.title
-        }}</nuxt-link>
+        <nuxt-link v-if="link" v-bind="{ ...link, to: localePath(link.to) }">
+          {{ link.title }}
+        </nuxt-link>
       </template>
     </base-layout-two-column-container>
-  </base-content-container>
+  </content-container>
 </template>
 
 <script setup>
-import BoosterPicture from '#booster/components/BoosterPicture';
+import { ContentContainer } from 'vue-semantic-structure';
+import BoosterPicture from '#booster/components/BoosterPicture.vue';
+import FragmentContent from '@/components/fragment/Content.vue';
+import BaseLayoutTwoColumnContainer from '@/components/base/layout/TwoColumnContainer.vue';
+
 import { useLocalePath } from '#imports';
 
 const localePath = useLocalePath();

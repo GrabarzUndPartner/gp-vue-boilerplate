@@ -1,22 +1,13 @@
 <template>
-  <base-content-container class="content">
+  <div :class="page?.class">
     <component
       :is="item.component"
-      v-for="(item, index) in components?.slice(0, 1)"
+      v-for="(item, index) in components"
       :key="index"
+      :critical="index < 1"
       v-bind="item.data"
-      critical
     />
-    <base-content-container>
-      <component
-        :is="item.component"
-        v-for="(item, index) in components?.slice(1)"
-        :key="index"
-        :critical="index < 1"
-        v-bind="item.data"
-      />
-    </base-content-container>
-  </base-content-container>
+  </div>
 </template>
 
 <script setup>
@@ -30,7 +21,7 @@ import {
 } from '#imports';
 
 const { fetch } = usePageContent();
-const { components, title, description, image } = await fetch();
+const { components, title, description, image, ...page } = await fetch();
 
 const {
   app: { baseURL },

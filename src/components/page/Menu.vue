@@ -15,16 +15,20 @@
         </li>
       </fragment-link-list>
       <ClientOnly>
-        <FragmentLanguageSwitch />
+        <fragment-language-switch />
       </ClientOnly>
     </nav>
   </base-layout-modal>
 </template>
 
 <script setup>
-import { useModalStore } from '@/stores/layout';
 import { useRoute, useLocalePath } from '#imports';
 import { computed, watch } from 'vue';
+import { useModalStore } from '@/stores/layout';
+
+import BaseLayoutModal from '@/components/base/layout/Modal.vue';
+import FragmentLinkList from '@/components/fragment/LinkList.vue';
+import FragmentLanguageSwitch from '@/components/fragment/LanguageSwitch.vue';
 
 const modalStore = useModalStore();
 const localePath = useLocalePath();

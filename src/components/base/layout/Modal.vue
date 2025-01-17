@@ -24,10 +24,11 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { computed, watch, onMounted, onUnmounted } from 'vue';
-import BaseLayoutLostContainer from './LostContainer';
-
-import svgIconClose from '@/assets/svg/icons/menu-close.svg?vue-template';
 import { useLayoutStore, useModalStore } from '@/stores/layout';
+
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+
+import svgIconClose from '@/assets/svg/icons/menu-close.svg';
 
 const props = defineProps({
   options: {

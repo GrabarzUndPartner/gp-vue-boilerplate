@@ -21,9 +21,11 @@
 </template>
 
 <script setup>
-import { useLayoutStore } from '@/stores/layout';
-import { computed } from 'vue';
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+
 import { useLocalePath } from '#imports';
+import { computed } from 'vue';
+import { useLayoutStore } from '@/stores/layout';
 
 const layoutStore = useLayoutStore();
 const localePath = useLocalePath();

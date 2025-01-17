@@ -1,17 +1,18 @@
 <template>
-  <base-content-container class="fragment-article">
-    <template #header>
-      <element-headline v-if="headline" v-bind="headline" />
-    </template>
-    <template #default>
-      <slot>
-        <element-rich-text :content="content" />
-      </slot>
-    </template>
-  </base-content-container>
+  <content-container class="fragment-article">
+    <element-headline v-if="headline" v-bind="headline" />
+    <slot>
+      <element-rich-text :content="content" />
+    </slot>
+  </content-container>
 </template>
 
 <script setup>
+import { ContentContainer } from 'vue-semantic-structure';
+
+import ElementHeadline from '@/components/element/Headline.vue';
+import ElementRichText from '@/components/element/RichText.vue';
+
 defineProps({
   headline: {
     type: Object,

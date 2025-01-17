@@ -22,7 +22,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import BaseLayoutLostContainer from '@/components/base/layout/LostContainer';
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
 
 const props = defineProps({
   options: {
