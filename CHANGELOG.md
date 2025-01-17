@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.5...v3.0.6) (2025-01-17)
+
+
+### Bug Fixes
+
+* **content:** prepare for nuxt content v3 ([bf5f56a](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/bf5f56aa8986a7c5f676e3492c05ae0c919b2132))
+
 ## [3.0.5](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.4...v3.0.5) (2024-11-04)
 
 
