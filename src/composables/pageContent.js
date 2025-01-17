@@ -8,9 +8,12 @@ export function usePageContent() {
     fetch: async () => {
       try {
         const path = `/pages${normalizePath(route.path).replace('/index', '')}`;
-        const {
-          body: { title, components, i18nParams }
-        } = await queryCollection('page').path(path).first();
+        const { components, i18nParams, ...meta } = await queryCollection(
+          'page'
+        )
+          .path(path)
+          .first()
+          .then(({ body }) => body);
 
         if (!import.meta.server) {
           setI18nParams(i18nParams);
@@ -18,7 +21,7 @@ export function usePageContent() {
 
         return {
           components,
-          pageMeta: { title }
+          ...meta
         };
       } catch (error) {
         console.error(error);
