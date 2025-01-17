@@ -20,12 +20,33 @@
 </template>
 
 <script setup>
-import { usePageContent, useHead } from '#imports';
+import { joinURL } from 'ufo';
+import {
+  useRuntimeConfig,
+  usePageContent,
+  useSeoMeta,
+  // eslint-disable-next-line no-unused-vars
+  useHead
+} from '#imports';
 
 const { fetch } = usePageContent();
-const { components, pageMeta } = await fetch();
+const { components, title, description, image } = await fetch();
 
-useHead({
-  title: () => pageMeta.title
+const {
+  app: { baseURL },
+  public: {
+    general: { url }
+  }
+} = await useRuntimeConfig();
+
+useSeoMeta({
+  title: () => title,
+  ogTitle: () => title,
+  description: () => description,
+  ogDescription: () => description,
+  ogImage: () => joinURL(url, baseURL, image?.src),
+  ogImageWidth: () => image?.width,
+  ogImageHeight: () => image?.height,
+  ogImageType: () => image?.type
 });
 </script>

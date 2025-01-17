@@ -47,6 +47,15 @@ export default defineNuxtConfig(() => {
       }
     },
 
+    runtimeConfig: {
+      isDev,
+      public: {
+        general: {
+          url: getWebsiteHost()
+        }
+      }
+    },
+
     devServer: {
       port: getPort(),
       host: getHost()
@@ -312,6 +321,14 @@ export default defineNuxtConfig(() => {
 
 function getBaseUrl() {
   return process.env.npm_config_base_url || process.env.BASE_URL || '/';
+}
+
+function getWebsiteHost() {
+  return (
+    process.env.npm_config_website_host ||
+    process.env.WEBSITE_HOST ||
+    'https://'
+  );
 }
 
 function getHost() {
