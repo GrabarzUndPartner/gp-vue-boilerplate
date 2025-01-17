@@ -13,9 +13,10 @@
 </template>
 
 <script setup>
-import FragmentLinkList from '@/components/fragment/LinkList';
 import { useSwitchLocalePath, useI18n } from '#imports';
 import { computed } from 'vue';
+import FragmentLinkList from '@/components/fragment/LinkList.vue';
+
 const switchLocalePath = useSwitchLocalePath();
 const { locales, locale: currentLocale } = useI18n();
 

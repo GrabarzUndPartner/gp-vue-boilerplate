@@ -23,9 +23,14 @@ export default defineNuxtConfig(() => {
       autoImport: false
     },
 
+    components: {
+      dirs: []
+    },
+
     site: {
       indexable: false,
-      trailingSlash: true
+      trailingSlash: true,
+      url: getWebsiteHost()
     },
 
     app: {

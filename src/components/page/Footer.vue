@@ -7,6 +7,9 @@
 </template>
 
 <script setup>
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+import FragmentLinkList from '@/components/fragment/LinkList.vue';
+
 defineProps({
   options: {
     type: Object,

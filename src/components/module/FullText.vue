@@ -6,6 +6,10 @@
 
 <script setup>
 import { useBoosterCritical } from '#imports';
+
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+import FragmentContent from '@/components/fragment/Content.vue';
+
 useBoosterCritical();
 
 defineProps({

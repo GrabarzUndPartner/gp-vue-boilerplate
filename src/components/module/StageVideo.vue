@@ -7,6 +7,9 @@
 </template>
 
 <script setup>
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+import ElementResponsiveVideo from '@/components/element/ResponsiveVideo.vue';
+
 defineProps({
   video: {
     type: Object,

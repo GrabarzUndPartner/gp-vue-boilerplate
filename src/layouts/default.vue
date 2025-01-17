@@ -1,24 +1,20 @@
 <template>
-  <base-content-container>
-    <template #before>
-      <page-header v-bind="layoutData?.components.pageHeader" sticky />
-    </template>
-    <template #default>
-      <page-menu
-        class="page-menu"
-        v-bind="layoutData?.components.pageMenu"
-        :opened="!preventMenuOpened"
-      />
-      <page-menu-button
-        v-bind="layoutData?.components.pageMenuButton"
-        @click="onClickMenuButton"
-      />
+  <div>
+    <page-header v-bind="layoutData?.components.pageHeader" sticky />
+    <page-menu
+      class="page-menu"
+      v-bind="layoutData?.components.pageMenu"
+      :opened="!preventMenuOpened"
+    />
+    <page-menu-button
+      v-bind="layoutData?.components.pageMenuButton"
+      @click="onClickMenuButton"
+    />
+    <content-container>
       <slot />
-    </template>
-    <template #after>
-      <page-footer v-bind="layoutData?.components.pageFooter" />
-    </template>
-  </base-content-container>
+    </content-container>
+    <page-footer v-bind="layoutData?.components.pageFooter" />
+  </div>
 </template>
 
 <script setup>
@@ -29,8 +25,8 @@ import {
   useBoosterHydrate
 } from '#imports';
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
+import { ContentContainer } from 'vue-semantic-structure';
 
-import BaseContentContainer from '@/components/base/ContentContainer';
 import PageHeader from '@/components/page/Header';
 import PageMenuButton from '@/components/page/MenuButton';
 import { useLayoutStore } from '@/stores/layout';

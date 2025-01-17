@@ -7,7 +7,8 @@
 </template>
 
 <script setup>
-import BoosterPicture from '#booster/components/BoosterPicture';
+import BaseLayoutLostContainer from '@/components/base/layout/LostContainer.vue';
+import BoosterPicture from '#booster/components/BoosterPicture.vue';
 
 defineProps({
   picture: {
