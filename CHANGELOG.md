@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.7...v3.0.8) (2025-01-17)
+
+
+### Bug Fixes
+
+* **update:** update components ([fc5bffb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/fc5bffbebecdda332c100cd02986b0d636fdf881))
+
 ## [3.0.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.6...v3.0.7) (2025-01-17)
 
 
