@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.7](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.6...v3.0.7) (2025-01-17)
+
+
+### Bug Fixes
+
+* **update:** improve content integration ([5da8765](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5da87650827cdd24ea86c108c7dbdd0b4a8e4b28))
+
 ## [3.0.6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.5...v3.0.6) (2025-01-17)
 
 
