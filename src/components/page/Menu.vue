@@ -3,9 +3,9 @@
     <nav>
       <fragment-link-list class="links" type="page-menu-links">
         <li v-for="item in navigation" :key="item.title">
-          <site-link :to="localePath(item.to)">
+          <nuxt-link :to="localePath(item.to)">
             {{ item.title }}
-          </site-link>
+          </nuxt-link>
           <fragment-link-list
             v-if="item.childs && item.childs.length"
             :list="item.childs"

@@ -1,4 +1,4 @@
-import { useRoute, queryContent, useSetI18nParams } from '#imports';
+import { useRoute, queryCollection, useSetI18nParams } from '#imports';
 
 export function usePageContent() {
   const route = useRoute();
@@ -7,11 +7,10 @@ export function usePageContent() {
   return {
     fetch: async () => {
       try {
-        const path = normalizePath(route.path).replace('/index', '');
-        const { title, components, i18nParams } = await queryContent(
-          'pages',
-          path
-        ).findOne();
+        const path = `/pages${normalizePath(route.path).replace('/index', '')}`;
+        const {
+          body: { title, components, i18nParams }
+        } = await queryCollection('page').path(path).first();
 
         if (!import.meta.server) {
           setI18nParams(i18nParams);

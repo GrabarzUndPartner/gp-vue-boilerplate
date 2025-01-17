@@ -6,9 +6,9 @@
   >
     <slot>
       <li v-for="item in list" :key="item.title">
-        <site-link :to="localePath(item.to)">
+        <nuxt-link :to="localePath(item.to)">
           {{ item.title }}
-        </site-link>
+        </nuxt-link>
       </li>
     </slot>
   </ul>

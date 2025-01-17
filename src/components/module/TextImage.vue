@@ -11,9 +11,9 @@
         <fragment-content
           v-bind="{ headline: { overline, headline, subline }, content }"
         />
-        <site-link v-if="link" v-bind="{ ...link, to: localePath(link.to) }">{{
+        <nuxt-link v-if="link" v-bind="{ ...link, to: localePath(link.to) }">{{
           link.title
-        }}</site-link>
+        }}</nuxt-link>
       </template>
     </base-layout-two-column-container>
   </base-content-container>

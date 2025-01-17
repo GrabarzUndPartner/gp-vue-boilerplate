@@ -6,7 +6,7 @@
   >
     <template #container>
       <div class="logo">
-        <site-link
+        <nuxt-link
           :to="
             localePath({
               path: '/'
@@ -14,7 +14,7 @@
           "
         >
           Logo
-        </site-link>
+        </nuxt-link>
       </div>
     </template>
   </base-layout-lost-container>

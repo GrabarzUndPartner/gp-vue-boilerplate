@@ -1,13 +1,13 @@
 <template>
   <fragment-link-list class="fragment-language-switch">
     <li v-for="language in languages" :key="language.code">
-      <site-link
+      <nuxt-link
         :to="switchLocalePath(language.code)"
         class="language-switch"
         :title="language.code"
       >
         {{ language.code }}
-      </site-link>
+      </nuxt-link>
     </li>
   </fragment-link-list>
 </template>

@@ -1,29 +1,29 @@
 <template>
   <base-content-container>
     <template #before>
-      <page-header v-bind="layoutData?.components.pageHeader" sticky />
+      <page-header v-bind="layoutData?.body.components.pageHeader" sticky />
     </template>
     <template #default>
       <page-menu
         class="page-menu"
-        v-bind="layoutData?.components.pageMenu"
+        v-bind="layoutData?.body.components.pageMenu"
         :opened="!preventMenuOpened"
       />
       <page-menu-button
-        v-bind="layoutData?.components.pageMenuButton"
+        v-bind="layoutData?.body.components.pageMenuButton"
         @click="onClickMenuButton"
       />
       <slot />
     </template>
     <template #after>
-      <page-footer v-bind="layoutData?.components.pageFooter" />
+      <page-footer v-bind="layoutData?.body.components.pageFooter" />
     </template>
   </base-content-container>
 </template>
 
 <script setup>
 import {
-  queryContent,
+  queryCollection,
   useI18n,
   useAsyncData,
   useBoosterHydrate
@@ -53,8 +53,8 @@ const { locale } = useI18n();
 
 const { data: layoutData } = await useAsyncData(
   `layout-data-${locale.value}`,
-  () => {
-    return queryContent('layout', locale.value).findOne();
+  async () => {
+    return queryCollection('layout').path(`/layout/${locale.value}`).first();
   },
   { watch: [locale] }
 );
