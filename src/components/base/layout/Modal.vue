@@ -140,8 +140,8 @@ function onRouterAfterEach() {
     position: absolute;
     top: calc(30 / 375 * 100vw);
     right: calc(15 / 375 * 100vw);
-    display: block;
     float: left;
+    display: block;
     padding: 0;
     appearance: none;
     cursor: pointer;
@@ -174,9 +174,9 @@ function onRouterAfterEach() {
 .modal-toggle-enter,
 .modal-toggle-leave-to {
   opacity: 0;
+  transform: scale(0.6);
   transition:
     transform 0.15s ease-in,
     opacity 0.15s linear;
-  transform: scale(0.6);
 }
 </style>

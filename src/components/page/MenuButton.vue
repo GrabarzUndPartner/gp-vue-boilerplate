@@ -54,12 +54,12 @@ function onClickMenu() {
   appearance: none;
   cursor: pointer;
   user-select: none;
+  outline: none;
   background: rgb(255 255 255 / 60%);
-  backdrop-filter: blur(2px);
   border: none;
   border-radius: 50%;
-  outline: none;
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  backdrop-filter: blur(2px);
   -webkit-tap-highlight-color: transparent;
 
   @media (--xs) {
@@ -93,17 +93,17 @@ function onClickMenu() {
   }
 
   & svg g {
+    transform-origin: center center;
     transition:
       transform 0.3s linear,
       opacity 0.3s linear;
-    transform-origin: center center;
 
     &:last-child {
       opacity: 0;
+      transform: scale(0.4);
       transition:
         transform 0.15s linear,
         opacity 0.15s linear;
-      transform: scale(0.4);
     }
   }
 
@@ -116,10 +116,10 @@ function onClickMenu() {
       & g {
         &:first-child {
           opacity: 0;
+          transform: scale(0.4);
           transition:
             transform 0.15s linear,
             opacity 0.15s linear;
-          transform: scale(0.4);
         }
 
         &:last-child {
@@ -141,9 +141,9 @@ function onClickMenu() {
 .button-toggle-enter,
 .button-toggle-leave-to {
   opacity: 0;
+  transform: scale(0.4);
   transition:
     transform 0.15s linear,
     opacity 0.15s linear;
-  transform: scale(0.4);
 }
 </style>
