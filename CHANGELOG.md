@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.8...v3.0.9) (2025-01-20)
+
+
+### Bug Fixes
+
+* **lint:** fix stylelint errors ([8062a78](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8062a78cbd215881a0929c6cfa8bcc619ca3825c))
+
 ## [3.0.8](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.7...v3.0.8) (2025-01-17)
 
 
