@@ -59,8 +59,8 @@ const languages = computed(() => {
 
   & a {
     color: var(--color-black);
-    text-decoration: none;
     text-transform: uppercase;
+    text-decoration: none;
     opacity: 0.6;
 
     &.router-link-exact-active {

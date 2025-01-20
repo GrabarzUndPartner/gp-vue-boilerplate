@@ -72,8 +72,8 @@ const styleClasses = computed(() => {
     font-weight: bold;
     text-align: center;
     background: rgb(255 255 255 / 50%);
-    backdrop-filter: blur(4px);
     box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    backdrop-filter: blur(4px);
 
     & a {
       color: var(--color-black);
