@@ -34,7 +34,7 @@
     "@commitlint/cli": "19.6.1",
     "@commitlint/config-conventional": "19.6.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "0.4.0",
-    "@nuxt/eslint": "0.7.5",
+    "@nuxt/eslint": "1.0.0",
     "@snyk/protect": "1.1295.0",
     "commitlint": "19.6.1",
     "eslint": "9.18.0",
