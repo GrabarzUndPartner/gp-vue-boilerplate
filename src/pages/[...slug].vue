@@ -28,7 +28,7 @@ const {
   public: {
     general: { url }
   }
-} = await useRuntimeConfig();
+} = useRuntimeConfig();
 
 useSeoMeta({
   title: () => title,
