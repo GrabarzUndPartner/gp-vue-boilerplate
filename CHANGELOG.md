@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [3.0.10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.9...v3.0.10) (2025-02-11)
+
+
+### Bug Fixes
+
+* **slug:** removed unused await ([6aa66a6](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6aa66a66e4a5a5f99ab76259a2d575ecb934cac0))
+
 ## [3.0.9](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v3.0.8...v3.0.9) (2025-01-20)
 
 
