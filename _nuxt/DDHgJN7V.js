@@ -1,0 +1,1 @@
+import{_ as o,c as r,r as t,o as c}from"./DhOc3cKl.js";import"./BjZZEgg-.js";const s={};function n(e,a){return c(),r("code",null,[t(e.$slots,"default")])}const d=o(s,[["render",n]]);export{d as default};
