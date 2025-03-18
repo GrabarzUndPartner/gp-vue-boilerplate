@@ -1,0 +1,1 @@
+import{_ as r,c as o,r as t,o as s}from"./CmvjcaxS.js";import"./Cuubmov9.js";const c={};function n(e,a){return s(),o("td",null,[t(e.$slots,"default")])}const d=r(c,[["render",n]]);export{d as default};
