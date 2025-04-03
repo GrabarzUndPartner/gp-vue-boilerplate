@@ -59,7 +59,7 @@
     "@js-basics/vector": "2.2.2",
     "@nuxt/content": "3.4.0",
     "@nuxtjs/i18n": "9.4.0",
-    "@nuxtjs/seo": "2.2.0",
+    "@nuxtjs/seo": "3.0.2",
     "@pinia/nuxt": "0.10.1",
     "lost": "9.0.2",
     "nuxt": "3.16.2",
