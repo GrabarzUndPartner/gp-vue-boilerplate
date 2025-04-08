@@ -63,7 +63,7 @@
     "@pinia/nuxt": "0.10.1",
     "lost": "9.0.2",
     "nuxt": "3.16.2",
-    "nuxt-booster": "3.2.6",
+    "nuxt-booster": "3.2.7",
     "pathe": "2.0.3",
     "pinia": "3.0.1",
     "postcss-custom-media": "11.0.5",
