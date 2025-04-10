@@ -1,8 +1,8 @@
 import path from 'pathe';
 import { defineNuxtConfig } from 'nuxt/config';
 import svgLoader from 'vite-svg-loader';
-import * as postcssFunctions from './src/globals/postcss/functions';
-import { DEFAULT_LOCALE } from './i18n.config';
+import * as postcssFunctions from './postcss/functions';
+import { DEFAULT_LOCALE } from './i18n/i18n.config';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -104,10 +104,7 @@ export default defineNuxtConfig(() => {
         },
         '@csstools/postcss-global-data': {
           files: [
-            path.resolve(
-              __dirname,
-              'src/globals/postcss/preset-env/custom-media.pcss'
-            )
+            path.resolve(__dirname, 'postcss/preset-env/custom-media.pcss')
           ]
         },
         'postcss-custom-media': {},

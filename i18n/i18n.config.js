@@ -1,4 +1,4 @@
-import { i18nMessageDe, i18nMessageEn } from './src/globals/locales';
+import { i18nMessageDe, i18nMessageEn } from './locales';
 
 export const DEFAULT_LOCALE = 'en';
 
