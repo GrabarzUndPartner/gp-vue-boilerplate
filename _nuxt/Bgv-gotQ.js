@@ -1,0 +1,1 @@
+import{_ as r,c as o,r as t,o as s}from"./BtBf-Gvt.js";import"./CadDDQjJ.js";const c={};function n(e,a){return s(),o("li",null,[t(e.$slots,"default")])}const f=r(c,[["render",n]]);export{f as default};
