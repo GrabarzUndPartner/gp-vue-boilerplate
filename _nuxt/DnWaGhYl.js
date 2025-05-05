@@ -1,0 +1,1 @@
+import{_ as r,a as o,r as t,o as s}from"./LOPSx1AR.js";import"./DVEjZ-2G.js";const n={};function a(e,c){return s(),o("th",null,[t(e.$slots,"default")])}const f=r(n,[["render",a]]);export{f as default};

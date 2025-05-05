@@ -1,0 +1,1 @@
+import{_ as r,a as o,r as t,o as a}from"./LOPSx1AR.js";import"./DVEjZ-2G.js";const s={};function n(e,c){return a(),o("table",null,[t(e.$slots,"default")])}const f=r(s,[["render",n]]);export{f as default};

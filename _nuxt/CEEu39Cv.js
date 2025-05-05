@@ -1,0 +1,1 @@
+import{_ as o,a as r,r as t,o as c}from"./LOPSx1AR.js";import"./DVEjZ-2G.js";const s={};function n(e,a){return c(),r("blockquote",null,[t(e.$slots,"default")])}const f=o(s,[["render",n]]);export{f as default};
