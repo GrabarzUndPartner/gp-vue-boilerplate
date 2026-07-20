@@ -20,13 +20,13 @@ jobs:
         node: [20]
 
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ matrix.node }}
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
       - name: cache node_modules
-        uses: actions/cache@v4
+        uses: actions/cache@v4.3.0
         id: cache
         with:
           path: node_modules
@@ -46,11 +46,11 @@ jobs:
         node: [20]
 
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ matrix.node }}
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
       - name: Versioning
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -70,13 +70,13 @@ jobs:
         node: [20]
 
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ matrix.node }}
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
       - name: cache node_modules
-        uses: actions/cache@v4
+        uses: actions/cache@v4.3.0
         id: cache
         with:
           path: node_modules
@@ -109,7 +109,7 @@ jobs:
           name: artifact
           path: public
       - name: Deploy to GH-Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
