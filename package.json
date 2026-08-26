@@ -62,7 +62,7 @@
     "@nuxtjs/seo": "3.0.3",
     "@pinia/nuxt": "0.11.0",
     "lost": "9.0.2",
-    "nuxt": "3.17.2",
+    "nuxt": "4.5.2",
     "nuxt-booster": "3.2.9",
     "pathe": "2.0.3",
     "pinia": "3.0.2",
