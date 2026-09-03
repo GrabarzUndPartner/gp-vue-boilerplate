@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@csstools/postcss-global-data": "3.0.0",
-    "@fullhuman/postcss-purgecss": "7.0.2",
+    "@fullhuman/postcss-purgecss": "8.0.0",
     "@js-basics/vector": "2.2.2",
     "@nuxt/content": "3.5.1",
     "@nuxtjs/i18n": "9.5.4",
